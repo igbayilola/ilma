@@ -1,0 +1,451 @@
+---
+
+## PROMPT 0 — “Brief Global” (à coller en début de session)
+
+
+ROLE:
+Tu es un Lead Frontend Engineer + Product Designer, spécialisé en web apps responsives, PWA, offline-first, et UX enfants (10–12 ans).
+
+CONTEXT:
+Développer le frontend WEB RESPONSIVE (desktop-first) de ILMA, une plateforme éducative.
+Rôles: Élève, Parent, Admin.
+Contraintes: low-end devices, réseau instable, offline-first (coeur du produit), performance et accessibilité.
+
+GLOBAL LAYOUT (WEB FIRST):
+- Desktop: App shell = Left sidebar + Top header + Content (max-width, dense mais lisible)
+- Mobile: Top header compact + Bottom navigation (max 4 items) + Drawer secondaire
+- Ne PAS faire une “app mobile étirée”. Le design est web-first puis adaptatif.
+
+DESIGN STYLE:
+- UI claire, lisible, enfant-friendly sans être “bébé”.
+- Taille texte >=16px, boutons larges, hiérarchie forte, feedback immédiat.
+- Accessibilité WCAG AA, ARIA, focus visible.
+- Optimisation low-end: animations légères, images WebP, skeleton loading.
+
+COLOR TOKENS (DSFT):
+Bleu primaire #1E5AA8, bleu clair #E8F4FD, vert #28A745, rouge #DC3545, orange #FFC107, gris texte #333333.
+
+COMPONENTS (must reuse consistently):
+- AppShell (sidebar/topbar), MobileShell (bottom nav)
+- DataList/Table (web) + Cards (mobile)
+- Drawer (détails rapides), Modal (confirmations), Toast
+- Skeleton, EmptyState, ErrorState
+- Progress widgets (SmartScore, streak, XP), Badge components
+- OfflineIndicator (nuage barré), SyncCounter (“À synchroniser”), SyncAnimation (discrète)
+- Pricing cards, Paywall modal
+
+CRITICAL BUSINESS RULES (UI STATES):
+- Offline-first: l’app fonctionne parfaitement sans réseau; sync opportuniste.
+- Indicateurs UI offline obligatoires: nuage barré + message “Mode hors-ligne — progression sauvegardée localement” + compteur “À synchroniser” + animation discrète pendant sync.
+- Sync: déclencheurs (startup, après session, manuel, périodique) + ordre priorité (tentatives → badges → profil → contenu → classements/notifications) + retry/backoff.
+- Freemium: 5 exercices/jour gratuit; premium = illimité + packs complets + options (protection streak, examens blancs, etc).
+
+DELIVERABLE (DEV, pas seulement maquette):
+- Code complet React + TypeScript (Vite)
+- Routing + RBAC (Élève/Parent/Admin)
+- Design system + composants réutilisables
+- Mocks + couche “apiClient” simulée
+- Gestion exhaustive des états: loading/error/empty
+- Checklist DoD par écran
+
+OUTPUT FORMAT (pour chaque écran/page):
+- Purpose
+- Layout (zones)
+- Components used
+- Data model (TS types) + validations
+- Primary actions + secondary actions
+- RBAC visibility notes
+- Offline behavior + Loading/Error/Empty states
+- Files created/updated (paths)
+
+
+Références : structure de brief inspirée de promptFrontend (ROLE/CONTEXT/LAYOUT/COMPONENTS/OUTPUT FORMAT). 
+Contraintes ILMA: design enfant + accessibilité + low-end. 
+Offline indicators + sync strategy. 
+
+---
+
+## PROMPT 1 — Scaffolding projet (web-first) + architecture dossiers
+
+
+Mets en place le projet ILMA Web:
+- React + TypeScript (Vite)
+- Tailwind + CSS variables tokens
+- React Router
+- State management: Zustand (ou Redux Toolkit, choisis 1 et justifie)
+- Data fetching: TanStack Query
+- PWA: manifest + service worker + offline fallback page
+- Dossier: /app (shell), /pages, /components/ui, /features, /services, /stores, /types, /mocks
+
+Livrer:
+- code fonctionnel
+- routing minimal
+- AppShell + MobileShell vides
+- README exécution
+
+
+---
+
+## PROMPT 2 — Design System ILMA (tokens + UI kit)
+
+
+Crée un design system ILMA (web-first):
+- Tokens couleurs (Les plus belles qui vont ensemble pour le contexte de l'application)
+- Typo: >=16px, line-height 1.5
+- Boutons: min 48x48 (enfant), focus visible, variantes primary/secondary/ghost/danger
+- Composants: Button, Input, Select, Tabs, Badge, Card, Modal, Drawer, Toast, Skeleton, EmptyState, ErrorState
+- Composants ILMA: SmartScoreMeter, XPBar, StreakWidget, BadgeGrid, OfflineBanner, SyncCounter
+
+Ajoute une page /styleguide listant chaque composant + états.
+
+
+Design enfants/accessibilité/low-end + palette DSFT.  
+
+---
+
+## PROMPT 3 — App Shell (Desktop) + Mobile Shell (Responsive)
+
+
+Implémente le shell global (WEB FIRST):
+Desktop:
+- Sidebar: Accueil, Matières, Progression, Badges, Profil
+- Header: recherche (placeholder), OfflineIndicator + SyncCounter, menu profil
+- Zone content avec max-width, padding, breadcrumb optionnel
+
+Mobile:
+- Header compact
+- Bottom nav (4 items max): Accueil, Matières, Progression, Profil
+- Drawer pour liens secondaires (Badges, Paramètres, Aide)
+
+Inclure:
+- composant OfflineBanner (“Mode hors-ligne — progression sauvegardée localement”)
+- Sync animation discrète pendant sync
+- états skeleton sur le layout lors de chargement user
+
+
+Indicateurs offline obligatoires. 
+
+---
+
+## PROMPT 4 — Routing + RBAC (Élève/Parent/Admin) + guards
+
+
+Implémente le routage + RBAC:
+Routes publiques: Splash/Onboarding, Login, Register, OTP, Mode invité
+Routes Élève: Home, Matières, Domaines, Compétences, Exercice Player, Micro-leçon, Progression, Badges, Profil
+Routes Parent: Dashboard Parent, Détail enfant, Objectifs, Alertes/Préférences
+Routes Admin: Dashboard Admin, Contenu (CRUD), Utilisateurs, Abonnements, Analytics, Config
+
+Ajoute:
+- ProtectedRoute
+- RoleRoute
+- Redirections propres
+- Menu items visibles selon rôle
+
+
+---
+
+## PROMPT 5 — Offline-first (IndexedDB) + Sync Manager (front uniquement)
+
+
+Implémente l’offline-first ILMA:
+- Stockage local: IndexedDB (questions/leçons/packs, tentatives, badges pending, profil cache)
+- Détection offline: events online/offline
+- Queue d’événements: attempts, badges, profil updates
+- Sync manager:
+  - triggers: au lancement si connecté, après session, manuel, périodique
+  - ordre: tentatives → badges → profil → contenu → classements/notifications
+  - retry backoff exponentiel + limite tentatives + bouton “retry manuel”
+- UI:
+  - nuage barré si offline (topbar)
+  - message “Mode hors-ligne — progression sauvegardée localement”
+  - badge “À synchroniser” compteur
+  - animation sync discrète
+
+Livrer:
+- hooks useOffline(), useSyncQueue(), useSyncStatus()
+- SyncProvider global
+- pages test /debug/sync (optionnel)
+
+
+Sync triggers/ordre/backoff + UI offline.  
+
+---
+
+## PROMPT 6 — Splash/Onboarding + Login + Mode invité
+
+
+Crée les écrans publics (responsive):
+- Splash/Onboarding (3 slides): Bienvenue → Mode hors-ligne → Badges
+- Login: Email/Phone + mot de passe, liens Inscription, MDP oublié, Mode invité
+- Register minimal (élève/parent)
+- OTP (6 digits, timer, resend)
+- Mode invité: accès limité + messages incitatifs + progression locale
+
+Exiger:
+- états loading/error
+- validation formulaire
+- transitions propres
+- design web-first
+
+
+Wireframes textuels. 
+
+---
+
+## PROMPT 7 — Home Élève (Dashboard web-first)
+
+
+Construis Home Élève (web-first):
+Zones:
+- Header: “Bonjour [Koffi]” + avatar + niveau/XP
+- Streak widget
+- Carte “Défi du jour”
+- Cartes Matières (Maths/Français) avec progression
+- Badges récents (3)
+- État Offline: bandeau
+
+Ajoute:
+- skeleton sur chargement
+- empty state si aucun pack téléchargé (CTA “Télécharger un pack”)
+- actions: Continuer, S’entraîner, Voir progression
+
+
+Home Élève + état offline. 
+
+---
+
+## PROMPT 8 — Parcours contenu: Matières → Domaines → Compétences
+
+
+Crée les pages pédagogiques:
+1) Matières: 2 cartes, accès rapide
+2) Domaines d’une matière: liste + progression
+3) Compétences: SmartScore (0–100), tri/filtre, CTA “S’entraîner”
+
+Web-first:
+- desktop: listes denses + filtres visibles
+- mobile: cards + filtres dans drawer
+
+
+Navigation simple (max 3 niveaux). 
+
+---
+
+## PROMPT 9 — Exercice Player + QuestionRenderer (multi-types) + feedback immédiat
+
+
+Développe l’Exercice Player:
+- Header: Matière + Compétence + compteur question (3/10)
+- Zone question: texte + image optionnelle
+- Zone réponses: QuestionRenderer supportant:
+  - MCQ, True/False, FillBlank, Calculation, DragDrop (si faisable)
+- CTA “Valider”: gros bouton, désactivé si aucune réponse
+- Feedback:
+  - Correct: vert + message + explication
+  - Incorrect: rouge + explication + propose micro-leçon après 2 erreurs
+- Fin session: résumé + XP + badge éventuel
+- Offline: stocker attempt en queue locale (transparent)
+
+Livrer:
+- machine d’état (idle/loading/answering/feedback/submitting/done)
+- mocks questions
+- tests de base (renderer)
+
+
+Wireframe exercice + feedback + offline transparent.  
+
+---
+
+## PROMPT 10 — Micro-leçon + déclenchement après erreurs
+
+
+Crée l’écran Micro-leçon:
+- lecture courte (2–3 min)
+- exemple + mini quiz optionnel
+- CTA “Retour à l’exercice”
+- déclenchement: après 2 erreurs consécutives dans une compétence
+
+Offline: micro-leçons disponibles si pack téléchargé.
+
+
+Micro-leçons disponibles offline. 
+
+---
+
+## PROMPT 11 — Progression + Badges + Profil Élève
+
+
+Crée 3 pages:
+- Progression: tabs Maths/Français, liste compétences + SmartScore + tendances
+- Badges: grille badges (lock/unlock), détails badge
+- Profil Élève: avatar, niveau, XP, streak, stats, bouton “Synchroniser” (si connecté)
+
+Exiger: loading/error/empty, et comportements offline (données locales).
+
+
+---
+
+## PROMPT 12 — Parent: Liaison enfant + Dashboard + Détail + Objectifs/Alertes
+
+
+Implémente l’espace Parent:
+- Liaison enfant via code (ajouter enfant)
+- Dashboard: cartes enfants (avatar, score, temps, streak)
+- Détail enfant: graphiques 4 semaines, forces/faiblesses, historique sessions
+- Paramètres: objectifs hebdo, alertes (inactivité, badges, objectifs), canaux Push/SMS, quiet hours (21h–7h)
+
+Web-first:
+- desktop: tableau + graphs
+- mobile: cards + onglets
+
+Livrer: composants réutilisables et mocks.
+
+
+Module Parent + paramètres (quiet hours, canaux). 
+
+---
+
+## PROMPT 13 — Paywall + Plans FCFA + Checkout (providers simulés) + états d’échec
+
+
+Monétisation UI:
+- Paywall quand limite gratuite atteinte (5 exercices/jour)
+- Page plans: Mensuel 2 500 FCFA, Trimestriel 6 000 FCFA, Annuel 20 000 FCFA, Famille
+- Checkout simulé: choix provider (KKiaPay / FedaPay), timeout, retry, alternatives
+- États: pending/success/failed + messages clairs
+
+Inclure:
+- badge Premium
+- verrouillage des features selon free/premium
+- offline: abonnement doit être vérifié au retour réseau (afficher “Vérification abonnement…”)
+
+
+Freemium + plans + providers + cas d’échec paiement.  
+
+---
+
+## PROMPT 14 — Notifications: centre + préférences
+
+
+Crée:
+- Centre de notifications in-app (filtre non lues)
+- Préférences: activer/désactiver par type, horaires autorisés (7h–21h), fréquence rappels
+- Templates: streak en danger, badge gagné, rapport hebdo parent
+
+Offline:
+- centre affiche cache local + marque “à sync” si actions de lecture offline.
+
+
+Préférences notifications. 
+
+---
+
+## PROMPT 15 — Admin Web (data-dense, desktop-first)
+
+
+Développe le Back-office Admin (web-first, dense mais lisible):
+- Admin Dashboard: DAU/MAU, conversion, revenus, engagement, alertes
+- Gestion contenu: CRUD matières/domaines/compétences/questions/leçons + import Excel + workflow validation
+- Gestion utilisateurs: recherche, détail profil, reset mdp, suspension
+- Abonnements: extension/remboursement, statut, historique paiements
+- Analytics: pédagogie (taux réussite question, temps moyen), export CSV/PDF
+- Config: limites freemium, prix, feature flags, codes promo, maintenance mode
+
+Exiger:
+- tables filtrables, tri, pagination
+- drawers de détail
+- actions confirmées (modals)
+- RBAC strict (admin seulement)
+
+
+Administration + analytics + configuration. 
+
+---
+
+## PROMPT 16 — Pass final qualité (accessibilité, perf, DoD)
+
+
+Fais un pass final:
+- Accessibilité: WCAG AA, ARIA, contrastes, focus, tailles tactiles
+- Performance: lazy routes, memoisation, images WebP, skeleton partout
+- Robustesse offline: tests manuels (offline → exercice → queue → online → sync)
+- Ajoute DoD global + DoD par écran (checklist exhaustive)
+
+Livrer: checklist + refacto minimal + corrections UI.
+
+
+Accessibilité + low-end. 
+
+---
+
+### PROMPT 17 — API contracts + génération types + erreurs standard
+
+
+Mets en place un contrat API:
+- OpenAPI (mock) + génération types TS
+- apiClient basé sur fetch/axios avec:
+  - retry contrôlé
+  - timeouts
+  - mapping erreurs (code/message/details)
+  - interceptors auth
+- Convention erreurs UI (toast + inline)
+Livrer: /contracts/openapi.yaml + génération types + examples
+
+
+### PROMPT 18 — Auth réelle (tokens, refresh, session)
+
+
+Implémente une vraie auth front:
+- access token + refresh token
+- refresh automatique, expiration, logout propre
+- stockage sécurisé (cookies httpOnly recommandé si possible, sinon stratégie explicite)
+- garde routes + gestion 401/403 standard
+Livrer: authStore, authService, tests unitaires basiques
+
+
+### PROMPT 19 — Offline: versioning packs + merge conflicts
+
+
+Renforce offline:
+- versioning packs (manifest + checksum)
+- migrations IndexedDB
+- règles de merge progression offline/online
+- quota storage + LRU cleanup
+- écran “Gestion offline” (packs téléchargés, espace utilisé, purge)
+
+
+### PROMPT 20 — Qualité: tests (unit/integration/e2e) + a11y
+
+
+Ajoute QA:
+- unit tests (vitest)
+- integration tests (react-testing-library)
+- e2e (playwright): login, exercice offline->online sync, paywall, admin table
+- audit a11y (axe-core)
+Livrer: pipeline tests + rapports
+
+
+### PROMPT 21 — Observabilité + perf
+
+
+Ajoute observabilité:
+- Sentry (errors + performance)
+- logs structurés sync/auth
+- Web Vitals (LCP/CLS/INP)
+- feature flags (local + remote ready)
+Livrer: instrumentation + docs
+
+
+### PROMPT 22 — CI/CD + environnements + PWA update flow
+
+
+Mets en place CI/CD:
+- GitHub Actions: lint/test/build
+- env dev/stage/prod
+- PWA: stratégie cache, update prompt “Nouvelle version disponible”
+- build analysis (bundle size)
+Livrer: workflows + documentation release
+
+
+---

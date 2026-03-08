@@ -1,0 +1,556 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "description": "Exercices Numération CM2 — Skill NUM-ENTIERS-0-1B (Lire, écrire et décomposer les nombres entiers jusqu'au milliard)",
+    "author": "ILMA",
+    "created_date": "2026-02-26",
+    "grade": "CM2",
+    "subject": "Mathématiques",
+    "domain": "Numération"
+  },
+  "exercises": [
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Comment lit-on le nombre 3 450 000 ?",
+          "choices": [
+            "Trois millions quatre cent cinquante mille",
+            "Trente-quatre millions cinquante mille",
+            "Trois milliards quatre cent cinquante mille",
+            "Trois cent quarante-cinq mille"
+          ],
+          "correct_answer": "Trois millions quatre cent cinquante mille",
+          "explanation": "3 450 000 = 3 millions + 450 mille. On lit : trois millions quatre cent cinquante mille.",
+          "hint": "Repère d'abord la classe des millions.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "bloom_level": "Connaître",
+          "ilma_level": "Découverte",
+          "tags": ["numération", "lecture", "millions"],
+          "common_mistake_targeted": "Confusion millions/milliards"
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quel nombre correspond à « sept cent vingt-trois millions huit cent mille » ?",
+          "choices": [
+            "723 800 000",
+            "72 380 000",
+            "7 238 000",
+            "723 080 000"
+          ],
+          "correct_answer": "723 800 000",
+          "explanation": "723 millions = 723 000 000, plus 800 mille = 800 000, soit 723 800 000.",
+          "hint": "Écris d'abord les millions, puis les milliers.",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "bloom_level": "Connaître",
+          "ilma_level": "Découverte",
+          "tags": ["numération", "écriture", "millions"],
+          "common_mistake_targeted": "Oubli d'un zéro dans les classes"
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Le nombre 56 000 000 se lit « cinquante-six milliards ».",
+          "correct_answer": false,
+          "explanation": "56 000 000 = 56 millions, pas 56 milliards. Un milliard = 1 000 000 000.",
+          "hint": "Compte le nombre de zéros.",
+          "points": 1,
+          "time_limit_seconds": 30,
+          "bloom_level": "Connaître",
+          "ilma_level": "Découverte",
+          "tags": ["numération", "vrai-faux", "millions"],
+          "common_mistake_targeted": "Confusion millions/milliards"
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Le nombre 1 000 000 000 correspond à :",
+          "choices": [
+            "Un milliard",
+            "Un million",
+            "Dix millions",
+            "Cent millions"
+          ],
+          "correct_answer": "Un milliard",
+          "explanation": "1 000 000 000 possède 9 zéros, c'est un milliard. Un million n'en a que 6.",
+          "hint": "Combien de groupes de trois zéros y a-t-il ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "bloom_level": "Connaître",
+          "ilma_level": "Découverte",
+          "tags": ["numération", "milliard"],
+          "common_mistake_targeted": "Ne pas savoir combien de zéros dans un milliard"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX005",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "Décompose le nombre 5 320 000 : 5 × ___ + 3 × ___ + 2 × ___",
+          "blanks": ["1 000 000", "100 000", "10 000"],
+          "correct_answer": ["1 000 000", "100 000", "10 000"],
+          "explanation": "5 320 000 = 5 × 1 000 000 + 3 × 100 000 + 2 × 10 000.",
+          "hint": "Identifie la valeur de chaque chiffre selon sa position.",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "bloom_level": "Comprendre",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "décomposition", "millions"],
+          "common_mistake_targeted": "Confusion entre la valeur positionnelle des chiffres"
+        },
+        {
+          "exercise_id": "EX006",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Dans le nombre 47 852 103, quel est le chiffre des centaines de mille ?",
+          "tolerance": 0,
+          "correct_answer": 8,
+          "explanation": "Dans 47 852 103, le chiffre des centaines de mille est 8 (position : 800 000).",
+          "hint": "Les centaines de mille sont le 6e chiffre en partant de la droite.",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "bloom_level": "Comprendre",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "valeur positionnelle"],
+          "common_mistake_targeted": "Confondre chiffre et nombre"
+        },
+        {
+          "exercise_id": "EX007",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "832 005 040 = ___ × 100 000 000 + ___ × 1 000 000 + 5 × ___ + 4 × ___",
+          "blanks": ["8", "32", "1 000", "10"],
+          "correct_answer": ["8", "32", "1 000", "10"],
+          "explanation": "832 005 040 = 8 × 100 000 000 + 32 × 1 000 000 + 5 × 1 000 + 4 × 10.",
+          "hint": "Sépare le nombre en classes : milliards | millions | milliers | unités.",
+          "points": 3,
+          "time_limit_seconds": 120,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "décomposition", "milliard"],
+          "common_mistake_targeted": "Oublier les zéros intercalaires dans la décomposition"
+        },
+        {
+          "exercise_id": "EX008",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Combien vaut le chiffre 6 dans le nombre 6 200 000 ?",
+          "tolerance": 0,
+          "correct_answer": 6000000,
+          "explanation": "Le 6 est en position des millions, donc il vaut 6 000 000.",
+          "hint": "Le 6 est à la place des millions.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "bloom_level": "Comprendre",
+          "ilma_level": "Découverte",
+          "tags": ["numération", "valeur positionnelle", "millions"],
+          "common_mistake_targeted": "Répondre 6 au lieu de 6 000 000"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX009",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Range ces nombres dans l'ordre croissant :",
+          "items": [
+            "8 500 000",
+            "850 000",
+            "85 000 000",
+            "8 050 000"
+          ],
+          "correct_answer": ["850 000", "8 050 000", "8 500 000", "85 000 000"],
+          "explanation": "850 000 < 8 050 000 < 8 500 000 < 85 000 000. On compare d'abord le nombre de chiffres, puis chiffre par chiffre.",
+          "hint": "Compare d'abord le nombre de chiffres de chaque nombre.",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "comparaison", "ordre croissant"],
+          "common_mistake_targeted": "Comparer les premiers chiffres sans regarder le nombre total de chiffres"
+        },
+        {
+          "exercise_id": "EX010",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Écris le signe qui convient (<, > ou =) : 42 300 000 ___ 42 030 000",
+          "accepted_answers": [">"],
+          "correct_answer": ">",
+          "explanation": "42 300 000 > 42 030 000 car à la position des centaines de mille, 3 > 0.",
+          "hint": "Compare chiffre par chiffre de gauche à droite.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "comparaison"],
+          "common_mistake_targeted": "Se tromper à cause des zéros intercalaires"
+        },
+        {
+          "exercise_id": "EX011",
+          "type": "ordering",
+          "difficulty": "hard",
+          "text": "Range ces nombres dans l'ordre décroissant :",
+          "items": [
+            "999 999 999",
+            "1 000 000 000",
+            "100 000 000",
+            "990 000 000"
+          ],
+          "correct_answer": ["1 000 000 000", "999 999 999", "990 000 000", "100 000 000"],
+          "explanation": "1 milliard > 999 999 999 > 990 000 000 > 100 000 000.",
+          "hint": "Le nombre avec le plus de chiffres est le plus grand.",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "comparaison", "ordre décroissant", "milliard"],
+          "common_mistake_targeted": "Penser que 999 999 999 > 1 000 000 000 car il y a plus de 9"
+        },
+        {
+          "exercise_id": "EX012",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "405 000 000 > 450 000 000",
+          "correct_answer": false,
+          "explanation": "405 000 000 < 450 000 000 car à la position des dizaines de millions, 0 < 5.",
+          "hint": "Compare les dizaines de millions.",
+          "points": 1,
+          "time_limit_seconds": 30,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "comparaison", "vrai-faux"],
+          "common_mistake_targeted": "Confondre 405 et 450"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX013",
+          "type": "matching",
+          "difficulty": "medium",
+          "text": "Associe chaque nombre à son écriture en lettres :",
+          "left_items": [
+            "7 200 000",
+            "72 000",
+            "720 000 000",
+            "72 000 000"
+          ],
+          "right_items": [
+            "Soixante-douze mille",
+            "Sept millions deux cent mille",
+            "Soixante-douze millions",
+            "Sept cent vingt millions"
+          ],
+          "correct_answer": {
+            "7 200 000": "Sept millions deux cent mille",
+            "72 000": "Soixante-douze mille",
+            "720 000 000": "Sept cent vingt millions",
+            "72 000 000": "Soixante-douze millions"
+          },
+          "explanation": "Chaque nombre correspond à une classe différente : milliers, millions, centaines de millions.",
+          "hint": "Regarde le nombre de chiffres pour identifier la classe.",
+          "points": 3,
+          "time_limit_seconds": 120,
+          "bloom_level": "Comprendre",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "association", "écriture en lettres"],
+          "common_mistake_targeted": "Confondre les classes (mille, millions, milliards)"
+        },
+        {
+          "exercise_id": "EX014",
+          "type": "error_correction",
+          "difficulty": "medium",
+          "text": "Un élève a écrit : « 15 300 000 se lit quinze millions trois cents. » Corrige son erreur.",
+          "erroneous_content": "quinze millions trois cents",
+          "correct_answer": "quinze millions trois cent mille",
+          "explanation": "Il manque « mille ». 15 300 000 = 15 millions + 300 mille, donc « quinze millions trois cent mille ».",
+          "hint": "Regarde la classe des milliers : 300 est dans les milliers, pas les unités.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "bloom_level": "Analyser",
+          "ilma_level": "Approfondissement",
+          "tags": ["numération", "correction", "lecture"],
+          "common_mistake_targeted": "Oublier le mot « mille » dans la lecture"
+        },
+        {
+          "exercise_id": "EX015",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève a décomposé 205 030 000 ainsi : 2 × 100 000 000 + 5 × 1 000 000 + 3 × 10 000. Trouve l'erreur et corrige.",
+          "erroneous_content": "2 × 100 000 000 + 5 × 1 000 000 + 3 × 10 000",
+          "correct_answer": "2 × 100 000 000 + 5 × 1 000 000 + 3 × 10 000",
+          "explanation": "La décomposition est en fait correcte : 200 000 000 + 5 000 000 + 30 000 = 205 030 000. L'élève a bien décomposé ! Piège : il faut vérifier avant de corriger.",
+          "hint": "Recalcule chaque terme et additionne.",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "bloom_level": "Analyser",
+          "ilma_level": "Approfondissement",
+          "tags": ["numération", "correction", "décomposition", "piège"],
+          "common_mistake_targeted": "Corriger à tort une décomposition correcte"
+        },
+        {
+          "exercise_id": "EX016",
+          "type": "matching",
+          "difficulty": "easy",
+          "text": "Associe chaque décomposition au nombre correspondant :",
+          "left_items": [
+            "3 × 1 000 000 + 5 × 100 000",
+            "3 × 100 000 + 5 × 10 000",
+            "3 × 10 000 000 + 5 × 1 000 000"
+          ],
+          "right_items": [
+            "3 500 000",
+            "350 000",
+            "35 000 000"
+          ],
+          "correct_answer": {
+            "3 × 1 000 000 + 5 × 100 000": "3 500 000",
+            "3 × 100 000 + 5 × 10 000": "350 000",
+            "3 × 10 000 000 + 5 × 1 000 000": "35 000 000"
+          },
+          "explanation": "Il suffit de calculer chaque produit et d'additionner.",
+          "hint": "Calcule chaque terme séparément.",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "bloom_level": "Comprendre",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "association", "décomposition"],
+          "common_mistake_targeted": "Erreur dans le nombre de zéros"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX017",
+          "type": "contextual_problem",
+          "difficulty": "medium",
+          "text": "La population du Bénin est d'environ 13 350 000 habitants. Celle du Togo est d'environ 8 680 000 habitants.",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Quel pays a le plus d'habitants ?",
+              "correct_answer": "Le Bénin"
+            },
+            {
+              "id": "b",
+              "text": "Quelle est la différence de population entre les deux pays ?",
+              "correct_answer": "4 670 000"
+            }
+          ],
+          "correct_answer": {
+            "a": "Le Bénin",
+            "b": "4 670 000"
+          },
+          "explanation": "13 350 000 > 8 680 000 donc le Bénin a plus d'habitants. Différence : 13 350 000 − 8 680 000 = 4 670 000.",
+          "hint": "Compare d'abord les dizaines de millions.",
+          "points": 3,
+          "time_limit_seconds": 180,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Approfondissement",
+          "tags": ["numération", "problème", "population", "Bénin"],
+          "common_mistake_targeted": "Erreur de soustraction avec les grands nombres"
+        },
+        {
+          "exercise_id": "EX018",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Le budget national du Bénin est de 2 845 000 000 000 FCFA. Décompose ce nombre étape par étape.",
+          "steps": [
+            {
+              "instruction": "Identifie la classe la plus élevée du nombre.",
+              "expected_answer": "Les billions (mille milliards)",
+              "hint": "Compte les groupes de 3 chiffres depuis la droite."
+            },
+            {
+              "instruction": "Écris le nombre de milliards.",
+              "expected_answer": "2 845 milliards",
+              "hint": "Sépare les 3 derniers groupes de 3 zéros."
+            },
+            {
+              "instruction": "Décompose en utilisant les puissances : ___ × 1 000 000 000 000 + ___ × 1 000 000 000",
+              "expected_answer": "2 × 1 000 000 000 000 + 845 × 1 000 000 000",
+              "hint": "2 billions + 845 milliards."
+            }
+          ],
+          "correct_answer": "2 × 1 000 000 000 000 + 845 × 1 000 000 000",
+          "explanation": "2 845 000 000 000 = 2 billions + 845 milliards = 2 × 10^12 + 845 × 10^9.",
+          "hint": "Procède classe par classe, de la plus grande à la plus petite.",
+          "points": 4,
+          "time_limit_seconds": 240,
+          "bloom_level": "Analyser",
+          "ilma_level": "Approfondissement",
+          "tags": ["numération", "décomposition", "étapes guidées", "Bénin"],
+          "common_mistake_targeted": "Se perdre dans les très grands nombres"
+        },
+        {
+          "exercise_id": "EX019",
+          "type": "contextual_problem",
+          "difficulty": "easy",
+          "text": "Un stade peut accueillir 35 000 spectateurs. Combien de spectateurs peuvent entrer dans 100 stades identiques ?",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Calcule 35 000 × 100.",
+              "correct_answer": "3 500 000"
+            }
+          ],
+          "correct_answer": "3 500 000",
+          "explanation": "35 000 × 100 = 3 500 000. Pour multiplier par 100, on ajoute deux zéros.",
+          "hint": "Multiplier par 100, c'est ajouter deux zéros à droite.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "multiplication", "problème"],
+          "common_mistake_targeted": "Oublier des zéros en multipliant par des puissances de 10"
+        },
+        {
+          "exercise_id": "EX020",
+          "type": "guided_steps",
+          "difficulty": "medium",
+          "text": "Encadre 67 430 000 entre deux dizaines de millions consécutives.",
+          "steps": [
+            {
+              "instruction": "Quel est le chiffre des dizaines de millions ?",
+              "expected_answer": "6",
+              "hint": "C'est le 8e chiffre en partant de la droite."
+            },
+            {
+              "instruction": "Quelle est la dizaine de millions inférieure ?",
+              "expected_answer": "60 000 000",
+              "hint": "6 × 10 000 000"
+            },
+            {
+              "instruction": "Quelle est la dizaine de millions supérieure ?",
+              "expected_answer": "70 000 000",
+              "hint": "7 × 10 000 000"
+            },
+            {
+              "instruction": "Écris l'encadrement complet.",
+              "expected_answer": "60 000 000 < 67 430 000 < 70 000 000",
+              "hint": "Utilise le signe < entre les trois nombres."
+            }
+          ],
+          "correct_answer": "60 000 000 < 67 430 000 < 70 000 000",
+          "explanation": "67 430 000 est entre 60 000 000 (6 dizaines de millions) et 70 000 000 (7 dizaines de millions).",
+          "hint": "Trouve les deux multiples de 10 000 000 qui entourent le nombre.",
+          "points": 3,
+          "time_limit_seconds": 150,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "encadrement", "dizaines de millions"],
+          "common_mistake_targeted": "Confondre encadrement à la dizaine de millions et au million"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS06",
+      "exercises": [
+        {
+          "exercise_id": "EX021",
+          "type": "justification",
+          "difficulty": "hard",
+          "text": "Karim dit que 999 999 999 est le plus grand nombre à 9 chiffres. Es-tu d'accord ? Justifie ta réponse.",
+          "scoring_rubric": "1 pt : réponse correcte (oui). 1 pt : justification claire (chaque chiffre est au maximum, 9). 1 pt : mention du nombre suivant (1 000 000 000 = 10 chiffres).",
+          "correct_answer": "Oui, car chaque chiffre est à sa valeur maximale (9). Le nombre suivant, 1 000 000 000, a 10 chiffres.",
+          "explanation": "999 999 999 est le plus grand nombre à 9 chiffres car tous les chiffres sont des 9. En ajoutant 1, on obtient 1 000 000 000 qui a 10 chiffres.",
+          "hint": "Que se passe-t-il si on ajoute 1 à ce nombre ?",
+          "points": 3,
+          "time_limit_seconds": 180,
+          "bloom_level": "Évaluer",
+          "ilma_level": "Approfondissement",
+          "tags": ["numération", "justification", "raisonnement"],
+          "common_mistake_targeted": "Ne pas justifier suffisamment sa réponse"
+        },
+        {
+          "exercise_id": "EX022",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Place les nombres suivants sur la droite numérique : 250 000 000, 500 000 000, 750 000 000",
+          "number_line": {
+            "min": 0,
+            "max": 1000000000,
+            "step": 250000000,
+            "unit": "",
+            "label_min": "0",
+            "label_max": "1 000 000 000"
+          },
+          "correct_answer": {
+            "250000000": 0.25,
+            "500000000": 0.5,
+            "750000000": 0.75
+          },
+          "explanation": "Sur une droite de 0 à 1 milliard divisée en 4 parts égales : 250 M est au 1er quart, 500 M au milieu, 750 M au 3e quart.",
+          "hint": "Divise le segment en 4 parties égales de 250 000 000.",
+          "points": 2,
+          "time_limit_seconds": 120,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Entraînement",
+          "tags": ["numération", "droite numérique", "repérage"],
+          "common_mistake_targeted": "Mal estimer la position proportionnelle sur la droite"
+        },
+        {
+          "exercise_id": "EX023",
+          "type": "justification",
+          "difficulty": "medium",
+          "text": "Aminata affirme que 50 000 000 est plus proche de 100 000 000 que de 0. A-t-elle raison ? Explique.",
+          "scoring_rubric": "1 pt : réponse correcte (non). 1 pt : calcul des deux distances (50 M chacune). 1 pt : conclusion (équidistant).",
+          "correct_answer": "Non, 50 000 000 est exactement au milieu : à 50 000 000 de 0 et à 50 000 000 de 100 000 000.",
+          "explanation": "Distance à 0 = 50 000 000. Distance à 100 000 000 = 100 000 000 − 50 000 000 = 50 000 000. Les deux distances sont égales.",
+          "hint": "Calcule la distance entre 50 000 000 et chacune des deux bornes.",
+          "points": 2,
+          "time_limit_seconds": 120,
+          "bloom_level": "Évaluer",
+          "ilma_level": "Approfondissement",
+          "tags": ["numération", "justification", "distance"],
+          "common_mistake_targeted": "Ne pas calculer les deux distances avant de conclure"
+        },
+        {
+          "exercise_id": "EX024",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Place approximativement 380 000 000 sur la droite numérique ci-dessous.",
+          "number_line": {
+            "min": 0,
+            "max": 1000000000,
+            "step": 100000000,
+            "unit": "",
+            "label_min": "0",
+            "label_max": "1 000 000 000"
+          },
+          "correct_answer": {
+            "380000000": 0.38
+          },
+          "explanation": "380 000 000 est entre 300 000 000 et 400 000 000, plus précisément à 38% du segment total (380 M / 1 000 M).",
+          "hint": "380 000 000 est un peu avant 400 000 000, c'est-à-dire un peu avant les 2/5 du segment.",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "bloom_level": "Appliquer",
+          "ilma_level": "Approfondissement",
+          "tags": ["numération", "droite numérique", "estimation"],
+          "common_mistake_targeted": "Placer le nombre trop loin ou trop près du milieu"
+        }
+      ]
+    }
+  ]
+}

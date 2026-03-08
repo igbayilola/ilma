@@ -1,0 +1,798 @@
+openapi: 3.0.3
+info:
+  title: ILMA API
+  version: 1.0.0
+  description: |
+    API for ILMA Education Platform (Offline-First).
+    Targets CM2 students in Benin preparing for CEP exam.
+    Three roles: Student, Parent, Admin.
+
+servers:
+  - url: https://api.ilma.app/v1
+    description: Production
+  - url: https://staging-api.ilma.app/v1
+    description: Staging
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          enum: [VALIDATION_ERROR, UNAUTHORIZED, FORBIDDEN, NOT_FOUND, SERVER_ERROR, NETWORK_ERROR, TIMEOUT, UNKNOWN]
+        message:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+
+    User:
+      type: object
+      required: [id, name, email, role]
+      properties:
+        id: { type: string, format: uuid }
+        name: { type: string }
+        email: { type: string, format: email }
+        phone: { type: string }
+        role: { type: string, enum: [STUDENT, PARENT, ADMIN, GUEST] }
+        avatarUrl: { type: string, format: uri }
+        level: { type: integer }
+        xp: { type: integer }
+        xpToNextLevel: { type: integer }
+        streak: { type: integer }
+        subscriptionTier: { type: string, enum: [FREE, PREMIUM] }
+
+    AuthResponse:
+      type: object
+      required: [accessToken, user]
+      properties:
+        accessToken: { type: string }
+        refreshToken: { type: string }
+        expiresIn: { type: integer }
+        user: { $ref: '#/components/schemas/User' }
+
+    Subject:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        iconUrl: { type: string }
+        progress: { type: number, minimum: 0, maximum: 100 }
+        totalLessons: { type: integer }
+        completedLessons: { type: integer }
+
+    Domain:
+      type: object
+      properties:
+        id: { type: string }
+        subjectId: { type: string }
+        name: { type: string }
+        description: { type: string }
+        progress: { type: number }
+        skillCount: { type: integer }
+
+    Skill:
+      type: object
+      properties:
+        id: { type: string }
+        domainId: { type: string }
+        name: { type: string }
+        smartScore: { type: number, minimum: 0, maximum: 100 }
+        status: { type: string, enum: [NOT_STARTED, IN_PROGRESS, MASTERED] }
+        exerciseCount: { type: integer }
+
+    Question:
+      type: object
+      required: [id, type, prompt]
+      properties:
+        id: { type: string }
+        type: { type: string, enum: [MCQ, TRUE_FALSE, FILL_BLANK, CALCULATION] }
+        prompt: { type: string }
+        imageUrl: { type: string }
+        options: { type: array, items: { type: string } }
+        correctAnswer: { type: string }
+        explanation: { type: string }
+        difficulty: { type: string, enum: [EASY, MEDIUM, HARD] }
+
+    ExerciseSession:
+      type: object
+      properties:
+        id: { type: string }
+        skillId: { type: string }
+        questions: { type: array, items: { $ref: '#/components/schemas/Question' } }
+        totalQuestions: { type: integer }
+
+    ExerciseAttempt:
+      type: object
+      required: [questionId, answer, isCorrect]
+      properties:
+        questionId: { type: string }
+        answer: { type: string }
+        isCorrect: { type: boolean }
+        timeTakenMs: { type: integer }
+        timestamp: { type: string, format: date-time }
+
+    MicroLesson:
+      type: object
+      properties:
+        id: { type: string }
+        skillId: { type: string }
+        title: { type: string }
+        content: { type: string }
+        example: { type: string }
+        durationMinutes: { type: integer }
+
+    Badge:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        description: { type: string }
+        iconUrl: { type: string }
+        category: { type: string }
+        unlockedAt: { type: string, format: date-time, nullable: true }
+        isUnlocked: { type: boolean }
+
+    ProgressSummary:
+      type: object
+      properties:
+        subjectId: { type: string }
+        skills:
+          type: array
+          items:
+            type: object
+            properties:
+              skillId: { type: string }
+              name: { type: string }
+              smartScore: { type: number }
+              trend: { type: string, enum: [UP, DOWN, STABLE] }
+
+    ChildSummary:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        avatarUrl: { type: string }
+        level: { type: integer }
+        smartScore: { type: number }
+        streak: { type: integer }
+        weeklyTime: { type: string }
+
+    Notification:
+      type: object
+      properties:
+        id: { type: string }
+        type: { type: string, enum: [STREAK_DANGER, BADGE_EARNED, WEEKLY_REPORT, GOAL_REACHED, INACTIVITY, SYSTEM] }
+        title: { type: string }
+        message: { type: string }
+        read: { type: boolean }
+        createdAt: { type: string, format: date-time }
+
+    Plan:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        price: { type: integer }
+        currency: { type: string, default: FCFA }
+        durationDays: { type: integer }
+        durationLabel: { type: string }
+        features: { type: array, items: { type: string } }
+
+    PaymentIntent:
+      type: object
+      properties:
+        id: { type: string }
+        planId: { type: string }
+        provider: { type: string, enum: [KKIAPAY, FEDAPAY, MTN_MOMO] }
+        status: { type: string, enum: [PENDING, SUCCESS, FAILED] }
+        amount: { type: integer }
+        createdAt: { type: string, format: date-time }
+
+    SyncPayload:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            required: [id, type, payload, timestamp]
+            properties:
+              id: { type: string }
+              type: { type: string }
+              payload: { type: object }
+              timestamp: { type: integer }
+
+    SyncResponse:
+      type: object
+      properties:
+        processedIds: { type: array, items: { type: string } }
+        failedIds:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              error: { type: string }
+
+    ContentPack:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        version: { type: string }
+        checksum: { type: string }
+        sizeBytes: { type: integer }
+        subjects: { type: array, items: { type: string } }
+
+    PaginatedResponse:
+      type: object
+      properties:
+        data: { type: array, items: {} }
+        total: { type: integer }
+        page: { type: integer }
+        pageSize: { type: integer }
+        totalPages: { type: integer }
+
+security:
+  - bearerAuth: []
+
+paths:
+  # --- AUTH ---
+  /auth/login:
+    post:
+      tags: [Auth]
+      summary: Login with email/phone + password or OTP
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                identifier: { type: string, description: "Email or phone number" }
+                password: { type: string }
+                otp: { type: string }
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+
+  /auth/register:
+    post:
+      tags: [Auth]
+      summary: Register a new account
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, role]
+              properties:
+                name: { type: string }
+                email: { type: string }
+                phone: { type: string }
+                password: { type: string }
+                role: { type: string, enum: [STUDENT, PARENT] }
+      responses:
+        '201':
+          description: Account created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+
+  /auth/otp/send:
+    post:
+      tags: [Auth]
+      summary: Send OTP code
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [identifier]
+              properties:
+                identifier: { type: string }
+                channel: { type: string, enum: [SMS, EMAIL] }
+      responses:
+        '200': { description: OTP sent }
+
+  /auth/otp/verify:
+    post:
+      tags: [Auth]
+      summary: Verify OTP code
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [identifier, code]
+              properties:
+                identifier: { type: string }
+                code: { type: string }
+      responses:
+        '200':
+          description: OTP verified
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+
+  /auth/refresh:
+    post:
+      tags: [Auth]
+      summary: Refresh access token
+      security: []
+      responses:
+        '200':
+          description: New token issued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken: { type: string }
+                  expiresIn: { type: integer }
+
+  /auth/logout:
+    post:
+      tags: [Auth]
+      summary: Logout
+      responses:
+        '204': { description: Logged out }
+
+  /auth/me:
+    get:
+      tags: [Auth]
+      summary: Get current user profile
+      responses:
+        '200':
+          description: Current user
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/User' }
+
+  # --- CONTENT ---
+  /subjects:
+    get:
+      tags: [Content]
+      summary: List all subjects
+      responses:
+        '200':
+          description: Subjects list
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Subject' }
+
+  /subjects/{subjectId}/domains:
+    get:
+      tags: [Content]
+      summary: List domains for a subject
+      parameters:
+        - name: subjectId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Domains list
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Domain' }
+
+  /domains/{domainId}/skills:
+    get:
+      tags: [Content]
+      summary: List skills for a domain
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Skills list
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Skill' }
+
+  /skills/{skillId}/exercise:
+    get:
+      tags: [Content]
+      summary: Get exercise session for a skill
+      parameters:
+        - name: skillId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Exercise session with questions
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ExerciseSession' }
+
+  /skills/{skillId}/lesson:
+    get:
+      tags: [Content]
+      summary: Get micro-lesson for a skill
+      parameters:
+        - name: skillId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Micro-lesson content
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MicroLesson' }
+
+  # --- SESSIONS ---
+  /sessions/submit:
+    post:
+      tags: [Sessions]
+      summary: Submit exercise attempt results
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [skillId, attempts]
+              properties:
+                skillId: { type: string }
+                attempts: { type: array, items: { $ref: '#/components/schemas/ExerciseAttempt' } }
+      responses:
+        '200':
+          description: Session result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  xpEarned: { type: integer }
+                  newSmartScore: { type: number }
+                  badgeEarned: { $ref: '#/components/schemas/Badge' }
+                  streakUpdated: { type: boolean }
+
+  # --- PROGRESS ---
+  /progress:
+    get:
+      tags: [Progress]
+      summary: Get student progress summary
+      parameters:
+        - name: subjectId
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Progress data
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ProgressSummary' }
+
+  /badges:
+    get:
+      tags: [Progress]
+      summary: List all badges with unlock status
+      responses:
+        '200':
+          description: Badges list
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Badge' }
+
+  # --- PARENT ---
+  /parent/children:
+    get:
+      tags: [Parent]
+      summary: List linked children
+      responses:
+        '200':
+          description: Children summaries
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/ChildSummary' }
+
+  /parent/children/{childId}:
+    get:
+      tags: [Parent]
+      summary: Get detailed child data
+      parameters:
+        - name: childId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Child detail
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ChildSummary' }
+
+  /parent/link:
+    post:
+      tags: [Parent]
+      summary: Link a child by code
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [code]
+              properties:
+                code: { type: string }
+      responses:
+        '200': { description: Child linked }
+
+  # --- NOTIFICATIONS ---
+  /notifications:
+    get:
+      tags: [Notifications]
+      summary: List notifications
+      parameters:
+        - name: unreadOnly
+          in: query
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: Notifications list
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Notification' }
+
+  /notifications/{id}/read:
+    put:
+      tags: [Notifications]
+      summary: Mark notification as read
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204': { description: Marked as read }
+
+  # --- SUBSCRIPTION ---
+  /plans:
+    get:
+      tags: [Subscription]
+      summary: List available plans
+      security: []
+      responses:
+        '200':
+          description: Plans list
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Plan' }
+
+  /subscription/checkout:
+    post:
+      tags: [Subscription]
+      summary: Initiate payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [planId, provider]
+              properties:
+                planId: { type: string }
+                provider: { type: string, enum: [KKIAPAY, FEDAPAY, MTN_MOMO] }
+      responses:
+        '200':
+          description: Payment intent created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PaymentIntent' }
+
+  /subscription/status:
+    get:
+      tags: [Subscription]
+      summary: Get current subscription status
+      responses:
+        '200':
+          description: Subscription status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tier: { type: string, enum: [FREE, PREMIUM] }
+                  expiresAt: { type: string, format: date-time, nullable: true }
+                  dailyExercisesUsed: { type: integer }
+                  dailyExerciseLimit: { type: integer }
+
+  # --- SYNC ---
+  /sync/push:
+    post:
+      tags: [Sync]
+      summary: Push offline actions to server
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SyncPayload' }
+      responses:
+        '200':
+          description: Sync result
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SyncResponse' }
+
+  /sync/pull:
+    get:
+      tags: [Sync]
+      summary: Pull updates from server
+      parameters:
+        - name: since
+          in: query
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: Updates since timestamp
+
+  # --- CONTENT PACKS ---
+  /packs:
+    get:
+      tags: [Content Packs]
+      summary: List available content packs
+      responses:
+        '200':
+          description: Packs list
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/ContentPack' }
+
+  /packs/{packId}/download:
+    get:
+      tags: [Content Packs]
+      summary: Download a content pack
+      parameters:
+        - name: packId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Pack data (binary)
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+
+  # --- ADMIN ---
+  /admin/users:
+    get:
+      tags: [Admin]
+      summary: List users (paginated)
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer, default: 1 }
+        - name: pageSize
+          in: query
+          schema: { type: integer, default: 20 }
+        - name: search
+          in: query
+          schema: { type: string }
+        - name: role
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Paginated user list
+
+  /admin/users/{userId}:
+    get:
+      tags: [Admin]
+      summary: Get user detail
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: User detail
+
+  /admin/users/{userId}/suspend:
+    post:
+      tags: [Admin]
+      summary: Suspend a user
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204': { description: User suspended }
+
+  /admin/content:
+    get:
+      tags: [Admin]
+      summary: List content (subjects/domains/skills/questions)
+      responses:
+        '200': { description: Content list }
+    post:
+      tags: [Admin]
+      summary: Create content item
+      responses:
+        '201': { description: Created }
+
+  /admin/analytics:
+    get:
+      tags: [Admin]
+      summary: Get platform analytics
+      parameters:
+        - name: period
+          in: query
+          schema: { type: string, enum: ['7d', '30d', '90d'] }
+      responses:
+        '200': { description: Analytics data }
+
+  /admin/config:
+    get:
+      tags: [Admin]
+      summary: Get system configuration
+      responses:
+        '200': { description: Config }
+    put:
+      tags: [Admin]
+      summary: Update system configuration
+      responses:
+        '200': { description: Updated config }
+
+  /admin/subscriptions:
+    get:
+      tags: [Admin]
+      summary: List subscriptions and transactions
+      responses:
+        '200': { description: Subscriptions list }

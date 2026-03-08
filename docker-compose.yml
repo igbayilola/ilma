@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  # ── Frontend (Nginx serving SPA + API proxy) ──
+  frontend:
+    build: ./frontend
+    container_name: ilma-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # ── Backend API ──
+  api:
+    build: ./backend
+    container_name: ilma-api
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_HOST=db
+      - REDIS_HOST=redis
+      - DATABASE_URL=postgresql+asyncpg://ilma_user:ilma_password@db:5432/ilma_db
+      - SECRET_KEY=change-me-in-production
+      - BACKEND_CORS_ORIGINS=["http://localhost:3000","http://localhost:5173"]
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── PostgreSQL ──
+  db:
+    image: postgres:15-alpine
+    container_name: ilma-db
+    environment:
+      POSTGRES_USER: ilma_user
+      POSTGRES_PASSWORD: ilma_password
+      POSTGRES_DB: ilma_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ilma_user -d ilma_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ── Redis ──
+  redis:
+    image: redis:7-alpine
+    container_name: ilma-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  pgdata:

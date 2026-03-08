@@ -1,0 +1,113 @@
+{
+  "common": {
+    "back": "Retour",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "create": "Créer",
+    "confirm": "Confirmer",
+    "yes": "Oui",
+    "no": "Non",
+    "success": "Succès",
+    "offline": "Hors-ligne",
+    "online": "En ligne"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "email": "Email",
+    "phone": "Téléphone",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Déjà un compte ?"
+  },
+  "nav": {
+    "home": "Accueil",
+    "subjects": "Matières",
+    "progress": "Progression",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "help": "Aide",
+    "dashboard": "Tableau de bord"
+  },
+  "student": {
+    "dashboard": "Tableau de bord",
+    "subjects": "Matières",
+    "progress": "Progression",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "exercise": "Exercice",
+    "lesson": "Leçon",
+    "badges": "Badges",
+    "streak": "Série",
+    "level": "Niveau",
+    "dailyChallenge": "Défi du jour",
+    "greeting": "Bonjour, {{name}} !",
+    "startExercise": "Commencer",
+    "continue": "Continuer",
+    "smartScore": "SmartScore",
+    "noBadges": "Pas encore de badge. Continue de t'entraîner !"
+  },
+  "exercise": {
+    "question": "Question {{current}} sur {{total}}",
+    "submit": "Valider",
+    "correct": "Bonne réponse !",
+    "incorrect": "Mauvaise réponse",
+    "explanation": "Explication",
+    "finish": "Terminer",
+    "score": "Score : {{score}}%",
+    "xpEarned": "+{{xp}} XP gagnés"
+  },
+  "parent": {
+    "dashboard": "Tableau de bord Parents",
+    "children": "Enfants",
+    "goals": "Objectifs",
+    "settings": "Paramètres",
+    "linkChild": "Ajouter un enfant",
+    "linkCode": "Code de liaison",
+    "weeklyReport": "Bilan hebdomadaire"
+  },
+  "offline": {
+    "banner": "Mode hors-ligne — votre progression est sauvegardée localement.",
+    "synced": "Tout est synchronisé",
+    "pending": "à envoyer",
+    "failed": "échoué",
+    "downloading": "Téléchargement...",
+    "storage": "Stockage Appareil",
+    "syncing": "Synchronisation en cours...",
+    "pendingItems": "{{count}} éléments en attente"
+  },
+  "subscription": {
+    "free": "Gratuit",
+    "premium": "Premium",
+    "monthly": "Mensuel",
+    "quarterly": "Trimestriel",
+    "annual": "Annuel",
+    "family": "Famille",
+    "upgrade": "Passer Premium",
+    "limitReached": "Limite quotidienne atteinte",
+    "subscribe": "S'abonner",
+    "currentPlan": "Abonnement actuel",
+    "perMonth": "/mois",
+    "perYear": "/an"
+  },
+  "settings": {
+    "notifications": "Notifications",
+    "appearance": "Apparence",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "themeSystem": "Système",
+    "language": "Langue",
+    "dailyReminder": "Rappel quotidien"
+  }
+}

@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+*.py[cod]
+venv/
+.venv/
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+.ruff_cache/
+
+# Frontend build
+frontend/dist/
+frontend/.vite/
+
+# Docker
+*.log
+
+# Docs (keep binaries out of git)
+*.docx
+*.pdf

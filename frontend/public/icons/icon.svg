@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E5AA8"/>
+      <stop offset="100%" style="stop-color:#1446B3"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <text x="256" y="200" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="120" font-weight="800" fill="white" letter-spacing="-4">ILMA</text>
+  <rect x="136" y="260" width="240" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
+  <rect x="136" y="260" width="160" height="6" rx="3" fill="#28A745"/>
+  <circle cx="186" cy="320" r="24" fill="rgba(255,255,255,0.15)"/>
+  <text x="186" y="328" text-anchor="middle" font-family="system-ui" font-size="24" fill="white">A</text>
+  <circle cx="256" cy="320" r="24" fill="rgba(255,255,255,0.15)"/>
+  <text x="256" y="328" text-anchor="middle" font-family="system-ui" font-size="24" fill="white">B</text>
+  <circle cx="326" cy="320" r="24" fill="rgba(255,255,255,0.15)"/>
+  <text x="326" y="328" text-anchor="middle" font-family="system-ui" font-size="24" fill="#28A745">&#10003;</text>
+  <text x="256" y="420" text-anchor="middle" font-family="system-ui" font-size="32" font-weight="600" fill="rgba(255,255,255,0.7)">Apprendre</text>
+</svg>

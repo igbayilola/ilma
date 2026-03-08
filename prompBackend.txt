@@ -1,0 +1,213 @@
+---
+
+## Suite de prompts backend ILMA (FastAPI 3.11+)
+
+### PROMPT 00 — “Règles globales” (à coller en premier)
+
+**Objectif :** imposer les standards d’architecture, la qualité, et éviter une base “démo”.
+
+Tu es un ingénieur backend senior. Génère un backend FastAPI async (Python 3.11+) pour ILMA (application éducative CM2).
+Respecte une architecture “clean-ish”: route -service -repository -db. 
+
+STACK OBLIGATOIRE: FastAPI async, Pydantic v2, SQLAlchemy 2.0 async, Alembic, PostgreSQL 15+. Redis optionnel (cache + rate limit). Auth JWT access+refresh. Docker compose (api + postgres + redis). Tests pytest async. 
+
+API: base path `/api/v1`, pagination/filtre/tri, OpenAPI propre + tags. Format réponse standard `{success,data,message,timestamp}` et erreurs `{success:false,error:{code,message,details},timestamp}`. 
+Ajoute `GET /health` et `GET /version`. 
+
+OUTPUT ATTENDU À CHAQUE LIVRAISON:
+
+1. Tree projet + brève explication
+2. Code complet prêt à build
+3. Migrations Alembic
+4. Docker compose + `.env.example` + seed script
+5. Tests minimaux par module 
+
+Contraintes ILMA clés: offline-first + sync opportuniste + gestion de conflits + idempotence sur événements offline (ex: attempts avec `client_event_id` unique).  
+
+Ne laisse pas de TODO bloquants : si une intégration externe (SMS, paiement, push) manque, implémente une interface + un provider “Mock” + un provider “HTTP” configurable.
+
+Le projet du frontend est déjà présent dans le répertoire frontend
+Le code du backend devra être dans le répertoire backend
+DSC_Ilma_Complet_V2.docx et DSFT_Ilma_V3_Complete.docx dans le répertoire courant.
+
+---
+
+### PROMPT 01 — Squelette repo + infra locale
+
+**Objectif :** repo complet backend, configuration, DB, migrations, docker, conventions.
+
+Crée le squelette complet du repository backend ILMA: `app/main.py`, `app/core` (config, security, deps), `app/db` (engine async, session), `app/models`, `app/schemas`, `app/api/routes`, `app/services`, `app/repositories`, `app/utils`. Ajoute Alembic async, Dockerfile, docker-compose.yml, Makefile, `.env.example`, scripts `seed`. 
+Implémente le “response envelope” standard et un handler d’erreurs global.
+
+---
+
+### PROMPT 02 — Modèle de données ILMA (MCD → SQLAlchemy) + Alembic initial
+
+**Objectif :** tables alignées DSFT/DSC, contraintes, indexes, enums.
+
+Implémente les modèles SQLAlchemy + migrations Alembic pour les entités ILMA: `users`, `students`, `parents`, relation parent-student, contenu (subjects/chapters/skills/questions/lessons), `sessions`, `attempts`, `progress`, `badges`, `student_badges`, `subscriptions`, `payments`. Aligne les champs critiques (ex: `attempts.client_event_id` UNIQUE, `attempts.synced_at` nullable, etc.).  
+Ajoute indexes utiles (student_id, skill_id, created_at, synced_at) et contraintes d’intégrité.
+
+---
+
+### PROMPT 03 — Auth (OTP + email) + JWT + audit
+
+**Objectif :** endpoints auth DSFT, OTP rules DSC, sécurité.
+
+Implémente l’auth ILMA avec les endpoints: `/auth/register`, `/auth/login`, `/auth/refresh`, `/auth/logout`, `/auth/otp/send`, `/auth/otp/verify`, `/auth/password/reset`, `/auth/password/change`. 
+OTP: 6 chiffres, validité 5 minutes, 3 tentatives max, renvoi après 60s, validation format téléphone +229XXXXXXXX + préfixes bénin. 
+Hash password bcrypt cost 12 ou Argon2id. Ajoute rate limit (Redis si dispo), journaux d’audit (login success/fail), et tests (ok/ko). 
+
+---
+
+### PROMPT 04 — Profils + liaison Parent-Élève (code de liaison)
+
+**Objectif :** N:N parent↔student, code liaison, objectifs hebdo.
+
+Implémente la logique parent-enfant: l’élève génère un code de liaison (6 caractères alphanumériques) et le parent le saisit pour lier l’enfant. Relation N:N (plusieurs enfants, plusieurs parents). 
+Endpoints:
+
+* `GET /me` (profil)
+* `POST /students/link-code` (générer/renouveler)
+* `POST /parents/link` (lier un enfant)
+* `GET /parents/students` (liste enfants)
+* `PATCH /parents/students/{student_id}/goal` (objectif hebdo)
+  Ajoute permissions (STUDENT/PARENT/ADMIN) et tests.
+
+---
+
+### PROMPT 05 — Contenu pédagogique (lecture côté app + CRUD admin)
+
+**Objectif :** endpoints DSFT, hiérarchie stricte, pagination.
+
+Implémente les endpoints contenu: `GET /subjects`, `GET /subjects/{id}/chapters`, `GET /chapters/{id}/skills`, `GET /skills/{id}` (inclure micro-leçon si dispo). 
+Ajoute endpoints admin CRUD (subjects/chapters/skills/questions/lessons) + import Excel (upload + validation + preview + commit). (Le DSC impose CRUD + import + workflow validation.) 
+Cache lecture (Redis optionnel).
+
+---
+
+### PROMPT 06 — Sessions d’exercices (start/next/attempt/complete)
+
+**Objectif :** moteur de session, anti-triche, scoring.
+
+Implémente: `POST /sessions/start`, `GET /sessions/{id}/next`, `POST /sessions/{id}/attempt`, `POST /sessions/{id}/complete`. 
+Modes session (practice/daily_challenge/revision/exam) et règles anti-triche (temps minimum question, patterns). (S’appuyer sur DSC Module Exercices & Sessions.) 
+Le endpoint `/attempt` doit créer une Attempt idempotente si `client_event_id` est déjà vu (offline sync). 
+Ajoute tests (session flow + idempotence + permissions).
+
+---
+
+### PROMPT 07 — SmartScore + Progression + Agrégations
+
+**Objectif :** table progress, calcul score, decay, streak, dashboards.
+
+Implémente `progress` (student_id + skill_id), mise à jour SmartScore à chaque tentative, bonus streak, décroissance, et endpoints de lecture:
+
+* `GET /students/{id}/progress/summary`
+* `GET /students/{id}/progress/skills`
+* `GET /students/{id}/stats/daily|weekly|monthly`
+  Le DSFT décrit l’entité `Progress` (clé composite) et le rôle SmartScore. 
+  Ajoute jobs planifiés (option APScheduler) pour appliquer la décroissance hebdo.
+
+---
+
+### PROMPT 08 — Badges + Gamification (attribution locale puis sync serveur)
+
+**Objectif :** badges, student_badges, règles, idempotence.
+
+Implémente:
+
+* tables `badges`, `student_badges` + règles d’attribution (ex: premier exercice, streak, etc.)
+* endpoint `GET /students/{id}/badges`
+* moteur “award_badges(student_id, context)” appelé après session/attempt
+  Le DSFT contient les entités Badge/StudentBadge. 
+  Supporte réception d’événements offline “badge_gained” via `/offline/sync` (doublons ignorés). 
+
+---
+
+### PROMPT 09 — Offline packs (ZIP) + endpoint sync (cœur production)
+
+**Objectif :** packs + sync + conflits + statut.
+
+Implémente les endpoints offline:
+
+* `GET /offline/packs`
+* `GET /offline/packs/{id}/download` (ZIP stream + ETag + version)
+* `POST /offline/sync` (upload batch événements offline)
+* `GET /offline/sync/status` 
+
+Règles sync à implémenter: priorité upload attempts puis badges puis profil, ensuite download updates. Gestion conflits: meilleur score si même exercice, last-write-wins pour profil, ignorer doublons badge, downgrade si abonnement expiré. 
+
+Le payload `/offline/sync` doit accepter une liste d’événements typés (attempt_created, session_completed, badge_gained, profile_updated) avec `client_event_id` unique pour idempotence. 
+Ajoute tests (replay batch, doublons, conflits).
+
+---
+
+### PROMPT 10 — Abonnements + Paiements (entitlements)
+
+**Objectif :** freemium/premium, plans, gating.
+
+Implémente `subscriptions` et `payments` + endpoints:
+
+* `GET /subscriptions/plans`
+* `GET /me/subscription`
+* `POST /payments/init` (démarrer transaction)
+* `POST /payments/webhook/{provider}` (KKiaPay/FedaPay)
+  Les entités Subscription/Payment sont dans le DSFT. 
+  Applique le gating (ex: examen blanc premium, limite gratuite). Offline: pas de validation paiement, seulement cache statut à rafraîchir à la reconnexion. 
+
+---
+
+### PROMPT 11 — Notifications (in-app + SMS + push) + préférences
+
+**Objectif :** modèle prefs + jobs + stubs providers.
+
+Implémente les préférences notifications parent/élève (JSONB côté parent), endpoints de configuration, et un service de notifications multi-canaux (mock + HTTP provider). Le DSC exige préférences configurables et types (inactivité, objectifs, badges, etc.). 
+Ajoute jobs: rappel quotidien, alerte inactivité, rapport hebdo.
+
+---
+
+### PROMPT 12 — Back-office Admin + Analytics + Exports
+
+**Objectif :** endpoints admin, KPIs, export CSV/PDF.
+
+Implémente un module admin:
+
+* gestion contenu (CRUD + import excel + validation)
+* gestion utilisateurs (recherche, reset, suspension)
+* analytics (DAU/MAU/rétention, MRR/churn/ARPU, pédagogie)
+* export CSV/PDF
+  Le DSC liste précisément ces responsabilités. 
+  PDF: implémente une génération simple (ex: rapport hebdo parent) sous 3s.
+
+---
+
+### PROMPT 13 — Observabilité, sécurité, performance (ce qui manque souvent)
+
+**Objectif :** “prod hardening”.
+
+Ajoute: logs structurés (request_id), metrics (Prometheus), tracing (OpenTelemetry), endpoints metrics, configuration CORS stricte, headers de sécurité, protection brute-force OTP/login, et stratégie de migration safe.
+Ajoute aussi un mode maintenance (feature flag), et des limites API (rate limit Redis). (Le DSC mentionne “mode maintenance” côté configuration système.) 
+
+---
+
+### PROMPT 14 — Tests + CI (qualité minimum)
+
+**Objectif :** ne pas livrer un backend “sans filet”.
+
+Écris une suite de tests pytest async (httpx AsyncClient) couvrant: auth otp/login/refresh, liaison parent-enfant, sessions flow, offline/sync idempotence, et permissions. Objectif couverture 80%. 
+Ajoute pipeline CI (lint + tests + migrations dry-run), et commandes Makefile.
+
+---
+
+## Pourquoi ce n’est pas “production-ready” sans ces prompts
+
+Pour ILMA, si tu n’as pas explicitement :
+
+* **idempotence** (client_event_id unique) 
+* **conflits offline** (meilleur score / last-write-wins / downgrade abonnement) 
+* **rate limiting OTP/login** + audit
+* **tests sur sync** (replay, doublons)
+  alors tu auras des bugs “invisibles” qui explosent en prod.
+
+Si tu veux, je peux ensuite te donner une **checklist DoD backend “production-ready”** alignée sur cette suite (sécurité, perf, tests, observabilité, runbook), mais la base ci-dessus est le minimum pour éviter un backend “démo”.

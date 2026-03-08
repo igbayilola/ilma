@@ -1,0 +1,1990 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "domain": "Numération",
+    "grade": "CM2",
+    "country": "Bénin",
+    "generated": true
+  },
+  "exercises": [
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Dans le nombre 4 572 836, quel est le chiffre des dizaines de mille ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "7",
+            "5",
+            "4",
+            "2"
+          ],
+          "correct_answer": "7",
+          "explanation": "Le chiffre des dizaines de mille est 7 (4 5̲7̲2 836).",
+          "hint": "Repère la position : unités, dizaines, centaines, milliers, dizaines de mille."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quel est le rang du chiffre 3 dans 8 305 417 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Centaines de mille",
+            "Dizaines de mille",
+            "Millions",
+            "Milliers"
+          ],
+          "correct_answer": "Centaines de mille",
+          "explanation": "Dans 8 305 417, le 3 occupe le rang des centaines de mille.",
+          "hint": "Décompose par classes."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Dans 12 456 789, le chiffre 4 est dans la classe des milliers.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "12 456 789 : classe des millions (12), classe des milliers (456), classe des unités (789). Le 4 est bien dans la classe des milliers.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Dans 67 890 123, le chiffre des ___ de mille est 9.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "dizaines",
+          "explanation": "67 890 123 → 890 est la classe des milliers : 8 centaines de mille, 9 dizaines de mille, 0 milliers.",
+          "hint": "Repère la classe des milliers."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Écris en chiffres : « trois millions cinq cent mille ».",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 3500000,
+          "explanation": "Trois millions = 3 000 000, cinq cent mille = 500 000, soit 3 500 000.",
+          "hint": "Commence par les millions."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Écris en chiffres : « vingt-trois millions quarante mille six cents ».",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 23040600,
+          "explanation": "23 millions = 23 000 000, 40 mille = 40 000, 600 → 23 040 600.",
+          "hint": "Attention aux zéros intercalés."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "(5 × 1 000 000) + (3 × 10 000) + (7 × 100) = ___",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "5 030 700",
+          "explanation": "5 000 000 + 30 000 + 700 = 5 030 700.",
+          "hint": "Calcule chaque terme puis additionne."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Écris en chiffres : « deux milliards cent sept millions cinquante mille ».",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 2107050000,
+          "explanation": "2 milliards = 2 000 000 000, 107 millions = 107 000 000, 50 mille = 50 000 → 2 107 050 000.",
+          "hint": "Calcule."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "short_answer",
+          "difficulty": "easy",
+          "text": "Écris en lettres : 4 500 000.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": "quatre millions cinq cent mille",
+          "explanation": "4 500 000 = quatre millions cinq cent mille.",
+          "hint": "Écris ta réponse.",
+          "accepted_answers": [
+            "quatre millions cinq cent mille",
+            "quatre millions cinq cents mille"
+          ]
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Écris en lettres : 30 020 100.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "trente millions vingt mille cent",
+          "explanation": "30 020 100 : trente millions, vingt mille, cent.",
+          "hint": "Écris ta réponse.",
+          "accepted_answers": [
+            "trente millions vingt mille cent"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quelle est l'écriture en lettres de 7 008 030 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Sept millions huit mille trente",
+            "Sept milliards huit mille trente",
+            "Sept millions huit cent trente",
+            "Sept millions huit cents trente"
+          ],
+          "correct_answer": "Sept millions huit mille trente",
+          "explanation": "7 008 030 = 7 millions + 8 mille + 30.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "805 600 000 s'écrit en lettres : ___.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "huit cent cinq millions six cent mille",
+          "explanation": "805 millions = huit cent cinq millions, 600 mille = six cent mille.",
+          "hint": "Complète."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "Décompose 34 567 : (3 × ___) + (4 × 1 000) + (5 × 100) + (6 × 10) + 7.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": "10 000",
+          "explanation": "34 567 = 3 × 10 000 + 4 × 1 000 + 5 × 100 + 6 × 10 + 7.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Donne la décomposition additive de 5 030 700.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "5 000 000 + 30 000 + 700",
+          "explanation": "5 030 700 = 5 000 000 + 30 000 + 700.",
+          "hint": "Écris ta réponse.",
+          "accepted_answers": [
+            "5 000 000 + 30 000 + 700",
+            "5000000 + 30000 + 700"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quelle décomposition est correcte pour 2 405 060 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "2×1000000 + 4×100000 + 5×1000 + 6×10",
+            "2×1000000 + 4×10000 + 5×1000 + 6×10",
+            "2×1000000 + 4×100000 + 5×100 + 60",
+            "2×1000000 + 40×10000 + 5×1000 + 60"
+          ],
+          "correct_answer": "2×1000000 + 4×100000 + 5×1000 + 6×10",
+          "explanation": "2 405 060 : 2M + 400k + 5k + 60.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève décompose 6 080 300 ainsi : 6×100000 + 8×10000 + 3×100.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "6×100000 + 8×10000 + 3×100",
+          "correct_answer": "6×1000000 + 8×10000 + 3×100",
+          "explanation": "L'erreur : 6 millions ≠ 6×100 000. Il faut 6×1 000 000.",
+          "hint": "Vérifie la valeur de chaque rang."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Recompose : 4 millions + 200 mille + 30 =",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 4200030,
+          "explanation": "4 000 000 + 200 000 + 30 = 4 200 030.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Recompose : 7×1 000 000 + 3×100 000 + 5×10 + 8 =",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 7300058,
+          "explanation": "7 000 000 + 300 000 + 50 + 8 = 7 300 058.",
+          "hint": "Calcule chaque produit."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "2 centaines de mille + 45 milliers + 6 centaines = ___",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "245 600",
+          "explanation": "200 000 + 45 000 + 600 = 245 600.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Recompose : 50 dizaines de mille + 3 centaines de mille + 12 unités =",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 800012,
+          "explanation": "50 × 10 000 = 500 000, 3 × 100 000 = 300 000, 12 → 800 012.",
+          "hint": "Attention : 50 dizaines de mille = 500 000."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-ENTIERS-0-1B::MS06",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "medium",
+          "text": "Un élève écrit « cinq millions trois mille » = 5 300 000.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "erroneous_content": "5 300 000",
+          "correct_answer": "5 003 000",
+          "explanation": "Cinq millions = 5 000 000, trois mille = 3 000 → 5 003 000, pas 5 300 000.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quelle écriture est correcte pour « deux millions quarante » ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "2 000 040",
+            "2 000 400",
+            "2 004 000",
+            "20 000 040"
+          ],
+          "correct_answer": "2 000 040",
+          "explanation": "Deux millions = 2 000 000, quarante = 40 → 2 000 040.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Erreur à corriger : 10 307 050 → « dix millions trente-sept mille cinquante ».",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "dix millions trente-sept mille cinquante",
+          "correct_answer": "dix millions trois cent sept mille cinquante",
+          "explanation": "307 mille = trois cent sept mille, pas trente-sept mille.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Le nombre « huit millions six cents » s'écrit 8 000 600.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "8 millions = 8 000 000, six cents = 600 → 8 000 600. C'est correct.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DROITE-NUM-ENTIERS::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "tracing",
+          "difficulty": "easy",
+          "text": "Place le nombre 350 sur cette droite graduée.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "number_line": {
+            "min": 0,
+            "max": 500,
+            "step": 50,
+            "target": 350
+          },
+          "correct_answer": 350,
+          "explanation": "350 se trouve entre 300 et 400, à mi-chemin + 50.",
+          "hint": "Observe la droite."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Place le nombre 7 500 sur cette droite graduée.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 0,
+            "max": 10000,
+            "step": 1000,
+            "target": 7500
+          },
+          "correct_answer": 7500,
+          "explanation": "7 500 se situe entre 7 000 et 8 000.",
+          "hint": "Observe la droite."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Sur une droite graduée de 0 à 100 000 (pas de 10 000), à quelle graduation se trouve le point situé à 3/4 du trajet entre 20 000 et 30 000 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 27500,
+          "explanation": "3/4 de 10 000 = 7 500. Donc 20 000 + 7 500 = 27 500.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Sur une droite graduée de 0 à 1 000 (pas de 100), entre quelles graduations se trouve 450 ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "400 et 500",
+            "300 et 400",
+            "500 et 600",
+            "450 et 550"
+          ],
+          "correct_answer": "400 et 500",
+          "explanation": "450 est entre 400 et 500.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DROITE-NUM-ENTIERS::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "Encadre 3 456 entre deux milliers consécutifs : ___ < 3 456 < ___",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": "3 000 < 3 456 < 4 000",
+          "explanation": "Le millier avant est 3 000, le millier après est 4 000.",
+          "hint": "Complète.",
+          "blanks": [
+            "3 000",
+            "4 000"
+          ]
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Encadre 78 432 à la dizaine de mille : ___ < 78 432 < ___",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "70 000 < 78 432 < 80 000",
+          "explanation": "La dizaine de mille inférieure est 70 000, la supérieure est 80 000.",
+          "hint": "Complète.",
+          "blanks": [
+            "70 000",
+            "80 000"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Quel est le nombre entier immédiatement après 99 999 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 100000,
+          "explanation": "99 999 + 1 = 100 000.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Encadre 5 678 345 au million près.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "5 000 000 < 5 678 345 < 6 000 000",
+            "5 600 000 < 5 678 345 < 5 700 000",
+            "5 678 000 < 5 678 345 < 5 679 000",
+            "5 000 000 < 5 678 345 < 5 500 000"
+          ],
+          "correct_answer": "5 000 000 < 5 678 345 < 6 000 000",
+          "explanation": "Au million près : le million inférieur est 5M, le supérieur 6M.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DROITE-NUM-ENTIERS::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "ordering",
+          "difficulty": "easy",
+          "text": "Range ces nombres dans l'ordre croissant.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "items": [
+            "45 321",
+            "12 890",
+            "67 450",
+            "34 100"
+          ],
+          "correct_answer": [
+            "12 890",
+            "34 100",
+            "45 321",
+            "67 450"
+          ],
+          "explanation": "12 890 < 34 100 < 45 321 < 67 450.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Range ces nombres dans l'ordre décroissant.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "1 234 567",
+            "1 324 567",
+            "1 234 657",
+            "1 243 567"
+          ],
+          "correct_answer": [
+            "1 324 567",
+            "1 243 567",
+            "1 234 657",
+            "1 234 567"
+          ],
+          "explanation": "On compare les chiffres de gauche à droite.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Range dans l'ordre croissant : 999 999, 1 000 001, 1 000 000, 999 000.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "999 999",
+            "1 000 001",
+            "1 000 000",
+            "999 000"
+          ],
+          "correct_answer": [
+            "999 000",
+            "999 999",
+            "1 000 000",
+            "1 000 001"
+          ],
+          "explanation": "999 000 < 999 999 < 1 000 000 < 1 000 001.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "ordering",
+          "difficulty": "hard",
+          "text": "Range dans l'ordre croissant ces nombres proches.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "items": [
+            "3 456 789",
+            "3 465 789",
+            "3 456 798",
+            "3 456 879"
+          ],
+          "correct_answer": [
+            "3 456 789",
+            "3 456 798",
+            "3 456 879",
+            "3 465 789"
+          ],
+          "explanation": "On compare rang par rang en partant de la gauche.",
+          "hint": "Mets dans l'ordre."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DROITE-NUM-ENTIERS::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Compare : 45 678 ___ 45 876.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "<",
+            ">",
+            "="
+          ],
+          "correct_answer": "<",
+          "explanation": "45 678 < 45 876 car au rang des centaines, 6 < 8.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "Complete avec <, > ou = : 1 000 000 ___ 999 999.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": ">",
+          "explanation": "1 000 000 > 999 999 car 1 000 000 a 7 chiffres et 999 999 en a 6.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "justification",
+          "difficulty": "medium",
+          "text": "Compare 3 045 678 et 3 054 678. Justifie ta réponse.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "3 045 678 < 3 054 678",
+          "explanation": "Les millions sont égaux (3). Aux dizaines de mille : 4 < 5, donc 3 045 678 < 3 054 678.",
+          "hint": "Justifie.",
+          "scoring_rubric": "1pt: bon symbole, 1pt: justification par rang"
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quel signe manque ? 7 890 123 ___ 7 890 132.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "<",
+            ">",
+            "="
+          ],
+          "correct_answer": "<",
+          "explanation": "Les 5 premiers chiffres sont identiques. Au rang des dizaines : 2 < 3.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DIVISIBILITE-2-3-5::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "4 678 est divisible par 2.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "Le dernier chiffre est 8 (pair), donc divisible par 2.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Lesquels sont divisibles par 2 ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "3 456 et 7 890",
+            "3 457 et 7 891",
+            "3 456 et 7 891",
+            "3 457 et 7 890"
+          ],
+          "correct_answer": "3 456 et 7 890",
+          "explanation": "Un nombre est divisible par 2 si son dernier chiffre est pair (0,2,4,6,8).",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Le nombre 10 345 est divisible par 2.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": false,
+          "explanation": "Le dernier chiffre est 5 (impair), donc non divisible par 2.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Parmi ces nombres, lequel n'est PAS divisible par 2 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "124",
+            "356",
+            "783",
+            "900"
+          ],
+          "correct_answer": "783",
+          "explanation": "783 se termine par 3 (impair).",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DIVISIBILITE-2-3-5::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Le nombre 4 325 est divisible par 5.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "Le dernier chiffre est 5, donc divisible par 5.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Lesquels sont divisibles par 5 ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "230 et 1 005",
+            "231 et 1 006",
+            "233 et 1 007",
+            "234 et 1 008"
+          ],
+          "correct_answer": "230 et 1 005",
+          "explanation": "Un nombre est divisible par 5 si son dernier chiffre est 0 ou 5.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "45 672 est divisible par 5.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": false,
+          "explanation": "Le dernier chiffre est 2, pas 0 ni 5.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quel nombre est divisible à la fois par 2 et par 5 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "135",
+            "240",
+            "345",
+            "127"
+          ],
+          "correct_answer": "240",
+          "explanation": "240 se termine par 0, donc divisible par 2 et par 5.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DIVISIBILITE-2-3-5::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Le nombre 5 412 est-il divisible par 3 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Oui, car 5+4+1+2=12 qui est divisible par 3",
+            "Non, car 5+4+1+2=12 qui n'est pas divisible par 3",
+            "Oui, car il se termine par 2",
+            "Non, car il est pair"
+          ],
+          "correct_answer": "Oui, car 5+4+1+2=12 qui est divisible par 3",
+          "explanation": "Somme des chiffres : 12. 12÷3=4, donc divisible par 3.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Pour vérifier si 7 236 est divisible par 3, je calcule 7+2+3+6 = ___. Conclusion : ___.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "18, oui",
+          "explanation": "7+2+3+6 = 18. 18÷3 = 6, donc 7 236 est divisible par 3.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "2 341 est divisible par 3.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": false,
+          "explanation": "2+3+4+1 = 10. 10 n'est pas divisible par 3.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Quel nombre est divisible par 3 mais PAS par 2 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "4 521",
+            "4 522",
+            "4 524",
+            "4 520"
+          ],
+          "correct_answer": "4 521",
+          "explanation": "4+5+2+1=12, divisible par 3. Se termine par 1, pas divisible par 2.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DIVISIBILITE-2-3-5::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Simplifie la fraction 12/18 en utilisant la divisibilité.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Trouve un diviseur commun de 12 et 18",
+              "expected": "6"
+            },
+            {
+              "instruction": "Divise numérateur et dénominateur par ce diviseur",
+              "expected": "12÷6=2, 18÷6=3"
+            },
+            {
+              "instruction": "Écris la fraction simplifiée",
+              "expected": "2/3"
+            }
+          ],
+          "correct_answer": "2/3",
+          "explanation": "12 et 18 sont tous deux divisibles par 6: 12÷6=2, 18÷6=3.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Quelle est la forme simplifiée de 15/25 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "3/5",
+            "5/5",
+            "1/5",
+            "15/25"
+          ],
+          "correct_answer": "3/5",
+          "explanation": "15 et 25 sont divisibles par 5 : 15÷5=3, 25÷5=5.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève simplifie 24/36 et obtient 4/9.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "24/36 = 4/9",
+          "correct_answer": "24/36 = 2/3",
+          "explanation": "24÷12=2, 36÷12=3. La fraction simplifiée est 2/3, pas 4/9.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Simplifie 20/30. Quel est le numérateur de la fraction irréductible ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 2,
+          "explanation": "PGCD(20,30) = 10. 20÷10 = 2.",
+          "hint": "Calcule."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-ECRIRE-REP::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Convertis 7/10 en nombre décimal.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 0.7,
+          "explanation": "7/10 = 0,7.",
+          "hint": "Calcule.",
+          "tolerance": 0.01
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "45/100 = ___",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "0,45",
+          "explanation": "45 centièmes = 0,45.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quelle fraction correspond à 0,125 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "125/1000",
+            "125/100",
+            "12/100",
+            "1/8"
+          ],
+          "correct_answer": "125/1000",
+          "explanation": "0,125 = 125 millièmes = 125/1000.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Convertis 3/1000 en nombre décimal.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 0.003,
+          "explanation": "3/1000 = 0,003.",
+          "hint": "Calcule.",
+          "tolerance": 0.0001
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-ECRIRE-REP::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Dans 4,567, quel est le chiffre des centièmes ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "6",
+            "5",
+            "7",
+            "4"
+          ],
+          "correct_answer": "6",
+          "explanation": "4,567 → 5 dixièmes, 6 centièmes, 7 millièmes.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Dans 12,345, le chiffre 3 représente 3 ___.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "dixièmes",
+          "explanation": "12,345 : 3 est au rang des dixièmes.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quelle est la valeur du chiffre 8 dans 0,089 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "8 centièmes",
+            "8 dixièmes",
+            "8 millièmes",
+            "8 unités"
+          ],
+          "correct_answer": "8 centièmes",
+          "explanation": "0,089 → 0 dixième, 8 centièmes, 9 millièmes.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "Dans 5,207, le chiffre 0 occupe le rang des centièmes.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": true,
+          "explanation": "5,207 → 2 dixièmes, 0 centième, 7 millièmes.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-ECRIRE-REP::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Place 3,5 sur cette droite graduée.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 3,
+            "max": 4,
+            "step": 0.1,
+            "target": 3.5
+          },
+          "correct_answer": 3.5,
+          "explanation": "3,5 est exactement au milieu entre 3 et 4.",
+          "hint": "Observe la droite."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Place 0,75 sur cette droite graduée.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "target": 0.75
+          },
+          "correct_answer": 0.75,
+          "explanation": "0,75 se situe entre 0,7 et 0,8.",
+          "hint": "Observe la droite."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Sur une droite de 0 à 1 graduée en dixièmes, quel décimal est situé entre 0,4 et 0,5, plus près de 0,5 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 0.47,
+          "explanation": "Un décimal entre 0,4 et 0,5 plus proche de 0,5 peut être 0,47.",
+          "hint": "Calcule.",
+          "tolerance": 0.04
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Sur une droite de 2 à 3 graduée en dixièmes, entre quelles graduations se trouve 2,34 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "2,3 et 2,4",
+            "2,2 et 2,3",
+            "2,4 et 2,5",
+            "2,34 et 2,35"
+          ],
+          "correct_answer": "2,3 et 2,4",
+          "explanation": "2,34 est entre 2,3 et 2,4.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-ECRIRE-REP::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Décompose 7,45 : partie entière = ___, partie décimale = ___",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "7 ; 0,45",
+          "explanation": "7,45 = 7 + 0,45. Partie entière : 7. Partie décimale : 0,45.",
+          "hint": "Complète.",
+          "blanks": [
+            "7",
+            "0,45"
+          ]
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Décompose 3,208 en rangs : 3 unités + ___ dixièmes + ___ centièmes + ___ millièmes.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "2 dixièmes + 0 centième + 8 millièmes",
+          "explanation": "3,208 = 3 + 2/10 + 0/100 + 8/1000.",
+          "hint": "Écris ta réponse.",
+          "accepted_answers": [
+            "2 + 0 + 8",
+            "2, 0, 8"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Recompose : 4 unités + 13 centièmes = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 4.13,
+          "explanation": "4 + 13/100 = 4 + 0,13 = 4,13.",
+          "hint": "Calcule.",
+          "tolerance": 0.001
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "56,7 = 56 unités + ___ dixièmes.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "7",
+          "explanation": "56,7 = 56 + 7/10.",
+          "hint": "Complète."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-ECRIRE-REP::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Encadre 4,67 entre deux entiers : ___ < 4,67 < ___.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "4 < 4,67 < 5",
+          "explanation": "La partie entière est 4, donc 4 < 4,67 < 5.",
+          "hint": "Complète.",
+          "blanks": [
+            "4",
+            "5"
+          ]
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Encadre 7,345 au dixième : ___ < 7,345 < ___.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "7,3 < 7,345 < 7,4",
+          "explanation": "7,345 est entre 7,3 et 7,4.",
+          "hint": "Complète.",
+          "blanks": [
+            "7,3",
+            "7,4"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "justification",
+          "difficulty": "hard",
+          "text": "Encadre 0,678 au centième et justifie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "0,67 < 0,678 < 0,68",
+          "explanation": "Le centième inférieur est 0,67 et le centième supérieur est 0,68. 0,678 est entre les deux car son millième est 8.",
+          "hint": "Justifie.",
+          "scoring_rubric": "1pt: encadrement correct, 1pt: justification"
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quel encadrement au dixième est correct pour 3,456 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "3,4 < 3,456 < 3,5",
+            "3,45 < 3,456 < 3,46",
+            "3 < 3,456 < 4",
+            "3,5 < 3,456 < 3,6"
+          ],
+          "correct_answer": "3,4 < 3,456 < 3,5",
+          "explanation": "Au dixième : 3,4 < 3,456 < 3,5.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-ECRIRE-REP::MS06",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Arrondis 4,567 à l'unité.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 5,
+          "explanation": "4,567 → le dixième est 5 (≥5), on arrondit à 5.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Arrondis 7,342 au dixième.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "7,3",
+            "7,4",
+            "7,34",
+            "7"
+          ],
+          "correct_answer": "7,3",
+          "explanation": "7,342 → le centième est 4 (<5), on garde 7,3.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Arrondis 12,8975 au centième.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 12.9,
+          "explanation": "Le millième est 7 (≥5), on arrondit : 12,90.",
+          "hint": "Calcule.",
+          "tolerance": 0.001
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève arrondit 3,450 au dixième et obtient 3,4.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "3,4",
+          "correct_answer": "3,5",
+          "explanation": "Le centième est 5, on arrondit au dixième supérieur : 3,5.",
+          "hint": "Trouve l'erreur."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-COMP-ORD::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Compare : 4,56 ___ 4,65.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "<",
+            ">",
+            "="
+          ],
+          "correct_answer": "<",
+          "explanation": "4,56 < 4,65 car au rang des dixièmes, 5 < 6.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Complete : 7,80 ___ 7,8.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "=",
+          "explanation": "7,80 = 7,8 car le zéro final ne change pas la valeur.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quel signe manque ? 0,309 ___ 0,31.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "<",
+            ">",
+            "="
+          ],
+          "correct_answer": "<",
+          "explanation": "0,309 < 0,310 car 309 millièmes < 310 millièmes.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "3,5 > 3,50.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": false,
+          "explanation": "3,5 = 3,50, les zéros finaux ne changent rien.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-COMP-ORD::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Range dans l'ordre croissant.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "3,45",
+            "3,405",
+            "3,5",
+            "3,045"
+          ],
+          "correct_answer": [
+            "3,045",
+            "3,405",
+            "3,45",
+            "3,5"
+          ],
+          "explanation": "On aligne les décimales : 3,045 < 3,405 < 3,450 < 3,500.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Range dans l'ordre croissant.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "0,7",
+            "0,67",
+            "0,076",
+            "0,706"
+          ],
+          "correct_answer": [
+            "0,076",
+            "0,67",
+            "0,7",
+            "0,706"
+          ],
+          "explanation": "0,076 < 0,670 < 0,700 < 0,706.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "ordering",
+          "difficulty": "hard",
+          "text": "Range dans l'ordre croissant.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "items": [
+            "12,099",
+            "12,1",
+            "12,009",
+            "12,91"
+          ],
+          "correct_answer": [
+            "12,009",
+            "12,099",
+            "12,1",
+            "12,91"
+          ],
+          "explanation": "12,009 < 12,099 < 12,100 < 12,910.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "ordering",
+          "difficulty": "easy",
+          "text": "Range dans l'ordre croissant.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "items": [
+            "5,6",
+            "5,2",
+            "5,9",
+            "5,1"
+          ],
+          "correct_answer": [
+            "5,1",
+            "5,2",
+            "5,6",
+            "5,9"
+          ],
+          "explanation": "On compare les dixièmes.",
+          "hint": "Mets dans l'ordre."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-COMP-ORD::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Range dans l'ordre décroissant.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "2,45",
+            "2,54",
+            "2,405",
+            "2,5"
+          ],
+          "correct_answer": [
+            "2,54",
+            "2,5",
+            "2,45",
+            "2,405"
+          ],
+          "explanation": "2,540 > 2,500 > 2,450 > 2,405.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "ordering",
+          "difficulty": "hard",
+          "text": "Range dans l'ordre décroissant.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "items": [
+            "8,01",
+            "8,1",
+            "8,001",
+            "8,101"
+          ],
+          "correct_answer": [
+            "8,101",
+            "8,1",
+            "8,01",
+            "8,001"
+          ],
+          "explanation": "8,101 > 8,100 > 8,010 > 8,001.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Range dans l'ordre décroissant.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "0,5",
+            "0,55",
+            "0,505",
+            "0,055"
+          ],
+          "correct_answer": [
+            "0,55",
+            "0,505",
+            "0,5",
+            "0,055"
+          ],
+          "explanation": "0,550 > 0,505 > 0,500 > 0,055.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "ordering",
+          "difficulty": "easy",
+          "text": "Range dans l'ordre décroissant.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "items": [
+            "7,3",
+            "7,8",
+            "7,1",
+            "7,5"
+          ],
+          "correct_answer": [
+            "7,8",
+            "7,5",
+            "7,3",
+            "7,1"
+          ],
+          "explanation": "Compare les dixièmes.",
+          "hint": "Mets dans l'ordre."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-DEC-COMP-ORD::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "justification",
+          "difficulty": "hard",
+          "text": "Sans calculer, compare 6,789 et 6,8. Justifie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "6,789 < 6,8",
+          "explanation": "6,789 < 6,800. Au rang des dixièmes : 7 < 8, donc 6,789 < 6,8.",
+          "hint": "Justifie.",
+          "scoring_rubric": "1pt: bon symbole, 1pt: justification par rang"
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Sans calcul, quel est le plus grand : 0,9 ou 0,89 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "0,9",
+            "0,89",
+            "Ils sont égaux",
+            "On ne peut pas savoir"
+          ],
+          "correct_answer": "0,9",
+          "explanation": "0,90 > 0,89 car au dixième 9 > 8.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "justification",
+          "difficulty": "hard",
+          "text": "Compare 4,50 et 4,500. Justifie sans calcul.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "4,50 = 4,500",
+          "explanation": "Les zéros ajoutés à droite de la partie décimale ne changent pas la valeur : 4,50 = 4,500.",
+          "hint": "Justifie.",
+          "scoring_rubric": "1pt: égalité, 1pt: justification"
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Sans calcul, range du plus petit au plus grand : 1,5 / 1,05 / 1,50.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "1,05 < 1,5 = 1,50",
+            "1,5 < 1,05 < 1,50",
+            "1,50 < 1,5 < 1,05",
+            "1,05 < 1,50 < 1,5"
+          ],
+          "correct_answer": "1,05 < 1,5 = 1,50",
+          "explanation": "1,5 et 1,50 sont égaux. 1,05 < 1,50.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-FRAC-REP::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Une pizza est partagée en 8 parts égales. Moussa en mange 3. Quelle fraction de la pizza a-t-il mangée ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "3/8",
+            "8/3",
+            "3/5",
+            "5/8"
+          ],
+          "correct_answer": "3/8",
+          "explanation": "3 parts sur 8 au total = 3/8.",
+          "hint": "Combien de parts au total ? Combien mangées ?"
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "matching",
+          "difficulty": "medium",
+          "text": "Associe chaque situation à sa fraction.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "left_items": [
+            "2 parts sur 5",
+            "1 part sur 4",
+            "3 parts sur 3"
+          ],
+          "right_items": [
+            "2/5",
+            "1/4",
+            "3/3"
+          ],
+          "correct_answer": {
+            "2 parts sur 5": "2/5",
+            "1 part sur 4": "1/4",
+            "3 parts sur 3": "3/3"
+          },
+          "explanation": "Le numérateur = parts prises, le dénominateur = parts totales.",
+          "hint": "Associe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Un terrain est divisé en 10 parcelles égales. 7 parcelles sont cultivées. Quelle fraction est cultivée ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "7/10",
+            "10/7",
+            "3/10",
+            "7/3"
+          ],
+          "correct_answer": "7/10",
+          "explanation": "7 parcelles sur 10 = 7/10.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Si on coupe un gâteau en 6 parts égales et qu'on en prend 6, on a pris 6/6 = 1 gâteau entier.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "6/6 = 1 entier.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-FRAC-REP::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Que signifie la fraction 3/4 en termes de division ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "3 divisé par 4",
+          "explanation": "3/4 = 3 ÷ 4. Une fraction est un quotient.",
+          "hint": "Écris ta réponse.",
+          "accepted_answers": [
+            "3 divisé par 4",
+            "3÷4",
+            "3 : 4"
+          ]
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 7/4 sous forme décimale.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Effectue la division 7 ÷ 4",
+              "expected": "1,75"
+            },
+            {
+              "instruction": "Vérifie : 1,75 × 4 = ?",
+              "expected": "7"
+            }
+          ],
+          "correct_answer": "1,75",
+          "explanation": "7 ÷ 4 = 1,75.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quelle division correspond à 5/8 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "5 ÷ 8",
+            "8 ÷ 5",
+            "5 × 8",
+            "8 − 5"
+          ],
+          "correct_answer": "5 ÷ 8",
+          "explanation": "5/8 signifie 5 divisé par 8.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Calcule le quotient décimal de 3/8.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 0.375,
+          "explanation": "3 ÷ 8 = 0,375.",
+          "hint": "Calcule.",
+          "tolerance": 0.001
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-FRAC-REP::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Dans une classe de 30 élèves, 18 sont des filles. Quelle fraction représente le rapport filles/total ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "18/30",
+            "30/18",
+            "18/12",
+            "12/18"
+          ],
+          "correct_answer": "18/30",
+          "explanation": "18 filles sur 30 élèves = 18/30 (= 3/5 simplifiée).",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "justification",
+          "difficulty": "hard",
+          "text": "Sur 25 mangues, 5 sont pourries. Exprime le rapport mangues pourries / total et simplifie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "5/25 = 1/5",
+          "explanation": "5 sur 25 = 5/25. On simplifie par 5 : 1/5.",
+          "hint": "Justifie.",
+          "scoring_rubric": "1pt: fraction correcte, 1pt: simplification"
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Akouavi a 12 billes et Kofi en a 8. Quel est le rapport billes de Kofi / billes d'Akouavi ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "8/12",
+            "12/8",
+            "8/20",
+            "12/20"
+          ],
+          "correct_answer": "8/12",
+          "explanation": "Le rapport est 8/12 = 2/3.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Le rapport 6/10 signifie « 6 pour chaque groupe de 10 ».",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Un rapport a/b signifie a pour chaque b.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-FRAC-REP::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Quelle fraction correspond à la moitié ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "1/2",
+            "1/4",
+            "2/1",
+            "1/3"
+          ],
+          "correct_answer": "1/2",
+          "explanation": "La moitié = 1/2.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "matching",
+          "difficulty": "medium",
+          "text": "Associe chaque fraction usuelle à sa valeur.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "left_items": [
+            "1/2",
+            "1/4",
+            "3/4",
+            "1/10"
+          ],
+          "right_items": [
+            "0,5",
+            "0,25",
+            "0,75",
+            "0,1"
+          ],
+          "correct_answer": {
+            "1/2": "0,5",
+            "1/4": "0,25",
+            "3/4": "0,75",
+            "1/10": "0,1"
+          },
+          "explanation": "1/2=0,5, 1/4=0,25, 3/4=0,75, 1/10=0,1.",
+          "hint": "Associe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "La moitié de 1 = 1/2 = 0,___",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": "5",
+          "explanation": "1/2 = 0,5.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quelle fraction usuelle est égale à 0,25 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "1/4",
+            "1/2",
+            "3/4",
+            "1/5"
+          ],
+          "correct_answer": "1/4",
+          "explanation": "0,25 = 25/100 = 1/4.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-FRAC-REP::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Sur un disque partagé en 4 parts égales, combien de parts colories-tu pour représenter 3/4 ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "3",
+            "4",
+            "1",
+            "2"
+          ],
+          "correct_answer": "3",
+          "explanation": "3/4 = 3 parts sur 4.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Place 2/5 sur cette droite graduée (0 à 1, pas de 1/5).",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 0,
+            "max": 1,
+            "step": 0.2,
+            "target": 0.4
+          },
+          "correct_answer": 0.4,
+          "explanation": "2/5 = 0,4, soit 2 graduations de 1/5.",
+          "hint": "Observe la droite."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "matching",
+          "difficulty": "medium",
+          "text": "Associe chaque fraction à sa représentation.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "left_items": [
+            "1/2",
+            "1/3",
+            "2/3"
+          ],
+          "right_items": [
+            "50% d'une barre",
+            "1 part sur 3",
+            "2 parts sur 3"
+          ],
+          "correct_answer": {
+            "1/2": "50% d'une barre",
+            "1/3": "1 part sur 3",
+            "2/3": "2 parts sur 3"
+          },
+          "explanation": "1/2 = moitié, 1/3 = un tiers, 2/3 = deux tiers.",
+          "hint": "Associe."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Quelle fraction est représentée si 5 cases sur 10 sont coloriées ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "5/10",
+            "10/5",
+            "5/5",
+            "1/5"
+          ],
+          "correct_answer": "5/10",
+          "explanation": "5 cases coloriées sur 10 = 5/10 = 1/2.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "NUM-FRAC-REP::MS06",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "La fraction 7/4 est-elle supérieure ou inférieure à 1 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Supérieure à 1",
+            "Inférieure à 1",
+            "Égale à 1",
+            "On ne peut pas savoir"
+          ],
+          "correct_answer": "Supérieure à 1",
+          "explanation": "7/4 > 1 car le numérateur (7) est plus grand que le dénominateur (4).",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Écris 11/3 sous forme de nombre mixte.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "3 2/3",
+          "explanation": "11 ÷ 3 = 3 reste 2, donc 11/3 = 3 + 2/3 = 3 2/3.",
+          "hint": "Écris ta réponse.",
+          "accepted_answers": [
+            "3 2/3",
+            "3+2/3"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Quel nombre mixte correspond à 9/4 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "2 1/4",
+            "2 1/2",
+            "1 3/4",
+            "3 1/4"
+          ],
+          "correct_answer": "2 1/4",
+          "explanation": "9 ÷ 4 = 2 reste 1, donc 9/4 = 2 1/4.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "La fraction 5/5 est égale à 1.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "5/5 = 5 ÷ 5 = 1.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    }
+  ]
+}
