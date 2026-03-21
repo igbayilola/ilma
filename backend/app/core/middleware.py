@@ -56,14 +56,24 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
 
 
 class MaintenanceModeMiddleware(BaseHTTPMiddleware):
-    """Return 503 when maintenance mode is enabled."""
-
-    def __init__(self, app, enabled: bool = False):
-        super().__init__(app)
-        self.enabled = enabled
+    """Return 503 when maintenance mode is enabled (reads from config DB/Redis)."""
 
     async def dispatch(self, request: Request, call_next):
-        if self.enabled and not request.url.path.startswith("/api/v1/health"):
+        # Skip maintenance check for health and config endpoints
+        path = request.url.path
+        if path.startswith("/api/v1/health") or path.startswith("/api/v1/config/public"):
+            return await call_next(request)
+
+        try:
+            from app.db.session import AsyncSessionLocal
+            from app.services.config_service import config_service
+
+            async with AsyncSessionLocal() as db:
+                maintenance = await config_service.get(db, "maintenance_mode")
+        except Exception:
+            maintenance = False
+
+        if maintenance:
             from fastapi.responses import JSONResponse
 
             return JSONResponse(
@@ -78,6 +88,10 @@ class MaintenanceModeMiddleware(BaseHTTPMiddleware):
 
 def register_middleware(app: FastAPI) -> None:
     """Register all middleware in correct order (outermost first)."""
+    from starlette.middleware.gzip import GZipMiddleware
+
+    app.add_middleware(GZipMiddleware, minimum_size=500)  # Compress responses > 500 bytes
+    app.add_middleware(MaintenanceModeMiddleware)
     app.add_middleware(SecurityHeadersMiddleware)
     app.add_middleware(AccessLogMiddleware)
     app.add_middleware(RequestIdMiddleware)

@@ -3,13 +3,16 @@ import { useParams, useNavigate, useLocation, useSearchParams } from 'react-rout
 import { Button } from '../../components/ui/Button';
 import { QuestionRenderer } from '../../components/exercise/QuestionRenderer';
 import { ButtonVariant, Question, SubscriptionTier } from '../../types';
-import { X, CheckCircle2, AlertCircle, ArrowRight, RotateCcw, Award, HelpCircle, BookOpen, PenLine } from 'lucide-react';
+import { X, CheckCircle2, AlertCircle, ArrowRight, RotateCcw, Award, HelpCircle, BookOpen, PenLine, Share2 } from 'lucide-react';
+import { Breadcrumb } from '../../components/ui/Breadcrumb';
 import { useAppStore } from '../../store';
 import { SmartScoreMeter } from '../../components/ilma/Gamification';
 import { PaywallModal } from '../../components/subscription/PaywallModal';
 import { contentService, QuestionDTO } from '../../services/contentService';
 import { sessionService, SessionDTO, NextQuestionDTO } from '../../services/sessionService';
 import { useAuthStore } from '../../store/authStore';
+import { useConfigStore } from '../../store/configStore';
+import { telemetry } from '../../services/telemetry';
 
 type PlayerPhase = 'INTRO' | 'ACTIVE' | 'SUMMARY';
 type AnswerStatus = 'IDLE' | 'CORRECT' | 'INCORRECT';
@@ -150,9 +153,19 @@ export const ExercisePlayerPage: React.FC = () => {
     const microSkillId = searchParams.get('micro_skill_id') || undefined;
     const navigate = useNavigate();
     const location = useLocation();
-    const { dailyExerciseCount, incrementDailyExercise } = useAppStore();
+    const { dailyExerciseCount, incrementDailyExercise, setLastActivity } = useAppStore();
     const { user, activeProfile } = useAuthStore();
     const effectiveTier = activeProfile?.subscriptionTier || user?.subscriptionTier;
+    const freemiumDailyLimit = useConfigStore(s => s.freemiumDailyLimit);
+
+    // Navigation context from location.state
+    const navState = (location.state || {}) as {
+      returnPath?: string;
+      subjectId?: string;
+      subjectName?: string;
+      domainName?: string;
+    };
+    const returnPath = navState.returnPath || '/app/student/subjects';
 
     // Intro data (loaded from content API for display)
     const [questionCount, setQuestionCount] = useState(0);
@@ -179,6 +192,9 @@ export const ExercisePlayerPage: React.FC = () => {
     const [explanation, setExplanation] = useState('');
     const [isValidating, setIsValidating] = useState(false);
     const [showScratchpad, setShowScratchpad] = useState(false);
+    const [smartScoreBefore, setSmartScoreBefore] = useState<number | null>(null);
+    const [smartScoreAfter, setSmartScoreAfter] = useState<number | null>(null);
+    const [xpEarned, setXpEarned] = useState<number | null>(null);
 
     // Load intro data (question count + skill name)
     useEffect(() => {
@@ -197,7 +213,7 @@ export const ExercisePlayerPage: React.FC = () => {
     const progress = totalQuestions > 0 ? (currentQIndex / totalQuestions) * 100 : 0;
 
     const handleStart = async () => {
-        if (effectiveTier === SubscriptionTier.FREE && dailyExerciseCount >= 5) {
+        if (effectiveTier === SubscriptionTier.FREE && dailyExerciseCount >= freemiumDailyLimit) {
             setIsPaywallOpen(true);
             return;
         }
@@ -220,6 +236,16 @@ export const ExercisePlayerPage: React.FC = () => {
             setCurrentQuestion(nq);
             questionStartTime.current = Date.now();
             setPhase('ACTIVE');
+
+            // Save last activity for "Resume" on Dashboard
+            if (id) {
+                setLastActivity({
+                    skillId: id,
+                    skillName,
+                    subjectId: navState.subjectId,
+                    subjectName: navState.subjectName,
+                });
+            }
         } catch (err: any) {
             // Fallback: if session engine fails (e.g. no questions in DB), show error
             console.error('Session start failed:', err);
@@ -302,6 +328,9 @@ export const ExercisePlayerPage: React.FC = () => {
                 setScore(result.correctAnswers || score);
                 setTotalQuestions(result.totalQuestions || totalQuestions);
             }
+            if (result.smartScoreBefore !== undefined) setSmartScoreBefore(result.smartScoreBefore);
+            if (result.smartScoreAfter !== undefined) setSmartScoreAfter(result.smartScoreAfter);
+            if (result.xpEarned !== undefined) setXpEarned(result.xpEarned);
         } catch {
             // Even if complete fails, show summary with local data
         }
@@ -311,7 +340,7 @@ export const ExercisePlayerPage: React.FC = () => {
 
     const handleQuit = () => {
         if (window.confirm("Tu veux vraiment quitter ? Ta progression pour cet exercice sera perdue.")) {
-            navigate('/app/student/subjects');
+            navigate(returnPath);
         }
     };
 
@@ -330,8 +359,19 @@ export const ExercisePlayerPage: React.FC = () => {
     if (questionCount === 0 && phase === 'INTRO') return <div className="p-8 text-center">Aucune question trouv&eacute;e pour cette comp&eacute;tence.</div>;
 
     if (phase === 'INTRO') {
+        const breadcrumbItems = [
+            { label: 'Mati\u00e8res', to: '/app/student/subjects' },
+            ...(navState.subjectName && navState.subjectId
+                ? [{ label: navState.subjectName, to: `/app/student/subjects/${navState.subjectId}` }]
+                : []),
+            { label: skillName },
+        ];
+
         return (
             <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center max-w-lg mx-auto">
+                <div className="mb-6 self-start w-full text-left">
+                    <Breadcrumb items={breadcrumbItems} />
+                </div>
                 <div className="w-20 h-20 gradient-hero rounded-3xl flex items-center justify-center text-white mb-6 animate-bounce-in shadow-glow-amber">
                     <Award size={40} />
                 </div>
@@ -340,7 +380,7 @@ export const ExercisePlayerPage: React.FC = () => {
 
                 {effectiveTier === SubscriptionTier.FREE && (
                     <div className="mb-8 text-xs font-bold text-gray-500 bg-gray-100 py-1 px-3 rounded-full inline-block">
-                        Exercice {dailyExerciseCount}/5 (Gratuit)
+                        Exercice {dailyExerciseCount}/{freemiumDailyLimit} (Gratuit)
                     </div>
                 )}
 
@@ -355,6 +395,10 @@ export const ExercisePlayerPage: React.FC = () => {
         const displayTotal = totalQuestions || questionCount || 1;
         const finalPercentage = Math.round((score / displayTotal) * 100);
         const isSuccess = finalPercentage >= 70;
+        const hasSmartScoreDelta = smartScoreBefore !== null && smartScoreAfter !== null;
+        const smartScoreDelta = hasSmartScoreDelta ? smartScoreAfter! - smartScoreBefore! : null;
+        const pointsToMastery = smartScoreAfter !== null ? Math.max(0, 100 - smartScoreAfter) : null;
+        const displayXp = xpEarned ?? xpReward;
 
         return (
             <div className={`min-h-screen flex flex-col items-center justify-center p-6 text-center max-w-lg mx-auto animate-fade-in ${isSuccess ? 'bg-gradient-to-b from-green-50 to-white' : 'bg-white'}`}>
@@ -371,13 +415,13 @@ export const ExercisePlayerPage: React.FC = () => {
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-2 font-display">
                     {isSuccess ? '\ud83c\udf89 Bravo !' : 'Bien jou\u00e9 !'}
                 </h2>
-                <p className="text-gray-500 mb-8">
+                <p className="text-gray-500 mb-4">
                     {isSuccess
-                        ? `Tu as ma\u00eetris\u00e9 cette comp\u00e9tence. Tu gagnes +${xpReward} XP.`
+                        ? `Tu as ma\u00eetris\u00e9 cette comp\u00e9tence. Tu gagnes +${displayXp} XP.`
                         : "Tu as fait quelques erreurs, mais c'est en forgeant qu'on devient forgeron !"}
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 w-full mb-8">
+                <div className="grid grid-cols-2 gap-4 w-full mb-6">
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-2xl">
                         <span className="block text-2xl font-bold text-ilma-primary">{score}/{displayTotal}</span>
                         <span className="text-xs text-gray-400 uppercase font-bold">Score</span>
@@ -388,11 +432,63 @@ export const ExercisePlayerPage: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Progression SmartScore */}
+                {hasSmartScoreDelta && (
+                    <div className="w-full bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-2xl mb-6">
+                        <p className="text-xs text-gray-500 uppercase font-bold mb-2">Ta progression</p>
+                        <div className="flex items-center justify-center gap-2 mb-3">
+                            <span className="text-lg font-bold text-gray-400">{smartScoreBefore}</span>
+                            <ArrowRight size={16} className="text-gray-400" />
+                            <span className="text-lg font-bold text-ilma-primary">{smartScoreAfter}</span>
+                            {smartScoreDelta !== null && smartScoreDelta !== 0 && (
+                                <span className={`text-sm font-bold px-2 py-0.5 rounded-full ${smartScoreDelta > 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                                    {smartScoreDelta > 0 ? '+' : ''}{smartScoreDelta}
+                                </span>
+                            )}
+                        </div>
+                        <div className="w-full bg-gray-200 h-2.5 rounded-full overflow-hidden">
+                            <div
+                                className="h-full rounded-full gradient-xp transition-all duration-1000 ease-out"
+                                style={{ width: `${smartScoreAfter}%` }}
+                            />
+                        </div>
+                        {pointsToMastery !== null && pointsToMastery > 0 && (
+                            <p className="text-xs text-gray-500 mt-2">
+                                Encore {pointsToMastery} point{pointsToMastery > 1 ? 's' : ''} pour ma&icirc;triser cette comp&eacute;tence !
+                            </p>
+                        )}
+                        {pointsToMastery === 0 && (
+                            <p className="text-xs text-green-600 font-bold mt-2">
+                                Comp&eacute;tence ma&icirc;tris&eacute;e !
+                            </p>
+                        )}
+                    </div>
+                )}
+
                 <div className="space-y-3 w-full">
-                    <Button fullWidth onClick={() => navigate('/app/student/dashboard')}>Retour au menu</Button>
+                    <Button fullWidth onClick={() => navigate(returnPath)}>Retour</Button>
                     {!isSuccess && (
                         <Button fullWidth variant={ButtonVariant.SECONDARY} leftIcon={<RotateCcw size={18}/>} onClick={() => window.location.reload()}>R&eacute;essayer</Button>
                     )}
+                    <Button
+                        fullWidth
+                        variant={ButtonVariant.GHOST}
+                        leftIcon={<Share2 size={18}/>}
+                        onClick={() => {
+                            const text = `J'ai obtenu ${finalPercentage}% en ${skillName} sur ILMA ! \ud83c\udfc6 Tu veux essayer ?`;
+                            const url = 'https://ilma.app';
+                            telemetry.logEvent('Exercise', 'Share', skillName, finalPercentage);
+                            if (navigator.share) {
+                                navigator.share({ title: 'Mon score ILMA', text, url }).catch(() => {});
+                            } else {
+                                navigator.clipboard.writeText(`${text} ${url}`).then(() => {
+                                    alert('Score copi\u00e9 dans le presse-papier !');
+                                }).catch(() => {});
+                            }
+                        }}
+                    >
+                        Partager mon score
+                    </Button>
                 </div>
             </div>
         );

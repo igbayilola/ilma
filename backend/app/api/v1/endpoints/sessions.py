@@ -17,8 +17,10 @@ from app.schemas.session import (
     SessionOut,
     SessionStartRequest,
 )
+from app.core.exceptions import AppException
 from app.services.progress_service import progress_service
 from app.services.session_service import session_service
+from app.services.subscription_service import subscription_service
 
 router = APIRouter(prefix="/sessions", tags=["Sessions"])
 
@@ -29,6 +31,15 @@ async def start_session(
     db: AsyncSession = Depends(get_db_session),
     profile: Profile = Depends(get_active_profile),
 ):
+    # Enforce freemium daily limit
+    allowed, remaining = await subscription_service.check_daily_limit(db, profile)
+    if not allowed:
+        raise AppException(
+            status_code=403,
+            code="DAILY_LIMIT_REACHED",
+            message="Tu as atteint ta limite quotidienne d'exercices gratuits. Passe en Premium pour continuer !",
+        )
+
     session = await session_service.start_session(
         db, profile, body.skill_id, body.mode, micro_skill_id=body.micro_skill_id
     )

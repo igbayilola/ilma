@@ -47,12 +47,26 @@ class Settings(BaseSettings):
     TWILIO_AUTH_TOKEN: str = ""
     TWILIO_FROM_NUMBER: str = ""
 
+    # Push Provider (mock | fcm)
+    PUSH_PROVIDER: str = "mock"
+
+    # Notification scheduler
+    NOTIFICATIONS_ENABLED: bool = True
+    NOTIFICATION_MAX_PER_DAY: int = 2
+
     # Payment Providers
     KKIAPAY_PUBLIC_KEY: str = ""
     KKIAPAY_PRIVATE_KEY: str = ""
     KKIAPAY_SECRET: str = ""
     FEDAPAY_API_KEY: str = ""
     FEDAPAY_ENVIRONMENT: str = "sandbox"
+
+    # S3 / Minio
+    S3_ENDPOINT: str = "http://localhost:9000"
+    S3_ACCESS_KEY: str = "ilma_minio"
+    S3_SECRET_KEY: str = "ilma_minio_secret"
+    S3_BUCKET: str = "ilma-packs"
+    S3_REGION: str = "us-east-1"
 
     # CORS
     BACKEND_CORS_ORIGINS: str = '["http://localhost:3000","http://localhost:5173"]'

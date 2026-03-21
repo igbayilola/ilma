@@ -19,8 +19,17 @@ bcrypt==4.0.1
 # Cache
 redis
 
+# Background tasks / scheduler
+apscheduler>=3.10,<4
+
+# SMS (Twilio)
+twilio
+
 # HTTP client (payment providers)
 httpx
+
+# S3 / Minio
+boto3
 
 # PDF generation
 weasyprint

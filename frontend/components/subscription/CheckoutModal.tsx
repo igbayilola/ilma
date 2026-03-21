@@ -6,6 +6,7 @@ import { CheckCircle2, AlertCircle, Smartphone, CreditCard, RefreshCw, ChevronRi
 import { useAuthStore } from '../../store/authStore';
 import { SubscriptionTier } from '../../types';
 import { apiClient } from '../../services/apiClient';
+import { useConfigStore } from '../../store/configStore';
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -15,8 +16,15 @@ interface CheckoutModalProps {
 
 type CheckoutStep = 'SELECT' | 'PROCESSING' | 'SUCCESS' | 'FAILURE';
 
+const PROVIDER_CONFIG: Record<string, { provider: PaymentProvider; label: string; icon: React.ReactNode }> = {
+  kkiapay: { provider: PaymentProvider.KKIAPAY, label: 'KKiaPay', icon: <CreditCard size={20}/> },
+  fedapay: { provider: PaymentProvider.FEDAPAY, label: 'FedaPay', icon: <CreditCard size={20}/> },
+  mtn_momo: { provider: PaymentProvider.MTN_MOMO, label: 'MTN Mobile Money', icon: <Smartphone size={20}/> },
+};
+
 export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, plan }) => {
   const { user } = useAuthStore();
+  const configProviders = useConfigStore(s => s.paymentProviders);
   const [step, setStep] = useState<CheckoutStep>('SELECT');
   const [selectedProvider, setSelectedProvider] = useState<PaymentProvider | null>(null);
   const [errorMsg, setErrorMsg] = useState('');
@@ -106,27 +114,30 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, p
 
             <h4 className="font-bold text-gray-800 mb-3">Moyen de paiement</h4>
             <div className="space-y-3">
-                <ProviderOption 
-                    provider={PaymentProvider.KKIAPAY} 
-                    label="KKiaPay" 
-                    icon={<CreditCard size={20}/>} 
-                    selected={selectedProvider === PaymentProvider.KKIAPAY}
-                    onSelect={() => setSelectedProvider(PaymentProvider.KKIAPAY)}
-                />
-                <ProviderOption 
-                    provider={PaymentProvider.FEDAPAY} 
-                    label="FedaPay" 
-                    icon={<CreditCard size={20}/>} 
-                    selected={selectedProvider === PaymentProvider.FEDAPAY}
-                    onSelect={() => setSelectedProvider(PaymentProvider.FEDAPAY)}
-                />
-                <ProviderOption 
-                    provider={PaymentProvider.MTN_MOMO} 
-                    label="MTN Mobile Money" 
-                    icon={<Smartphone size={20}/>} 
-                    selected={selectedProvider === PaymentProvider.MTN_MOMO}
-                    onSelect={() => setSelectedProvider(PaymentProvider.MTN_MOMO)}
-                />
+                {configProviders.map(key => {
+                    const cfg = PROVIDER_CONFIG[key];
+                    if (!cfg) return null;
+                    return (
+                        <ProviderOption
+                            key={key}
+                            provider={cfg.provider}
+                            label={cfg.label}
+                            icon={cfg.icon}
+                            selected={selectedProvider === cfg.provider}
+                            onSelect={() => setSelectedProvider(cfg.provider)}
+                        />
+                    );
+                })}
+                {/* Always show MTN MoMo if not in configProviders but kkiapay is */}
+                {configProviders.includes('kkiapay') && !configProviders.includes('mtn_momo') && (
+                    <ProviderOption
+                        provider={PaymentProvider.MTN_MOMO}
+                        label="MTN Mobile Money"
+                        icon={<Smartphone size={20}/>}
+                        selected={selectedProvider === PaymentProvider.MTN_MOMO}
+                        onSelect={() => setSelectedProvider(PaymentProvider.MTN_MOMO)}
+                    />
+                )}
             </div>
         </div>
         <div className="mt-4">

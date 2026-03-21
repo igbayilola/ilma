@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthLayout } from '../../components/auth/AuthLayout';
 import { Input } from '../../components/ui/Input';
 import { Button } from '../../components/ui/Button';
 import { useAuthStore } from '../../store/authStore';
-import { User, ShieldCheck, Mail, Lock, Phone, GraduationCap } from 'lucide-react';
+import { Mail, Lock, Phone } from 'lucide-react';
 import { ButtonVariant } from '../../types';
-import { contentService, GradeLevelDTO } from '../../services/contentService';
-
-type RegRole = 'student' | 'parent';
+import { useConfigStore } from '../../store/configStore';
 
 const formatPhone = (value: string): string => {
   // Strip everything except digits and +
@@ -33,11 +31,12 @@ const rawPhone = (value: string): string => {
   return value.replace(/[^\d+]/g, '');
 };
 
-const validatePhone = (phone: string): string | null => {
+const validatePhone = (phone: string, prefixes?: string[]): string | null => {
   const cleaned = phone.replace(/\s/g, '');
   if (!cleaned) return null;
-  const regex = /^\+229(90|91|94|95|96|97)\d{6}$/;
-  if (!regex.test(cleaned)) return 'Format: +229XXXXXXXX (préfixes 90-97)';
+  const pfx = prefixes && prefixes.length > 0 ? prefixes : ['90','91','92','93','94','95','96','97'];
+  const regex = new RegExp('^\\+229(' + pfx.join('|') + ')\\d{6}$');
+  if (!regex.test(cleaned)) return `Format: +229XXXXXXXX (préfixes ${pfx.join(', ')})`;
   return null;
 };
 
@@ -57,20 +56,14 @@ const validateEmail = (email: string): string | null => {
 };
 
 export const RegisterPage: React.FC = () => {
-  const [role, setRole] = useState<RegRole>('student');
   const [usePhone, setUsePhone] = useState(true);
   const [formData, setFormData] = useState({ name: '', identifier: '', password: '', confirmPassword: '' });
-  const [selectedGradeId, setSelectedGradeId] = useState('');
-  const [gradeLevels, setGradeLevels] = useState<GradeLevelDTO[]>([]);
   const [displayIdentifier, setDisplayIdentifier] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const { register, isLoading, error: apiError } = useAuthStore();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    contentService.listGradeLevels().then(setGradeLevels).catch(() => {});
-  }, []);
+  const allowedPhonePrefixes = useConfigStore(s => s.allowedPhonePrefixes);
 
   const validate = (): boolean => {
     const errs: Record<string, string> = {};
@@ -78,7 +71,7 @@ export const RegisterPage: React.FC = () => {
     if (!formData.identifier.trim()) {
       errs.identifier = usePhone ? 'Téléphone requis' : 'Email requis';
     } else if (usePhone) {
-      const phoneErr = validatePhone(formData.identifier);
+      const phoneErr = validatePhone(formData.identifier, allowedPhonePrefixes);
       if (phoneErr) errs.identifier = phoneErr;
     } else {
       const emailErr = validateEmail(formData.identifier);
@@ -107,8 +100,7 @@ export const RegisterPage: React.FC = () => {
         phone: usePhone ? formData.identifier : '',
         password: formData.password,
         name: formData.name,
-        role: role,
-        gradeLevelId: role === 'student' && selectedGradeId ? selectedGradeId : undefined,
+        role: 'parent',
       });
       navigate('/otp', { state: { identifier: formData.identifier, usePhone, password: formData.password } });
     } catch {
@@ -131,51 +123,13 @@ export const RegisterPage: React.FC = () => {
   const strengthLabels = ['', 'Faible', 'Moyen', 'Bon', 'Fort'];
 
   return (
-    <AuthLayout title="Créer un compte" subtitle="Rejoins l'aventure ILMA." backLink="/">
+    <AuthLayout title="Créer un compte" subtitle="Inscrivez-vous pour suivre l'apprentissage de vos enfants." backLink="/">
 
-      {/* Role Switcher */}
-      <div className="flex bg-gray-100 p-1 rounded-xl mb-6">
-        <button
-          type="button"
-          className={`flex-1 flex items-center justify-center py-2.5 rounded-lg text-sm font-bold transition-all ${role === 'student' ? 'bg-white shadow-sm text-ilma-primary' : 'text-gray-500'}`}
-          onClick={() => setRole('student')}
-        >
-          <User size={16} className="mr-2" /> Élève
-        </button>
-        <button
-          type="button"
-          className={`flex-1 flex items-center justify-center py-2.5 rounded-lg text-sm font-bold transition-all ${role === 'parent' ? 'bg-white shadow-sm text-ilma-primary' : 'text-gray-500'}`}
-          onClick={() => setRole('parent')}
-        >
-          <ShieldCheck size={16} className="mr-2" /> Parent
-        </button>
+      <div className="mb-4 p-3 bg-blue-50 rounded-xl">
+        <p className="text-xs text-blue-700 leading-relaxed">
+          Vous pourrez ajouter des profils pour vos enfants (avec leur classe et avatar) après l'inscription.
+        </p>
       </div>
-
-      {/* Grade level selector for students only (parents add children's grades via profiles) */}
-      {role === 'student' && gradeLevels.length > 0 && (
-        <div className="mb-4">
-          <label className="block text-sm font-bold text-gray-700 mb-1.5">
-            <GraduationCap size={16} className="inline mr-1.5 -mt-0.5" />
-            Classe
-          </label>
-          <select
-            value={selectedGradeId}
-            onChange={e => setSelectedGradeId(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm bg-white"
-          >
-            <option value="">— Choisir ta classe —</option>
-            {gradeLevels.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
-          </select>
-        </div>
-      )}
-
-      {role === 'parent' && (
-        <div className="mb-4 p-3 bg-blue-50 rounded-xl">
-          <p className="text-xs text-blue-700 leading-relaxed">
-            Vous pourrez ajouter des profils pour vos enfants (avec leur classe et avatar) après l'inscription.
-          </p>
-        </div>
-      )}
 
       {apiError && (
         <div className="p-3 bg-red-50 text-red-600 text-sm rounded-xl font-medium mb-4 animate-slide-down">
@@ -186,7 +140,7 @@ export const RegisterPage: React.FC = () => {
       <form onSubmit={handleSubmit} className="space-y-4">
         <Input
           label="Nom complet"
-          placeholder={role === 'student' ? "Ton prénom" : "Votre nom"}
+          placeholder="Votre nom"
           value={formData.name}
           onChange={e => setFormData({...formData, name: e.target.value})}
           onBlur={() => handleBlur('name')}
@@ -255,7 +209,7 @@ export const RegisterPage: React.FC = () => {
         <Input
           label="Confirmer le mot de passe"
           type="password"
-          placeholder="Retape ton mot de passe"
+          placeholder="Confirmez le mot de passe"
           leftIcon={<Lock size={18} />}
           value={formData.confirmPassword}
           onChange={e => setFormData({...formData, confirmPassword: e.target.value})}
@@ -264,14 +218,12 @@ export const RegisterPage: React.FC = () => {
           required
         />
 
-        {role === 'parent' && (
-          <label className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl cursor-pointer">
-            <input type="checkbox" required className="mt-1 w-4 h-4 accent-ilma-primary" />
-            <span className="text-xs text-gray-600 leading-relaxed">
-              Je certifie être le parent ou tuteur légal de l'enfant et je consens au traitement de ses données conformément à la politique de confidentialité d'ILMA.
-            </span>
-          </label>
-        )}
+        <label className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl cursor-pointer">
+          <input type="checkbox" required className="mt-1 w-4 h-4 accent-ilma-primary" />
+          <span className="text-xs text-gray-600 leading-relaxed">
+            Je certifie être le parent ou tuteur légal et je consens au traitement des données conformément à la politique de confidentialité d'ILMA.
+          </span>
+        </label>
 
         <div className="pt-2">
           <Button fullWidth type="submit" isLoading={isLoading}>

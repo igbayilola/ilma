@@ -103,6 +103,52 @@ export interface InstalledPack extends ContentPack {
   isUpdateAvailable: boolean;
 }
 
+/** Per-skill micro pack metadata from the API */
+export interface SkillPack {
+  skill_id: string;
+  skill_name: string;
+  skill_slug: string;
+  domain_id: string;
+  domain_name: string;
+  subject_id: string;
+  subject_name: string;
+  questions_count: number;
+  lessons_count: number;
+  estimated_size_bytes: number;
+  version: string | null;
+}
+
+/** Full per-skill content pack (downloaded JSON) */
+export interface SkillPackData {
+  skill_id: string;
+  skill_name: string;
+  skill_slug: string;
+  domain_id: string | null;
+  domain_name: string | null;
+  subject_id: string | null;
+  subject_name: string | null;
+  micro_skills: any[];
+  questions: any[];
+  lessons: any[];
+  checksum: string;
+  generated_at: string;
+}
+
+/** Installed skill pack tracked in IndexedDB */
+export interface InstalledSkillPack {
+  skillId: string;
+  skillName: string;
+  subjectName: string;
+  domainName: string;
+  questionsCount: number;
+  lessonsCount: number;
+  sizeBytes: number;
+  checksum: string;
+  version: string;
+  installedAt: number;
+  lastUsedAt: number;
+}
+
 export interface StorageStats {
   used: number;
   quota: number;

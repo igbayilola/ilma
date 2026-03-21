@@ -21,7 +21,7 @@ class UserCreate(UserBase):
     password: str
     full_name: Optional[str] = None
     phone: Optional[str] = None
-    role: Optional[UserRole] = UserRole.STUDENT
+    role: Optional[UserRole] = UserRole.PARENT
     grade_level_id: Optional[uuid.UUID] = None
 
 

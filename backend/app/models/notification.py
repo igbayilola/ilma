@@ -24,6 +24,14 @@ class NotificationChannel(str, enum.Enum):
     PUSH = "push"
 
 
+class NotificationStatus(str, enum.Enum):
+    PENDING = "pending"
+    SENT = "sent"
+    DELIVERED = "delivered"
+    FAILED = "failed"
+    OPENED = "opened"
+
+
 class Notification(Base, BaseMixin):
     __tablename__ = "notifications"
 
@@ -35,5 +43,11 @@ class Notification(Base, BaseMixin):
     data = Column(JSONB, nullable=True)
     is_read = Column(Boolean, default=False, nullable=False)
     read_at = Column(DateTime(timezone=True), nullable=True)
+
+    # Delivery tracking
+    status = Column(String(20), default="pending", nullable=False, index=True)
+    sent_at = Column(DateTime(timezone=True), nullable=True)
+    delivered_at = Column(DateTime(timezone=True), nullable=True)
+    error_message = Column(Text, nullable=True)
 
     user = relationship("User", back_populates="notifications")

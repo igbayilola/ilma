@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { CheckoutModal } from '../../components/subscription/CheckoutModal';
@@ -7,6 +7,7 @@ import { Check, Star, Crown, ShieldCheck, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { apiClient } from '../../services/apiClient';
 import { useAuthStore } from '../../store/authStore';
+import { useConfigStore } from '../../store/configStore';
 
 const FALLBACK_PLANS: Plan[] = [
     {
@@ -66,6 +67,13 @@ function mapBackendPlan(p: any, index: number): Plan {
 export const PlansPage: React.FC = () => {
     const navigate = useNavigate();
     const { profiles, activeProfile, selectProfile } = useAuthStore();
+    const monthlyPriceXof = useConfigStore(s => s.monthlyPriceXof);
+
+    // Build fallback plans with dynamic monthly price (memoized)
+    const dynamicFallbackPlans = useMemo<Plan[]>(() =>
+        FALLBACK_PLANS.map(p => p.id === 'monthly' ? { ...p, price: monthlyPriceXof } : p),
+        [monthlyPriceXof]
+    );
     const [plans, setPlans] = useState<Plan[]>(FALLBACK_PLANS);
     const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
     const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -82,9 +90,10 @@ export const PlansPage: React.FC = () => {
                 }
             })
             .catch(() => {
-                // Keep fallback plans on error
+                // Keep fallback plans with dynamic price on error
+                setPlans(dynamicFallbackPlans);
             });
-    }, []);
+    }, [dynamicFallbackPlans]);
 
     // Auto-select first beneficiary if none selected
     useEffect(() => {

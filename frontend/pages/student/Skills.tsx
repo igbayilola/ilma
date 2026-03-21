@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Drawer } from '../../components/ui/Drawer';
 import { Skeleton } from '../../components/ui/Skeleton';
 import { SkillItem } from '../../components/ilma/SkillItem';
 import { ButtonVariant, type SkillWithProgress } from '../../types';
-import { ArrowLeft, Filter, Search } from 'lucide-react';
-import { contentService } from '../../services/contentService';
+import { Filter, Search } from 'lucide-react';
+import { Breadcrumb } from '../../components/ui/Breadcrumb';
+import { contentService, SubjectDTO, DomainDTO } from '../../services/contentService';
 import { progressService, SkillProgressDTO } from '../../services/progressService';
 
 type FilterType = 'all' | 'todo' | 'mastered';
@@ -32,13 +33,19 @@ export const SkillsPage: React.FC = () => {
   const [skills, setSkills] = useState<SkillWithProgress[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [subject, setSubject] = useState<SubjectDTO | null>(null);
+  const [domain, setDomain] = useState<DomainDTO | null>(null);
 
   useEffect(() => {
     if (!subjectId || !domainId) return;
     Promise.all([
       contentService.listSkills(subjectId, domainId),
       progressService.getSkillsProgress().catch(() => [] as SkillProgressDTO[]),
-    ]).then(([skillList, progressList]) => {
+      contentService.getSubject(subjectId).catch(() => null),
+      contentService.getDomain(subjectId, domainId).catch(() => null),
+    ]).then(([skillList, progressList, subjectData, domainData]) => {
+      setSubject(subjectData);
+      setDomain(domainData);
       const progressMap = new Map(progressList.map(p => [p.skillId, p]));
       const merged: SkillWithProgress[] = skillList.map(sk => {
         const prog = progressMap.get(sk.id);
@@ -95,9 +102,11 @@ export const SkillsPage: React.FC = () => {
     <div className="flex flex-col h-full md:flex-row md:space-x-8">
       <aside className="hidden md:block w-64 flex-shrink-0">
          <div className="sticky top-24 space-y-6">
-             <Link to={`/app/student/subjects/${subjectId}`} className="flex items-center text-sm font-bold text-gray-500 hover:text-ilma-primary mb-6">
-                <ArrowLeft size={16} className="mr-1" /> Retour au domaine
-             </Link>
+             <Breadcrumb items={[
+               { label: 'Mati\u00e8res', to: '/app/student/subjects' },
+               { label: subject?.name || '...', to: `/app/student/subjects/${subjectId}` },
+               { label: domain?.name || 'Comp\u00e9tences' },
+             ]} />
              <Card className="clay-card"><FilterContent /></Card>
          </div>
       </aside>
@@ -105,13 +114,15 @@ export const SkillsPage: React.FC = () => {
       <div className="flex-1 space-y-6">
         <header className="flex flex-col space-y-4">
             <div className="md:hidden">
-                <Link to={`/app/student/subjects/${subjectId}`} className="flex items-center text-sm font-bold text-gray-500 hover:text-ilma-primary">
-                    <ArrowLeft size={16} className="mr-1" /> Retour
-                </Link>
+                <Breadcrumb items={[
+                  { label: 'Mati\u00e8res', to: '/app/student/subjects' },
+                  { label: subject?.name || '...', to: `/app/student/subjects/${subjectId}` },
+                  { label: domain?.name || 'Comp\u00e9tences' },
+                ]} />
             </div>
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-center flex-wrap gap-2">
-                  <h1 className="text-2xl font-extrabold text-gray-900 font-display">Comp&eacute;tences</h1>
+                  <h1 className="text-2xl font-extrabold text-gray-900 font-display">{domain?.name || 'Comp\u00e9tences'}</h1>
                   <span className="text-xs font-medium bg-amber-50 text-amber-600 px-2 py-0.5 rounded-full">
                     {skills.length} compétence{skills.length !== 1 ? 's' : ''}
                   </span>
@@ -139,7 +150,14 @@ export const SkillsPage: React.FC = () => {
               <SkillItem
                 key={skill.id}
                 skill={skill}
-                onClick={(id) => navigate(`/app/student/exercise/${id}`)}
+                onClick={(id) => navigate(`/app/student/exercise/${id}`, {
+                  state: {
+                    returnPath: `/app/student/subjects/${subjectId}/domains/${domainId}`,
+                    subjectId,
+                    subjectName: subject?.name,
+                    domainName: domain?.name,
+                  },
+                })}
               />
             ))}
           </div>

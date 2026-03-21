@@ -2,8 +2,9 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Card } from '../../components/ui/Cards';
 import { Skeleton } from '../../components/ui/Skeleton';
-import { ArrowLeft, ChevronDown, ChevronUp, ChevronRight } from 'lucide-react';
-import { contentService, DomainDTO } from '../../services/contentService';
+import { ChevronDown, ChevronUp, ChevronRight } from 'lucide-react';
+import { Breadcrumb } from '../../components/ui/Breadcrumb';
+import { contentService, DomainDTO, SubjectDTO } from '../../services/contentService';
 import { progressService, SkillProgressDTO } from '../../services/progressService';
 import type { SkillWithProgress } from '../../types';
 
@@ -20,6 +21,7 @@ export const DomainsPage: React.FC = () => {
   const [allSkills, setAllSkills] = useState<SkillWithProgress[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [expandedDomain, setExpandedDomain] = useState<string | null>(null);
+  const [subject, setSubject] = useState<SubjectDTO | null>(null);
 
   useEffect(() => {
     if (!subjectId) return;
@@ -30,7 +32,9 @@ export const DomainsPage: React.FC = () => {
       contentService.listDomains(subjectId),
       contentService.listSkills(subjectId),
       progressService.getSkillsProgress().catch(() => [] as SkillProgressDTO[]),
-    ]).then(([domainList, skillList, progressList]) => {
+      contentService.getSubject(subjectId).catch(() => null),
+    ]).then(([domainList, skillList, progressList, subjectData]) => {
+      setSubject(subjectData);
       const progressMap = new Map(progressList.map(p => [p.skillId, p]));
       const merged: SkillWithProgress[] = skillList.map(sk => {
         const prog = progressMap.get(sk.id);
@@ -86,11 +90,12 @@ export const DomainsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       <header className="flex flex-col space-y-4">
-        <Link to="/app/student/subjects" className="inline-flex items-center text-sm font-bold text-gray-500 hover:text-ilma-primary transition-colors">
-          <ArrowLeft size={16} className="mr-1" /> Retour aux mati&egrave;res
-        </Link>
+        <Breadcrumb items={[
+          { label: 'Mati\u00e8res', to: '/app/student/subjects' },
+          { label: subject?.name || 'Domaines' },
+        ]} />
         <div className="flex items-center justify-between flex-wrap gap-2">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 font-display">Domaines</h1>
+          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 font-display">{subject?.name || 'Domaines'}</h1>
           <div className="flex items-center space-x-2">
             <span className="text-sm font-bold bg-amber-50 text-amber-700 px-3 py-1 rounded-full">
               &#128221; {totalSkills} comp&eacute;tences
@@ -155,6 +160,7 @@ export const DomainsPage: React.FC = () => {
                         <Link
                           key={skill.id}
                           to={`/app/student/exercise/${skill.id}`}
+                          state={{ returnPath: `/app/student/subjects/${subjectId}`, subjectId, subjectName: subject?.name }}
                           className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-amber-50 transition-colors"
                         >
                           <div className="flex items-center gap-2">

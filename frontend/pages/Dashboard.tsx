@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Card, Badge } from '../components/ui/Cards';
 import { Button } from '../components/ui/Button';
 import { Skeleton } from '../components/ui/Skeleton';
 import { StreakWidget } from '../components/ilma/Gamification';
 import { useAuthStore } from '../store/authStore';
-import { contentService, SubjectDTO } from '../services/contentService';
+import { useAppStore } from '../store';
+import { contentService, SubjectDTO, SkillDTO } from '../services/contentService';
 import { progressService, SkillProgressDTO } from '../services/progressService';
-import { Play, Zap, Trophy, Download, Book, Calculator, FlaskConical, Globe, BookOpen, PlayCircle } from 'lucide-react';
+import { Play, Zap, Trophy, Download, Book, Calculator, FlaskConical, Globe, BookOpen, PlayCircle, Flame, Clock, Sprout } from 'lucide-react';
 import { ButtonVariant } from '../types';
 
 const ICON_COMPONENTS: Record<string, React.ReactNode> = {
@@ -62,28 +63,170 @@ function buildDynamicChallenge(skills: SkillProgressDTO[]): { title: string; des
   };
 }
 
+/** Returns hours and minutes remaining until midnight (local time). */
+export function useTimeUntilMidnight() {
+  const [remaining, setRemaining] = useState(() => calcRemaining());
+
+  function calcRemaining() {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+    const diffMs = midnight.getTime() - now.getTime();
+    const hours = Math.floor(diffMs / (1000 * 60 * 60));
+    const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+    return { hours, minutes };
+  }
+
+  useEffect(() => {
+    const timer = setInterval(() => setRemaining(calcRemaining()), 60_000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return remaining;
+}
+
+/** Streak reminder card — replaces the old "Reprendre" section. */
+export const StreakReminderCard: React.FC<{
+  streak: number;
+  hasPlayedToday: boolean;
+  lastActivity: { skillId: string; skillName: string; subjectId?: string; subjectName?: string } | null;
+}> = ({ streak, hasPlayedToday, lastActivity }) => {
+  const navigate = useNavigate();
+  const { hours, minutes } = useTimeUntilMidnight();
+
+  const handlePlay = () => {
+    if (lastActivity) {
+      navigate(`/app/student/exercise/${lastActivity.skillId}`, {
+        state: {
+          returnPath: '/app/student/dashboard',
+          subjectId: lastActivity.subjectId,
+          subjectName: lastActivity.subjectName,
+        },
+      });
+    } else {
+      navigate('/app/student/subjects');
+    }
+  };
+
+  // Already played today — positive reinforcement
+  if (hasPlayedToday && streak > 0) {
+    return (
+      <div className="clay-card p-4 flex items-center justify-between bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
+            <Flame size={20} className="text-green-600 fill-green-600" />
+          </div>
+          <div>
+            <p className="font-bold text-sm text-green-800">
+              S&eacute;rie : {streak} jour{streak > 1 ? 's' : ''} !
+            </p>
+            <p className="text-xs text-green-600">
+              Bravo ! Tu as jou&eacute; aujourd'hui. Continue demain !
+            </p>
+          </div>
+        </div>
+        <button
+          onClick={handlePlay}
+          className="px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-lg shadow-sm hover:bg-green-700 transition-colors"
+        >
+          Rejouer &rarr;
+        </button>
+      </div>
+    );
+  }
+
+  // Streak active but hasn't played today — urgency
+  if (streak > 0) {
+    return (
+      <div className="clay-card p-4 bg-gradient-to-r from-orange-50 to-amber-50 border-orange-200">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
+              <Flame size={20} className="text-ilma-orange fill-ilma-orange animate-wiggle" />
+            </div>
+            <div>
+              <p className="font-bold text-sm text-gray-800">
+                S&eacute;rie : {streak} jour{streak > 1 ? 's' : ''} !
+              </p>
+              <p className="text-xs text-gray-600">
+                Joue aujourd'hui pour ne pas perdre ta s&eacute;rie !
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={handlePlay}
+            className="px-4 py-2 gradient-hero text-white text-sm font-bold rounded-lg shadow-sm"
+          >
+            Jouer &rarr;
+          </button>
+        </div>
+        <div className="flex items-center gap-1 mt-3 text-xs text-orange-600 font-medium">
+          <Clock size={14} />
+          <span>Il te reste {hours}h{String(minutes).padStart(2, '0')} avant minuit</span>
+        </div>
+      </div>
+    );
+  }
+
+  // No streak — encourage starting a new one
+  return (
+    <div className="clay-card p-4 flex items-center justify-between bg-gradient-to-r from-sky-50 to-indigo-50 border-sky-200">
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center">
+          <Sprout size={20} className="text-sky-600" />
+        </div>
+        <div>
+          <p className="font-bold text-sm text-gray-800">
+            Commence une nouvelle s&eacute;rie !
+          </p>
+          <p className="text-xs text-gray-500">
+            1 exercice = 1 jour de s&eacute;rie
+          </p>
+        </div>
+      </div>
+      <button
+        onClick={handlePlay}
+        className="px-4 py-2 gradient-hero text-white text-sm font-bold rounded-lg shadow-sm"
+      >
+        C'est parti &rarr;
+      </button>
+    </div>
+  );
+};
+
 export const Dashboard: React.FC = () => {
   const { user, activeProfile } = useAuthStore();
   const displayName = activeProfile?.displayName || user?.name;
   const displayAvatar = activeProfile?.avatarUrl || user?.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.id}`;
   const gradeLevelId = activeProfile?.gradeLevelId || user?.gradeLevelId;
   const navigate = useNavigate();
+  const lastActivity = useAppStore(s => s.lastActivity);
+  const dailyExerciseCount = useAppStore(s => s.dailyExerciseCount);
   const [isLoading, setIsLoading] = useState(true);
   const [subjects, setSubjects] = useState<SubjectDTO[]>([]);
+  const [skillsBySubject, setSkillsBySubject] = useState<Map<string, SkillDTO[]>>(new Map());
+  const [skillsProgress, setSkillsProgress] = useState<SkillProgressDTO[]>([]);
   const [todayChallenge, setTodayChallenge] = useState(STATIC_CHALLENGES[new Date().getDay()]);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [subjectsData] = await Promise.all([
-          contentService.listSubjects(gradeLevelId).catch(() => [] as SubjectDTO[]),
-        ]);
+        const subjectsData = await contentService.listSubjects(gradeLevelId).catch(() => [] as SubjectDTO[]);
         setSubjects(subjectsData);
+
+        // Load all skills per subject (for progress bars)
+        const skillsMap = new Map<string, SkillDTO[]>();
+        const skillsLists = await Promise.all(
+          subjectsData.map(s => contentService.listSkills(s.id).catch(() => [] as SkillDTO[]))
+        );
+        subjectsData.forEach((s, i) => skillsMap.set(s.id, skillsLists[i]));
+        setSkillsBySubject(skillsMap);
 
         // Try to build a dynamic challenge from progress data
         try {
-          const skills = await progressService.getSkillsProgress();
-          const dynamic = buildDynamicChallenge(skills);
+          const progress = await progressService.getSkillsProgress();
+          setSkillsProgress(progress);
+          const dynamic = buildDynamicChallenge(progress);
           if (dynamic) setTodayChallenge(dynamic);
         } catch {
           // Keep static fallback
@@ -183,23 +326,12 @@ export const Dashboard: React.FC = () => {
         </Card>
       </div>
 
-      {/* 2b. Reprendre Section */}
-      <div className="clay-card p-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-ilma-primary-light flex items-center justify-center">
-            <PlayCircle size={20} className="text-ilma-primary" />
-          </div>
-          <div>
-            <p className="font-bold text-sm text-gray-800">Reprendre</p>
-            <p className="text-xs text-gray-500">Continue tes exercices</p>
-          </div>
-        </div>
-        <Link to="/app/student/subjects">
-          <button className="px-4 py-2 gradient-hero text-white text-sm font-bold rounded-lg shadow-sm">
-            Continuer →
-          </button>
-        </Link>
-      </div>
+      {/* 2b. Streak Reminder — replaces the old "Reprendre" section */}
+      <StreakReminderCard
+        streak={user?.streak || 0}
+        hasPlayedToday={dailyExerciseCount > 0}
+        lastActivity={lastActivity}
+      />
 
       {/* 3. Subjects Grid */}
       <section>
@@ -210,7 +342,14 @@ export const Dashboard: React.FC = () => {
           </div>
 
           <div className="bento-grid">
-              {subjects.map(subject => (
+              {subjects.map(subject => {
+                  const subjectSkills = skillsBySubject.get(subject.id) || [];
+                  const progressMap = new Map(skillsProgress.map(p => [p.skillId, p]));
+                  const totalSkills = subjectSkills.length;
+                  const scoreSum = subjectSkills.reduce((acc, sk) => acc + (progressMap.get(sk.id)?.score || 0), 0);
+                  const avgProgress = totalSkills > 0 ? Math.round(scoreSum / totalSkills) : 0;
+
+                  return (
                   <Card key={subject.id} interactive onClick={() => navigate(`/app/student/subjects/${subject.id}`)} className={`flex flex-col hover:border-ilma-primary transition-all duration-300 group relative overflow-hidden ${GRADIENT_TOP_MAP[subject.slug] || 'card-gradient-top-blue'}`}>
                       <div className="flex items-start justify-between mb-4 relative z-10">
                           <div className={`w-12 h-12 flex items-center justify-center rounded-2xl ${subject.color} ${subject.textColor} group-hover:scale-110 transition-transform`}>
@@ -219,15 +358,31 @@ export const Dashboard: React.FC = () => {
                       </div>
 
                       <h4 className="text-lg font-bold text-gray-800 mb-1 group-hover:text-ilma-primary transition-colors relative z-10 font-display">{subject.emoji} {subject.name}</h4>
-                      <p className="text-xs text-gray-500 mb-5 relative z-10 font-medium">
+                      <p className="text-xs text-gray-500 mb-3 relative z-10 font-medium">
                           {subject.description || 'Exercices et le\u00e7ons'}
                       </p>
+
+                      {totalSkills > 0 && (
+                          <div className="relative z-10 mb-3">
+                              <div className="flex items-center justify-between text-xs mb-1">
+                                  <span className="font-medium text-gray-500">Progression</span>
+                                  <span className="font-bold text-gray-700">{avgProgress}%</span>
+                              </div>
+                              <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                  <div
+                                      className="h-full rounded-full transition-all duration-500 gradient-xp"
+                                      style={{ width: `${avgProgress}%` }}
+                                  />
+                              </div>
+                          </div>
+                      )}
 
                       <Button fullWidth variant={ButtonVariant.SECONDARY} className="mt-auto group-hover:bg-ilma-primary group-hover:text-white transition-colors relative z-10 border-0 bg-gray-50">
                           Commencer
                       </Button>
                   </Card>
-              ))}
+                  );
+              })}
           </div>
       </section>
     </div>

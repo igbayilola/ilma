@@ -12,6 +12,7 @@ from app.api.v1.endpoints import (
     profiles,
     progress,
     sessions,
+    social,
     subscriptions,
 )
 
@@ -43,6 +44,9 @@ api_router.include_router(offline.router)
 
 # Subscriptions + payments
 api_router.include_router(subscriptions.router)
+
+# Social (leaderboard + challenges)
+api_router.include_router(social.router)
 
 # Notifications
 api_router.include_router(notifications.router)

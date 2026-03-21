@@ -23,10 +23,16 @@ services:
       - DATABASE_URL=postgresql+asyncpg://ilma_user:ilma_password@db:5432/ilma_db
       - SECRET_KEY=change-me-in-production
       - BACKEND_CORS_ORIGINS=["http://localhost:3000","http://localhost:5173"]
+      - S3_ENDPOINT=http://minio:9000
+      - S3_ACCESS_KEY=ilma_minio
+      - S3_SECRET_KEY=ilma_minio_secret
+      - S3_BUCKET=ilma-packs
     depends_on:
       db:
         condition: service_healthy
       redis:
+        condition: service_healthy
+      minio:
         condition: service_healthy
     restart: unless-stopped
 
@@ -60,5 +66,40 @@ services:
       timeout: 3s
       retries: 5
 
+  # ── Minio (S3-compatible object storage) ──
+  minio:
+    image: minio/minio:latest
+    container_name: ilma-minio
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: ilma_minio
+      MINIO_ROOT_PASSWORD: ilma_minio_secret
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ── Minio init (create bucket) ──
+  minio-init:
+    image: minio/mc:latest
+    container_name: ilma-minio-init
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set ilma http://minio:9000 ilma_minio ilma_minio_secret;
+      mc mb --ignore-existing ilma/ilma-packs;
+      mc anonymous set download ilma/ilma-packs;
+      exit 0;
+      "
+
 volumes:
   pgdata:
+  miniodata:

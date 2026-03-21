@@ -7,6 +7,31 @@ import { apiClient } from './services/apiClient';
 
 // --- Freemium daily exercise counter (localStorage-backed, works offline) ---
 const DAILY_EXERCISES_KEY = 'ilma_daily_exercises';
+const LAST_ACTIVITY_KEY = 'ilma_last_activity';
+
+export interface LastActivity {
+  skillId: string;
+  skillName: string;
+  subjectId?: string;
+  subjectName?: string;
+}
+
+const getStoredLastActivity = (): LastActivity | null => {
+  try {
+    const stored = localStorage.getItem(LAST_ACTIVITY_KEY);
+    return stored ? JSON.parse(stored) : null;
+  } catch { return null; }
+};
+
+const storeLastActivity = (activity: LastActivity | null): void => {
+  try {
+    if (activity) {
+      localStorage.setItem(LAST_ACTIVITY_KEY, JSON.stringify(activity));
+    } else {
+      localStorage.removeItem(LAST_ACTIVITY_KEY);
+    }
+  } catch { /* ignore */ }
+};
 
 const getDailyCount = (): number => {
   const today = new Date().toISOString().split('T')[0];
@@ -56,6 +81,10 @@ interface AppState {
   incrementDailyExercise: () => void;
   resetDailyExercise: () => void;
 
+  // Last Activity (resume feature)
+  lastActivity: LastActivity | null;
+  setLastActivity: (activity: LastActivity | null) => void;
+
   // Notifications
   notifications: AppNotification[];
   fetchNotifications: () => Promise<void>;
@@ -91,6 +120,13 @@ export const useAppStore = create<AppState>((set) => ({
     set({ dailyExerciseCount: 0 });
   },
   
+  // Last Activity
+  lastActivity: getStoredLastActivity(),
+  setLastActivity: (activity) => {
+    storeLastActivity(activity);
+    set({ lastActivity: activity });
+  },
+
   // Notifications
   notifications: [],
   fetchNotifications: async () => {

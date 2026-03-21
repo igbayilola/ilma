@@ -2,11 +2,12 @@
 import uuid
 from datetime import datetime, timedelta, timezone
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import NotFoundException
 from app.models.profile import Profile
+from app.models.session import ExerciseSession, SessionStatus
 from app.models.subscription import (
     Payment,
     PaymentProvider,
@@ -17,6 +18,7 @@ from app.models.subscription import (
     SubscriptionStatus,
 )
 from app.models.user import User
+from app.services.config_service import config_service
 from app.services.payment_providers import get_payment_provider
 
 
@@ -152,6 +154,26 @@ class SubscriptionService:
 
         await db.flush()
         return True
+
+    async def check_daily_limit(self, db: AsyncSession, profile: Profile) -> tuple[bool, int]:
+        """Check if a FREE profile has exceeded the daily exercise limit.
+        Returns (allowed: bool, remaining: int).
+        """
+        tier = await self.get_active_tier(db, profile)
+        if tier != PlanTier.FREE:
+            return True, -1  # Unlimited for paid users
+
+        limit = await config_service.get(db, "freemium_daily_limit")
+        today_start = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+        result = await db.execute(
+            select(func.count(ExerciseSession.id)).where(
+                ExerciseSession.profile_id == profile.id,
+                ExerciseSession.started_at >= today_start,
+            )
+        )
+        count = result.scalar() or 0
+        remaining = max(0, limit - count)
+        return count < limit, remaining
 
     async def _activate_subscription(
         self,

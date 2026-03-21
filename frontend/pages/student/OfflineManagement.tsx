@@ -3,10 +3,11 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Card, Badge } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Modal } from '../../components/ui/Modal';
-import { ButtonVariant } from '../../types';
+import { ButtonVariant, SkillPack, InstalledSkillPack } from '../../types';
 import { useOfflineStore } from '../../store/offlineStore';
 import { AVAILABLE_PACKS, offlineManager } from '../../services/offlineManager';
-import { Cloud, Download, Trash2, Database, AlertCircle, CheckCircle2, RefreshCw, HardDrive } from 'lucide-react';
+import { skillOfflineManager } from '../../services/skillOfflineManager';
+import { Cloud, Download, Trash2, Database, AlertCircle, CheckCircle2, RefreshCw, HardDrive, BookOpen } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const formatBytes = (bytes: number, decimals = 2) => {
@@ -68,12 +69,40 @@ export const OfflineManagementPage: React.FC = () => {
 
     const [availablePacks, setAvailablePacks] = useState(AVAILABLE_PACKS);
 
+    // Per-skill packs state
+    const [skillPacks, setSkillPacks] = useState<SkillPack[]>([]);
+    const [installedSkillPacks, setInstalledSkillPacks] = useState<InstalledSkillPack[]>([]);
+    const [downloadingSkillId, setDownloadingSkillId] = useState<string | null>(null);
+    const [skillDownloadProgress, setSkillDownloadProgress] = useState(0);
+
     useEffect(() => {
         offlineManager.fetchAvailablePacks().then(packs => {
             setAvailablePacks(packs);
         });
+        skillOfflineManager.fetchAvailableSkillPacks().then(setSkillPacks).catch(() => {});
+        skillOfflineManager.getInstalledSkillPacks().then(setInstalledSkillPacks).catch(() => {});
         refreshData();
     }, [refreshData]);
+
+    const handleDownloadSkill = async (skillId: string) => {
+        setDownloadingSkillId(skillId);
+        setSkillDownloadProgress(0);
+        try {
+            await skillOfflineManager.downloadSkillPack(skillId, setSkillDownloadProgress);
+            const updated = await skillOfflineManager.getInstalledSkillPacks();
+            setInstalledSkillPacks(updated);
+        } catch {
+            // error handled silently
+        } finally {
+            setDownloadingSkillId(null);
+        }
+    };
+
+    const handleDeleteSkill = async (skillId: string) => {
+        await skillOfflineManager.deleteSkillPack(skillId);
+        const updated = await skillOfflineManager.getInstalledSkillPacks();
+        setInstalledSkillPacks(updated);
+    };
 
     // Check if storage is above 80% and suggest cleanup
     useEffect(() => {
@@ -232,6 +261,72 @@ export const OfflineManagementPage: React.FC = () => {
                 })}
             </div>
             
+            {/* Per-Skill Packs */}
+            {skillPacks.length > 0 && (
+                <>
+                    <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2 mt-4">
+                        <BookOpen size={20} className="text-ilma-primary" />
+                        Packs par compétence
+                    </h2>
+                    <p className="text-sm text-gray-500 -mt-4">Téléchargez uniquement les compétences dont vous avez besoin.</p>
+
+                    {/* Group by subject */}
+                    {(() => {
+                        const bySubject: Record<string, SkillPack[]> = {};
+                        for (const sp of skillPacks) {
+                            (bySubject[sp.subject_name] ??= []).push(sp);
+                        }
+                        const installedSet = new Set(installedSkillPacks.map(p => p.skillId));
+                        return Object.entries(bySubject).map(([subject, skills]) => (
+                            <div key={subject}>
+                                <h3 className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-2">{subject}</h3>
+                                <div className="grid grid-cols-1 gap-2">
+                                    {skills.map(sp => {
+                                        const isInstalled = installedSet.has(sp.skill_id);
+                                        const isDownloading = downloadingSkillId === sp.skill_id;
+                                        return (
+                                            <div key={sp.skill_id} className="flex items-center p-3 bg-white rounded-xl border border-gray-100">
+                                                <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 ${isInstalled ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-400'}`}>
+                                                    {isInstalled ? <CheckCircle2 size={16} /> : <BookOpen size={16} />}
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <p className="font-medium text-sm text-gray-800 truncate">{sp.skill_name}</p>
+                                                    <p className="text-xs text-gray-400">{sp.domain_name} — {sp.questions_count} questions, {sp.lessons_count} leçons — {formatBytes(sp.estimated_size_bytes)}</p>
+                                                </div>
+                                                <div className="ml-2 flex-shrink-0">
+                                                    {isDownloading ? (
+                                                        <div className="w-20">
+                                                            <div className="w-full bg-gray-100 rounded-full h-1.5">
+                                                                <div className="bg-ilma-primary h-full rounded-full transition-all" style={{ width: `${skillDownloadProgress}%` }} />
+                                                            </div>
+                                                        </div>
+                                                    ) : isInstalled ? (
+                                                        <button
+                                                            onClick={() => { if (confirm('Supprimer ce pack ?')) handleDeleteSkill(sp.skill_id); }}
+                                                            className="text-red-400 hover:text-red-600 p-1"
+                                                        >
+                                                            <Trash2 size={14} />
+                                                        </button>
+                                                    ) : (
+                                                        <button
+                                                            onClick={() => handleDownloadSkill(sp.skill_id)}
+                                                            disabled={!!downloadingSkillId}
+                                                            className="text-ilma-primary hover:text-ilma-primary-dark p-1 disabled:opacity-30"
+                                                        >
+                                                            <Download size={16} />
+                                                        </button>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        ));
+                    })()}
+                </>
+            )}
+
             <div className="bg-amber-50 p-4 rounded-xl flex items-start">
                 <AlertCircle className="text-amber-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
                 <p className="text-sm text-amber-800">

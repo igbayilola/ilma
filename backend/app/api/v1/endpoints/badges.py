@@ -23,6 +23,16 @@ async def my_badges(
     return ok(data=badges)
 
 
+@router.get("/students/me/badges/collection")
+async def my_badge_collection(
+    db: AsyncSession = Depends(get_db_session),
+    profile: Profile = Depends(get_active_profile),
+):
+    """All badges with earned/locked status for the collection page."""
+    badges = await badge_service.get_all_badges_with_status(db, profile.id)
+    return ok(data=badges)
+
+
 @router.get("/students/{profile_id}/badges")
 async def student_badges(
     profile_id: UUID,

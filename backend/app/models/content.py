@@ -1,7 +1,7 @@
 """Educational content hierarchy: GradeLevel → Subject → Domain/Chapter → Skill → MicroSkill → Question / Lesson."""
 import enum
 
-from sqlalchemy import Boolean, Column, Enum, ForeignKey, Integer, String, Text, UniqueConstraint
+from sqlalchemy import Boolean, Column, DateTime, Enum, ForeignKey, Integer, String, Text, UniqueConstraint, func
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import relationship
 
@@ -13,6 +13,13 @@ class DifficultyLevel(str, enum.Enum):
     EASY = "easy"
     MEDIUM = "medium"
     HARD = "hard"
+
+
+class ContentStatus(str, enum.Enum):
+    DRAFT = "draft"
+    IN_REVIEW = "in_review"
+    PUBLISHED = "published"
+    ARCHIVED = "archived"
 
 
 class QuestionType(str, enum.Enum):
@@ -145,9 +152,25 @@ class Question(Base, BaseMixin):
     tags = Column(JSONB, nullable=True)
     common_mistake_targeted = Column(Text, nullable=True)
     is_active = Column(Boolean, default=True, nullable=False)
+    status = Column(Enum(ContentStatus, values_callable=lambda e: [x.value for x in e]), nullable=False, default=ContentStatus.PUBLISHED)
+    reviewer_notes = Column(Text, nullable=True)
+    version = Column(Integer, default=1, nullable=False)
 
     skill = relationship("Skill", back_populates="questions")
     micro_skill = relationship("MicroSkill", back_populates="questions")
+    comments = relationship("QuestionComment", back_populates="question", order_by="QuestionComment.created_at", cascade="all, delete-orphan", passive_deletes=True)
+
+
+class QuestionComment(Base, BaseMixin):
+    """Inline comment on a question for the editorial workflow."""
+    __tablename__ = "question_comments"
+
+    question_id = Column(UUID(as_uuid=True), ForeignKey("questions.id", ondelete="CASCADE"), nullable=False, index=True)
+    author_id = Column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True)
+    text = Column(Text, nullable=False)
+
+    question = relationship("Question", back_populates="comments")
+    author = relationship("User", lazy="selectin")
 
 
 class MicroLesson(Base, BaseMixin):
@@ -162,6 +185,21 @@ class MicroLesson(Base, BaseMixin):
     duration_minutes = Column(Integer, default=5, nullable=False)
     order = Column(Integer, default=0, nullable=False)
     is_active = Column(Boolean, default=True, nullable=False)
+    status = Column(Enum(ContentStatus, values_callable=lambda e: [x.value for x in e]), nullable=False, default=ContentStatus.PUBLISHED)
+    reviewer_notes = Column(Text, nullable=True)
+    version = Column(Integer, default=1, nullable=False)
 
     skill = relationship("Skill", back_populates="lessons")
     micro_skill = relationship("MicroSkill", back_populates="lessons")
+
+
+class ContentVersion(Base, BaseMixin):
+    """Lightweight content versioning: stores JSON snapshots of questions and lessons."""
+    __tablename__ = "content_versions"
+
+    content_type = Column(String(20), nullable=False)  # "question" or "lesson"
+    content_id = Column(UUID(as_uuid=True), nullable=False, index=True)
+    version = Column(Integer, nullable=False)
+    data_json = Column(JSONB, nullable=False)
+    modified_by = Column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
+    modified_at = Column(DateTime(timezone=True), nullable=False, server_default=func.now())

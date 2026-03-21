@@ -2,6 +2,7 @@
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, Query
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.deps import get_active_profile, get_current_user, require_role
@@ -82,3 +83,32 @@ async def student_micro_skills_progress(
 ):
     data = await progress_service.get_micro_skills_progress(db, profile_id, skill_id)
     return ok(data=data)
+
+
+@router.get("/health-summary")
+async def parent_health_summary(
+    db: AsyncSession = Depends(get_db_session),
+    current_user: User = Depends(require_role(UserRole.PARENT)),
+):
+    """Health-at-a-glance for all children of the current parent."""
+    # Get all profiles belonging to this parent
+    result = await db.execute(
+        select(Profile).where(
+            Profile.user_id == current_user.id,
+            Profile.is_active.is_(True),
+        )
+    )
+    profiles = list(result.scalars().all())
+
+    children = []
+    for profile in profiles:
+        health = await progress_service.get_child_health(db, profile.id)
+        children.append({
+            "profile_id": str(profile.id),
+            "display_name": profile.display_name,
+            "avatar_url": profile.avatar_url,
+            "weekly_goal_minutes": profile.weekly_goal_minutes,
+            **health,
+        })
+
+    return ok(data=children)

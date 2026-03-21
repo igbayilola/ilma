@@ -2,7 +2,7 @@
 import enum
 
 from sqlalchemy import Boolean, Column, Enum, ForeignKey, String, Text
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import relationship
 
 from app.db.base import Base
@@ -28,6 +28,11 @@ class User(Base, BaseMixin):
     avatar_url = Column(Text, nullable=True)
     link_code = Column(String(6), unique=True, nullable=True, index=True)
     grade_level_id = Column(UUID(as_uuid=True), ForeignKey("grade_levels.id", ondelete="SET NULL"), nullable=True, index=True)
+    notification_prefs = Column(JSONB, nullable=True, default=lambda: {
+        "sms_digest": True,
+        "push_enabled": True,
+        "inactivity_alerts": True,
+    })
 
     # Relationships
     grade_level = relationship("GradeLevel", lazy="selectin")

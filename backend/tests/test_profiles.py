@@ -184,8 +184,8 @@ async def test_student_self_profile_auto_select(client: AsyncClient, test_studen
 
 
 @pytest.mark.asyncio
-async def test_register_student_creates_self_profile(client: AsyncClient):
-    """Registering as a student should auto-create a self-profile."""
+async def test_register_creates_parent_no_auto_profile(client: AsyncClient):
+    """Registration always creates a PARENT account with no auto-profile."""
     resp = await client.post(
         "/api/v1/auth/register",
         json={"email": "selfprofile@test.com", "password": "Pass1234!", "full_name": "Auto Profile"},
@@ -193,5 +193,5 @@ async def test_register_student_creates_self_profile(client: AsyncClient):
     assert resp.status_code == 201
     data = resp.json()["data"]
     assert "profiles" in data
-    assert len(data["profiles"]) == 1
-    assert data["profiles"][0]["display_name"] == "Auto Profile"
+    assert len(data["profiles"]) == 0
+    assert data["user"]["role"] == "parent"

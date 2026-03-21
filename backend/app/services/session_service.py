@@ -11,9 +11,7 @@ from app.models.content import Question
 from app.models.profile import Profile
 from app.models.progress import MicroSkillProgress
 from app.models.session import Attempt, ExerciseSession, SessionMode, SessionStatus
-
-MIN_TIME_SECONDS = 2  # Anti-cheat: minimum time per question
-MAX_SCORE = 100.0
+from app.services.config_service import config_service
 
 
 class SessionService:
@@ -96,6 +94,8 @@ class SessionService:
         self, db: AsyncSession, candidates: list[Question], profile_id: UUID
     ) -> Question:
         """Weighted random selection: lower micro-skill scores → higher weight."""
+        max_score = await config_service.get(db, "smart_score_max")
+
         # Collect micro_skill_ids from candidates
         ms_ids = {q.micro_skill_id for q in candidates if q.micro_skill_id}
 
@@ -123,10 +123,10 @@ class SessionService:
         for q in candidates:
             if q.micro_skill_id and q.micro_skill_id in score_map:
                 score = score_map[q.micro_skill_id]
-                weights.append(MAX_SCORE - score + 1)
+                weights.append(max_score - score + 1)
             elif q.micro_skill_id:
                 # Micro-skill exists but no progress yet → treat as 0 score (high weight)
-                weights.append(MAX_SCORE + 1)
+                weights.append(max_score + 1)
             else:
                 weights.append(NEUTRAL_WEIGHT)
 
@@ -155,7 +155,8 @@ class SessionService:
             return dup
 
         # Anti-cheat: minimum time check
-        if time_spent_seconds is not None and time_spent_seconds < MIN_TIME_SECONDS:
+        min_time = await config_service.get(db, "min_attempt_time_seconds")
+        if time_spent_seconds is not None and time_spent_seconds < min_time:
             raise AppException(
                 status_code=400,
                 code="TOO_FAST",
@@ -212,6 +213,22 @@ class SessionService:
 
         db.add(session)
         await db.flush()
+
+        # Award XP to weekly leaderboard
+        try:
+            from app.services.social_service import social_service
+            xp = max(1, session.correct_answers)  # 1 XP per correct answer, min 1 for participation
+            await social_service.increment_xp(db, profile.id, xp)
+        except Exception:
+            pass  # Non-critical — don't break session completion
+
+        # Award badges
+        try:
+            from app.services.badge_service import badge_service
+            await badge_service.award_badges(db, profile.id)
+        except Exception:
+            pass  # Non-critical
+
         return session
 
     # ── Helpers ─────────────────────────────────────────────

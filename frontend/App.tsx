@@ -10,6 +10,7 @@ import { ToastProvider } from './components/ui/Toast';
 import { Skeleton } from './components/ui/Skeleton';
 import { PWAUpdatePrompt } from './components/pwa/UpdatePrompt';
 import { ErrorBoundary } from './components/common/ErrorBoundary';
+import { useForegroundNotifications } from './hooks/useForegroundNotifications';
 
 // Retry wrapper for lazy imports — reloads the page once on chunk load failure
 function lazyWithRetry<T extends React.ComponentType<any>>(
@@ -58,6 +59,7 @@ const ExercisePlayerPage = lazyNamed(() => import('./pages/student/ExercisePlaye
 const MicroLessonPage = lazyNamed(() => import('./pages/student/MicroLesson'), 'MicroLessonPage');
 const ProgressPage = lazyNamed(() => import('./pages/student/Progress'), 'ProgressPage');
 const BadgesPage = lazyNamed(() => import('./pages/student/Badges'), 'BadgesPage');
+const LeaderboardPage = lazyNamed(() => import('./pages/student/Leaderboard'), 'LeaderboardPage');
 const ProfilePage = lazyNamed(() => import('./pages/student/Profile'), 'ProfilePage');
 const StudentSettingsPage = lazyNamed(() => import('./pages/student/Settings'), 'StudentSettingsPage');
 const OfflineManagementPage = lazyNamed(() => import('./pages/student/OfflineManagement'), 'OfflineManagementPage');
@@ -78,6 +80,7 @@ const AdminUsersPage = lazyNamed(() => import('./pages/admin/Users'), 'AdminUser
 const AdminSubsPage = lazyNamed(() => import('./pages/admin/Subscriptions'), 'AdminSubsPage');
 const AdminAnalyticsPage = lazyNamed(() => import('./pages/admin/Analytics'), 'AdminAnalyticsPage');
 const AdminConfigPage = lazyNamed(() => import('./pages/admin/Config'), 'AdminConfigPage');
+const AdminEditorialPage = lazyNamed(() => import('./pages/admin/Editorial'), 'AdminEditorialPage');
 
 // Other Pages
 const DebugSyncPage = lazyNamed(() => import('./pages/DebugSync'), 'DebugSyncPage');
@@ -93,6 +96,8 @@ const PageLoader = () => (
 
 // Layout wrapper for authenticated routes to ensure Shell is always present
 const AppLayout = () => {
+    useForegroundNotifications();
+
     return (
         <AppShell>
             <Suspense fallback={<PageLoader />}>
@@ -130,14 +135,11 @@ const App: React.FC = () => {
       }
 
       switch(user.role) {
-          case UserRole.PARENT:
-            // Parents with profiles go to selector, without go to dashboard
-            return profiles.length > 0 && !activeProfile ? '/select-profile' : '/app/parent/dashboard';
           case UserRole.ADMIN: return '/app/admin/dashboard';
-          case UserRole.STUDENT:
-          case UserRole.GUEST:
-            return '/app/student/dashboard';
-          default: return '/app/student/dashboard';
+          case UserRole.PARENT:
+          default:
+            // Parents always go through profile selector first
+            return !activeProfile ? '/select-profile' : '/app/student/dashboard';
       }
   };
 
@@ -192,6 +194,7 @@ const App: React.FC = () => {
 
                                         <Route path="progress" element={<ProgressPage />} />
                                         <Route path="badges" element={<BadgesPage />} />
+                                        <Route path="leaderboard" element={<LeaderboardPage />} />
                                         <Route path="profile" element={<ProfilePage />} />
                                         <Route path="settings" element={<StudentSettingsPage />} />
                                         <Route path="offline-management" element={<OfflineManagementPage />} />
@@ -216,6 +219,7 @@ const App: React.FC = () => {
                                     <Route path="subs" element={<AdminSubsPage />} />
                                     <Route path="analytics" element={<AdminAnalyticsPage />} />
                                     <Route path="config" element={<AdminConfigPage />} />
+                                    <Route path="editorial" element={<AdminEditorialPage />} />
                                 </Route>
 
                             </Route>

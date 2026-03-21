@@ -8,11 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.models.content import MicroSkill
 from app.models.progress import MicroSkillProgress, Progress
 from app.models.session import Attempt, ExerciseSession, SessionStatus
-
-# SmartScore parameters
-DECAY_RATE = 0.05  # 5% weekly decay
-STREAK_BONUS = 0.02  # 2% bonus per consecutive correct answer
-MAX_SCORE = 100.0
+from app.services.config_service import config_service
 
 
 class ProgressService:
@@ -25,6 +21,9 @@ class ProgressService:
         micro_skill_id: UUID | None = None,
     ) -> Progress:
         """Recalculate SmartScore after an attempt."""
+        streak_bonus_rate = await config_service.get(db, "smart_score_streak_bonus")
+        max_score = await config_service.get(db, "smart_score_max")
+
         # Update micro-skill progress first if applicable
         if micro_skill_id:
             await self.update_micro_skill_progress_after_attempt(
@@ -65,8 +64,8 @@ class ProgressService:
         # SmartScore = weighted accuracy + streak bonus
         if progress.total_attempts > 0:
             accuracy = progress.correct_attempts / progress.total_attempts * 100
-            streak_bonus = min(progress.streak * STREAK_BONUS * 100, 20)  # Cap at 20
-            progress.smart_score = min(accuracy + streak_bonus, MAX_SCORE)
+            streak_bonus = min(progress.streak * streak_bonus_rate * 100, 20)  # Cap at 20
+            progress.smart_score = min(accuracy + streak_bonus, max_score)
 
         progress.last_attempt_at = now
         await db.flush()
@@ -85,6 +84,9 @@ class ProgressService:
         is_correct: bool,
     ) -> MicroSkillProgress:
         """Recalculate SmartScore for a micro-skill after an attempt."""
+        streak_bonus_rate = await config_service.get(db, "smart_score_streak_bonus")
+        max_score = await config_service.get(db, "smart_score_max")
+
         result = await db.execute(
             select(MicroSkillProgress).where(
                 MicroSkillProgress.profile_id == profile_id,
@@ -118,8 +120,8 @@ class ProgressService:
 
         if msp.total_attempts > 0:
             accuracy = msp.correct_attempts / msp.total_attempts * 100
-            streak_bonus = min(msp.streak * STREAK_BONUS * 100, 20)
-            msp.smart_score = min(accuracy + streak_bonus, MAX_SCORE)
+            streak_bonus = min(msp.streak * streak_bonus_rate * 100, 20)
+            msp.smart_score = min(accuracy + streak_bonus, max_score)
 
         msp.last_attempt_at = now
         await db.flush()
@@ -157,6 +159,7 @@ class ProgressService:
 
     async def apply_weekly_decay(self, db: AsyncSession) -> int:
         """Decay all SmartScores that haven't been updated in 7+ days."""
+        decay_rate = await config_service.get(db, "smart_score_decay_rate")
         cutoff = datetime.now(timezone.utc) - timedelta(days=7)
 
         # Decay skill-level progress
@@ -168,7 +171,7 @@ class ProgressService:
         )
         stale = list(result.scalars().all())
         for p in stale:
-            p.smart_score = max(0, p.smart_score * (1 - DECAY_RATE))
+            p.smart_score = max(0, p.smart_score * (1 - decay_rate))
             p.last_decay_at = datetime.now(timezone.utc)
 
         # Decay micro-skill progress
@@ -180,7 +183,7 @@ class ProgressService:
         )
         stale_msp = list(msp_result.scalars().all())
         for msp in stale_msp:
-            msp.smart_score = max(0, msp.smart_score * (1 - DECAY_RATE))
+            msp.smart_score = max(0, msp.smart_score * (1 - decay_rate))
             msp.last_decay_at = datetime.now(timezone.utc)
 
         await db.flush()
@@ -308,6 +311,111 @@ class ProgressService:
             {"date": row[0].isoformat() if row[0] else None, "attempts": row[1]}
             for row in raw.all()
         ]
+
+
+    async def get_child_health(self, db: AsyncSession, profile_id: UUID) -> dict:
+        """Health-at-a-glance for a child profile (used by parent dashboard).
+
+        Returns:
+            average_score, streak, status (green/orange/red),
+            time_this_week, time_delta_vs_last_week,
+            weakest_skill_name, advice
+        """
+        from app.models.content import Skill
+
+        now = datetime.now(timezone.utc)
+        week_start = now - timedelta(days=7)
+        prev_week_start = now - timedelta(days=14)
+
+        # Average SmartScore
+        score_result = await db.execute(
+            select(func.avg(Progress.smart_score)).where(Progress.profile_id == profile_id)
+        )
+        avg_score = round(score_result.scalar() or 0, 1)
+
+        # Current streak (max across skills)
+        streak_result = await db.execute(
+            select(func.max(Progress.streak)).where(Progress.profile_id == profile_id)
+        )
+        streak = streak_result.scalar() or 0
+
+        # Time this week
+        time_result = await db.execute(
+            select(func.coalesce(func.sum(ExerciseSession.duration_seconds), 0)).where(
+                ExerciseSession.profile_id == profile_id,
+                ExerciseSession.status == SessionStatus.COMPLETED,
+                ExerciseSession.completed_at >= week_start,
+            )
+        )
+        time_this_week_seconds = time_result.scalar() or 0
+
+        # Time previous week
+        prev_time_result = await db.execute(
+            select(func.coalesce(func.sum(ExerciseSession.duration_seconds), 0)).where(
+                ExerciseSession.profile_id == profile_id,
+                ExerciseSession.status == SessionStatus.COMPLETED,
+                ExerciseSession.completed_at >= prev_week_start,
+                ExerciseSession.completed_at < week_start,
+            )
+        )
+        time_prev_week_seconds = prev_time_result.scalar() or 0
+
+        time_this_week_min = round(time_this_week_seconds / 60)
+        time_delta_min = round((time_this_week_seconds - time_prev_week_seconds) / 60)
+
+        # Days since last activity
+        last_activity_result = await db.execute(
+            select(func.max(ExerciseSession.completed_at)).where(
+                ExerciseSession.profile_id == profile_id,
+                ExerciseSession.status == SessionStatus.COMPLETED,
+            )
+        )
+        last_activity = last_activity_result.scalar()
+        days_inactive = (now - last_activity).days if last_activity else 999
+
+        # Status: green / orange / red
+        if avg_score >= 70 and days_inactive <= 1:
+            status = "green"
+        elif avg_score < 40 or days_inactive >= 4:
+            status = "red"
+        else:
+            status = "orange"
+
+        # Weakest skill (lowest SmartScore with at least 1 attempt)
+        weakest_result = await db.execute(
+            select(Progress.skill_id, Progress.smart_score)
+            .where(Progress.profile_id == profile_id, Progress.total_attempts > 0)
+            .order_by(Progress.smart_score.asc())
+            .limit(1)
+        )
+        weakest_row = weakest_result.first()
+        weakest_skill_name = None
+        advice = None
+
+        if weakest_row:
+            skill_result = await db.execute(
+                select(Skill.name).where(Skill.id == weakest_row[0])
+            )
+            weakest_skill_name = skill_result.scalar()
+            if weakest_skill_name:
+                if weakest_row[1] < 50:
+                    advice = f"Parler de : {weakest_skill_name} (score en baisse)"
+                else:
+                    advice = f"Encourager à continuer : {weakest_skill_name}"
+
+        if days_inactive >= 3 and not advice:
+            advice = "Encourager à reprendre les exercices"
+
+        return {
+            "average_score": avg_score,
+            "streak": streak,
+            "status": status,
+            "time_this_week_minutes": time_this_week_min,
+            "time_delta_minutes": time_delta_min,
+            "days_inactive": min(days_inactive, 999),
+            "weakest_skill_name": weakest_skill_name,
+            "advice": advice,
+        }
 
 
 progress_service = ProgressService()

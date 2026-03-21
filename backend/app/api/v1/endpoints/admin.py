@@ -1,6 +1,7 @@
 """Admin endpoints: user management, analytics, exports."""
 import io
 from datetime import datetime, timezone
+from typing import Any
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, Query
@@ -14,6 +15,7 @@ from app.models.user import User, UserRole
 from app.schemas.response import ok, paginated
 from app.schemas.user import User as UserSchema
 from app.services.admin_service import admin_service
+from app.services.config_service import config_service
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -97,6 +99,60 @@ async def get_kpis(
     return ok(data=kpis)
 
 
+@router.get("/analytics/engagement")
+async def get_engagement(
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    data = await admin_service.get_engagement(db)
+    return ok(data=data)
+
+
+@router.get("/analytics/retention")
+async def get_retention(
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    data = await admin_service.get_retention(db)
+    return ok(data=data)
+
+
+@router.get("/analytics/conversion")
+async def get_conversion(
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    data = await admin_service.get_conversion(db)
+    return ok(data=data)
+
+
+@router.get("/analytics/virality")
+async def get_virality(
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    data = await admin_service.get_virality(db)
+    return ok(data=data)
+
+
+@router.get("/analytics/notifications")
+async def get_notification_stats(
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    stats = await admin_service.get_notification_stats(db)
+    return ok(data=stats)
+
+
+@router.get("/analytics/digest-stats")
+async def get_digest_stats(
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    stats = await admin_service.get_digest_stats(db)
+    return ok(data=stats)
+
+
 @router.get("/analytics/questions")
 async def get_question_stats(
     limit: int = Query(50, ge=1, le=200),
@@ -175,3 +231,48 @@ tr:nth-child(even) {{ background: #f8f9fa; }}
         media_type="application/pdf",
         headers={"Content-Disposition": f"attachment; filename=ilma_report_{now[:10]}.pdf"},
     )
+
+
+# ── Dynamic Config ────────────────────────────────────────
+@router.get("/config")
+async def get_all_config(
+    category: str | None = None,
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    configs = await config_service.get_all(db, category=category)
+    # Group by category
+    grouped: dict[str, dict] = {}
+    for key, info in configs.items():
+        cat = info["category"]
+        if cat not in grouped:
+            grouped[cat] = {}
+        grouped[cat][key] = info
+    return ok(data=grouped)
+
+
+@router.put("/config/bulk")
+async def update_config_bulk(
+    updates: dict[str, Any],
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    await config_service.set_bulk(db, updates)
+    await db.commit()
+    return ok(message="Configuration mise à jour")
+
+
+@router.put("/config/{key}")
+async def update_config(
+    key: str,
+    body: dict,
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    value = body.get("value")
+    if value is None:
+        from app.core.exceptions import AppException
+        raise AppException(status_code=400, code="MISSING_VALUE", message="Le champ 'value' est requis.")
+    await config_service.set(db, key, value)
+    await db.commit()
+    return ok(message=f"Config '{key}' mise à jour")

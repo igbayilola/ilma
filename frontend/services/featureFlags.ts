@@ -46,6 +46,21 @@ export const useFeatureFlagStore = create<FeatureFlagState>((set, get) => ({
         }
       }
 
+      // Also try to fetch maintenance_mode from public config
+      try {
+        const configUrl = ((import.meta as any).env?.VITE_API_URL || '/api/v1') + '/config/public';
+        const configRes = await fetch(configUrl, { signal: AbortSignal.timeout(3000) });
+        if (configRes.ok) {
+          const configData = await configRes.json();
+          const cfg = configData.data || configData;
+          if (cfg.maintenance_mode !== undefined) {
+            remoteFlags['maintenance_mode'] = cfg.maintenance_mode;
+          }
+        }
+      } catch {
+        // Ignore config fetch failure
+      }
+
       set((state) => ({
         flags: { ...state.flags, ...remoteFlags },
         isLoading: false,

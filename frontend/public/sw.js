@@ -128,6 +128,68 @@ async function syncPendingItems() {
   }
 }
 
+// Push notifications
+self.addEventListener('push', (event) => {
+  let data = { title: 'ILMA', body: 'Nouveau message', url: '/' };
+  try {
+    if (event.data) {
+      data = { ...data, ...event.data.json() };
+    }
+  } catch {
+    // Fallback to text
+    if (event.data) {
+      data.body = event.data.text();
+    }
+  }
+
+  const options = {
+    body: data.body,
+    icon: '/icons/icon-192x192.svg',
+    badge: '/icons/icon-192x192.svg',
+    vibrate: [100, 50, 100],
+    data: { url: data.url || '/' },
+    actions: [{ action: 'open', title: 'Ouvrir' }],
+  };
+
+  // Show OS notification + forward to foreground clients as in-app toast
+  event.waitUntil(
+    Promise.all([
+      self.registration.showNotification(data.title, options),
+      self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
+        for (const client of clients) {
+          client.postMessage({
+            type: 'PUSH_RECEIVED',
+            title: data.title,
+            body: data.body,
+            url: data.url,
+            notificationType: data.notification_type || data.notificationType || null,
+          });
+        }
+      }),
+    ])
+  );
+});
+
+// Notification click: open the app at the right page
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const url = event.notification.data?.url || '/';
+
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
+      // Focus existing window if available
+      for (const client of clients) {
+        if (client.url.includes(self.location.origin)) {
+          client.navigate(url);
+          return client.focus();
+        }
+      }
+      // Otherwise open a new window
+      return self.clients.openWindow(url);
+    })
+  );
+});
+
 // Listen for update messages from the app
 self.addEventListener('message', (event) => {
   if (event.data === 'SKIP_WAITING') {

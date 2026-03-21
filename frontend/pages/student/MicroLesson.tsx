@@ -11,20 +11,32 @@ export const MicroLessonPage: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [lesson, setLesson] = useState<LessonDTO | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
     const [understood, setUnderstood] = useState(false);
 
     const returnPath = (location.state as any)?.returnPath || '/app/student/dashboard';
 
     useEffect(() => {
-        if (!id) return;
+        if (!id) { setIsLoading(false); return; }
+        setIsLoading(true);
         contentService.getSkillWithLessons(id)
             .then(({ lessons }) => {
                 if (lessons.length > 0) setLesson(lessons[0]);
             })
-            .catch(() => setLesson(null));
+            .catch(() => setLesson(null))
+            .finally(() => setIsLoading(false));
     }, [id]);
 
-    if (!lesson) return <div className="p-8 text-center">Chargement de la leçon...</div>;
+    if (isLoading) return <div className="p-8 text-center text-gray-400">Chargement de la leçon...</div>;
+
+    if (!lesson) return (
+        <div className="min-h-screen bg-ilma-surface flex flex-col items-center justify-center p-8 text-center">
+            <BookOpen size={48} className="text-gray-300 mb-4" />
+            <h2 className="text-xl font-bold text-gray-700 mb-2">Aucune leçon disponible</h2>
+            <p className="text-gray-500 mb-6">Cette compétence n'a pas encore de micro-leçon associée.</p>
+            <Button onClick={() => navigate(returnPath)}>Retour</Button>
+        </div>
+    );
 
     // Parse contentHtml or use as plain text
     const paragraphs = lesson.contentHtml

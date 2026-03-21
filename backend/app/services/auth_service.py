@@ -8,10 +8,9 @@ from app.core.security import (
     get_password_hash,
     verify_password,
 )
-from app.models.user import User, UserRole
+from app.models.user import User
 from app.repositories.user_repository import user_repository
 from app.schemas.user import UserCreate
-from app.services.profile_service import profile_service
 
 
 class AuthService:
@@ -27,11 +26,6 @@ class AuthService:
             if existing:
                 raise ConflictException("Un compte avec ce numéro existe déjà.")
         user = await user_repository.create(db, obj_in=user_in)
-
-        # Auto-create a self-profile for standalone students
-        if user.role == UserRole.STUDENT:
-            await profile_service.create_self_profile(db, user)
-
         return user
 
     async def login(self, db: AsyncSession, *, email: str, password: str) -> dict:

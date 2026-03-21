@@ -41,6 +41,86 @@ export interface QuestionStatDTO {
   totalAttempts: number;
 }
 
+export interface DigestStatsDTO {
+  totalAllTime: number;
+  digestsThisWeek: number;
+  digestsLastWeek: number;
+  uniqueParentsReached: number;
+  avgChildrenPerDigest: number;
+}
+
+export interface EngagementTimeSeriesPoint {
+  date: string;
+  dau: number;
+}
+
+export interface EngagementDTO {
+  dau: number;
+  wau: number;
+  mau: number;
+  stickiness: number;
+  timeSeries: EngagementTimeSeriesPoint[];
+}
+
+export interface RetentionCohortDTO {
+  cohortWeek: string;
+  cohortSize: number;
+  d1: number | null;
+  d7: number | null;
+  d14: number | null;
+  d30: number | null;
+}
+
+export interface ConversionStageDTO {
+  stage: string;
+  count: number;
+  conversionRate: number;
+}
+
+export interface ConversionDTO {
+  stages: ConversionStageDTO[];
+}
+
+export interface NotificationChannelStatDTO {
+  channel: string;
+  sentCount: number;
+  deliveredCount: number;
+  failedCount: number;
+  failureRate: number;
+}
+
+export interface NotificationDailyDTO {
+  date: string;
+  total: number;
+  delivered: number;
+  deliveryRate: number;
+}
+
+export interface NotificationErrorDTO {
+  error: string;
+  count: number;
+}
+
+export interface NotificationStatsDTO {
+  total24h: number;
+  total7d: number;
+  total30d: number;
+  byChannel: NotificationChannelStatDTO[];
+  topErrors: NotificationErrorDTO[];
+  dailySeries: NotificationDailyDTO[];
+}
+
+export interface ViralityDTO {
+  totalChallenges: number;
+  challengesThisMonth: number;
+  activeChallengers: number;
+  mau: number;
+  newUsersThisMonth: number;
+  invitationsPerUser: number;
+  inviteConversionRate: number;
+  kFactor: number;
+}
+
 export const adminService = {
   async listUsers(page = 1, pageSize = 50, role?: string, search?: string): Promise<{ items: AdminUserDTO[]; total: number; page: number; totalPages: number }> {
     const params = new URLSearchParams({ page: String(page), page_size: String(pageSize) });
@@ -119,6 +199,94 @@ export const adminService = {
       avgTimeSeconds: q.avg_time_seconds ?? 0,
       totalAttempts: q.total_attempts ?? 0,
     }));
+  },
+
+  async getDigestStats(): Promise<DigestStatsDTO> {
+    const data = await apiClient.get<any>('/admin/analytics/digest-stats');
+    return {
+      totalAllTime: data.total_all_time ?? 0,
+      digestsThisWeek: data.digests_this_week ?? 0,
+      digestsLastWeek: data.digests_last_week ?? 0,
+      uniqueParentsReached: data.unique_parents_reached ?? 0,
+      avgChildrenPerDigest: data.avg_children_per_digest ?? 0,
+    };
+  },
+
+  async getEngagement(): Promise<EngagementDTO> {
+    const data = await apiClient.get<any>('/admin/analytics/engagement');
+    return {
+      dau: data.dau ?? 0,
+      wau: data.wau ?? 0,
+      mau: data.mau ?? 0,
+      stickiness: data.stickiness ?? 0,
+      timeSeries: (data.time_series || []).map((p: any) => ({
+        date: p.date,
+        dau: p.dau ?? 0,
+      })),
+    };
+  },
+
+  async getRetention(): Promise<RetentionCohortDTO[]> {
+    const data = await apiClient.get<any>('/admin/analytics/retention');
+    return (Array.isArray(data) ? data : []).map((c: any) => ({
+      cohortWeek: c.cohort_week || '',
+      cohortSize: c.cohort_size ?? 0,
+      d1: c.d1,
+      d7: c.d7,
+      d14: c.d14,
+      d30: c.d30,
+    }));
+  },
+
+  async getConversion(): Promise<ConversionDTO> {
+    const data = await apiClient.get<any>('/admin/analytics/conversion');
+    return {
+      stages: (data.stages || []).map((s: any) => ({
+        stage: s.stage || '',
+        count: s.count ?? 0,
+        conversionRate: s.conversion_rate ?? 0,
+      })),
+    };
+  },
+
+  async getVirality(): Promise<ViralityDTO> {
+    const data = await apiClient.get<any>('/admin/analytics/virality');
+    return {
+      totalChallenges: data.total_challenges ?? 0,
+      challengesThisMonth: data.challenges_this_month ?? 0,
+      activeChallengers: data.active_challengers ?? 0,
+      mau: data.mau ?? 0,
+      newUsersThisMonth: data.new_users_this_month ?? 0,
+      invitationsPerUser: data.invitations_per_user ?? 0,
+      inviteConversionRate: data.invite_conversion_rate ?? 0,
+      kFactor: data.k_factor ?? 0,
+    };
+  },
+
+  async getNotificationStats(): Promise<NotificationStatsDTO> {
+    const data = await apiClient.get<any>('/admin/analytics/notifications');
+    return {
+      total24h: data.total_24h ?? 0,
+      total7d: data.total_7d ?? 0,
+      total30d: data.total_30d ?? 0,
+      byChannel: (data.by_channel || []).map((c: any) => ({
+        channel: c.channel || '',
+        sentCount: c.sent_count ?? 0,
+        deliveredCount: c.delivered_count ?? 0,
+        failedCount: c.failed_count ?? 0,
+        failureRate: c.failure_rate ?? 0,
+      })),
+      topErrors: (data.top_errors || []).map((e: any) => ({
+        error: e.error || '',
+        count: e.count ?? 0,
+      })),
+      dailySeries: (data.daily_series || []).map((d: any) => ({
+        date: d.date || '',
+        total: d.total ?? 0,
+        delivered: d.delivered ?? 0,
+        deliveryRate: d.delivery_rate ?? 0,
+      })),
+    };
   },
 
   async exportUsersCsv(): Promise<void> {

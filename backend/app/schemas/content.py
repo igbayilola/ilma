@@ -1,10 +1,26 @@
 """Content Pydantic schemas."""
 import uuid
+from datetime import datetime
 from typing import Annotated, Any, Dict, List, Literal, Optional, Union
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from app.models.content import DifficultyLevel, QuestionType
+
+
+# ── Question Comments ─────────────────────────────────────
+class QuestionCommentCreate(BaseModel):
+    text: str
+
+
+class QuestionCommentOut(BaseModel):
+    id: uuid.UUID
+    question_id: uuid.UUID
+    author_id: Optional[uuid.UUID] = None
+    author_name: str = ""
+    text: str
+    created_at: datetime
+    model_config = ConfigDict(from_attributes=True)
 
 
 # ── GradeLevel ────────────────────────────────────────────
@@ -176,7 +192,7 @@ class QuestionBase(BaseModel):
     question_type: QuestionType = QuestionType.MCQ
     difficulty: DifficultyLevel = DifficultyLevel.MEDIUM
     text: str
-    choices: Optional[list] = None
+    choices: Optional[Union[list, dict]] = None
     correct_answer: object
     explanation: Optional[str] = None
     hint: Optional[str] = None
@@ -200,7 +216,7 @@ class QuestionUpdate(BaseModel):
     question_type: Optional[QuestionType] = None
     difficulty: Optional[DifficultyLevel] = None
     text: Optional[str] = None
-    choices: Optional[list] = None
+    choices: Optional[Union[list, dict]] = None
     correct_answer: Optional[object] = None
     explanation: Optional[str] = None
     hint: Optional[str] = None
@@ -218,6 +234,7 @@ class QuestionOut(QuestionBase):
     skill_id: uuid.UUID
     micro_skill_id: Optional[uuid.UUID] = None
     external_id: Optional[str] = None
+    version: int = 1
     model_config = ConfigDict(from_attributes=True)
 
 
@@ -251,6 +268,31 @@ class LessonOut(LessonBase):
     id: uuid.UUID
     skill_id: uuid.UUID
     micro_skill_id: Optional[uuid.UUID] = None
+    version: int = 1
+    model_config = ConfigDict(from_attributes=True)
+
+
+# ── Content Versioning ────────────────────────────────────
+
+class ContentVersionOut(BaseModel):
+    id: uuid.UUID
+    content_type: str
+    content_id: uuid.UUID
+    version: int
+    modified_by: Optional[uuid.UUID] = None
+    modified_at: datetime
+    data_json: Optional[Dict[str, Any]] = None  # included only in detail view
+    model_config = ConfigDict(from_attributes=True)
+
+
+class ContentVersionListOut(BaseModel):
+    """Summary version for list view (no data_json)."""
+    id: uuid.UUID
+    content_type: str
+    content_id: uuid.UUID
+    version: int
+    modified_by: Optional[uuid.UUID] = None
+    modified_at: datetime
     model_config = ConfigDict(from_attributes=True)
 
 
@@ -506,3 +548,20 @@ class ExerciseFileImportResult(BaseModel):
     updated: int = 0
     skipped: int = 0
     errors: List[Dict[str, Any]] = Field(default_factory=list)
+
+
+# ── Bulk Question Import Report ──────────────────────────
+
+class BulkImportRowError(BaseModel):
+    row: int
+    message: str
+
+
+class BulkImportReport(BaseModel):
+    status: str = "success"  # "success" | "failed"
+    total_rows: int = 0
+    valid_rows: int = 0
+    invalid_rows: int = 0
+    created: int = 0
+    errors: List[BulkImportRowError] = Field(default_factory=list)
+    rolled_back: bool = False

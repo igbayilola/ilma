@@ -13,6 +13,9 @@ class BadgeCategory(str, enum.Enum):
     STREAK = "streak"
     MASTERY = "mastery"
     COMPLETION = "completion"
+    EXPLORATION = "exploration"
+    CEP = "cep"
+    SOCIAL = "social"
     SPECIAL = "special"
 
 

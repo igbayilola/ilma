@@ -9,7 +9,7 @@ from app.core.deps import get_current_user
 from app.core.exceptions import AppException
 from app.core.security import create_access_token, create_refresh_token
 from app.db.session import get_db_session
-from app.models.user import User as UserModel
+from app.models.user import User as UserModel, UserRole
 from app.repositories.user_repository import user_repository
 from app.schemas.auth import (
     LoginRequest,
@@ -24,6 +24,7 @@ from app.schemas.token import Token
 from app.schemas.user import User, UserCreate
 from app.services.audit_service import audit_service
 from app.services.auth_service import auth_service
+from app.services.config_service import config_service
 from app.services.otp_service import otp_service
 
 router = APIRouter(tags=["Auth"])
@@ -64,6 +65,35 @@ async def register(
     request: Request,
     db: AsyncSession = Depends(get_db_session),
 ):
+    # Check if registration is open
+    registration_open = await config_service.get(db, "registration_open")
+    if not registration_open:
+        raise AppException(
+            status_code=403,
+            code="REGISTRATION_CLOSED",
+            message="Les inscriptions sont actuellement fermées.",
+        )
+
+    # Only PARENT (and ADMIN) accounts can be created via registration
+    if user_in.role == "student" or user_in.role == UserRole.STUDENT:
+        user_in.role = UserRole.PARENT
+
+    # Validate phone prefix if phone is provided
+    phone = getattr(user_in, 'phone', None) or ''
+    if phone:
+        import re
+        allowed_prefixes = await config_service.get(db, "allowed_phone_prefixes")
+        cleaned = re.sub(r'\s', '', phone)
+        # Strip +229 prefix for checking
+        if cleaned.startswith('+229') and len(cleaned) > 4:
+            local_prefix = cleaned[4:6]
+            if local_prefix not in allowed_prefixes:
+                raise AppException(
+                    status_code=400,
+                    code="INVALID_PHONE_PREFIX",
+                    message=f"Préfixe téléphone non autorisé. Préfixes valides : {', '.join(allowed_prefixes)}",
+                )
+
     user = await auth_service.register_user(db, user_in)
     access_token = create_access_token(subject=user.id)
     refresh_token = create_refresh_token(subject=user.id)

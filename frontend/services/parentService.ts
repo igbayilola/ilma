@@ -11,6 +11,21 @@ export interface ChildDTO {
   subscriptionTier: string;
 }
 
+export interface ChildHealthDTO {
+  profileId: string;
+  displayName: string;
+  avatarUrl: string;
+  weeklyGoalMinutes: number;
+  averageScore: number;
+  streak: number;
+  status: 'green' | 'orange' | 'red';
+  timeThisWeekMinutes: number;
+  timeDeltaMinutes: number;
+  daysInactive: number;
+  weakestSkillName: string | null;
+  advice: string | null;
+}
+
 export const parentService = {
   async listChildren(): Promise<ChildDTO[]> {
     const data = await apiClient.get<any[]>('/profiles');
@@ -33,5 +48,27 @@ export const parentService = {
   async getChildProgress(profileId: string): Promise<any> {
     const data = await apiClient.get(`/students/${profileId}/progress/summary`);
     return data;
+  },
+
+  async triggerDigest(): Promise<void> {
+    await apiClient.post('/notifications/trigger-digest', {});
+  },
+
+  async getHealthSummary(): Promise<ChildHealthDTO[]> {
+    const data = await apiClient.get<any[]>('/students/health-summary');
+    return (data || []).map((c: any) => ({
+      profileId: c.profile_id,
+      displayName: c.display_name,
+      avatarUrl: c.avatar_url || `https://api.dicebear.com/7.x/avataaars/svg?seed=${c.profile_id}`,
+      weeklyGoalMinutes: c.weekly_goal_minutes ?? 120,
+      averageScore: c.average_score ?? 0,
+      streak: c.streak ?? 0,
+      status: c.status || 'orange',
+      timeThisWeekMinutes: c.time_this_week_minutes ?? 0,
+      timeDeltaMinutes: c.time_delta_minutes ?? 0,
+      daysInactive: c.days_inactive ?? 0,
+      weakestSkillName: c.weakest_skill_name || null,
+      advice: c.advice || null,
+    }));
   },
 };

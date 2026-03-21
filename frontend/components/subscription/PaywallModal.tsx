@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
-import { ButtonVariant } from '../../types';
+import { ButtonVariant, UserRole } from '../../types';
 import { useNavigate } from 'react-router-dom';
 import { Lock, Star, CheckCircle2, Zap, MessageSquare, Loader2 } from 'lucide-react';
 import { useAuthStore } from '../../store/authStore';
@@ -15,7 +15,7 @@ interface PaywallModalProps {
 export const PaywallModal: React.FC<PaywallModalProps> = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const { user, activeProfile, profiles } = useAuthStore();
-  const isChildProfile = user?.role === 'parent' && activeProfile;
+  const isChildProfile = user?.role === UserRole.PARENT && activeProfile;
   const [parentNotifState, setParentNotifState] = useState<'idle' | 'sending' | 'sent' | 'no-parent'>('idle');
 
   const handleUpgrade = () => {

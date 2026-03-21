@@ -17,6 +17,10 @@ class NotificationOut(BaseModel):
     data: Optional[dict]
     is_read: bool
     read_at: Optional[datetime]
+    status: str = "pending"
+    sent_at: Optional[datetime] = None
+    delivered_at: Optional[datetime] = None
+    error_message: Optional[str] = None
     created_at: datetime
     model_config = ConfigDict(from_attributes=True)
 

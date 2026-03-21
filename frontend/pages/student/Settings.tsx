@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Toggle } from '../../components/ui/Toggle';
 import { Input } from '../../components/ui/Input';
-import { Bell, Clock, Flame, Trophy, FileText, ArrowLeft, Save, Sun, Moon, Monitor, Volume2, Wifi } from 'lucide-react';
+import { Bell, Clock, Flame, Trophy, FileText, ArrowLeft, Save, Sun, Moon, Monitor, Volume2, Wifi, Smartphone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { ButtonVariant } from '../../types';
 import { useThemeStore } from '../../store/themeStore';
+import { pushService } from '../../services/pushService';
 
 export const StudentSettingsPage: React.FC = () => {
     const navigate = useNavigate();
@@ -38,6 +39,26 @@ export const StudentSettingsPage: React.FC = () => {
       const newValue = !soundEnabled;
       setSoundEnabled(newValue);
       localStorage.setItem('ilma_sound', String(newValue));
+    };
+
+    // Push notification state
+    const [pushSupported] = useState(() => pushService.isSupported());
+    const [pushEnabled, setPushEnabled] = useState(() => pushService.isSubscribed());
+    const [pushLoading, setPushLoading] = useState(false);
+
+    const togglePush = async () => {
+        setPushLoading(true);
+        try {
+            if (pushEnabled) {
+                await pushService.unsubscribe();
+                setPushEnabled(false);
+            } else {
+                const ok = await pushService.subscribe();
+                setPushEnabled(ok);
+            }
+        } finally {
+            setPushLoading(false);
+        }
     };
 
     const update = (key: string, value: any) => {
@@ -108,6 +129,35 @@ export const StudentSettingsPage: React.FC = () => {
                     </div>
                 </div>
             </Card>
+
+            {/* Push Notifications */}
+            {pushSupported && (
+                <Card>
+                    <div className="flex items-center mb-6">
+                        <div className="p-2 bg-blue-100 rounded-lg mr-3 text-blue-600">
+                            <Smartphone size={24} />
+                        </div>
+                        <div>
+                            <h2 className="text-lg font-bold text-gray-900">Notifications Push</h2>
+                            <p className="text-sm text-gray-500">Reçois des alertes même quand l'app est fermée.</p>
+                        </div>
+                    </div>
+                    <label className="flex items-center justify-between cursor-pointer">
+                        <span className="text-sm font-medium text-gray-700">
+                            {pushLoading ? 'Activation...' : pushEnabled ? 'Notifications activées' : 'Activer les notifications'}
+                        </span>
+                        <button
+                            role="switch"
+                            aria-checked={pushEnabled}
+                            onClick={togglePush}
+                            disabled={pushLoading}
+                            className={`relative w-12 h-7 rounded-full transition-colors ${pushEnabled ? 'bg-ilma-primary' : 'bg-gray-300'} ${pushLoading ? 'opacity-50' : ''}`}
+                        >
+                            <span className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform ${pushEnabled ? 'translate-x-5' : ''}`} />
+                        </button>
+                    </label>
+                </Card>
+            )}
 
             <Card>
                  <div className="flex items-center mb-6">

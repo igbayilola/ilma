@@ -87,7 +87,12 @@ class ContentService:
     async def list_questions(
         self, db: AsyncSession, skill_id: UUID, micro_skill_id: UUID | None = None
     ) -> list[Question]:
-        stmt = select(Question).where(Question.skill_id == skill_id, Question.is_active.is_(True))
+        from app.models.content import ContentStatus
+        stmt = select(Question).where(
+            Question.skill_id == skill_id,
+            Question.is_active.is_(True),
+            Question.status == ContentStatus.PUBLISHED,
+        )
         if micro_skill_id:
             stmt = stmt.where(Question.micro_skill_id == micro_skill_id)
         result = await db.execute(stmt)
@@ -95,9 +100,14 @@ class ContentService:
 
     # ── Lessons ────────────────────────────────────────────
     async def list_lessons(self, db: AsyncSession, skill_id: UUID) -> list[MicroLesson]:
+        from app.models.content import ContentStatus
         result = await db.execute(
             select(MicroLesson)
-            .where(MicroLesson.skill_id == skill_id, MicroLesson.is_active.is_(True))
+            .where(
+                MicroLesson.skill_id == skill_id,
+                MicroLesson.is_active.is_(True),
+                MicroLesson.status == ContentStatus.PUBLISHED,
+            )
             .order_by(MicroLesson.order)
         )
         return list(result.scalars().all())

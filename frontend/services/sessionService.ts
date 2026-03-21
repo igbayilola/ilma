@@ -7,6 +7,9 @@ export interface SessionDTO {
   score?: number;
   totalQuestions?: number;
   correctAnswers?: number;
+  smartScoreBefore?: number;
+  smartScoreAfter?: number;
+  xpEarned?: number;
 }
 
 export interface NextQuestionDTO {
@@ -89,6 +92,9 @@ export const sessionService = {
       score: data.score,
       totalQuestions: data.total_questions,
       correctAnswers: data.correct_answers,
+      smartScoreBefore: data.smart_score_before,
+      smartScoreAfter: data.smart_score_after,
+      xpEarned: data.xp_earned,
     };
   },
 };

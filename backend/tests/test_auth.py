@@ -17,10 +17,9 @@ async def test_register(client: AsyncClient):
     # Register now returns combined auth response: {access_token, refresh_token, user, profiles, ...}
     assert "access_token" in body["data"]
     assert body["data"]["user"]["email"] == "new@test.com"
-    # Student registration auto-creates a self-profile
+    # Registration creates a PARENT account (no auto-profile)
     assert "profiles" in body["data"]
-    assert len(body["data"]["profiles"]) == 1
-    assert body["data"]["profiles"][0]["display_name"] == "New User"
+    assert len(body["data"]["profiles"]) == 0
 
 
 @pytest.mark.asyncio

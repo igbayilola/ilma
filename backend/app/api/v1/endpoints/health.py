@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import settings
 from app.db.session import get_db_session
 from app.schemas.response import ok
+from app.services.config_service import config_service
 
 router = APIRouter(tags=["Health"])
 
@@ -56,3 +57,11 @@ async def health_check(
 @router.get("/version", summary="Get API version")
 async def version():
     return ok(data={"version": "0.1.0", "project": settings.PROJECT_NAME})
+
+
+@router.get("/config/public", summary="Get public configuration for frontend")
+async def get_public_config(
+    db: AsyncSession = Depends(get_db_session),
+):
+    data = await config_service.get_public_config(db)
+    return ok(data=data)

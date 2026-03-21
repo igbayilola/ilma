@@ -1,23 +1,26 @@
 
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { useAuthStore } from '../../store/authStore';
 import { useAppStore } from '../../store';
 import { NavItem, UserRole, SubscriptionTier } from '../../types';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Home, BookOpen, Award, User, Menu, Bell,
-  Settings, LogOut, X, ChevronRight,
+  Home, BookOpen, Award, User, Menu, Bell, Trophy,
+  Settings, LogOut, X, ChevronRight, FileEdit,
   LayoutDashboard, Users, FileText, BarChart2, Shield, Target, AlertTriangle, Crown, Cloud, ArrowLeftRight
 } from 'lucide-react';
 import { OfflineBanner, SyncCounter } from '../ilma/OfflineIndicators';
 import { XPBar, StreakWidget, LEVEL_NAMES } from '../ilma/Gamification';
 import { NotificationCenter } from '../notifications/NotificationCenter';
+import { dbService } from '../../services/db';
+import { syncManager } from '../../services/syncManager';
 
 // Definitive Navigation Configuration
 const NAV_ITEMS: NavItem[] = [
   // Student & Guest
   { label: 'Accueil', path: '/app/student/dashboard', icon: 'Home', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Mati\u00e8res', path: '/app/student/subjects', icon: 'BookOpen', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
+  { label: 'Classement', path: '/app/student/leaderboard', icon: 'Trophy', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Progression', path: '/app/student/progress', icon: 'Award', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Profil', path: '/app/student/profile', icon: 'User', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
 
@@ -32,12 +35,14 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Contenu', path: '/app/admin/content', icon: 'FileText', allowedRoles: [UserRole.ADMIN] },
   { label: 'Utilisateurs', path: '/app/admin/users', icon: 'Users', allowedRoles: [UserRole.ADMIN] },
   { label: 'Analytics', path: '/app/admin/analytics', icon: 'BarChart2', allowedRoles: [UserRole.ADMIN] },
+  { label: 'Editorial', path: '/app/admin/editorial', icon: 'FileEdit', allowedRoles: [UserRole.ADMIN] },
   { label: 'Config', path: '/app/admin/config', icon: 'Shield', allowedRoles: [UserRole.ADMIN] },
 ];
 
 const IconMap: Record<string, React.ReactNode> = {
   Home: <Home size={24} />,
   BookOpen: <BookOpen size={24} />,
+  Trophy: <Trophy size={24} />,
   Award: <Award size={24} />,
   User: <User size={24} />,
   LayoutDashboard: <LayoutDashboard size={24} />,
@@ -47,12 +52,125 @@ const IconMap: Record<string, React.ReactNode> = {
   FileText: <FileText size={24} />,
   BarChart2: <BarChart2 size={24} />,
   Shield: <Shield size={24} />,
+  FileEdit: <FileEdit size={24} />,
 };
+
+// --- Sync-aware logout guard ---
+
+interface LogoutGuardState {
+  showModal: boolean;
+  pendingCount: number;
+  syncing: boolean;
+}
+
+const LogoutGuardModal: React.FC<{
+  pendingCount: number;
+  onCancel: () => void;
+  onForceLogout: () => void;
+}> = ({ pendingCount, onCancel, onForceLogout }) => (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-sm w-full mx-4 p-6">
+      <div className="flex items-center mb-4">
+        <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg mr-3">
+          <AlertTriangle size={24} className="text-red-500" />
+        </div>
+        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+          Données non synchronisées
+        </h3>
+      </div>
+      <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">
+        {pendingCount} événement{pendingCount > 1 ? 's' : ''} non synchronisé{pendingCount > 1 ? 's' : ''}.
+        Si vous vous déconnectez, ces données seront perdues.
+        Connectez-vous à internet pour synchroniser avant de vous déconnecter.
+      </p>
+      <div className="flex space-x-3">
+        <button
+          onClick={onCancel}
+          className="flex-1 px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+        >
+          Annuler
+        </button>
+        <button
+          onClick={onForceLogout}
+          className="flex-1 px-4 py-2.5 rounded-xl bg-red-500 text-white font-medium hover:bg-red-600 transition-colors"
+        >
+          Déconnexion forcée
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+const SyncingOverlay: React.FC = () => (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-xs w-full mx-4 p-6 text-center">
+      <div className="animate-spin w-8 h-8 border-4 border-ilma-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+      <p className="text-gray-700 dark:text-gray-300 font-medium">Synchronisation en cours...</p>
+      <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Veuillez patienter</p>
+    </div>
+  </div>
+);
+
+function useSafeLogout() {
+  const { logout } = useAuthStore();
+  const [guard, setGuard] = useState<LogoutGuardState>({
+    showModal: false,
+    pendingCount: 0,
+    syncing: false,
+  });
+
+  const attemptLogout = useCallback(async () => {
+    try {
+      const count = await dbService.getPendingSyncCount();
+
+      if (count === 0) {
+        await logout();
+        return;
+      }
+
+      if (navigator.onLine) {
+        // Online with pending events: sync first, then logout
+        setGuard({ showModal: false, pendingCount: count, syncing: true });
+        try {
+          await syncManager.processQueue();
+        } catch {
+          // Sync failed — check remaining count
+        }
+        const remaining = await dbService.getPendingSyncCount();
+        if (remaining === 0) {
+          setGuard({ showModal: false, pendingCount: 0, syncing: false });
+          await logout();
+        } else {
+          // Some items failed to sync, show modal
+          setGuard({ showModal: true, pendingCount: remaining, syncing: false });
+        }
+      } else {
+        // Offline with pending events: warn user
+        setGuard({ showModal: true, pendingCount: count, syncing: false });
+      }
+    } catch {
+      // If we can't even check, just logout
+      await logout();
+    }
+  }, [logout]);
+
+  const forceLogout = useCallback(async () => {
+    setGuard({ showModal: false, pendingCount: 0, syncing: false });
+    await logout();
+  }, [logout]);
+
+  const cancelLogout = useCallback(() => {
+    setGuard({ showModal: false, pendingCount: 0, syncing: false });
+  }, []);
+
+  return { guard, attemptLogout, forceLogout, cancelLogout };
+}
 
 // Sidebar Component (Desktop)
 const Sidebar: React.FC = () => {
   const { pathname } = useLocation();
-  const { user, logout, activeProfile, profiles } = useAuthStore();
+  const { user, activeProfile, profiles } = useAuthStore();
+  const { guard, attemptLogout, forceLogout, cancelLogout } = useSafeLogout();
 
   // When a parent has selected a child profile, show student nav items
   const effectiveRole = (user?.role === UserRole.PARENT && activeProfile) ? UserRole.STUDENT : user?.role;
@@ -141,13 +259,21 @@ const Sidebar: React.FC = () => {
              </div>
          )}
          <button
-           onClick={logout}
+           onClick={attemptLogout}
            className="w-full flex items-center px-4 py-3 mt-4 rounded-xl text-gray-500 hover:bg-red-50 hover:text-ilma-red transition-colors group"
          >
            <LogOut size={20} className="mr-3 text-gray-400 group-hover:text-ilma-red" />
            <span className="font-medium">D&eacute;connexion</span>
          </button>
       </div>
+      {guard.syncing && <SyncingOverlay />}
+      {guard.showModal && (
+        <LogoutGuardModal
+          pendingCount={guard.pendingCount}
+          onCancel={cancelLogout}
+          onForceLogout={forceLogout}
+        />
+      )}
     </aside>
   );
 };
@@ -189,7 +315,8 @@ const MobileNav: React.FC = () => {
 // Drawer for Mobile Menu
 const MobileDrawer: React.FC = () => {
     const { isMobileDrawerOpen, setMobileDrawerOpen } = useAppStore();
-    const { user, logout, activeProfile } = useAuthStore();
+    const { user, activeProfile } = useAuthStore();
+    const { guard, attemptLogout, forceLogout, cancelLogout } = useSafeLogout();
     const effectiveRole = (user?.role === UserRole.PARENT && activeProfile) ? UserRole.STUDENT : user?.role;
     const isPremium = activeProfile?.subscriptionTier === SubscriptionTier.PREMIUM || user?.subscriptionTier === SubscriptionTier.PREMIUM;
     const displayName = activeProfile?.displayName || user?.name;
@@ -242,9 +369,9 @@ const MobileDrawer: React.FC = () => {
                             <ChevronRight size={16} className="text-gray-300" />
                         </Link>
                          <button
-                            onClick={() => {
-                                logout();
+                            onClick={async () => {
                                 setMobileDrawerOpen(false);
+                                await attemptLogout();
                             }}
                             className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-red-50 text-ilma-red mt-4"
                          >
@@ -252,6 +379,14 @@ const MobileDrawer: React.FC = () => {
                         </button>
                     </div>
                 </div>
+                {guard.syncing && <SyncingOverlay />}
+                {guard.showModal && (
+                  <LogoutGuardModal
+                    pendingCount={guard.pendingCount}
+                    onCancel={cancelLogout}
+                    onForceLogout={forceLogout}
+                  />
+                )}
             </div>
         </div>
     );

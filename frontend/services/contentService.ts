@@ -162,6 +162,51 @@ export interface TreeGradeDTO {
   subjects: TreeSubjectDTO[];
 }
 
+export interface QuestionCommentDTO {
+  id: string;
+  questionId: string;
+  authorId: string | null;
+  authorName: string;
+  text: string;
+  createdAt: string;
+}
+
+export interface ContentVersionDTO {
+  id: string;
+  content_type: string;
+  content_id: string;
+  version: number;
+  modified_by: string | null;
+  modified_at: string;
+  data_json?: Record<string, any>;
+}
+
+export interface KanbanQuestionDTO {
+  id: string;
+  text: string;
+  questionType: string | null;
+  difficulty: string | null;
+  status: string;
+  reviewerNotes: string | null;
+  skillId: string;
+  updatedAt: string | null;
+}
+
+export interface BulkImportRowError {
+  row: number;
+  message: string;
+}
+
+export interface BulkImportReport {
+  status: 'success' | 'failed';
+  total_rows: number;
+  valid_rows: number;
+  invalid_rows: number;
+  created: number;
+  errors: BulkImportRowError[];
+  rolled_back: boolean;
+}
+
 export interface CurriculumImportResult {
   grade_levels: number;
   subjects: number;
@@ -224,6 +269,38 @@ export const contentService = {
         gradeLevelId: s.grade_level_id ? String(s.grade_level_id) : undefined,
       };
     });
+  },
+
+  async getSubject(subjectId: string): Promise<SubjectDTO | null> {
+    try {
+      const data = await apiClient.get<any>(`/subjects/${subjectId}`);
+      if (!data) return null;
+      const colors = getSubjectColors(data.slug);
+      return {
+        id: String(data.id),
+        name: data.name,
+        slug: data.slug,
+        description: data.description,
+        iconName: getIconName(data.slug),
+        color: colors.bg,
+        textColor: colors.text,
+        gradient: colors.gradient,
+        emoji: colors.emoji,
+        order: data.order,
+        gradeLevelId: data.grade_level_id ? String(data.grade_level_id) : undefined,
+      };
+    } catch {
+      return null;
+    }
+  },
+
+  async getDomain(subjectId: string, domainId: string): Promise<DomainDTO | null> {
+    try {
+      const domains = await this.listDomains(subjectId);
+      return domains.find(d => d.id === domainId) || null;
+    } catch {
+      return null;
+    }
   },
 
   async listDomains(subjectId: string): Promise<DomainDTO[]> {
@@ -312,7 +389,13 @@ export const contentService = {
     return { id: String(data.id), name: data.name, slug: data.slug, description: data.description, domainId: String(data.domain_id), order: data.order };
   },
 
-  async importQuestionsCsv(file: File): Promise<{ created: number; errors: Array<{ row: number; error: string }> }> {
+  async importQuestionsCsv(file: File): Promise<BulkImportReport> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return apiClient.upload('/admin/content/import/questions', formData);
+  },
+
+  async importQuestions(file: File): Promise<BulkImportReport> {
     const formData = new FormData();
     formData.append('file', file);
     return apiClient.upload('/admin/content/import/questions', formData);
@@ -335,5 +418,117 @@ export const contentService = {
     const formData = new FormData();
     formData.append('file', file);
     return apiClient.upload('/admin/content/curriculum/import/file', formData);
+  },
+
+  // ── Content Workflow ─────────────────────────────────
+  async listQuestionsByStatus(status: string, limit = 50, offset = 0): Promise<KanbanQuestionDTO[]> {
+    const data = await apiClient.get<any[]>(`/admin/content/questions/by-status?status=${status}&limit=${limit}&offset=${offset}`);
+    return (data || []).map((q: any) => ({
+      id: q.id,
+      text: q.text || '',
+      questionType: q.question_type,
+      difficulty: q.difficulty,
+      status: q.status,
+      reviewerNotes: q.reviewer_notes,
+      skillId: q.skill_id,
+      updatedAt: q.updated_at,
+    }));
+  },
+
+  async transitionQuestion(questionId: string, targetStatus: string, reviewerNotes?: string): Promise<void> {
+    await apiClient.post(`/admin/content/questions/${questionId}/transition`, {
+      target_status: targetStatus,
+      reviewer_notes: reviewerNotes || undefined,
+    });
+  },
+
+  async previewQuestion(questionId: string): Promise<{
+    id: string;
+    questionType: string;
+    difficulty: string;
+    text: string;
+    choices: any;
+    correctAnswer: any;
+    explanation: string | null;
+    hint: string | null;
+    mediaUrl: string | null;
+    points: number;
+    timeLimitSeconds: number | null;
+    status: string;
+  }> {
+    const data = await apiClient.get<any>(`/admin/content/questions/${questionId}/preview`);
+    return {
+      id: data.id,
+      questionType: data.question_type || 'mcq',
+      difficulty: data.difficulty || 'medium',
+      text: data.text,
+      choices: data.choices,
+      correctAnswer: data.correct_answer,
+      explanation: data.explanation || null,
+      hint: data.hint || null,
+      mediaUrl: data.media_url || null,
+      points: data.points,
+      timeLimitSeconds: data.time_limit_seconds || null,
+      status: data.status,
+    };
+  },
+
+  async transitionLesson(lessonId: string, targetStatus: string, reviewerNotes?: string): Promise<void> {
+    await apiClient.post(`/admin/content/lessons/${lessonId}/transition`, {
+      target_status: targetStatus,
+      reviewer_notes: reviewerNotes || undefined,
+    });
+  },
+
+  // ── Question Comments ─────────────────────────────────
+  async getQuestionComments(questionId: string): Promise<QuestionCommentDTO[]> {
+    const data = await apiClient.get<any[]>(`/admin/content/questions/${questionId}/comments`);
+    return (data || []).map((c: any) => ({
+      id: c.id,
+      questionId: c.question_id,
+      authorId: c.author_id,
+      authorName: c.author_name || '',
+      text: c.text,
+      createdAt: c.created_at,
+    }));
+  },
+
+  async addQuestionComment(questionId: string, text: string): Promise<QuestionCommentDTO> {
+    const c = await apiClient.post<any>(`/admin/content/questions/${questionId}/comments`, { text });
+    return {
+      id: c.id,
+      questionId: c.question_id,
+      authorId: c.author_id,
+      authorName: c.author_name || '',
+      text: c.text,
+      createdAt: c.created_at,
+    };
+  },
+
+  async deleteQuestionComment(questionId: string, commentId: string): Promise<void> {
+    await apiClient.delete(`/admin/content/questions/${questionId}/comments/${commentId}`);
+  },
+
+  // ── Content Versioning ─────────────────────────────────
+  async getQuestionVersions(questionId: string): Promise<ContentVersionDTO[]> {
+    const data = await apiClient.get<ContentVersionDTO[]>(`/admin/content/questions/${questionId}/versions`);
+    return data || [];
+  },
+
+  async getQuestionVersionDetail(questionId: string, version: number): Promise<ContentVersionDTO> {
+    return apiClient.get<ContentVersionDTO>(`/admin/content/questions/${questionId}/versions/${version}`);
+  },
+
+  async rollbackQuestion(questionId: string, version: number): Promise<any> {
+    return apiClient.post(`/admin/content/questions/${questionId}/rollback/${version}`, {});
+  },
+
+  async getLessonVersions(lessonId: string): Promise<ContentVersionDTO[]> {
+    const data = await apiClient.get<ContentVersionDTO[]>(`/admin/content/lessons/${lessonId}/versions`);
+    return data || [];
+  },
+
+  async rollbackLesson(lessonId: string, version: number): Promise<any> {
+    return apiClient.post(`/admin/content/lessons/${lessonId}/rollback/${version}`, {});
   },
 };

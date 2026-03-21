@@ -1,7 +1,11 @@
 """Shared pytest fixtures for ILMA backend tests."""
 import asyncio
+import os
 import uuid
 from typing import AsyncGenerator
+
+# Disable scheduler during tests
+os.environ["TESTING"] = "1"
 
 import pytest
 import pytest_asyncio

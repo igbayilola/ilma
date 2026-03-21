@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/authStore';
-import { Profile, UserRole } from '../../types';
+import { ButtonVariant, Profile, UserRole } from '../../types';
 import { profileService } from '../../services/profileService';
 import { Plus, Lock, LayoutDashboard } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
@@ -143,7 +143,7 @@ export const ProfileSelectorPage: React.FC = () => {
                 </div>
 
                 <Button
-                    variant="ghost" as any
+                    variant={ButtonVariant.GHOST}
                     onClick={() => useAuthStore.getState().logout()}
                     className="text-gray-400 hover:text-red-500"
                 >
