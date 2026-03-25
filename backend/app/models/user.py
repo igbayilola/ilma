@@ -13,6 +13,7 @@ class UserRole(str, enum.Enum):
     ADMIN = "admin"
     PARENT = "parent"
     STUDENT = "student"
+    TEACHER = "teacher"
     GUEST = "guest"
 
 

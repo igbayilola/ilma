@@ -7,7 +7,8 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   Home, BookOpen, Award, User, Menu, Bell, Trophy,
   Settings, LogOut, X, ChevronRight, FileEdit,
-  LayoutDashboard, Users, FileText, BarChart2, Shield, Target, AlertTriangle, Crown, Cloud, ArrowLeftRight
+  LayoutDashboard, Users, FileText, BarChart2, Shield, Target, AlertTriangle, Crown, Cloud, ArrowLeftRight,
+  School, ClipboardList
 } from 'lucide-react';
 import { OfflineBanner, SyncCounter } from '../ilma/OfflineIndicators';
 import { XPBar, StreakWidget, LEVEL_NAMES } from '../ilma/Gamification';
@@ -29,6 +30,11 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Enfants', path: '/app/parent/children', icon: 'Users', allowedRoles: [UserRole.PARENT] },
   { label: 'Objectifs', path: '/app/parent/goals', icon: 'Target', allowedRoles: [UserRole.PARENT] },
   { label: 'Alertes', path: '/app/parent/alerts', icon: 'AlertTriangle', allowedRoles: [UserRole.PARENT] },
+
+  // Teacher
+  { label: 'Dashboard', path: '/app/teacher/dashboard', icon: 'LayoutDashboard', allowedRoles: [UserRole.TEACHER] },
+  { label: 'Mes Classes', path: '/app/teacher/dashboard', icon: 'School', allowedRoles: [UserRole.TEACHER] },
+  { label: 'Alertes', path: '/app/teacher/dashboard', icon: 'AlertTriangle', allowedRoles: [UserRole.TEACHER] },
 
   // Admin
   { label: 'Dashboard', path: '/app/admin/dashboard', icon: 'LayoutDashboard', allowedRoles: [UserRole.ADMIN] },
@@ -53,6 +59,8 @@ const IconMap: Record<string, React.ReactNode> = {
   BarChart2: <BarChart2 size={24} />,
   Shield: <Shield size={24} />,
   FileEdit: <FileEdit size={24} />,
+  School: <School size={24} />,
+  ClipboardList: <ClipboardList size={24} />,
 };
 
 // --- Sync-aware logout guard ---

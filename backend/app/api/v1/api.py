@@ -6,6 +6,7 @@ from app.api.v1.endpoints import (
     auth,
     badges,
     content,
+    exams,
     health,
     notifications,
     offline,
@@ -14,6 +15,7 @@ from app.api.v1.endpoints import (
     sessions,
     social,
     subscriptions,
+    teacher,
 )
 
 api_router = APIRouter()
@@ -45,11 +47,17 @@ api_router.include_router(offline.router)
 # Subscriptions + payments
 api_router.include_router(subscriptions.router)
 
+# Mock exams (Examens Blancs CEP)
+api_router.include_router(exams.router)
+
 # Social (leaderboard + challenges)
 api_router.include_router(social.router)
 
 # Notifications
 api_router.include_router(notifications.router)
+
+# Teacher (Espace Enseignant)
+api_router.include_router(teacher.router)
 
 # Admin
 api_router.include_router(admin_content.router)

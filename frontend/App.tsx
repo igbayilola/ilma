@@ -63,6 +63,9 @@ const LeaderboardPage = lazyNamed(() => import('./pages/student/Leaderboard'), '
 const ProfilePage = lazyNamed(() => import('./pages/student/Profile'), 'ProfilePage');
 const StudentSettingsPage = lazyNamed(() => import('./pages/student/Settings'), 'StudentSettingsPage');
 const OfflineManagementPage = lazyNamed(() => import('./pages/student/OfflineManagement'), 'OfflineManagementPage');
+const ExamListPage = lazyNamed(() => import('./pages/student/ExamList'), 'ExamListPage');
+const ExamPlayerPage = lazyNamed(() => import('./pages/student/ExamPlayer'), 'ExamPlayerPage');
+const ExamCorrectionPage = lazyNamed(() => import('./pages/student/ExamCorrection'), 'ExamCorrectionPage');
 
 // Parent Pages
 const ParentDashboard = lazyNamed(() => import('./pages/parent/Dashboard'), 'ParentDashboard');
@@ -72,6 +75,11 @@ const ParentGoalsPage = lazyNamed(() => import('./pages/parent/Goals'), 'ParentG
 
 // Subscription
 const PlansPage = lazyNamed(() => import('./pages/subscription/Plans'), 'PlansPage');
+
+// Teacher Pages
+const TeacherDashboard = lazyNamed(() => import('./pages/teacher/Dashboard'), 'TeacherDashboard');
+const ClassroomDetailPage = lazyNamed(() => import('./pages/teacher/ClassroomDetail'), 'ClassroomDetail');
+const AssignmentResultsPage = lazyNamed(() => import('./pages/teacher/AssignmentResults'), 'AssignmentResults');
 
 // Admin Pages
 const AdminDashboard = lazyNamed(() => import('./pages/admin/Dashboard'), 'AdminDashboard');
@@ -136,6 +144,7 @@ const App: React.FC = () => {
 
       switch(user.role) {
           case UserRole.ADMIN: return '/app/admin/dashboard';
+          case UserRole.TEACHER: return '/app/teacher/dashboard';
           case UserRole.PARENT:
           default:
             // Parents always go through profile selector first
@@ -198,6 +207,11 @@ const App: React.FC = () => {
                                         <Route path="profile" element={<ProfilePage />} />
                                         <Route path="settings" element={<StudentSettingsPage />} />
                                         <Route path="offline-management" element={<OfflineManagementPage />} />
+
+                                        {/* Examens Blancs CEP */}
+                                        <Route path="exams" element={<ExamListPage />} />
+                                        <Route path="exams/:examId/play" element={<ExamPlayerPage />} />
+                                        <Route path="exams/:sessionId/correction" element={<ExamCorrectionPage />} />
                                     </Route>
                                 </Route>
 
@@ -209,6 +223,13 @@ const App: React.FC = () => {
                                     <Route path="goals" element={<ParentGoalsPage />} />
                                     <Route path="alerts" element={<ParentSettingsPage />} /> {/* Alerts are inside settings now */}
                                     <Route path="settings" element={<ParentSettingsPage />} />
+                                </Route>
+
+                                {/* TEACHER ROUTES */}
+                                <Route path="teacher" element={<RoleRoute allowedRoles={[UserRole.TEACHER, UserRole.ADMIN]} />}>
+                                    <Route path="dashboard" element={<TeacherDashboard />} />
+                                    <Route path="classrooms/:id" element={<ClassroomDetailPage />} />
+                                    <Route path="assignments/:id/results" element={<AssignmentResultsPage />} />
                                 </Route>
 
                                 {/* ADMIN ROUTES */}

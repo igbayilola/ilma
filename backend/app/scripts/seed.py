@@ -17,6 +17,7 @@ from app.models.content import (
     QuestionType,
     Skill,
 )
+from app.models.mock_exam import MockExam
 from app.models.subscription import Plan, PlanTier
 from app.models.user import User, UserRole
 from app.schemas.content import CurriculumImportRequest
@@ -287,6 +288,47 @@ async def seed() -> None:
         print("── Plans ──")
         for p_data in SEED_PLANS:
             await _upsert(session, Plan, "tier", p_data)
+        await session.flush()
+
+        # Mock Exams (Examens Blancs)
+        print("── Mock Exams ──")
+        # Find the Mathématiques subject for CM2
+        from app.models.content import Subject
+        math_result = await session.execute(
+            select(Subject).where(Subject.slug == "mathematiques").limit(1)
+        )
+        math_subject = math_result.scalars().first()
+        if math_subject and cm2_grade:
+            import datetime as dt
+            seed_exams = [
+                {
+                    "title": "Examen Blanc Mathématiques CM2",
+                    "grade_level_id": cm2_grade.id,
+                    "subject_id": math_subject.id,
+                    "duration_minutes": 60,
+                    "total_questions": 30,
+                    "question_distribution": {"easy": 10, "medium": 15, "hard": 5},
+                    "is_free": True,
+                    "is_national": False,
+                    "is_active": True,
+                },
+                {
+                    "title": "Examen Blanc National Mars 2026",
+                    "grade_level_id": cm2_grade.id,
+                    "subject_id": math_subject.id,
+                    "duration_minutes": 90,
+                    "total_questions": 40,
+                    "question_distribution": {"easy": 12, "medium": 18, "hard": 10},
+                    "is_free": False,
+                    "is_national": True,
+                    "national_date": dt.date(2026, 3, 28),
+                    "is_active": True,
+                },
+            ]
+            for exam_data in seed_exams:
+                await _upsert(session, MockExam, "title", exam_data)
+        else:
+            print("  [warn] math subject or cm2 grade not found, skipping mock exams")
 
         await session.commit()
     print("\nSeed complete.")
