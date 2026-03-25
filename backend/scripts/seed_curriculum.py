@@ -83,7 +83,7 @@ async def seed(json_path: str):
                     skill_desc = skill_data.get("description", "")
                     ilma_path = skill_data.get("ilma_path", [])
                     if ilma_path:
-                        skill_desc = f"{skill_desc}\n[Parcours ILMA : {' → '.join(ilma_path)}]".strip()
+                        skill_desc = f"{skill_desc}\n[Parcours Sitou : {' → '.join(ilma_path)}]".strip()
 
                     sk, created = await get_or_create(
                         db, Skill,

@@ -25,8 +25,8 @@ export const Toggle: React.FC<ToggleProps> = ({ label, description, checked, onC
         onClick={() => !disabled && onChange(!checked)}
         className={`
           relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent 
-          transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-ilma-primary focus:ring-offset-2
-          ${checked ? 'bg-ilma-primary' : 'bg-gray-200'}
+          transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-sitou-primary focus:ring-offset-2
+          ${checked ? 'bg-sitou-primary' : 'bg-gray-200'}
         `}
       >
         <span

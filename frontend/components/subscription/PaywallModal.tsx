@@ -45,7 +45,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({ isOpen, onClose }) =
       <div className="text-center">
         <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 relative animate-bounce-in">
           <Lock size={40} className="text-yellow-600" />
-          <div className="absolute -top-1 -right-1 bg-ilma-primary text-white rounded-full p-1.5 border-2 border-white">
+          <div className="absolute -top-1 -right-1 bg-sitou-primary text-white rounded-full p-1.5 border-2 border-white">
              <Star size={12} fill="currentColor" />
           </div>
         </div>
@@ -57,7 +57,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({ isOpen, onClose }) =
 
         <div className="bg-gray-50 rounded-2xl p-4 mb-6 text-left border border-gray-100">
             <h4 className="font-bold text-gray-700 mb-3 flex items-center">
-                <Zap size={16} className="mr-2 text-ilma-orange fill-current" /> Avec Premium :
+                <Zap size={16} className="mr-2 text-sitou-orange fill-current" /> Avec Premium :
             </h4>
             <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center"><CheckCircle2 size={16} className="text-green-500 mr-2"/> Exercices illimités</li>
@@ -68,13 +68,13 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({ isOpen, onClose }) =
         </div>
 
         <div className="space-y-3">
-            <Button fullWidth onClick={handleUpgrade} className="bg-gradient-to-r from-ilma-orange to-yellow-500 border-none shadow-lg shadow-yellow-500/30">
+            <Button fullWidth onClick={handleUpgrade} className="bg-gradient-to-r from-sitou-orange to-yellow-500 border-none shadow-lg shadow-yellow-500/30">
                 Débloquer l'illimité
             </Button>
             {!isChildProfile && parentNotifState === 'idle' && (
               <button
                 onClick={handleSendToParent}
-                className="w-full py-3 text-sm font-medium text-ilma-primary hover:bg-ilma-primary-light rounded-xl transition-colors flex items-center justify-center gap-2"
+                className="w-full py-3 text-sm font-medium text-sitou-primary hover:bg-sitou-primary-light rounded-xl transition-colors flex items-center justify-center gap-2"
               >
                 <MessageSquare size={16} />
                 Envoyer à mes parents

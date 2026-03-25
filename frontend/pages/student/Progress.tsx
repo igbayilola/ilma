@@ -123,7 +123,7 @@ export const ProgressPage: React.FC = () => {
                  </div>
 
                  <div className="md:hidden mr-3">
-                     <div className={`w-3 h-3 rounded-full ${item.score >= 80 ? 'bg-ilma-green' : item.score >= 50 ? 'bg-ilma-primary' : 'bg-ilma-orange'}`} />
+                     <div className={`w-3 h-3 rounded-full ${item.score >= 80 ? 'bg-sitou-green' : item.score >= 50 ? 'bg-sitou-primary' : 'bg-sitou-orange'}`} />
                  </div>
 
                  <div className="flex-shrink-0 text-gray-400">

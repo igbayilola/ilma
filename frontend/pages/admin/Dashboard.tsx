@@ -88,12 +88,12 @@ export const AdminDashboard: React.FC = () => {
                 <div className="lg:col-span-2 bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
                     <div className="flex items-center justify-between mb-6">
                         <h3 className="font-bold text-gray-800 flex items-center">
-                            <Activity size={20} className="mr-2 text-ilma-primary" /> Métriques d'engagement
+                            <Activity size={20} className="mr-2 text-sitou-primary" /> Métriques d'engagement
                         </h3>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div className="text-center">
-                            <span className="block text-3xl font-extrabold text-ilma-primary">{kpis?.dau ?? 0}</span>
+                            <span className="block text-3xl font-extrabold text-sitou-primary">{kpis?.dau ?? 0}</span>
                             <span className="text-xs text-gray-500 uppercase font-bold">DAU</span>
                         </div>
                         <div className="text-center">
@@ -131,7 +131,7 @@ export const AdminDashboard: React.FC = () => {
                         </div>
                     </Card>
 
-                    <Card className="bg-gradient-to-br from-ilma-primary to-amber-800 text-white border-none">
+                    <Card className="bg-gradient-to-br from-sitou-primary to-amber-800 text-white border-none">
                         <h3 className="font-bold mb-2">Résumé</h3>
                         <p className="text-amber-100 text-sm mb-2">
                             {kpis?.dau ?? 0} utilisateur(s) actif(s) aujourd'hui, {kpis?.activeSubscriptions ?? 0} abonné(s).

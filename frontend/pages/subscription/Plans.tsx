@@ -119,7 +119,7 @@ export const PlansPage: React.FC = () => {
                 </div>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900">Devenez Premium</h1>
                 <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-                    Débloquez tout le potentiel de ILMA. Apprenez sans limites, même sans internet.
+                    Débloquez tout le potentiel de Sitou. Apprenez sans limites, même sans internet.
                 </p>
             </header>
 
@@ -138,7 +138,7 @@ export const PlansPage: React.FC = () => {
                                 onClick={() => setSelectedBeneficiaryId(p.id)}
                                 className={`flex flex-col items-center p-3 rounded-xl border-2 transition-all min-w-[80px] ${
                                     selectedBeneficiaryId === p.id
-                                        ? 'border-ilma-primary bg-amber-50'
+                                        ? 'border-sitou-primary bg-amber-50'
                                         : 'border-gray-100 hover:border-amber-200'
                                 }`}
                             >
@@ -147,7 +147,7 @@ export const PlansPage: React.FC = () => {
                                     alt={p.displayName}
                                     className="w-10 h-10 rounded-full mb-1"
                                 />
-                                <span className={`text-xs font-bold ${selectedBeneficiaryId === p.id ? 'text-ilma-primary' : 'text-gray-600'}`}>
+                                <span className={`text-xs font-bold ${selectedBeneficiaryId === p.id ? 'text-sitou-primary' : 'text-gray-600'}`}>
                                     {p.displayName}
                                 </span>
                             </button>
@@ -161,11 +161,11 @@ export const PlansPage: React.FC = () => {
                     <Card
                         key={plan.id}
                         className={`clay-card relative flex flex-col p-6 border-2 transition-transform hover:-translate-y-2 duration-300 ${
-                            plan.isPopular ? 'border-ilma-primary shadow-2xl scale-105 z-10' : 'border-gray-100'
+                            plan.isPopular ? 'border-sitou-primary shadow-2xl scale-105 z-10' : 'border-gray-100'
                         }`}
                     >
                         {plan.isPopular && (
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-ilma-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-sitou-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                                 PLUS POPULAIRE
                             </div>
                         )}
@@ -192,7 +192,7 @@ export const PlansPage: React.FC = () => {
                             fullWidth 
                             variant={plan.isPopular ? ButtonVariant.PRIMARY : ButtonVariant.SECONDARY}
                             onClick={() => handleSelectPlan(plan)}
-                            className={plan.isPopular ? 'bg-gradient-to-r from-amber-600 to-ilma-primary shadow-lg shadow-amber-500/30' : ''}
+                            className={plan.isPopular ? 'bg-gradient-to-r from-amber-600 to-sitou-primary shadow-lg shadow-amber-500/30' : ''}
                         >
                             Choisir ce plan
                         </Button>
@@ -207,7 +207,7 @@ export const PlansPage: React.FC = () => {
                         <tr className="border-b-2 border-gray-200">
                             <th className="py-3 px-4 text-left font-bold text-gray-700">Fonctionnalité</th>
                             {plans.map(p => (
-                                <th key={p.id} className={`py-3 px-4 text-center font-bold ${p.isPopular ? 'text-ilma-primary' : 'text-gray-700'}`}>
+                                <th key={p.id} className={`py-3 px-4 text-center font-bold ${p.isPopular ? 'text-sitou-primary' : 'text-gray-700'}`}>
                                     {p.name}
                                 </th>
                             ))}

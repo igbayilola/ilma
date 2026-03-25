@@ -29,11 +29,11 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variants = {
-    [ButtonVariant.PRIMARY]: "gradient-hero text-white shadow-clay hover:shadow-clay-hover active:shadow-clay-pressed focus:ring-ilma-primary",
-    [ButtonVariant.SECONDARY]: "bg-ilma-primary-light text-ilma-primary-dark hover:bg-amber-200/60 focus:ring-ilma-primary-light shadow-clay-sm",
-    [ButtonVariant.GHOST]: "bg-transparent text-ilma-text hover:bg-gray-100 focus:ring-gray-200",
-    [ButtonVariant.DANGER]: "gradient-danger text-white hover:shadow-glow-orange focus:ring-ilma-red shadow-clay-sm",
-    [ButtonVariant.SUCCESS]: "gradient-success text-white shadow-clay-sm hover:shadow-glow-green focus:ring-ilma-green"
+    [ButtonVariant.PRIMARY]: "gradient-hero text-white shadow-clay hover:shadow-clay-hover active:shadow-clay-pressed focus:ring-sitou-primary",
+    [ButtonVariant.SECONDARY]: "bg-sitou-primary-light text-sitou-primary-dark hover:bg-amber-200/60 focus:ring-sitou-primary-light shadow-clay-sm",
+    [ButtonVariant.GHOST]: "bg-transparent text-sitou-text hover:bg-gray-100 focus:ring-gray-200",
+    [ButtonVariant.DANGER]: "gradient-danger text-white hover:shadow-glow-orange focus:ring-sitou-red shadow-clay-sm",
+    [ButtonVariant.SUCCESS]: "gradient-success text-white shadow-clay-sm hover:shadow-glow-green focus:ring-sitou-green"
   };
 
   const widthStyle = fullWidth ? "w-full" : "";

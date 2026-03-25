@@ -7,7 +7,7 @@
   </defs>
   <!-- Maskable: full bleed background, content in safe zone (80% center) -->
   <rect width="512" height="512" fill="url(#bg)"/>
-  <text x="256" y="220" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="110" font-weight="800" fill="white" letter-spacing="-4">ILMA</text>
+  <text x="256" y="220" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="110" font-weight="800" fill="white" letter-spacing="-4">SITOU</text>
   <rect x="156" y="270" width="200" height="5" rx="2.5" fill="rgba(255,255,255,0.3)"/>
   <rect x="156" y="270" width="130" height="5" rx="2.5" fill="#28A745"/>
   <text x="256" y="370" text-anchor="middle" font-family="system-ui" font-size="28" font-weight="600" fill="rgba(255,255,255,0.7)">Apprendre</text>

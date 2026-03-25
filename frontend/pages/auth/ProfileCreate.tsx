@@ -60,7 +60,7 @@ export const ProfileCreatePage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-ilma-surface flex items-center justify-center p-6">
+        <div className="min-h-screen bg-sitou-surface flex items-center justify-center p-6">
             <div className="w-full max-w-md">
                 <button
                     onClick={() => navigate('/select-profile')}
@@ -94,7 +94,7 @@ export const ProfileCreatePage: React.FC = () => {
                                 <img
                                     src={avatarUrl}
                                     alt="Avatar sélectionné"
-                                    className="w-20 h-20 rounded-full border-4 border-ilma-primary shadow-lg"
+                                    className="w-20 h-20 rounded-full border-4 border-sitou-primary shadow-lg"
                                 />
                                 <div className="flex-1">
                                     <div className="flex flex-wrap gap-2">
@@ -105,7 +105,7 @@ export const ProfileCreatePage: React.FC = () => {
                                                 onClick={() => setSelectedAvatar(seed)}
                                                 className={`w-10 h-10 rounded-full border-2 transition-all ${
                                                     selectedAvatar === seed
-                                                        ? 'border-ilma-primary scale-110'
+                                                        ? 'border-sitou-primary scale-110'
                                                         : 'border-transparent hover:border-gray-300'
                                                 }`}
                                             >
@@ -139,7 +139,7 @@ export const ProfileCreatePage: React.FC = () => {
                                 <select
                                     value={gradeLevelId}
                                     onChange={e => setGradeLevelId(e.target.value)}
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm bg-white"
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm bg-white"
                                 >
                                     <option value="">— Choisir la classe —</option>
                                     {gradeLevels.map(g => (
@@ -163,7 +163,7 @@ export const ProfileCreatePage: React.FC = () => {
                                     type="checkbox"
                                     checked={usePin}
                                     onChange={e => { setUsePin(e.target.checked); if (!e.target.checked) setPin(''); }}
-                                    className="w-5 h-5 accent-ilma-primary"
+                                    className="w-5 h-5 accent-sitou-primary"
                                 />
                             </label>
                             {usePin && (

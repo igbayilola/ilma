@@ -94,7 +94,7 @@ export const AdminSubsPage: React.FC = () => {
                 </div>
                 <div className="p-4 bg-white border border-gray-200 rounded-xl shadow-sm">
                     <span className="text-xs text-gray-500 uppercase font-bold">Abonnés Actifs</span>
-                    <div className="text-2xl font-extrabold text-ilma-primary mt-1">
+                    <div className="text-2xl font-extrabold text-sitou-primary mt-1">
                         {kpis?.activeSubscriptions ?? '—'}
                     </div>
                 </div>

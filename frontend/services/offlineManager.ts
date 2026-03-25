@@ -90,7 +90,7 @@ export const offlineManager = {
         if (!pack) throw new Error("Pack not found");
 
         // --- Resume support ---
-        const progressKey = `ilma_download_${packId}`;
+        const progressKey = `sitou_download_${packId}`;
         const savedProgress = localStorage.getItem(progressKey);
         let startChunk = 0;
         if (savedProgress) {

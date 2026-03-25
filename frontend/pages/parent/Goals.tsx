@@ -58,7 +58,7 @@ export const ParentGoalsPage: React.FC = () => {
                                 onChange={(e) => setGoals({...goals, weeklyTime: parseInt(e.target.value)})}
                                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                             />
-                            <span className="font-bold text-ilma-primary w-16 text-right">{goals.weeklyTime}m</span>
+                            <span className="font-bold text-sitou-primary w-16 text-right">{goals.weeklyTime}m</span>
                         </div>
                     </div>
 
@@ -75,7 +75,7 @@ export const ParentGoalsPage: React.FC = () => {
                                 onChange={(e) => setGoals({...goals, weeklyExercises: parseInt(e.target.value)})}
                                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                             />
-                            <span className="font-bold text-ilma-primary w-16 text-right">{goals.weeklyExercises}</span>
+                            <span className="font-bold text-sitou-primary w-16 text-right">{goals.weeklyExercises}</span>
                         </div>
                     </div>
                 </div>

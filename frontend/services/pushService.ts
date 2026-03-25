@@ -5,7 +5,7 @@
 import { apiClient } from './apiClient';
 import { telemetry } from './telemetry';
 
-const PUSH_SUBSCRIBED_KEY = 'ilma_push_subscribed';
+const PUSH_SUBSCRIBED_KEY = 'sitou_push_subscribed';
 const VAPID_PUBLIC_KEY = 'BNQC2U0LMDuszpg_NmkMmh_v8_FuJUkCoC3o-Ew-X3fNzvJb4F8iBmxFXV55y3Z8u7KQ0-Rwyixz2BUL7ttgo50';
 
 /** Convert a base64 VAPID key to Uint8Array for pushManager.subscribe(). */

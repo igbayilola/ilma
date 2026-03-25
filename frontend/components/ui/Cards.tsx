@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({ children, className = '', onClick, i
   return (
     <div
       onClick={onClick}
-      className={`bg-white dark:bg-gray-800 rounded-3xl p-6 border border-ilma-border dark:border-gray-700 shadow-clay ${accentClass} ${interactive ? 'cursor-pointer hover:shadow-clay-hover transition-all duration-300 transform hover:-translate-y-1' : ''} ${className}`}
+      className={`bg-white dark:bg-gray-800 rounded-3xl p-6 border border-sitou-border dark:border-gray-700 shadow-clay ${accentClass} ${interactive ? 'cursor-pointer hover:shadow-clay-hover transition-all duration-300 transform hover:-translate-y-1' : ''} ${className}`}
     >
       {children}
     </div>
@@ -30,16 +30,16 @@ interface BadgeProps {
 
 export const Badge: React.FC<BadgeProps> = ({ label, color = 'amber', size = 'md', className = '' }) => {
   const colorStyles: Record<string, string> = {
-    amber: 'bg-ilma-primary-light text-ilma-primary-dark',
+    amber: 'bg-sitou-primary-light text-sitou-primary-dark',
     blue: 'bg-blue-100 text-blue-700',
-    green: 'bg-green-100 text-ilma-green',
-    red: 'bg-red-100 text-ilma-red',
-    orange: 'bg-orange-100 text-ilma-orange',
+    green: 'bg-green-100 text-sitou-green',
+    red: 'bg-red-100 text-sitou-red',
+    orange: 'bg-orange-100 text-sitou-orange',
     gray: 'bg-gray-100 text-gray-600',
-    purple: 'bg-ilma-purple-light text-ilma-purple',
-    teal: 'bg-ilma-teal-light text-ilma-teal',
-    pink: 'bg-ilma-pink-light text-ilma-pink',
-    gold: 'bg-ilma-gold-light text-ilma-gold',
+    purple: 'bg-sitou-purple-light text-sitou-purple',
+    teal: 'bg-sitou-teal-light text-sitou-teal',
+    pink: 'bg-sitou-pink-light text-sitou-pink',
+    gold: 'bg-sitou-gold-light text-sitou-gold',
   };
 
   const sizeStyles = {

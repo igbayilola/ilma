@@ -105,7 +105,7 @@ class SubscriptionService:
         adapter = get_payment_provider(provider.value)
         result = await adapter.create_transaction(
             amount=plan.price_xof,
-            description=f"ILMA - {plan.name}",
+            description=f"Sitou - {plan.name}",
             callback_url=f"/api/v1/payments/webhook/{provider.value}",
         )
         payment.provider_tx_id = result.get("transaction_id")

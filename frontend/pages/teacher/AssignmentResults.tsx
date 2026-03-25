@@ -49,7 +49,7 @@ export const AssignmentResults: React.FC = () => {
         </p>
         <button
           onClick={() => navigate(-1)}
-          className="mt-4 text-ilma-primary font-bold hover:underline"
+          className="mt-4 text-sitou-primary font-bold hover:underline"
         >
           Retour
         </button>

@@ -47,7 +47,7 @@ export const SplashPage: React.FC = () => {
     <div className="min-h-screen bg-white flex flex-col justify-between max-w-md mx-auto md:max-w-full md:grid md:grid-cols-2">
 
       {/* Visual Side (Carousel) */}
-      <div className="flex-1 flex flex-col items-center justify-center p-8 bg-white md:bg-ilma-primary-light relative overflow-hidden">
+      <div className="flex-1 flex flex-col items-center justify-center p-8 bg-white md:bg-sitou-primary-light relative overflow-hidden">
         {/* Carousel Content */}
         <div className="w-full max-w-sm text-center z-10">
           <div className={`w-48 h-48 mx-auto rounded-full flex items-center justify-center mb-8 transition-all duration-500 ${SLIDES[currentSlide].gradient} shadow-lg`}>
@@ -78,7 +78,7 @@ export const SplashPage: React.FC = () => {
       {/* Action Side */}
       <div className="p-8 flex flex-col justify-center bg-white md:max-w-md md:mx-auto w-full">
         <div className="md:hidden text-center mb-8">
-             <span className="font-extrabold text-2xl bg-gradient-to-r from-amber-600 via-orange-500 to-yellow-500 bg-clip-text text-transparent font-display">ILMA</span>
+             <span className="font-extrabold text-2xl bg-gradient-to-r from-amber-600 via-orange-500 to-yellow-500 bg-clip-text text-transparent font-display">SITOU</span>
         </div>
 
         <div className="space-y-4">
@@ -107,7 +107,7 @@ export const SplashPage: React.FC = () => {
             fullWidth
             variant={ButtonVariant.GHOST}
             onClick={handleGuestMode}
-            className="text-gray-500 font-medium hover:text-ilma-primary hover:bg-gray-50"
+            className="text-gray-500 font-medium hover:text-sitou-primary hover:bg-gray-50"
           >
             Continuer en mode invit&eacute;
           </Button>

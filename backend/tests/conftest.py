@@ -1,4 +1,4 @@
-"""Shared pytest fixtures for ILMA backend tests."""
+"""Shared pytest fixtures for Sitou backend tests."""
 import asyncio
 import os
 import uuid

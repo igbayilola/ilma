@@ -167,7 +167,7 @@ export const ClassroomDetail: React.FC = () => {
         <p className="text-gray-500 font-medium">Classe introuvable.</p>
         <button
           onClick={() => navigate('/app/teacher/dashboard')}
-          className="mt-4 text-ilma-primary font-bold hover:underline"
+          className="mt-4 text-sitou-primary font-bold hover:underline"
         >
           Retour au dashboard
         </button>
@@ -336,7 +336,7 @@ export const ClassroomDetail: React.FC = () => {
                     onClick={() =>
                       navigate(`/app/teacher/assignments/${a.id}/results`)
                     }
-                    className="inline-flex items-center px-3 py-1.5 bg-ilma-primary-light text-ilma-primary-dark text-sm font-bold rounded-lg hover:bg-amber-200 transition-colors"
+                    className="inline-flex items-center px-3 py-1.5 bg-sitou-primary-light text-sitou-primary-dark text-sm font-bold rounded-lg hover:bg-amber-200 transition-colors"
                   >
                     <Eye size={14} className="mr-1.5" />
                     Voir résultats

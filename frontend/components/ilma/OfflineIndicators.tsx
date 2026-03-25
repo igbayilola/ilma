@@ -43,7 +43,7 @@ export const SyncCounter: React.FC = () => {
 
   if (count === 0 && syncStatus === SyncStatus.SYNCED && failedCount === 0) {
     return (
-      <div className="flex items-center text-ilma-green text-sm font-medium" title="Tout est synchronisé">
+      <div className="flex items-center text-sitou-green text-sm font-medium" title="Tout est synchronisé">
         <CheckCircle2 className="w-5 h-5" />
       </div>
     );
@@ -60,13 +60,13 @@ export const SyncCounter: React.FC = () => {
 
   return (
     <div className="flex items-center gap-1">
-      <div className="flex items-center bg-ilma-primary-light px-3 py-1.5 rounded-full border border-amber-200">
+      <div className="flex items-center bg-sitou-primary-light px-3 py-1.5 rounded-full border border-amber-200">
         {syncStatus === SyncStatus.SYNCING ? (
-          <RefreshCw className="w-4 h-4 text-ilma-primary mr-2 animate-spin" />
+          <RefreshCw className="w-4 h-4 text-sitou-primary mr-2 animate-spin" />
         ) : (
-          <Cloud className="w-4 h-4 text-ilma-primary mr-2" />
+          <Cloud className="w-4 h-4 text-sitou-primary mr-2" />
         )}
-        <span className="text-xs font-bold text-ilma-primary">
+        <span className="text-xs font-bold text-sitou-primary">
           {syncStatus === SyncStatus.SYNCING ? 'Synchronisation...' : `${count} à envoyer`}
         </span>
       </div>

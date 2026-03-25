@@ -80,7 +80,7 @@ class MaintenanceModeMiddleware(BaseHTTPMiddleware):
                 status_code=503,
                 content=err(
                     code="MAINTENANCE",
-                    message="ILMA est en maintenance. Veuillez réessayer plus tard.",
+                    message="Sitou est en maintenance. Veuillez réessayer plus tard.",
                 ),
             )
         return await call_next(request)

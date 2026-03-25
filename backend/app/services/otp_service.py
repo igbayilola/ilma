@@ -99,7 +99,7 @@ class OTPService:
         db.add(otp)
         await db.flush()
 
-        await self._sms.send(phone, f"Votre code ILMA : {code}")
+        await self._sms.send(phone, f"Votre code Sitou : {code}")
 
         return {"phone": phone, "expires_in": OTP_VALIDITY_MINUTES * 60}
 

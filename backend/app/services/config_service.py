@@ -8,10 +8,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.app_config import AppConfig
 
-logger = logging.getLogger("ilma.config")
+logger = logging.getLogger("sitou.config")
 
 CACHE_TTL = 300  # 5 minutes
-CACHE_PREFIX = "ilma:config:"
+CACHE_PREFIX = "sitou:config:"
 
 # Ultimate fallback defaults if both Redis and DB are unavailable
 DEFAULTS: dict[str, Any] = {

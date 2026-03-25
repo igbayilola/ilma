@@ -23,22 +23,22 @@ export const StudentSettingsPage: React.FC = () => {
     });
 
     // Data saver mode
-    const [dataSaver, setDataSaver] = useState(() => localStorage.getItem('ilma_data_saver') === 'true');
+    const [dataSaver, setDataSaver] = useState(() => localStorage.getItem('sitou_data_saver') === 'true');
 
     const toggleDataSaver = () => {
       const newValue = !dataSaver;
       setDataSaver(newValue);
-      localStorage.setItem('ilma_data_saver', String(newValue));
+      localStorage.setItem('sitou_data_saver', String(newValue));
       document.documentElement.classList.toggle('data-saver', newValue);
     };
 
     // Sound feedback
-    const [soundEnabled, setSoundEnabled] = useState(() => localStorage.getItem('ilma_sound') !== 'false');
+    const [soundEnabled, setSoundEnabled] = useState(() => localStorage.getItem('sitou_sound') !== 'false');
 
     const toggleSound = () => {
       const newValue = !soundEnabled;
       setSoundEnabled(newValue);
-      localStorage.setItem('ilma_sound', String(newValue));
+      localStorage.setItem('sitou_sound', String(newValue));
     };
 
     // Push notification state
@@ -84,7 +84,7 @@ export const StudentSettingsPage: React.FC = () => {
 
             <Card>
                 <div className="flex items-center mb-6">
-                    <div className="p-2 bg-amber-100 rounded-lg mr-3 text-ilma-primary">
+                    <div className="p-2 bg-amber-100 rounded-lg mr-3 text-sitou-primary">
                         <Bell size={24} />
                     </div>
                     <div>
@@ -95,7 +95,7 @@ export const StudentSettingsPage: React.FC = () => {
 
                 <div className="space-y-2">
                     <div className="flex items-center py-2">
-                        <Flame size={20} className="text-ilma-orange mr-3" />
+                        <Flame size={20} className="text-sitou-orange mr-3" />
                         <div className="flex-1">
                              <Toggle 
                                 label="Série en danger" 
@@ -151,7 +151,7 @@ export const StudentSettingsPage: React.FC = () => {
                             aria-checked={pushEnabled}
                             onClick={togglePush}
                             disabled={pushLoading}
-                            className={`relative w-12 h-7 rounded-full transition-colors ${pushEnabled ? 'bg-ilma-primary' : 'bg-gray-300'} ${pushLoading ? 'opacity-50' : ''}`}
+                            className={`relative w-12 h-7 rounded-full transition-colors ${pushEnabled ? 'bg-sitou-primary' : 'bg-gray-300'} ${pushLoading ? 'opacity-50' : ''}`}
                         >
                             <span className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform ${pushEnabled ? 'translate-x-5' : ''}`} />
                         </button>
@@ -213,7 +213,7 @@ export const StudentSettingsPage: React.FC = () => {
                             onClick={() => setTheme(opt.value)}
                             className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-colors ${
                                 theme === opt.value
-                                    ? 'border-ilma-primary bg-ilma-primary-light dark:bg-amber-900/30 text-ilma-primary'
+                                    ? 'border-sitou-primary bg-sitou-primary-light dark:bg-amber-900/30 text-sitou-primary'
                                     : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 text-gray-600 dark:text-gray-400'
                             }`}
                         >
@@ -241,7 +241,7 @@ export const StudentSettingsPage: React.FC = () => {
                       role="switch"
                       aria-checked={dataSaver}
                       onClick={toggleDataSaver}
-                      className={`relative w-12 h-7 rounded-full transition-colors ${dataSaver ? 'bg-ilma-primary' : 'bg-gray-300'}`}
+                      className={`relative w-12 h-7 rounded-full transition-colors ${dataSaver ? 'bg-sitou-primary' : 'bg-gray-300'}`}
                     >
                       <span className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform ${dataSaver ? 'translate-x-5' : ''}`} />
                     </button>
@@ -265,7 +265,7 @@ export const StudentSettingsPage: React.FC = () => {
                       role="switch"
                       aria-checked={soundEnabled}
                       onClick={toggleSound}
-                      className={`relative w-12 h-7 rounded-full transition-colors ${soundEnabled ? 'bg-ilma-primary' : 'bg-gray-300'}`}
+                      className={`relative w-12 h-7 rounded-full transition-colors ${soundEnabled ? 'bg-sitou-primary' : 'bg-gray-300'}`}
                     >
                       <span className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform ${soundEnabled ? 'translate-x-5' : ''}`} />
                     </button>

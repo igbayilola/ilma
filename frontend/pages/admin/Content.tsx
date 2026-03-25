@@ -521,7 +521,7 @@ export const AdminContentPage: React.FC = () => {
             <select
               value={selectedGradeId}
               onChange={e => setSelectedGradeId(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm"
+              className="px-3 py-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
             >
               <option value="">Toutes les classes</option>
               {grades.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
@@ -592,7 +592,7 @@ export const AdminContentPage: React.FC = () => {
               value={formName}
               onChange={e => setFormName(e.target.value)}
               placeholder="Ex: CM2"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
             />
             {formName && <p className="text-xs text-gray-400 mt-1">Slug : {slugify(formName)}</p>}
           </div>
@@ -602,7 +602,7 @@ export const AdminContentPage: React.FC = () => {
               value={formDescription}
               onChange={e => setFormDescription(e.target.value)}
               rows={2}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm resize-none"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm resize-none"
             />
           </div>
           {formError && (
@@ -626,7 +626,7 @@ export const AdminContentPage: React.FC = () => {
               <select
                 value={formGradeId}
                 onChange={e => setFormGradeId(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
               >
                 <option value="">— Aucune classe —</option>
                 {grades.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
@@ -640,7 +640,7 @@ export const AdminContentPage: React.FC = () => {
               value={formName}
               onChange={e => setFormName(e.target.value)}
               placeholder="Ex: Mathematiques"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
             />
             {formName && <p className="text-xs text-gray-400 mt-1">Slug : {slugify(formName)}</p>}
           </div>
@@ -650,7 +650,7 @@ export const AdminContentPage: React.FC = () => {
               value={formDescription}
               onChange={e => setFormDescription(e.target.value)}
               rows={2}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm resize-none"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm resize-none"
             />
           </div>
           {formError && (
@@ -699,7 +699,7 @@ export const AdminContentPage: React.FC = () => {
           </p>
 
           <div
-            className="border-2 border-dashed border-gray-200 rounded-2xl p-8 text-center cursor-pointer hover:border-ilma-primary hover:bg-ilma-primary-light/30 transition-colors"
+            className="border-2 border-dashed border-gray-200 rounded-2xl p-8 text-center cursor-pointer hover:border-sitou-primary hover:bg-sitou-primary-light/30 transition-colors"
             onClick={() => curriculumFileRef.current?.click()}
           >
             <FileJson size={32} className="mx-auto text-gray-400 mb-2" />
@@ -790,7 +790,7 @@ export const AdminContentPage: React.FC = () => {
             <button
               type="button"
               onClick={() => toggleAllExportDomains(!allExportDomainsChecked)}
-              className="text-xs text-ilma-primary hover:underline font-medium"
+              className="text-xs text-sitou-primary hover:underline font-medium"
             >
               {allExportDomainsChecked ? 'Tout decocher' : 'Tout cocher'}
             </button>
@@ -810,7 +810,7 @@ export const AdminContentPage: React.FC = () => {
                         type="checkbox"
                         checked={exportCheckedDomains.has(domain.id)}
                         onChange={() => toggleExportDomain(domain.id)}
-                        className="rounded border-gray-300 text-ilma-primary focus:ring-ilma-primary/20 shrink-0"
+                        className="rounded border-gray-300 text-sitou-primary focus:ring-sitou-primary/20 shrink-0"
                       />
                       <span className="text-sm text-gray-800 flex-1 truncate">{domain.name}</span>
                       <span className="text-[11px] text-gray-400 shrink-0">{skillCount} comp. · {msCount} micro</span>

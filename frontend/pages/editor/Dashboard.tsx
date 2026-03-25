@@ -111,7 +111,7 @@ export const EditorDashboard: React.FC = () => {
         <Card className="p-4">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm text-gray-500">Total questions</span>
-            <FileQuestion size={20} className="text-ilma-primary" />
+            <FileQuestion size={20} className="text-sitou-primary" />
           </div>
           <p className="text-2xl font-bold">{stats?.totalQuestions ?? 0}</p>
         </Card>
@@ -170,7 +170,7 @@ export const EditorDashboard: React.FC = () => {
                   <p className="text-sm text-gray-500">Arbre du curriculum</p>
                 </div>
               </div>
-              <ArrowRight size={20} className="text-gray-300 group-hover:text-ilma-primary transition-colors" />
+              <ArrowRight size={20} className="text-gray-300 group-hover:text-sitou-primary transition-colors" />
             </div>
           </Card>
         </Link>
@@ -186,7 +186,7 @@ export const EditorDashboard: React.FC = () => {
                   <p className="text-sm text-gray-500">Kanban editorial</p>
                 </div>
               </div>
-              <ArrowRight size={20} className="text-gray-300 group-hover:text-ilma-primary transition-colors" />
+              <ArrowRight size={20} className="text-gray-300 group-hover:text-sitou-primary transition-colors" />
             </div>
           </Card>
         </Link>

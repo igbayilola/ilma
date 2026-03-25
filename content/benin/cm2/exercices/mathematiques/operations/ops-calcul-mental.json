@@ -1,0 +1,24 @@
+{
+  "skill_slug": "ops-calcul-mental",
+  "questions": [
+    {
+      "text": "Le double de 450 est 900.",
+      "question_type": "TRUE_FALSE",
+      "difficulty": "EASY",
+      "choices": ["Vrai", "Faux"],
+      "correct_answer": "Vrai",
+      "explanation": "450 × 2 = 900.",
+      "points": 1
+    },
+    {
+      "text": "12 + 8 = 20",
+      "question_type": "TRUE_FALSE",
+      "difficulty": "EASY",
+      "choices": ["Vrai", "Faux"],
+      "correct_answer": "Vrai",
+      "explanation": "12 + 8 = 20.",
+      "points": 1
+    }
+  ],
+  "micro_lesson": null
+}

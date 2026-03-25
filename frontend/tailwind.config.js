@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        ilma: {
+        sitou: {
           // Vibrant West Africa — primary (amber)
           primary: '#D97706',          // AA-safe on white (text)
           'primary-bright': '#F59E0B', // fills/backgrounds only

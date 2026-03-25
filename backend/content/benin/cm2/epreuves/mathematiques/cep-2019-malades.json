@@ -1,0 +1,132 @@
+{
+  "title": "CEP 2019 Session des Malades — Mathématiques",
+  "year": 2019,
+  "session": "malades",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Codjo est un maraîcher. Il dispose d'un domaine de 150 m de long sur 80 m de large qu'il veut exploiter. Pour cela, il demande et obtient auprès d'une banque un prêt de 2 500 000 FCFA au taux annuel de 12%.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "measures_operations",
+      "context_text": "Le domaine de Codjo mesure 150 m de long sur 80 m de large.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule en hectare (ha) la superficie du domaine à exploiter.",
+          "question_type": "numeric_input",
+          "correct_answer": "1.2",
+          "explanation": "150 × 80 = 12 000 m² = 1,2 ha (1 ha = 10 000 m²).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Détermine l'aire de la superficie occupée par les produits. (Le plan montre des allées de 2 m.)",
+          "question_type": "numeric_input",
+          "correct_answer": "11200",
+          "explanation": "Aire totale moins l'aire des allées. Aire utile = 11 200 m².",
+          "hint": "Soustrais l'aire des allées de l'aire totale.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule le nombre de planches que l'on peut installer sur cette superficie utile. (Chaque planche = 5 m × 2 m)",
+          "question_type": "numeric_input",
+          "correct_answer": "1120",
+          "explanation": "Aire d'une planche = 5 × 2 = 10 m². 11 200 ÷ 10 = 1 120 planches.",
+          "hint": "Utilise la superficie utile de la question b).",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "geometry",
+      "context_text": "Une planche rectangulaire mesure 5 m × 2 m.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Reproduis à l'échelle de 1/100 une planche. (rectangulaire 5 m × 2 m)",
+          "question_type": "mcq",
+          "choices": ["Rectangle 5cm × 2cm", "Rectangle 50cm × 20cm", "Rectangle 0.5cm × 0.2cm"],
+          "correct_answer": "Rectangle 5cm × 2cm",
+          "explanation": "Échelle 1/100 : 5 m = 500 cm ÷ 100 = 5 cm. 2 m = 200 cm ÷ 100 = 2 cm.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Trace son symétrique par rapport à une droite (D) placée hors du rectangle.",
+          "question_type": "mcq",
+          "choices": ["Rectangle symétrique de l'autre côté de D", "Même rectangle sur D", "Rectangle réduit"],
+          "correct_answer": "Rectangle symétrique de l'autre côté de D",
+          "explanation": "Le symétrique par rapport à une droite est une figure de mêmes dimensions reflétée de l'autre côté de (D).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Indique la nature du quadrilatère formé par la planche et son symétrique.",
+          "question_type": "mcq",
+          "choices": ["Un hexagone", "Deux rectangles symétriques", "Un losange"],
+          "correct_answer": "Deux rectangles symétriques",
+          "explanation": "La figure et son symétrique forment deux rectangles identiques de part et d'autre de (D).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "data_proportionality",
+      "context_text": "Codjo obtient un prêt de 2 500 000 FCFA au taux annuel de 12 %. Il rembourse au bout de 6 mois.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule l'intérêt annuel du prêt effectué par Codjo.",
+          "question_type": "numeric_input",
+          "correct_answer": "300000",
+          "explanation": "I = C × t = 2 500 000 × 12/100 = 300 000 F.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule l'intérêt payé au bout de 6 mois.",
+          "question_type": "numeric_input",
+          "correct_answer": "150000",
+          "explanation": "300 000 × 6/12 = 150 000 F.",
+          "hint": "Utilise l'intérêt annuel de la question a).",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule le montant remboursé par Codjo.",
+          "question_type": "numeric_input",
+          "correct_answer": "2650000",
+          "explanation": "2 500 000 + 150 000 = 2 650 000 F.",
+          "hint": "Additionne le capital et l'intérêt de la question b).",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

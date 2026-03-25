@@ -3,7 +3,7 @@ version: "3.9"
 services:
   api:
     build: .
-    container_name: ilma-api
+    container_name: sitou-api
     ports:
       - "8000:8000"
     env_file:
@@ -11,7 +11,7 @@ services:
     environment:
       - POSTGRES_HOST=db
       - REDIS_HOST=redis
-      - DATABASE_URL=postgresql+asyncpg://ilma_user:ilma_password@db:5432/ilma_db
+      - DATABASE_URL=postgresql+asyncpg://sitou_user:sitou_password@db:5432/sitou_db
     depends_on:
       db:
         condition: service_healthy
@@ -23,24 +23,24 @@ services:
 
   db:
     image: postgres:15-alpine
-    container_name: ilma-db
+    container_name: sitou-db
     environment:
-      POSTGRES_USER: ilma_user
-      POSTGRES_PASSWORD: ilma_password
-      POSTGRES_DB: ilma_db
+      POSTGRES_USER: sitou_user
+      POSTGRES_PASSWORD: sitou_password
+      POSTGRES_DB: sitou_db
     ports:
       - "5434:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ilma_user -d ilma_db"]
+      test: ["CMD-SHELL", "pg_isready -U sitou_user -d sitou_db"]
       interval: 5s
       timeout: 3s
       retries: 5
 
   redis:
     image: redis:7-alpine
-    container_name: ilma-redis
+    container_name: sitou-redis
     ports:
       - "6379:6379"
     healthcheck:

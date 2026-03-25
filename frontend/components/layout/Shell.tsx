@@ -118,7 +118,7 @@ const LogoutGuardModal: React.FC<{
 const SyncingOverlay: React.FC = () => (
   <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-xs w-full mx-4 p-6 text-center">
-      <div className="animate-spin w-8 h-8 border-4 border-ilma-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+      <div className="animate-spin w-8 h-8 border-4 border-sitou-primary border-t-transparent rounded-full mx-auto mb-4"></div>
       <p className="text-gray-700 dark:text-gray-300 font-medium">Synchronisation en cours...</p>
       <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Veuillez patienter</p>
     </div>
@@ -194,12 +194,12 @@ const Sidebar: React.FC = () => {
   const displayAvatar = activeProfile?.avatarUrl || user?.avatarUrl;
 
   return (
-    <aside className="hidden md:flex flex-col w-64 gradient-sidebar dark:bg-gray-900 border-r border-ilma-border dark:border-gray-700 h-screen fixed left-0 top-0 z-30">
-      <div className="p-6 flex items-center justify-start border-b border-ilma-border h-20">
+    <aside className="hidden md:flex flex-col w-64 gradient-sidebar dark:bg-gray-900 border-r border-sitou-border dark:border-gray-700 h-screen fixed left-0 top-0 z-30">
+      <div className="p-6 flex items-center justify-start border-b border-sitou-border h-20">
         <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-xl mr-3 shadow-lg gradient-hero">
           I
         </div>
-        <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-amber-600 via-orange-500 to-yellow-500 bg-clip-text text-transparent font-display">ILMA</span>
+        <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-amber-600 via-orange-500 to-yellow-500 bg-clip-text text-transparent font-display">SITOU</span>
       </div>
 
       <div className="p-6">
@@ -237,10 +237,10 @@ const Sidebar: React.FC = () => {
                 className={`flex items-center px-4 py-3 rounded-xl transition-all duration-200 group ${
                   isActive
                     ? 'gradient-hero text-white shadow-clay-sm'
-                    : 'text-gray-600 hover:bg-ilma-primary-light hover:text-ilma-primary'
+                    : 'text-gray-600 hover:bg-sitou-primary-light hover:text-sitou-primary'
                 }`}
               >
-                <span className={`mr-3 ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-ilma-primary'}`}>
+                <span className={`mr-3 ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-sitou-primary'}`}>
                   {IconMap[item.icon]}
                 </span>
                 <span className="font-medium">{item.label}</span>
@@ -250,7 +250,7 @@ const Sidebar: React.FC = () => {
         </nav>
       </div>
 
-      <div className="mt-auto p-6 border-t border-ilma-border">
+      <div className="mt-auto p-6 border-t border-sitou-border">
          {(effectiveRole === UserRole.STUDENT || effectiveRole === UserRole.GUEST) && !isPremium && (
              <div className="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-2xl p-4 border border-yellow-200 shadow-sm">
                  <div className="flex items-center mb-1">
@@ -274,9 +274,9 @@ const Sidebar: React.FC = () => {
          )}
          <button
            onClick={attemptLogout}
-           className="w-full flex items-center px-4 py-3 mt-4 rounded-xl text-gray-500 hover:bg-red-50 hover:text-ilma-red transition-colors group"
+           className="w-full flex items-center px-4 py-3 mt-4 rounded-xl text-gray-500 hover:bg-red-50 hover:text-sitou-red transition-colors group"
          >
-           <LogOut size={20} className="mr-3 text-gray-400 group-hover:text-ilma-red" />
+           <LogOut size={20} className="mr-3 text-gray-400 group-hover:text-sitou-red" />
            <span className="font-medium">D&eacute;connexion</span>
          </button>
       </div>
@@ -316,7 +316,7 @@ const MobileNav: React.FC = () => {
             <div className={`p-1.5 rounded-full mb-1 transition-all ${isActive ? 'gradient-hero text-white scale-110 shadow-md' : 'text-gray-400'}`}>
                {React.cloneElement(IconMap[item.icon] as React.ReactElement<any>, { size: 20 })}
             </div>
-            <span className={`text-[10px] font-bold ${isActive ? 'text-ilma-primary' : 'text-gray-500'}`}>
+            <span className={`text-[10px] font-bold ${isActive ? 'text-sitou-primary' : 'text-gray-500'}`}>
               {item.label}
             </span>
           </Link>
@@ -387,7 +387,7 @@ const MobileDrawer: React.FC = () => {
                                 setMobileDrawerOpen(false);
                                 await attemptLogout();
                             }}
-                            className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-red-50 text-ilma-red mt-4"
+                            className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-red-50 text-sitou-red mt-4"
                          >
                              <div className="flex items-center"><LogOut size={20} className="mr-3"/> D&eacute;connexion</div>
                         </button>
@@ -415,7 +415,7 @@ const Header: React.FC = () => {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-ilma-border dark:border-gray-700 h-16 md:h-20 flex items-center justify-between px-4 md:px-8 sticky top-0 z-20">
+    <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-sitou-border dark:border-gray-700 h-16 md:h-20 flex items-center justify-between px-4 md:px-8 sticky top-0 z-20">
       <div className="flex items-center md:hidden">
           <div className="w-8 h-8 gradient-hero rounded-lg flex items-center justify-center text-white font-bold mr-3">I</div>
       </div>
@@ -432,7 +432,7 @@ const Header: React.FC = () => {
         >
             <Bell className={`w-6 h-6 ${unreadCount > 0 ? 'text-gray-800' : 'text-gray-500'}`} />
             {unreadCount > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-ilma-red rounded-full border-2 border-white flex items-center justify-center text-[8px] text-white font-bold">
+                <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-sitou-red rounded-full border-2 border-white flex items-center justify-center text-[8px] text-white font-bold">
                     {unreadCount}
                 </span>
             )}
@@ -450,11 +450,11 @@ const Header: React.FC = () => {
 // Main Layout Wrapper
 export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-ilma-surface dark:bg-gray-950 flex flex-col">
+    <div className="min-h-screen bg-sitou-surface dark:bg-gray-950 flex flex-col">
       {/* Skip to content link for keyboard users */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-ilma-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-bold"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-sitou-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-bold"
       >
         Aller au contenu principal
       </a>

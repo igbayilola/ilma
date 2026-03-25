@@ -1,0 +1,129 @@
+{
+  "title": "CEP 2024 Session Normale — Mathématiques",
+  "year": 2024,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Dans le cadre de la riposte contre le COVID 19, le gouvernement du Bénin avait lancé le 06 mai 2020 un appel aux artisans locaux pour confectionner des masques en tissu. Cette opération avait pris fin le 16 mai 2020. Au cours de cette période, la couturière Sènanmi a cousu 8600 masques en tissu de différentes couleurs : bleu, vert et jaune.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "La couturière Sènanmi a cousu 8600 masques en tissu de différentes couleurs : bleu (40%), vert (35%) et jaune (25%).",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Dresse le tableau des effectifs de cette série statistique.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bleu: 3440, Vert: 3010, Jaune: 2150",
+          "explanation": "Bleu: 8600 × 40/100 = 3440. Vert: 8600 × 35/100 = 3010. Jaune: 8600 × 25/100 = 2150.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Complète-le par des fréquences par fraction.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bleu: 4/10, Vert: 35/100, Jaune: 1/4",
+          "explanation": "Bleu: 3440/8600 = 4/10. Vert: 3010/8600 = 35/100. Jaune: 2150/8600 = 1/4.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Complète-le par des fréquences exprimées sous forme de pourcentage.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bleu: 40%, Vert: 35%, Jaune: 25%",
+          "explanation": "Les pourcentages correspondent directement aux données du diagramme circulaire.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Les masques sont rangés dans des boîtes puis dans des cartons. Une boîte mesure 20 cm × 10 cm × 8 cm. Un carton mesure 60 cm × 40 cm × 50 cm.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule le volume d'une boîte. (20 cm × 10 cm × 8 cm)",
+          "question_type": "numeric_input",
+          "correct_answer": "1600",
+          "explanation": "V = L × l × h = 20 × 10 × 8 = 1 600 cm³",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le volume d'un carton. (60 cm × 40 cm × 50 cm)",
+          "question_type": "numeric_input",
+          "correct_answer": "120000",
+          "explanation": "V = 60 × 40 × 50 = 120 000 cm³",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Détermine le nombre de boîtes que peut contenir un carton.",
+          "question_type": "numeric_input",
+          "correct_answer": "75",
+          "explanation": "120 000 ÷ 1 600 = 75 boîtes",
+          "hint": "Utilise les résultats des questions a) et b).",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "On considère la base ABCD d'un carton de dimensions 60 cm × 40 cm.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Représente à l'échelle de 1/10 la base ABCD d'un carton.",
+          "question_type": "mcq",
+          "choices": ["Rectangle 6cm × 4cm", "Rectangle 60cm × 40cm", "Carré 6cm × 6cm", "Rectangle 3cm × 2cm"],
+          "correct_answer": "Rectangle 6cm × 4cm",
+          "explanation": "Échelle 1/10 : 60cm ÷ 10 = 6cm et 40cm ÷ 10 = 4cm.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Trace les diagonales de cette figure.",
+          "question_type": "mcq",
+          "choices": ["Deux segments reliant les sommets opposés", "Deux segments reliant les milieux des côtés", "Un seul segment diagonal"],
+          "correct_answer": "Deux segments reliant les sommets opposés",
+          "explanation": "Les diagonales d'un rectangle relient les sommets opposés : AC et BD.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Trace la figure symétrique du triangle ABC par rapport au point C.",
+          "question_type": "mcq",
+          "choices": ["Triangle BCE avec E symétrique de A par rapport à C", "Triangle identique à ABC", "Triangle inversé par rapport à la diagonale"],
+          "correct_answer": "Triangle BCE avec E symétrique de A par rapport à C",
+          "explanation": "Le symétrique de A par rapport à C est le point E tel que C est le milieu de [AE].",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "title": "CEP 2018 Session des Malades — Mathématiques",
+  "year": 2018,
+  "session": "malades",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Après leur formation au lycée agricole Mèdji de Sékou, Suzanne et Paul décident d'installer ensemble une ferme à Pahou pour y élever de la volaille. Le terrain qu'ils ont acheté a une forme rectangulaire qui mesure 125 m de longueur sur 75 m de largeur.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Les poussins commandés coûtent 600 000 francs CFA. Suzanne paie les 3/5 de ce montant et Paul le reste. Les élèves de 3ème année du lycée d'Adja-Ouèrè visitent la ferme. Transport : 162 700 F. Le lycée paie 92 500 F. Chaque élève cotise 2 600 F.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Les poussins commandés coûtent 600 000 francs CFA. Suzanne paie les 3/5 de ce montant et Paul le reste. Détermine le montant payé par chacun.",
+          "question_type": "numeric_input",
+          "correct_answer": "360000",
+          "explanation": "Suzanne : 3/5 × 600 000 = 360 000 F. Paul : 600 000 - 360 000 = 240 000 F.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Les élèves de 3ème année du lycée d'Adja-Ouèrè visitent. Transport : 162 700 F. Le lycée paie 92 500 F. Chaque élève cotise 2 600 F. Calcule le nombre d'élèves.",
+          "question_type": "numeric_input",
+          "correct_answer": "27",
+          "explanation": "Reste : 162 700 - 92 500 = 70 200 F. Élèves : 70 200 ÷ 2 600 = 27.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Les sacs de provende : 2 sacs = 25 000 F, 3 sacs = 37 500 F, 5 sacs = 62 500 F. Calcule le nombre de sacs qu'on peut acheter avec 87 500 F.",
+          "question_type": "numeric_input",
+          "correct_answer": "7",
+          "explanation": "Prix unitaire : 12 500 F. 87 500 ÷ 12 500 = 7 sacs.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Les sacs de provende coûtent : 2 sacs = 25 000 F, 3 sacs = 37 500 F, 5 sacs = 62 500 F.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Présente ces données dans un tableau de correspondance.",
+          "question_type": "fill_blank",
+          "correct_answer": "2 sacs: 25000F, 3 sacs: 37500F, 5 sacs: 62500F",
+          "explanation": "On organise les données : nombre de sacs et prix correspondant.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Dis s'il s'agit d'une situation de proportionnalité. Justifie.",
+          "question_type": "true_false",
+          "correct_answer": "Vrai",
+          "explanation": "Prix unitaire constant : 25 000 ÷ 2 = 12 500 F. 37 500 ÷ 3 = 12 500 F. 62 500 ÷ 5 = 12 500 F.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule le nombre de sacs de provende qu'on peut acheter avec 87 500 F.",
+          "question_type": "numeric_input",
+          "correct_answer": "7",
+          "explanation": "87 500 ÷ 12 500 = 7 sacs.",
+          "hint": "Utilise le prix unitaire trouvé à la question précédente.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "Le terrain rectangulaire mesure 125 m de longueur sur 75 m de largeur.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Détermine les dimensions réduites du terrain à l'échelle 1/2500.",
+          "question_type": "fill_blank",
+          "correct_answer": "5 cm × 3 cm",
+          "explanation": "125 m = 12 500 cm ÷ 2 500 = 5 cm. 75 m = 7 500 cm ÷ 2 500 = 3 cm.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Représente cette figure sur ta feuille.",
+          "question_type": "mcq",
+          "choices": ["Rectangle 5cm × 3cm", "Rectangle 12.5cm × 7.5cm", "Carré 5cm × 5cm"],
+          "correct_answer": "Rectangle 5cm × 3cm",
+          "explanation": "D'après le calcul de la question a), le rectangle réduit mesure 5 cm × 3 cm.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Trace son symétrique par rapport à une droite OD placée à l'intérieur de la figure.",
+          "question_type": "mcq",
+          "choices": ["Rectangle symétrique par rapport à OD", "Même rectangle décalé", "Rectangle réduit"],
+          "correct_answer": "Rectangle symétrique par rapport à OD",
+          "explanation": "Le symétrique par rapport à une droite est une figure de mêmes dimensions, reflétée de l'autre côté de la droite.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

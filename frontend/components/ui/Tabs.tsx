@@ -30,7 +30,7 @@ export const Tabs: React.FC<TabsProps> = ({ tabs, activeTab, onChange, className
           className={`
             pb-3 px-4 text-sm font-bold whitespace-nowrap transition-colors border-b-2 flex-shrink-0
             ${activeTab === tab.id
-              ? 'border-ilma-primary text-ilma-primary'
+              ? 'border-sitou-primary text-sitou-primary'
               : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}
           `}
         >

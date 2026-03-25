@@ -6,7 +6,7 @@
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  <text x="256" y="200" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="120" font-weight="800" fill="white" letter-spacing="-4">ILMA</text>
+  <text x="256" y="200" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="120" font-weight="800" fill="white" letter-spacing="-4">SITOU</text>
   <rect x="136" y="260" width="240" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
   <rect x="136" y="260" width="160" height="6" rx="3" fill="#28A745"/>
   <circle cx="186" cy="320" r="24" fill="rgba(255,255,255,0.15)"/>

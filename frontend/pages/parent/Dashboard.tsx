@@ -59,7 +59,7 @@ export const ParentDashboard: React.FC = () => {
 
   useEffect(() => {
     if (!isLoading && healthData.length === 0 && childrenList.length === 0) {
-      const alreadyOnboarded = localStorage.getItem('ilma_parent_onboarded');
+      const alreadyOnboarded = localStorage.getItem('sitou_parent_onboarded');
       if (!alreadyOnboarded) {
         setShowOnboarding(true);
       }
@@ -70,7 +70,7 @@ export const ParentDashboard: React.FC = () => {
     if (onboardingStep < onboardingSteps.length - 1) {
       setOnboardingStep(prev => prev + 1);
     } else {
-      localStorage.setItem('ilma_parent_onboarded', 'true');
+      localStorage.setItem('sitou_parent_onboarded', 'true');
       setShowOnboarding(false);
     }
   };
@@ -215,7 +215,7 @@ export const ParentDashboard: React.FC = () => {
             <button
               onClick={handleTriggerDigest}
               disabled={digestSending}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-ilma-primary text-white font-bold rounded-2xl hover:bg-amber-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-sitou-primary text-white font-bold rounded-2xl hover:bg-amber-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <MessageSquare size={18} />
               {digestSending ? 'Envoi en cours…' : 'Recevoir le digest SMS'}
@@ -231,7 +231,7 @@ export const ParentDashboard: React.FC = () => {
         {/* Add child card */}
         <button
           onClick={handleAddChild}
-          className="w-full border-2 border-dashed border-gray-300 rounded-3xl p-6 flex items-center justify-center gap-3 text-gray-400 hover:border-ilma-primary hover:text-ilma-primary hover:bg-amber-50 transition-all"
+          className="w-full border-2 border-dashed border-gray-300 rounded-3xl p-6 flex items-center justify-center gap-3 text-gray-400 hover:border-sitou-primary hover:text-sitou-primary hover:bg-amber-50 transition-all"
         >
           <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
             <Plus size={24} />
@@ -256,7 +256,7 @@ export const ParentDashboard: React.FC = () => {
               {onboardingSteps.map((_, i) => (
                 <div
                   key={i}
-                  className={`h-2 rounded-full transition-all ${i === onboardingStep ? 'w-8 bg-ilma-primary' : 'w-2 bg-gray-200'}`}
+                  className={`h-2 rounded-full transition-all ${i === onboardingStep ? 'w-8 bg-sitou-primary' : 'w-2 bg-gray-200'}`}
                 />
               ))}
             </div>

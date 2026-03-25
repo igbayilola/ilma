@@ -11,13 +11,13 @@ class Settings(BaseSettings):
     )
 
     # API
-    PROJECT_NAME: str = "ILMA Backend"
+    PROJECT_NAME: str = "Sitou Backend"
     API_V1_STR: str = "/api/v1"
 
     # Database
-    POSTGRES_USER: str = "ilma_user"
-    POSTGRES_PASSWORD: str = "ilma_password"
-    POSTGRES_DB: str = "ilma_db"
+    POSTGRES_USER: str = "sitou_user"
+    POSTGRES_PASSWORD: str = "sitou_password"
+    POSTGRES_DB: str = "sitou_db"
     POSTGRES_HOST: str = "localhost"
     POSTGRES_PORT: int = 5432
     DATABASE_URL: str = ""
@@ -51,7 +51,7 @@ class Settings(BaseSettings):
     PUSH_PROVIDER: str = "mock"
     VAPID_PUBLIC_KEY: str = ""
     VAPID_PRIVATE_KEY: str = ""
-    VAPID_CONTACT_EMAIL: str = "admin@ilma.bj"
+    VAPID_CONTACT_EMAIL: str = "admin@sitou.bj"
 
     # Notification scheduler
     NOTIFICATIONS_ENABLED: bool = True
@@ -66,9 +66,9 @@ class Settings(BaseSettings):
 
     # S3 / Minio
     S3_ENDPOINT: str = "http://localhost:9000"
-    S3_ACCESS_KEY: str = "ilma_minio"
-    S3_SECRET_KEY: str = "ilma_minio_secret"
-    S3_BUCKET: str = "ilma-packs"
+    S3_ACCESS_KEY: str = "sitou_minio"
+    S3_SECRET_KEY: str = "sitou_minio_secret"
+    S3_BUCKET: str = "sitou-packs"
     S3_REGION: str = "us-east-1"
 
     # CORS

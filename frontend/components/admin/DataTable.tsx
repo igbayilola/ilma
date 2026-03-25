@@ -42,7 +42,7 @@ export function DataTable<T extends { id: string | number }>({
             <input 
               type="text" 
               placeholder={searchPlaceholder}
-              className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-ilma-primary/20 focus:outline-none"
+              className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-sitou-primary/20 focus:outline-none"
               onChange={(e) => onSearch && onSearch(e.target.value)}
             />
           </div>

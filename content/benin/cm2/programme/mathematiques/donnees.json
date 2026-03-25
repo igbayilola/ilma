@@ -1,0 +1,955 @@
+{
+  "schema_version": "1.4.0",
+  "subject": "Mathématiques",
+  "grade": "CM2",
+  "country": "BENIN",
+  "domain": {
+    "domain_id": "MATH-CM2-DATA",
+    "domain_name": "Organisation de données"
+  },
+  "standards": {
+    "ilma_levels": [
+      "Découverte",
+      "Entraînement",
+      "Maîtrise",
+      "Expert"
+    ],
+    "exercise_types_vocab": [
+      "Choix multiples",
+      "Réponse courte",
+      "Réponse numérique",
+      "Glisser-déposer",
+      "Construction",
+      "Tracer",
+      "Classement",
+      "Compléter",
+      "Problème contextualisé",
+      "Correction d'erreur",
+      "Étapes guidées",
+      "Flash cards",
+      "Calcul chronométré",
+      "Vrai/Faux",
+      "Justification"
+    ],
+    "bloom_taxonomy_levels": [
+      "Connaître",
+      "Comprendre",
+      "Appliquer",
+      "Analyser",
+      "Évaluer",
+      "Créer"
+    ],
+    "exercise_type_semantics": {
+      "Tracer": "Action centrée sur le tracé (droite graduée, segment, repérage), précision graphique.",
+      "Construction": "Construction géométrique guidée (règle/compas) ou assemblage de figures/objets."
+    }
+  },
+  "inheritance_rules": {
+    "micro_skill_overrides_parent_fields": true,
+    "fields_inheritable_from_skill": [
+      "estimated_time_minutes",
+      "difficulty_index",
+      "bloom_taxonomy_level",
+      "mastery_threshold",
+      "cep_frequency",
+      "adaptive_hints",
+      "local_context_examples",
+      "accessibility_tags",
+      "recommended_exercise_types"
+    ]
+  },
+  "cep_frequency_rules": {
+    "scale": {
+      "null": "Non évalué / difficile à quantifier",
+      "10-30": "Occasionnel",
+      "40-60": "Fréquent",
+      "70-90": "Très fréquent",
+      "100": "Systématique"
+    },
+    "aggregation_policy_for_skill": "max_of_micro_skills_if_defined_else_null",
+    "note": "Si au moins 1 micro-skill a cep_frequency défini, alors le skill peut dériver sa valeur via la policy."
+  },
+  "skills": [
+    {
+      "skill_id": "DATA-TAB-EFFECTIFS",
+      "skill_name": "Tableaux : effectifs, comptage et lecture",
+      "micro_skill_ids_ordered": [
+        "DATA-TAB-EFFECTIFS::MS01",
+        "DATA-TAB-EFFECTIFS::MS02",
+        "DATA-TAB-EFFECTIFS::MS03",
+        "DATA-TAB-EFFECTIFS::MS04"
+      ],
+      "prerequisites_skill_ids": [
+        "OPS-PB-MULTI"
+      ],
+      "exercise_types": [
+        "Compléter",
+        "Choix multiples",
+        "Réponse numérique"
+      ],
+      "recommended_modifiers": [],
+      "common_mistakes": [
+        "Totaux incorrects",
+        "Confusion effectif/valeur"
+      ],
+      "mastery_threshold": "90% sur 10 exercices",
+      "estimated_time_minutes": null,
+      "difficulty_index": null,
+      "bloom_taxonomy_level": null,
+      "cep_frequency": 50,
+      "adaptive_hints": null,
+      "local_context_examples": [],
+      "accessibility_tags": []
+    },
+    {
+      "skill_id": "DATA-FREQ",
+      "skill_name": "Fréquences : par comptage et en pourcentage",
+      "micro_skill_ids_ordered": [
+        "DATA-FREQ::MS01",
+        "DATA-FREQ::MS02",
+        "DATA-FREQ::MS03",
+        "DATA-FREQ::MS04",
+        "DATA-FREQ::MS05"
+      ],
+      "prerequisites_skill_ids": [
+        "DATA-TAB-EFFECTIFS",
+        "NUM-DEC-ECRIRE-REP",
+        "NUM-FRAC-REP"
+      ],
+      "exercise_types": [
+        "Réponse numérique",
+        "Compléter",
+        "Choix multiples",
+        "Correction d'erreur"
+      ],
+      "recommended_modifiers": [],
+      "common_mistakes": [
+        "Total incorrect",
+        "Pourcentage > 100%",
+        "Arrondi incohérent"
+      ],
+      "mastery_threshold": "85% sur 10 exercices",
+      "estimated_time_minutes": null,
+      "difficulty_index": null,
+      "bloom_taxonomy_level": null,
+      "cep_frequency": 75,
+      "adaptive_hints": null,
+      "local_context_examples": [],
+      "accessibility_tags": []
+    },
+    {
+      "skill_id": "DATA-MOYENNE",
+      "skill_name": "Moyenne arithmétique",
+      "micro_skill_ids_ordered": [
+        "DATA-MOYENNE::MS01",
+        "DATA-MOYENNE::MS02",
+        "DATA-MOYENNE::MS03",
+        "DATA-MOYENNE::MS04"
+      ],
+      "prerequisites_skill_ids": [
+        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+        "OPS-ESTIMER-VERIFIER"
+      ],
+      "exercise_types": [
+        "Réponse numérique",
+        "Problème contextualisé",
+        "Étapes guidées"
+      ],
+      "recommended_modifiers": [],
+      "common_mistakes": [
+        "Oublier de diviser",
+        "Mauvais effectif",
+        "Moyenne de moyennes (erreur classique)"
+      ],
+      "mastery_threshold": "85% sur 10 exercices",
+      "estimated_time_minutes": null,
+      "difficulty_index": null,
+      "bloom_taxonomy_level": null,
+      "cep_frequency": 60,
+      "adaptive_hints": null,
+      "local_context_examples": [],
+      "accessibility_tags": []
+    },
+    {
+      "skill_id": "DATA-DIAG-BATONS",
+      "skill_name": "Diagramme en bâtons",
+      "micro_skill_ids_ordered": [
+        "DATA-DIAG-BATONS::MS03",
+        "DATA-DIAG-BATONS::MS01",
+        "DATA-DIAG-BATONS::MS02",
+        "DATA-DIAG-BATONS::MS04"
+      ],
+      "prerequisites_skill_ids": [
+        "DATA-TAB-EFFECTIFS",
+        "GEO-FIG-DECRIRE"
+      ],
+      "exercise_types": [
+        "Tracer",
+        "Compléter",
+        "Choix multiples"
+      ],
+      "recommended_modifiers": [],
+      "common_mistakes": [
+        "Échelle non respectée",
+        "Lecture sur mauvais axe"
+      ],
+      "mastery_threshold": "85% sur 8 exercices",
+      "estimated_time_minutes": null,
+      "difficulty_index": null,
+      "bloom_taxonomy_level": null,
+      "cep_frequency": 55,
+      "adaptive_hints": null,
+      "local_context_examples": [],
+      "accessibility_tags": []
+    },
+    {
+      "skill_id": "DATA-DIAG-SEMI",
+      "skill_name": "Diagramme semi-circulaire",
+      "micro_skill_ids_ordered": [
+        "DATA-DIAG-SEMI::MS01",
+        "DATA-DIAG-SEMI::MS02",
+        "DATA-DIAG-SEMI::MS03",
+        "DATA-DIAG-SEMI::MS04",
+        "DATA-DIAG-SEMI::MS05"
+      ],
+      "prerequisites_skill_ids": [
+        "DATA-FREQ",
+        "GEO-ANGLES",
+        "PROP-TABLEAU"
+      ],
+      "exercise_types": [
+        "Étapes guidées",
+        "Tracer",
+        "Réponse numérique",
+        "Correction d'erreur"
+      ],
+      "recommended_modifiers": [],
+      "common_mistakes": [
+        "Utiliser 360 au lieu de 180",
+        "Angles mal calculés",
+        "Tracé imprécis"
+      ],
+      "mastery_threshold": "75% sur 8 exercices",
+      "estimated_time_minutes": null,
+      "difficulty_index": null,
+      "bloom_taxonomy_level": null,
+      "cep_frequency": 25,
+      "adaptive_hints": null,
+      "local_context_examples": [],
+      "accessibility_tags": []
+    }
+  ],
+  "micro_skills": [
+    {
+      "micro_skill_id": "DATA-TAB-EFFECTIFS::MS01",
+      "parent_skill_id": "DATA-TAB-EFFECTIFS",
+      "micro_skill_name": "Organiser des données brutes en tableau (classer, regrouper, compter)",
+      "prerequisites_micro_skill_ids": [],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Compléter",
+        "Classement"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 3,
+      "estimated_time_minutes": 12,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "90% sur 8 exercices",
+      "cep_frequency": 40,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Classer les résultats d'une enquête sur les fruits préférés de la classe"
+      ],
+      "accessibility_tags": [
+        "table_scaffold"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-TAB-EFFECTIFS::MS02",
+      "parent_skill_id": "DATA-TAB-EFFECTIFS",
+      "micro_skill_name": "Lire un tableau à simple ou double entrée (repérer une donnée)",
+      "prerequisites_micro_skill_ids": [
+        "DATA-TAB-EFFECTIFS::MS01"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Choix multiples",
+        "Réponse numérique"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 3,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Comprendre",
+      "mastery_threshold": "90% sur 8 exercices",
+      "cep_frequency": 45,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Combien d'absences au mois de mars dans le tableau ?"
+      ],
+      "accessibility_tags": [
+        "table_scaffold"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-TAB-EFFECTIFS::MS03",
+      "parent_skill_id": "DATA-TAB-EFFECTIFS",
+      "micro_skill_name": "Compléter un tableau avec des données manquantes (effectif ou catégorie)",
+      "prerequisites_micro_skill_ids": [
+        "DATA-TAB-EFFECTIFS::MS02"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Compléter",
+        "Réponse numérique"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 4,
+      "estimated_time_minutes": 12,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "85% sur 8 exercices",
+      "cep_frequency": 45,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Compléter la case manquante sachant le total de la ligne"
+      ],
+      "accessibility_tags": [
+        "table_scaffold"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-TAB-EFFECTIFS::MS04",
+      "parent_skill_id": "DATA-TAB-EFFECTIFS",
+      "micro_skill_name": "Calculer le total des effectifs et vérifier la cohérence",
+      "prerequisites_micro_skill_ids": [
+        "DATA-TAB-EFFECTIFS::MS02"
+      ],
+      "external_prerequisites": [
+        {
+          "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+          "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
+          "why": "Addition posée"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Correction d'erreur"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 4,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "90% sur 6 exercices",
+      "cep_frequency": 45,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Total des élèves = somme de chaque catégorie"
+      ],
+      "accessibility_tags": [
+        "Dyscalculie-support"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-FREQ::MS01",
+      "parent_skill_id": "DATA-FREQ",
+      "micro_skill_name": "Calculer la fréquence d'une catégorie : effectif / total",
+      "prerequisites_micro_skill_ids": [],
+      "external_prerequisites": [
+        {
+          "skill_id": "OPS-DECIMAUX-DIVISER",
+          "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
+          "why": "Division pour obtenir un décimal"
+        },
+        {
+          "skill_id": "NUM-FRAC-REP",
+          "micro_skill_id": "NUM-FRAC-REP::MS02",
+          "why": "Fraction comme quotient"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Compléter"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 5,
+      "estimated_time_minutes": 12,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "85% sur 8 exercices",
+      "cep_frequency": 65,
+      "adaptive_hints": 3,
+      "local_context_examples": [
+        "12 élèves viennent à pied sur 40 → fréquence = 12/40 = 0,3"
+      ],
+      "accessibility_tags": [
+        "table_scaffold"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-FREQ::MS02",
+      "parent_skill_id": "DATA-FREQ",
+      "micro_skill_name": "Comparer des fréquences pour identifier la catégorie la plus/moins représentée",
+      "prerequisites_micro_skill_ids": [
+        "DATA-FREQ::MS01"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Choix multiples",
+        "Classement"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 5,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Analyser",
+      "mastery_threshold": "85% sur 6 exercices",
+      "cep_frequency": 60,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "La marche (0,3) est plus fréquente que le vélo (0,15)"
+      ],
+      "accessibility_tags": [
+        "table_scaffold"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-FREQ::MS03",
+      "parent_skill_id": "DATA-FREQ",
+      "micro_skill_name": "Convertir une fréquence en pourcentage (x 100)",
+      "prerequisites_micro_skill_ids": [
+        "DATA-FREQ::MS01"
+      ],
+      "external_prerequisites": [
+        {
+          "skill_id": "OPS-CALCUL-MENTAL-TABLES",
+          "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
+          "why": "Multiplier par 100"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Compléter"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 5,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "85% sur 8 exercices",
+      "cep_frequency": 70,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "0,3 = 30% des élèves"
+      ],
+      "accessibility_tags": [
+        "Dyscalculie-support"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-FREQ::MS04",
+      "parent_skill_id": "DATA-FREQ",
+      "micro_skill_name": "Arrondir un pourcentage de manière cohérente",
+      "prerequisites_micro_skill_ids": [
+        "DATA-FREQ::MS03"
+      ],
+      "external_prerequisites": [
+        {
+          "skill_id": "NUM-DEC-ECRIRE-REP",
+          "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS06",
+          "why": "Arrondir un décimal"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Correction d'erreur"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 5,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "85% sur 6 exercices",
+      "cep_frequency": 55,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "33,333...% arrondi à 33%"
+      ],
+      "accessibility_tags": [
+        "Dyscalculie-support"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-FREQ::MS05",
+      "parent_skill_id": "DATA-FREQ",
+      "micro_skill_name": "Contrôler que la somme des pourcentages est environ 100%",
+      "prerequisites_micro_skill_ids": [
+        "DATA-FREQ::MS03"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Correction d'erreur",
+        "Choix multiples"
+      ],
+      "recommended_modifiers": [
+        "justification_required"
+      ],
+      "difficulty_index": 6,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Évaluer",
+      "mastery_threshold": "80% sur 6 exercices",
+      "cep_frequency": 60,
+      "adaptive_hints": 3,
+      "local_context_examples": [
+        "30% + 25% + 20% + 15% = 90% → il manque 10% quelque part"
+      ],
+      "accessibility_tags": [
+        "worked_examples"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-MOYENNE::MS01",
+      "parent_skill_id": "DATA-MOYENNE",
+      "micro_skill_name": "Calculer la somme d'une série de valeurs",
+      "prerequisites_micro_skill_ids": [],
+      "external_prerequisites": [
+        {
+          "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+          "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
+          "why": "Addition posée"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Compléter"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 3,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "90% sur 6 exercices",
+      "cep_frequency": 50,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Somme des notes : 12 + 15 + 8 + 14 + 11 = 60"
+      ],
+      "accessibility_tags": [
+        "Dyscalculie-support"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-MOYENNE::MS02",
+      "parent_skill_id": "DATA-MOYENNE",
+      "micro_skill_name": "Diviser la somme par l'effectif pour obtenir la moyenne",
+      "prerequisites_micro_skill_ids": [
+        "DATA-MOYENNE::MS01"
+      ],
+      "external_prerequisites": [
+        {
+          "skill_id": "OPS-DECIMAUX-DIVISER",
+          "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
+          "why": "Division pour obtenir un décimal"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Étapes guidées"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 4,
+      "estimated_time_minutes": 12,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "85% sur 8 exercices",
+      "cep_frequency": 55,
+      "adaptive_hints": 3,
+      "local_context_examples": [
+        "Moyenne = 60 / 5 = 12"
+      ],
+      "accessibility_tags": [
+        "step_by_step_mode"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-MOYENNE::MS03",
+      "parent_skill_id": "DATA-MOYENNE",
+      "micro_skill_name": "Interpréter la moyenne dans un contexte (comparer à un seuil, commenter)",
+      "prerequisites_micro_skill_ids": [
+        "DATA-MOYENNE::MS02"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Problème contextualisé",
+        "Réponse courte"
+      ],
+      "recommended_modifiers": [
+        "justification_required"
+      ],
+      "difficulty_index": 5,
+      "estimated_time_minutes": 12,
+      "bloom_taxonomy_level": "Analyser",
+      "mastery_threshold": "80% sur 6 exercices",
+      "cep_frequency": 55,
+      "adaptive_hints": 3,
+      "local_context_examples": [
+        "Moyenne de 12/20 : au-dessus de la moyenne de classe (10) ?"
+      ],
+      "accessibility_tags": [
+        "Dyslexie-friendly"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-MOYENNE::MS04",
+      "parent_skill_id": "DATA-MOYENNE",
+      "micro_skill_name": "Vérifier la moyenne par estimation (entre la plus petite et la plus grande valeur)",
+      "prerequisites_micro_skill_ids": [
+        "DATA-MOYENNE::MS02"
+      ],
+      "external_prerequisites": [
+        {
+          "skill_id": "OPS-ESTIMER-VERIFIER",
+          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
+          "why": "Détection résultat absurde"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Correction d'erreur",
+        "Choix multiples"
+      ],
+      "recommended_modifiers": [
+        "justification_required"
+      ],
+      "difficulty_index": 5,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Évaluer",
+      "mastery_threshold": "80% sur 6 exercices",
+      "cep_frequency": 45,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Notes entre 8 et 15 : la moyenne ne peut pas être 18"
+      ],
+      "accessibility_tags": [
+        "worked_examples"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-BATONS::MS01",
+      "parent_skill_id": "DATA-DIAG-BATONS",
+      "micro_skill_name": "Choisir les axes et une échelle adaptée pour un diagramme en bâtons",
+      "prerequisites_micro_skill_ids": [
+        "DATA-DIAG-BATONS::MS03"
+      ],
+      "external_prerequisites": [
+        {
+          "skill_id": "GEO-FIG-DECRIRE",
+          "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
+          "why": "Tracer avec la règle"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Compléter",
+        "Choix multiples"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 4,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Analyser",
+      "mastery_threshold": "85% sur 6 exercices",
+      "cep_frequency": 45,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Axe horizontal : jours de la semaine ; axe vertical : nombre de cahiers vendus"
+      ],
+      "accessibility_tags": [
+        "high_contrast_axes"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-BATONS::MS02",
+      "parent_skill_id": "DATA-DIAG-BATONS",
+      "micro_skill_name": "Tracer des bâtons proportionnels aux effectifs",
+      "prerequisites_micro_skill_ids": [
+        "DATA-DIAG-BATONS::MS01"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Tracer",
+        "Construction"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 4,
+      "estimated_time_minutes": 14,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "80% sur 6 exercices",
+      "cep_frequency": 50,
+      "adaptive_hints": 3,
+      "local_context_examples": [
+        "Bâton de 3 cm pour 30 élèves (échelle : 1 cm = 10)"
+      ],
+      "accessibility_tags": [
+        "high_contrast_axes",
+        "grid_overlay"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-BATONS::MS03",
+      "parent_skill_id": "DATA-DIAG-BATONS",
+      "micro_skill_name": "Lire une valeur sur un diagramme en bâtons existant",
+      "prerequisites_micro_skill_ids": [],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Choix multiples"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 3,
+      "estimated_time_minutes": 8,
+      "bloom_taxonomy_level": "Comprendre",
+      "mastery_threshold": "90% sur 8 exercices",
+      "cep_frequency": 50,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Combien de cahiers vendus le mercredi d'après le diagramme ?"
+      ],
+      "accessibility_tags": [
+        "high_contrast_axes"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-BATONS::MS04",
+      "parent_skill_id": "DATA-DIAG-BATONS",
+      "micro_skill_name": "Comparer deux catégories à partir du diagramme (écart, plus grand, plus petit)",
+      "prerequisites_micro_skill_ids": [
+        "DATA-DIAG-BATONS::MS03"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Choix multiples",
+        "Réponse courte"
+      ],
+      "recommended_modifiers": [
+        "justification_required"
+      ],
+      "difficulty_index": 4,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Analyser",
+      "mastery_threshold": "85% sur 6 exercices",
+      "cep_frequency": 50,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Le lundi on vend plus que le vendredi : écart = 15 cahiers"
+      ],
+      "accessibility_tags": [
+        "high_contrast_axes"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-SEMI::MS01",
+      "parent_skill_id": "DATA-DIAG-SEMI",
+      "micro_skill_name": "Comprendre que le demi-cercle représente le total (180°)",
+      "prerequisites_micro_skill_ids": [],
+      "external_prerequisites": [
+        {
+          "skill_id": "GEO-ANGLES",
+          "micro_skill_id": "GEO-ANGLES::MS01",
+          "why": "Notion d'angle et de mesure en degrés"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Choix multiples",
+        "Compléter"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 5,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Comprendre",
+      "mastery_threshold": "85% sur 6 exercices",
+      "cep_frequency": 35,
+      "adaptive_hints": 2,
+      "local_context_examples": [
+        "Le demi-cercle entier = 100% des réponses = 180°"
+      ],
+      "accessibility_tags": [
+        "visual_fraction_models"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-SEMI::MS02",
+      "parent_skill_id": "DATA-DIAG-SEMI",
+      "micro_skill_name": "Convertir un pourcentage en angle : angle = pourcentage x 180 / 100",
+      "prerequisites_micro_skill_ids": [
+        "DATA-DIAG-SEMI::MS01"
+      ],
+      "external_prerequisites": [
+        {
+          "skill_id": "PROP-TABLEAU",
+          "micro_skill_id": "PROP-TABLEAU::MS02",
+          "why": "Coefficient multiplicateur pour conversion proportionnelle"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Étapes guidées"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 6,
+      "estimated_time_minutes": 12,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "80% sur 8 exercices",
+      "cep_frequency": 35,
+      "adaptive_hints": 3,
+      "local_context_examples": [
+        "30% → 30 x 180 / 100 = 54°"
+      ],
+      "accessibility_tags": [
+        "formula_card"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-SEMI::MS03",
+      "parent_skill_id": "DATA-DIAG-SEMI",
+      "micro_skill_name": "Calculer l'angle de chaque secteur et vérifier que le total = 180°",
+      "prerequisites_micro_skill_ids": [
+        "DATA-DIAG-SEMI::MS02"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Compléter",
+        "Correction d'erreur"
+      ],
+      "recommended_modifiers": [
+        "justification_required"
+      ],
+      "difficulty_index": 7,
+      "estimated_time_minutes": 14,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "80% sur 6 exercices",
+      "cep_frequency": 35,
+      "adaptive_hints": 3,
+      "local_context_examples": [
+        "54° + 36° + 72° + 18° = 180° — correct"
+      ],
+      "accessibility_tags": [
+        "formula_card"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-SEMI::MS04",
+      "parent_skill_id": "DATA-DIAG-SEMI",
+      "micro_skill_name": "Tracer les secteurs au rapporteur sur un demi-cercle",
+      "prerequisites_micro_skill_ids": [
+        "DATA-DIAG-SEMI::MS03"
+      ],
+      "external_prerequisites": [
+        {
+          "skill_id": "GEO-ANGLES",
+          "micro_skill_id": "GEO-ANGLES::MS03",
+          "why": "Construction d'angle au rapporteur"
+        }
+      ],
+      "recommended_exercise_types": [
+        "Construction",
+        "Tracer"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 7,
+      "estimated_time_minutes": 16,
+      "bloom_taxonomy_level": "Appliquer",
+      "mastery_threshold": "75% sur 6 exercices",
+      "cep_frequency": 35,
+      "adaptive_hints": 4,
+      "local_context_examples": [
+        "Tracer un secteur de 54° pour la catégorie marche"
+      ],
+      "accessibility_tags": [
+        "zoomable_protractor",
+        "step_by_step_mode"
+      ]
+    },
+    {
+      "micro_skill_id": "DATA-DIAG-SEMI::MS05",
+      "parent_skill_id": "DATA-DIAG-SEMI",
+      "micro_skill_name": "Lire un secteur sur un diagramme semi-circulaire existant (estimer le pourcentage)",
+      "prerequisites_micro_skill_ids": [
+        "DATA-DIAG-SEMI::MS01"
+      ],
+      "external_prerequisites": [],
+      "recommended_exercise_types": [
+        "Réponse numérique",
+        "Choix multiples"
+      ],
+      "recommended_modifiers": [],
+      "difficulty_index": 7,
+      "estimated_time_minutes": 10,
+      "bloom_taxonomy_level": "Analyser",
+      "mastery_threshold": "80% sur 6 exercices",
+      "cep_frequency": 40,
+      "adaptive_hints": 3,
+      "local_context_examples": [
+        "Ce secteur occupe environ un quart du demi-cercle = environ 25%"
+      ],
+      "accessibility_tags": [
+        "visual_fraction_models"
+      ]
+    }
+  ],
+  "external_micro_skill_stubs": [
+    {
+      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
+      "micro_skill_name": "Addition posée"
+    },
+    {
+      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
+      "micro_skill_name": "Diviser un décimal par un entier"
+    },
+    {
+      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
+      "micro_skill_name": "Multiplier par 10/100/1000"
+    },
+    {
+      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
+      "micro_skill_name": "Détecter un résultat absurde"
+    },
+    {
+      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS06",
+      "micro_skill_name": "Arrondir un décimal"
+    },
+    {
+      "micro_skill_id": "NUM-FRAC-REP::MS02",
+      "micro_skill_name": "Fraction comme quotient"
+    },
+    {
+      "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
+      "micro_skill_name": "Utiliser règle, compas, équerre"
+    },
+    {
+      "micro_skill_id": "GEO-ANGLES::MS01",
+      "micro_skill_name": "Identifier aigu/droit/obtus"
+    },
+    {
+      "micro_skill_id": "GEO-ANGLES::MS03",
+      "micro_skill_name": "Construire un angle au rapporteur"
+    },
+    {
+      "micro_skill_id": "PROP-TABLEAU::MS02",
+      "micro_skill_name": "Coefficient multiplicateur"
+    }
+  ],
+  "notes": {
+    "origin": "Créé à partir de progamme_mathematiquesCM2_deep.json, domaine MATH-CM2-DATA",
+    "quality_guardrails": [
+      "Un micro-skill = une action observable et testable en 1-2 minutes.",
+      "Les recommended_exercise_types appartiennent à exercise_types_vocab.",
+      "Les prérequis micro-skill ne créent pas de cycles."
+    ],
+    "pedagogical_notes": [
+      "DATA-TAB-EFFECTIFS est le socle : sans tableau, pas de fréquences ni de diagrammes.",
+      "DATA-FREQ (CEP 75) est le skill le plus testé — les pourcentages sont omniprésents au CEP.",
+      "DATA-DIAG-SEMI est le plus complexe (diff 5-7) car il croise fréquences, proportionnalité et géométrie (angles).",
+      "DATA-DIAG-BATONS::MS03 (lire un diagramme) n'a pas de prérequis interne car la lecture est accessible sans savoir tracer."
+    ],
+    "changes_from_1_3_1": [
+      "v1.4.1: DATA-TAB-EFFECTIFS::MS04 diff 3→4.",
+      "v1.4.1: DATA-DIAG-BATONS réordonné: lire(MS03) avant choisir axes(MS01) et tracer(MS02).",
+      "v1.4.1: DATA-DIAG-SEMI::MS05 diff 6→7.",
+      "v1.4.2: DATA-DIAG-SEMI cep 40→25 (construction rarement demandée au CEP, surtout lecture)."
+    ]
+  },
+  "quality_checks": {
+    "difficulty_progression_issues": [],
+    "all_checks_pass": true
+  }
+}

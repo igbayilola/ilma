@@ -33,7 +33,7 @@ const FunnelBar: React.FC<{ stage: string; count: number; rate: number; maxCount
             <div className="w-44 text-sm font-medium text-gray-700 shrink-0">{stage}</div>
             <div className="flex-1 bg-gray-100 rounded-full h-7 relative overflow-hidden">
                 <div
-                    className="bg-ilma-primary h-7 rounded-full transition-all duration-500"
+                    className="bg-sitou-primary h-7 rounded-full transition-all duration-500"
                     style={{ width: `${Math.max(pct, 2)}%` }}
                 />
                 <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-gray-800">
@@ -53,7 +53,7 @@ const MiniChart: React.FC<{ data: { date: string; dau: number }[] }> = ({ data }
             {data.map((d, i) => (
                 <div
                     key={i}
-                    className="flex-1 bg-ilma-primary/70 hover:bg-ilma-primary rounded-t transition-colors"
+                    className="flex-1 bg-sitou-primary/70 hover:bg-sitou-primary rounded-t transition-colors"
                     style={{ height: `${Math.max((d.dau / max) * 100, 2)}%` }}
                     title={`${d.date}: ${d.dau} actifs`}
                 />
@@ -144,11 +144,11 @@ export const AdminAnalyticsPage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <Card>
                     <h3 className="font-bold text-gray-800 mb-4 flex items-center">
-                        <Users size={20} className="mr-2 text-ilma-primary" /> Engagement
+                        <Users size={20} className="mr-2 text-sitou-primary" /> Engagement
                     </h3>
                     <div className="grid grid-cols-2 gap-4 mb-4">
                         <div className="text-center p-4 bg-amber-50 rounded-xl">
-                            <span className="block text-3xl font-extrabold text-ilma-primary">{engagement?.dau ?? kpis?.dau ?? 0}</span>
+                            <span className="block text-3xl font-extrabold text-sitou-primary">{engagement?.dau ?? kpis?.dau ?? 0}</span>
                             <span className="text-xs text-gray-500 font-bold uppercase">DAU</span>
                         </div>
                         <div className="text-center p-4 bg-blue-50 rounded-xl">

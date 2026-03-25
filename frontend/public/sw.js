@@ -1,5 +1,5 @@
-// ILMA Service Worker - Cache-first with network fallback
-const CACHE_NAME = 'ilma-v3';
+// SITOU Service Worker - Cache-first with network fallback
+const CACHE_NAME = 'sitou-v3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -95,7 +95,7 @@ async function syncPendingItems() {
   try {
     // Open IndexedDB and get pending items
     const db = await new Promise((resolve, reject) => {
-      const req = indexedDB.open('ilma-db', 2);
+      const req = indexedDB.open('sitou-db', 2);
       req.onsuccess = () => resolve(req.result);
       req.onerror = () => reject(req.error);
     });
@@ -130,7 +130,7 @@ async function syncPendingItems() {
 
 // Push notifications
 self.addEventListener('push', (event) => {
-  let data = { title: 'ILMA', body: 'Nouveau message', url: '/' };
+  let data = { title: 'Sitou', body: 'Nouveau message', url: '/' };
   try {
     if (event.data) {
       data = { ...data, ...event.data.json() };

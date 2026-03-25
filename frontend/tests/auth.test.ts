@@ -158,7 +158,7 @@ describe('AuthStore', () => {
     const p1 = mockProfile({ id: 'p1' });
     const p2 = mockProfile({ id: 'p2' });
 
-    localStorage.setItem('ilma_active_profile_id', 'p2');
+    localStorage.setItem('sitou_active_profile_id', 'p2');
 
     useAuthStore.getState().setProfiles([p1, p2]);
 

@@ -6,8 +6,8 @@ import { apiClient } from './services/apiClient';
 // This store now manages UI state and Business Logic (Offline, Sync, Notifications)
 
 // --- Freemium daily exercise counter (localStorage-backed, works offline) ---
-const DAILY_EXERCISES_KEY = 'ilma_daily_exercises';
-const LAST_ACTIVITY_KEY = 'ilma_last_activity';
+const DAILY_EXERCISES_KEY = 'sitou_daily_exercises';
+const LAST_ACTIVITY_KEY = 'sitou_last_activity';
 
 export interface LastActivity {
   skillId: string;

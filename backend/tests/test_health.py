@@ -44,7 +44,7 @@ async def test_version(client: AsyncClient):
     data = body["data"]
     assert data["version"] == "0.1.0"
     assert "project" in data
-    assert data["project"] == "ILMA Backend"
+    assert data["project"] == "Sitou Backend"
 
 
 @pytest.mark.asyncio
@@ -53,4 +53,4 @@ async def test_root_endpoint(client: AsyncClient):
     assert resp.status_code == 200
     body = resp.json()
     assert body["success"] is True
-    assert "ILMA" in body["message"]
+    assert "Sitou" in body["message"]

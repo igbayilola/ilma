@@ -1,0 +1,130 @@
+{
+  "title": "CEP 2019 Session Normale — Mathématiques",
+  "year": 2019,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Pour les fêtes de retrouvaille, le comité d'organisation décide d'acheter 20 bouteilles de Fanta à 7 000 F, 150 bouteilles d'eau à 52 500 F, des bouteilles de bières pour 10 500 F et 50 bouteilles de Coca-Cola. Pour recevoir les invités, un espace est aménagé.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Le comité achète : 20 bouteilles de Fanta à 7 000 F, 150 bouteilles d'eau à 52 500 F, des bouteilles de bières pour 10 500 F et 50 bouteilles de Coca-Cola.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Présente les données dans un tableau de correspondance.",
+          "question_type": "fill_blank",
+          "correct_answer": "Fanta: 20 bouteilles = 7000F, Eau: 150 bouteilles = 52500F, Bière: ? bouteilles = 10500F, Coca: 50 bouteilles = ?",
+          "explanation": "On organise les données en colonnes : boisson, nombre de bouteilles, prix total.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Dis si ce tableau est un tableau de proportionnalité.",
+          "question_type": "true_false",
+          "correct_answer": "Faux",
+          "explanation": "Les prix unitaires sont différents : Fanta = 350 F, Eau = 350 F, mais ce n'est pas constant pour tous les produits.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule le montant à payer pour les bouteilles de Coca-Cola et le nombre de bouteilles de bières à acheter.",
+          "question_type": "numeric_input",
+          "correct_answer": "17500",
+          "explanation": "Prix unitaire = 350 F. Coca : 50 × 350 = 17 500 F. Bières : 10 500 ÷ 350 = 30 bouteilles.",
+          "hint": "Utilise le prix unitaire trouvé à la question précédente.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Pour recevoir les invités, un espace rectangulaire de 60 m × 40 m est aménagé sous une bâche.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule l'aire de l'espace occupé par la bâche. (60 m × 40 m)",
+          "question_type": "numeric_input",
+          "correct_answer": "2400",
+          "explanation": "A = 60 × 40 = 2 400 m²",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Sachant que chaque invité doit occuper une superficie de 6 m², détermine le nombre d'invités.",
+          "question_type": "numeric_input",
+          "correct_answer": "400",
+          "explanation": "2 400 ÷ 6 = 400 invités",
+          "hint": "Utilise l'aire calculée à la question a).",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Quel est le périmètre du domaine ?",
+          "question_type": "numeric_input",
+          "correct_answer": "200",
+          "explanation": "P = 2 × (60 + 40) = 200 m",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "L'espace rectangulaire mesure 60 m × 40 m.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Construis ce rectangle à l'échelle de 1/1000.",
+          "question_type": "mcq",
+          "choices": ["Rectangle 6cm × 4cm", "Rectangle 60cm × 40cm", "Rectangle 0.6cm × 0.4cm"],
+          "correct_answer": "Rectangle 6cm × 4cm",
+          "explanation": "Échelle 1/1000 : 60m = 6000cm ÷ 1000 = 6cm. 40m = 4000cm ÷ 1000 = 4cm.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Place un point I à l'extérieur du rectangle.",
+          "question_type": "mcq",
+          "choices": ["Un point situé hors du rectangle", "Un point au centre", "Un point sur un côté"],
+          "correct_answer": "Un point situé hors du rectangle",
+          "explanation": "Un point extérieur est situé en dehors des côtés du rectangle.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Construis le symétrique de ce rectangle par rapport au point I.",
+          "question_type": "mcq",
+          "choices": ["Un rectangle de mêmes dimensions de l'autre côté de I", "Un rectangle réduit de moitié", "Le même rectangle retourné"],
+          "correct_answer": "Un rectangle de mêmes dimensions de l'autre côté de I",
+          "explanation": "Le symétrique par rapport à un point conserve les dimensions. Chaque sommet a son symétrique de l'autre côté de I, à égale distance.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

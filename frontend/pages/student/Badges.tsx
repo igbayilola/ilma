@@ -170,7 +170,7 @@ export const BadgesPage: React.FC = () => {
                     <div className="w-full mt-1.5 px-1">
                       <div className="w-full bg-gray-200 h-1 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-ilma-primary/60 rounded-full transition-all"
+                          className="h-full bg-sitou-primary/60 rounded-full transition-all"
                           style={{ width: `${Math.min(100, Math.round((badge.progress.current / badge.progress.target) * 100))}%` }}
                         />
                       </div>
@@ -245,16 +245,16 @@ export const BadgesPage: React.FC = () => {
             ) : (
               <div className="w-full space-y-3">
                 {selectedBadge.progress && selectedBadge.progress.target > 0 && (
-                  <div className="bg-ilma-primary/5 border border-ilma-primary/20 rounded-2xl p-4">
+                  <div className="bg-sitou-primary/5 border border-sitou-primary/20 rounded-2xl p-4">
                     <div className="flex items-center justify-between text-sm mb-2">
                       <span className="font-bold text-gray-700">Progression</span>
-                      <span className="font-bold text-ilma-primary">
+                      <span className="font-bold text-sitou-primary">
                         {selectedBadge.progress.current} / {selectedBadge.progress.target}
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 h-2.5 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-ilma-primary to-amber-400 rounded-full transition-all duration-500"
+                        className="h-full bg-gradient-to-r from-sitou-primary to-amber-400 rounded-full transition-all duration-500"
                         style={{ width: `${Math.min(100, Math.round((selectedBadge.progress.current / selectedBadge.progress.target) * 100))}%` }}
                       />
                     </div>

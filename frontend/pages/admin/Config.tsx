@@ -18,7 +18,7 @@ interface ConfigEntry {
 type GroupedConfig = Record<string, Record<string, ConfigEntry>>;
 
 const CATEGORY_META: Record<string, { label: string; icon: React.ReactNode; color: string }> = {
-    system: { label: 'Accès & Système', icon: <Shield size={20} />, color: 'text-ilma-primary' },
+    system: { label: 'Accès & Système', icon: <Shield size={20} />, color: 'text-sitou-primary' },
     subscription: { label: 'Monétisation', icon: <Coins size={20} />, color: 'text-yellow-600' },
     scoring: { label: 'Scoring (SmartScore)', icon: <Crosshair size={20} />, color: 'text-blue-600' },
     badges: { label: 'Badges', icon: <Award size={20} />, color: 'text-purple-600' },
@@ -104,7 +104,7 @@ export const AdminConfigPage: React.FC = () => {
                         type="number"
                         value={value}
                         onChange={(e) => handleChange(key, parseInt(e.target.value) || 0)}
-                        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary"
+                        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary"
                     />
                 </div>
             );
@@ -120,7 +120,7 @@ export const AdminConfigPage: React.FC = () => {
                         step="0.01"
                         value={value}
                         onChange={(e) => handleChange(key, parseFloat(e.target.value) || 0)}
-                        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary"
+                        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary"
                     />
                 </div>
             );
@@ -143,7 +143,7 @@ export const AdminConfigPage: React.FC = () => {
                             }
                         }}
                         rows={2}
-                        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm font-mono focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary"
+                        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm font-mono focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary"
                     />
                 </div>
             );
@@ -162,7 +162,7 @@ export const AdminConfigPage: React.FC = () => {
     if (loading) {
         return (
             <div className="flex items-center justify-center p-12">
-                <Loader2 size={32} className="animate-spin text-ilma-primary" />
+                <Loader2 size={32} className="animate-spin text-sitou-primary" />
             </div>
         );
     }

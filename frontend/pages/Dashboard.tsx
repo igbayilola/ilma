@@ -142,7 +142,7 @@ export const StreakReminderCard: React.FC<{
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
-              <Flame size={20} className="text-ilma-orange fill-ilma-orange animate-wiggle" />
+              <Flame size={20} className="text-sitou-orange fill-sitou-orange animate-wiggle" />
             </div>
             <div>
               <p className="font-bold text-sm text-gray-800">
@@ -285,7 +285,7 @@ export const Dashboard: React.FC = () => {
                 <p className="text-amber-100 mb-6 max-w-lg font-medium text-sm md:text-base">{todayChallenge.desc}</p>
                 <Button
                     onClick={() => navigate('/app/student/subjects')}
-                    className="bg-white text-ilma-primary hover:bg-amber-50 border-none shadow-xl font-bold"
+                    className="bg-white text-sitou-primary hover:bg-amber-50 border-none shadow-xl font-bold"
                     leftIcon={<Play size={20} className="fill-current" />}
                 >
                     Relever le d&eacute;fi
@@ -299,7 +299,7 @@ export const Dashboard: React.FC = () => {
         <Card className="bento-tall flex flex-col justify-between h-full">
             <div>
                 <h3 className="font-bold text-gray-800 mb-6 flex items-center font-display">
-                    <Trophy size={18} className="mr-2 text-ilma-orange" /> &#127942; Troph&eacute;es R&eacute;cents
+                    <Trophy size={18} className="mr-2 text-sitou-orange" /> &#127942; Troph&eacute;es R&eacute;cents
                 </h3>
                 <div className="flex items-center justify-around mb-4">
                     <div className="flex flex-col items-center group cursor-pointer">
@@ -350,14 +350,14 @@ export const Dashboard: React.FC = () => {
                   const avgProgress = totalSkills > 0 ? Math.round(scoreSum / totalSkills) : 0;
 
                   return (
-                  <Card key={subject.id} interactive onClick={() => navigate(`/app/student/subjects/${subject.id}`)} className={`flex flex-col hover:border-ilma-primary transition-all duration-300 group relative overflow-hidden ${GRADIENT_TOP_MAP[subject.slug] || 'card-gradient-top-blue'}`}>
+                  <Card key={subject.id} interactive onClick={() => navigate(`/app/student/subjects/${subject.id}`)} className={`flex flex-col hover:border-sitou-primary transition-all duration-300 group relative overflow-hidden ${GRADIENT_TOP_MAP[subject.slug] || 'card-gradient-top-blue'}`}>
                       <div className="flex items-start justify-between mb-4 relative z-10">
                           <div className={`w-12 h-12 flex items-center justify-center rounded-2xl ${subject.color} ${subject.textColor} group-hover:scale-110 transition-transform`}>
                               {ICON_COMPONENTS[subject.iconName] || <BookOpen size={24} />}
                           </div>
                       </div>
 
-                      <h4 className="text-lg font-bold text-gray-800 mb-1 group-hover:text-ilma-primary transition-colors relative z-10 font-display">{subject.emoji} {subject.name}</h4>
+                      <h4 className="text-lg font-bold text-gray-800 mb-1 group-hover:text-sitou-primary transition-colors relative z-10 font-display">{subject.emoji} {subject.name}</h4>
                       <p className="text-xs text-gray-500 mb-3 relative z-10 font-medium">
                           {subject.description || 'Exercices et le\u00e7ons'}
                       </p>
@@ -377,7 +377,7 @@ export const Dashboard: React.FC = () => {
                           </div>
                       )}
 
-                      <Button fullWidth variant={ButtonVariant.SECONDARY} className="mt-auto group-hover:bg-ilma-primary group-hover:text-white transition-colors relative z-10 border-0 bg-gray-50">
+                      <Button fullWidth variant={ButtonVariant.SECONDARY} className="mt-auto group-hover:bg-sitou-primary group-hover:text-white transition-colors relative z-10 border-0 bg-gray-50">
                           Commencer
                       </Button>
                   </Card>

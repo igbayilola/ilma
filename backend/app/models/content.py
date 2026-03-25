@@ -10,31 +10,31 @@ from app.models.base import BaseMixin
 
 
 class DifficultyLevel(str, enum.Enum):
-    EASY = "easy"
-    MEDIUM = "medium"
-    HARD = "hard"
+    EASY = "EASY"
+    MEDIUM = "MEDIUM"
+    HARD = "HARD"
 
 
 class ContentStatus(str, enum.Enum):
-    DRAFT = "draft"
-    IN_REVIEW = "in_review"
-    PUBLISHED = "published"
-    ARCHIVED = "archived"
+    DRAFT = "DRAFT"
+    IN_REVIEW = "IN_REVIEW"
+    PUBLISHED = "PUBLISHED"
+    ARCHIVED = "ARCHIVED"
 
 
 class QuestionType(str, enum.Enum):
-    MCQ = "mcq"
-    TRUE_FALSE = "true_false"
-    FILL_BLANK = "fill_blank"
-    NUMERIC_INPUT = "numeric_input"
-    SHORT_ANSWER = "short_answer"
-    ORDERING = "ordering"
-    MATCHING = "matching"
-    ERROR_CORRECTION = "error_correction"
-    CONTEXTUAL_PROBLEM = "contextual_problem"
-    GUIDED_STEPS = "guided_steps"
-    JUSTIFICATION = "justification"
-    TRACING = "tracing"
+    MCQ = "MCQ"
+    TRUE_FALSE = "TRUE_FALSE"
+    FILL_BLANK = "FILL_BLANK"
+    NUMERIC_INPUT = "NUMERIC_INPUT"
+    SHORT_ANSWER = "SHORT_ANSWER"
+    ORDERING = "ORDERING"
+    MATCHING = "MATCHING"
+    ERROR_CORRECTION = "ERROR_CORRECTION"
+    CONTEXTUAL_PROBLEM = "CONTEXTUAL_PROBLEM"
+    GUIDED_STEPS = "GUIDED_STEPS"
+    JUSTIFICATION = "JUSTIFICATION"
+    TRACING = "TRACING"
 
 
 class GradeLevel(Base, BaseMixin):

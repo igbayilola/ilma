@@ -2,7 +2,7 @@
 import { openDB, DBSchema, IDBPDatabase } from 'idb';
 import { SyncItem, InstalledPack, InstalledSkillPack, SkillPackData } from '../types';
 
-interface IlmaDB extends DBSchema {
+interface SitouDB extends DBSchema {
   syncQueue: {
     key: string;
     value: SyncItem;
@@ -32,11 +32,11 @@ interface IlmaDB extends DBSchema {
   };
 }
 
-const DB_NAME = 'ilma-db';
+const DB_NAME = 'sitou-db';
 const DB_VERSION = 3; // v3: per-skill packs
 
-export const initDB = async (): Promise<IDBPDatabase<IlmaDB>> => {
-  return openDB<IlmaDB>(DB_NAME, DB_VERSION, {
+export const initDB = async (): Promise<IDBPDatabase<SitouDB>> => {
+  return openDB<SitouDB>(DB_NAME, DB_VERSION, {
     upgrade(db, oldVersion) {
       // v1 Stores
       if (oldVersion < 1) {

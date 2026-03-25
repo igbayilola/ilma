@@ -54,7 +54,7 @@ describe('Login Page Integration', () => {
     const submitBtn = screen.getByRole('button', { name: /se connecter/i });
 
     // 2. Simulate User Input
-    fireEvent.change(emailInput, { target: { value: 'test@ilma.app' } });
+    fireEvent.change(emailInput, { target: { value: 'test@sitou.app' } });
     fireEvent.change(passInput, { target: { value: 'password123' } });
 
     // 3. Submit
@@ -63,7 +63,7 @@ describe('Login Page Integration', () => {
     // 4. Assert Store Action was called
     await waitFor(() => {
       expect(loginMock).toHaveBeenCalledWith({
-        identifier: 'test@ilma.app',
+        identifier: 'test@sitou.app',
         password: 'password123'
       });
     });

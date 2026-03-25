@@ -1,0 +1,2099 @@
+{
+  "schema_version": "2.0",
+  "grade": {
+    "name": "CM2",
+    "slug": "cm2",
+    "description": "CM2 — programme BENIN"
+  },
+  "subjects": [
+    {
+      "name": "Éducation Sociale",
+      "slug": "education-sociale",
+      "icon": "users",
+      "color": "#8B5CF6",
+      "order": 4,
+      "domains": [
+        {
+          "name": "Préparation au CEP – Éducation Sociale",
+          "slug": "preparation-cep-es",
+          "order": 1,
+          "skills": [
+            {
+              "external_id": "CEP-ES-ANNALES",
+              "name": "Sujets d'examen ES (2010-2025) : entraînement en conditions réelles",
+              "order": 1,
+              "cep_frequency": 100,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Réponses trop vagues sans exemples concrets",
+                "Mal situer les événements historiques dans le temps",
+                "Confondre les institutions et leurs rôles",
+                "Ne pas justifier ses réponses"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte",
+                "Vrai/Faux"
+              ],
+              "mastery_threshold": "Score >= 70% sur 3 sujets complets",
+              "micro_skills": [
+                {
+                  "external_id": "CEP-ES-ANNALES::MS01",
+                  "name": "Lire les consignes d'un sujet d'ES et identifier le type de réponse attendu",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% de consignes bien interprétées sur 2 sujets",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": [
+                    {
+                      "why": "Compréhension de consignes",
+                      "skill_id": "LECT-COMP-TEXTE-INFORMATIF",
+                      "micro_skill_id": "LECT-COMP-TEXTE-INFORMATIF::MS01"
+                    }
+                  ]
+                },
+                {
+                  "external_id": "CEP-ES-ANNALES::MS02",
+                  "name": "Justifier ses réponses avec des exemples concrets du programme (dates, noms, définitions)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% de réponses argumentées sur 2 sujets",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": [
+                    {
+                      "why": "Connaître les dates clés de l'histoire",
+                      "skill_id": "ES-HIST-INDEPENDANCE",
+                      "micro_skill_id": "ES-HIST-INDEPENDANCE::MS02"
+                    },
+                    {
+                      "why": "Connaître les institutions",
+                      "skill_id": "ES-CIV-PRESIDENT",
+                      "micro_skill_id": "ES-CIV-PRESIDENT::MS01"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "external_id": "CEP-ES-CORRIGES",
+              "name": "Corrigés ES (2010-2025) : auto-évaluation et remédiation",
+              "order": 2,
+              "cep_frequency": 100,
+              "prerequisites": [
+                "CEP-ES-ANNALES"
+              ],
+              "common_mistakes": [
+                "Ne pas analyser le type d'erreur",
+                "Reproduire les mêmes erreurs",
+                "Ne pas refaire les exercices ratés"
+              ],
+              "exercise_types": [
+                "Correction d'erreur",
+                "Étapes guidées",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "Identifier ses 3 principales lacunes et les corriger sur 2 sujets",
+              "micro_skills": [
+                {
+                  "external_id": "CEP-ES-CORRIGES::MS01",
+                  "name": "Comparer ses réponses au corrigé et repérer les écarts",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "3+ écarts identifiés",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CEP-ES-CORRIGES::MS02",
+                  "name": "Refaire les exercices ratés en utilisant le corrigé comme modèle",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% de réussite sur les exercices refaits",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Morale et Vivre-ensemble",
+          "slug": "morale",
+          "order": 2,
+          "skills": [
+            {
+              "external_id": "ES-MOR-POLITESSE",
+              "name": "Les marques de politesse",
+              "order": 1,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître toutes les marques de politesse",
+                "Confondre politesse et obéissance"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-POLITESSE::MS01",
+                  "name": "Citer les marques de politesse (salutation, remerciement, excuses, respect) et les appliquer dans des mises en situation",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "4 marques citées + comportement correct dans 2 mises en situation",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-RESPECT-PARENTS",
+              "name": "Le respect aux parents et aux grands-parents",
+              "order": 2,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas citer de comportements concrets",
+                "Confondre respect et crainte"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Mise en situation",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-RESPECT-PARENTS::MS01",
+                  "name": "Citer et mettre en pratique des comportements respectueux : saluer, demander la permission, informer les parents de ses préoccupations",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "3 comportements cités + 1 mise en situation réussie",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-ENTRAIDE",
+              "name": "L'entraide entre camarades, amis, frères, sœurs",
+              "order": 3,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre entraide et dépendance",
+                "Ne pas donner d'exemples concrets"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-ENTRAIDE::MS01",
+                  "name": "Définir l'entraide, citer ses avantages et donner des exemples concrets de la vie scolaire et familiale",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "Définition + 2 exemples concrets",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-TEMPERANCE",
+              "name": "La tempérance : l'excès en toute chose est un défaut",
+              "order": 4,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre tempérance et abstinence",
+                "Ne pas comprendre la notion d'excès"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte",
+                "Vrai/Faux"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-TEMPERANCE::MS01",
+                  "name": "Expliquer la tempérance avec des exemples concrets (nourriture, jeux, écrans) et la nécessité d'éviter les excès",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices + 2 exemples concrets",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-FLEAUX-SOCIAUX",
+              "name": "L'alcoolisme, le tabagisme, la toxicomanie : des fléaux sociaux",
+              "order": 5,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "ES-MOR-TEMPERANCE"
+              ],
+              "common_mistakes": [
+                "Confondre causes et conséquences",
+                "Ne pas connaître les conduites à tenir"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Vrai/Faux",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-FLEAUX-SOCIAUX::MS01",
+                  "name": "Identifier les causes et les conséquences des fléaux sociaux (alcoolisme, tabagisme, toxicomanie)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-MOR-FLEAUX-SOCIAUX::MS02",
+                  "name": "Décrire les conduites à tenir face à la pression (refuser, s'éloigner, en parler à un adulte) et le lien alcool-accidents de la route",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 4 mises en situation",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-SINCERITE-VERITE",
+              "name": "La sincérité et la vérité",
+              "order": 6,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre sincérité et franchise blessante",
+                "Ne pas citer les avantages"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-SINCERITE-VERITE::MS01",
+                  "name": "Définir la sincérité et la vérité, expliquer leurs avantages et savoir distinguer 'dire la vérité' de 'être méchant'",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "Définition + 2 avantages + 1 mise en situation",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-PAROLE-DONNEE",
+              "name": "Le respect de la parole donnée",
+              "order": 7,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre promesse et parole donnée"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 4 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-PAROLE-DONNEE::MS01",
+                  "name": "Expliquer l'importance de tenir ses promesses avec des conséquences concrètes (perte de confiance, conflits)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-TRAVAIL",
+              "name": "Le travail, une nécessité sociale",
+              "order": 8,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas comprendre le lien travail-développement"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte",
+                "Vrai/Faux"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-TRAVAIL::MS01",
+                  "name": "Expliquer que le travail procure l'autonomie et assure le développement, avec des exemples de métiers locaux",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices + 2 métiers locaux cités",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-CONSCIENCE-PRO",
+              "name": "La conscience professionnelle",
+              "order": 9,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre conscience professionnelle et discipline"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 4 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-CONSCIENCE-PRO::MS01",
+                  "name": "Définir la conscience professionnelle et donner des exemples concrets (ponctualité, soin du travail scolaire, respect du matériel)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Définition + 2 exemples appliqués à l'école",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-MAITRISE-SOI",
+              "name": "La maîtrise de soi",
+              "order": 10,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre maîtrise de soi et soumission"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Mise en situation",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-MAITRISE-SOI::MS01",
+                  "name": "Expliquer la maîtrise de soi et proposer des stratégies concrètes pour éviter la colère (respirer, s'éloigner, compter jusqu'à 10)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 3 mises en situation",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-MEDISANCE-CALOMNIE",
+              "name": "La médisance et la calomnie",
+              "order": 11,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre médisance (dire le mal vrai) et calomnie (dire le mal faux)"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-MEDISANCE-CALOMNIE::MS01",
+                  "name": "Distinguer médisance (dire du mal vrai sur quelqu'un) et calomnie (inventer du mal sur quelqu'un) avec des exemples concrets",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exemples classés",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-VOL-CORRUPTION",
+              "name": "Le vol et la corruption",
+              "order": 12,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas comprendre toutes les formes de vol",
+                "Minimiser la corruption"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte",
+                "Vrai/Faux"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-VOL-CORRUPTION::MS01",
+                  "name": "Définir le vol et la corruption, citer leurs conséquences et décrire le comportement à adopter (refuser, dénoncer, témoigner)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-DELINQUANCE",
+              "name": "La délinquance juvénile",
+              "order": 13,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas comprendre le lien loisirs sains / prévention"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 4 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-DELINQUANCE::MS01",
+                  "name": "Expliquer les causes de la délinquance juvénile et proposer des alternatives concrètes (sport, lecture, activités associatives)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "2 causes + 2 alternatives citées",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-PAIX-NONVIOLENCE",
+              "name": "La culture de la paix et de la non-violence",
+              "order": 14,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre paix et absence de conflit"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-PAIX-NONVIOLENCE::MS01",
+                  "name": "Définir la paix et la non-violence et décrire des comportements concrets pour résoudre les conflits sans violence (dialogue, médiation, compromis)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 3 mises en situation de résolution de conflit",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-SITES-ENVIRONNEMENT",
+              "name": "Respect et protection de l'environnement",
+              "order": 15,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les gestes concrets de protection",
+                "Confondre respect des sites et interdiction d'accès"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-SITES-ENVIRONNEMENT::MS01",
+                  "name": "Citer les beautés naturelles du Bénin (Pendjari, lac Ahémé, forêts sacrées, chutes de Kota) et expliquer les attitudes à adopter face à ces richesses",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "3 sites + 2 attitudes citées",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-MOR-SITES-ENVIRONNEMENT::MS02",
+                  "name": "Proposer des gestes concrets de protection de l'environnement : tri des déchets, économie d'eau et d'énergie, reboisement, ne pas jeter dans les cours d'eau",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "4 gestes concrets proposés",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-MOR-ECRANS-NUMERIQUE",
+              "name": "Usage responsable des écrans et des réseaux",
+              "order": 16,
+              "cep_frequency": 30,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas comprendre les risques liés aux écrans",
+                "Partager des informations personnelles en ligne"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Vrai/Faux",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-MOR-ECRANS-NUMERIQUE::MS01",
+                  "name": "Citer les règles d'usage responsable des écrans (durée limitée, pas d'infos personnelles, signaler les contenus choquants) et les risques (cyberharcèlement, addiction)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 règles + 2 risques cités",
+                  "cep_frequency": 30,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Civisme et Institutions",
+          "slug": "civisme-institutions",
+          "order": 3,
+          "skills": [
+            {
+              "external_id": "ES-CIV-COMMUNE",
+              "name": "L'instance dirigeante de la commune",
+              "order": 1,
+              "cep_frequency": 65,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître le processus d'élection du maire",
+                "Confondre attributions du maire et du chef d'arrondissement"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-COMMUNE::MS01",
+                  "name": "Identifier le maire et les conseillers communaux (hommes et femmes), leur élection et leurs rôles dans la gestion de la commune",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "Rôle du maire + processus d'élection décrits",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-CIV-ARRONDISSEMENT",
+              "name": "L'instance dirigeante de l'arrondissement",
+              "order": 2,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre arrondissement et commune"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-ARRONDISSEMENT::MS01",
+                  "name": "Identifier le chef d'arrondissement, son élection et le fonctionnement de l'arrondissement",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-CIV-QUARTIER-VILLAGE",
+              "name": "L'instance dirigeante du quartier ou du village",
+              "order": 3,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre chef de quartier et chef d'arrondissement",
+                "Ignorer l'existence de femmes chefs traditionnelles au Bénin"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 4 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-QUARTIER-VILLAGE::MS01",
+                  "name": "Identifier le/la chef de quartier ou de village, son élection et ses fonctions (y compris les femmes chefs traditionnelles dans certaines régions)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-CIV-DEPARTEMENTS",
+              "name": "Les départements comme collectivités territoriales",
+              "order": 4,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les 12 départements du Bénin",
+                "Confondre département et commune"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Carte à compléter"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-DEPARTEMENTS::MS01",
+                  "name": "Nommer les 12 départements du Bénin, situer son propre département et expliquer le rôle du préfet",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "12 départements nommés + département personnel situé",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-CIV-ASSEMBLEE-NATIONALE",
+              "name": "L'Assemblée Nationale",
+              "order": 5,
+              "cep_frequency": 65,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre le rôle de l'Assemblée (voter les lois) avec celui du gouvernement (appliquer les lois)"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-ASSEMBLEE-NATIONALE::MS01",
+                  "name": "Expliquer le rôle de l'Assemblée Nationale (voter les lois, contrôler le gouvernement), le mode d'élection des députés et la durée du mandat",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "Rôle + élection + mandat décrits",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-CIV-PRESIDENT",
+              "name": "Le Président de la République",
+              "order": 6,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les pouvoirs du Président et ceux de l'Assemblée",
+                "Ne pas connaître la notion d'investiture"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "85% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-PRESIDENT::MS01",
+                  "name": "Expliquer l'élection, l'investiture, le mandat et le rôle du Président de la République",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "4 aspects décrits correctement",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-CIV-GOUVERNEMENT",
+              "name": "Le gouvernement : Premier ministre et ministères",
+              "order": 7,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre le rôle du gouvernement et celui de l'Assemblée",
+                "Ne pas connaître les principaux ministères"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-GOUVERNEMENT::MS01",
+                  "name": "Expliquer le rôle du gouvernement (appliquer les lois, gérer le pays au quotidien), la nomination des ministres par le Président, et citer quelques ministères clés (Éducation, Santé, Intérieur, Finances)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "Rôle + 4 ministères cités",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-CIV-CONTRE-POUVOIRS",
+              "name": "Les contre-pouvoirs : Cour Constitutionnelle, HAAC, Cour Suprême",
+              "order": 8,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre Cour Constitutionnelle et Cour Suprême",
+                "Ne pas connaître le rôle de la HAAC"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte",
+                "Associer"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-CONTRE-POUVOIRS::MS01",
+                  "name": "Identifier la Cour Constitutionnelle (vérifie la conformité des lois), la HAAC (régule les médias) et la Cour Suprême (plus haute juridiction) : rôle, composition, importance pour la démocratie",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 institutions identifiées avec leur rôle",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-CIV-JUSTICE",
+              "name": "Le système judiciaire : tribunaux et accès à la justice",
+              "order": 9,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les différents niveaux de tribunaux",
+                "Croire que la justice est réservée aux riches"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 4 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-CIV-JUSTICE::MS01",
+                  "name": "Expliquer l'organisation de la justice au Bénin (tribunal de première instance, cour d'appel, Cour Suprême) et le droit de tout citoyen à accéder à la justice",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 niveaux cités + principe d'accès expliqué",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Droits, Obligations et Citoyenneté",
+          "slug": "droits-obligations-citoyennete",
+          "order": 4,
+          "skills": [
+            {
+              "external_id": "ES-DROITS-OBLIGATIONS",
+              "name": "Droits et obligations de l'homme",
+              "order": 1,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre droits et obligations",
+                "Ne pas comprendre leur complémentarité"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Associer"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-DROITS-OBLIGATIONS::MS01",
+                  "name": "Identifier les droits et obligations de l'homme et expliquer que chaque droit implique des obligations",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 droits + 3 obligations associées",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-DROITS-ENFANT",
+              "name": "Convention sur les droits de l'enfant : droits, devoirs et protection",
+              "order": 2,
+              "cep_frequency": 65,
+              "prerequisites": [
+                "ES-DROITS-OBLIGATIONS"
+              ],
+              "common_mistakes": [
+                "Ne connaître que les droits sans les devoirs associés",
+                "Ne pas connaître les mécanismes de protection"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "85% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-DROITS-ENFANT::MS01",
+                  "name": "Citer les principaux droits de l'enfant (éducation, santé, protection, identité, expression) et les devoirs associés (respect, travail scolaire, obéissance)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "5 droits + 3 devoirs cités",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-DROITS-ENFANT::MS02",
+                  "name": "Connaître les mécanismes de protection de l'enfant : numéros verts, ONG locales (Terre des hommes, Plan International), signalement aux enseignants ou aux chefs de quartier",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "2 mécanismes de protection cités",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-DROITS-FEMME-GENRE",
+              "name": "Droits de la femme et égalité des genres",
+              "order": 3,
+              "cep_frequency": 55,
+              "prerequisites": [
+                "ES-DROITS-OBLIGATIONS"
+              ],
+              "common_mistakes": [
+                "Confondre égalité et identité des rôles",
+                "Ignorer les formes de discrimination courantes"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-DROITS-FEMME-GENRE::MS01",
+                  "name": "Identifier les droits de la femme, les formes de discrimination à bannir (travail, école, héritage), et analyser les rôles genrés dans la famille et la société béninoise",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-DROITS-CITOYENS",
+              "name": "Droits et devoirs du citoyen béninois : drapeau, nation, démocratie, obligations civiques",
+              "order": 4,
+              "cep_frequency": 75,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les symboles nationaux",
+                "Confondre obligation et droit"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte",
+                "Vrai/Faux"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-DROITS-CITOYENS::MS01",
+                  "name": "Identifier le drapeau du Bénin (vert, jaune, rouge), l'hymne national (L'Aube Nouvelle), la devise et expliquer le sens du nationalisme",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "Drapeau décrit + hymne nommé + devise citée",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-DROITS-CITOYENS::MS02",
+                  "name": "Identifier les comportements d'un démocrate (tolérance, équité, justice, acceptation du résultat des élections)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-DROITS-CITOYENS::MS03",
+                  "name": "Citer et expliquer les obligations civiques : se faire recenser, avoir une carte d'identité, voter, inscrire ses enfants à l'école, payer les impôts, faire vacciner ses enfants",
+                  "order": 3,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "5 obligations citées et expliquées",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-DROITS-LIBERTES",
+              "name": "Les droits fondamentaux : instruction, santé, libertés, sécurité, différence, religion",
+              "order": 5,
+              "cep_frequency": 65,
+              "prerequisites": [
+                "ES-DROITS-CITOYENS"
+              ],
+              "common_mistakes": [
+                "Confondre les différents droits",
+                "Confondre liberté et absence de règles"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte",
+                "Associer"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-DROITS-LIBERTES::MS01",
+                  "name": "Expliquer les droits fondamentaux : instruction, soins médicaux, liberté (circulation, association, expression, religion), sécurité, droit à la différence",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "6 droits expliqués",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-DROITS-LIBERTES::MS02",
+                  "name": "Expliquer l'esprit de responsabilité, de sacrifice (primauté de l'intérêt général) et le rôle des impôts et taxes (financer les services publics)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Santé et Éducation à la vie",
+          "slug": "sante-education-vie",
+          "order": 5,
+          "skills": [
+            {
+              "external_id": "ES-SANTE-MST-VIH",
+              "name": "Les MST et le VIH/SIDA : prévention et lutte",
+              "order": 1,
+              "cep_frequency": 60,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre VIH et SIDA",
+                "Croire aux fausses croyances sur la transmission",
+                "Ne pas connaître les moyens de prévention"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Vrai/Faux",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-SANTE-MST-VIH::MS01",
+                  "name": "Expliquer ce que sont les MST et le VIH/SIDA, les modes de transmission (sang, rapports sexuels, mère-enfant) et les fausses croyances à combattre",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 modes de transmission + 2 fausses croyances identifiées",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-SANTE-MST-VIH::MS02",
+                  "name": "Citer les moyens de prévention (abstinence, fidélité, préservatif, dépistage) et les structures d'aide locales",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 moyens de prévention cités",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-SANTE-PUBERTE",
+              "name": "La puberté et l'hygiène corporelle",
+              "order": 2,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas comprendre les transformations normales du corps",
+                "Manque d'hygiène lié à la méconnaissance"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-SANTE-PUBERTE::MS01",
+                  "name": "Expliquer les transformations du corps à la puberté (filles et garçons) et les règles d'hygiène corporelle associées",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-SANTE-PREMIERS-SECOURS",
+              "name": "Les premiers secours : gestes d'urgence",
+              "order": 3,
+              "cep_frequency": 35,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les gestes de base",
+                "Paniquer au lieu d'agir",
+                "Ne pas connaître les numéros d'urgence"
+              ],
+              "exercise_types": [
+                "Étapes ordonnées",
+                "Mise en situation",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-SANTE-PREMIERS-SECOURS::MS01",
+                  "name": "Connaître les gestes d'urgence de base : alerter (appeler un adulte, numéro d'urgence), protéger (éloigner du danger), mettre en position latérale de sécurité, comprimer une plaie",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "4 gestes cités dans l'ordre",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-SANTE-COOPERATIVE",
+              "name": "La coopérative scolaire et les projets citoyens",
+              "order": 4,
+              "cep_frequency": 30,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas comprendre le fonctionnement d'une coopérative",
+                "Ne pas voir le lien entre coopérative et citoyenneté"
+              ],
+              "exercise_types": [
+                "Réponse courte",
+                "Question ouverte",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "80% sur 4 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-SANTE-COOPERATIVE::MS01",
+                  "name": "Expliquer le fonctionnement d'une coopérative scolaire (cotisation, bureau, projets communs) et participer à une simulation d'élection de bureau",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 3 exercices + 1 simulation réussie",
+                  "cep_frequency": 30,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Code de la route et sécurité routière",
+          "slug": "code-route",
+          "order": 6,
+          "skills": [
+            {
+              "external_id": "ES-ROUTE-EQUIPEMENT",
+              "name": "Équipement du vélomoteur et port du casque",
+              "order": 1,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les éléments de l'équipement",
+                "Ne pas comprendre l'importance du casque"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Associer"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-ROUTE-EQUIPEMENT::MS01",
+                  "name": "Identifier les éléments de l'équipement du vélomoteur (phare, freins, feux arrières, rétroviseurs) et expliquer l'utilité du casque",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "4 éléments + utilité du casque",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-ROUTE-SIGNAUX",
+              "name": "Les signaux de la route et l'agent de circulation",
+              "order": 2,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les panneaux",
+                "Ne pas comprendre les gestes de l'agent"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Associer",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-ROUTE-SIGNAUX::MS01",
+                  "name": "Identifier les principaux panneaux de signalisation (interdiction, obligation, danger, indication) et les feux tricolores",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "80% d'identification correcte sur 10 panneaux",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-ROUTE-SIGNAUX::MS02",
+                  "name": "Comprendre les gestes de l'agent régulant la circulation (bras levé = arrêt, bras tendus = passage autorisé)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-ROUTE-PIETON",
+              "name": "Le piéton : traversée, trottoir, passages cloutés",
+              "order": 3,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas regarder avant de traverser",
+                "Traverser en dehors des passages cloutés",
+                "Marcher du mauvais côté de la route"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Vrai/Faux",
+                "Mise en situation"
+              ],
+              "mastery_threshold": "85% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-ROUTE-PIETON::MS01",
+                  "name": "Appliquer les règles du piéton : marcher à gauche face au danger (hors agglomération), utiliser le trottoir et les passages cloutés (en ville), regarder à gauche puis à droite avant de traverser",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "3 règles citées + 1 mise en situation réussie",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-ROUTE-VELO-CHARRETTE",
+              "name": "Le vélo et la charrette sur la route",
+              "order": 4,
+              "cep_frequency": 35,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas signaler ses changements de direction",
+                "Rouler de nuit sans éclairage"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Vrai/Faux"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-ROUTE-VELO-CHARRETTE::MS01",
+                  "name": "Citer les règles pour le cycliste (rouler à droite, signaler, éclairage de nuit) et pour la charrette (signalisation, éclairage, chargement)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-ROUTE-REGLES",
+              "name": "Règles de circulation : dépassement, priorité, véhicules prioritaires, nuit, panne",
+              "order": 5,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les véhicules prioritaires",
+                "Confondre priorité à droite et dépassement à gauche"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Vrai/Faux",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-ROUTE-REGLES::MS01",
+                  "name": "Expliquer les règles de dépassement à gauche, la priorité à droite en ville, et identifier les véhicules prioritaires (ambulance, pompiers, police)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-ROUTE-REGLES::MS02",
+                  "name": "Citer les précautions pour la conduite de nuit (éclairage, habits clairs) et en cas de panne (triangle, bord de route)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-ROUTE-REGLES::MS03",
+                  "name": "Expliquer le lien entre alcool, vitesse et accidents de la route",
+                  "order": 3,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 3 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": [
+                    {
+                      "why": "Fléaux sociaux dont alcoolisme",
+                      "skill_id": "ES-MOR-FLEAUX-SOCIAUX",
+                      "micro_skill_id": "ES-MOR-FLEAUX-SOCIAUX::MS02"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Géographie du Bénin",
+          "slug": "geographie-benin",
+          "order": 7,
+          "skills": [
+            {
+              "external_id": "ES-GEO-BENIN-MONDE",
+              "name": "Le Bénin en Afrique et dans le monde",
+              "order": 1,
+              "cep_frequency": 75,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les pays limitrophes",
+                "Ne pas connaître la superficie",
+                "Erreurs de tracé de carte"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Carte à compléter"
+              ],
+              "mastery_threshold": "85% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-GEO-BENIN-MONDE::MS01",
+                  "name": "Situer le Bénin en Afrique (pays limitrophes : Togo, Burkina Faso, Niger, Nigeria) et dans le monde, connaître sa superficie et tracer une carte simplifiée",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "4 pays limitrophes + superficie + tracé correct",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-GEO-REGION-SEPTENTRIONALE",
+              "name": "Aspects physiques, humains et économiques de la région septentrionale",
+              "order": 2,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "ES-GEO-BENIN-MONDE"
+              ],
+              "common_mistakes": [
+                "Confondre les caractéristiques des régions",
+                "Erreurs sur les cours d'eau du Nord"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Carte à compléter",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-GEO-REGION-SEPTENTRIONALE::MS01",
+                  "name": "Décrire le relief, le climat (tropical sec), la végétation (savane) et l'habitat de la région septentrionale et les cours d'eau (bassin fluvial du Nord, affluents)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-GEO-REGION-SEPTENTRIONALE::MS02",
+                  "name": "Décrire la population (densité), les activités agricoles (coton, céréales, élevage) et économiques (commerce, artisanat) de la région septentrionale",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-GEO-REGION-CENTRALE",
+              "name": "Aspects physiques, humains et économiques de la région centrale",
+              "order": 3,
+              "cep_frequency": 55,
+              "prerequisites": [
+                "ES-GEO-BENIN-MONDE"
+              ],
+              "common_mistakes": [
+                "Confondre les plateaux du centre avec les plaines du sud",
+                "Ne pas connaître les cultures de la région"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Carte à compléter"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-GEO-REGION-CENTRALE::MS01",
+                  "name": "Décrire le relief (plateaux, collines), le climat (tropical humide de transition), la végétation (forêt claire, savane arborée), la population et les activités (igname, noix de cajou, karité, commerce)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-GEO-REGION-MERIDIONALE",
+              "name": "Aspects physiques, humains et économiques de la région méridionale",
+              "order": 4,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "ES-GEO-BENIN-MONDE"
+              ],
+              "common_mistakes": [
+                "Ne pas connaître les lagunes et le littoral",
+                "Confondre Porto-Novo et Cotonou dans les fonctions"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Carte à compléter"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-GEO-REGION-MERIDIONALE::MS01",
+                  "name": "Décrire le relief (plaine côtière, lagunes, lac Nokoué, lac Ahémé), le climat (subéquatorial, 2 saisons de pluie), la végétation (forêt dense, mangrove, cocotiers)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-GEO-REGION-MERIDIONALE::MS02",
+                  "name": "Décrire la population (forte densité), les villes principales (Cotonou, Porto-Novo, Ouidah), les activités (pêche, maraîchage, huile de palme, commerce, port de Cotonou, industrie)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-GEO-TRANSPORT-RESSOURCES",
+              "name": "Transport, communication et ressources minières du Bénin",
+              "order": 5,
+              "cep_frequency": 45,
+              "prerequisites": [
+                "ES-GEO-BENIN-MONDE"
+              ],
+              "common_mistakes": [
+                "Confondre types de routes",
+                "Ne pas connaître les cours d'eau navigables"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Carte à compléter"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-GEO-TRANSPORT-RESSOURCES::MS01",
+                  "name": "Identifier les réseaux de transport : routier (routes inter-États, principales, secondaires, voies ferrées), aérien (aéroport de Cotonou), fluvial (Ouémé, Mono, Okpara)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "3 types de transport + exemples",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-GEO-TRANSPORT-RESSOURCES::MS02",
+                  "name": "Identifier et localiser les principales ressources minières du Bénin et expliquer leur importance économique",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Histoire du Bénin",
+          "slug": "histoire-benin",
+          "order": 8,
+          "skills": [
+            {
+              "external_id": "ES-HIST-PRECOLONIALE",
+              "name": "L'histoire précoloniale : royaumes et traite négrière",
+              "order": 1,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les royaumes du Dahomey",
+                "Confondre traite négrière et colonisation"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-PRECOLONIALE::MS01",
+                  "name": "Citer les principaux royaumes précoloniaux (Dahomey/Abomey, Allada, Porto-Novo/Hogbonou, Nikki) et leurs caractéristiques (rois, organisation, commerce)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "3 royaumes cités avec 1 caractéristique chacun",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-HIST-PRECOLONIALE::MS02",
+                  "name": "Expliquer la traite négrière : définition, période, conséquences pour l'Afrique et le Dahomey, rôle de Ouidah comme port négrier",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-CULTURE-LOCALE",
+              "name": "Culture et traditions béninoises : fêtes, chefferies, patrimoine",
+              "order": 2,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les fêtes traditionnelles",
+                "Ignorer le patrimoine culturel local"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-CULTURE-LOCALE::MS01",
+                  "name": "Citer les principales fêtes traditionnelles du Bénin (fête du Vodoun le 10 janvier, Gani, Nonvitcha, Gaani) et le patrimoine culturel (palais royaux d'Abomey — UNESCO, cité lacustre de Ganvié)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "3 fêtes + 2 éléments de patrimoine",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-COLONISATION",
+              "name": "La colonisation française en Afrique et au Dahomey",
+              "order": 3,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre colonisation et commerce",
+                "Ne pas connaître la période et les conséquences"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-COLONISATION::MS01",
+                  "name": "Définir la colonisation et décrire la colonisation française au Dahomey : période, acteurs, manifestations, faits marquants, conséquences",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-RESISTANCES",
+              "name": "Les résistances à la colonisation",
+              "order": 4,
+              "cep_frequency": 65,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les résistances au nord et au sud",
+                "Ne pas connaître les figures emblématiques"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-RESISTANCES::MS01",
+                  "name": "Décrire les résistances au Dahomey (nord, centre, sud) et en Afrique : figures emblématiques (Béhanzin, Kaba, Bio Guéra), manifestations et effets",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 figures citées + 2 formes de résistance",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-LOI-CADRE-REFERENDUM",
+              "name": "La loi-cadre et le référendum de 1958",
+              "order": 5,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre loi-cadre et constitution",
+                "Ne pas connaître les implications du référendum"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-LOI-CADRE-REFERENDUM::MS01",
+                  "name": "Définir la loi-cadre (1956) et le référendum (1958), expliquer leurs raisons, la réponse du Dahomey et les conséquences",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-REPUBLIQUE-INDEPENDANCE",
+              "name": "La proclamation de la République et de l'indépendance",
+              "order": 6,
+              "cep_frequency": 75,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre date de la République et de l'indépendance",
+                "Ne pas connaître le Conseil de l'Entente"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-REPUBLIQUE-INDEPENDANCE::MS01",
+                  "name": "Citer la date de proclamation de la République, Hubert MAGA (premier chef d'État), la devise, et les limites (Dahomey non souverain)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "Date + nom + devise",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-HIST-REPUBLIQUE-INDEPENDANCE::MS02",
+                  "name": "Expliquer l'accession à l'indépendance (1er août 1960) : Conseil de l'Entente (1959), notion de souveraineté, droits conférés (hymne, drapeau)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-1960-1972",
+              "name": "Le Bénin de 1960 à 1972 : instabilités politiques",
+              "order": 7,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les coups d'État successifs",
+                "Confondre les personnages de cette période"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-1960-1972::MS01",
+                  "name": "Décrire les instabilités politiques (coups d'État), le conseil présidentiel (Maga, Apithy, Ahomadégbé) et les trois glorieuses (26 octobre 1972)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-1972-1990",
+              "name": "Le Bénin de 1972 à 1990 : le régime révolutionnaire",
+              "order": 8,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître cette période",
+                "Confondre les changements apportés par la révolution"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-1972-1990::MS01",
+                  "name": "Décrire le régime révolutionnaire de Mathieu Kérékou : idéologie marxiste-léniniste, changement de nom (Dahomey → République Populaire du Bénin en 1975), parti unique, crise économique des années 1980",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-CONFERENCE-DEMOCRATIE",
+              "name": "La conférence nationale (1990) et l'avènement de la démocratie",
+              "order": 9,
+              "cep_frequency": 65,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre conférence nationale et Assemblée Nationale",
+                "Ne pas comprendre la démocratie"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "85% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-CONFERENCE-DEMOCRATIE::MS01",
+                  "name": "Expliquer la conférence des forces vives de la Nation (février 1990) : raisons (crise économique, revendications), déroulement, conclusions (démocratie, multipartisme, nouvelle constitution)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ES-HIST-CONFERENCE-DEMOCRATIE::MS02",
+                  "name": "Définir la démocratie (pouvoir du peuple, élections libres, multipartisme, libertés) et citer ses avantages",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "Définition + 3 avantages",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-PRESIDENTS",
+              "name": "Les présidents de la République du Bénin",
+              "order": 10,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître la liste des présidents",
+                "Confondre les périodes de chaque président"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Associer"
+              ],
+              "mastery_threshold": "85% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-PRESIDENTS::MS01",
+                  "name": "Citer les présidents du Bénin dans l'ordre : Hubert Maga, Mathieu Kérékou (1972-1991, 1996-2006), Nicéphore Soglo (1991-1996), Boni Yayi (2006-2016), Patrice Talon (depuis 2016) et situer leur mandat",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "5 présidents cités dans l'ordre avec périodes approximatives",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ES-HIST-ORGANISATIONS-INTERNATIONALES",
+              "name": "Le Bénin dans les organisations internationales",
+              "order": 11,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre UA, CEDEAO, UEMOA",
+                "Ne pas connaître la Francophonie"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Associer"
+              ],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ES-HIST-ORGANISATIONS-INTERNATIONALES::MS01",
+                  "name": "Identifier l'UA, la CEDEAO, l'UEMOA, le Conseil de l'Entente et la Francophonie : rôle principal de chaque organisation",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "5 organisations identifiées avec rôle",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

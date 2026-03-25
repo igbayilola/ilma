@@ -9,17 +9,17 @@ export const StyleGuide: React.FC = () => {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-extrabold text-gray-900 mb-2">Design System ILMA</h1>
+        <h1 className="text-3xl font-extrabold text-gray-900 mb-2">Design System Sitou</h1>
         <p className="text-gray-500">Tokens, Composants et Widgets pour le frontend.</p>
       </div>
 
       <section>
         <h2 className="text-xl font-bold mb-4 border-b pb-2">Couleurs</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="h-20 rounded-xl bg-ilma-primary flex items-end p-2 text-white font-mono text-xs shadow-lg">primary #D97706</div>
-          <div className="h-20 rounded-xl bg-ilma-primary-light flex items-end p-2 text-ilma-primary font-mono text-xs border border-amber-200">light #FEF3C7</div>
-          <div className="h-20 rounded-xl bg-ilma-green flex items-end p-2 text-white font-mono text-xs shadow-lg">green #22C55E</div>
-          <div className="h-20 rounded-xl bg-ilma-orange flex items-end p-2 text-white font-mono text-xs shadow-lg">orange #F97316</div>
+          <div className="h-20 rounded-xl bg-sitou-primary flex items-end p-2 text-white font-mono text-xs shadow-lg">primary #D97706</div>
+          <div className="h-20 rounded-xl bg-sitou-primary-light flex items-end p-2 text-sitou-primary font-mono text-xs border border-amber-200">light #FEF3C7</div>
+          <div className="h-20 rounded-xl bg-sitou-green flex items-end p-2 text-white font-mono text-xs shadow-lg">green #22C55E</div>
+          <div className="h-20 rounded-xl bg-sitou-orange flex items-end p-2 text-white font-mono text-xs shadow-lg">orange #F97316</div>
         </div>
       </section>
 
@@ -37,7 +37,7 @@ export const StyleGuide: React.FC = () => {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold mb-4 border-b pb-2">Widgets ILMA</h2>
+        <h2 className="text-xl font-bold mb-4 border-b pb-2">Widgets Sitou</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="flex flex-col items-center justify-center space-y-4">
                 <span className="text-sm text-gray-400 font-bold uppercase">Smart Score</span>
@@ -68,16 +68,16 @@ export const StyleGuide: React.FC = () => {
         <h2 className="text-xl font-bold mb-4 border-b pb-2">Alertes & Cartes</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 bg-red-50 border border-red-100 rounded-2xl flex items-start">
-                <AlertCircle className="text-ilma-red mt-0.5 mr-3 flex-shrink-0" />
+                <AlertCircle className="text-sitou-red mt-0.5 mr-3 flex-shrink-0" />
                 <div>
-                    <h4 className="font-bold text-ilma-red">Erreur de connexion</h4>
+                    <h4 className="font-bold text-sitou-red">Erreur de connexion</h4>
                     <p className="text-sm text-red-700 mt-1">Impossible de charger le contenu. Vérifiez votre réseau.</p>
                 </div>
             </div>
             <div className="p-4 bg-green-50 border border-green-100 rounded-2xl flex items-start">
-                <Check className="text-ilma-green mt-0.5 mr-3 flex-shrink-0" />
+                <Check className="text-sitou-green mt-0.5 mr-3 flex-shrink-0" />
                 <div>
-                    <h4 className="font-bold text-ilma-green">Exercice terminé !</h4>
+                    <h4 className="font-bold text-sitou-green">Exercice terminé !</h4>
                     <p className="text-sm text-green-700 mt-1">Tu as gagné +20 XP.</p>
                 </div>
             </div>

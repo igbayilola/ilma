@@ -26,7 +26,7 @@ def main():
         "schema_version": "1.0",
         "metadata": {
             "description": "Exercices Numération CM2 — Tous les skills",
-            "author": "ILMA",
+            "author": "Sitou",
             "created_date": "2026-02-28",
             "grade": "CM2",
             "subject": "Mathématiques",

@@ -33,7 +33,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
               ) : (
                 <Link
                   to={item.to}
-                  className="hover:text-ilma-primary transition-colors truncate max-w-[200px]"
+                  className="hover:text-sitou-primary transition-colors truncate max-w-[200px]"
                 >
                   {item.label}
                 </Link>
@@ -48,7 +48,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
         <nav aria-label="Retour" className="flex md:hidden">
           <Link
             to={parentItem.to}
-            className="inline-flex items-center text-sm font-bold text-gray-500 hover:text-ilma-primary transition-colors"
+            className="inline-flex items-center text-sm font-bold text-gray-500 hover:text-sitou-primary transition-colors"
           >
             <ArrowLeft size={16} className="mr-1" />
             {parentItem.label}

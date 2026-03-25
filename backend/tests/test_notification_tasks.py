@@ -565,7 +565,7 @@ class TestSendParentWeeklyDigest:
         notifs = await _get_notifications(db_session, parent.id)
         assert len(notifs) == 1
         assert notifs[0].type == NotificationType.WEEKLY_REPORT
-        assert notifs[0].title == "R\u00e9sum\u00e9 hebdomadaire ILMA"
+        assert notifs[0].title == "R\u00e9sum\u00e9 hebdomadaire Sitou"
         assert "Aissatou" in notifs[0].body
         assert "1 exercice(s)" in notifs[0].body
         assert "30 min" in notifs[0].body

@@ -1,4 +1,4 @@
-"""APScheduler configuration — CRON jobs for ILMA."""
+"""APScheduler configuration — CRON jobs for Sitou."""
 import logging
 import os
 

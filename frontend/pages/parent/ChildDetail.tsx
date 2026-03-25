@@ -44,7 +44,7 @@ export const ChildDetailPage: React.FC = () => {
 
     return (
         <div className="space-y-6">
-            <Link to="/app/parent/dashboard" className="inline-flex items-center gap-2 text-gray-500 hover:text-ilma-primary transition-colors mb-4">
+            <Link to="/app/parent/dashboard" className="inline-flex items-center gap-2 text-gray-500 hover:text-sitou-primary transition-colors mb-4">
               <ArrowLeft size={18} />
               <span className="text-sm font-medium">Retour au tableau de bord</span>
             </Link>
@@ -78,7 +78,7 @@ export const ChildDetailPage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <Card className="md:col-span-2">
                             <h3 className="font-bold text-gray-800 mb-4 flex items-center">
-                                <Clock size={18} className="mr-2 text-ilma-primary" /> Progression par compétence
+                                <Clock size={18} className="mr-2 text-sitou-primary" /> Progression par compétence
                             </h3>
                             {skillProgress.length === 0 ? (
                                 <p className="text-gray-500 text-center py-8">Aucune donnée de progression.</p>
@@ -90,7 +90,7 @@ export const ChildDetailPage: React.FC = () => {
                                                 <p className="text-sm font-medium text-gray-800 truncate">{sp.skillName}</p>
                                             </div>
                                             <div className="w-24 bg-gray-100 h-2 rounded-full overflow-hidden">
-                                                <div className="bg-ilma-primary h-full rounded-full" style={{ width: `${sp.score}%` }} />
+                                                <div className="bg-sitou-primary h-full rounded-full" style={{ width: `${sp.score}%` }} />
                                             </div>
                                             <span className="text-sm font-bold text-gray-600 w-10 text-right">{sp.score}%</span>
                                         </div>

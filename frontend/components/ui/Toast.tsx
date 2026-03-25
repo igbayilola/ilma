@@ -37,14 +37,14 @@ const ToastItem: React.FC<{ toast: Toast; onClose: () => void }> = ({ toast, onC
     success: 'bg-white border-l-4 border-green-500 text-gray-800',
     error: 'bg-white border-l-4 border-red-500 text-gray-800',
     warning: 'bg-white border-l-4 border-yellow-500 text-gray-800',
-    info: 'bg-white border-l-4 border-ilma-primary text-gray-800'
+    info: 'bg-white border-l-4 border-sitou-primary text-gray-800'
   };
 
   const icons = {
     success: <CheckCircle size={20} className="text-green-500" />,
     error: <AlertCircle size={20} className="text-red-500" />,
     warning: <AlertTriangle size={20} className="text-yellow-500" />,
-    info: <Info size={20} className="text-ilma-primary" />
+    info: <Info size={20} className="text-sitou-primary" />
   };
 
   return (

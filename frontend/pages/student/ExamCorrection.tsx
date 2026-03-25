@@ -49,11 +49,11 @@ export const ExamCorrectionPage: React.FC = () => {
     const scoreText = isCep
       ? `${session.predicted_cep_score}/20`
       : `${Math.round(session.percentage ?? (session.total_correct / session.total_questions) * 100)}%`;
-    const text = `J'ai obtenu ${scoreText} à un examen blanc CEP sur ILMA !`;
-    const url = 'https://ilma.app';
+    const text = `J'ai obtenu ${scoreText} à un examen blanc CEP sur Sitou !`;
+    const url = 'https://sitou.app';
 
     if (navigator.share) {
-      navigator.share({ title: 'Mon résultat CEP - ILMA', text, url }).catch(() => {});
+      navigator.share({ title: 'Mon résultat CEP - Sitou', text, url }).catch(() => {});
     } else {
       navigator.clipboard
         .writeText(`${text} ${url}`)

@@ -10,11 +10,11 @@ let refreshTimerId: ReturnType<typeof setTimeout> | null = null;
 
 // Storage keys
 const STORAGE_KEYS = {
-  LAST_USER: 'ilma_last_user',
-  TOKEN_EXPIRY: 'ilma_token_expiry',
-  REFRESH_TOKEN: 'ilma_refresh_token',
-  ACTIVE_PROFILE_ID: 'ilma_active_profile_id',
-  PROFILES: 'ilma_profiles',
+  LAST_USER: 'sitou_last_user',
+  TOKEN_EXPIRY: 'sitou_token_expiry',
+  REFRESH_TOKEN: 'sitou_refresh_token',
+  ACTIVE_PROFILE_ID: 'sitou_active_profile_id',
+  PROFILES: 'sitou_profiles',
 } as const;
 
 /**

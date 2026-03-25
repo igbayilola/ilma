@@ -127,7 +127,7 @@ const Scratchpad: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen
         <h3 className="font-bold text-sm text-gray-700">📝 Brouillon</h3>
         <div className="flex gap-2">
           <button onClick={clearCanvas} className="text-xs px-3 py-1.5 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors font-medium">Effacer</button>
-          <button onClick={onClose} className="text-xs px-3 py-1.5 bg-ilma-primary text-white rounded-lg hover:bg-ilma-primary-dark transition-colors font-medium">Fermer</button>
+          <button onClick={onClose} className="text-xs px-3 py-1.5 bg-sitou-primary text-white rounded-lg hover:bg-sitou-primary-dark transition-colors font-medium">Fermer</button>
         </div>
       </div>
       <canvas
@@ -423,7 +423,7 @@ export const ExercisePlayerPage: React.FC = () => {
 
                 <div className="grid grid-cols-2 gap-4 w-full mb-6">
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-2xl">
-                        <span className="block text-2xl font-bold text-ilma-primary">{score}/{displayTotal}</span>
+                        <span className="block text-2xl font-bold text-sitou-primary">{score}/{displayTotal}</span>
                         <span className="text-xs text-gray-400 uppercase font-bold">Score</span>
                     </div>
                     <div className={`p-4 rounded-2xl ${mistakes === 0 ? 'bg-gradient-to-br from-green-50 to-teal-50' : 'bg-gradient-to-br from-orange-50 to-red-50'}`}>
@@ -439,7 +439,7 @@ export const ExercisePlayerPage: React.FC = () => {
                         <div className="flex items-center justify-center gap-2 mb-3">
                             <span className="text-lg font-bold text-gray-400">{smartScoreBefore}</span>
                             <ArrowRight size={16} className="text-gray-400" />
-                            <span className="text-lg font-bold text-ilma-primary">{smartScoreAfter}</span>
+                            <span className="text-lg font-bold text-sitou-primary">{smartScoreAfter}</span>
                             {smartScoreDelta !== null && smartScoreDelta !== 0 && (
                                 <span className={`text-sm font-bold px-2 py-0.5 rounded-full ${smartScoreDelta > 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
                                     {smartScoreDelta > 0 ? '+' : ''}{smartScoreDelta}
@@ -475,11 +475,11 @@ export const ExercisePlayerPage: React.FC = () => {
                         variant={ButtonVariant.GHOST}
                         leftIcon={<Share2 size={18}/>}
                         onClick={() => {
-                            const text = `J'ai obtenu ${finalPercentage}% en ${skillName} sur ILMA ! \ud83c\udfc6 Tu veux essayer ?`;
-                            const url = 'https://ilma.app';
+                            const text = `J'ai obtenu ${finalPercentage}% en ${skillName} sur Sitou ! \ud83c\udfc6 Tu veux essayer ?`;
+                            const url = 'https://sitou.app';
                             telemetry.logEvent('Exercise', 'Share', skillName, finalPercentage);
                             if (navigator.share) {
-                                navigator.share({ title: 'Mon score ILMA', text, url }).catch(() => {});
+                                navigator.share({ title: 'Mon score Sitou', text, url }).catch(() => {});
                             } else {
                                 navigator.clipboard.writeText(`${text} ${url}`).then(() => {
                                     alert('Score copi\u00e9 dans le presse-papier !');
@@ -496,7 +496,7 @@ export const ExercisePlayerPage: React.FC = () => {
 
     // ACTIVE PHASE
     return (
-        <div className="min-h-screen bg-ilma-surface flex flex-col max-w-3xl mx-auto md:border-x md:border-gray-200 md:bg-white md:shadow-xl md:min-h-0 md:h-screen">
+        <div className="min-h-screen bg-sitou-surface flex flex-col max-w-3xl mx-auto md:border-x md:border-gray-200 md:bg-white md:shadow-xl md:min-h-0 md:h-screen">
             <header className="p-4 border-b border-gray-100 bg-white sticky top-0 z-20">
                 <div className="flex items-center justify-between mb-4">
                     <button onClick={handleQuit} className="p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-600" aria-label="Quitter l'exercice">
@@ -509,7 +509,7 @@ export const ExercisePlayerPage: React.FC = () => {
                         <button onClick={() => setShowScratchpad(!showScratchpad)} className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Ouvrir le brouillon" title="Brouillon">
                             <PenLine size={20} className="text-gray-400" />
                         </button>
-                    <button onClick={goToLesson} className="p-2 text-ilma-primary hover:bg-amber-50 rounded-full" title="Voir la le&ccedil;on">
+                    <button onClick={goToLesson} className="p-2 text-sitou-primary hover:bg-amber-50 rounded-full" title="Voir la le&ccedil;on">
                         <HelpCircle size={24} />
                     </button>
                     </div>
@@ -540,15 +540,15 @@ export const ExercisePlayerPage: React.FC = () => {
                         <div className="flex items-start mb-2">
                             {answerStatus === 'CORRECT' ? (
                                 <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                                    <CheckCircle2 className="text-ilma-green w-5 h-5" />
+                                    <CheckCircle2 className="text-sitou-green w-5 h-5" />
                                 </div>
                             ) : (
                                 <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                                    <AlertCircle className="text-ilma-red w-5 h-5" />
+                                    <AlertCircle className="text-sitou-red w-5 h-5" />
                                 </div>
                             )}
                             <div>
-                                <h3 className={`font-extrabold text-lg ${answerStatus === 'CORRECT' ? 'text-ilma-green' : 'text-ilma-red'}`}>
+                                <h3 className={`font-extrabold text-lg ${answerStatus === 'CORRECT' ? 'text-sitou-green' : 'text-sitou-red'}`}>
                                     {feedbackMessage.emoji} {feedbackMessage.text}
                                 </h3>
                                 {explanation && (
@@ -565,7 +565,7 @@ export const ExercisePlayerPage: React.FC = () => {
                                     size="sm"
                                     variant={ButtonVariant.SECONDARY}
                                     onClick={goToLesson}
-                                    className="bg-white border border-red-200 text-ilma-red hover:bg-red-50"
+                                    className="bg-white border border-red-200 text-sitou-red hover:bg-red-50"
                                     leftIcon={<BookOpen size={16} />}
                                 >
                                     Relire la le&ccedil;on

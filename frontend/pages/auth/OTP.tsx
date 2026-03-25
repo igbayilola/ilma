@@ -126,9 +126,9 @@ export const OTPPage: React.FC = () => {
             key={index}
             ref={el => { inputRefs.current[index] = el; }}
             className={`w-10 h-12 md:w-12 md:h-14 border-2 rounded-xl text-center text-xl font-bold transition-colors focus:outline-none
-              ${digit ? 'border-ilma-primary bg-ilma-primary-light/30' : 'border-gray-200'}
+              ${digit ? 'border-sitou-primary bg-sitou-primary-light/30' : 'border-gray-200'}
               ${error ? 'border-red-300 bg-red-50' : ''}
-              focus:border-ilma-primary focus:ring-2 focus:ring-ilma-primary-light`}
+              focus:border-sitou-primary focus:ring-2 focus:ring-sitou-primary-light`}
             type="text"
             inputMode="numeric"
             maxLength={1}
@@ -166,7 +166,7 @@ export const OTPPage: React.FC = () => {
         ) : (
           <button
             onClick={handleResend}
-            className="text-sm font-bold text-ilma-primary hover:underline"
+            className="text-sm font-bold text-sitou-primary hover:underline"
           >
             Renvoyer le code
           </button>

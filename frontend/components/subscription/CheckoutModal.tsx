@@ -107,7 +107,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, p
                     <span className="font-extrabold text-gray-900 text-lg">{plan.name}</span>
                 </div>
                 <div className="text-right">
-                    <span className="block font-bold text-ilma-primary text-xl">{plan.price.toLocaleString()} F</span>
+                    <span className="block font-bold text-sitou-primary text-xl">{plan.price.toLocaleString()} F</span>
                     <span className="text-xs text-gray-500">/{plan.durationLabel}</span>
                 </div>
             </div>
@@ -143,7 +143,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, p
         <div className="mt-4">
           <button
             onClick={() => setShowPromo(!showPromo)}
-            className="text-sm text-ilma-primary hover:underline"
+            className="text-sm text-sitou-primary hover:underline"
           >
             {showPromo ? 'Masquer' : 'J\'ai un code promo'}
           </button>
@@ -154,7 +154,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, p
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
                 placeholder="CODE PROMO"
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm uppercase font-mono focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm uppercase font-mono focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary"
                 maxLength={20}
               />
               <button className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
@@ -176,7 +176,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, p
 
   const StepProcessing = () => (
       <div className="py-10 text-center flex flex-col items-center">
-          <div className="w-20 h-20 border-4 border-gray-100 border-t-ilma-primary rounded-full animate-spin mb-6"></div>
+          <div className="w-20 h-20 border-4 border-gray-100 border-t-sitou-primary rounded-full animate-spin mb-6"></div>
           <h3 className="text-xl font-bold text-gray-900 mb-2">Paiement en cours...</h3>
           <p className="text-gray-500 text-sm max-w-xs mx-auto">Veuillez valider la transaction sur votre téléphone si nécessaire.</p>
       </div>
@@ -227,15 +227,15 @@ const ProviderOption = ({ provider, label, icon, selected, onSelect }: any) => (
     <div 
         onClick={onSelect}
         className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
-            selected ? 'border-ilma-primary bg-amber-50' : 'border-gray-100 hover:border-amber-200'
+            selected ? 'border-sitou-primary bg-amber-50' : 'border-gray-100 hover:border-amber-200'
         }`}
     >
         <div className="flex items-center">
-            <div className={`p-2 rounded-lg mr-3 ${selected ? 'bg-white text-ilma-primary' : 'bg-gray-100 text-gray-500'}`}>
+            <div className={`p-2 rounded-lg mr-3 ${selected ? 'bg-white text-sitou-primary' : 'bg-gray-100 text-gray-500'}`}>
                 {icon}
             </div>
-            <span className={`font-bold ${selected ? 'text-ilma-primary' : 'text-gray-700'}`}>{label}</span>
+            <span className={`font-bold ${selected ? 'text-sitou-primary' : 'text-gray-700'}`}>{label}</span>
         </div>
-        {selected && <div className="w-5 h-5 bg-ilma-primary rounded-full flex items-center justify-center"><CheckCircle2 size={12} className="text-white"/></div>}
+        {selected && <div className="w-5 h-5 bg-sitou-primary rounded-full flex items-center justify-center"><CheckCircle2 size={12} className="text-white"/></div>}
     </div>
 );

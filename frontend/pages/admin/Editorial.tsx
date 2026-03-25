@@ -478,7 +478,7 @@ export const AdminEditorialPage: React.FC = () => {
                 {col.status === 'DRAFT' && (
                   <button
                     onClick={openCreateForm}
-                    className="ml-1 p-1 rounded-lg bg-ilma-primary text-white hover:opacity-90 transition-opacity"
+                    className="ml-1 p-1 rounded-lg bg-sitou-primary text-white hover:opacity-90 transition-opacity"
                     aria-label="Creer une nouvelle question"
                     title="Nouvelle question"
                   >
@@ -495,7 +495,7 @@ export const AdminEditorialPage: React.FC = () => {
                 {items.map(q => (
                   <Card key={q.id} className="p-3 bg-white shadow-sm hover:shadow-md transition-shadow">
                     <p
-                      className="text-sm text-gray-800 font-medium line-clamp-2 mb-2 cursor-pointer hover:text-ilma-primary transition-colors"
+                      className="text-sm text-gray-800 font-medium line-clamp-2 mb-2 cursor-pointer hover:text-sitou-primary transition-colors"
                       onClick={() => openDetailModal(q)}
                       role="button"
                       tabIndex={0}
@@ -546,7 +546,7 @@ export const AdminEditorialPage: React.FC = () => {
                           }}
                           className={`flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-lg transition-colors ${
                             t.variant === ButtonVariant.PRIMARY
-                              ? 'bg-ilma-primary text-white hover:opacity-90'
+                              ? 'bg-sitou-primary text-white hover:opacity-90'
                               : t.variant === ButtonVariant.GHOST
                               ? 'text-gray-500 hover:bg-gray-100'
                               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -586,7 +586,7 @@ export const AdminEditorialPage: React.FC = () => {
                   onChange={e => setNotes(e.target.value)}
                   rows={3}
                   placeholder="Expliquez pourquoi la question est retournee..."
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm resize-none"
                 />
               </div>
             )}
@@ -599,7 +599,7 @@ export const AdminEditorialPage: React.FC = () => {
                   onChange={e => setNotes(e.target.value)}
                   rows={2}
                   placeholder="Commentaire..."
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm resize-none"
                 />
               </div>
             )}
@@ -641,7 +641,7 @@ export const AdminEditorialPage: React.FC = () => {
               value={formData.skill_id}
               onChange={e => updateField('skill_id', e.target.value)}
               placeholder="UUID de la competence"
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
               disabled={!!editingQuestionId}
             />
           </div>
@@ -652,7 +652,7 @@ export const AdminEditorialPage: React.FC = () => {
             <select
               value={formData.question_type}
               onChange={e => updateField('question_type', e.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm bg-white"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm bg-white"
             >
               {QUESTION_TYPES.map(qt => (
                 <option key={qt.value} value={qt.value}>{qt.label}</option>
@@ -666,7 +666,7 @@ export const AdminEditorialPage: React.FC = () => {
             <select
               value={formData.difficulty}
               onChange={e => updateField('difficulty', e.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm bg-white"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm bg-white"
             >
               {DIFFICULTY_OPTIONS.map(d => (
                 <option key={d.value} value={d.value}>{d.label}</option>
@@ -682,7 +682,7 @@ export const AdminEditorialPage: React.FC = () => {
               onChange={e => updateField('text', e.target.value)}
               rows={3}
               placeholder="Saisissez l'enonce de la question..."
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm resize-none"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm resize-none"
             />
           </div>
 
@@ -695,7 +695,7 @@ export const AdminEditorialPage: React.FC = () => {
                 onChange={e => updateField('choices', e.target.value)}
                 rows={4}
                 placeholder={"Choix A\nChoix B\nChoix C\nChoix D"}
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm resize-none font-mono"
+                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm resize-none font-mono"
               />
             </div>
           )}
@@ -708,7 +708,7 @@ export const AdminEditorialPage: React.FC = () => {
               value={formData.correct_answer}
               onChange={e => updateField('correct_answer', e.target.value)}
               placeholder="La bonne reponse"
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
             />
           </div>
 
@@ -720,7 +720,7 @@ export const AdminEditorialPage: React.FC = () => {
               onChange={e => updateField('explanation', e.target.value)}
               rows={2}
               placeholder="Explication affichee apres la reponse..."
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm resize-none"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm resize-none"
             />
           </div>
 
@@ -733,7 +733,7 @@ export const AdminEditorialPage: React.FC = () => {
               max={100}
               value={formData.points}
               onChange={e => updateField('points', Math.max(1, parseInt(e.target.value) || 1))}
-              className="w-32 px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm"
+              className="w-32 px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
             />
           </div>
 
@@ -777,7 +777,7 @@ export const AdminEditorialPage: React.FC = () => {
                 onClick={() => setDetailTab('edition')}
                 className={`px-4 py-2 text-sm font-bold border-b-2 transition-colors ${
                   detailTab === 'edition'
-                    ? 'border-ilma-primary text-ilma-primary'
+                    ? 'border-sitou-primary text-sitou-primary'
                     : 'border-transparent text-gray-400 hover:text-gray-600'
                 }`}
               >
@@ -787,7 +787,7 @@ export const AdminEditorialPage: React.FC = () => {
                 onClick={() => setDetailTab('commentaires')}
                 className={`px-4 py-2 text-sm font-bold border-b-2 transition-colors flex items-center gap-1.5 ${
                   detailTab === 'commentaires'
-                    ? 'border-ilma-primary text-ilma-primary'
+                    ? 'border-sitou-primary text-sitou-primary'
                     : 'border-transparent text-gray-400 hover:text-gray-600'
                 }`}
               >
@@ -801,7 +801,7 @@ export const AdminEditorialPage: React.FC = () => {
                 onClick={() => setDetailTab('historique')}
                 className={`px-4 py-2 text-sm font-bold border-b-2 transition-colors flex items-center gap-1.5 ${
                   detailTab === 'historique'
-                    ? 'border-ilma-primary text-ilma-primary'
+                    ? 'border-sitou-primary text-sitou-primary'
                     : 'border-transparent text-gray-400 hover:text-gray-600'
                 }`}
               >
@@ -868,7 +868,7 @@ export const AdminEditorialPage: React.FC = () => {
               <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-1">
                 {commentsLoading && (
                   <div className="flex items-center justify-center py-8">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-ilma-primary" />
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-sitou-primary" />
                   </div>
                 )}
 
@@ -903,7 +903,7 @@ export const AdminEditorialPage: React.FC = () => {
                     value={newCommentText}
                     onChange={e => setNewCommentText(e.target.value)}
                     placeholder="Ajouter un commentaire..."
-                    className="flex-1 px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary text-sm"
+                    className="flex-1 px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
                     onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleAddComment(); } }}
                     disabled={commentSaving}
                   />
@@ -923,7 +923,7 @@ export const AdminEditorialPage: React.FC = () => {
               <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-1">
                 {versionsLoading && (
                   <div className="flex items-center justify-center py-8">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-ilma-primary" />
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-sitou-primary" />
                   </div>
                 )}
 
@@ -962,7 +962,7 @@ export const AdminEditorialPage: React.FC = () => {
                       ) : (
                         <button
                           onClick={() => setRollbackConfirm(v.version)}
-                          className="flex items-center gap-1 text-xs text-ilma-primary hover:text-ilma-primary/80 font-medium transition-colors"
+                          className="flex items-center gap-1 text-xs text-sitou-primary hover:text-sitou-primary/80 font-medium transition-colors"
                         >
                           <RotateCcw size={12} />
                           Restaurer cette version
@@ -991,7 +991,7 @@ export const AdminEditorialPage: React.FC = () => {
         <div className="space-y-4 max-h-[75vh] overflow-y-auto">
           {previewLoading && (
             <div className="flex items-center justify-center py-12">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-ilma-primary" />
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sitou-primary" />
             </div>
           )}
 
@@ -1019,7 +1019,7 @@ export const AdminEditorialPage: React.FC = () => {
               </div>
 
               {/* Question rendered exactly like the student sees it */}
-              <div className="bg-ilma-surface rounded-2xl p-4 border border-gray-100">
+              <div className="bg-sitou-surface rounded-2xl p-4 border border-gray-100">
                 <QuestionRenderer
                   question={previewQuestion}
                   selectedAnswer={previewAnswer}
@@ -1110,7 +1110,7 @@ export const AdminEditorialPage: React.FC = () => {
                   type="file"
                   accept=".csv,.json"
                   onChange={handleImportFileChange}
-                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-ilma-primary/10 file:text-ilma-primary hover:file:bg-ilma-primary/20 transition-colors"
+                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-sitou-primary/10 file:text-sitou-primary hover:file:bg-sitou-primary/20 transition-colors"
                 />
               </div>
 
@@ -1198,7 +1198,7 @@ export const AdminEditorialPage: React.FC = () => {
                     <h3 className="text-sm font-bold text-gray-700">Detail des erreurs</h3>
                     <button
                       onClick={downloadErrorReport}
-                      className="flex items-center gap-1.5 text-xs font-bold text-ilma-primary hover:underline"
+                      className="flex items-center gap-1.5 text-xs font-bold text-sitou-primary hover:underline"
                     >
                       <Download size={14} />
                       Telecharger le rapport d'erreurs

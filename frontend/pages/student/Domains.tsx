@@ -122,7 +122,7 @@ export const DomainsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleExpand(domain.id)}
-                className="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ilma-primary"
+                className="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sitou-primary"
                 aria-expanded={isOpen}
                 aria-controls={`domain-skills-${domain.id}`}
               >
@@ -185,13 +185,13 @@ export const DomainsPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => toggleExpand(domain.id)}
-                      className="text-sm font-medium text-gray-500 hover:text-ilma-primary transition-colors"
+                      className="text-sm font-medium text-gray-500 hover:text-sitou-primary transition-colors"
                     >
                       R&eacute;duire
                     </button>
                     <Link
                       to={`/app/student/subjects/${subjectId}/domains/${domain.id}`}
-                      className="text-xs text-gray-400 hover:text-ilma-primary transition-colors"
+                      className="text-xs text-gray-400 hover:text-sitou-primary transition-colors"
                     >
                       Vue filtr&eacute;e
                     </Link>
@@ -205,7 +205,7 @@ export const DomainsPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => toggleExpand(domain.id)}
-                    className="text-sm font-medium text-ilma-primary hover:underline"
+                    className="text-sm font-medium text-sitou-primary hover:underline"
                   >
                     Voir les {domain.skills.length} comp&eacute;tences &rsaquo;
                   </button>

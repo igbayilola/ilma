@@ -119,7 +119,7 @@ export const RegisterPage: React.FC = () => {
     return s;
   })();
 
-  const strengthColors = ['bg-gray-200', 'bg-red-400', 'bg-orange-400', 'bg-yellow-400', 'bg-ilma-green'];
+  const strengthColors = ['bg-gray-200', 'bg-red-400', 'bg-orange-400', 'bg-yellow-400', 'bg-sitou-green'];
   const strengthLabels = ['', 'Faible', 'Moyen', 'Bon', 'Fort'];
 
   return (
@@ -157,7 +157,7 @@ export const RegisterPage: React.FC = () => {
             <button
               type="button"
               onClick={() => { setUsePhone(!usePhone); setFormData({...formData, identifier: ''}); setDisplayIdentifier(''); }}
-              className="text-xs font-bold text-ilma-primary hover:underline"
+              className="text-xs font-bold text-sitou-primary hover:underline"
             >
               Utiliser {usePhone ? "l'email" : 'le téléphone'}
             </button>
@@ -219,9 +219,9 @@ export const RegisterPage: React.FC = () => {
         />
 
         <label className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl cursor-pointer">
-          <input type="checkbox" required className="mt-1 w-4 h-4 accent-ilma-primary" />
+          <input type="checkbox" required className="mt-1 w-4 h-4 accent-sitou-primary" />
           <span className="text-xs text-gray-600 leading-relaxed">
-            Je certifie être le parent ou tuteur légal et je consens au traitement des données conformément à la politique de confidentialité d'ILMA.
+            Je certifie être le parent ou tuteur légal et je consens au traitement des données conformément à la politique de confidentialité de Sitou.
           </span>
         </label>
 
@@ -235,7 +235,7 @@ export const RegisterPage: React.FC = () => {
       <div className="mt-6 text-center">
         <p className="text-sm text-gray-500">
           Déjà un compte ?{' '}
-          <Link to="/login" className="font-bold text-ilma-primary hover:underline">
+          <Link to="/login" className="font-bold text-sitou-primary hover:underline">
             Se connecter
           </Link>
         </p>

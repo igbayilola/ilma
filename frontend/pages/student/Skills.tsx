@@ -78,7 +78,7 @@ export const SkillsPage: React.FC = () => {
         <div className="space-y-2">
           {(['all', 'todo', 'mastered'] as FilterType[]).map(f => (
             <label key={f} className="flex items-center space-x-3 cursor-pointer">
-              <input type="radio" name="filter" checked={activeFilter === f} onChange={() => setActiveFilter(f)} className="w-5 h-5 text-ilma-primary focus:ring-ilma-primary border-gray-300" />
+              <input type="radio" name="filter" checked={activeFilter === f} onChange={() => setActiveFilter(f)} className="w-5 h-5 text-sitou-primary focus:ring-sitou-primary border-gray-300" />
               <span className="text-gray-700">{f === 'all' ? 'Tout afficher' : f === 'todo' ? 'À travailler' : 'Maîtrisé (90+)'}</span>
             </label>
           ))}
@@ -135,7 +135,7 @@ export const SkillsPage: React.FC = () => {
                 <div className="flex items-center space-x-2">
                     <div className="relative flex-1 md:w-64">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                        <input type="text" placeholder="Rechercher une compétence..." value={search} onChange={(e) => setSearch(e.target.value)} className="w-full pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-ilma-primary focus:border-transparent" />
+                        <input type="text" placeholder="Rechercher une compétence..." value={search} onChange={(e) => setSearch(e.target.value)} className="w-full pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-sitou-primary focus:border-transparent" />
                     </div>
                     <Button variant={ButtonVariant.SECONDARY} className="md:hidden px-3" onClick={() => setIsFilterOpen(true)}>
                         <Filter size={20} />
@@ -164,7 +164,7 @@ export const SkillsPage: React.FC = () => {
         ) : (
           <div className="text-center py-12 bg-gradient-to-br from-amber-50 to-purple-50 rounded-3xl border border-dashed border-gray-300">
             <p className="text-gray-500 font-medium">Aucune comp&eacute;tence trouv&eacute;e avec ces filtres.</p>
-            <Button variant={ButtonVariant.GHOST} onClick={() => {setActiveFilter('all'); setSearch('')}} className="mt-2 text-ilma-primary">Réinitialiser</Button>
+            <Button variant={ButtonVariant.GHOST} onClick={() => {setActiveFilter('all'); setSearch('')}} className="mt-2 text-sitou-primary">Réinitialiser</Button>
           </div>
         )}
       </div>

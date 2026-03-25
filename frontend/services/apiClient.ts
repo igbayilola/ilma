@@ -98,7 +98,7 @@ async function client<T>(endpoint: string, config: RequestConfig = {}): Promise<
 
         try {
           // Attempt Refresh — send refresh_token from localStorage
-          const storedRefresh = localStorage.getItem('ilma_refresh_token');
+          const storedRefresh = localStorage.getItem('sitou_refresh_token');
           if (!storedRefresh) throw new Error('No refresh token');
 
           const refreshResponse = await fetch(`${BASE_URL}/auth/refresh`, {
@@ -116,7 +116,7 @@ async function client<T>(endpoint: string, config: RequestConfig = {}): Promise<
           const newAccessToken = refreshData.access_token || refreshData.accessToken;
           // Store new refresh token if rotated
           if (refreshData.refresh_token) {
-            localStorage.setItem('ilma_refresh_token', refreshData.refresh_token);
+            localStorage.setItem('sitou_refresh_token', refreshData.refresh_token);
           }
 
           // Update Store

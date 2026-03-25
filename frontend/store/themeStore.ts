@@ -15,10 +15,10 @@ function getSystemPreference(): boolean {
 function applyTheme(theme: Theme) {
   const isDark = theme === 'dark' || (theme === 'system' && getSystemPreference());
   document.documentElement.classList.toggle('dark', isDark);
-  localStorage.setItem('ilma-theme', theme);
+  localStorage.setItem('sitou-theme', theme);
 }
 
-const stored = (typeof localStorage !== 'undefined' && localStorage.getItem('ilma-theme')) as Theme | null;
+const stored = (typeof localStorage !== 'undefined' && localStorage.getItem('sitou-theme')) as Theme | null;
 const initial: Theme = stored && ['light', 'dark', 'system'].includes(stored) ? stored : 'light';
 
 // Apply on load

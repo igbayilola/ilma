@@ -29,7 +29,7 @@ export const SkillItem: React.FC<SkillItemProps> = ({ skill, onClick }) => {
       type="button"
       onClick={() => onClick(skill.id)}
       aria-label={label}
-      className="flex items-start w-full text-left px-3 py-2.5 rounded-xl hover:bg-amber-50 hover:text-amber-700 hover:translate-x-0.5 transition-all group focus:outline-none focus:ring-2 focus:ring-ilma-primary focus:ring-offset-1"
+      className="flex items-start w-full text-left px-3 py-2.5 rounded-xl hover:bg-amber-50 hover:text-amber-700 hover:translate-x-0.5 transition-all group focus:outline-none focus:ring-2 focus:ring-sitou-primary focus:ring-offset-1"
     >
       <span className={`w-2.5 h-2.5 mt-1.5 rounded-full flex-shrink-0 ${dotColor(skill.score)}`} aria-hidden="true" />
       <span className="ml-2.5 flex-1 text-sm text-gray-700 group-hover:text-amber-700">

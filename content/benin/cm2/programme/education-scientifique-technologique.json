@@ -1,0 +1,1529 @@
+{
+  "schema_version": "2.0",
+  "grade": {
+    "name": "CM2",
+    "slug": "cm2",
+    "description": "CM2 — programme BENIN"
+  },
+  "subjects": [
+    {
+      "name": "Éducation Scientifique et Technologique",
+      "slug": "education-scientifique-technologique",
+      "icon": "flask-conical",
+      "color": "#2E8B57",
+      "order": 3,
+      "domains": [
+        {
+          "name": "Préparation au CEP – EST",
+          "slug": "preparation-cep-est",
+          "order": 1,
+          "skills": [
+            {
+              "external_id": "CEP-EST-ANNALES",
+              "name": "Sujets d'examen EST (2010-2025) : entraînement en conditions réelles",
+              "order": 1,
+              "cep_frequency": 100,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les notions de sciences naturelles et de technologie",
+                "Ne pas utiliser le vocabulaire scientifique approprié",
+                "Répondre de manière imprécise sans exemples concrets",
+                "Oublier de justifier ses réponses",
+                "Ne pas légender correctement les schémas"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Schéma à compléter", "Question ouverte"],
+              "mastery_threshold": "Score >= 70% sur 3 sujets complets en temps limité",
+              "micro_skills": [
+                {
+                  "external_id": "CEP-EST-ANNALES::MS01",
+                  "name": "Lire et comprendre les consignes d'un sujet d'EST (identifier si on demande une définition, un schéma, une explication ou une comparaison)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% de consignes correctement interprétées sur 2 sujets",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": [
+                    {"why": "Comprendre un texte informatif (consignes)", "skill_id": "LECT-COMP-TEXTE-INFORMATIF", "micro_skill_id": "LECT-COMP-TEXTE-INFORMATIF::MS01"}
+                  ]
+                },
+                {
+                  "external_id": "CEP-EST-ANNALES::MS02",
+                  "name": "Répondre avec le vocabulaire scientifique approprié et donner des exemples du milieu local",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% de réponses utilisant le vocabulaire correct sur 2 sujets",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CEP-EST-ANNALES::MS03",
+                  "name": "Compléter ou reproduire un schéma scientifique avec légendes (circuit électrique, appareil digestif, cycle de l'eau...)",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% des schémas correctement complétés et légendés sur 2 sujets",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": [
+                    {"why": "Schéma du circuit électrique", "skill_id": "EST-ELEC-SYMBOLES", "micro_skill_id": "EST-ELEC-SYMBOLES::MS01"},
+                    {"why": "Schéma du cycle de l'eau", "skill_id": "EST-EAU-CYCLE", "micro_skill_id": "EST-EAU-CYCLE::MS02"}
+                  ]
+                }
+              ]
+            },
+            {
+              "external_id": "CEP-EST-CORRIGES",
+              "name": "Corrigés EST (2010-2025) : auto-évaluation et remédiation",
+              "order": 2,
+              "cep_frequency": 100,
+              "prerequisites": ["CEP-EST-ANNALES"],
+              "common_mistakes": [
+                "Ne pas analyser pourquoi une réponse est fausse",
+                "Confondre erreur de vocabulaire et erreur de compréhension",
+                "Ne pas réviser les schémas mal réalisés"
+              ],
+              "exercise_types": ["Correction d'erreur", "Étapes guidées", "Réponse courte"],
+              "mastery_threshold": "Identifier ses 3 principales lacunes et les corriger sur 2 sujets",
+              "micro_skills": [
+                {
+                  "external_id": "CEP-EST-CORRIGES::MS01",
+                  "name": "Comparer ses réponses au corrigé et repérer les écarts (réponse fausse, incomplète ou mal formulée)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "3+ écarts identifiés sur un sujet corrigé",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CEP-EST-CORRIGES::MS02",
+                  "name": "Refaire les exercices ratés en utilisant le corrigé comme modèle",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% de réussite sur les exercices refaits",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Démarche scientifique et sécurité",
+          "slug": "demarche-scientifique-securite",
+          "order": 2,
+          "skills": [
+            {
+              "external_id": "EST-DEMARCHE-SCIENTIFIQUE",
+              "name": "La démarche scientifique : observer, questionner, émettre une hypothèse, expérimenter, conclure",
+              "order": 1,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre observation et interprétation",
+                "Ne pas formuler d'hypothèse avant d'expérimenter",
+                "Tirer une conclusion qui ne correspond pas aux résultats observés",
+                "Confondre cause et conséquence"
+              ],
+              "exercise_types": ["Étapes ordonnées", "Question ouverte", "Choix multiples", "Réponse courte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-DEMARCHE-SCIENTIFIQUE::MS01",
+                  "name": "Décrire les étapes de la démarche scientifique dans l'ordre : observer → questionner → émettre une hypothèse → expérimenter → conclure",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "5 étapes citées dans l'ordre correct",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Étapes ordonnées"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-DEMARCHE-SCIENTIFIQUE::MS02",
+                  "name": "Appliquer la démarche scientifique à un problème simple (exemple : pourquoi la lampe ne s'allume-t-elle pas ?)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 4 problèmes simples",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-SECURITE-HYGIENE",
+              "name": "Sécurité et hygiène : précautions électriques, hygiène corporelle et alimentaire",
+              "order": 2,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas connaître les dangers du courant électrique",
+                "Ignorer les risques de court-circuit et d'ampoule chaude",
+                "Oublier l'importance du lavage des mains avant les repas",
+                "Ne pas connaître les règles de conservation des aliments"
+              ],
+              "exercise_types": ["Choix multiples", "Vrai/Faux", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-SECURITE-HYGIENE::MS01",
+                  "name": "Citer les dangers de l'électricité (électrocution, court-circuit, incendie, ampoule brûlante) et les précautions à prendre",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 dangers + 3 précautions citées",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-SECURITE-HYGIENE::MS02",
+                  "name": "Expliquer les règles d'hygiène corporelle (lavage des mains, bain quotidien) et alimentaire (conservation, cuisson, eau potable)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Vrai/Faux"],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Le circuit électrique",
+          "slug": "circuit-electrique",
+          "order": 3,
+          "skills": [
+            {
+              "external_id": "EST-ELEC-ELEMENTS",
+              "name": "Éléments d'un circuit électrique",
+              "order": 1,
+              "cep_frequency": 80,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre pile et batterie",
+                "Oublier le fil conducteur comme élément du circuit",
+                "Confondre bornes positives et négatives",
+                "Ne pas savoir le rôle du récepteur (lampe)"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Schéma à compléter", "Associer"],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ELEC-ELEMENTS::MS01",
+                  "name": "Nommer et décrire le rôle des éléments d'un circuit : générateur (pile/batterie), récepteur (lampe), interrupteur, fil conducteur",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "4 éléments nommés avec leur rôle",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer", "Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ELEC-ELEMENTS::MS02",
+                  "name": "Identifier les bornes positives et négatives d'une pile et expliquer la notion de tension (volts)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Choix multiples"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ELEC-SYMBOLES",
+              "name": "Symboles normalisés des éléments d'un circuit électrique",
+              "order": 2,
+              "cep_frequency": 75,
+              "prerequisites": ["EST-ELEC-ELEMENTS"],
+              "common_mistakes": [
+                "Confondre le symbole de la pile et de la lampe",
+                "Dessiner l'interrupteur ouvert au lieu de fermé et inversement",
+                "Mauvaise orientation du symbole de la pile (+ et -)"
+              ],
+              "exercise_types": ["Schéma à compléter", "Dessin", "Associer", "Choix multiples"],
+              "mastery_threshold": "90% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ELEC-SYMBOLES::MS01",
+                  "name": "Dessiner les symboles normalisés : pile/générateur, lampe, interrupteur ouvert, interrupteur fermé, fil conducteur",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "5 symboles dessinés correctement sur 6",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Dessin"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ELEC-SYMBOLES::MS02",
+                  "name": "Lire un schéma de circuit électrique et identifier les éléments à partir de leurs symboles",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% d'identification correcte sur 5 schémas",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ELEC-CONDITIONS",
+              "name": "Conditions d'allumage d'une lampe dans un circuit : conducteurs et isolants",
+              "order": 3,
+              "cep_frequency": 70,
+              "prerequisites": ["EST-ELEC-SYMBOLES"],
+              "common_mistakes": [
+                "Croire qu'une lampe abîmée peut fonctionner",
+                "Confondre conducteur et isolant",
+                "Ne pas comprendre qu'un circuit doit être fermé pour fonctionner"
+              ],
+              "exercise_types": ["Choix multiples", "Vrai/Faux", "Question ouverte", "Schéma à compléter"],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ELEC-CONDITIONS::MS01",
+                  "name": "Énoncer les 3 conditions d'allumage : circuit fermé (interrupteur fermé), lampe en bon état, pile fonctionnelle",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 conditions citées et expliquées",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ELEC-CONDITIONS::MS02",
+                  "name": "Distinguer un corps conducteur (fer, cuivre, eau salée, corps humain) d'un corps isolant (plastique, bois sec, caoutchouc, verre)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 8 exemples classés",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Choix multiples"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ELEC-CONDITIONS::MS03",
+                  "name": "Diagnostiquer pourquoi une lampe ne s'allume pas dans un circuit donné (appliquer la démarche scientifique)",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 5 situations-problèmes",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": [
+                    {"why": "Appliquer la démarche scientifique", "skill_id": "EST-DEMARCHE-SCIENTIFIQUE", "micro_skill_id": "EST-DEMARCHE-SCIENTIFIQUE::MS02"}
+                  ]
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ELEC-MONTAGES",
+              "name": "Montages en série et en dérivation (parallèle)",
+              "order": 4,
+              "cep_frequency": 70,
+              "prerequisites": ["EST-ELEC-CONDITIONS"],
+              "common_mistakes": [
+                "Confondre montage en série et montage en dérivation (= parallèle)",
+                "Ne pas comprendre l'effet de l'opposition des piles",
+                "Croire que les lampes en série brillent autant qu'une seule lampe"
+              ],
+              "exercise_types": ["Schéma à compléter", "Choix multiples", "Question ouverte", "Vrai/Faux"],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ELEC-MONTAGES::MS01",
+                  "name": "Expliquer et schématiser un montage en série (piles et lampes sur un seul chemin de courant)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Schéma à compléter"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ELEC-MONTAGES::MS02",
+                  "name": "Expliquer le montage en opposition des piles (bornes identiques face à face → la lampe ne s'allume pas)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Vrai/Faux"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ELEC-MONTAGES::MS03",
+                  "name": "Expliquer et schématiser un montage en dérivation (= parallèle) : plusieurs chemins de courant, chaque lampe brille normalement",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Schéma à compléter", "Choix multiples"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ELEC-MONTAGES::MS04",
+                  "name": "Comparer montage en série et montage en dérivation (parallèle) : effet sur l'éclat des lampes",
+                  "order": 4,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 4 exercices comparatifs",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ELEC-FABRICATION-LAMPE",
+              "name": "Fabrication d'une lampe de poche : lecture de fiche technique",
+              "order": 5,
+              "cep_frequency": 45,
+              "prerequisites": ["EST-ELEC-MONTAGES"],
+              "common_mistakes": [
+                "Ne pas suivre la fiche technique dans l'ordre",
+                "Oublier un composant (réflecteur, interrupteur)",
+                "Mauvaise connexion des fils",
+                "Ne pas respecter les consignes de sécurité"
+              ],
+              "exercise_types": ["Étapes ordonnées", "Schéma à compléter", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ELEC-FABRICATION-LAMPE::MS01",
+                  "name": "Connaître les outils de l'électricien et du dépanneur",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% d'identification correcte",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ELEC-FABRICATION-LAMPE::MS02",
+                  "name": "Lire une fiche technique de fabrication et en décrire les étapes dans l'ordre (composants : pile, lampe, fil conducteur, boîtier, réflecteur, interrupteur)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Étapes décrites dans l'ordre correct",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Étapes ordonnées"],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "L'eau",
+          "slug": "eau",
+          "order": 4,
+          "skills": [
+            {
+              "external_id": "EST-EAU-ETATS",
+              "name": "Les trois états de l'eau et les changements d'état",
+              "order": 1,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre évaporation et ébullition",
+                "Ne pas connaître le terme 'condensation' (vapeur → liquide)",
+                "Croire que la glace disparaît au lieu de fondre",
+                "Ne pas connaître les températures de changement d'état (0°C et 100°C)"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Schéma à compléter", "Réponse courte"],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-EAU-ETATS::MS01",
+                  "name": "Nommer les 3 états de l'eau (solide = glace, liquide = eau, gazeux = vapeur d'eau) et donner des exemples locaux",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 états nommés avec exemples",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-EAU-ETATS::MS02",
+                  "name": "Nommer les changements d'état : fusion (solide→liquide), solidification (liquide→solide), évaporation/vaporisation (liquide→gaz), condensation (gaz→liquide)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "4 changements nommés correctement",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-EAU-ETATS::MS03",
+                  "name": "Connaître les températures de changement d'état de l'eau (0°C fusion/solidification, 100°C ébullition) et les utiliser pour expliquer des phénomènes quotidiens",
+                  "order": 3,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Choix multiples"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-EAU-CYCLE",
+              "name": "Le cycle de l'eau dans la nature",
+              "order": 2,
+              "cep_frequency": 65,
+              "prerequisites": ["EST-EAU-ETATS"],
+              "common_mistakes": [
+                "Ne pas comprendre que le cycle est continu (l'eau ne disparaît pas)",
+                "Oublier l'infiltration dans le cycle",
+                "Ne pas relier évaporation → condensation → précipitation → ruissellement",
+                "Confondre le cycle de l'eau et le traitement de l'eau"
+              ],
+              "exercise_types": ["Schéma à compléter", "Étapes ordonnées", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-EAU-CYCLE::MS01",
+                  "name": "Décrire les étapes du cycle de l'eau : évaporation → condensation (nuages) → précipitations (pluie) → ruissellement/infiltration → retour aux cours d'eau",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "5 étapes décrites dans l'ordre",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Étapes ordonnées"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-EAU-CYCLE::MS02",
+                  "name": "Compléter et légender un schéma du cycle de l'eau",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Schéma correctement complété et légendé",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Schéma à compléter"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-EAU-POTABILITE",
+              "name": "L'eau potable : traitement, économie et protection des sources",
+              "order": 3,
+              "cep_frequency": 60,
+              "prerequisites": ["EST-EAU-CYCLE"],
+              "common_mistakes": [
+                "Croire que l'eau claire est toujours potable",
+                "Ne pas connaître les méthodes de traitement locales (ébullition, filtration, chlore)",
+                "Ne pas comprendre l'importance d'économiser l'eau"
+              ],
+              "exercise_types": ["Choix multiples", "Vrai/Faux", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-EAU-POTABILITE::MS01",
+                  "name": "Distinguer eau potable et eau non potable, et citer les méthodes de potabilisation (ébullition, filtration, ajout de chlore/eau de javel)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 méthodes citées",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-EAU-POTABILITE::MS02",
+                  "name": "Expliquer pourquoi il faut économiser l'eau et protéger les sources d'eau (puits, rivières, forages)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "L'air et la matière",
+          "slug": "air-matiere",
+          "order": 5,
+          "skills": [
+            {
+              "external_id": "EST-AIR-COMPOSITION",
+              "name": "L'air : composition, propriétés et utilité",
+              "order": 1,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Croire que l'air est vide ou ne contient que de l'oxygène",
+                "Ne pas savoir que l'air est un mélange de gaz (azote 78%, oxygène 21%)",
+                "Ne pas comprendre que l'air occupe un espace et a un poids",
+                "Confondre pollution de l'air et pollution de l'eau"
+              ],
+              "exercise_types": ["Choix multiples", "Vrai/Faux", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-AIR-COMPOSITION::MS01",
+                  "name": "Expliquer que l'air est un mélange de gaz (surtout azote et oxygène), qu'il occupe un espace et qu'il a un poids",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-AIR-COMPOSITION::MS02",
+                  "name": "Expliquer l'utilité de l'air pour la respiration, la combustion et le vent, et citer les causes et conséquences de la pollution de l'air (fumées, gaz d'échappement, feux de brousse)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-MATIERE-ETATS",
+              "name": "Les états de la matière et les transformations",
+              "order": 2,
+              "cep_frequency": 50,
+              "prerequisites": ["EST-EAU-ETATS"],
+              "common_mistakes": [
+                "Croire que seule l'eau change d'état",
+                "Confondre transformation physique et transformation chimique",
+                "Ne pas comprendre que la matière se conserve lors d'un changement d'état"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Réponse courte", "Vrai/Faux"],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-MATIERE-ETATS::MS01",
+                  "name": "Identifier les 3 états de la matière (solide, liquide, gazeux) pour différents matériaux et donner des exemples locaux (beurre de karité, huile de palme, fumée)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 6 exemples classés",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-MATIERE-ETATS::MS02",
+                  "name": "Distinguer transformation physique (changement d'état réversible : glace ↔ eau) et transformation chimique (irréversible : bois brûlé → cendres, rouille)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 6 exemples classés",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Choix multiples"],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alimentation, digestion et santé",
+          "slug": "alimentation-digestion-sante",
+          "order": 6,
+          "skills": [
+            {
+              "external_id": "EST-ALIM-ROLE-ALIMENTS",
+              "name": "Rôle des aliments : construction, énergie, protection",
+              "order": 1,
+              "cep_frequency": 85,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les 3 rôles des aliments",
+                "Croire que les glucides ne servent qu'à donner de l'énergie",
+                "Oublier le rôle protecteur des vitamines et minéraux",
+                "Ne pas citer d'aliments locaux comme exemples"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Réponse courte", "Compléter"],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ALIM-ROLE-ALIMENTS::MS01",
+                  "name": "Classer les aliments selon leur rôle : construction (protides : viande, poisson, haricot, soja), énergie (glucides/lipides : igname, manioc, maïs, huile de palme, arachide), protection (vitamines/minéraux : fruits, légumes, oranges, tomates)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 10 aliments locaux classés",
+                  "cep_frequency": 85,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ALIM-ROLE-ALIMENTS::MS02",
+                  "name": "Expliquer que l'organisme a besoin des 3 types d'aliments pour la croissance, l'énergie et la protection",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 questions ouvertes",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ALIM-BESOINS-ENERGETIQUES",
+              "name": "Facteurs de variation des besoins énergétiques",
+              "order": 2,
+              "cep_frequency": 60,
+              "prerequisites": ["EST-ALIM-ROLE-ALIMENTS"],
+              "common_mistakes": [
+                "Croire que tous les individus ont les mêmes besoins",
+                "Ne pas comprendre que l'activité physique augmente les besoins"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Lecture de tableau"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ALIM-BESOINS-ENERGETIQUES::MS01",
+                  "name": "Citer les facteurs qui font varier les besoins énergétiques (âge, poids, sexe, activité physique) et lire un tableau de besoins en kilocalories",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "4 facteurs cités + 1 lecture de tableau correcte",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Lecture de tableau"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ALIM-VITAMINES-MINERAUX",
+              "name": "Rôle des vitamines et des sels minéraux, carences spécifiques",
+              "order": 3,
+              "cep_frequency": 65,
+              "prerequisites": ["EST-ALIM-ROLE-ALIMENTS"],
+              "common_mistakes": [
+                "Confondre vitamines et sels minéraux",
+                "Croire que les vitamines donnent de l'énergie",
+                "Ne pas connaître les carences spécifiques : scorbut (vitamine C), rachitisme (vitamine D/calcium), goitre (iode)"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Réponse courte", "Vrai/Faux"],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ALIM-VITAMINES-MINERAUX::MS01",
+                  "name": "Expliquer le rôle des vitamines et sels minéraux (protection, bon fonctionnement de l'organisme) et citer des aliments qui en contiennent (fruits, légumes, lait)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ALIM-VITAMINES-MINERAUX::MS02",
+                  "name": "Associer les carences à leurs conséquences : carence en vitamine C → scorbut, carence en vitamine D/calcium → rachitisme (déformation des os), carence en iode → goitre, avitaminose générale",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 6 associations",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ALIM-EQUILIBREE",
+              "name": "Alimentation équilibrée, malnutrition et sous-alimentation",
+              "order": 4,
+              "cep_frequency": 85,
+              "prerequisites": ["EST-ALIM-VITAMINES-MINERAUX"],
+              "common_mistakes": [
+                "Confondre malnutrition (déséquilibre qualitatif) et sous-alimentation (insuffisance quantitative)",
+                "Confondre kwashiorkor et marasme",
+                "Croire que manger beaucoup = bien manger",
+                "Ne pas connaître la notion de ration alimentaire"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Vrai/Faux", "Question ouverte", "Associer"],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ALIM-EQUILIBREE::MS01",
+                  "name": "Définir une alimentation équilibrée (suffisante, régulière, variée, équilibrée) et la ration alimentaire (ensemble des repas couvrant les besoins journaliers)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 85,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ALIM-EQUILIBREE::MS02",
+                  "name": "Distinguer sous-alimentation (quantité insuffisante → marasme : amaigrissement) et malnutrition (alimentation déséquilibrée, pauvre en protides → kwashiorkor : gonflement du ventre, visage, pieds, cheveux roux et cassants)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "90% sur 6 exercices comparatifs",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Choix multiples", "Associer"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ALIM-EQUILIBREE::MS03",
+                  "name": "Composer un menu équilibré d'une journée en utilisant des aliments locaux (igname, riz, haricot, poisson, légumes, fruits...)",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Menu couvrant les 3 groupes alimentaires",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ALIM-DIGESTION",
+              "name": "L'appareil digestif et la digestion",
+              "order": 5,
+              "cep_frequency": 70,
+              "prerequisites": ["EST-ALIM-ROLE-ALIMENTS"],
+              "common_mistakes": [
+                "Confondre l'ordre des organes du tube digestif",
+                "Croire que la digestion n'a lieu que dans l'estomac",
+                "Confondre digestion mécanique (mastication) et digestion chimique (sucs)",
+                "Ne pas comprendre le rôle de l'intestin grêle dans l'absorption"
+              ],
+              "exercise_types": ["Schéma à compléter", "Étapes ordonnées", "Choix multiples", "Réponse courte"],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ALIM-DIGESTION::MS01",
+                  "name": "Nommer les organes du tube digestif dans l'ordre : bouche → œsophage → estomac → intestin grêle → gros intestin → anus, et les légender sur un schéma",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "6 organes nommés dans l'ordre",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Schéma à compléter"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ALIM-DIGESTION::MS02",
+                  "name": "Expliquer le trajet et la transformation des aliments : mastication (bouche), brassage (estomac), absorption des nutriments (intestin grêle), élimination des déchets (gros intestin)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Étapes ordonnées"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ALIM-RESPIRATION",
+              "name": "L'appareil respiratoire et la respiration",
+              "order": 6,
+              "cep_frequency": 60,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre inspiration et expiration",
+                "Croire que les poumons 'aspirent' l'air (c'est le diaphragme qui crée la dépression)",
+                "Ne pas comprendre l'échange gazeux (O₂ absorbé, CO₂ rejeté)",
+                "Confondre les voies respiratoires"
+              ],
+              "exercise_types": ["Schéma à compléter", "Choix multiples", "Réponse courte", "Vrai/Faux"],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ALIM-RESPIRATION::MS01",
+                  "name": "Nommer les organes de l'appareil respiratoire (nez, trachée, bronches, poumons, diaphragme) et les légender sur un schéma",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "5 organes nommés et légendés",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Schéma à compléter"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ALIM-RESPIRATION::MS02",
+                  "name": "Expliquer le mécanisme de la respiration : inspiration (air entre, oxygène absorbé) et expiration (air sort, gaz carbonique rejeté)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ALIM-MALADIES",
+              "name": "Maladies transmissibles et prévention (paludisme, choléra, typhoïde)",
+              "order": 7,
+              "cep_frequency": 65,
+              "prerequisites": ["EST-SECURITE-HYGIENE"],
+              "common_mistakes": [
+                "Confondre les modes de transmission des maladies",
+                "Croire que le paludisme se transmet par l'eau sale",
+                "Ne pas connaître les vecteurs (moustique anophèle pour le paludisme)",
+                "Confondre prévention et traitement"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Réponse courte", "Vrai/Faux"],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ALIM-MALADIES::MS01",
+                  "name": "Identifier les principales maladies transmissibles au Bénin (paludisme, choléra, fièvre typhoïde) : symptômes, mode de transmission et vecteurs",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 maladies décrites (symptômes + transmission)",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ALIM-MALADIES::MS02",
+                  "name": "Citer les moyens de prévention : moustiquaire imprégnée (paludisme), eau potable et lavage des mains (choléra, typhoïde), vaccination, assainissement du milieu",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 5 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": [
+                    {"why": "Règles d'hygiène alimentaire et corporelle", "skill_id": "EST-SECURITE-HYGIENE", "micro_skill_id": "EST-SECURITE-HYGIENE::MS02"}
+                  ]
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ALIM-CHAINE-ALIMENTAIRE",
+              "name": "La chaîne alimentaire : producteurs, consommateurs, décomposeurs",
+              "order": 8,
+              "cep_frequency": 50,
+              "prerequisites": ["EST-ALIM-ROLE-ALIMENTS"],
+              "common_mistakes": [
+                "Confondre producteur et consommateur primaire",
+                "Ne pas comprendre le sens de la flèche ('est mangé par')",
+                "Oublier le rôle des décomposeurs (champignons, bactéries)",
+                "Ne pas relier la chaîne alimentaire à l'équilibre de l'écosystème"
+              ],
+              "exercise_types": ["Schéma à compléter", "Étapes ordonnées", "Choix multiples", "Réponse courte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ALIM-CHAINE-ALIMENTAIRE::MS01",
+                  "name": "Définir et illustrer une chaîne alimentaire avec des exemples locaux : herbe → sauterelle → grenouille → serpent → aigle",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "1 chaîne alimentaire complète avec exemples locaux",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Schéma à compléter"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ALIM-CHAINE-ALIMENTAIRE::MS02",
+                  "name": "Identifier les 3 maillons : producteurs (plantes), consommateurs (herbivores, carnivores), décomposeurs, et expliquer que la disparition d'un maillon déséquilibre la chaîne",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Les premiers hommes (Préhistoire)",
+          "slug": "premiers-hommes-prehistoire",
+          "order": 7,
+          "skills": [
+            {
+              "external_id": "EST-PREHIST-ANCETRES",
+              "name": "Les hommes préhistoriques sont nos ancêtres : traces et preuves",
+              "order": 1,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre hommes préhistoriques et animaux préhistoriques",
+                "Ne pas connaître les types de traces laissées"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Question ouverte", "Vrai/Faux"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-PREHIST-ANCETRES::MS01",
+                  "name": "Expliquer que les hommes préhistoriques sont nos ancêtres et citer les traces de leurs activités : outils, peintures rupestres, statuettes, traces de feu, sépultures",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "4 traces citées sur 5",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-PREHIST-FOSSILES",
+              "name": "Les fossiles : témoins du passé",
+              "order": 2,
+              "cep_frequency": 50,
+              "prerequisites": ["EST-PREHIST-ANCETRES"],
+              "common_mistakes": [
+                "Confondre fossile et objet fabriqué (outil)",
+                "Croire que les fossiles sont uniquement des os",
+                "Ne pas comprendre le lien entre fossiles et temps géologiques"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Vrai/Faux", "Question ouverte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-PREHIST-FOSSILES::MS01",
+                  "name": "Définir un fossile (trace ou reste d'êtres vivants ayant existé sur terre) et distinguer un fossile d'un objet fabriqué par l'homme",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "Définition correcte + 80% sur 5 exemples classés",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Choix multiples"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-PREHIST-FOSSILES::MS02",
+                  "name": "Expliquer que les fossiles révèlent l'évolution des espèces vivantes au cours des temps géologiques",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-PREHIST-PALEOLITHIQUE",
+              "name": "Le Paléolithique : pierre taillée, nomadisme, chasse et cueillette",
+              "order": 3,
+              "cep_frequency": 50,
+              "prerequisites": ["EST-PREHIST-ANCETRES"],
+              "common_mistakes": [
+                "Confondre Paléolithique et Néolithique",
+                "Confondre pierre taillée et pierre polie",
+                "Ne pas comprendre le mode de vie nomade (déplacements pour la nourriture)"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-PREHIST-PALEOLITHIQUE::MS01",
+                  "name": "Décrire le mode de vie au Paléolithique : outils en pierre taillée (biface, grattoir), vie nomade, chasse, pêche et cueillette, découverte du feu",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "4 caractéristiques citées",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-PREHIST-NEOLITHIQUE",
+              "name": "Le Néolithique : pierre polie, sédentarisation, agriculture et domestication",
+              "order": 4,
+              "cep_frequency": 55,
+              "prerequisites": ["EST-PREHIST-PALEOLITHIQUE"],
+              "common_mistakes": [
+                "Ne pas comprendre ce que signifie 'sédentarisation' (s'installer durablement)",
+                "Confondre domestication des animaux et chasse",
+                "Ne pas connaître les nouvelles activités (poterie, tissage, agriculture)"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-PREHIST-NEOLITHIQUE::MS01",
+                  "name": "Décrire le mode de vie au Néolithique : outils en pierre polie, sédentarisation, invention de l'agriculture, domestication des animaux, poterie, tissage",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "5 caractéristiques citées",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-PREHIST-NEOLITHIQUE::MS02",
+                  "name": "Comparer Paléolithique et Néolithique : outils, mode de vie, alimentation, habitat",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 4 exercices comparatifs",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-PREHIST-AFRIQUE",
+              "name": "La préhistoire en Afrique : civilisations de Nok et d'Ifé, arts rupestres",
+              "order": 5,
+              "cep_frequency": 45,
+              "prerequisites": ["EST-PREHIST-NEOLITHIQUE"],
+              "common_mistakes": [
+                "Ne pas connaître les civilisations africaines anciennes",
+                "Croire que la préhistoire n'a eu lieu qu'en Europe",
+                "Ne pas connaître les arts rupestres d'Afrique"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-PREHIST-AFRIQUE::MS01",
+                  "name": "Situer les civilisations de Nok (Nigeria, terre cuite) et d'Ifé (Nigeria, sculptures en bronze) et citer des exemples d'arts rupestres en Afrique",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "2 civilisations citées avec caractéristiques",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-PREHIST-AFRIQUE::MS02",
+                  "name": "Expliquer que l'Afrique est le berceau de l'humanité et que des civilisations avancées y ont existé bien avant la colonisation",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "L'énergie",
+          "slug": "energie",
+          "order": 8,
+          "skills": [
+            {
+              "external_id": "EST-ENERG-SOLAIRE",
+              "name": "L'énergie solaire et ses usages",
+              "order": 1,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Croire que l'énergie solaire ne sert qu'à chauffer",
+                "Ne pas savoir que l'énergie solaire peut se transformer en énergie électrique",
+                "Confondre l'absorption par les corps noirs et les corps blancs (les corps noirs absorbent plus vite)"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Vrai/Faux", "Question ouverte"],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ENERG-SOLAIRE::MS01",
+                  "name": "Citer les usages de l'énergie solaire dans la vie quotidienne au Bénin : sécher les vêtements et les cossettes de manioc, chauffer, éclairer, faire fonctionner des appareils (réfrigérateur solaire, lampe solaire)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "4 usages cités avec exemples locaux",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ENERG-SOLAIRE::MS02",
+                  "name": "Expliquer que les corps noirs (sombres) absorbent l'énergie solaire plus vite que les corps blancs (clairs) — expérience avec des bidons peints",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Vrai/Faux"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ENERG-SOLAIRE::MS03",
+                  "name": "Expliquer la transformation de l'énergie solaire en énergie électrique (panneau solaire, calculette solaire) et en énergie thermique (chaleur)",
+                  "order": 3,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ENERG-SOURCES-TYPES",
+              "name": "Sources et types d'énergie : renouvelable et non renouvelable",
+              "order": 2,
+              "cep_frequency": 75,
+              "prerequisites": ["EST-ENERG-SOLAIRE"],
+              "common_mistakes": [
+                "Confondre source d'énergie et type d'énergie",
+                "Ne pas distinguer énergie renouvelable et non renouvelable",
+                "Oublier les sources d'énergie locales (bois de chauffe, charbon de bois)"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Compléter", "Vrai/Faux"],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ENERG-SOURCES-TYPES::MS01",
+                  "name": "Identifier les types d'énergie : mécanique (voiture, pilon, pirogue), solaire (soleil), électrique (pile, barrage), éolienne (vent), thermique (= calorifique : feu, charbon de bois), chimique (pile, aliments)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "5 types identifiés avec exemples locaux",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ENERG-SOURCES-TYPES::MS02",
+                  "name": "Classer les sources d'énergie en renouvelables (solaire, éolienne, hydraulique, bois — si replantation) et non renouvelables (pétrole, charbon fossile, gaz naturel)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exemples classés",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Choix multiples"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-ENERG-TRANSFORMATION",
+              "name": "Transformation et conservation de l'énergie",
+              "order": 3,
+              "cep_frequency": 55,
+              "prerequisites": ["EST-ENERG-SOURCES-TYPES"],
+              "common_mistakes": [
+                "Croire que l'énergie disparaît quand on l'utilise",
+                "Ne pas comprendre qu'une forme d'énergie peut se transformer en une autre",
+                "Confondre énergie chimique et énergie thermique"
+              ],
+              "exercise_types": ["Associer", "Choix multiples", "Question ouverte", "Schéma à compléter"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-ENERG-TRANSFORMATION::MS01",
+                  "name": "Expliquer que l'énergie ne disparaît pas mais se transforme : énergie chimique (pile) → énergie électrique → énergie lumineuse (lampe) + énergie thermique (chaleur)",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Schéma à compléter"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-ENERG-TRANSFORMATION::MS02",
+                  "name": "Donner des exemples de transformation d'énergie dans la vie courante : bois (énergie chimique) → feu (énergie thermique), nourriture (énergie chimique) → mouvement (énergie mécanique), barrage (énergie hydraulique) → électricité",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "3 chaînes de transformation décrites",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Machines simples",
+          "slug": "machines-simples",
+          "order": 9,
+          "skills": [
+            {
+              "external_id": "EST-MACH-LEVIERS",
+              "name": "Le levier : principe et applications locales",
+              "order": 1,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre le point d'appui (pivot), la force (effort) et la résistance (charge)",
+                "Ne pas comprendre qu'un levier multiplie la force",
+                "Ne pas reconnaître les leviers dans les objets du quotidien"
+              ],
+              "exercise_types": ["Choix multiples", "Schéma à compléter", "Réponse courte", "Associer", "Question ouverte"],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-MACH-LEVIERS::MS01",
+                  "name": "Identifier les 3 éléments d'un levier (point d'appui/pivot, force/effort, résistance/charge) sur un schéma",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 éléments identifiés correctement sur 3 schémas",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Schéma à compléter"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-MACH-LEVIERS::MS02",
+                  "name": "Expliquer le principe du levier et reconnaître les leviers locaux : pilon et mortier, brouette, pince, balance, décapsuleur, rame de pirogue",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "4 leviers locaux identifiés",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-MACH-POULIES",
+              "name": "La poulie : poulie fixe et poulie mobile",
+              "order": 2,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre poulie fixe et poulie mobile",
+                "Ne pas comprendre la différence d'effet (fixe = change la direction, mobile = réduit l'effort)"
+              ],
+              "exercise_types": ["Choix multiples", "Schéma à compléter", "Réponse courte", "Question ouverte"],
+              "mastery_threshold": "80% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-MACH-POULIES::MS01",
+                  "name": "Identifier une poulie et expliquer son rôle (faciliter le levage d'une charge)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Réponse courte"],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EST-MACH-POULIES::MS02",
+                  "name": "Distinguer poulie fixe (change la direction de la force, l'effort reste le même) et poulie mobile (réduit l'effort de moitié) avec des exemples locaux (puits, chantier)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Choix multiples"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-MACH-PLAN-INCLINE",
+              "name": "Le plan incliné",
+              "order": 3,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas reconnaître un plan incliné dans la vie courante",
+                "Ne pas comprendre que le plan incliné réduit l'effort mais augmente la distance",
+                "Confondre plan incliné et escalier"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Question ouverte", "Associer"],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-MACH-PLAN-INCLINE::MS01",
+                  "name": "Expliquer le principe du plan incliné (réduire l'effort en augmentant la distance) et citer des exemples : rampe de chargement de camion, route en lacets, vis (plan incliné enroulé)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices + 2 exemples",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-MACH-ROUE-ENGRENAGES",
+              "name": "La roue, les engrenages et la vis",
+              "order": 4,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas comprendre que la roue réduit le frottement",
+                "Confondre engrenages et poulies",
+                "Ne pas voir la vis comme un plan incliné enroulé"
+              ],
+              "exercise_types": ["Choix multiples", "Réponse courte", "Associer", "Question ouverte"],
+              "mastery_threshold": "80% sur 5 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-MACH-ROUE-ENGRENAGES::MS01",
+                  "name": "Expliquer le rôle de la roue (réduire le frottement, faciliter le déplacement) et des engrenages (transmettre un mouvement, changer la vitesse/direction) avec des exemples locaux : charrette, moulin à meule, vélo, broyeur de manioc",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices + 2 exemples locaux",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EST-MACH-SYNTHESE",
+              "name": "Les machines simples facilitent le travail (synthèse)",
+              "order": 5,
+              "cep_frequency": 50,
+              "prerequisites": ["EST-MACH-LEVIERS", "EST-MACH-POULIES", "EST-MACH-PLAN-INCLINE"],
+              "common_mistakes": [
+                "Confondre les différentes machines simples",
+                "Croire que les machines simples créent de l'énergie",
+                "Ne pas comprendre le compromis effort/distance"
+              ],
+              "exercise_types": ["Choix multiples", "Associer", "Question ouverte", "Schéma à compléter"],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "EST-MACH-SYNTHESE::MS01",
+                  "name": "Expliquer le principe commun des machines simples : elles réduisent l'effort en échange d'une plus grande distance ou d'un changement de direction, mais ne créent pas d'énergie",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Question ouverte"],
+                  "external_prerequisites": [
+                    {"why": "Lien entre énergie et machines", "skill_id": "EST-ENERG-TRANSFORMATION", "micro_skill_id": "EST-ENERG-TRANSFORMATION::MS01"}
+                  ]
+                },
+                {
+                  "external_id": "EST-MACH-SYNTHESE::MS02",
+                  "name": "Classer un objet du quotidien (pilon, brouette, puits, rampe, vélo) comme levier, poulie, plan incliné, roue/engrenage",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 6 objets classés",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": ["Associer"],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

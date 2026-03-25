@@ -39,16 +39,16 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
         let icon = null;
 
         if (isSelected && !isFeedbackMode) {
-          cardClass = "border-2 border-ilma-primary bg-amber-50 ring-2 ring-amber-200";
+          cardClass = "border-2 border-sitou-primary bg-amber-50 ring-2 ring-amber-200";
         }
 
         if (isFeedbackMode) {
            if (isCorrect) {
-               cardClass = "border-ilma-green bg-green-50 text-green-800";
-               icon = <Check className="text-ilma-green" />;
+               cardClass = "border-sitou-green bg-green-50 text-green-800";
+               icon = <Check className="text-sitou-green" />;
            } else if (isSelected && !isCorrect) {
-               cardClass = "border-ilma-red bg-red-50 text-red-800";
-               icon = <X className="text-ilma-red" />;
+               cardClass = "border-sitou-red bg-red-50 text-red-800";
+               icon = <X className="text-sitou-red" />;
            } else {
                cardClass = "border-gray-100 opacity-50";
            }
@@ -63,7 +63,7 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
             disabled={isFeedbackMode}
             className={`
               relative p-6 rounded-2xl cursor-pointer transition-all duration-200 flex items-center justify-between
-              font-bold text-lg text-gray-700 text-left w-full focus:outline-none focus:ring-4 focus:ring-opacity-50 focus:ring-ilma-primary
+              font-bold text-lg text-gray-700 text-left w-full focus:outline-none focus:ring-4 focus:ring-opacity-50 focus:ring-sitou-primary
               ${cardClass}
             `}
           >
@@ -85,14 +85,14 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
         let btnClass = "bg-white border-2 border-gray-200 text-gray-600 hover:bg-gray-50";
 
         if (isSelected && !isFeedbackMode) {
-          btnClass = "bg-ilma-primary text-white border-ilma-primary shadow-lg";
+          btnClass = "bg-sitou-primary text-white border-sitou-primary shadow-lg";
         }
 
         if (isFeedbackMode) {
             if (isCorrect) {
-                btnClass = "bg-ilma-green text-white border-ilma-green";
+                btnClass = "bg-sitou-green text-white border-sitou-green";
             } else if (isSelected) {
-                btnClass = "bg-ilma-red text-white border-ilma-red";
+                btnClass = "bg-sitou-red text-white border-sitou-red";
             } else {
                 btnClass = "bg-gray-100 text-gray-300 border-gray-200";
             }
@@ -104,7 +104,7 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
             onClick={() => handleSelect(val)}
             disabled={isFeedbackMode}
             className={`
-              flex-1 py-8 rounded-2xl text-2xl font-bold transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-opacity-50 focus:ring-ilma-primary
+              flex-1 py-8 rounded-2xl text-2xl font-bold transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-opacity-50 focus:ring-sitou-primary
               ${btnClass}
             `}
           >
@@ -181,10 +181,10 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
               <span className="flex-1 font-medium text-gray-800">{item}</span>
               {!isFeedbackMode && (
                 <div className="flex flex-col ml-2">
-                  <button onClick={() => moveItem(idx, 'up')} disabled={idx === 0} className="p-1 text-gray-400 hover:text-ilma-primary disabled:opacity-30" aria-label="Monter">
+                  <button onClick={() => moveItem(idx, 'up')} disabled={idx === 0} className="p-1 text-gray-400 hover:text-sitou-primary disabled:opacity-30" aria-label="Monter">
                     <ArrowUp size={16} />
                   </button>
-                  <button onClick={() => moveItem(idx, 'down')} disabled={idx === items.length - 1} className="p-1 text-gray-400 hover:text-ilma-primary disabled:opacity-30" aria-label="Descendre">
+                  <button onClick={() => moveItem(idx, 'down')} disabled={idx === items.length - 1} className="p-1 text-gray-400 hover:text-sitou-primary disabled:opacity-30" aria-label="Descendre">
                     <ArrowDown size={16} />
                   </button>
                 </div>
@@ -222,7 +222,7 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
               value={pairs[left] || ''}
               onChange={(e) => handleMatch(left, e.target.value)}
               disabled={isFeedbackMode}
-              className={`flex-1 p-3 rounded-xl border-2 text-sm font-medium focus:ring-2 focus:ring-ilma-primary ${
+              className={`flex-1 p-3 rounded-xl border-2 text-sm font-medium focus:ring-2 focus:ring-sitou-primary ${
                 isFeedbackMode
                   ? pairs[left] === (question.correctAnswer as any)?.[left]
                     ? 'border-green-300 bg-green-50'
@@ -257,7 +257,7 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
         {steps.map((step, idx) => (
           <div key={idx} className="p-4 rounded-xl border border-gray-200 bg-white">
             <div className="flex items-center mb-2">
-              <span className="w-7 h-7 rounded-full bg-ilma-primary text-white flex items-center justify-center text-sm font-bold mr-3">{idx + 1}</span>
+              <span className="w-7 h-7 rounded-full bg-sitou-primary text-white flex items-center justify-center text-sm font-bold mr-3">{idx + 1}</span>
               <p className="text-sm font-medium text-gray-700">{step.instruction}</p>
             </div>
             <Input
@@ -354,7 +354,7 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
               speechSynthesis.cancel();
               speechSynthesis.speak(u);
             }}
-            className="inline-flex items-center gap-1 text-sm text-ilma-primary hover:text-ilma-primary-dark transition-colors p-1 rounded"
+            className="inline-flex items-center gap-1 text-sm text-sitou-primary hover:text-sitou-primary-dark transition-colors p-1 rounded"
             aria-label="Lire la question à voix haute"
             title="Lire la question"
           >

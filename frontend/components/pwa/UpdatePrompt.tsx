@@ -68,7 +68,7 @@ export const PWAUpdatePrompt: React.FC = () => {
   return (
     <div className="fixed bottom-20 md:bottom-6 left-4 right-4 md:left-auto md:right-6 md:w-96 z-50 animate-slide-up">
       <div className="bg-white rounded-2xl shadow-float border border-gray-200 p-4 flex items-start gap-3">
-        <div className={`p-2 rounded-xl flex-shrink-0 ${isInExercise ? 'bg-blue-100 text-blue-600' : 'bg-amber-100 text-ilma-primary'}`}>
+        <div className={`p-2 rounded-xl flex-shrink-0 ${isInExercise ? 'bg-blue-100 text-blue-600' : 'bg-amber-100 text-sitou-primary'}`}>
           {isInExercise ? <Clock size={20} /> : <RefreshCw size={20} />}
         </div>
         <div className="flex-1">
@@ -78,7 +78,7 @@ export const PWAUpdatePrompt: React.FC = () => {
           <p className="text-xs text-gray-500 mt-0.5 mb-3">
             {isInExercise
               ? "Mise à jour disponible. Elle sera installée au prochain lancement."
-              : "Une mise a jour d'ILMA est prête. Rechargez pour en profiter."}
+              : "Une mise a jour de Sitou est prête. Rechargez pour en profiter."}
           </p>
           <div className="flex gap-2">
             {!isInExercise && (

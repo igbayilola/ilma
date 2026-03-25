@@ -86,7 +86,7 @@ export const LoginPage: React.FC = () => {
         
         <Input
           label="Email ou Téléphone"
-          placeholder="ex: leo@ilma.app ou +229 96 XX XX XX"
+          placeholder="ex: leo@sitou.app ou +229 96 XX XX XX"
           leftIcon={isPhone ? <Phone size={18} /> : <Mail size={18} />}
           value={displayIdentifier}
           onChange={(e) => {
@@ -114,7 +114,7 @@ export const LoginPage: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             />
             <div className="text-right">
-                <Link to="#" className="text-xs font-bold text-ilma-primary hover:underline">
+                <Link to="#" className="text-xs font-bold text-sitou-primary hover:underline">
                     Mot de passe oublié ?
                 </Link>
             </div>
@@ -128,7 +128,7 @@ export const LoginPage: React.FC = () => {
       <div className="mt-6 text-center">
         <p className="text-sm text-gray-500">
           Pas encore de compte ?{' '}
-          <Link to="/register" className="font-bold text-ilma-primary hover:underline">
+          <Link to="/register" className="font-bold text-sitou-primary hover:underline">
             S'inscrire
           </Link>
         </p>

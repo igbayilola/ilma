@@ -31,7 +31,7 @@ export const ProfilePage: React.FC = () => {
        <Card className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left p-8 border-none bg-gradient-to-br from-white to-amber-50">
            <div className="relative mb-4 md:mb-0 md:mr-8">
                <img src={displayAvatar} alt="Avatar" className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover bg-gray-200" />
-               <div className="absolute bottom-0 right-0 bg-ilma-primary text-white text-sm font-bold px-3 py-1 rounded-full border-2 border-white">
+               <div className="absolute bottom-0 right-0 bg-sitou-primary text-white text-sm font-bold px-3 py-1 rounded-full border-2 border-white">
                    Niv. {user.level}
                </div>
            </div>
@@ -78,7 +78,7 @@ export const ProfilePage: React.FC = () => {
            <select
              value={selectedGrade}
              onChange={(e) => handleGradeChange(e.target.value)}
-             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm font-medium focus:ring-2 focus:ring-ilma-primary/20 focus:border-ilma-primary bg-white"
+             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm font-medium focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary bg-white"
              aria-label="Niveau scolaire"
            >
              <option value="cm2">CM2 (10-11 ans)</option>

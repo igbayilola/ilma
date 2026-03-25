@@ -44,7 +44,7 @@ export const NotificationCenter: React.FC = () => {
         <div className="flex items-center justify-between mb-4">
             <button 
                 onClick={() => setFilterUnread(!filterUnread)}
-                className={`flex items-center text-xs font-bold px-3 py-1.5 rounded-full border transition-colors ${filterUnread ? 'bg-ilma-primary text-white border-ilma-primary' : 'bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200'}`}
+                className={`flex items-center text-xs font-bold px-3 py-1.5 rounded-full border transition-colors ${filterUnread ? 'bg-sitou-primary text-white border-sitou-primary' : 'bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200'}`}
             >
                 <Filter size={12} className="mr-1.5" />
                 {filterUnread ? 'Non lues uniquement' : 'Toutes'}
@@ -53,7 +53,7 @@ export const NotificationCenter: React.FC = () => {
             {unreadCount > 0 && (
                 <button 
                     onClick={handleMarkAllRead}
-                    className="flex items-center text-xs font-bold text-ilma-primary hover:text-amber-700"
+                    className="flex items-center text-xs font-bold text-sitou-primary hover:text-amber-700"
                 >
                     <Check size={14} className="mr-1" /> Tout marquer comme lu
                 </button>

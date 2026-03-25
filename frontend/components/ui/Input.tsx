@@ -38,7 +38,7 @@ export const Input: React.FC<InputProps> = ({
           aria-describedby={errorId}
           className={`
             w-full bg-white border
-            ${error ? 'border-red-500 focus:ring-red-200' : 'border-gray-200 focus:ring-ilma-primary-light focus:border-ilma-primary'}
+            ${error ? 'border-red-500 focus:ring-red-200' : 'border-gray-200 focus:ring-sitou-primary-light focus:border-sitou-primary'}
             rounded-xl py-3 px-4 text-gray-800 placeholder-gray-400 font-medium
             transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-opacity-50
             disabled:bg-gray-50 disabled:text-gray-400

@@ -22,8 +22,8 @@ export const SmartScoreMeter: React.FC<SmartScoreMeterProps> = ({ score }) => {
   };
 
   const getTextClass = (s: number) => {
-    if (s >= 80) return 'text-ilma-primary';
-    if (s >= 50) return 'text-ilma-orange';
+    if (s >= 80) return 'text-sitou-primary';
+    if (s >= 50) return 'text-sitou-orange';
     return 'text-gray-400';
   };
 
@@ -79,7 +79,7 @@ export const XPBar: React.FC<XPBarProps> = ({ current, max, level }) => {
         aria-label={`Progression niveau ${level}`}
     >
       <div className="flex justify-between items-end mb-1" aria-hidden="true">
-        <span className="text-xs font-bold text-ilma-primary uppercase tracking-wide">Niveau {level} — {LEVEL_NAMES[level] || 'Apprenti'}</span>
+        <span className="text-xs font-bold text-sitou-primary uppercase tracking-wide">Niveau {level} — {LEVEL_NAMES[level] || 'Apprenti'}</span>
         <span className="text-xs text-gray-500">{current}/{max} XP</span>
       </div>
       <div className="h-4 w-full bg-gray-200 rounded-full overflow-hidden shadow-clay-sm">
@@ -106,8 +106,8 @@ export const StreakWidget: React.FC<StreakWidgetProps> = ({ days, active }) => {
         title={`${days} jours de suite`}
         role="status"
     >
-      <Flame className={`w-5 h-5 ${active ? 'text-ilma-orange fill-ilma-orange' : 'text-gray-400'} ${days >= 7 ? 'animate-wiggle' : ''}`} />
-      <span className={`font-bold ${active ? 'text-ilma-orange' : 'text-gray-400'}`}>
+      <Flame className={`w-5 h-5 ${active ? 'text-sitou-orange fill-sitou-orange' : 'text-gray-400'} ${days >= 7 ? 'animate-wiggle' : ''}`} />
+      <span className={`font-bold ${active ? 'text-sitou-orange' : 'text-gray-400'}`}>
         {days} <span className="sr-only">jours de suite</span><span aria-hidden="true">jours</span>
       </span>
     </div>

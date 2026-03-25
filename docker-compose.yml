@@ -27,11 +27,13 @@ services:
       - S3_ENDPOINT=http://minio:9000
       - S3_ACCESS_KEY=${MINIO_USER}
       - S3_SECRET_KEY=${MINIO_PASSWORD}
-      - S3_BUCKET=ilma-packs
+      - S3_BUCKET=sitou-packs
       - SENTRY_DSN=https://c1acb7c44c4a4c11b2b440ab4259a690@o4511106245853184.ingest.de.sentry.io/4511106288058448
       - PUSH_PROVIDER=webpush
       - VAPID_PRIVATE_KEY=6Hg26ySbfz4_i-cf3t2IdG0cWf6DGf_Zc3UidkOgJ9I
       - VAPID_PUBLIC_KEY=BNQC2U0LMDuszpg_NmkMmh_v8_FuJUkCoC3o-Ew-X3fNzvJb4F8iBmxFXV55y3Z8u7KQ0-Rwyixz2BUL7ttgo50
+    volumes:
+      - ./content:/app/content:ro
     depends_on:
       db:
         condition: service_healthy
@@ -105,8 +107,8 @@ services:
     entrypoint: >
       /bin/sh -c "
       mc alias set sitou http://minio:9000 ${MINIO_USER} ${MINIO_PASSWORD};
-      mc mb --ignore-existing sitou/ilma-packs;
-      mc anonymous set download sitou/ilma-packs;
+      mc mb --ignore-existing sitou/sitou-packs;
+      mc anonymous set download sitou/sitou-packs;
       exit 0;
       "
     networks:

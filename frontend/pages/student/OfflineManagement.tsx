@@ -138,7 +138,7 @@ export const OfflineManagementPage: React.FC = () => {
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h1 className="text-2xl font-extrabold text-gray-900 flex items-center">
-                        <Cloud size={28} className="mr-3 text-ilma-primary" />
+                        <Cloud size={28} className="mr-3 text-sitou-primary" />
                         Gestion Hors-Ligne
                     </h1>
                     <p className="text-gray-500">Gérez le contenu téléchargé sur votre appareil.</p>
@@ -162,7 +162,7 @@ export const OfflineManagementPage: React.FC = () => {
                     
                     <div className="w-full bg-gray-200 rounded-full h-4 mb-2 overflow-hidden">
                         <div 
-                            className={`h-full rounded-full transition-all duration-1000 ${storageStats.percentUsed > 80 ? 'bg-red-500' : 'bg-ilma-primary'}`} 
+                            className={`h-full rounded-full transition-all duration-1000 ${storageStats.percentUsed > 80 ? 'bg-red-500' : 'bg-sitou-primary'}`} 
                             style={{ width: `${storageStats.percentUsed}%` }} 
                         />
                     </div>
@@ -207,11 +207,11 @@ export const OfflineManagementPage: React.FC = () => {
                                 {status === 'DOWNLOADING' && (
                                     <div className="w-full md:w-48">
                                         <div className="flex justify-between text-xs mb-1">
-                                            <span className="font-bold text-ilma-primary">Téléchargement...</span>
+                                            <span className="font-bold text-sitou-primary">Téléchargement...</span>
                                             <span>{Math.round(downloadProgress)}%</span>
                                         </div>
                                         <div className="w-full bg-gray-100 rounded-full h-2">
-                                            <div className="bg-ilma-primary h-full rounded-full transition-all duration-300" style={{ width: `${downloadProgress}%` }} />
+                                            <div className="bg-sitou-primary h-full rounded-full transition-all duration-300" style={{ width: `${downloadProgress}%` }} />
                                         </div>
                                         {estimatedTime && (
                                             <div className="text-xs text-gray-400 mt-1 text-right">{estimatedTime}</div>
@@ -265,7 +265,7 @@ export const OfflineManagementPage: React.FC = () => {
             {skillPacks.length > 0 && (
                 <>
                     <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2 mt-4">
-                        <BookOpen size={20} className="text-ilma-primary" />
+                        <BookOpen size={20} className="text-sitou-primary" />
                         Packs par compétence
                     </h2>
                     <p className="text-sm text-gray-500 -mt-4">Téléchargez uniquement les compétences dont vous avez besoin.</p>
@@ -297,7 +297,7 @@ export const OfflineManagementPage: React.FC = () => {
                                                     {isDownloading ? (
                                                         <div className="w-20">
                                                             <div className="w-full bg-gray-100 rounded-full h-1.5">
-                                                                <div className="bg-ilma-primary h-full rounded-full transition-all" style={{ width: `${skillDownloadProgress}%` }} />
+                                                                <div className="bg-sitou-primary h-full rounded-full transition-all" style={{ width: `${skillDownloadProgress}%` }} />
                                                             </div>
                                                         </div>
                                                     ) : isInstalled ? (
@@ -311,7 +311,7 @@ export const OfflineManagementPage: React.FC = () => {
                                                         <button
                                                             onClick={() => handleDownloadSkill(sp.skill_id)}
                                                             disabled={!!downloadingSkillId}
-                                                            className="text-ilma-primary hover:text-ilma-primary-dark p-1 disabled:opacity-30"
+                                                            className="text-sitou-primary hover:text-sitou-primary-dark p-1 disabled:opacity-30"
                                                         >
                                                             <Download size={16} />
                                                         </button>

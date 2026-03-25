@@ -70,9 +70,9 @@ async def reset_user_password(
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(_admin),
 ):
-    await admin_service.reset_user_password(db, user_id, "Ilma2024!")
+    await admin_service.reset_user_password(db, user_id, "Sitou2024!")
     await db.commit()
-    return ok(message="Mot de passe réinitialisé (temporaire: Ilma2024!)")
+    return ok(message="Mot de passe réinitialisé (temporaire: Sitou2024!)")
 
 
 # ── Payments ──────────────────────────────────────────────
@@ -199,7 +199,7 @@ tr:nth-child(even) {{ background: #f8f9fa; }}
 .footer {{ margin-top: 40px; font-size: 0.85em; color: #999; }}
 </style></head>
 <body>
-<h1>ILMA — Rapport d'activité</h1>
+<h1>Sitou — Rapport d'activité</h1>
 <p>Généré le {now}</p>
 
 <h2>Indicateurs clés</h2>
@@ -211,7 +211,7 @@ tr:nth-child(even) {{ background: #f8f9fa; }}
         html += f"<tr><td>{label}</td><td>{value}</td></tr>\n"
 
     html += """</table>
-<div class="footer">Rapport généré automatiquement par ILMA Admin.</div>
+<div class="footer">Rapport généré automatiquement par Sitou Admin.</div>
 </body></html>"""
 
     try:

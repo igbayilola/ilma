@@ -82,7 +82,7 @@ export const LeaderboardPage: React.FC = () => {
         <>
           {/* My position card */}
           {data?.my_rank && (
-            <Card className="bg-gradient-to-r from-ilma-primary/10 to-amber-50 border-ilma-primary/20">
+            <Card className="bg-gradient-to-r from-sitou-primary/10 to-amber-50 border-sitou-primary/20">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs text-gray-500 font-medium">Ta position</p>
@@ -90,8 +90,8 @@ export const LeaderboardPage: React.FC = () => {
                   <p className="text-sm font-medium text-gray-600">{data.my_pseudonym}</p>
                 </div>
                 <div className="text-right">
-                  <div className="flex items-center gap-1 text-ilma-primary font-bold text-lg">
-                    <Zap size={20} className="fill-ilma-primary" />
+                  <div className="flex items-center gap-1 text-sitou-primary font-bold text-lg">
+                    <Zap size={20} className="fill-sitou-primary" />
                     {data.my_xp} XP
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export const LeaderboardPage: React.FC = () => {
                   key={entry.rank}
                   className={`flex items-center p-3 rounded-xl border transition-all ${
                     entry.is_me
-                      ? 'bg-ilma-primary/5 border-ilma-primary/30 ring-2 ring-ilma-primary/20'
+                      ? 'bg-sitou-primary/5 border-sitou-primary/30 ring-2 ring-sitou-primary/20'
                       : style?.bg || 'bg-white border-gray-100'
                   }`}
                 >
@@ -121,7 +121,7 @@ export const LeaderboardPage: React.FC = () => {
 
                   {/* Pseudonym */}
                   <div className="flex-1 ml-3">
-                    <p className={`font-bold text-sm ${entry.is_me ? 'text-ilma-primary' : style?.text || 'text-gray-700'}`}>
+                    <p className={`font-bold text-sm ${entry.is_me ? 'text-sitou-primary' : style?.text || 'text-gray-700'}`}>
                       {entry.pseudonym}
                       {entry.is_me && <span className="text-xs ml-1 opacity-60">(Toi)</span>}
                     </p>
@@ -161,14 +161,14 @@ export const LeaderboardPage: React.FC = () => {
                 key={h.week}
                 className={`flex items-center p-4 rounded-xl border transition-all ${
                   h.is_current
-                    ? 'bg-ilma-primary/5 border-ilma-primary/30'
+                    ? 'bg-sitou-primary/5 border-sitou-primary/30'
                     : 'bg-white border-gray-100'
                 }`}
               >
                 <div className="flex-1">
                   <p className="font-bold text-sm text-gray-800">
                     Semaine {h.week}
-                    {h.is_current && <span className="text-xs text-ilma-primary ml-2">(en cours)</span>}
+                    {h.is_current && <span className="text-xs text-sitou-primary ml-2">(en cours)</span>}
                   </p>
                   <p className="text-xs text-gray-400 mt-0.5">
                     {h.pseudonym} &middot; {h.total_participants} participant{h.total_participants > 1 ? 's' : ''}
@@ -178,8 +178,8 @@ export const LeaderboardPage: React.FC = () => {
                   {h.rank && (
                     <p className="font-bold text-sm text-gray-700">#{h.rank}</p>
                   )}
-                  <div className="flex items-center gap-1 text-xs text-ilma-primary font-bold">
-                    <Zap size={12} className="fill-ilma-primary" />
+                  <div className="flex items-center gap-1 text-xs text-sitou-primary font-bold">
+                    <Zap size={12} className="fill-sitou-primary" />
                     {h.xp_earned} XP
                   </div>
                 </div>
@@ -194,15 +194,15 @@ export const LeaderboardPage: React.FC = () => {
           {/* Share challenge button */}
           <button
             onClick={async () => {
-              const text = `Je te défie sur ILMA ! Viens montrer ce que tu sais faire 🎓⚔️`;
+              const text = `Je te défie sur Sitou ! Viens montrer ce que tu sais faire 🎓⚔️`;
               const url = window.location.origin;
               if (navigator.share) {
-                await navigator.share({ title: 'Défi ILMA', text, url }).catch(() => {});
+                await navigator.share({ title: 'Défi Sitou', text, url }).catch(() => {});
               } else {
                 await navigator.clipboard.writeText(`${text}\n${url}`).catch(() => {});
               }
             }}
-            className="w-full flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-ilma-primary to-amber-500 text-white rounded-xl font-bold text-sm shadow-md hover:opacity-90 transition-opacity"
+            className="w-full flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-sitou-primary to-amber-500 text-white rounded-xl font-bold text-sm shadow-md hover:opacity-90 transition-opacity"
           >
             <Share2 size={16} />
             Défier un ami

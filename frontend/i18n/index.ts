@@ -18,7 +18,7 @@ interface I18nState {
   t: (key: string, params?: Record<string, string | number>) => string;
 }
 
-const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('ilma-locale') : null;
+const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('sitou-locale') : null;
 const initial: Locale = stored === 'en' ? 'en' : 'fr';
 currentLocale = initial;
 
@@ -41,7 +41,7 @@ function interpolate(template: string, params?: Record<string, string | number>)
 
 export function setLocale(locale: Locale) {
   currentLocale = locale;
-  localStorage.setItem('ilma-locale', locale);
+  localStorage.setItem('sitou-locale', locale);
   document.documentElement.lang = locale;
 }
 
@@ -65,7 +65,7 @@ export const useI18n = create<I18nState>((set, get) => ({
 
   setLocale: (locale: Locale) => {
     currentLocale = locale;
-    localStorage.setItem('ilma-locale', locale);
+    localStorage.setItem('sitou-locale', locale);
     document.documentElement.lang = locale;
     set({ locale });
   },

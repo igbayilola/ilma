@@ -1,6 +1,6 @@
 {
-  "name": "ILMA - Apprentissage",
-  "short_name": "ILMA",
+  "name": "SITOU - Apprentissage",
+  "short_name": "SITOU",
   "description": "Plateforme éducative offline-first pour les élèves de CM2 au Bénin",
   "start_url": "/",
   "display": "standalone",

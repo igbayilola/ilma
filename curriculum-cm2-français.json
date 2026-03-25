@@ -1,0 +1,4201 @@
+{
+  "schema_version": "2.0",
+  "grade": {
+    "name": "CM2",
+    "slug": "cm2",
+    "description": "CM2 — programme BENIN"
+  },
+  "subjects": [
+    {
+      "name": "Français",
+      "slug": "francais",
+      "icon": "book-open",
+      "color": "#E63946",
+      "order": 2,
+      "domains": [
+        {
+          "name": "Préparation au CEP – Français",
+          "slug": "preparation-cep-francais",
+          "order": 1,
+          "skills": [
+            {
+              "external_id": "CEP-FR-ANNALES",
+              "name": "Sujets d'examen Français (2010-2025) : entraînement en conditions réelles",
+              "order": 1,
+              "cep_frequency": 100,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas lire le texte en entier avant de répondre aux questions",
+                "Confondre les types de questions (compréhension vs grammaire vs conjugaison)",
+                "Mal gérer le temps entre dictée, questions et rédaction",
+                "Oublier de relire la dictée et la rédaction"
+              ],
+              "exercise_types": [
+                "Compréhension de texte",
+                "Dictée",
+                "Questions de grammaire",
+                "Rédaction"
+              ],
+              "mastery_threshold": "Score >= 70% sur 3 sujets complets en temps limité",
+              "micro_skills": [
+                {
+                  "external_id": "CEP-FR-ANNALES::MS01",
+                  "name": "Lire et comprendre les consignes d'un sujet de français (identifier le type de question)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% de consignes correctement interprétées sur 2 sujets",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": [
+                    {
+                      "why": "Comprendre les types de phrases pour analyser les consignes",
+                      "skill_id": "GRAM-TYPES-PHRASES",
+                      "micro_skill_id": "GRAM-TYPES-PHRASES::MS01"
+                    }
+                  ]
+                },
+                {
+                  "external_id": "CEP-FR-ANNALES::MS02",
+                  "name": "Gérer le temps d'un examen de français (dictée, questions, rédaction)",
+                  "order": 2,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "Respecter le temps imparti (±5 min) sur 3 sujets consécutifs",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CEP-FR-ANNALES::MS03",
+                  "name": "Relire et corriger sa dictée (orthographe, accords, ponctuation)",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "Détecter 80% des erreurs glissées dans une dictée corrigée",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": [
+                    {
+                      "why": "Vérifier les accords sujet-verbe",
+                      "skill_id": "ORTH-ACCORD-VERBE-SUJET",
+                      "micro_skill_id": "ORTH-ACCORD-VERBE-SUJET::MS02"
+                    },
+                    {
+                      "why": "Vérifier les homophones",
+                      "skill_id": "ORTH-HOMOPHONES-ON-ONT",
+                      "micro_skill_id": "ORTH-HOMOPHONES-ON-ONT::MS01"
+                    },
+                    {
+                      "why": "Vérifier les accords du participe passé",
+                      "skill_id": "ORTH-ACCORD-PP-GENERAL",
+                      "micro_skill_id": "ORTH-ACCORD-PP-GENERAL::MS01"
+                    }
+                  ]
+                },
+                {
+                  "external_id": "CEP-FR-ANNALES::MS04",
+                  "name": "Relire et améliorer sa rédaction (cohérence, orthographe, ponctuation)",
+                  "order": 4,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "Améliorer au moins 3 points dans sa rédaction après relecture",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": [
+                    {
+                      "why": "Structurer un récit",
+                      "skill_id": "EXPR-RECIT",
+                      "micro_skill_id": "EXPR-RECIT::MS01"
+                    },
+                    {
+                      "why": "Utiliser la ponctuation correctement",
+                      "skill_id": "GRAM-PONCTUATION",
+                      "micro_skill_id": "GRAM-PONCTUATION::MS01"
+                    },
+                    {
+                      "why": "Appliquer les règles d'accord",
+                      "skill_id": "GRAM-REGLES-ACCORD",
+                      "micro_skill_id": "GRAM-REGLES-ACCORD::MS01"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "external_id": "CEP-FR-CORRIGES",
+              "name": "Corrigés Français (2010-2025) : auto-évaluation et remédiation",
+              "order": 2,
+              "cep_frequency": 100,
+              "prerequisites": [
+                "CEP-FR-ANNALES"
+              ],
+              "common_mistakes": [
+                "Ne pas analyser le type d'erreur (orthographe vs grammaire vs compréhension)",
+                "Reproduire les mêmes fautes de conjugaison",
+                "Ignorer les erreurs d'accord récurrentes"
+              ],
+              "exercise_types": [
+                "Correction d'erreur",
+                "Étapes guidées",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "Plan de remédiation rédigé couvrant les lacunes identifiées sur 2+ sujets",
+              "micro_skills": [
+                {
+                  "external_id": "CEP-FR-CORRIGES::MS01",
+                  "name": "Comparer ses réponses au corrigé et identifier les écarts",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "Identification de 3+ écarts sur un sujet corrigé",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CEP-FR-CORRIGES::MS02",
+                  "name": "Classifier ses erreurs par catégorie (orthographe, conjugaison, grammaire, compréhension, rédaction)",
+                  "order": 2,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "Classification correcte de 80% de ses erreurs sur 2 sujets",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CEP-FR-CORRIGES::MS03",
+                  "name": "Planifier des révisions ciblées à partir des lacunes identifiées en français",
+                  "order": 3,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Plan de révision rédigé couvrant les lacunes identifiées",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Conjugaison",
+          "slug": "conjugaison",
+          "order": 2,
+          "skills": [
+            {
+              "external_id": "CONJ-INDICATIF-TEMPS",
+              "name": "Emploi des divers temps du mode indicatif (présent, passé, futur)",
+              "order": 1,
+              "cep_frequency": 90,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre le passé composé et l'imparfait",
+                "Oublier l'auxiliaire dans les temps composés",
+                "Confondre le futur simple et le conditionnel présent",
+                "Erreurs de terminaison au présent pour les verbes du 3e groupe"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Choix multiples",
+                "Conjuguer un verbe",
+                "Transformation de phrase"
+              ],
+              "mastery_threshold": "85% sur 10 exercices de conjugaison à l'indicatif",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-INDICATIF-TEMPS::MS01",
+                  "name": "Conjuguer aux temps simples de l'indicatif : présent et passé (imparfait, passé simple)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 exercices",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-INDICATIF-TEMPS::MS02",
+                  "name": "Conjuguer aux temps simples de l'indicatif : présent et futur",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 exercices",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-INDICATIF-TEMPS::MS03",
+                  "name": "Identifier le temps d'un verbe conjugué dans une phrase",
+                  "order": 3,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% d'identification correcte sur 15 phrases",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-INDICATIF-TEMPS::MS04",
+                  "name": "Choisir le temps approprié selon le contexte de la phrase",
+                  "order": 4,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 10 exercices contextuels",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-IMPERATIF-COND",
+              "name": "Le présent de l'impératif et du conditionnel",
+              "order": 2,
+              "cep_frequency": 75,
+              "prerequisites": [
+                "CONJ-INDICATIF-TEMPS"
+              ],
+              "common_mistakes": [
+                "Ajouter un 's' à la 2e personne du singulier de l'impératif pour les verbes du 1er groupe",
+                "Confondre les terminaisons du conditionnel et du futur simple",
+                "Oublier le 'i' dans les terminaisons du conditionnel (-rais, -rait)"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Transformation de phrase",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-IMPERATIF-COND::MS01",
+                  "name": "Conjuguer un verbe au présent de l'impératif (3 personnes)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-IMPERATIF-COND::MS02",
+                  "name": "Conjuguer un verbe au présent du conditionnel",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-IMPERATIF-COND::MS03",
+                  "name": "Distinguer l'impératif du présent de l'indicatif dans une phrase",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 10 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-SUBJONCTIF",
+              "name": "Emploi du subjonctif présent",
+              "order": 3,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "CONJ-INDICATIF-TEMPS"
+              ],
+              "common_mistakes": [
+                "Confondre l'indicatif et le subjonctif présent",
+                "Erreurs de terminaison au subjonctif (que je finisse vs que je finis)",
+                "Ne pas reconnaître les expressions qui appellent le subjonctif (il faut que, pour que...)"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-SUBJONCTIF::MS01",
+                  "name": "Conjuguer un verbe au présent du subjonctif (verbes courants)",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-SUBJONCTIF::MS02",
+                  "name": "Reconnaître les expressions qui appellent le subjonctif",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 10 phrases",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-INFINITIF-IMPERSONNELS",
+              "name": "Emploi de l'infinitif et les verbes impersonnels (falloir, pleuvoir)",
+              "order": 4,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "CONJ-INDICATIF-TEMPS"
+              ],
+              "common_mistakes": [
+                "Confondre l'infinitif et le participe passé (-er vs -é)",
+                "Ne pas reconnaître un verbe impersonnel",
+                "Conjuguer falloir à d'autres personnes que la 3e du singulier"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Choix multiples",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-INFINITIF-IMPERSONNELS::MS01",
+                  "name": "Employer correctement l'infinitif dans une phrase (après une préposition, après un verbe)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-INFINITIF-IMPERSONNELS::MS02",
+                  "name": "Distinguer l'infinitif (-er) du participe passé (-é) en contexte",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-INFINITIF-IMPERSONNELS::MS03",
+                  "name": "Conjuguer et utiliser les verbes impersonnels falloir et pleuvoir",
+                  "order": 3,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-VERBES-PRONOMINAUX",
+              "name": "Emploi des verbes pronominaux (temps simples et composés de l'indicatif)",
+              "order": 5,
+              "cep_frequency": 55,
+              "prerequisites": [
+                "CONJ-INDICATIF-TEMPS",
+                "CONJ-INFINITIF-IMPERSONNELS"
+              ],
+              "common_mistakes": [
+                "Oublier le pronom réfléchi (se, me, te...)",
+                "Erreurs d'accord du participe passé avec les verbes pronominaux",
+                "Confondre temps simples et composés des verbes pronominaux"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-VERBES-PRONOMINAUX::MS01",
+                  "name": "Conjuguer un verbe pronominal aux temps simples de l'indicatif",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-VERBES-PRONOMINAUX::MS02",
+                  "name": "Conjuguer un verbe pronominal aux temps composés de l'indicatif",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-VERBES-PRONOMINAUX::MS03",
+                  "name": "Identifier un verbe pronominal dans une phrase",
+                  "order": 3,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 10 phrases",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-VERBES-PARTICULIERS-1G",
+              "name": "Étude de quelques verbes particuliers du 1er groupe (verbes en -ger et en -cer)",
+              "order": 6,
+              "cep_frequency": 65,
+              "prerequisites": [
+                "CONJ-INDICATIF-TEMPS"
+              ],
+              "common_mistakes": [
+                "Oublier le 'e' après le 'g' devant 'a' et 'o' (mangeons, pas mangons)",
+                "Oublier la cédille du 'c' devant 'a' et 'o' (lançons, pas lancons)",
+                "Appliquer ces règles à des verbes qui ne sont pas concernés"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-VERBES-PARTICULIERS-1G::MS01",
+                  "name": "Conjuguer les verbes en -ger en ajoutant le 'e' devant 'a' et 'o'",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-VERBES-PARTICULIERS-1G::MS02",
+                  "name": "Conjuguer les verbes en -cer en ajoutant la cédille devant 'a' et 'o'",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-VERBES-UYER-AYER-OYER",
+              "name": "Verbes en -uyer, -ayer, -oyer",
+              "order": 7,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "CONJ-INDICATIF-TEMPS"
+              ],
+              "common_mistakes": [
+                "Oublier le changement y → i devant un 'e' muet",
+                "Ne pas savoir que les verbes en -ayer acceptent les deux formes (je paye / je paie)",
+                "Erreurs de terminaison au futur et au conditionnel"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-VERBES-UYER-AYER-OYER::MS01",
+                  "name": "Appliquer la règle y → i pour les verbes en -uyer et -oyer devant 'e' muet",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-VERBES-UYER-AYER-OYER::MS02",
+                  "name": "Connaître la double possibilité des verbes en -ayer (je paye / je paie)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-VERBES-3G-IRREGULIERS",
+              "name": "Verbes irréguliers du 3e groupe : naître, vivre, mourir, pouvoir, savoir",
+              "order": 8,
+              "cep_frequency": 70,
+              "prerequisites": [
+                "CONJ-INDICATIF-TEMPS"
+              ],
+              "common_mistakes": [
+                "Confondre les formes de pouvoir et savoir au présent",
+                "Erreurs sur le participe passé (né, vécu, mort, pu, su)",
+                "Confondre naître et naitre (accent circonflexe)"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-VERBES-3G-IRREGULIERS::MS01",
+                  "name": "Conjuguer naître, vivre et mourir aux principaux temps de l'indicatif",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-VERBES-3G-IRREGULIERS::MS02",
+                  "name": "Conjuguer pouvoir et savoir aux principaux temps de l'indicatif",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-VERBES-3G-IRREGULIERS::MS03",
+                  "name": "Donner le participe passé des verbes irréguliers courants",
+                  "order": 3,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "90% sur 10 verbes",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-FORME-PRONOMINALE",
+              "name": "Verbes usuels à la forme pronominale aux temps simples de l'indicatif",
+              "order": 9,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "CONJ-VERBES-PRONOMINAUX"
+              ],
+              "common_mistakes": [
+                "Oublier d'accorder le pronom réfléchi avec le sujet",
+                "Confondre la forme pronominale et la forme passive",
+                "Erreurs de conjugaison au passé composé avec l'auxiliaire être"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Transformation de phrase"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-FORME-PRONOMINALE::MS01",
+                  "name": "Conjuguer des verbes usuels à la forme pronominale (se lever, se laver, s'habiller...)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-FORME-PRONOMINALE::MS02",
+                  "name": "Transformer une phrase de la forme active à la forme pronominale et inversement",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-TABLEAU-CONJUGAISON",
+              "name": "Utilisation du tableau de conjugaison",
+              "order": 10,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas identifier le groupe du verbe pour choisir le bon tableau",
+                "Confondre les colonnes de temps dans le tableau",
+                "Ne pas retrouver le radical du verbe"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Réponse courte",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-TABLEAU-CONJUGAISON::MS01",
+                  "name": "Identifier le groupe d'un verbe pour choisir le bon modèle de conjugaison",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 10 verbes",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-TABLEAU-CONJUGAISON::MS02",
+                  "name": "Utiliser un tableau de conjugaison pour trouver la forme correcte d'un verbe",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-MODES-RENFORCEMENT",
+              "name": "Le présent de l'impératif, du conditionnel et du subjonctif (renforcement)",
+              "order": 11,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les trois modes entre eux",
+                "Utiliser l'indicatif à la place du subjonctif après 'il faut que'",
+                "Confondre conditionnel et futur"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Choix multiples",
+                "Transformation de phrase"
+              ],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-MODES-RENFORCEMENT::MS01",
+                  "name": "Distinguer impératif, conditionnel et subjonctif dans des phrases",
+                  "order": 1,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 12 phrases",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-MODES-RENFORCEMENT::MS02",
+                  "name": "Choisir le mode approprié selon le sens de la phrase (ordre, souhait, obligation, condition)",
+                  "order": 2,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 10 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "CONJ-EMPLOI-INDICATIF-RENF",
+              "name": "Emploi du mode indicatif (renforcement)",
+              "order": 12,
+              "cep_frequency": 85,
+              "prerequisites": [
+                "CONJ-INDICATIF-TEMPS"
+              ],
+              "common_mistakes": [
+                "Confondre passé composé et plus-que-parfait",
+                "Erreurs de concordance des temps",
+                "Utiliser le passé simple dans un contexte familier"
+              ],
+              "exercise_types": [
+                "Conjuguer un verbe",
+                "Compléter",
+                "Transformation de phrase",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "CONJ-EMPLOI-INDICATIF-RENF::MS01",
+                  "name": "Conjuguer aux 8 temps de l'indicatif de manière fluide",
+                  "order": 1,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 16 exercices (2 par temps)",
+                  "cep_frequency": 85,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Conjuguer un verbe"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "CONJ-EMPLOI-INDICATIF-RENF::MS02",
+                  "name": "Appliquer la concordance des temps dans un récit",
+                  "order": 2,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Grammaire",
+          "slug": "grammaire",
+          "order": 3,
+          "skills": [
+            {
+              "external_id": "GRAM-PONCTUATION",
+              "name": "La ponctuation : point, virgule, point-virgule, deux-points, guillemets, tiret",
+              "order": 1,
+              "cep_frequency": 75,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Oublier le point en fin de phrase",
+                "Confondre le rôle de la virgule et du point-virgule",
+                "Ne pas mettre de virgule dans les énumérations",
+                "Confondre point d'exclamation et point d'interrogation",
+                "Oublier les deux-points avant une énumération ou une explication",
+                "Ne pas utiliser les guillemets pour le discours direct",
+                "Confondre tiret de dialogue et trait d'union"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Correction d'erreur",
+                "Choix multiples",
+                "Dictée"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-PONCTUATION::MS01",
+                  "name": "Placer correctement le point, la virgule et le point-virgule dans un texte",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PONCTUATION::MS02",
+                  "name": "Expliquer le rôle de chaque signe de ponctuation (point = fin de phrase, virgule = pause courte/énumération, point-virgule = pause moyenne)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PONCTUATION::MS03",
+                  "name": "Utiliser correctement les deux-points (explication, énumération), les guillemets (discours direct, citation) et le tiret (dialogue)",
+                  "order": 3,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-TYPES-PHRASES",
+              "name": "Phrase nominale, phrase verbale, phrase simple, phrase complexe",
+              "order": 2,
+              "cep_frequency": 80,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre phrase nominale et phrase verbale",
+                "Ne pas reconnaître une phrase complexe (plusieurs verbes conjugués)",
+                "Confondre phrase simple et phrase complexe"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Associer",
+                "Réponse courte",
+                "Transformation de phrase"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-TYPES-PHRASES::MS01",
+                  "name": "Distinguer phrase nominale (sans verbe conjugué) et phrase verbale (avec verbe conjugué)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 phrases",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-TYPES-PHRASES::MS02",
+                  "name": "Distinguer phrase simple (un seul verbe conjugué) et phrase complexe (plusieurs verbes conjugués)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 phrases",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-TYPES-PHRASES::MS03",
+                  "name": "Identifier le nombre de propositions dans une phrase complexe",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 6 phrases",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-PHRASE-DECL-IMPER",
+              "name": "Les types de phrase : phrase déclarative et phrase impérative",
+              "order": 3,
+              "cep_frequency": 70,
+              "prerequisites": [
+                "GRAM-TYPES-PHRASES"
+              ],
+              "common_mistakes": [
+                "Confondre phrase déclarative et phrase impérative",
+                "Oublier que l'impérative n'a pas de sujet exprimé",
+                "Confondre l'impératif avec le présent de l'indicatif"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Transformation de phrase",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-PHRASE-DECL-IMPER::MS01",
+                  "name": "Identifier une phrase déclarative (information, constat) et une phrase impérative (ordre, conseil)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 8 phrases",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PHRASE-DECL-IMPER::MS02",
+                  "name": "Transformer une phrase déclarative en phrase impérative et inversement",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-PHRASE-INTERR-EXCL",
+              "name": "Phrase interrogative et phrase exclamative",
+              "order": 4,
+              "cep_frequency": 70,
+              "prerequisites": [
+                "GRAM-PHRASE-DECL-IMPER"
+              ],
+              "common_mistakes": [
+                "Oublier le point d'interrogation ou d'exclamation",
+                "Ne pas reconnaître une interrogation indirecte",
+                "Confondre exclamation et interjection"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Transformation de phrase",
+                "Compléter"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-PHRASE-INTERR-EXCL::MS01",
+                  "name": "Identifier et construire des phrases interrogatives et exclamatives",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PHRASE-INTERR-EXCL::MS02",
+                  "name": "Distinguer les quatre types de phrases (déclarative, interrogative, exclamative, impérative)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 10 phrases classées",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-FORMES-PHRASES",
+              "name": "Formes de phrases : phrases affirmatives, phrases négatives",
+              "order": 5,
+              "cep_frequency": 80,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Oublier le deuxième élément de la négation (ne... pas, ne... plus, ne... jamais)",
+                "Confondre 'ne... que' (restriction) et 'ne... pas'",
+                "Oublier le 'ne' à l'oral et à l'écrit"
+              ],
+              "exercise_types": [
+                "Transformation de phrase",
+                "Choix multiples",
+                "Compléter",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-FORMES-PHRASES::MS01",
+                  "name": "Transformer une phrase affirmative en phrase négative et inversement",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-FORMES-PHRASES::MS02",
+                  "name": "Utiliser correctement les différentes formes de négation (ne...pas, ne...plus, ne...jamais, ne...rien, ne...que)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-ACCORD-VERBE-SUJET",
+              "name": "Accord du verbe avec son sujet (commun, partiel, inversé)",
+              "order": 6,
+              "cep_frequency": 90,
+              "prerequisites": [
+                "GRAM-TYPES-PHRASES"
+              ],
+              "common_mistakes": [
+                "Ne pas identifier le sujet quand il est inversé",
+                "Confondre le sujet avec un complément placé entre le sujet et le verbe",
+                "Erreurs d'accord avec les sujets collectifs",
+                "Ne pas accorder quand le sujet est un pronom relatif (qui)"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Correction d'erreur",
+                "Choix multiples",
+                "Dictée"
+              ],
+              "mastery_threshold": "90% sur 12 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-ACCORD-VERBE-SUJET::MS01",
+                  "name": "Accorder le verbe avec un sujet commun (sujet avant le verbe)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-ACCORD-VERBE-SUJET::MS02",
+                  "name": "Accorder le verbe quand le sujet est partiellement séparé du verbe par un complément",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-ACCORD-VERBE-SUJET::MS03",
+                  "name": "Accorder le verbe avec un sujet inversé",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-PRONOMS",
+              "name": "Mots et groupes de mots qui remplacent le nom : le pronom",
+              "order": 7,
+              "cep_frequency": 75,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre pronom personnel et déterminant (le, la, les)",
+                "Ne pas identifier l'antécédent du pronom",
+                "Confondre les différents types de pronoms (personnel, possessif, démonstratif, relatif)"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Compléter",
+                "Transformation de phrase",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-PRONOMS::MS01",
+                  "name": "Identifier les pronoms dans une phrase et trouver le nom qu'ils remplacent (antécédent)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PRONOMS::MS02",
+                  "name": "Remplacer un groupe nominal par le pronom approprié (personnel, possessif, démonstratif)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PRONOMS::MS03",
+                  "name": "Distinguer le pronom du déterminant quand ils ont la même forme (le, la, les, leur...)",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 phrases",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-INVERSION-SUJET",
+              "name": "L'inversion du sujet",
+              "order": 8,
+              "cep_frequency": 55,
+              "prerequisites": [
+                "GRAM-ACCORD-VERBE-SUJET"
+              ],
+              "common_mistakes": [
+                "Ne pas reconnaître un sujet inversé",
+                "Oublier le trait d'union dans l'inversion (dit-il, mange-t-elle)",
+                "Confondre l'inversion avec la forme interrogative"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Transformation de phrase",
+                "Compléter"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-INVERSION-SUJET::MS01",
+                  "name": "Identifier le sujet inversé dans une phrase (le sujet est après le verbe)",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 phrases",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-INVERSION-SUJET::MS02",
+                  "name": "Construire une phrase avec inversion du sujet (interrogation, incise)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-ADVERBE-MENT",
+              "name": "L'adverbe en « -ment »",
+              "order": 9,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre l'adverbe et l'adjectif",
+                "Ne pas savoir que l'adverbe est invariable",
+                "Erreurs de formation (féminin + -ment, cas particuliers)"
+              ],
+              "exercise_types": [
+                "Transformation",
+                "Compléter",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-ADVERBE-MENT::MS01",
+                  "name": "Reconnaître un adverbe en -ment dans une phrase et identifier sa fonction (modifier le verbe, l'adjectif ou un autre adverbe)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 8 phrases",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "why": "Orthographe de l'adverbe en -ment",
+                      "skill_id": "ORTH-ADVERBES-MENT",
+                      "micro_skill_id": "ORTH-ADVERBES-MENT::MS01"
+                    },
+                    {
+                      "why": "Formation par suffixation (vocabulaire)",
+                      "skill_id": "VOCAB-SUFFIXE-MENT",
+                      "micro_skill_id": "VOCAB-SUFFIXE-MENT::MS01"
+                    }
+                  ]
+                },
+                {
+                  "external_id": "GRAM-ADVERBE-MENT::MS02",
+                  "name": "Former un adverbe en -ment à partir d'un adjectif et l'utiliser dans une phrase",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-COMPLEMENTS-ESSENTIELS",
+              "name": "Les compléments essentiels (COD, COI)",
+              "order": 10,
+              "cep_frequency": 85,
+              "prerequisites": [
+                "GRAM-TYPES-PHRASES"
+              ],
+              "common_mistakes": [
+                "Confondre COD et COI",
+                "Ne pas poser la bonne question pour trouver le complément (qui ? quoi ? → COD ; à qui ? de quoi ? → COI)",
+                "Confondre complément essentiel et complément circonstanciel"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Compléter",
+                "Transformation de phrase"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-COMPLEMENTS-ESSENTIELS::MS01",
+                  "name": "Identifier le COD dans une phrase en posant la question 'qui ?' ou 'quoi ?' après le verbe",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 85,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-COMPLEMENTS-ESSENTIELS::MS02",
+                  "name": "Identifier le COI dans une phrase en posant la question 'à qui ?', 'à quoi ?', 'de qui ?', 'de quoi ?' après le verbe",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 phrases",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-COMPLEMENTS-ESSENTIELS::MS03",
+                  "name": "Distinguer COD et COI dans une même phrase",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-COMPLEMENTS-CIRC",
+              "name": "Les compléments circonstanciels de temps, lieu et manière",
+              "order": 11,
+              "cep_frequency": 80,
+              "prerequisites": [
+                "GRAM-COMPLEMENTS-ESSENTIELS"
+              ],
+              "common_mistakes": [
+                "Confondre complément circonstanciel et complément essentiel",
+                "Ne pas reconnaître le type de CC (temps, lieu, manière)",
+                "Croire que le CC ne peut pas être déplacé dans la phrase"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Compléter",
+                "Transformation de phrase"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-COMPLEMENTS-CIRC::MS01",
+                  "name": "Identifier les CC de temps (quand ?), de lieu (où ?) et de manière (comment ?) dans une phrase",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-COMPLEMENTS-CIRC::MS02",
+                  "name": "Distinguer un complément circonstanciel (déplaçable, supprimable) d'un complément essentiel",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-DETERMINANTS-ADJ-QUAL",
+              "name": "Les mots qui accompagnent et complètent le nom : déterminants et adjectif qualificatif",
+              "order": 12,
+              "cep_frequency": 75,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre déterminant et adjectif qualificatif",
+                "Ne pas accorder l'adjectif en genre et en nombre avec le nom",
+                "Confondre les différents types de déterminants (article, possessif, démonstratif)"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Compléter",
+                "Réponse courte",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-DETERMINANTS-ADJ-QUAL::MS01",
+                  "name": "Identifier les déterminants (articles, possessifs, démonstratifs) dans un groupe nominal",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-DETERMINANTS-ADJ-QUAL::MS02",
+                  "name": "Identifier et accorder l'adjectif qualificatif avec le nom qu'il qualifie",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-DETERMINANTS-ADJ-QUAL::MS03",
+                  "name": "Distinguer épithète (liée au nom) et attribut du sujet (après un verbe d'état)",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 phrases",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-PROP-SUB-RELATIVE",
+              "name": "La proposition subordonnée relative",
+              "order": 13,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "GRAM-TYPES-PHRASES",
+                "GRAM-PRONOMS"
+              ],
+              "common_mistakes": [
+                "Ne pas identifier le pronom relatif (qui, que, dont, où)",
+                "Confondre proposition principale et proposition subordonnée",
+                "Confondre 'que' conjonction et 'que' pronom relatif",
+                "Ne pas trouver l'antécédent du pronom relatif"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Compléter",
+                "Transformation de phrase",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-PROP-SUB-RELATIVE::MS01",
+                  "name": "Identifier la proposition subordonnée relative et le pronom relatif qui l'introduit (qui, que, dont, où)",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 phrases",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PROP-SUB-RELATIVE::MS02",
+                  "name": "Identifier l'antécédent du pronom relatif",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 6 phrases",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PROP-SUB-RELATIVE::MS03",
+                  "name": "Construire une phrase complexe en ajoutant une proposition subordonnée relative",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation de phrase"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-PP-ETRE-AVOIR",
+              "name": "Emploi du participe passé avec les auxiliaires « être » et « avoir »",
+              "order": 14,
+              "cep_frequency": 85,
+              "prerequisites": [
+                "GRAM-ACCORD-VERBE-SUJET"
+              ],
+              "common_mistakes": [
+                "Oublier l'accord avec être",
+                "Accorder avec le sujet au lieu du COD avec avoir",
+                "Confondre les deux règles"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Correction d'erreur",
+                "Dictée",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-PP-ETRE-AVOIR::MS01",
+                  "name": "Appliquer la règle d'accord du participe passé avec être (accord avec le sujet)",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 85,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-PP-ETRE-AVOIR::MS02",
+                  "name": "Appliquer la règle d'accord du participe passé avec avoir (accord avec le COD placé avant)",
+                  "order": 2,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "GRAM-REGLES-ACCORD",
+              "name": "Quelques règles d'accord (bilan)",
+              "order": 15,
+              "cep_frequency": 90,
+              "prerequisites": [
+                "GRAM-ACCORD-VERBE-SUJET",
+                "GRAM-PP-ETRE-AVOIR",
+                "GRAM-DETERMINANTS-ADJ-QUAL"
+              ],
+              "common_mistakes": [
+                "Mélanger les différentes règles d'accord",
+                "Oublier l'accord de l'adjectif dans le GN",
+                "Erreurs d'accord en genre et en nombre dans un texte long"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Correction d'erreur",
+                "Dictée",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 12 exercices mixtes",
+              "micro_skills": [
+                {
+                  "external_id": "GRAM-REGLES-ACCORD::MS01",
+                  "name": "Appliquer simultanément les règles d'accord (sujet-verbe, adjectif-nom, participe passé) dans un texte",
+                  "order": 1,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur un texte de 10 lignes",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "GRAM-REGLES-ACCORD::MS02",
+                  "name": "Identifier et corriger les erreurs d'accord dans un texte (bilan)",
+                  "order": 2,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% des erreurs détectées dans un texte",
+                  "cep_frequency": 85,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Orthographe",
+          "slug": "orthographe",
+          "order": 4,
+          "skills": [
+            {
+              "external_id": "ORTH-ECRITURE-CURSIVE-SCRIPT",
+              "name": "Écriture cursive et écriture script",
+              "order": 1,
+              "cep_frequency": 30,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confusion entre lettres similaires en cursive (n/m, u/v)",
+                "Mauvaise liaison des lettres en écriture cursive",
+                "Mélange de cursive et de script dans un même texte"
+              ],
+              "exercise_types": [
+                "Copie",
+                "Transformation"
+              ],
+              "mastery_threshold": "Écriture lisible et régulière sur 3 textes consécutifs",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-ECRITURE-CURSIVE-SCRIPT::MS01",
+                  "name": "Écrire lisiblement en cursive avec les liaisons correctes",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Écriture régulière et lisible",
+                  "cep_frequency": 30,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Copie"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-ECRITURE-CURSIVE-SCRIPT::MS02",
+                  "name": "Transcrire un texte de cursive en script et inversement",
+                  "order": 2,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "100% de transcription correcte",
+                  "cep_frequency": 20,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-ACCORD-VERBE-SUJET",
+              "name": "Accord du verbe avec son sujet",
+              "order": 2,
+              "cep_frequency": 95,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas identifier le sujet quand il est éloigné du verbe",
+                "Erreurs d'accord avec un sujet inversé",
+                "Confondre le sujet avec un complément placé entre le sujet et le verbe",
+                "Erreurs d'accord avec les sujets collectifs (la foule, un groupe de...)"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Correction d'erreur",
+                "Dictée",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-ACCORD-VERBE-SUJET::MS01",
+                  "name": "Identifier le sujet d'un verbe (y compris sujet éloigné ou inversé)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "90% sur 10 phrases",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-ACCORD-VERBE-SUJET::MS02",
+                  "name": "Accorder le verbe avec son sujet au singulier et au pluriel",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 10 exercices",
+                  "cep_frequency": 95,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-ACCORD-VERBE-SUJET::MS03",
+                  "name": "Accorder le verbe avec un sujet complexe (sujet éloigné, inversé, collectif)",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-HOMOPHONES-ON-ONT",
+              "name": "Les homophones « on, on n', ont »",
+              "order": 3,
+              "cep_frequency": 80,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre 'on' (pronom) et 'ont' (verbe avoir)",
+                "Oublier le 'n'' dans 'on n'a pas' (négation)",
+                "Ne pas vérifier en remplaçant par 'il' ou 'avaient'"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Choix multiples",
+                "Dictée",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "90% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-HOMOPHONES-ON-ONT::MS01",
+                  "name": "Distinguer 'on' (pronom sujet) de 'ont' (verbe avoir) par substitution",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 10 phrases",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-HOMOPHONES-ON-ONT::MS02",
+                  "name": "Identifier 'on n'' (on + négation) dans les phrases négatives",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 phrases",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-HOMOPHONES-QUAND",
+              "name": "Les homophones « quand, qu'en, quant à »",
+              "order": 4,
+              "cep_frequency": 65,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre 'quand' (temps) et 'quant à' (en ce qui concerne)",
+                "Oublier le 't' de liaison avec 'quant'",
+                "Ne pas reconnaître 'qu'en' comme contraction de 'que en'"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Choix multiples",
+                "Dictée"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-HOMOPHONES-QUAND::MS01",
+                  "name": "Distinguer 'quand' (conjonction de temps), 'qu'en' et 'quant à'",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-HOMOPHONES-QUAND::MS02",
+                  "name": "Utiliser la substitution pour choisir le bon homophone (lorsque → quand, en ce qui concerne → quant à)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-HOMOPHONES-QUEL-QUELLE",
+              "name": "Graphie des homophones « quel, quelle, qu'elle »",
+              "order": 5,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre 'quel' (déterminant) et 'qu'elle' (que + elle)",
+                "Oublier l'accord de 'quel' en genre et en nombre",
+                "Ne pas vérifier en remplaçant 'qu'elle' par 'qu'il'"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Choix multiples",
+                "Dictée",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-HOMOPHONES-QUEL-QUELLE::MS01",
+                  "name": "Distinguer 'quel/quelle' (déterminant interrogatif/exclamatif) de 'qu'elle' (que + elle)",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-HOMOPHONES-QUEL-QUELLE::MS02",
+                  "name": "Accorder 'quel' en genre et en nombre (quel, quelle, quels, quelles)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-ACCORD-PP-ETRE",
+              "name": "Accord du participe passé avec l'auxiliaire « être »",
+              "order": 6,
+              "cep_frequency": 85,
+              "prerequisites": [
+                "ORTH-ACCORD-VERBE-SUJET"
+              ],
+              "common_mistakes": [
+                "Oublier d'accorder le participe passé avec le sujet",
+                "Erreurs d'accord en genre (elle est allé au lieu de allée)",
+                "Erreurs d'accord en nombre (ils sont parti au lieu de partis)"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Correction d'erreur",
+                "Dictée",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 12 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-ACCORD-PP-ETRE::MS01",
+                  "name": "Identifier l'auxiliaire être dans un temps composé",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 10 phrases",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-ACCORD-PP-ETRE::MS02",
+                  "name": "Accorder le participe passé en genre et en nombre avec le sujet (auxiliaire être)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 exercices",
+                  "cep_frequency": 85,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-ACCORD-PP-AVOIR",
+              "name": "Accord du participe passé avec l'auxiliaire « avoir »",
+              "order": 7,
+              "cep_frequency": 80,
+              "prerequisites": [
+                "ORTH-ACCORD-PP-ETRE"
+              ],
+              "common_mistakes": [
+                "Accorder le participe passé avec le sujet au lieu du COD",
+                "Oublier l'accord quand le COD est placé avant le verbe",
+                "Ne pas identifier le COD dans la phrase"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Correction d'erreur",
+                "Dictée",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 12 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-ACCORD-PP-AVOIR::MS01",
+                  "name": "Appliquer la règle : pas d'accord quand le COD est après le verbe ou absent",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-ACCORD-PP-AVOIR::MS02",
+                  "name": "Accorder le participe passé quand le COD est placé avant le verbe",
+                  "order": 2,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 10 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-ACCORD-PP-AVOIR::MS03",
+                  "name": "Identifier le COD et sa position par rapport au verbe",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 10 phrases",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-ADVERBES-MENT",
+              "name": "Graphie des adverbes en « -ment »",
+              "order": 8,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre -ment et -mment (prudemment vs prudement)",
+                "Ne pas partir du féminin de l'adjectif pour former l'adverbe",
+                "Erreurs avec les adjectifs en -ent/-ant (patiemment, couramment)"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Transformation",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-ADVERBES-MENT::MS01",
+                  "name": "Former un adverbe en -ment à partir d'un adjectif (règle générale : féminin + -ment)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "why": "Formation de l'adverbe (même règle, perspective vocabulaire)",
+                      "skill_id": "VOCAB-SUFFIXE-MENT",
+                      "micro_skill_id": "VOCAB-SUFFIXE-MENT::MS01"
+                    },
+                    {
+                      "why": "Fonction de l'adverbe en grammaire",
+                      "skill_id": "GRAM-ADVERBE-MENT",
+                      "micro_skill_id": "GRAM-ADVERBE-MENT::MS01"
+                    }
+                  ]
+                },
+                {
+                  "external_id": "ORTH-ADVERBES-MENT::MS02",
+                  "name": "Connaître les cas particuliers : adjectifs en -ent → -emment, en -ant → -amment",
+                  "order": 2,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-ACCORD-PP-GENERAL",
+              "name": "Accord du participe passé (synthèse et bilan)",
+              "order": 9,
+              "cep_frequency": 90,
+              "prerequisites": [
+                "ORTH-ACCORD-PP-ETRE",
+                "ORTH-ACCORD-PP-AVOIR"
+              ],
+              "common_mistakes": [
+                "Confondre les règles d'accord avec être et avoir",
+                "Ne pas identifier l'auxiliaire utilisé",
+                "Oublier les cas particuliers des verbes pronominaux"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Correction d'erreur",
+                "Dictée",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 12 exercices mixtes",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-ACCORD-PP-GENERAL::MS01",
+                  "name": "Identifier l'auxiliaire (être ou avoir) et appliquer la règle d'accord correspondante",
+                  "order": 1,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 12 exercices mixtes",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-ACCORD-PP-GENERAL::MS02",
+                  "name": "Corriger les erreurs d'accord du participe passé dans un texte",
+                  "order": 2,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% des erreurs détectées dans un texte de 10 lignes",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ORTH-DICTEE",
+              "name": "Dictée (entraînement régulier)",
+              "order": 10,
+              "cep_frequency": 100,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Fautes d'accord (sujet-verbe, participes passés)",
+                "Confusion des homophones",
+                "Oubli des accents et de la ponctuation",
+                "Erreurs de segmentation des mots"
+              ],
+              "exercise_types": [
+                "Dictée",
+                "Auto-correction"
+              ],
+              "mastery_threshold": "Moins de 5 erreurs sur une dictée de 80 mots",
+              "micro_skills": [
+                {
+                  "external_id": "ORTH-DICTEE::MS01",
+                  "name": "Écrire sous la dictée un texte de 60-80 mots avec moins de 5 erreurs",
+                  "order": 1,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Moins de 5 erreurs sur 3 dictées consécutives",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Dictée"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ORTH-DICTEE::MS02",
+                  "name": "Relire et corriger sa dictée en vérifiant les accords et les homophones",
+                  "order": 2,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "Corriger au moins 50% de ses erreurs à la relecture",
+                  "cep_frequency": 100,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Auto-correction"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "why": "Vérifier les accords sujet-verbe",
+                      "skill_id": "ORTH-ACCORD-VERBE-SUJET",
+                      "micro_skill_id": "ORTH-ACCORD-VERBE-SUJET::MS02"
+                    },
+                    {
+                      "why": "Vérifier les homophones",
+                      "skill_id": "ORTH-HOMOPHONES-ON-ONT",
+                      "micro_skill_id": "ORTH-HOMOPHONES-ON-ONT::MS01"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vocabulaire",
+          "slug": "vocabulaire",
+          "order": 5,
+          "skills": [
+            {
+              "external_id": "VOCAB-PREFIXE-IN-IM",
+              "name": "Étude du préfixe « in- / im- »",
+              "order": 1,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre 'in-' et 'im-' (im- devant b, m, p)",
+                "Ne pas reconnaître le sens de négation du préfixe",
+                "Confondre le préfixe in- (négation) avec in- (dans)"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Transformation",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "VOCAB-PREFIXE-IN-IM::MS01",
+                  "name": "Former le contraire d'un mot avec le préfixe in- ou im-",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 mots",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "VOCAB-PREFIXE-IN-IM::MS02",
+                  "name": "Appliquer la règle : im- devant b, m, p (impossible, immeuble, imbattable)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "VOCAB-PREFIXES-IN-IM-IR-IL",
+              "name": "Étude des préfixes « in-, im-, ir-, il- » (négation)",
+              "order": 2,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "VOCAB-PREFIXE-IN-IM"
+              ],
+              "common_mistakes": [
+                "Confondre ir- et il- (irréel vs illégal)",
+                "Ne pas reconnaître quand utiliser ir- (devant r) et il- (devant l)",
+                "Appliquer le mauvais préfixe de négation"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Transformation",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "VOCAB-PREFIXES-IN-IM-IR-IL::MS01",
+                  "name": "Choisir le bon préfixe de négation selon la lettre initiale du mot (in-, im-, ir-, il-)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 mots",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "VOCAB-PREFIXES-IN-IM-IR-IL::MS02",
+                  "name": "Former le contraire de mots commençant par r ou l avec ir- et il-",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "VOCAB-SUFFIXE-EL",
+              "name": "Étude du suffixe « -el » (qualité liée à ce nom)",
+              "order": 3,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre -el et -al (mortel vs moral)",
+                "Oublier que -el exprime une qualité liée au nom (formel, virtuel)",
+                "Erreurs d'orthographe (materiel vs matériel)"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Transformation",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "VOCAB-SUFFIXE-EL::MS01",
+                  "name": "Former un adjectif avec le suffixe -el à partir d'un nom (industrie → industriel)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 mots",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "VOCAB-SUFFIXE-EL::MS02",
+                  "name": "Comprendre le sens du suffixe -el (qualité liée au nom de base)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "VOCAB-PREFIXE-INTER",
+              "name": "Étude du préfixe « inter- »",
+              "order": 4,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas reconnaître le sens de 'entre' du préfixe inter-",
+                "Confondre inter- et intra-",
+                "Erreurs d'orthographe (international vs internasional)"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Choix multiples",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "VOCAB-PREFIXE-INTER::MS01",
+                  "name": "Comprendre le sens du préfixe inter- (entre, réciproque) et l'utiliser pour deviner le sens d'un mot",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 8 mots",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "VOCAB-PREFIXE-INTER::MS02",
+                  "name": "Former des mots avec le préfixe inter- (classe → interclasse, national → international)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "VOCAB-PREFIXE-TRANS",
+              "name": "Étude du préfixe « trans- »",
+              "order": 5,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas reconnaître le sens de 'à travers' du préfixe trans-",
+                "Confondre trans- et tra- (traverser)",
+                "Erreurs d'orthographe (transport vs tranport)"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Choix multiples",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "VOCAB-PREFIXE-TRANS::MS01",
+                  "name": "Comprendre le sens du préfixe trans- (à travers, au-delà) et l'utiliser pour deviner le sens d'un mot",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 8 mots",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "VOCAB-PREFIXE-TRANS::MS02",
+                  "name": "Former des mots avec le préfixe trans- et en déduire le sens",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "VOCAB-SUFFIXE-MENT",
+              "name": "Étude du suffixe « -ment » (formation d'adverbes)",
+              "order": 6,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre le suffixe -ment (adverbe) et le nom 'ment' (mensonge)",
+                "Ne pas partir du féminin de l'adjectif",
+                "Erreurs avec les cas particuliers (-emment, -amment)"
+              ],
+              "exercise_types": [
+                "Transformation",
+                "Compléter",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "VOCAB-SUFFIXE-MENT::MS01",
+                  "name": "Former un adverbe en -ment à partir d'un adjectif",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 10 adjectifs",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Transformation"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "why": "Orthographe de l'adverbe en -ment (cas particuliers)",
+                      "skill_id": "ORTH-ADVERBES-MENT",
+                      "micro_skill_id": "ORTH-ADVERBES-MENT::MS02"
+                    }
+                  ]
+                },
+                {
+                  "external_id": "VOCAB-SUFFIXE-MENT::MS02",
+                  "name": "Identifier le sens d'un adverbe en -ment dans une phrase (manière, intensité)",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 6 phrases",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lexique thématique",
+          "slug": "lexique-thematique",
+          "order": 6,
+          "skills": [
+            {
+              "external_id": "LEX-CORPS-HUMAIN",
+              "name": "Lexique du corps humain et de la santé",
+              "order": 1,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les organes internes et externes",
+                "Ne pas connaître le vocabulaire des maladies courantes",
+                "Erreurs d'orthographe sur les termes médicaux courants"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Associer",
+                "Compléter",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "LEX-CORPS-HUMAIN::MS01",
+                  "name": "Nommer et orthographier correctement les parties du corps humain et les organes principaux",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "90% sur 15 mots",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LEX-CORPS-HUMAIN::MS02",
+                  "name": "Utiliser le vocabulaire de la santé et des maladies courantes dans des phrases",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LEX-ENVIRONNEMENT-NATURE",
+              "name": "Lexique de l'environnement et de la nature",
+              "order": 2,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les termes liés à la faune et la flore",
+                "Ne pas connaître le vocabulaire du climat",
+                "Erreurs sur les termes géographiques"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Associer",
+                "Compléter"
+              ],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "LEX-ENVIRONNEMENT-NATURE::MS01",
+                  "name": "Nommer et orthographier les éléments de la nature (arbres, animaux, rivières, montagnes, climat)",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "85% sur 15 mots",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LEX-ENVIRONNEMENT-NATURE::MS02",
+                  "name": "Utiliser le vocabulaire de l'environnement dans des textes descriptifs",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LEX-VIE-QUOTIDIENNE",
+              "name": "Lexique de la vie quotidienne (famille, école, marché, métiers)",
+              "order": 3,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Vocabulaire limité pour décrire les activités quotidiennes",
+                "Confondre les termes liés aux métiers",
+                "Difficulté à utiliser les mots du marché dans des phrases"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Compléter",
+                "Réponse courte",
+                "Rédaction"
+              ],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "LEX-VIE-QUOTIDIENNE::MS01",
+                  "name": "Nommer et orthographier le vocabulaire de la famille, de l'école, du marché et des métiers courants",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "85% sur 15 mots",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LEX-VIE-QUOTIDIENNE::MS02",
+                  "name": "Utiliser ce vocabulaire dans des phrases et des textes courts",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LEX-SYNONYMES-ANTONYMES",
+              "name": "Synonymes, antonymes et familles de mots",
+              "order": 4,
+              "cep_frequency": 65,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre synonyme et antonyme",
+                "Ne pas trouver de synonyme pour les mots courants",
+                "Ne pas comprendre la notion de famille de mots (radical commun)"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Associer",
+                "Compléter",
+                "Transformation"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "LEX-SYNONYMES-ANTONYMES::MS01",
+                  "name": "Trouver le synonyme ou l'antonyme d'un mot courant",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 paires",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LEX-SYNONYMES-ANTONYMES::MS02",
+                  "name": "Identifier et former des familles de mots à partir d'un radical commun",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LEX-SYNONYMES-ANTONYMES::MS03",
+                  "name": "Utiliser des synonymes pour éviter les répétitions dans un texte",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 5 exercices de réécriture",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lecture et Compréhension de texte",
+          "slug": "lecture-comprehension",
+          "order": 7,
+          "skills": [
+            {
+              "external_id": "LECT-COMP-TEXTE-NARRATIF",
+              "name": "Comprendre un texte narratif (récit, conte, nouvelle)",
+              "order": 1,
+              "cep_frequency": 90,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas identifier les personnages principaux",
+                "Confondre les événements dans l'ordre chronologique",
+                "Ne pas distinguer les informations explicites des informations implicites",
+                "Répondre sans relire le passage concerné"
+              ],
+              "exercise_types": [
+                "Compréhension de texte",
+                "Choix multiples",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 5 textes narratifs avec questions",
+              "micro_skills": [
+                {
+                  "external_id": "LECT-COMP-TEXTE-NARRATIF::MS01",
+                  "name": "Identifier les personnages, le lieu, le temps et l'action principale d'un texte narratif",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% d'identification correcte sur 5 textes",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LECT-COMP-TEXTE-NARRATIF::MS02",
+                  "name": "Distinguer les informations explicites (écrites dans le texte) des informations implicites (à déduire)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 questions",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LECT-COMP-TEXTE-NARRATIF::MS03",
+                  "name": "Résumer un texte narratif en identifiant les étapes clés (situation initiale, péripéties, dénouement)",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "Résumé fidèle en 5 lignes max",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LECT-COMP-TEXTE-NARRATIF::MS04",
+                  "name": "Répondre à des questions de compréhension en justifiant par le texte",
+                  "order": 4,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% de réponses justifiées sur 3 textes",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LECT-COMP-TEXTE-INFORMATIF",
+              "name": "Comprendre un texte informatif (documentaire, article, notice)",
+              "order": 2,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre opinion et fait",
+                "Ne pas repérer l'idée principale de chaque paragraphe",
+                "Difficulté à extraire les informations-clés d'un texte dense"
+              ],
+              "exercise_types": [
+                "Compréhension de texte",
+                "Choix multiples",
+                "Réponse courte",
+                "Vrai/Faux"
+              ],
+              "mastery_threshold": "80% sur 5 textes informatifs",
+              "micro_skills": [
+                {
+                  "external_id": "LECT-COMP-TEXTE-INFORMATIF::MS01",
+                  "name": "Identifier le sujet et l'idée principale d'un texte informatif",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 textes",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LECT-COMP-TEXTE-INFORMATIF::MS02",
+                  "name": "Extraire des informations précises d'un texte informatif (chiffres, dates, noms, faits)",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 5 textes",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LECT-COMP-TEXTE-INFORMATIF::MS03",
+                  "name": "Distinguer fait et opinion dans un texte",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 phrases",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LECT-COMP-TEXTE-DIALOGUE",
+              "name": "Comprendre un texte dialogué (dialogue, théâtre)",
+              "order": 3,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre les répliques des personnages",
+                "Ne pas identifier le registre de langue utilisé",
+                "Ne pas comprendre les didascalies"
+              ],
+              "exercise_types": [
+                "Compréhension de texte",
+                "Choix multiples",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "80% sur 3 textes dialogués",
+              "micro_skills": [
+                {
+                  "external_id": "LECT-COMP-TEXTE-DIALOGUE::MS01",
+                  "name": "Identifier qui parle dans un dialogue et le ton employé",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 dialogues",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LECT-COMP-TEXTE-DIALOGUE::MS02",
+                  "name": "Comprendre les intentions et sentiments des personnages à travers leurs répliques",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 4 dialogues",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LECT-VOCABULAIRE-CONTEXTE",
+              "name": "Comprendre le vocabulaire en contexte",
+              "order": 4,
+              "cep_frequency": 80,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Donner le sens courant au lieu du sens contextuel",
+                "Ne pas utiliser les indices du texte pour deviner le sens",
+                "Confondre sens propre et sens figuré"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse courte",
+                "Compléter"
+              ],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "LECT-VOCABULAIRE-CONTEXTE::MS01",
+                  "name": "Deviner le sens d'un mot inconnu à partir du contexte de la phrase",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 10 mots",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LECT-VOCABULAIRE-CONTEXTE::MS02",
+                  "name": "Distinguer le sens propre et le sens figuré d'un mot ou d'une expression",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 expressions",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LECT-LECTURE-FLUIDE",
+              "name": "Lecture fluide et expressive à voix haute",
+              "order": 5,
+              "cep_frequency": 40,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Lecture hachée (mot par mot)",
+                "Mauvaise intonation (interrogation, exclamation)",
+                "Ne pas respecter la ponctuation"
+              ],
+              "exercise_types": [
+                "Lecture à voix haute",
+                "Auto-évaluation"
+              ],
+              "mastery_threshold": "Lecture fluide d'un texte de 15 lignes en moins de 3 minutes",
+              "micro_skills": [
+                {
+                  "external_id": "LECT-LECTURE-FLUIDE::MS01",
+                  "name": "Lire un texte à voix haute avec fluidité, en respectant la ponctuation et l'intonation",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Lecture fluide de 3 textes",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LECT-LECTURE-FLUIDE::MS02",
+                  "name": "Adapter son intonation au type de phrase (interrogative, exclamative, impérative)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Intonation correcte sur 80% des phrases",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Expression écrite",
+          "slug": "expression-ecrite",
+          "order": 8,
+          "skills": [
+            {
+              "external_id": "EXPR-PORTRAIT",
+              "name": "Le portrait",
+              "order": 1,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas organiser la description (physique puis moral)",
+                "Utiliser un vocabulaire pauvre et répétitif",
+                "Oublier les traits de caractère (portrait moral)",
+                "Ne pas utiliser d'adjectifs qualificatifs variés"
+              ],
+              "exercise_types": [
+                "Rédaction",
+                "Compléter",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "Portrait complet (physique + moral) de 10 lignes minimum",
+              "micro_skills": [
+                {
+                  "external_id": "EXPR-PORTRAIT::MS01",
+                  "name": "Rédiger un portrait physique en utilisant des adjectifs variés (taille, corpulence, visage, cheveux, vêtements...)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Portrait physique cohérent de 5 lignes",
+                  "cep_frequency": 65,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-PORTRAIT::MS02",
+                  "name": "Rédiger un portrait moral en décrivant le caractère, les qualités et les défauts",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Portrait moral cohérent de 5 lignes",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-PORTRAIT::MS03",
+                  "name": "Organiser un portrait complet (du physique au moral, du général au particulier)",
+                  "order": 3,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Portrait structuré de 10 lignes",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EXPR-LETTRE-PERSONNELLE",
+              "name": "La lettre personnelle ou familière",
+              "order": 2,
+              "cep_frequency": 80,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Oublier la date et le lieu",
+                "Ne pas adapter le ton au destinataire (familier)",
+                "Oublier la formule d'appel ou la formule de politesse",
+                "Ne pas signer la lettre"
+              ],
+              "exercise_types": [
+                "Rédaction",
+                "Compléter",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "Lettre personnelle complète avec tous les éléments",
+              "micro_skills": [
+                {
+                  "external_id": "EXPR-LETTRE-PERSONNELLE::MS01",
+                  "name": "Connaître la mise en page d'une lettre personnelle : lieu, date, formule d'appel, corps, formule de politesse, signature",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "6 éléments cités dans l'ordre",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-LETTRE-PERSONNELLE::MS02",
+                  "name": "Rédiger une lettre personnelle en adaptant le ton familier au destinataire (ami, parent, cousin...)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Lettre complète et cohérente de 10 lignes",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EXPR-LETTRE-ADMINISTRATIVE",
+              "name": "La lettre administrative ou officielle",
+              "order": 3,
+              "cep_frequency": 75,
+              "prerequisites": [
+                "EXPR-LETTRE-PERSONNELLE"
+              ],
+              "common_mistakes": [
+                "Utiliser un ton trop familier",
+                "Oublier l'objet de la lettre",
+                "Ne pas utiliser les formules de politesse formelles",
+                "Confondre la mise en page d'une lettre familière et officielle"
+              ],
+              "exercise_types": [
+                "Rédaction",
+                "Compléter",
+                "Correction d'erreur",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "Lettre administrative complète avec ton approprié",
+              "micro_skills": [
+                {
+                  "external_id": "EXPR-LETTRE-ADMINISTRATIVE::MS01",
+                  "name": "Connaître la mise en page d'une lettre officielle : expéditeur, destinataire, lieu/date, objet, formule d'appel, corps, formule de politesse, signature",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "8 éléments cités dans l'ordre",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-LETTRE-ADMINISTRATIVE::MS02",
+                  "name": "Rédiger une lettre administrative en utilisant un ton formel et des formules de politesse appropriées",
+                  "order": 2,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Lettre officielle complète et cohérente",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-LETTRE-ADMINISTRATIVE::MS03",
+                  "name": "Distinguer lettre personnelle et lettre administrative par le ton, la mise en page et les formules utilisées",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 6 exercices comparatifs",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EXPR-AFFICHE",
+              "name": "L'affiche",
+              "order": 4,
+              "cep_frequency": 50,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Trop de texte sur l'affiche (pas assez synthétique)",
+                "Oublier les informations essentielles (quoi, quand, où)",
+                "Message pas assez clair ou accrocheur",
+                "Pas de hiérarchie visuelle de l'information"
+              ],
+              "exercise_types": [
+                "Rédaction",
+                "Compléter",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "Affiche complète avec message clair et informations essentielles",
+              "micro_skills": [
+                {
+                  "external_id": "EXPR-AFFICHE::MS01",
+                  "name": "Identifier les éléments d'une affiche : titre accrocheur, image, informations essentielles (quoi, quand, où), émetteur",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "4 éléments identifiés",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-AFFICHE::MS02",
+                  "name": "Rédiger le texte d'une affiche de manière synthétique et accrocheuse",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Affiche avec message clair en moins de 50 mots",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EXPR-COMPTE-RENDU",
+              "name": "Le compte rendu",
+              "order": 5,
+              "cep_frequency": 55,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre compte rendu et récit (le compte rendu est factuel)",
+                "Ne pas respecter l'ordre chronologique des événements",
+                "Ajouter des opinions personnelles au lieu de rester objectif",
+                "Oublier de mentionner les participants, le lieu ou la date"
+              ],
+              "exercise_types": [
+                "Rédaction",
+                "Compléter",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "Compte rendu objectif et structuré de 10 lignes",
+              "micro_skills": [
+                {
+                  "external_id": "EXPR-COMPTE-RENDU::MS01",
+                  "name": "Identifier les caractéristiques d'un compte rendu : objectivité, faits, ordre chronologique",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 5 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-COMPTE-RENDU::MS02",
+                  "name": "Rédiger un compte rendu d'événement (sortie, cérémonie, réunion) en restant objectif et chronologique",
+                  "order": 2,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Compte rendu structuré de 10 lignes",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EXPR-ARTICLE-JOURNAL",
+              "name": "L'article de journal",
+              "order": 6,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "EXPR-COMPTE-RENDU"
+              ],
+              "common_mistakes": [
+                "Oublier le titre accrocheur",
+                "Ne pas répondre aux questions essentielles (qui, quoi, quand, où, pourquoi, comment)",
+                "Confondre article informatif et article d'opinion",
+                "Ne pas structurer en chapeau puis développement"
+              ],
+              "exercise_types": [
+                "Rédaction",
+                "Compléter",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "Article de journal complet avec titre et réponse aux 5W",
+              "micro_skills": [
+                {
+                  "external_id": "EXPR-ARTICLE-JOURNAL::MS01",
+                  "name": "Connaître la structure d'un article de journal : titre, chapeau (résumé), développement",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "3 éléments identifiés",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-ARTICLE-JOURNAL::MS02",
+                  "name": "Rédiger un article de journal en répondant aux questions essentielles (qui, quoi, quand, où, pourquoi)",
+                  "order": 2,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Article complet de 10 lignes",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "EXPR-RECIT",
+              "name": "Le récit",
+              "order": 7,
+              "cep_frequency": 85,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas structurer le récit (situation initiale, élément perturbateur, péripéties, dénouement, situation finale)",
+                "Incohérence dans les temps du récit (mélange passé composé / passé simple / imparfait)",
+                "Manque de connecteurs logiques et temporels",
+                "Oublier les descriptions et les dialogues"
+              ],
+              "exercise_types": [
+                "Rédaction",
+                "Compléter",
+                "Étapes ordonnées",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "Récit structuré de 15 lignes minimum avec temps cohérents",
+              "micro_skills": [
+                {
+                  "external_id": "EXPR-RECIT::MS01",
+                  "name": "Connaître la structure du récit : situation initiale, élément perturbateur, péripéties, dénouement, situation finale",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "5 étapes identifiées dans un texte",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Étapes ordonnées"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-RECIT::MS02",
+                  "name": "Utiliser les temps du récit de manière cohérente (imparfait pour la description, passé simple/composé pour les actions)",
+                  "order": 2,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% de cohérence temporelle dans un récit de 15 lignes",
+                  "cep_frequency": 75,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "why": "Conjuguer aux temps du récit",
+                      "skill_id": "CONJ-INDICATIF-TEMPS",
+                      "micro_skill_id": "CONJ-INDICATIF-TEMPS::MS01"
+                    }
+                  ]
+                },
+                {
+                  "external_id": "EXPR-RECIT::MS03",
+                  "name": "Utiliser des connecteurs logiques et temporels pour structurer le récit (d'abord, ensuite, puis, enfin, soudain, alors...)",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "5+ connecteurs utilisés dans un récit",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "EXPR-RECIT::MS04",
+                  "name": "Rédiger un récit complet et cohérent de 15 lignes minimum",
+                  "order": 4,
+                  "difficulty_index": 7,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "Récit structuré, cohérent, avec moins de 5 erreurs",
+                  "cep_frequency": 85,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Rédaction"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Poésie et Récitation",
+          "slug": "poesie-recitation",
+          "order": 9,
+          "skills": [
+            {
+              "external_id": "POESIE-COMPREHENSION",
+              "name": "Comprendre un poème : thème, images, sentiments",
+              "order": 1,
+              "cep_frequency": 45,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas identifier le thème du poème",
+                "Confondre rime et rythme",
+                "Ne pas comprendre les images poétiques (métaphore, comparaison)"
+              ],
+              "exercise_types": [
+                "Compréhension de texte",
+                "Réponse courte",
+                "Question ouverte"
+              ],
+              "mastery_threshold": "80% sur 5 poèmes étudiés",
+              "micro_skills": [
+                {
+                  "external_id": "POESIE-COMPREHENSION::MS01",
+                  "name": "Identifier le thème, les sentiments et les images poétiques dans un poème",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 5 poèmes",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "POESIE-COMPREHENSION::MS02",
+                  "name": "Identifier les caractéristiques formelles d'un poème : vers, strophes, rimes",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 4 poèmes",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "POESIE-RECITATION",
+              "name": "Réciter un poème avec expression (épreuve orale CEP)",
+              "order": 2,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "POESIE-COMPREHENSION"
+              ],
+              "common_mistakes": [
+                "Oublier des vers en cours de récitation",
+                "Réciter de manière monotone sans expression",
+                "Ne pas adapter le débit et le volume à la salle"
+              ],
+              "exercise_types": [
+                "Récitation",
+                "Auto-évaluation"
+              ],
+              "mastery_threshold": "Récitation expressive de 3 poèmes mémorisés",
+              "micro_skills": [
+                {
+                  "external_id": "POESIE-RECITATION::MS01",
+                  "name": "Mémoriser intégralement un poème de 12 à 20 vers",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "3 poèmes mémorisés sans erreur",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "POESIE-RECITATION::MS02",
+                  "name": "Réciter avec expression : intonation, pauses, rythme, regard, posture",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Récitation expressive notée 7/10 minimum",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "POESIE-ENTRETIEN-ORAL",
+              "name": "Préparation à l'entretien oral du CEP",
+              "order": 3,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "POESIE-RECITATION"
+              ],
+              "common_mistakes": [
+                "Répondre par oui/non sans développer",
+                "Ne pas comprendre la question posée",
+                "Manque de confiance et voix trop basse",
+                "Ne pas structurer sa réponse"
+              ],
+              "exercise_types": [
+                "Exercice oral",
+                "Question ouverte",
+                "Simulation"
+              ],
+              "mastery_threshold": "Réponses développées et structurées à 5 questions types",
+              "micro_skills": [
+                {
+                  "external_id": "POESIE-ENTRETIEN-ORAL::MS01",
+                  "name": "Répondre à une question orale en structurant sa réponse (introduction, développement, conclusion)",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% de réponses structurées sur 5 questions",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "POESIE-ENTRETIEN-ORAL::MS02",
+                  "name": "S'exprimer avec clarté, volume et assurance devant un adulte",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Expression claire et audible sur 3 simulations",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Écriture",
+          "slug": "ecriture",
+          "order": 10,
+          "skills": [
+            {
+              "external_id": "ECRIT-MAJ-GROUPE-1",
+              "name": "Écriture des majuscules cursives : I, J, H",
+              "order": 1,
+              "cep_frequency": 10,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confusion entre I et J majuscules",
+                "Mauvaise formation des boucles du H"
+              ],
+              "exercise_types": [
+                "Copie",
+                "Écriture dirigée"
+              ],
+              "mastery_threshold": "Lettres lisibles et régulières sur 3 lignes",
+              "micro_skills": [
+                {
+                  "external_id": "ECRIT-MAJ-GROUPE-1::MS01",
+                  "name": "Tracer les majuscules cursives I, J, H avec la bonne formation et les bonnes proportions",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Lettres régulières sur 3 lignes",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ECRIT-MAJ-GROUPE-2",
+              "name": "Écriture des majuscules cursives : K, L, P",
+              "order": 2,
+              "cep_frequency": 10,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Mauvais tracé du P cursif",
+                "Liaisons incorrectes avec la lettre suivante"
+              ],
+              "exercise_types": [
+                "Copie",
+                "Écriture dirigée"
+              ],
+              "mastery_threshold": "Lettres lisibles et régulières",
+              "micro_skills": [
+                {
+                  "external_id": "ECRIT-MAJ-GROUPE-2::MS01",
+                  "name": "Tracer les majuscules cursives K, L, P avec la bonne formation",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Lettres régulières sur 3 lignes",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ECRIT-MAJ-GROUPE-3",
+              "name": "Écriture des majuscules cursives : C, O, G",
+              "order": 3,
+              "cep_frequency": 10,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Fermer le C comme un O",
+                "Mauvaise boucle descendante du G"
+              ],
+              "exercise_types": [
+                "Copie",
+                "Écriture dirigée"
+              ],
+              "mastery_threshold": "Lettres lisibles et régulières",
+              "micro_skills": [
+                {
+                  "external_id": "ECRIT-MAJ-GROUPE-3::MS01",
+                  "name": "Tracer les majuscules cursives C, O, G avec la bonne formation",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Lettres régulières sur 3 lignes",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ECRIT-MAJ-GROUPE-4",
+              "name": "Écriture des majuscules cursives : U, V, W, Y",
+              "order": 4,
+              "cep_frequency": 10,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre V et W",
+                "Mauvais tracé du Y majuscule",
+                "Angulations incorrectes"
+              ],
+              "exercise_types": [
+                "Copie",
+                "Écriture dirigée"
+              ],
+              "mastery_threshold": "Lettres lisibles et régulières",
+              "micro_skills": [
+                {
+                  "external_id": "ECRIT-MAJ-GROUPE-4::MS01",
+                  "name": "Tracer les majuscules cursives U, V, W, Y avec la bonne formation",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Lettres régulières sur 3 lignes",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ECRIT-MAJ-GROUPE-5",
+              "name": "Écriture des majuscules cursives : A, M, N",
+              "order": 5,
+              "cep_frequency": 10,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre M et N (nombre de ponts)",
+                "Mauvaise formation des ponts du A"
+              ],
+              "exercise_types": [
+                "Copie",
+                "Écriture dirigée"
+              ],
+              "mastery_threshold": "Lettres lisibles et régulières",
+              "micro_skills": [
+                {
+                  "external_id": "ECRIT-MAJ-GROUPE-5::MS01",
+                  "name": "Tracer les majuscules cursives A, M, N avec la bonne formation",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Lettres régulières sur 3 lignes",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ECRIT-MAJ-GROUPE-6",
+              "name": "Écriture des majuscules cursives : T, Z",
+              "order": 6,
+              "cep_frequency": 10,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Mauvais tracé de la barre du T",
+                "Confusion du Z cursif avec d'autres lettres"
+              ],
+              "exercise_types": [
+                "Copie",
+                "Écriture dirigée"
+              ],
+              "mastery_threshold": "Lettres lisibles et régulières",
+              "micro_skills": [
+                {
+                  "external_id": "ECRIT-MAJ-GROUPE-6::MS01",
+                  "name": "Tracer les majuscules cursives T, Z avec la bonne formation",
+                  "order": 1,
+                  "difficulty_index": 2,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Lettres régulières sur 3 lignes",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "ECRIT-BILAN",
+              "name": "Écriture : bilan général (toutes les majuscules cursives)",
+              "order": 7,
+              "cep_frequency": 15,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Lettres mal proportionnées entre elles",
+                "Mélange de styles",
+                "Inclinaison irrégulière"
+              ],
+              "exercise_types": [
+                "Copie",
+                "Écriture libre",
+                "Auto-évaluation"
+              ],
+              "mastery_threshold": "Écriture régulière et lisible de toutes les majuscules cursives",
+              "micro_skills": [
+                {
+                  "external_id": "ECRIT-BILAN::MS01",
+                  "name": "Écrire toutes les lettres majuscules cursives de A à Z de manière fluide et régulière",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "26 lettres tracées correctement de mémoire",
+                  "cep_frequency": 15,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "ECRIT-BILAN::MS02",
+                  "name": "Copier un texte en utilisant les majuscules cursives avec régularité de taille, inclinaison et espacement",
+                  "order": 2,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Texte de 5 lignes copié lisiblement",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Langue et Culture",
+          "slug": "langue-et-culture",
+          "order": 11,
+          "skills": [
+            {
+              "external_id": "LANG-COMPTAGE-OBJETS",
+              "name": "Pratique de la langue maternelle : comptage de divers objets",
+              "order": 1,
+              "cep_frequency": 30,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Erreurs de numération en langue maternelle au-delà de 20",
+                "Confondre le comptage classique et le comptage par bonds",
+                "Décomptage difficile"
+              ],
+              "exercise_types": [
+                "Exercice oral",
+                "Comptage",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "Compter de 1 à 100 en langue maternelle sans erreur",
+              "micro_skills": [
+                {
+                  "external_id": "LANG-COMPTAGE-OBJETS::MS01",
+                  "name": "Compter de 1 à 100 en langue maternelle du groupe linguistique",
+                  "order": 1,
+                  "difficulty_index": 3,
+                  "bloom_taxonomy_level": "Mémoriser",
+                  "mastery_threshold": "Comptage fluide de 1 à 100",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Exercice oral"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LANG-COMPTAGE-OBJETS::MS02",
+                  "name": "Compter par bonds selon la pratique du milieu en langue maternelle",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Comptage par bonds correct sur 3 séries",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Comptage"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LANG-COMPTAGE-OBJETS::MS03",
+                  "name": "Décompter (compter à rebours) en langue maternelle",
+                  "order": 3,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Décomptage fluide de 20 à 0",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Exercice oral"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LANG-COMPTAGE-ARGENT",
+              "name": "Pratique de la langue maternelle : comptage d'argent",
+              "order": 2,
+              "cep_frequency": 35,
+              "prerequisites": [
+                "LANG-COMPTAGE-OBJETS"
+              ],
+              "common_mistakes": [
+                "Erreurs de conversion entre pièces et billets en langue maternelle",
+                "Difficulté à rendre la monnaie en langue maternelle",
+                "Confusion entre les termes locaux pour les différentes valeurs"
+              ],
+              "exercise_types": [
+                "Exercice oral",
+                "Simulation",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "Compter de l'argent de 1F à 500 000F en langue maternelle",
+              "micro_skills": [
+                {
+                  "external_id": "LANG-COMPTAGE-ARGENT::MS01",
+                  "name": "Compter de l'argent (de 1F à 500 000F) en langue maternelle",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Comptage correct de billets et pièces variés",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Simulation"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LANG-COMPTAGE-ARGENT::MS02",
+                  "name": "Identifier les pièces et billets et effectuer des échanges en langue maternelle",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Échanges corrects dans 3 simulations",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Simulation"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LANG-COMPTAGE-ARGENT::MS03",
+                  "name": "Rendre ou prendre le reliquat correctement en langue maternelle",
+                  "order": 3,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% de reliquats corrects sur 5 simulations",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Simulation"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LANG-CONTES",
+              "name": "Pratique de la langue maternelle : les contes",
+              "order": 3,
+              "cep_frequency": 30,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Difficulté à résumer un conte en langue maternelle",
+                "Confondre les personnages principaux et secondaires",
+                "Ne pas identifier le message véhiculé par le conte"
+              ],
+              "exercise_types": [
+                "Exercice oral",
+                "Résumé",
+                "Compréhension"
+              ],
+              "mastery_threshold": "Résumer un conte et en identifier le message",
+              "micro_skills": [
+                {
+                  "external_id": "LANG-CONTES::MS01",
+                  "name": "Résumer un conte en langue maternelle (début, milieu, fin)",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "Résumé cohérent d'un conte",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Résumé"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LANG-CONTES::MS02",
+                  "name": "Identifier les personnages et le message véhiculé par le conte",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "Identification correcte pour 2 contes",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compréhension"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LANG-PROVERBES-DEVINETTES",
+              "name": "Pratique de la langue maternelle : proverbes et devinettes",
+              "order": 4,
+              "cep_frequency": 25,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Ne pas comprendre le sens figuré du proverbe",
+                "Difficulté à trouver la réponse des devinettes traditionnelles",
+                "Erreurs de formulation en langue maternelle"
+              ],
+              "exercise_types": [
+                "Exercice oral",
+                "Réponse courte",
+                "Compréhension"
+              ],
+              "mastery_threshold": "Utiliser correctement 5 proverbes et résoudre 5 devinettes",
+              "micro_skills": [
+                {
+                  "external_id": "LANG-PROVERBES-DEVINETTES::MS01",
+                  "name": "Citer et expliquer le sens de proverbes en langue maternelle",
+                  "order": 1,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "5 proverbes expliqués correctement",
+                  "cep_frequency": 15,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Exercice oral"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LANG-PROVERBES-DEVINETTES::MS02",
+                  "name": "Résoudre des devinettes traditionnelles en langue maternelle",
+                  "order": 2,
+                  "difficulty_index": 4,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "5 devinettes résolues",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LANG-TRADUCTION-LETTRE",
+              "name": "Pratique de la langue maternelle : traduction d'une lettre écrite",
+              "order": 5,
+              "cep_frequency": 25,
+              "prerequisites": [
+                "LANG-CONTES"
+              ],
+              "common_mistakes": [
+                "Traduction mot à mot au lieu d'une traduction de sens",
+                "Erreurs de structure grammaticale de la langue maternelle",
+                "Perte du sens global de la lettre"
+              ],
+              "exercise_types": [
+                "Traduction",
+                "Exercice oral",
+                "Rédaction"
+              ],
+              "mastery_threshold": "Traduction compréhensible d'une lettre simple",
+              "micro_skills": [
+                {
+                  "external_id": "LANG-TRADUCTION-LETTRE::MS01",
+                  "name": "Traduire une lettre simple du français en langue maternelle en respectant le sens",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Traduction compréhensible d'une lettre de 5 phrases",
+                  "cep_frequency": 15,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Traduction"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LANG-TRADUCTION-LETTRE::MS02",
+                  "name": "Utiliser les mots et expressions appropriés en langue maternelle (pas de traduction littérale)",
+                  "order": 2,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% d'expressions correctes",
+                  "cep_frequency": 10,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Traduction"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            },
+            {
+              "external_id": "LANG-TRADUCTION-TEXTES",
+              "name": "Traduction de textes ou discours du français en langue maternelle et vice-versa",
+              "order": 6,
+              "cep_frequency": 25,
+              "prerequisites": [
+                "LANG-TRADUCTION-LETTRE"
+              ],
+              "common_mistakes": [
+                "Perte de nuances lors de la traduction",
+                "Erreurs de registre de langue",
+                "Difficulté avec les expressions idiomatiques"
+              ],
+              "exercise_types": [
+                "Traduction",
+                "Exercice oral",
+                "Comparaison"
+              ],
+              "mastery_threshold": "Traduction fidèle d'un texte court dans les deux sens",
+              "micro_skills": [
+                {
+                  "external_id": "LANG-TRADUCTION-TEXTES::MS01",
+                  "name": "Traduire un texte ou récit court du français en langue maternelle",
+                  "order": 1,
+                  "difficulty_index": 5,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Traduction fidèle d'un texte de 10 lignes",
+                  "cep_frequency": 15,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Traduction"
+                  ],
+                  "external_prerequisites": []
+                },
+                {
+                  "external_id": "LANG-TRADUCTION-TEXTES::MS02",
+                  "name": "Traduire un texte ou discours de la langue maternelle en français",
+                  "order": 2,
+                  "difficulty_index": 6,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "Traduction fidèle d'un texte de 10 lignes",
+                  "cep_frequency": 15,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Traduction"
+                  ],
+                  "external_prerequisites": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

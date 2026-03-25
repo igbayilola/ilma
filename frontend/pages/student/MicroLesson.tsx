@@ -30,7 +30,7 @@ export const MicroLessonPage: React.FC = () => {
     if (isLoading) return <div className="p-8 text-center text-gray-400">Chargement de la leçon...</div>;
 
     if (!lesson) return (
-        <div className="min-h-screen bg-ilma-surface flex flex-col items-center justify-center p-8 text-center">
+        <div className="min-h-screen bg-sitou-surface flex flex-col items-center justify-center p-8 text-center">
             <BookOpen size={48} className="text-gray-300 mb-4" />
             <h2 className="text-xl font-bold text-gray-700 mb-2">Aucune leçon disponible</h2>
             <p className="text-gray-500 mb-6">Cette compétence n'a pas encore de micro-leçon associée.</p>
@@ -44,12 +44,12 @@ export const MicroLessonPage: React.FC = () => {
         : ['Contenu de la leçon'];
 
     return (
-        <div className="min-h-screen bg-ilma-surface md:bg-white flex flex-col max-w-3xl mx-auto md:shadow-xl md:min-h-0 md:h-screen">
+        <div className="min-h-screen bg-sitou-surface md:bg-white flex flex-col max-w-3xl mx-auto md:shadow-xl md:min-h-0 md:h-screen">
             <header className="p-4 bg-white border-b border-gray-100 sticky top-0 z-20 flex items-center justify-between">
-                <button onClick={() => navigate(returnPath)} className="flex items-center text-gray-500 font-bold text-sm hover:text-ilma-primary">
+                <button onClick={() => navigate(returnPath)} className="flex items-center text-gray-500 font-bold text-sm hover:text-sitou-primary">
                     <ArrowLeft size={20} className="mr-1" /> Retour à l'exercice
                 </button>
-                <div className="flex items-center text-ilma-primary font-bold bg-amber-50 px-3 py-1 rounded-full text-xs">
+                <div className="flex items-center text-sitou-primary font-bold bg-amber-50 px-3 py-1 rounded-full text-xs">
                     <BookOpen size={14} className="mr-2" />
                     Micro-leçon • {lesson.durationMinutes} min
                 </div>

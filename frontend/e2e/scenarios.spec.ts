@@ -13,7 +13,7 @@ const loginAs = async (page: any, role: 'student' | 'parent' | 'admin') => {
   await page.getByRole('button', { name: 'Se connecter' }).click();
 };
 
-test.describe('ILMA Core User Flows', () => {
+test.describe('Sitou Core User Flows', () => {
 
   test('Student can login and see dashboard', async ({ page }) => {
     await loginAs(page, 'student');

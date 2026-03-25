@@ -12,7 +12,7 @@ export interface ApiErrorResponse {
 export interface LoginRequest {
   email?: string;
   password?: string;
-  phone?: string; // ILMA specific
+  phone?: string; // Sitou specific
 }
 
 export interface LoginResponse {

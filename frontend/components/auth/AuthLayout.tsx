@@ -22,7 +22,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
           {subtitle && <p className="text-gray-500 mt-2">{subtitle}</p>}
         </div>
 
-        <div className="bg-white rounded-3xl shadow-clay p-6 md:p-8 border border-ilma-border clay-card">
+        <div className="bg-white rounded-3xl shadow-clay p-6 md:p-8 border border-sitou-border clay-card">
           {children}
         </div>
 

@@ -70,7 +70,7 @@ export const ParentSettingsPage: React.FC = () => {
             {/* Notifications Channels */}
             <Card>
                 <div className="flex items-center mb-6">
-                    <div className="p-2 bg-blue-100 rounded-lg mr-3 text-ilma-primary">
+                    <div className="p-2 bg-blue-100 rounded-lg mr-3 text-sitou-primary">
                         <Bell size={24} />
                     </div>
                     <div>

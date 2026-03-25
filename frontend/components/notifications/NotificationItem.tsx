@@ -76,7 +76,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({ notification
   return (
     <div 
         onClick={handleClick}
-        className={`relative flex p-4 rounded-xl cursor-pointer transition-all border mb-3 ${styles.bg} ${styles.border} ${!notification.read ? 'border-l-4 border-l-ilma-primary shadow-sm' : ''}`}
+        className={`relative flex p-4 rounded-xl cursor-pointer transition-all border mb-3 ${styles.bg} ${styles.border} ${!notification.read ? 'border-l-4 border-l-sitou-primary shadow-sm' : ''}`}
     >
       <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mr-4 shadow-sm ${styles.iconBg}`}>
         {getIcon()}
@@ -95,7 +95,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({ notification
       </div>
 
       {!notification.read && (
-        <div className="absolute top-4 right-4 w-2 h-2 bg-ilma-primary rounded-full"></div>
+        <div className="absolute top-4 right-4 w-2 h-2 bg-sitou-primary rounded-full"></div>
       )}
     </div>
   );

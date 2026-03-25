@@ -222,7 +222,7 @@ async def _send_parent_weekly_digest() -> int:
                 db=db,
                 user_id=parent.id,
                 type=NotificationType.WEEKLY_REPORT,
-                title="Résumé hebdomadaire ILMA",
+                title="Résumé hebdomadaire Sitou",
                 body=body,
                 phone=parent.phone,
             )

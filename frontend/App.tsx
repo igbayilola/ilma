@@ -18,7 +18,7 @@ function lazyWithRetry<T extends React.ComponentType<any>>(
 ): React.LazyExoticComponent<T> {
   return React.lazy(() =>
     factory().catch((err) => {
-      const key = 'ilma_chunk_retry';
+      const key = 'sitou_chunk_retry';
       const hasRetried = sessionStorage.getItem(key);
       if (!hasRetried) {
         sessionStorage.setItem(key, '1');
@@ -102,7 +102,7 @@ const UnauthorizedPage = lazyNamed(() => import('./pages/Placeholders'), 'Unauth
 // Global Loading Fallback
 const PageLoader = () => (
     <div className="w-full h-screen flex flex-col items-center justify-center space-y-4 p-8">
-        <div className="w-12 h-12 border-4 border-ilma-primary-light border-t-ilma-primary rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-sitou-primary-light border-t-sitou-primary rounded-full animate-spin"></div>
         <Skeleton variant="text" className="w-32 mx-auto" />
     </div>
 );

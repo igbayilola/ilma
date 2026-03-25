@@ -124,7 +124,7 @@ async def trigger_digest(
         db=db,
         user_id=current_user.id,
         type=NotificationType.WEEKLY_REPORT,
-        title="Résumé hebdomadaire ILMA",
+        title="Résumé hebdomadaire Sitou",
         body=body,
         phone=current_user.phone,
     )
