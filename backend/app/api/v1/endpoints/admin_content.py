@@ -60,7 +60,7 @@ from app.services.exercise_import_service import (
 
 router = APIRouter(prefix="/admin/content", tags=["Admin - Content"])
 
-_admin = require_role(UserRole.ADMIN)
+_admin = require_role(UserRole.ADMIN, UserRole.EDITOR)
 
 
 # ── Versioning helpers ─────────────────────────────────────

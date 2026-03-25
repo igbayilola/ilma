@@ -10,11 +10,12 @@ from app.models.base import BaseMixin
 
 
 class UserRole(str, enum.Enum):
-    ADMIN = "admin"
-    PARENT = "parent"
-    STUDENT = "student"
-    TEACHER = "teacher"
-    GUEST = "guest"
+    ADMIN = "ADMIN"
+    EDITOR = "EDITOR"
+    PARENT = "PARENT"
+    STUDENT = "STUDENT"
+    TEACHER = "TEACHER"
+    GUEST = "GUEST"
 
 
 class User(Base, BaseMixin):

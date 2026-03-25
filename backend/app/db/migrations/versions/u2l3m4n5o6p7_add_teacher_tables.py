@@ -18,7 +18,7 @@ depends_on = None
 
 def upgrade() -> None:
     # Add 'teacher' to userrole enum
-    op.execute("ALTER TYPE userrole ADD VALUE IF NOT EXISTS 'teacher'")
+    op.execute("ALTER TYPE userrole ADD VALUE IF NOT EXISTS 'TEACHER'")
 
     # Create classrooms table
     op.create_table(

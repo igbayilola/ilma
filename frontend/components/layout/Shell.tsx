@@ -8,7 +8,7 @@ import {
   Home, BookOpen, Award, User, Menu, Bell, Trophy,
   Settings, LogOut, X, ChevronRight, FileEdit,
   LayoutDashboard, Users, FileText, BarChart2, Shield, Target, AlertTriangle, Crown, Cloud, ArrowLeftRight,
-  School, ClipboardList
+  School, ClipboardList, FileQuestion
 } from 'lucide-react';
 import { OfflineBanner, SyncCounter } from '../ilma/OfflineIndicators';
 import { XPBar, StreakWidget, LEVEL_NAMES } from '../ilma/Gamification';
@@ -36,6 +36,11 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Mes Classes', path: '/app/teacher/dashboard', icon: 'School', allowedRoles: [UserRole.TEACHER] },
   { label: 'Alertes', path: '/app/teacher/dashboard', icon: 'AlertTriangle', allowedRoles: [UserRole.TEACHER] },
 
+  // Editor
+  { label: 'Dashboard', path: '/app/editor/dashboard', icon: 'LayoutDashboard', allowedRoles: [UserRole.EDITOR] },
+  { label: 'Programme', path: '/app/editor/programme', icon: 'BookOpen', allowedRoles: [UserRole.EDITOR] },
+  { label: 'Questions', path: '/app/editor/questions', icon: 'FileQuestion', allowedRoles: [UserRole.EDITOR] },
+
   // Admin
   { label: 'Dashboard', path: '/app/admin/dashboard', icon: 'LayoutDashboard', allowedRoles: [UserRole.ADMIN] },
   { label: 'Contenu', path: '/app/admin/content', icon: 'FileText', allowedRoles: [UserRole.ADMIN] },
@@ -61,6 +66,7 @@ const IconMap: Record<string, React.ReactNode> = {
   FileEdit: <FileEdit size={24} />,
   School: <School size={24} />,
   ClipboardList: <ClipboardList size={24} />,
+  FileQuestion: <FileQuestion size={24} />,
 };
 
 // --- Sync-aware logout guard ---

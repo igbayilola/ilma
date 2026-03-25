@@ -79,6 +79,8 @@ export const GuestRoute: React.FC = () => {
 
         const home = user.role === UserRole.ADMIN
             ? '/app/admin/dashboard'
+            : user.role === UserRole.EDITOR
+            ? '/app/editor/dashboard'
             : user.role === UserRole.TEACHER
             ? '/app/teacher/dashboard'
             : (!activeProfile ? '/select-profile' : '/app/student/dashboard');

@@ -35,6 +35,7 @@ _CM2_MATHS_DIR = _WORKDIR / "cm2_maths"
 SEED_USERS = [
     {"email": "admin@ilma.bj", "full_name": "Administrateur ILMA", "role": UserRole.ADMIN, "password": "Xr;aTRKMx_1CI1Wd@HF1c!9"},
     {"email": "parent@ilma.bj", "full_name": "Koffi Mensah", "role": UserRole.PARENT, "password": "Xr;aTRKMx_1CI1Wd@HF1c!9"},
+    {"email": "editeur@ilma.bj", "full_name": "Éditeur Contenu", "role": UserRole.EDITOR, "password": "Xr;aTRKMx_1CI1Wd@HF1c!9"},
     {"email": "eleve@ilma.bj", "full_name": "Afi Mensah", "role": UserRole.STUDENT, "password": "Xr;aTRKMx_1CI1Wd@HF1c!9"},
     {"email": "eleve2@ilma.bj", "full_name": "Kofi Junior", "role": UserRole.STUDENT, "password": "Xr;aTRKMx_1CI1Wd@HF1c!9"},
 ]

@@ -90,6 +90,11 @@ const AdminAnalyticsPage = lazyNamed(() => import('./pages/admin/Analytics'), 'A
 const AdminConfigPage = lazyNamed(() => import('./pages/admin/Config'), 'AdminConfigPage');
 const AdminEditorialPage = lazyNamed(() => import('./pages/admin/Editorial'), 'AdminEditorialPage');
 
+// Editor Pages
+const EditorDashboard = lazyNamed(() => import('./pages/editor/Dashboard'), 'EditorDashboard');
+const EditorProgramme = lazyNamed(() => import('./pages/editor/Programme'), 'EditorProgramme');
+const EditorQuestions = lazyNamed(() => import('./pages/editor/Questions'), 'EditorQuestions');
+
 // Other Pages
 const DebugSyncPage = lazyNamed(() => import('./pages/DebugSync'), 'DebugSyncPage');
 const UnauthorizedPage = lazyNamed(() => import('./pages/Placeholders'), 'UnauthorizedPage');
@@ -144,6 +149,7 @@ const App: React.FC = () => {
 
       switch(user.role) {
           case UserRole.ADMIN: return '/app/admin/dashboard';
+          case UserRole.EDITOR: return '/app/editor/dashboard';
           case UserRole.TEACHER: return '/app/teacher/dashboard';
           case UserRole.PARENT:
           default:
@@ -241,6 +247,13 @@ const App: React.FC = () => {
                                     <Route path="analytics" element={<AdminAnalyticsPage />} />
                                     <Route path="config" element={<AdminConfigPage />} />
                                     <Route path="editorial" element={<AdminEditorialPage />} />
+                                </Route>
+
+                                {/* EDITOR ROUTES */}
+                                <Route path="editor" element={<RoleRoute allowedRoles={[UserRole.EDITOR, UserRole.ADMIN]} />}>
+                                    <Route path="dashboard" element={<EditorDashboard />} />
+                                    <Route path="programme" element={<EditorProgramme />} />
+                                    <Route path="questions" element={<EditorQuestions />} />
                                 </Route>
 
                             </Route>
