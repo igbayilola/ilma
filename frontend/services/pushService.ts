@@ -1,11 +1,24 @@
 /**
  * Push notification registration service.
- * Handles permission request + subscription management.
+ * Handles permission request + subscription management via Web Push with VAPID.
  */
 import { apiClient } from './apiClient';
 import { telemetry } from './telemetry';
 
 const PUSH_SUBSCRIBED_KEY = 'ilma_push_subscribed';
+const VAPID_PUBLIC_KEY = 'BNQC2U0LMDuszpg_NmkMmh_v8_FuJUkCoC3o-Ew-X3fNzvJb4F8iBmxFXV55y3Z8u7KQ0-Rwyixz2BUL7ttgo50';
+
+/** Convert a base64 VAPID key to Uint8Array for pushManager.subscribe(). */
+function urlBase64ToUint8Array(base64String: string): Uint8Array {
+  const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
 
 export const pushService = {
   /** Check if push is supported in this browser. */
@@ -46,17 +59,19 @@ export const pushService = {
       const existingSub = await registration.pushManager.getSubscription();
 
       if (existingSub) {
-        // Already subscribed at browser level
+        // Already subscribed — send to backend in case it's a new login
+        await apiClient.post('/notifications/push-subscription', {
+          endpoint: existingSub.endpoint,
+          keys: existingSub.toJSON().keys,
+        }).catch(() => {});
         localStorage.setItem(PUSH_SUBSCRIBED_KEY, '1');
         return true;
       }
 
-      // Subscribe — in a real deployment, the VAPID public key comes from the server
-      // For now, create a subscription that works with the mock push provider
+      // Subscribe with VAPID public key
       const subscription = await registration.pushManager.subscribe({
         userVisibleOnly: true,
-        // applicationServerKey would be the VAPID public key from the server
-        // applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
+        applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
       }).catch(() => null);
 
       if (subscription) {
@@ -64,9 +79,7 @@ export const pushService = {
         await apiClient.post('/notifications/push-subscription', {
           endpoint: subscription.endpoint,
           keys: subscription.toJSON().keys,
-        }).catch(() => {
-          // Backend may not have this endpoint yet — that's OK
-        });
+        }).catch(() => {});
 
         localStorage.setItem(PUSH_SUBSCRIBED_KEY, '1');
         telemetry.logEvent('Push', 'Subscribed');
@@ -88,6 +101,13 @@ export const pushService = {
       const registration = await navigator.serviceWorker.ready;
       const subscription = await registration.pushManager.getSubscription();
       if (subscription) {
+        // Remove from backend
+        await apiClient.delete('/notifications/push-subscription', {
+          data: {
+            endpoint: subscription.endpoint,
+            keys: subscription.toJSON().keys,
+          },
+        }).catch(() => {});
         await subscription.unsubscribe();
       }
       localStorage.removeItem(PUSH_SUBSCRIBED_KEY);

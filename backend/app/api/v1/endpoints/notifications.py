@@ -1,5 +1,6 @@
 """Notification endpoints."""
 import logging
+import uuid
 from datetime import datetime, timedelta, timezone
 from typing import Dict, Optional
 from uuid import UUID
@@ -13,6 +14,7 @@ from app.core.deps import get_current_user
 from app.db.session import get_db_session
 from app.models.notification import NotificationType
 from app.models.parent_student import ParentStudent
+from app.models.push_subscription import PushSubscription
 from app.models.session import ExerciseSession, SessionStatus
 from app.models.user import User, UserRole
 from app.schemas.notification import NotificationOut
@@ -170,3 +172,58 @@ async def update_notification_prefs(
     current_user.notification_prefs = prefs
     await db.commit()
     return ok(data=prefs)
+
+
+# ── Push Subscription ────────────────────────────────────────
+
+
+class PushSubscriptionCreate(PydanticBaseModel):
+    endpoint: str
+    keys: dict
+
+
+@router.post("/push-subscription")
+async def register_push_subscription(
+    body: PushSubscriptionCreate,
+    db: AsyncSession = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Register or update a Web Push subscription for the current user."""
+    # Upsert: if endpoint already exists, update keys and user
+    result = await db.execute(
+        select(PushSubscription).where(PushSubscription.endpoint == body.endpoint)
+    )
+    existing = result.scalar_one_or_none()
+    if existing:
+        existing.user_id = current_user.id
+        existing.keys_json = body.keys
+    else:
+        sub = PushSubscription(
+            id=uuid.uuid4(),
+            user_id=current_user.id,
+            endpoint=body.endpoint,
+            keys_json=body.keys,
+        )
+        db.add(sub)
+    await db.commit()
+    return ok(message="Push subscription enregistrée")
+
+
+@router.delete("/push-subscription")
+async def remove_push_subscription(
+    body: PushSubscriptionCreate,
+    db: AsyncSession = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Remove a Web Push subscription."""
+    result = await db.execute(
+        select(PushSubscription).where(
+            PushSubscription.endpoint == body.endpoint,
+            PushSubscription.user_id == current_user.id,
+        )
+    )
+    existing = result.scalar_one_or_none()
+    if existing:
+        await db.delete(existing)
+        await db.commit()
+    return ok(message="Push subscription supprimée")

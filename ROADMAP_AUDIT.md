@@ -41,7 +41,7 @@
 - [x] P0-1.1 : Installer et configurer APScheduler (léger, intégré au process FastAPI) + lifespan
 - [x] P0-1.2 : Créer le module `backend/app/tasks/` avec scheduler + notification_tasks
 - [x] P0-1.3 : Implémenter le provider SMS réel (Twilio) avec fallback mock automatique
-- [ ] P0-1.4 : Implémenter le provider Push PWA réel (Firebase Cloud Messaging / web-push)
+- [x] P0-1.4 : Implémenter le provider Push PWA réel (Web Push avec VAPID / pywebpush)
 - [x] P0-1.5 : Ajouter la gestion des préférences de notification par utilisateur (opt-in/out, horaires)
 
 #### Backend — Triggers automatiques (CRON jobs)

@@ -28,6 +28,9 @@ twilio
 # HTTP client (payment providers)
 httpx
 
+# Web Push notifications
+pywebpush
+
 # Monitoring
 sentry-sdk[fastapi]
 

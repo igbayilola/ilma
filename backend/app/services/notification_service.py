@@ -1,13 +1,15 @@
 """Notification service: multi-channel (in-app, SMS, push) with real + mock providers."""
+import json
 import logging
 from datetime import datetime, timezone
 from uuid import UUID
 
-from sqlalchemy import func, select, update
+from sqlalchemy import delete, func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
 from app.models.notification import Notification, NotificationChannel, NotificationStatus, NotificationType
+from app.models.push_subscription import PushSubscription
 
 logger = logging.getLogger(__name__)
 
@@ -71,6 +73,43 @@ class MockPushProvider(NotificationProvider):
         return True
 
 
+class WebPushProvider(NotificationProvider):
+    """Real Web Push provider using pywebpush with VAPID."""
+
+    def __init__(self) -> None:
+        try:
+            from pywebpush import webpush, WebPushException  # type: ignore[import-untyped]
+            self._webpush = webpush
+            self._WebPushException = WebPushException
+            self.available = True
+        except ImportError:
+            logger.warning("pywebpush not available, falling back to mock push")
+            self.available = False
+            self._fallback = MockPushProvider()
+
+    async def send(self, to: str, title: str, body: str, data: dict | None = None) -> bool:
+        """'to' is a JSON-encoded push subscription info dict."""
+        if not self.available:
+            return await self._fallback.send(to, title, body, data)
+        try:
+            subscription_info = json.loads(to)
+            payload = json.dumps({"title": title, "body": body, **(data or {})})
+            self._webpush(
+                subscription_info=subscription_info,
+                data=payload,
+                vapid_private_key=settings.VAPID_PRIVATE_KEY,
+                vapid_claims={"sub": f"mailto:{settings.VAPID_CONTACT_EMAIL}"},
+            )
+            logger.info("[PUSH WebPush] Sent to endpoint %s", subscription_info.get("endpoint", "")[:60])
+            return True
+        except self._WebPushException as e:
+            logger.error("[PUSH WebPush] Failed: %s", e)
+            return False
+        except Exception as e:
+            logger.error("[PUSH WebPush] Unexpected error: %s", e)
+            return False
+
+
 # ── Factory ───────────────────────────────────────────────────
 
 
@@ -81,7 +120,8 @@ def _create_sms_provider() -> NotificationProvider:
 
 
 def _create_push_provider() -> NotificationProvider:
-    # FCM provider can be added here later
+    if settings.PUSH_PROVIDER == "webpush" and settings.VAPID_PRIVATE_KEY:
+        return WebPushProvider()
     return MockPushProvider()
 
 
@@ -137,13 +177,32 @@ class NotificationService:
                 logger.error("[SMS] Failed to send to user %s: %s", user_id, e)
         elif channel == NotificationChannel.PUSH:
             try:
-                success = await self.push_provider.send(str(user_id), title, body or "")
-                notif.sent_at = now
-                if success:
-                    notif.status = "sent"
-                else:
+                # Look up all push subscriptions for this user
+                subs_result = await db.execute(
+                    select(PushSubscription).where(PushSubscription.user_id == user_id)
+                )
+                subscriptions = list(subs_result.scalars().all())
+                if not subscriptions:
                     notif.status = "failed"
-                    notif.error_message = "Push provider returned failure"
+                    notif.error_message = "No push subscriptions found"
+                else:
+                    any_success = False
+                    for sub in subscriptions:
+                        sub_info = json.dumps({"endpoint": sub.endpoint, "keys": sub.keys_json})
+                        success = await self.push_provider.send(
+                            sub_info, title, body or "", data
+                        )
+                        if success:
+                            any_success = True
+                        else:
+                            # Remove stale subscription
+                            await db.execute(
+                                delete(PushSubscription).where(PushSubscription.id == sub.id)
+                            )
+                    notif.sent_at = now
+                    notif.status = "sent" if any_success else "failed"
+                    if not any_success:
+                        notif.error_message = "All push subscriptions failed"
             except Exception as e:
                 notif.status = "failed"
                 notif.error_message = str(e)[:500]

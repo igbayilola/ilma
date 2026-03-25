@@ -47,8 +47,11 @@ class Settings(BaseSettings):
     TWILIO_AUTH_TOKEN: str = ""
     TWILIO_FROM_NUMBER: str = ""
 
-    # Push Provider (mock | fcm)
+    # Push Provider (mock | webpush)
     PUSH_PROVIDER: str = "mock"
+    VAPID_PUBLIC_KEY: str = ""
+    VAPID_PRIVATE_KEY: str = ""
+    VAPID_CONTACT_EMAIL: str = "admin@ilma.bj"
 
     # Notification scheduler
     NOTIFICATIONS_ENABLED: bool = True
