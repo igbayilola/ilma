@@ -21,13 +21,14 @@ from app.models.subscription import Plan, PlanTier
 from app.models.user import User, UserRole
 from app.schemas.content import CurriculumImportRequest
 from app.services.curriculum_import_service import import_curriculum
-from app.scripts.convert_legacy_json import convert as convert_legacy, convert_deep
+from app.scripts.convert_legacy_json import convert as convert_legacy
 
-# Resolve path to the curriculum JSON
-# seed.py → scripts/ → app/ → backend/ → ilma/ (repo root)
-_REPO_ROOT = pathlib.Path(__file__).resolve().parents[3]
-_CURRICULUM_JSON = _REPO_ROOT / "progamme_mathematiquesCM2_deeeep.json"
-_CURRICULUM_DEEP_JSON = _REPO_ROOT / "progamme_mathematiquesCM2_deep.json"
+# Resolve path to the curriculum JSON directory
+# Inside container: /app/cm2_maths/  |  Local dev: backend/cm2_maths/
+# Inside container: /app/app/scripts/seed.py → parents[2] = /app
+# Local dev: backend/app/scripts/seed.py → parents[2] = backend/
+_WORKDIR = pathlib.Path(__file__).resolve().parents[2]
+_CM2_MATHS_DIR = _WORKDIR / "cm2_maths"
 
 # ── Users ──────────────────────────────────────────────────
 SEED_USERS = [
@@ -196,33 +197,22 @@ async def seed_curriculum_via_import(session) -> None:
     result = await import_curriculum(session, payload)
     print(f"  Created: {result.created}, Updated: {result.updated}, Errors: {len(result.errors)}")
 
-    # Import deeeep.json — Numération domain with rich micro-skill metadata
-    if _CURRICULUM_JSON.exists():
-        print("  ── Curriculum import (deeeep JSON → Numération) ──")
-        with open(_CURRICULUM_JSON, encoding="utf-8") as f:
-            legacy_data = json.load(f)
-        v2_data = convert_legacy(legacy_data)
-        legacy_payload = CurriculumImportRequest(**v2_data)
-        result2 = await import_curriculum(session, legacy_payload)
-        print(f"  Created: {result2.created}, Updated: {result2.updated}, "
-              f"Skills: {result2.skills}, Micro-skills: {result2.micro_skills}, "
-              f"Errors: {len(result2.errors)}")
+    # Import all domain JSON files from cm2_maths/
+    if _CM2_MATHS_DIR.exists():
+        domain_files = sorted(_CM2_MATHS_DIR.glob("progamme_mathematiquesCM2_deeeep_*.json"))
+        for domain_file in domain_files:
+            domain_tag = domain_file.stem.split("_")[-1]  # e.g. NUM, OPS, GEO...
+            print(f"  ── Curriculum import ({domain_tag}) ──")
+            with open(domain_file, encoding="utf-8") as f:
+                legacy_data = json.load(f)
+            v2_data = convert_legacy(legacy_data)
+            legacy_payload = CurriculumImportRequest(**v2_data)
+            result_domain = await import_curriculum(session, legacy_payload)
+            print(f"  Created: {result_domain.created}, Updated: {result_domain.updated}, "
+                  f"Skills: {result_domain.skills}, Micro-skills: {result_domain.micro_skills}, "
+                  f"Errors: {len(result_domain.errors)}")
     else:
-        print(f"  [skip] deeeep JSON not found at {_CURRICULUM_JSON}")
-
-    # Import deep.json — remaining 6 domains (skip Numération, already richer from deeeep)
-    if _CURRICULUM_DEEP_JSON.exists():
-        print("  ── Curriculum import (deep JSON → Opérations, Géométrie, Mesures, Proportionnalité, Données, CEP) ──")
-        with open(_CURRICULUM_DEEP_JSON, encoding="utf-8") as f:
-            deep_data = json.load(f)
-        v2_deep = convert_deep(deep_data, skip_domains=["MATH-CM2-NUM"])
-        deep_payload = CurriculumImportRequest(**v2_deep)
-        result3 = await import_curriculum(session, deep_payload)
-        print(f"  Created: {result3.created}, Updated: {result3.updated}, "
-              f"Skills: {result3.skills}, Micro-skills: {result3.micro_skills}, "
-              f"Errors: {len(result3.errors)}")
-    else:
-        print(f"  [skip] deep JSON not found at {_CURRICULUM_DEEP_JSON}")
+        print(f"  [skip] cm2_maths directory not found at {_CM2_MATHS_DIR}")
 
 
 async def seed() -> None:
