@@ -4,7 +4,7 @@ import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
 import { Modal } from '../../components/ui/Modal';
 import { ButtonVariant, Question } from '../../types';
-import { FileEdit, CheckCircle2, Archive, AlertCircle, ChevronRight, Send, RotateCcw, Eye, Plus, MessageCircle, Trash2, Upload, Download, History } from 'lucide-react';
+import { FileEdit, CheckCircle2, Archive, AlertCircle, ChevronRight, Send, RotateCcw, Eye, Plus, MessageCircle, Trash2, Upload, Download, History, Play, ArrowRight } from 'lucide-react';
 import { QuestionRenderer } from '../../components/exercise/QuestionRenderer';
 import { contentService, KanbanQuestionDTO, QuestionCommentDTO, ContentVersionDTO, BulkImportReport, BulkImportRowError } from '../../services/contentService';
 import { apiClient } from '../../services/apiClient';
@@ -115,6 +115,16 @@ export const AdminEditorialPage: React.FC = () => {
   const [previewLoading, setPreviewLoading] = useState(false);
   const [previewStatus, setPreviewStatus] = useState('');
 
+  // Batch test state ("Tester en série")
+  const [batchTestOpen, setBatchTestOpen] = useState(false);
+  const [batchQuestions, setBatchQuestions] = useState<Question[]>([]);
+  const [batchIndex, setBatchIndex] = useState(0);
+  const [batchAnswer, setBatchAnswer] = useState<any>(null);
+  const [batchFeedback, setBatchFeedback] = useState(false);
+  const [batchResults, setBatchResults] = useState<{ correct: boolean; answer: any }[]>([]);
+  const [batchDone, setBatchDone] = useState(false);
+  const [batchLoading, setBatchLoading] = useState(false);
+
   // Import state
   const [importModalOpen, setImportModalOpen] = useState(false);
   const [importFile, setImportFile] = useState<File | null>(null);
@@ -223,6 +233,69 @@ export const AdminEditorialPage: React.FC = () => {
     setPreviewAnswer(null);
     setPreviewFeedback(false);
   };
+
+  // ── Batch test functions ──────────────────────────────────
+  const startBatchTest = async (status: string) => {
+    const questionsInColumn = columns[status] || [];
+    if (questionsInColumn.length === 0) return;
+    setBatchLoading(true);
+    setBatchTestOpen(true);
+    setBatchIndex(0);
+    setBatchAnswer(null);
+    setBatchFeedback(false);
+    setBatchResults([]);
+    setBatchDone(false);
+
+    const loaded: Question[] = [];
+    for (const q of questionsInColumn.slice(0, 20)) {
+      try {
+        const data = await contentService.previewQuestion(q.id);
+        const mappedType = QUESTION_TYPE_MAP_PREVIEW[data.questionType.toLowerCase()] || 'MCQ';
+        loaded.push({
+          id: q.id,
+          text: data.text,
+          questionType: mappedType as any,
+          choices: data.choices || [],
+          correctAnswer: data.correctAnswer,
+          explanation: data.explanation,
+          hint: data.hint,
+          difficulty: data.difficulty,
+          points: data.points || 1,
+        } as Question);
+      } catch { /* skip failed loads */ }
+    }
+    setBatchQuestions(loaded);
+    setBatchLoading(false);
+  };
+
+  const batchValidate = () => {
+    if (batchAnswer === null || batchAnswer === '') return;
+    setBatchFeedback(true);
+    const current = batchQuestions[batchIndex];
+    const correct = String(current.correctAnswer).trim().toLowerCase();
+    const answer = String(batchAnswer).trim().toLowerCase();
+    const isCorrect = correct === answer;
+    setBatchResults(prev => [...prev, { correct: isCorrect, answer: batchAnswer }]);
+  };
+
+  const batchNext = () => {
+    if (batchIndex + 1 >= batchQuestions.length) {
+      setBatchDone(true);
+    } else {
+      setBatchIndex(prev => prev + 1);
+      setBatchAnswer(null);
+      setBatchFeedback(false);
+    }
+  };
+
+  const closeBatchTest = () => {
+    setBatchTestOpen(false);
+    setBatchQuestions([]);
+    setBatchResults([]);
+    setBatchDone(false);
+  };
+
+  const batchScore = batchResults.filter(r => r.correct).length;
 
   const openDetailModal = async (q: KanbanQuestionDTO) => {
     setDetailQuestion(q);
@@ -475,6 +548,15 @@ export const AdminEditorialPage: React.FC = () => {
                 <span className={`ml-auto text-xs font-bold px-2 py-0.5 rounded-full ${col.bg} ${col.color} border ${col.border}`}>
                   {items.length}
                 </span>
+                {items.length > 0 && (
+                  <button
+                    onClick={() => startBatchTest(col.status)}
+                    className="ml-1 p-1 rounded-lg bg-indigo-100 text-indigo-600 hover:bg-indigo-200 transition-colors"
+                    title={`Tester les ${items.length} questions`}
+                  >
+                    <Play size={14} />
+                  </button>
+                )}
                 {col.status === 'DRAFT' && (
                   <button
                     onClick={openCreateForm}
@@ -1240,6 +1322,138 @@ export const AdminEditorialPage: React.FC = () => {
                 </Button>
               </div>
             </div>
+          )}
+        </div>
+      </Modal>
+
+      {/* Batch test modal ("Tester en série") */}
+      <Modal
+        isOpen={batchTestOpen}
+        onClose={closeBatchTest}
+        title={batchDone ? 'Résultats du test' : `Test en série — Question ${batchIndex + 1}/${batchQuestions.length}`}
+      >
+        <div className="space-y-4 max-h-[75vh] overflow-y-auto">
+          {batchLoading && (
+            <div className="flex flex-col items-center justify-center py-12 gap-3">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sitou-primary" />
+              <p className="text-sm text-gray-500">Chargement des questions...</p>
+            </div>
+          )}
+
+          {!batchLoading && batchQuestions.length === 0 && (
+            <p className="text-sm text-gray-500 text-center py-8">Aucune question à tester.</p>
+          )}
+
+          {/* Score summary */}
+          {!batchLoading && batchDone && batchQuestions.length > 0 && (
+            <div className="space-y-4">
+              <div className="text-center py-4">
+                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full text-2xl font-black ${
+                  batchScore / batchResults.length >= 0.7 ? 'bg-green-100 text-green-700' :
+                  batchScore / batchResults.length >= 0.4 ? 'bg-amber-100 text-amber-700' :
+                  'bg-red-100 text-red-700'
+                }`}>
+                  {batchScore}/{batchResults.length}
+                </div>
+                <p className="text-sm text-gray-500 mt-2">
+                  {Math.round(batchScore / batchResults.length * 100)}% de bonnes réponses
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                {batchQuestions.map((q, i) => (
+                  <div key={q.id} className={`flex items-center gap-3 p-3 rounded-xl text-sm ${
+                    batchResults[i]?.correct ? 'bg-green-50' : 'bg-red-50'
+                  }`}>
+                    <span className="font-bold text-gray-500 w-6">{i + 1}.</span>
+                    {batchResults[i]?.correct ? (
+                      <CheckCircle2 size={16} className="text-green-600 shrink-0" />
+                    ) : (
+                      <AlertCircle size={16} className="text-red-600 shrink-0" />
+                    )}
+                    <span className="truncate flex-1">{q.text}</span>
+                    {!batchResults[i]?.correct && (
+                      <span className="text-xs text-red-600 shrink-0">→ {String(q.correctAnswer)}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex justify-end gap-3 pt-2">
+                <Button variant={ButtonVariant.SECONDARY} onClick={() => { setBatchIndex(0); setBatchAnswer(null); setBatchFeedback(false); setBatchResults([]); setBatchDone(false); }}>
+                  <RotateCcw size={14} className="mr-1.5" /> Recommencer
+                </Button>
+                <Button variant={ButtonVariant.GHOST} onClick={closeBatchTest}>Fermer</Button>
+              </div>
+            </div>
+          )}
+
+          {/* Active question */}
+          {!batchLoading && !batchDone && batchQuestions.length > 0 && (
+            <>
+              {/* Progress bar */}
+              <div className="flex items-center gap-2">
+                <div className="flex-1 bg-gray-200 rounded-full h-2">
+                  <div
+                    className="bg-sitou-primary h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${((batchIndex) / batchQuestions.length) * 100}%` }}
+                  />
+                </div>
+                <span className="text-xs font-bold text-gray-500">{batchIndex + 1}/{batchQuestions.length}</span>
+              </div>
+
+              <div className="bg-sitou-surface rounded-2xl p-4 border border-gray-100">
+                <QuestionRenderer
+                  question={batchQuestions[batchIndex]}
+                  selectedAnswer={batchAnswer}
+                  onAnswerChange={batchFeedback ? () => {} : setBatchAnswer}
+                  isFeedbackMode={batchFeedback}
+                />
+              </div>
+
+              {batchFeedback && (
+                <div className={`rounded-2xl p-4 animate-slide-up ${
+                  batchResults[batchResults.length - 1]?.correct ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'
+                }`}>
+                  <div className="flex items-start">
+                    {batchResults[batchResults.length - 1]?.correct ? (
+                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 shrink-0">
+                        <CheckCircle2 className="text-green-600 w-5 h-5" />
+                      </div>
+                    ) : (
+                      <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 shrink-0">
+                        <AlertCircle className="text-red-600 w-5 h-5" />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className={`font-extrabold text-lg ${batchResults[batchResults.length - 1]?.correct ? 'text-green-700' : 'text-red-700'}`}>
+                        {batchResults[batchResults.length - 1]?.correct ? 'Bonne réponse !' : 'Mauvaise réponse'}
+                      </h3>
+                      {!batchResults[batchResults.length - 1]?.correct && (
+                        <p className="text-sm text-gray-700 mt-1">Réponse correcte : <b>{String(batchQuestions[batchIndex].correctAnswer)}</b></p>
+                      )}
+                      {batchQuestions[batchIndex].explanation && (
+                        <p className="text-sm text-gray-600 mt-2">{batchQuestions[batchIndex].explanation}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex justify-end gap-3 pt-2">
+                {batchFeedback ? (
+                  <Button onClick={batchNext}>
+                    {batchIndex + 1 >= batchQuestions.length ? 'Voir les résultats' : 'Question suivante'}
+                    <ArrowRight size={14} className="ml-1.5" />
+                  </Button>
+                ) : (
+                  <Button onClick={batchValidate} disabled={batchAnswer === null || batchAnswer === ''}>
+                    Valider
+                  </Button>
+                )}
+                <Button variant={ButtonVariant.GHOST} onClick={closeBatchTest}>Quitter</Button>
+              </div>
+            </>
           )}
         </div>
       </Modal>
