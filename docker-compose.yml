@@ -1,32 +1,34 @@
-version: "3.9"
+name: sitou
 
 services:
-  # ── Frontend (Nginx serving SPA + API proxy) ──
+
+  # ── Frontend (Nginx serving SPA) ─────────────────────────────────────────
   frontend:
     build: ./frontend
-    container_name: ilma-frontend
-    ports:
-      - "3000:80"
+    container_name: sitou-frontend          # nginx upstream: proxy_pass http://sitou-frontend:80
+    restart: unless-stopped
     depends_on:
       - api
-    restart: unless-stopped
+    networks:
+      - internal
+      - proxy_net                            # visible to /opt/ops nginx
 
-  # ── Backend API ──
+  # ── Backend API ───────────────────────────────────────────────────────────
   api:
     build: ./backend
-    container_name: ilma-api
-    ports:
-      - "8000:8000"
+    container_name: sitou-api              # nginx upstream: proxy_pass http://sitou-api:8000
+    restart: unless-stopped
     environment:
       - POSTGRES_HOST=db
       - REDIS_HOST=redis
-      - DATABASE_URL=postgresql+asyncpg://ilma_user:ilma_password@db:5432/ilma_db
-      - SECRET_KEY=change-me-in-production
-      - BACKEND_CORS_ORIGINS=["http://localhost:3000","http://localhost:5173"]
+      - DATABASE_URL=postgresql+asyncpg://sitou_user:${DB_PASSWORD}@db:5432/sitou_db
+      - SECRET_KEY=${SECRET_KEY}
+      - BACKEND_CORS_ORIGINS=["https://sitou.biasharys.com"]
       - S3_ENDPOINT=http://minio:9000
-      - S3_ACCESS_KEY=ilma_minio
-      - S3_SECRET_KEY=ilma_minio_secret
+      - S3_ACCESS_KEY=${MINIO_USER}
+      - S3_SECRET_KEY=${MINIO_PASSWORD}
       - S3_BUCKET=ilma-packs
+      - SENTRY_DSN=https://c1acb7c44c4a4c11b2b440ab4259a690@o4511106245853184.ingest.de.sentry.io/4511106288058448
     depends_on:
       db:
         condition: service_healthy
@@ -34,49 +36,51 @@ services:
         condition: service_healthy
       minio:
         condition: service_healthy
-    restart: unless-stopped
+    networks:
+      - internal
+      - proxy_net
 
-  # ── PostgreSQL ──
+  # ── PostgreSQL ────────────────────────────────────────────────────────────
   db:
     image: postgres:15-alpine
-    container_name: ilma-db
+    container_name: sitou-db
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: ilma_user
-      POSTGRES_PASSWORD: ilma_password
-      POSTGRES_DB: ilma_db
-    ports:
-      - "5434:5432"
+      POSTGRES_USER: sitou_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: sitou_db
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ilma_user -d ilma_db"]
+      test: ["CMD-SHELL", "pg_isready -U sitou_user -d sitou_db"]
       interval: 5s
       timeout: 3s
       retries: 5
+    networks:
+      - internal                             # DB never touches proxy_net
 
-  # ── Redis ──
+  # ── Redis ─────────────────────────────────────────────────────────────────
   redis:
     image: redis:7-alpine
-    container_name: ilma-redis
-    ports:
-      - "6379:6379"
+    container_name: sitou-redis
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
       timeout: 3s
       retries: 5
+    networks:
+      - internal
 
-  # ── Minio (S3-compatible object storage) ──
+  # ── MinIO (S3-compatible object storage) ─────────────────────────────────
   minio:
     image: minio/minio:latest
-    container_name: ilma-minio
+    container_name: sitou-minio
     command: server /data --console-address ":9001"
-    ports:
-      - "9000:9000"
-      - "9001:9001"
+    restart: unless-stopped
     environment:
-      MINIO_ROOT_USER: ilma_minio
-      MINIO_ROOT_PASSWORD: ilma_minio_secret
+      MINIO_ROOT_USER: ${MINIO_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_PASSWORD}
     volumes:
       - miniodata:/data
     healthcheck:
@@ -84,22 +88,34 @@ services:
       interval: 5s
       timeout: 3s
       retries: 5
+    networks:
+      - internal
 
-  # ── Minio init (create bucket) ──
+  # ── MinIO init (create bucket on first start) ─────────────────────────────
   minio-init:
     image: minio/mc:latest
-    container_name: ilma-minio-init
+    container_name: sitou-minio-init
+    restart: "no"
     depends_on:
       minio:
         condition: service_healthy
     entrypoint: >
       /bin/sh -c "
-      mc alias set ilma http://minio:9000 ilma_minio ilma_minio_secret;
-      mc mb --ignore-existing ilma/ilma-packs;
-      mc anonymous set download ilma/ilma-packs;
+      mc alias set sitou http://minio:9000 ${MINIO_USER} ${MINIO_PASSWORD};
+      mc mb --ignore-existing sitou/ilma-packs;
+      mc anonymous set download sitou/ilma-packs;
       exit 0;
       "
+    networks:
+      - internal
 
 volumes:
   pgdata:
   miniodata:
+
+networks:
+  internal:
+    driver: bridge                           # project-private, DB/Redis/MinIO stay here
+  proxy_net:
+    external: true                           # created by /opt/ops, shared with nginx
+

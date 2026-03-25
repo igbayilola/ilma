@@ -28,6 +28,9 @@ twilio
 # HTTP client (payment providers)
 httpx
 
+# Monitoring
+sentry-sdk[fastapi]
+
 # S3 / Minio
 boto3
 
