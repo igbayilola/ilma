@@ -5,10 +5,11 @@ from uuid import UUID
 
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from app.core.exceptions import AppException, NotFoundException
 from app.models.content import Domain, Question, Skill, Subject, DifficultyLevel, MicroLesson
-from app.models.mock_exam import ExamSession, MockExam
+from app.models.mock_exam import ExamItem, ExamSession, ExamSubQuestion, MockExam
 from app.models.profile import Profile
 from app.models.subscription import PlanTier
 from app.services.subscription_service import subscription_service
@@ -89,6 +90,7 @@ class ExamService:
             is_national=is_national,
             national_date=national_date,
             is_active=True,
+            exam_type="qcm",
         )
         db.add(exam)
         await db.flush()
@@ -143,7 +145,11 @@ class ExamService:
                         message="Tu as déjà utilisé ton examen blanc gratuit pour cette matière. Passe en Premium pour continuer !",
                     )
 
-        # Select questions based on distribution
+        # CEP-type exam: load items and sub-questions
+        if exam.exam_type == "cep":
+            return await self._start_cep_exam(db, exam, profile)
+
+        # QCM-type exam: select random questions
         questions = await self._select_questions(db, exam)
 
         # Create session
@@ -181,7 +187,69 @@ class ExamService:
             "duration_minutes": exam.duration_minutes,
             "total_questions": len(questions),
             "started_at": session.started_at.isoformat(),
+            "exam_type": "qcm",
             "questions": question_list,
+        }
+
+    async def _start_cep_exam(self, db: AsyncSession, exam: MockExam, profile: Profile) -> dict:
+        """Start a CEP-format exam with items and sub-questions."""
+        # Load items with sub-questions
+        items_result = await db.execute(
+            select(ExamItem)
+            .where(ExamItem.mock_exam_id == exam.id)
+            .options(selectinload(ExamItem.sub_questions))
+            .order_by(ExamItem.order)
+        )
+        items = list(items_result.scalars().all())
+
+        # Count total sub-questions
+        total_sub_questions = sum(len(item.sub_questions) for item in items)
+
+        now = datetime.now(timezone.utc)
+        session = ExamSession(
+            profile_id=profile.id,
+            mock_exam_id=exam.id,
+            started_at=now,
+            total_questions=total_sub_questions,
+            answers=[],
+            status="in_progress",
+        )
+        db.add(session)
+        await db.flush()
+
+        # Build items list for response
+        items_list = []
+        for item in items:
+            sub_questions = []
+            for sq in sorted(item.sub_questions, key=lambda x: x.order):
+                sub_questions.append({
+                    "id": str(sq.id),
+                    "sub_label": sq.sub_label,
+                    "text": sq.text,
+                    "question_type": sq.question_type,
+                    "choices": sq.choices,
+                    "depends_on_previous": sq.depends_on_previous,
+                    "hint": sq.hint,
+                    "points": sq.points,
+                })
+            items_list.append({
+                "item_number": item.item_number,
+                "domain": item.domain,
+                "context_text": item.context_text,
+                "points": item.points,
+                "sub_questions": sub_questions,
+            })
+
+        return {
+            "session_id": str(session.id),
+            "mock_exam_id": str(exam.id),
+            "title": exam.title,
+            "duration_minutes": exam.duration_minutes,
+            "total_questions": total_sub_questions,
+            "started_at": session.started_at.isoformat(),
+            "exam_type": "cep",
+            "context_text": exam.context_text,
+            "items": items_list,
         }
 
     async def _select_questions(self, db: AsyncSession, exam: MockExam) -> list[Question]:
@@ -225,9 +293,12 @@ class ExamService:
         db: AsyncSession,
         exam_session_id: UUID,
         profile_id: UUID,
-        question_id: UUID,
-        answer: object,
+        question_id: UUID | None = None,
+        answer: object = None,
         time_seconds: int | None = None,
+        # CEP-format fields
+        item_number: int | None = None,
+        sub_label: str | None = None,
     ) -> dict:
         """Record an answer in the JSONB array."""
         result = await db.execute(
@@ -241,8 +312,19 @@ class ExamService:
         if session.status != "in_progress":
             raise AppException(status_code=400, code="EXAM_ENDED", message="Cet examen est terminé.")
 
-        # Check if question already answered
         existing_answers = session.answers or []
+
+        # CEP-format answer
+        if item_number is not None and sub_label is not None:
+            return await self._submit_cep_answer(
+                db, session, existing_answers, item_number, sub_label, answer, time_seconds
+            )
+
+        # QCM-format answer (legacy)
+        if question_id is None:
+            raise AppException(status_code=400, code="MISSING_FIELD", message="question_id est requis.")
+
+        # Check if question already answered
         for a in existing_answers:
             if a.get("question_id") == str(question_id):
                 return a  # Idempotent
@@ -270,6 +352,61 @@ class ExamService:
         await db.flush()
         return answer_entry
 
+    async def _submit_cep_answer(
+        self,
+        db: AsyncSession,
+        session: ExamSession,
+        existing_answers: list,
+        item_number: int,
+        sub_label: str,
+        answer: object,
+        time_seconds: int | None,
+    ) -> dict:
+        """Submit an answer for a CEP-format sub-question."""
+        # Check if already answered (idempotent)
+        for a in existing_answers:
+            if a.get("item_number") == item_number and a.get("sub_label") == sub_label:
+                return a
+
+        # Find the sub-question
+        exam = session.mock_exam
+        if not exam:
+            raise AppException(status_code=400, code="EXAM_NOT_FOUND", message="Examen introuvable.")
+
+        sq_result = await db.execute(
+            select(ExamSubQuestion)
+            .join(ExamItem, ExamSubQuestion.exam_item_id == ExamItem.id)
+            .where(
+                ExamItem.mock_exam_id == exam.id,
+                ExamItem.item_number == item_number,
+                ExamSubQuestion.sub_label == sub_label,
+            )
+        )
+        sub_question = sq_result.scalar_one_or_none()
+        if not sub_question:
+            raise NotFoundException("ExamSubQuestion", f"Item {item_number}, {sub_label}")
+
+        # Check answer
+        is_correct = self._check_cep_answer(sub_question, answer)
+        points_earned = sub_question.points if is_correct else 0.0
+
+        answer_entry = {
+            "item_number": item_number,
+            "sub_label": sub_label,
+            "sub_question_id": str(sub_question.id),
+            "answer": answer,
+            "correct": is_correct,
+            "points_earned": points_earned,
+            "time_seconds": time_seconds,
+        }
+
+        updated_answers = list(existing_answers)
+        updated_answers.append(answer_entry)
+        session.answers = updated_answers
+
+        await db.flush()
+        return answer_entry
+
     async def complete_exam(
         self, db: AsyncSession, exam_session_id: UUID, profile_id: UUID
     ) -> dict:
@@ -288,11 +425,23 @@ class ExamService:
 
         now = datetime.now(timezone.utc)
         answers = session.answers or []
-        total_correct = sum(1 for a in answers if a.get("correct"))
-        total_questions = session.total_questions
 
-        score_pct = round(total_correct / total_questions * 100, 1) if total_questions > 0 else 0.0
-        predicted_cep = round(score_pct / 100 * 20, 1)
+        # Check if this is a CEP exam
+        exam = session.mock_exam
+        is_cep = exam and exam.exam_type == "cep"
+
+        if is_cep:
+            # CEP scoring: sum of points_earned, score out of 20
+            total_points = sum(a.get("points_earned", 0) for a in answers)
+            total_correct = sum(1 for a in answers if a.get("correct"))
+            score = round(total_points, 1)  # This IS the /20 score
+            predicted_cep = score
+        else:
+            # QCM scoring: percentage-based
+            total_correct = sum(1 for a in answers if a.get("correct"))
+            total_questions = session.total_questions
+            score = round(total_correct / total_questions * 100, 1) if total_questions > 0 else 0.0
+            predicted_cep = round(score / 100 * 20, 1)
 
         started = session.started_at
         if started and started.tzinfo is None:
@@ -301,7 +450,7 @@ class ExamService:
 
         session.completed_at = now
         session.time_spent_seconds = time_spent
-        session.score = score_pct
+        session.score = score
         session.total_correct = total_correct
         session.predicted_cep_score = predicted_cep
         session.status = "completed"
@@ -334,6 +483,13 @@ class ExamService:
         if session.profile_id != profile_id:
             raise AppException(status_code=403, code="FORBIDDEN", message="Accès refusé à cette session.")
 
+        exam = session.mock_exam
+        is_cep = exam and exam.exam_type == "cep"
+
+        if is_cep:
+            return await self._get_cep_correction(db, session, exam)
+
+        # QCM correction (legacy)
         answers = session.answers or []
         corrections = []
 
@@ -378,7 +534,62 @@ class ExamService:
 
         return {
             **self._session_to_dict(session),
+            "exam_type": "qcm",
             "corrections": corrections,
+        }
+
+    async def _get_cep_correction(self, db: AsyncSession, session: ExamSession, exam: MockExam) -> dict:
+        """Return detailed correction for a CEP-format exam."""
+        # Load items with sub-questions
+        items_result = await db.execute(
+            select(ExamItem)
+            .where(ExamItem.mock_exam_id == exam.id)
+            .options(selectinload(ExamItem.sub_questions))
+            .order_by(ExamItem.order)
+        )
+        items = list(items_result.scalars().all())
+
+        answers = session.answers or []
+        # Build lookup: (item_number, sub_label) -> answer
+        answer_lookup = {}
+        for a in answers:
+            key = (a.get("item_number"), a.get("sub_label"))
+            answer_lookup[key] = a
+
+        items_correction = []
+        for item in items:
+            sub_corrections = []
+            for sq in sorted(item.sub_questions, key=lambda x: x.order):
+                ans = answer_lookup.get((item.item_number, sq.sub_label), {})
+                sub_corrections.append({
+                    "sub_question_id": str(sq.id),
+                    "sub_label": sq.sub_label,
+                    "text": sq.text,
+                    "question_type": sq.question_type,
+                    "choices": sq.choices,
+                    "student_answer": ans.get("answer"),
+                    "correct_answer": sq.correct_answer,
+                    "is_correct": ans.get("correct", False),
+                    "points_earned": ans.get("points_earned", 0),
+                    "points_possible": sq.points,
+                    "explanation": sq.explanation,
+                    "hint": sq.hint,
+                    "depends_on_previous": sq.depends_on_previous,
+                    "time_seconds": ans.get("time_seconds"),
+                })
+            items_correction.append({
+                "item_number": item.item_number,
+                "domain": item.domain,
+                "context_text": item.context_text,
+                "points": item.points,
+                "sub_questions": sub_corrections,
+            })
+
+        return {
+            **self._session_to_dict(session),
+            "exam_type": "cep",
+            "context_text": exam.context_text,
+            "items": items_correction,
         }
 
     async def list_exams(
@@ -404,6 +615,7 @@ class ExamService:
                 "is_free": e.is_free,
                 "is_national": e.is_national,
                 "national_date": e.national_date.isoformat() if e.national_date else None,
+                "exam_type": e.exam_type or "qcm",
             }
             for e in exams
         ]
@@ -414,7 +626,29 @@ class ExamService:
             return correct.strip().lower() == answer.strip().lower()
         return correct == answer
 
+    def _check_cep_answer(self, sub_question: ExamSubQuestion, answer: object) -> bool:
+        """Check answer for a CEP sub-question (more lenient matching)."""
+        correct = sub_question.correct_answer
+        if not isinstance(answer, str) or not isinstance(correct, str):
+            return str(answer).strip() == str(correct).strip()
+
+        answer_clean = answer.strip().lower().replace(" ", "").replace("\u00a0", "")
+        correct_clean = correct.strip().lower().replace(" ", "").replace("\u00a0", "")
+
+        # Exact match
+        if answer_clean == correct_clean:
+            return True
+
+        # For numeric answers, compare as numbers
+        try:
+            return float(answer_clean.replace(",", ".")) == float(correct_clean.replace(",", "."))
+        except (ValueError, TypeError):
+            pass
+
+        return False
+
     def _session_to_dict(self, session: ExamSession) -> dict:
+        exam = session.mock_exam
         return {
             "session_id": str(session.id),
             "mock_exam_id": str(session.mock_exam_id),
@@ -427,7 +661,9 @@ class ExamService:
             "total_questions": session.total_questions,
             "predicted_cep_score": session.predicted_cep_score,
             "status": session.status,
-            "exam_title": session.mock_exam.title if session.mock_exam else None,
+            "exam_title": exam.title if exam else None,
+            "mock_exam_title": exam.title if exam else None,
+            "exam_type": exam.exam_type if exam else "qcm",
         }
 
 

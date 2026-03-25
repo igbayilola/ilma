@@ -8,13 +8,10 @@ export interface MockExamDTO {
   total_questions: number;
   is_free: boolean;
   grade_level_id?: string;
+  exam_type?: 'cep' | 'qcm';
 }
 
-export interface ExamSessionDTO {
-  session_id: string;
-  questions: ExamQuestionDTO[];
-}
-
+// QCM format
 export interface ExamQuestionDTO {
   id: string;
   text: string;
@@ -24,10 +21,46 @@ export interface ExamQuestionDTO {
   order: number;
 }
 
+// CEP format
+export interface ExamSubQuestionDTO {
+  id: string;
+  sub_label: string;
+  text: string;
+  question_type: 'numeric_input' | 'fill_blank' | 'true_false' | 'mcq';
+  choices?: string[];
+  depends_on_previous: boolean;
+  hint?: string;
+  points: number;
+}
+
+export interface ExamItemDTO {
+  item_number: number;
+  domain: string;
+  context_text: string;
+  points: number;
+  sub_questions: ExamSubQuestionDTO[];
+}
+
+export interface ExamSessionDTO {
+  session_id: string;
+  exam_type?: 'cep' | 'qcm';
+  duration_minutes?: number;
+  // QCM format
+  questions?: ExamQuestionDTO[];
+  // CEP format
+  context_text?: string;
+  items?: ExamItemDTO[];
+  total_questions?: number;
+}
+
 export interface ExamAnswerResultDTO {
-  question_id: string;
+  question_id?: string;
+  item_number?: number;
+  sub_label?: string;
   answer: string;
   recorded: boolean;
+  correct?: boolean;
+  points_earned?: number;
 }
 
 export interface ExamCompletionDTO {
@@ -36,6 +69,7 @@ export interface ExamCompletionDTO {
   total_questions: number;
   predicted_cep_score: number;
   percentage: number;
+  exam_type?: string;
 }
 
 export interface ExamSessionDetailDTO {
@@ -49,7 +83,13 @@ export interface ExamSessionDetailDTO {
   percentage: number;
   completed_at: string;
   duration_minutes: number;
+  exam_type?: 'cep' | 'qcm';
+  // QCM format
   answers: ExamAnswerDetailDTO[];
+  // CEP format
+  context_text?: string;
+  items?: ExamItemCorrectionDTO[];
+  corrections?: ExamAnswerDetailDTO[];
 }
 
 export interface ExamAnswerDetailDTO {
@@ -64,6 +104,31 @@ export interface ExamAnswerDetailDTO {
   related_lesson_id?: string;
 }
 
+export interface ExamSubQuestionCorrectionDTO {
+  sub_question_id: string;
+  sub_label: string;
+  text: string;
+  question_type: string;
+  choices?: string[];
+  student_answer?: string;
+  correct_answer: string;
+  is_correct: boolean;
+  points_earned: number;
+  points_possible: number;
+  explanation?: string;
+  hint?: string;
+  depends_on_previous: boolean;
+  time_seconds?: number;
+}
+
+export interface ExamItemCorrectionDTO {
+  item_number: number;
+  domain: string;
+  context_text: string;
+  points: number;
+  sub_questions: ExamSubQuestionCorrectionDTO[];
+}
+
 export interface ExamHistoryItemDTO {
   session_id: string;
   mock_exam_title: string;
@@ -73,6 +138,7 @@ export interface ExamHistoryItemDTO {
   predicted_cep_score: number;
   percentage: number;
   completed_at: string;
+  exam_type?: string;
 }
 
 export const examService = {
@@ -82,6 +148,12 @@ export const examService = {
   submitAnswer: (sessionId: string, questionId: string, answer: string) =>
     apiClient.post<ExamAnswerResultDTO>(`/exams/sessions/${sessionId}/answer`, {
       question_id: questionId,
+      answer,
+    }),
+  submitCepAnswer: (sessionId: string, itemNumber: number, subLabel: string, answer: string) =>
+    apiClient.post<ExamAnswerResultDTO>(`/exams/sessions/${sessionId}/answer`, {
+      item_number: itemNumber,
+      sub_label: subLabel,
       answer,
     }),
   completeExam: (sessionId: string) =>

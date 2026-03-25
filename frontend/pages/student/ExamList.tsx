@@ -4,7 +4,7 @@ import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
 import { ButtonVariant } from '../../types';
-import { ClipboardList, Clock, Lock, Trophy, ChevronRight, History } from 'lucide-react';
+import { ClipboardList, Clock, Lock, Trophy, ChevronRight, History, FileText } from 'lucide-react';
 import { examService, MockExamDTO, ExamHistoryItemDTO } from '../../services/examService';
 import { useAuthStore } from '../../store/authStore';
 
@@ -66,7 +66,7 @@ export const ExamListPage: React.FC = () => {
           Examens Blancs CEP
         </h1>
         <p className="text-gray-500">
-          Entra&icirc;ne-toi dans les conditions r&eacute;elles du CEP.
+          Entraîne-toi dans les conditions réelles du CEP.
         </p>
       </header>
 
@@ -80,23 +80,35 @@ export const ExamListPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {exams.map((exam) => {
             const locked = !exam.is_free && !isPremium;
+            const isCep = exam.exam_type === 'cep';
             return (
               <Card key={exam.id} className="p-6 relative overflow-hidden">
-                {/* Badge */}
+                {/* Badge row */}
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600">
-                      <ClipboardList size={20} />
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      isCep ? 'bg-blue-100 text-blue-600' : 'bg-amber-100 text-amber-600'
+                    }`}>
+                      {isCep ? <FileText size={20} /> : <ClipboardList size={20} />}
                     </div>
-                    <span
-                      className={`text-xs font-bold uppercase px-2 py-0.5 rounded-full ${
-                        exam.is_free
-                          ? 'bg-green-100 text-green-700'
-                          : 'bg-purple-100 text-purple-700'
-                      }`}
-                    >
-                      {exam.is_free ? 'Gratuit' : 'Premium'}
-                    </span>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-1.5">
+                        <span
+                          className={`text-xs font-bold uppercase px-2 py-0.5 rounded-full ${
+                            exam.is_free
+                              ? 'bg-green-100 text-green-700'
+                              : 'bg-purple-100 text-purple-700'
+                          }`}
+                        >
+                          {exam.is_free ? 'Gratuit' : 'Premium'}
+                        </span>
+                        {isCep && (
+                          <span className="text-xs font-bold uppercase px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
+                            Format CEP
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                   {locked && <Lock size={18} className="text-gray-300" />}
                 </div>
@@ -114,16 +126,29 @@ export const ExamListPage: React.FC = () => {
                     <Clock size={14} />
                     {exam.duration_minutes} min
                   </span>
-                  <span className="flex items-center gap-1">
-                    <ClipboardList size={14} />
-                    {exam.total_questions} questions
-                  </span>
+                  {isCep ? (
+                    <>
+                      <span className="flex items-center gap-1">
+                        <FileText size={14} />
+                        3 Items &times; 3 sous-questions
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Trophy size={14} />
+                        Barème : /20
+                      </span>
+                    </>
+                  ) : (
+                    <span className="flex items-center gap-1">
+                      <ClipboardList size={14} />
+                      {exam.total_questions} questions
+                    </span>
+                  )}
                 </div>
 
                 {locked ? (
                   <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-sm text-amber-700">
                     <Lock size={14} className="inline mr-1" />
-                    Passe en Premium pour acc&eacute;der &agrave; cet examen.
+                    Passe en Premium pour accéder à cet examen.
                     <Button
                       variant={ButtonVariant.GHOST}
                       size="sm"
@@ -159,8 +184,14 @@ export const ExamListPage: React.FC = () => {
           </h2>
           <div className="space-y-3">
             {history.map((item) => {
-              const pct = Math.round(item.percentage ?? (item.total_correct / item.total_questions) * 100);
-              const isGood = pct >= 50;
+              const isCepHistory = item.exam_type === 'cep';
+              const displayScore = isCepHistory
+                ? `${item.predicted_cep_score}/20`
+                : `${Math.round(item.percentage ?? (item.total_correct / item.total_questions) * 100)}%`;
+              const isGood = isCepHistory
+                ? (item.predicted_cep_score ?? 0) >= 10
+                : (item.percentage ?? (item.total_correct / item.total_questions) * 100) >= 50;
+
               return (
                 <Card
                   key={item.session_id}
@@ -177,18 +208,30 @@ export const ExamListPage: React.FC = () => {
                         : 'bg-orange-100 text-orange-700'
                     }`}
                   >
-                    {pct}%
+                    {displayScore}
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-gray-900 truncate">
                       {item.mock_exam_title}
                     </h4>
                     <p className="text-sm text-gray-500">
-                      {item.total_correct}/{item.total_questions} correct
-                      {item.predicted_cep_score != null && (
-                        <span className="ml-2 text-amber-600 font-semibold">
-                          <Trophy size={12} className="inline mr-0.5" />
-                          {item.predicted_cep_score}/20 CEP
+                      {isCepHistory ? (
+                        <span>
+                          {item.total_correct}/{item.total_questions} correct
+                          <span className="ml-2 text-amber-600 font-semibold">
+                            <Trophy size={12} className="inline mr-0.5" />
+                            {item.predicted_cep_score}/20 CEP
+                          </span>
+                        </span>
+                      ) : (
+                        <span>
+                          {item.total_correct}/{item.total_questions} correct
+                          {item.predicted_cep_score != null && (
+                            <span className="ml-2 text-amber-600 font-semibold">
+                              <Trophy size={12} className="inline mr-0.5" />
+                              {item.predicted_cep_score}/20 CEP
+                            </span>
+                          )}
                         </span>
                       )}
                     </p>

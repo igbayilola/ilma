@@ -17,7 +17,7 @@ from app.models.content import (
     QuestionType,
     Skill,
 )
-from app.models.mock_exam import MockExam
+from app.models.mock_exam import MockExam, ExamItem, ExamSubQuestion
 from app.models.subscription import Plan, PlanTier
 from app.models.user import User, UserRole
 from app.schemas.content import CurriculumImportRequest
@@ -151,6 +151,203 @@ async def _upsert(session, model, unique_field: str, data: dict):
     session.add(obj)
     print(f"  [seed] {model.__tablename__}.{data[unique_field]}")
     return obj
+
+
+async def seed_cep_exams(session, cm2_grade, math_subject) -> None:
+    """Seed the 4 real CEP exams from past annales."""
+    CEP_EXAMS = [
+        {
+            "title": "CEP 2024 Session Normale — Mathématiques",
+            "context_text": "Dans le cadre de la riposte contre le COVID 19, le gouvernement du Bénin avait lancé le 06 mai 2020 un appel aux artisans locaux pour confectionner des masques en tissu. Cette opération avait pris fin le 16 mai 2020. Au cours de cette période, la couturière Sènanmi a cousu 8600 masques en tissu de différentes couleurs : bleu, vert et jaune.",
+            "items": [
+                {
+                    "item_number": 1, "domain": "data_proportionality",
+                    "context_text": "La couturière Sènanmi a cousu 8600 masques en tissu de différentes couleurs : bleu (40%), vert (35%) et jaune (25%).",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Dresse le tableau des effectifs de cette série statistique.", "question_type": "fill_blank", "correct_answer": "Bleu: 3440, Vert: 3010, Jaune: 2150", "explanation": "Bleu: 8600 × 40/100 = 3440. Vert: 8600 × 35/100 = 3010. Jaune: 8600 × 25/100 = 2150.", "order": 0},
+                        {"sub_label": "b", "text": "Complète-le par des fréquences par fraction.", "question_type": "fill_blank", "correct_answer": "Bleu: 4/10, Vert: 35/100, Jaune: 1/4", "explanation": "Bleu: 3440/8600 = 4/10. Vert: 3010/8600 = 35/100. Jaune: 2150/8600 = 1/4.", "depends_on_previous": True, "order": 1},
+                        {"sub_label": "c", "text": "Complète-le par des fréquences exprimées sous forme de pourcentage.", "question_type": "fill_blank", "correct_answer": "Bleu: 40%, Vert: 35%, Jaune: 25%", "explanation": "Les pourcentages correspondent directement aux données du diagramme circulaire.", "depends_on_previous": True, "order": 2},
+                    ],
+                },
+                {
+                    "item_number": 2, "domain": "measures_operations",
+                    "context_text": "Les masques sont rangés dans des boîtes puis dans des cartons. Une boîte mesure 20 cm × 10 cm × 8 cm. Un carton mesure 60 cm × 40 cm × 50 cm.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Calcule le volume d'une boîte. (20 cm × 10 cm × 8 cm)", "question_type": "numeric_input", "correct_answer": "1600", "explanation": "V = L × l × h = 20 × 10 × 8 = 1 600 cm³", "order": 0},
+                        {"sub_label": "b", "text": "Calcule le volume d'un carton. (60 cm × 40 cm × 50 cm)", "question_type": "numeric_input", "correct_answer": "120000", "explanation": "V = 60 × 40 × 50 = 120 000 cm³", "order": 1},
+                        {"sub_label": "c", "text": "Détermine le nombre de boîtes que peut contenir un carton.", "question_type": "numeric_input", "correct_answer": "75", "depends_on_previous": True, "explanation": "120 000 ÷ 1 600 = 75 boîtes", "hint": "Utilise les résultats des questions a) et b).", "order": 2},
+                    ],
+                },
+                {
+                    "item_number": 3, "domain": "geometry",
+                    "context_text": "On considère la base ABCD d'un carton de dimensions 60 cm × 40 cm.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Représente à l'échelle de 1/10 la base ABCD d'un carton.", "question_type": "mcq", "choices": ["Rectangle 6cm × 4cm", "Rectangle 60cm × 40cm", "Carré 6cm × 6cm", "Rectangle 3cm × 2cm"], "correct_answer": "Rectangle 6cm × 4cm", "explanation": "Échelle 1/10 : 60cm ÷ 10 = 6cm et 40cm ÷ 10 = 4cm.", "order": 0},
+                        {"sub_label": "b", "text": "Trace les diagonales de cette figure.", "question_type": "mcq", "choices": ["Deux segments reliant les sommets opposés", "Deux segments reliant les milieux des côtés", "Un seul segment diagonal"], "correct_answer": "Deux segments reliant les sommets opposés", "explanation": "Les diagonales d'un rectangle relient les sommets opposés : AC et BD.", "order": 1},
+                        {"sub_label": "c", "text": "Trace la figure symétrique du triangle ABC par rapport au point C.", "question_type": "mcq", "choices": ["Triangle BCE avec E symétrique de A par rapport à C", "Triangle identique à ABC", "Triangle inversé par rapport à la diagonale"], "correct_answer": "Triangle BCE avec E symétrique de A par rapport à C", "explanation": "Le symétrique de A par rapport à C est le point E tel que C est le milieu de [AE].", "order": 2},
+                    ],
+                },
+            ],
+        },
+        {
+            "title": "CEP 2019 Session Normale — Mathématiques",
+            "context_text": "Pour les fêtes de retrouvaille, le comité d'organisation décide d'acheter 20 bouteilles de Fanta à 7 000 F, 150 bouteilles d'eau à 52 500 F, des bouteilles de bières pour 10 500 F et 50 bouteilles de Coca-Cola. Pour recevoir les invités, un espace est aménagé.",
+            "items": [
+                {
+                    "item_number": 1, "domain": "data_proportionality",
+                    "context_text": "Le comité achète : 20 bouteilles de Fanta à 7 000 F, 150 bouteilles d'eau à 52 500 F, des bouteilles de bières pour 10 500 F et 50 bouteilles de Coca-Cola.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Présente les données dans un tableau de correspondance.", "question_type": "fill_blank", "correct_answer": "Fanta: 20 bouteilles = 7000F, Eau: 150 bouteilles = 52500F, Bière: ? bouteilles = 10500F, Coca: 50 bouteilles = ?", "explanation": "On organise les données en colonnes : boisson, nombre de bouteilles, prix total.", "order": 0},
+                        {"sub_label": "b", "text": "Dis si ce tableau est un tableau de proportionnalité.", "question_type": "true_false", "correct_answer": "Faux", "explanation": "Les prix unitaires sont différents : Fanta = 350 F, Eau = 350 F, mais ce n'est pas constant pour tous les produits.", "order": 1},
+                        {"sub_label": "c", "text": "Calcule le montant à payer pour les bouteilles de Coca-Cola et le nombre de bouteilles de bières à acheter.", "question_type": "numeric_input", "correct_answer": "17500", "depends_on_previous": True, "explanation": "Prix unitaire = 350 F. Coca : 50 × 350 = 17 500 F. Bières : 10 500 ÷ 350 = 30 bouteilles.", "hint": "Utilise le prix unitaire trouvé à la question précédente.", "order": 2},
+                    ],
+                },
+                {
+                    "item_number": 2, "domain": "measures_operations",
+                    "context_text": "Pour recevoir les invités, un espace rectangulaire de 60 m × 40 m est aménagé sous une bâche.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Calcule l'aire de l'espace occupé par la bâche. (60 m × 40 m)", "question_type": "numeric_input", "correct_answer": "2400", "explanation": "A = 60 × 40 = 2 400 m²", "order": 0},
+                        {"sub_label": "b", "text": "Sachant que chaque invité doit occuper une superficie de 6 m², détermine le nombre d'invités.", "question_type": "numeric_input", "correct_answer": "400", "depends_on_previous": True, "explanation": "2 400 ÷ 6 = 400 invités", "hint": "Utilise l'aire calculée à la question a).", "order": 1},
+                        {"sub_label": "c", "text": "Quel est le périmètre du domaine ?", "question_type": "numeric_input", "correct_answer": "200", "explanation": "P = 2 × (60 + 40) = 200 m", "order": 2},
+                    ],
+                },
+                {
+                    "item_number": 3, "domain": "geometry",
+                    "context_text": "L'espace rectangulaire mesure 60 m × 40 m.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Construis ce rectangle à l'échelle de 1/1000.", "question_type": "mcq", "choices": ["Rectangle 6cm × 4cm", "Rectangle 60cm × 40cm", "Rectangle 0.6cm × 0.4cm"], "correct_answer": "Rectangle 6cm × 4cm", "explanation": "Échelle 1/1000 : 60m = 6000cm ÷ 1000 = 6cm. 40m = 4000cm ÷ 1000 = 4cm.", "order": 0},
+                        {"sub_label": "b", "text": "Place un point I à l'extérieur du rectangle.", "question_type": "mcq", "choices": ["Un point situé hors du rectangle", "Un point au centre", "Un point sur un côté"], "correct_answer": "Un point situé hors du rectangle", "explanation": "Un point extérieur est situé en dehors des côtés du rectangle.", "order": 1},
+                        {"sub_label": "c", "text": "Construis le symétrique de ce rectangle par rapport au point I.", "question_type": "mcq", "choices": ["Un rectangle de mêmes dimensions de l'autre côté de I", "Un rectangle réduit de moitié", "Le même rectangle retourné"], "correct_answer": "Un rectangle de mêmes dimensions de l'autre côté de I", "explanation": "Le symétrique par rapport à un point conserve les dimensions. Chaque sommet a son symétrique de l'autre côté de I, à égale distance.", "order": 2},
+                    ],
+                },
+            ],
+        },
+        {
+            "title": "CEP 2018 Session des Malades — Mathématiques",
+            "context_text": "Après leur formation au lycée agricole Mèdji de Sékou, Suzanne et Paul décident d'installer ensemble une ferme à Pahou pour y élever de la volaille. Le terrain qu'ils ont acheté a une forme rectangulaire qui mesure 125 m de longueur sur 75 m de largeur.",
+            "items": [
+                {
+                    "item_number": 1, "domain": "data_proportionality",
+                    "context_text": "Les poussins commandés coûtent 600 000 francs CFA. Suzanne paie les 3/5 de ce montant et Paul le reste. Les élèves de 3ème année du lycée d'Adja-Ouèrè visitent la ferme. Transport : 162 700 F. Le lycée paie 92 500 F. Chaque élève cotise 2 600 F.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Les poussins commandés coûtent 600 000 francs CFA. Suzanne paie les 3/5 de ce montant et Paul le reste. Détermine le montant payé par chacun.", "question_type": "numeric_input", "correct_answer": "360000", "explanation": "Suzanne : 3/5 × 600 000 = 360 000 F. Paul : 600 000 - 360 000 = 240 000 F.", "order": 0},
+                        {"sub_label": "b", "text": "Les élèves de 3ème année du lycée d'Adja-Ouèrè visitent. Transport : 162 700 F. Le lycée paie 92 500 F. Chaque élève cotise 2 600 F. Calcule le nombre d'élèves.", "question_type": "numeric_input", "correct_answer": "27", "explanation": "Reste : 162 700 - 92 500 = 70 200 F. Élèves : 70 200 ÷ 2 600 = 27.", "order": 1},
+                        {"sub_label": "c", "text": "Les sacs de provende : 2 sacs = 25 000 F, 3 sacs = 37 500 F, 5 sacs = 62 500 F. Calcule le nombre de sacs qu'on peut acheter avec 87 500 F.", "question_type": "numeric_input", "correct_answer": "7", "explanation": "Prix unitaire : 12 500 F. 87 500 ÷ 12 500 = 7 sacs.", "order": 2},
+                    ],
+                },
+                {
+                    "item_number": 2, "domain": "measures_operations",
+                    "context_text": "Les sacs de provende coûtent : 2 sacs = 25 000 F, 3 sacs = 37 500 F, 5 sacs = 62 500 F.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Présente ces données dans un tableau de correspondance.", "question_type": "fill_blank", "correct_answer": "2 sacs: 25000F, 3 sacs: 37500F, 5 sacs: 62500F", "explanation": "On organise les données : nombre de sacs et prix correspondant.", "order": 0},
+                        {"sub_label": "b", "text": "Dis s'il s'agit d'une situation de proportionnalité. Justifie.", "question_type": "true_false", "correct_answer": "Vrai", "explanation": "Prix unitaire constant : 25 000 ÷ 2 = 12 500 F. 37 500 ÷ 3 = 12 500 F. 62 500 ÷ 5 = 12 500 F.", "order": 1},
+                        {"sub_label": "c", "text": "Calcule le nombre de sacs de provende qu'on peut acheter avec 87 500 F.", "question_type": "numeric_input", "correct_answer": "7", "depends_on_previous": True, "explanation": "87 500 ÷ 12 500 = 7 sacs.", "hint": "Utilise le prix unitaire trouvé à la question précédente.", "order": 2},
+                    ],
+                },
+                {
+                    "item_number": 3, "domain": "geometry",
+                    "context_text": "Le terrain rectangulaire mesure 125 m de longueur sur 75 m de largeur.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Détermine les dimensions réduites du terrain à l'échelle 1/2500.", "question_type": "fill_blank", "correct_answer": "5 cm × 3 cm", "explanation": "125 m = 12 500 cm ÷ 2 500 = 5 cm. 75 m = 7 500 cm ÷ 2 500 = 3 cm.", "order": 0},
+                        {"sub_label": "b", "text": "Représente cette figure sur ta feuille.", "question_type": "mcq", "choices": ["Rectangle 5cm × 3cm", "Rectangle 12.5cm × 7.5cm", "Carré 5cm × 5cm"], "correct_answer": "Rectangle 5cm × 3cm", "explanation": "D'après le calcul de la question a), le rectangle réduit mesure 5 cm × 3 cm.", "depends_on_previous": True, "order": 1},
+                        {"sub_label": "c", "text": "Trace son symétrique par rapport à une droite OD placée à l'intérieur de la figure.", "question_type": "mcq", "choices": ["Rectangle symétrique par rapport à OD", "Même rectangle décalé", "Rectangle réduit"], "correct_answer": "Rectangle symétrique par rapport à OD", "explanation": "Le symétrique par rapport à une droite est une figure de mêmes dimensions, reflétée de l'autre côté de la droite.", "order": 2},
+                    ],
+                },
+            ],
+        },
+        {
+            "title": "CEP 2019 Session des Malades — Mathématiques",
+            "context_text": "Codjo est un maraîcher. Il dispose d'un domaine de 150 m de long sur 80 m de large qu'il veut exploiter. Pour cela, il demande et obtient auprès d'une banque un prêt de 2 500 000 FCFA au taux annuel de 12%.",
+            "items": [
+                {
+                    "item_number": 1, "domain": "measures_operations",
+                    "context_text": "Le domaine de Codjo mesure 150 m de long sur 80 m de large.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Calcule en hectare (ha) la superficie du domaine à exploiter.", "question_type": "numeric_input", "correct_answer": "1.2", "explanation": "150 × 80 = 12 000 m² = 1,2 ha (1 ha = 10 000 m²).", "order": 0},
+                        {"sub_label": "b", "text": "Détermine l'aire de la superficie occupée par les produits. (Le plan montre des allées de 2 m.)", "question_type": "numeric_input", "correct_answer": "11200", "depends_on_previous": True, "explanation": "Aire totale moins l'aire des allées. Aire utile = 11 200 m².", "hint": "Soustrais l'aire des allées de l'aire totale.", "order": 1},
+                        {"sub_label": "c", "text": "Calcule le nombre de planches que l'on peut installer sur cette superficie utile. (Chaque planche = 5 m × 2 m)", "question_type": "numeric_input", "correct_answer": "1120", "depends_on_previous": True, "explanation": "Aire d'une planche = 5 × 2 = 10 m². 11 200 ÷ 10 = 1 120 planches.", "hint": "Utilise la superficie utile de la question b).", "order": 2},
+                    ],
+                },
+                {
+                    "item_number": 2, "domain": "geometry",
+                    "context_text": "Une planche rectangulaire mesure 5 m × 2 m.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Reproduis à l'échelle de 1/100 une planche. (rectangulaire 5 m × 2 m)", "question_type": "mcq", "choices": ["Rectangle 5cm × 2cm", "Rectangle 50cm × 20cm", "Rectangle 0.5cm × 0.2cm"], "correct_answer": "Rectangle 5cm × 2cm", "explanation": "Échelle 1/100 : 5 m = 500 cm ÷ 100 = 5 cm. 2 m = 200 cm ÷ 100 = 2 cm.", "order": 0},
+                        {"sub_label": "b", "text": "Trace son symétrique par rapport à une droite (D) placée hors du rectangle.", "question_type": "mcq", "choices": ["Rectangle symétrique de l'autre côté de D", "Même rectangle sur D", "Rectangle réduit"], "correct_answer": "Rectangle symétrique de l'autre côté de D", "explanation": "Le symétrique par rapport à une droite est une figure de mêmes dimensions reflétée de l'autre côté de (D).", "order": 1},
+                        {"sub_label": "c", "text": "Indique la nature du quadrilatère formé par la planche et son symétrique.", "question_type": "mcq", "choices": ["Un hexagone", "Deux rectangles symétriques", "Un losange"], "correct_answer": "Deux rectangles symétriques", "explanation": "La figure et son symétrique forment deux rectangles identiques de part et d'autre de (D).", "order": 2},
+                    ],
+                },
+                {
+                    "item_number": 3, "domain": "data_proportionality",
+                    "context_text": "Codjo obtient un prêt de 2 500 000 FCFA au taux annuel de 12 %. Il rembourse au bout de 6 mois.",
+                    "sub_questions": [
+                        {"sub_label": "a", "text": "Calcule l'intérêt annuel du prêt effectué par Codjo.", "question_type": "numeric_input", "correct_answer": "300000", "explanation": "I = C × t = 2 500 000 × 12/100 = 300 000 F.", "order": 0},
+                        {"sub_label": "b", "text": "Calcule l'intérêt payé au bout de 6 mois.", "question_type": "numeric_input", "correct_answer": "150000", "depends_on_previous": True, "explanation": "300 000 × 6/12 = 150 000 F.", "hint": "Utilise l'intérêt annuel de la question a).", "order": 1},
+                        {"sub_label": "c", "text": "Calcule le montant remboursé par Codjo.", "question_type": "numeric_input", "correct_answer": "2650000", "depends_on_previous": True, "explanation": "2 500 000 + 150 000 = 2 650 000 F.", "hint": "Additionne le capital et l'intérêt de la question b).", "order": 2},
+                    ],
+                },
+            ],
+        },
+    ]
+
+    for exam_data in CEP_EXAMS:
+        # Check if exam already exists
+        result = await session.execute(
+            select(MockExam).where(MockExam.title == exam_data["title"])
+        )
+        existing = result.scalar_one_or_none()
+        if existing:
+            print(f"  [skip] CEP exam: {exam_data['title']}")
+            continue
+
+        mock_exam = MockExam(
+            id=uuid.uuid4(),
+            grade_level_id=cm2_grade.id,
+            subject_id=math_subject.id,
+            title=exam_data["title"],
+            duration_minutes=60,
+            total_questions=9,  # 3 items × 3 sub-questions
+            exam_type="cep",
+            context_text=exam_data["context_text"],
+            is_free=True,
+            is_national=False,
+            is_active=True,
+        )
+        session.add(mock_exam)
+        await session.flush()
+
+        for item_data in exam_data["items"]:
+            item = ExamItem(
+                id=uuid.uuid4(),
+                mock_exam_id=mock_exam.id,
+                item_number=item_data["item_number"],
+                domain=item_data["domain"],
+                context_text=item_data["context_text"],
+                points=6.67,
+                order=item_data["item_number"],
+            )
+            session.add(item)
+            await session.flush()
+
+            for sq_data in item_data["sub_questions"]:
+                sub_q = ExamSubQuestion(
+                    id=uuid.uuid4(),
+                    exam_item_id=item.id,
+                    sub_label=sq_data["sub_label"],
+                    text=sq_data["text"],
+                    question_type=sq_data["question_type"],
+                    correct_answer=sq_data["correct_answer"],
+                    choices=sq_data.get("choices"),
+                    explanation=sq_data.get("explanation"),
+                    hint=sq_data.get("hint"),
+                    points=2.22,
+                    depends_on_previous=sq_data.get("depends_on_previous", False),
+                    order=sq_data["order"],
+                )
+                session.add(sub_q)
+
+        await session.flush()
+        print(f"  [seed] CEP exam: {exam_data['title']}")
 
 
 async def seed_curriculum_via_import(session) -> None:
@@ -329,6 +526,13 @@ async def seed() -> None:
                 await _upsert(session, MockExam, "title", exam_data)
         else:
             print("  [warn] math subject or cm2 grade not found, skipping mock exams")
+
+        # CEP-format exams (real annales)
+        print("── CEP Exams (Annales) ──")
+        if math_subject and cm2_grade:
+            await seed_cep_exams(session, cm2_grade, math_subject)
+        else:
+            print("  [warn] math subject or cm2 grade not found, skipping CEP exams")
 
         await session.commit()
     print("\nSeed complete.")

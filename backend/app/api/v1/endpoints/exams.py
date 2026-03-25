@@ -20,9 +20,13 @@ class StartExamRequest(BaseModel):
 
 
 class SubmitAnswerRequest(BaseModel):
-    question_id: UUID
+    # QCM-format fields
+    question_id: UUID | None = None
     answer: object
     time_seconds: int | None = None
+    # CEP-format fields
+    item_number: int | None = None
+    sub_label: str | None = None
 
 
 @router.get("")
@@ -56,7 +60,14 @@ async def submit_answer(
 ):
     """Submit an answer for a question in an exam session."""
     result = await exam_service.submit_answer(
-        db, session_id, profile.id, body.question_id, body.answer, body.time_seconds
+        db,
+        session_id,
+        profile.id,
+        question_id=body.question_id,
+        answer=body.answer,
+        time_seconds=body.time_seconds,
+        item_number=body.item_number,
+        sub_label=body.sub_label,
     )
     await db.commit()
     return ok(data=result)

@@ -17,4 +17,4 @@ from app.models.app_config import AppConfig, ValueType  # noqa
 from app.models.social import WeeklyLeaderboard, Challenge, ChallengeStatus  # noqa
 from app.models.classroom import Classroom, ClassroomStudent, Assignment  # noqa
 from app.models.content_audit import ContentTransition  # noqa
-from app.models.mock_exam import MockExam, ExamSession  # noqa
+from app.models.mock_exam import MockExam, ExamItem, ExamSubQuestion, ExamSession  # noqa
