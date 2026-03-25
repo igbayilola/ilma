@@ -134,14 +134,6 @@ export const LoginPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Demo Helpers */}
-      <div className="mt-8 pt-6 border-t border-gray-100">
-        <p className="text-xs text-center text-gray-400 mb-2 uppercase font-bold">Accès Rapide (Démo)</p>
-        <div className="flex justify-center space-x-2">
-          <button type="button" onClick={() => { setIdentifier('parent@ilma.bj'); setDisplayIdentifier('parent@ilma.bj'); setIsPhone(false); setPassword('Parent123!'); }} className="text-xs bg-gray-100 px-2 py-1 rounded hover:bg-gray-200">Parent</button>
-          <button type="button" onClick={() => { setIdentifier('admin@ilma.bj'); setDisplayIdentifier('admin@ilma.bj'); setIsPhone(false); setPassword('Admin123!'); }} className="text-xs bg-gray-100 px-2 py-1 rounded hover:bg-gray-200">Admin</button>
-        </div>
-      </div>
 
     </AuthLayout>
   );

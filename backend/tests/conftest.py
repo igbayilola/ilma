@@ -82,7 +82,7 @@ async def test_student(db_session: AsyncSession) -> User:
         id=uuid.uuid4(),
         email="student@test.com",
         full_name="Test Student",
-        hashed_password=get_password_hash("Test1234!"),
+        hashed_password=get_password_hash("Xr;aTRKMx_1CI1Wd@HF1c!9"),
         role=UserRole.STUDENT,
         is_active=True,
     )
@@ -97,7 +97,7 @@ async def test_parent(db_session: AsyncSession) -> User:
         id=uuid.uuid4(),
         email="parent@test.com",
         full_name="Test Parent",
-        hashed_password=get_password_hash("Test1234!"),
+        hashed_password=get_password_hash("Xr;aTRKMx_1CI1Wd@HF1c!9"),
         role=UserRole.PARENT,
         is_active=True,
     )
@@ -112,7 +112,7 @@ async def test_admin(db_session: AsyncSession) -> User:
         id=uuid.uuid4(),
         email="admin@test.com",
         full_name="Test Admin",
-        hashed_password=get_password_hash("Test1234!"),
+        hashed_password=get_password_hash("Xr;aTRKMx_1CI1Wd@HF1c!9"),
         role=UserRole.ADMIN,
         is_active=True,
     )

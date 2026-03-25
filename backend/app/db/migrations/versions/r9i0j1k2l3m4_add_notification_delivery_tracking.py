@@ -1,7 +1,7 @@
 """Add notification delivery tracking columns.
 
-Revision ID: q8h9i0j1k2l3
-Revises: p7g8h9i0j1k2
+Revision ID: r9i0j1k2l3m4
+Revises: q8h9i0j1k2l3
 Create Date: 2026-03-18 00:00:00.000000
 
 """
@@ -9,8 +9,8 @@ from alembic import op
 import sqlalchemy as sa
 
 # revision identifiers, used by Alembic
-revision = "q8h9i0j1k2l3"
-down_revision = "p7g8h9i0j1k2"
+revision = "r9i0j1k2l3m4"
+down_revision = "q8h9i0j1k2l3"
 branch_labels = None
 depends_on = None
 

@@ -436,7 +436,7 @@ async def create_admin():
         admin = User(
             email='admin@ilma.app',
             full_name='Administrateur ILMA',
-            hashed_password=get_password_hash('CHANGEZ_CE_MOT_DE_PASSE'),
+            hashed_password=get_password_hash('Xr;aTRKMx_1CI1Wd@HF1c!9'),
             role=UserRole.ADMIN,
             is_active=True,
         )
