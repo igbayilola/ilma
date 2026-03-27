@@ -1,4 +1,5 @@
 """Exercise session engine: start, next question (adaptive), attempt (idempotent), complete."""
+import logging
 import random
 from datetime import datetime, timezone
 from uuid import UUID
@@ -12,6 +13,8 @@ from app.models.profile import Profile
 from app.models.progress import MicroSkillProgress
 from app.models.session import Attempt, ExerciseSession, SessionMode, SessionStatus
 from app.services.config_service import config_service
+
+logger = logging.getLogger(__name__)
 
 
 class SessionService:
@@ -220,14 +223,14 @@ class SessionService:
             xp = max(1, session.correct_answers)  # 1 XP per correct answer, min 1 for participation
             await social_service.increment_xp(db, profile.id, xp)
         except Exception:
-            pass  # Non-critical — don't break session completion
+            logger.warning("Failed to increment XP for profile %s", profile.id, exc_info=True)
 
         # Award badges
         try:
             from app.services.badge_service import badge_service
             await badge_service.award_badges(db, profile.id)
         except Exception:
-            pass  # Non-critical
+            logger.warning("Failed to award badges for profile %s", profile.id, exc_info=True)
 
         return session
 

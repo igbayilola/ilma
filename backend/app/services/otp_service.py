@@ -1,4 +1,5 @@
 """OTP generation, validation, and sending (mock + Twilio provider)."""
+import logging
 import random
 import re
 from datetime import datetime, timedelta, timezone
@@ -9,6 +10,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import settings
 from app.core.exceptions import AppException, RateLimitException
 from app.models.otp import OTPCode
+
+logger = logging.getLogger(__name__)
 
 # Benin phone prefixes: MTN (96,97,66,67), Moov (95,94,64,65,69), etc.
 BENIN_PHONE_RE = re.compile(r"^\+229(9[4-7]|6[4-9])\d{6}$")
@@ -35,7 +38,7 @@ class SMSProvider:
 
 class MockSMSProvider(SMSProvider):
     async def send(self, phone: str, message: str) -> None:
-        print(f"[SMS MOCK] To {phone}: {message}")
+        logger.info("[SMS MOCK] To %s: %s", phone, message)
 
 
 class TwilioSMSProvider(SMSProvider):
