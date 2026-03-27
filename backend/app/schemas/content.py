@@ -205,39 +205,36 @@ class QuestionBase(BaseModel):
     common_mistake_targeted: Optional[str] = None
     is_active: bool = True
 
-    @model_validator(mode="after")
-    def validate_question_consistency(self):
-        qt = self.question_type
-        choices = self.choices
-        correct = self.correct_answer
 
-        # MCQ and TRUE_FALSE require choices list
-        if qt in (QuestionType.MCQ, QuestionType.TRUE_FALSE):
-            if not isinstance(choices, list) or len(choices) == 0:
-                raise ValueError(f"{qt.value} questions require a non-empty choices list")
-            # correct_answer must be one of the choices (or convertible to string match)
-            if isinstance(correct, str) and correct not in [str(c) for c in choices]:
-                pass  # Allow — correct_answer may use index or label
-        elif qt == QuestionType.ORDERING:
-            if not isinstance(choices, list) or len(choices) < 2:
-                raise ValueError("ORDERING questions require a choices list with at least 2 items")
-        elif qt == QuestionType.MATCHING:
-            if not isinstance(choices, dict) or "left" not in choices or "right" not in choices:
-                pass  # Allow legacy flat list format
-        elif qt == QuestionType.NUMERIC_INPUT:
-            # correct_answer should be numeric or convertible
-            try:
-                float(str(correct))
-            except (ValueError, TypeError):
-                raise ValueError(f"NUMERIC_INPUT correct_answer must be numeric, got: {correct}")
+def _validate_question_consistency(values):
+    """Validate question data consistency (used on create/update only, not on read)."""
+    qt = values.question_type
+    choices = values.choices
+    correct = values.correct_answer
 
-        return self
+    if qt in (QuestionType.MCQ, QuestionType.TRUE_FALSE):
+        if not isinstance(choices, list) or len(choices) == 0:
+            raise ValueError(f"{qt.value} questions require a non-empty choices list")
+    elif qt == QuestionType.ORDERING:
+        if not isinstance(choices, list) or len(choices) < 2:
+            raise ValueError("ORDERING questions require a choices list with at least 2 items")
+    elif qt == QuestionType.NUMERIC_INPUT:
+        try:
+            float(str(correct))
+        except (ValueError, TypeError):
+            raise ValueError(f"NUMERIC_INPUT correct_answer must be numeric, got: {correct}")
+
+    return values
 
 
 class QuestionCreate(QuestionBase):
     skill_id: uuid.UUID
     micro_skill_id: Optional[uuid.UUID] = None
     external_id: Optional[str] = None
+
+    @model_validator(mode="after")
+    def validate(self):
+        return _validate_question_consistency(self)
 
 
 class QuestionUpdate(BaseModel):
