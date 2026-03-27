@@ -90,13 +90,14 @@ class SubscriptionService:
         if not plan:
             raise NotFoundException("Plan", str(plan_id))
 
-        # Create pending payment
+        # Create pending payment with plan_id in metadata for webhook lookup
         payment = Payment(
             user_id=user.id,
             profile_id=profile.id,
             provider=provider,
             amount_xof=plan.price_xof,
             status=PaymentStatus.PENDING,
+            metadata_={"plan_id": str(plan.id)},
         )
         db.add(payment)
         await db.flush()
@@ -143,10 +144,19 @@ class SubscriptionService:
             if payment.profile_id:
                 profile_result = await db.execute(select(Profile).where(Profile.id == payment.profile_id))
                 profile = profile_result.scalar_one_or_none()
-                plan_result = await db.execute(
-                    select(Plan).where(Plan.price_xof == payment.amount_xof, Plan.is_active.is_(True))
-                )
-                plan = plan_result.scalar_one_or_none()
+                # Look up plan by ID stored in metadata, fallback to price match
+                plan = None
+                metadata = payment.metadata_ or {}
+                if metadata.get("plan_id"):
+                    plan_result = await db.execute(
+                        select(Plan).where(Plan.id == uuid.UUID(metadata["plan_id"]))
+                    )
+                    plan = plan_result.scalar_one_or_none()
+                if not plan:
+                    plan_result = await db.execute(
+                        select(Plan).where(Plan.price_xof == payment.amount_xof, Plan.is_active.is_(True))
+                    )
+                    plan = plan_result.scalar_one_or_none()
                 if profile and plan:
                     await self._activate_subscription(db, profile, plan, payment)
         elif status in ("failed", "declined"):

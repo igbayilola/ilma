@@ -32,6 +32,12 @@ services:
       - PUSH_PROVIDER=webpush
       - VAPID_PRIVATE_KEY=6Hg26ySbfz4_i-cf3t2IdG0cWf6DGf_Zc3UidkOgJ9I
       - VAPID_PUBLIC_KEY=BNQC2U0LMDuszpg_NmkMmh_v8_FuJUkCoC3o-Ew-X3fNzvJb4F8iBmxFXV55y3Z8u7KQ0-Rwyixz2BUL7ttgo50
+      # Payment providers (set in .env or uncomment with real keys)
+      - KKIAPAY_PUBLIC_KEY=${KKIAPAY_PUBLIC_KEY:-}
+      - KKIAPAY_PRIVATE_KEY=${KKIAPAY_PRIVATE_KEY:-}
+      - KKIAPAY_SECRET=${KKIAPAY_SECRET:-}
+      - FEDAPAY_API_KEY=${FEDAPAY_API_KEY:-}
+      - FEDAPAY_ENVIRONMENT=${FEDAPAY_ENVIRONMENT:-sandbox}
     volumes:
       - ./content:/app/content:ro
     depends_on:

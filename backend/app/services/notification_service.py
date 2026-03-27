@@ -204,10 +204,13 @@ class NotificationService:
                         if success:
                             any_success = True
                         else:
-                            # Remove stale subscription
-                            await db.execute(
-                                delete(PushSubscription).where(PushSubscription.id == sub.id)
-                            )
+                            # Track failures — only remove after 3 consecutive failures
+                            sub.fail_count = getattr(sub, "fail_count", 0) + 1
+                            if sub.fail_count >= 3:
+                                logger.info("[PUSH] Removing stale subscription %s after %d failures", sub.endpoint[:50], sub.fail_count)
+                                await db.execute(
+                                    delete(PushSubscription).where(PushSubscription.id == sub.id)
+                                )
                     notif.sent_at = now
                     notif.status = "sent" if any_success else "failed"
                     if not any_success:

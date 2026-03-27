@@ -114,7 +114,7 @@ export const LoginPage: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             />
             <div className="text-right">
-                <Link to="#" className="text-xs font-bold text-sitou-primary hover:underline">
+                <Link to="/forgot-password" className="text-xs font-bold text-sitou-primary hover:underline">
                     Mot de passe oublié ?
                 </Link>
             </div>

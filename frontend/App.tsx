@@ -46,6 +46,7 @@ const SplashPage = lazyNamed(() => import('./pages/public/Splash'), 'SplashPage'
 const LoginPage = lazyNamed(() => import('./pages/auth/Login'), 'LoginPage');
 const RegisterPage = lazyNamed(() => import('./pages/auth/Register'), 'RegisterPage');
 const OTPPage = lazyNamed(() => import('./pages/auth/OTP'), 'OTPPage');
+const ForgotPasswordPage = lazyNamed(() => import('./pages/auth/ForgotPassword'), 'ForgotPasswordPage');
 
 // Profile selection
 const ProfileSelectorPage = lazyNamed(() => import('./pages/auth/ProfileSelector'), 'ProfileSelectorPage');
@@ -172,6 +173,7 @@ const App: React.FC = () => {
                             <Route path="/login" element={<LoginPage />} />
                             <Route path="/register" element={<RegisterPage />} />
                             <Route path="/otp" element={<OTPPage />} />
+                            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                         </Route>
 
                         <Route path="/styleguide" element={<AppShell><StyleGuide /></AppShell>} />

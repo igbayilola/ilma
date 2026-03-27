@@ -314,8 +314,17 @@ class BadgeService:
             return True
 
         if condition_type == "exam_score":
-            # Will be evaluated when exam mode is implemented
-            return False
+            from app.models.mock_exam import ExamSession
+            min_score = params.get("min_score", 80)
+            min_count = params.get("min_count", 1)
+            result = await db.execute(
+                select(func.count(ExamSession.id)).where(
+                    ExamSession.profile_id == profile_id,
+                    ExamSession.status == "completed",
+                    ExamSession.score >= min_score,
+                )
+            )
+            return (result.scalar() or 0) >= min_count
 
         return False
 
