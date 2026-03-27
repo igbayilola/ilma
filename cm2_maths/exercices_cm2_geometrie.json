@@ -1,0 +1,2402 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "domain": "Géométrie",
+    "grade": "CM2",
+    "country": "Bénin",
+    "generated": true
+  },
+  "exercises": [
+    {
+      "micro_skill_external_id": "GEO-FIG-DECRIRE::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Comment s'appelle le point où deux côtés d'un polygone se rencontrent ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "Un sommet",
+            "Un côté",
+            "Un angle",
+            "Une diagonale"
+          ],
+          "correct_answer": "Un sommet",
+          "explanation": "Le point de rencontre de deux côtés est un sommet.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "matching",
+          "difficulty": "medium",
+          "text": "Associe chaque terme à sa définition.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "left_items": [
+            "Sommet",
+            "Côté",
+            "Diagonale"
+          ],
+          "right_items": [
+            "Point de rencontre de 2 côtés",
+            "Segment reliant 2 sommets consécutifs",
+            "Segment reliant 2 sommets non consécutifs"
+          ],
+          "correct_answer": {
+            "Sommet": "Point de rencontre de 2 côtés",
+            "Côté": "Segment reliant 2 sommets consécutifs",
+            "Diagonale": "Segment reliant 2 sommets non consécutifs"
+          },
+          "explanation": "Sommet = point d'intersection des côtés; côté = segment entre sommets consécutifs; diagonale = segment entre sommets non consécutifs.",
+          "hint": "Associe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "Un cercle a un ___, un ___ et un ___.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": "centre, rayon, diamètre",
+          "explanation": "Les éléments principaux du cercle sont le centre, le rayon et le diamètre.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Combien de diagonales possède un rectangle ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "2",
+            "4",
+            "1",
+            "3"
+          ],
+          "correct_answer": "2",
+          "explanation": "Un rectangle a exactement 2 diagonales.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-FIG-DECRIRE::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour tracer un angle droit, j'utilise :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Une équerre",
+            "Un compas",
+            "Un rapporteur",
+            "Une règle seule"
+          ],
+          "correct_answer": "Une équerre",
+          "explanation": "L'équerre sert à tracer et vérifier les angles droits.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "On utilise le compas pour tracer un cercle.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "Le compas permet de tracer un cercle en gardant l'écartement constant.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Trace un segment de 7 cm à la règle.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "target": 7
+          },
+          "correct_answer": 7,
+          "explanation": "Un segment de 7 cm va de 0 à 7 cm sur la règle.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour vérifier qu'un angle est droit, je place :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "L'angle droit de l'équerre dans l'angle",
+            "Le compas au sommet",
+            "La règle le long du côté",
+            "Le rapporteur sur le sommet"
+          ],
+          "correct_answer": "L'angle droit de l'équerre dans l'angle",
+          "explanation": "L'équerre permet de vérifier un angle droit en le plaçant dans le coin.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-FIG-DECRIRE::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour reproduire un triangle sur un quadrillage, je dois repérer :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Les coordonnées des 3 sommets",
+            "Seulement la longueur d'un côté",
+            "Le centre du triangle",
+            "La couleur du triangle"
+          ],
+          "correct_answer": "Les coordonnées des 3 sommets",
+          "explanation": "Pour reproduire, il faut connaître la position de chaque sommet.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Reproduis un carré de côté 4 cm.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 8,
+            "step": 1,
+            "target": 4
+          },
+          "correct_answer": 4,
+          "explanation": "Un carré de 4 cm a 4 côtés égaux et 4 angles droits.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Pour reproduire une figure hors quadrillage, on peut utiliser la règle et le compas.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "La règle mesure les longueurs et le compas reporte les distances.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Quelle information est indispensable pour reproduire un losange hors quadrillage ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Les longueurs des deux diagonales",
+            "Seulement un côté",
+            "La couleur",
+            "Le nombre de sommets"
+          ],
+          "correct_answer": "Les longueurs des deux diagonales",
+          "explanation": "Un losange est défini par ses diagonales (perpendiculaires et se coupant en leur milieu).",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-FIG-DECRIRE::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève a tracé un rectangle dont les côtés mesurent 5 cm et 3 cm, mais un angle n'est pas droit.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Rectangle avec un angle non droit",
+          "correct_answer": "Refaire le tracé en vérifiant chaque angle avec l'équerre",
+          "explanation": "Un rectangle doit avoir 4 angles droits. Utilisez l'équerre pour vérifier.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Comment vérifier que deux segments tracés ont la même longueur ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Mesurer chacun avec la règle",
+            "Les regarder à l'œil",
+            "Compter les angles",
+            "Utiliser le rapporteur"
+          ],
+          "correct_answer": "Mesurer chacun avec la règle",
+          "explanation": "La règle graduée permet de mesurer et comparer les longueurs.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Pour vérifier l'alignement de 3 points, on peut utiliser une règle.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Si la règle passe par les 3 points, ils sont alignés.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Le cercle tracé par un élève n'a pas un rayon constant (l'écartement du compas a bougé).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Cercle irrégulier",
+          "correct_answer": "Retracer en maintenant l'écartement du compas fixe",
+          "explanation": "Le compas doit garder le même écartement pendant tout le tracé.",
+          "hint": "Trouve l'erreur."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-CERCLE::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Le segment qui relie le centre du cercle à un point du cercle s'appelle :",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "Le rayon",
+            "Le diamètre",
+            "La corde",
+            "L'arc"
+          ],
+          "correct_answer": "Le rayon",
+          "explanation": "Le rayon va du centre à n'importe quel point du cercle.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "matching",
+          "difficulty": "medium",
+          "text": "Associe chaque élément du cercle à sa définition.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "left_items": [
+            "Rayon",
+            "Diamètre",
+            "Corde"
+          ],
+          "right_items": [
+            "Du centre à un point du cercle",
+            "Corde passant par le centre",
+            "Segment entre 2 points du cercle"
+          ],
+          "correct_answer": {
+            "Rayon": "Du centre à un point du cercle",
+            "Diamètre": "Corde passant par le centre",
+            "Corde": "Segment entre 2 points du cercle"
+          },
+          "explanation": "Rayon = centre→point, diamètre = plus grande corde (passe par le centre), corde = segment entre 2 points.",
+          "hint": "Associe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Le diamètre est toujours le double du rayon.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "D = 2 × r, toujours.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Le ___ est la plus longue corde du cercle.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "diamètre",
+          "explanation": "Le diamètre passe par le centre et est la corde la plus longue.",
+          "hint": "Complète."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-CERCLE::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour tracer un cercle de rayon 5 cm, j'écarte mon compas de :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "5 cm",
+            "10 cm",
+            "2,5 cm",
+            "15 cm"
+          ],
+          "correct_answer": "5 cm",
+          "explanation": "L'écartement du compas = le rayon.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "medium",
+          "text": "Trace un cercle de centre O et de rayon 4 cm.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "steps": [
+            {
+              "instruction": "Place le point O",
+              "expected": "Point O marqué"
+            },
+            {
+              "instruction": "Écarte le compas de 4 cm",
+              "expected": "Écartement de 4 cm"
+            },
+            {
+              "instruction": "Trace le cercle en gardant la pointe sur O",
+              "expected": "Cercle complet"
+            }
+          ],
+          "correct_answer": "Cercle de centre O et rayon 4 cm",
+          "explanation": "Pointe sèche sur O, écartement 4 cm, tracer sans bouger la pointe.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Pour tracer un cercle de diamètre 6 cm, j'écarte le compas de 6 cm.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": false,
+          "explanation": "Le compas s'écarte du rayon, pas du diamètre. Rayon = 6/2 = 3 cm.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Trace un cercle de rayon 3 cm.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 0,
+            "max": 6,
+            "step": 1,
+            "target": 3
+          },
+          "correct_answer": 3,
+          "explanation": "Écartement du compas = 3 cm.",
+          "hint": "Observe."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-CERCLE::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Le rayon d'un cercle est 8 cm. Quel est son diamètre ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 16,
+          "explanation": "D = 2 × r = 2 × 8 = 16 cm.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Le diamètre d'un cercle est 14 cm. Quel est son rayon ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 7,
+          "explanation": "r = D ÷ 2 = 14 ÷ 2 = 7 cm.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Un cercle a un diamètre de 2,5 cm. Son rayon est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "1,25 cm",
+            "5 cm",
+            "0,5 cm",
+            "2,5 cm"
+          ],
+          "correct_answer": "1,25 cm",
+          "explanation": "r = D/2 = 2,5/2 = 1,25 cm.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Le rayon d'un cercle est 3,5 cm. Calcule le diamètre.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 7,
+          "explanation": "D = 2 × 3,5 = 7 cm.",
+          "hint": "Calcule.",
+          "tolerance": 0.1
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-ANGLES::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Un angle de 45° est :",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "Aigu",
+            "Droit",
+            "Obtus",
+            "Plat"
+          ],
+          "correct_answer": "Aigu",
+          "explanation": "Un angle aigu mesure entre 0° et 90°.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "ordering",
+          "difficulty": "easy",
+          "text": "Classe ces angles du plus petit au plus grand.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "items": [
+            "Aigu (30°)",
+            "Droit (90°)",
+            "Obtus (120°)",
+            "Plat (180°)"
+          ],
+          "correct_answer": [
+            "Aigu (30°)",
+            "Droit (90°)",
+            "Obtus (120°)",
+            "Plat (180°)"
+          ],
+          "explanation": "30° < 90° < 120° < 180°.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Un angle de 90° est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Un angle droit",
+            "Un angle aigu",
+            "Un angle obtus",
+            "Un angle plat"
+          ],
+          "correct_answer": "Un angle droit",
+          "explanation": "90° = angle droit.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Un angle de 135° est un angle obtus.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "Un angle obtus est entre 90° et 180°. 135° est obtus.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-ANGLES::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Mesure au rapporteur : l'angle entre les aiguilles d'une horloge à 3h.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 90,
+          "explanation": "À 3h, les aiguilles forment un angle droit de 90°.",
+          "hint": "Place le centre du rapporteur au centre de l'horloge."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour mesurer un angle, le centre du rapporteur doit être placé sur :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Le sommet de l'angle",
+            "Un côté de l'angle",
+            "À l'extérieur de l'angle",
+            "N'importe où"
+          ],
+          "correct_answer": "Le sommet de l'angle",
+          "explanation": "Le centre du rapporteur se place toujours sur le sommet.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "L'angle entre les deux côtés d'un triangle isocèle au sommet mesure 40°. Quelle est cette mesure ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 40,
+          "explanation": "L'angle au sommet est donné : 40°.",
+          "hint": "Calcule.",
+          "tolerance": 1
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève lit 150° au lieu de 30° sur le rapporteur.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "150° au lieu de 30°",
+          "correct_answer": "30°",
+          "explanation": "L'élève a lu la mauvaise graduation (intérieure/extérieure). Il faut choisir la graduation qui part de 0° sur le bon côté.",
+          "hint": "Trouve l'erreur."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-ANGLES::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Construis un angle de 60° au rapporteur.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Trace un côté de l'angle (demi-droite)",
+              "expected": "Demi-droite tracée"
+            },
+            {
+              "instruction": "Place le centre du rapporteur sur l'origine de la demi-droite",
+              "expected": "Centre placé"
+            },
+            {
+              "instruction": "Repère 60° et marque un point",
+              "expected": "Point à 60°"
+            },
+            {
+              "instruction": "Trace la deuxième demi-droite passant par ce point",
+              "expected": "Angle de 60° construit"
+            }
+          ],
+          "correct_answer": "Angle de 60°",
+          "explanation": "Après avoir tracé un côté, utilise le rapporteur pour repérer 60° et trace le second côté.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Construis un angle de 45°.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 0,
+            "max": 180,
+            "step": 15,
+            "target": 45
+          },
+          "correct_answer": 45,
+          "explanation": "45° est la moitié d'un angle droit.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour construire un angle de 120°, je repère sur le rapporteur :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "120° sur la bonne graduation",
+            "60° et je double",
+            "90° + 30°",
+            "180° - 120°"
+          ],
+          "correct_answer": "120° sur la bonne graduation",
+          "explanation": "On lit directement 120° sur le rapporteur.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Construis un angle de 75°.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 180,
+            "step": 15,
+            "target": 75
+          },
+          "correct_answer": 75,
+          "explanation": "75° est entre 60° et 90°.",
+          "hint": "Observe."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-ANGLES::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Un triangle a deux angles de 50° et 70°. Combien mesure le troisième angle ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 60,
+          "explanation": "50 + 70 = 120. 180 - 120 = 60°.",
+          "hint": "La somme des angles d'un triangle = 180°."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule le 3e angle d'un triangle dont les deux autres mesurent 35° et 90°.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Additionne les deux angles connus",
+              "expected": "35 + 90 = 125"
+            },
+            {
+              "instruction": "Soustrais de 180°",
+              "expected": "180 - 125 = 55"
+            }
+          ],
+          "correct_answer": "55°",
+          "explanation": "35 + 90 = 125. 180 - 125 = 55°.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève dit que les angles d'un triangle mesurent 60°, 70° et 60°.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "60° + 70° + 60° = 190°",
+          "correct_answer": "La somme ne fait pas 180° (elle fait 190°). L'élève s'est trompé.",
+          "explanation": "La somme des angles d'un triangle doit toujours être 180°.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Dans un triangle équilatéral, combien mesure chaque angle ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 60,
+          "explanation": "Triangle équilatéral : 3 angles égaux. 180 ÷ 3 = 60°.",
+          "hint": "Calcule."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-POINT::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Dans une symétrie centrale de centre O, le symétrique d'un point A est un point A' tel que :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "O est le milieu de [AA']",
+            "A et A' sont du même côté de O",
+            "AA' = AO",
+            "A' est sur le cercle de centre A"
+          ],
+          "correct_answer": "O est le milieu de [AA']",
+          "explanation": "En symétrie centrale, le centre O est le milieu du segment [AA'].",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Construis le symétrique du point A(3,2) par rapport au centre O(5,4).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "target": 7
+          },
+          "correct_answer": 7,
+          "explanation": "A'(7,6) : xA' = 2×5-3=7, yA' = 2×4-2=6.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "guided_steps",
+          "difficulty": "medium",
+          "text": "Construis le symétrique de A par rapport à O sur quadrillage.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "steps": [
+            {
+              "instruction": "Compte les carreaux de A à O horizontalement et verticalement",
+              "expected": "dx et dy comptés"
+            },
+            {
+              "instruction": "Reporte la même distance de l'autre côté de O",
+              "expected": "Point A' placé"
+            }
+          ],
+          "correct_answer": "Point A' symétrique de A par rapport à O",
+          "explanation": "On prolonge [AO] d'une distance égale à AO de l'autre côté de O.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "En symétrie centrale de centre O, les distances sont conservées : OA = OA'.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Par définition, O est le milieu de [AA'], donc OA = OA'.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-POINT::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Construis le symétrique du segment [AB] par rapport au centre O.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Construis A', symétrique de A par rapport à O",
+              "expected": "A' placé"
+            },
+            {
+              "instruction": "Construis B', symétrique de B par rapport à O",
+              "expected": "B' placé"
+            },
+            {
+              "instruction": "Trace [A'B']",
+              "expected": "Segment [A'B'] tracé"
+            }
+          ],
+          "correct_answer": "Segment [A'B'] symétrique de [AB]",
+          "explanation": "On construit le symétrique de chaque extrémité, puis on trace le segment.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Le segment symétrique a la même longueur que le segment original.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "La symétrie centrale conserve les longueurs : AB = A'B'.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Le symétrique d'un segment [AB] par rapport à O est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Un segment [A'B'] de même longueur",
+            "Un segment plus court",
+            "Un arc de cercle",
+            "Un point"
+          ],
+          "correct_answer": "Un segment [A'B'] de même longueur",
+          "explanation": "La symétrie centrale transforme un segment en un segment de même longueur.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Trace le symétrique du segment.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "target": 5
+          },
+          "correct_answer": 5,
+          "explanation": "Le symétrique est de l'autre côté du centre.",
+          "hint": "Observe."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-POINT::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Construis le symétrique du triangle ABC par rapport au centre O.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Construis A' symétrique de A",
+              "expected": "A' placé"
+            },
+            {
+              "instruction": "Construis B' symétrique de B",
+              "expected": "B' placé"
+            },
+            {
+              "instruction": "Construis C' symétrique de C",
+              "expected": "C' placé"
+            },
+            {
+              "instruction": "Trace le triangle A'B'C'",
+              "expected": "Triangle image tracé"
+            }
+          ],
+          "correct_answer": "Triangle A'B'C'",
+          "explanation": "On construit le symétrique de chaque sommet, puis on trace la figure.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "Le symétrique d'un triangle par symétrie centrale est un triangle de mêmes dimensions.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": true,
+          "explanation": "La symétrie centrale conserve les longueurs et les angles.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour construire le symétrique d'un carré par rapport à un point O, il faut construire le symétrique de :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Chaque sommet du carré",
+            "Un seul sommet",
+            "Le centre du carré",
+            "Les diagonales seulement"
+          ],
+          "correct_answer": "Chaque sommet du carré",
+          "explanation": "On transforme chaque sommet pour obtenir la figure image.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "matching",
+          "difficulty": "medium",
+          "text": "Associe chaque figure à son image par symétrie centrale.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "left_items": [
+            "Triangle",
+            "Carré",
+            "Cercle"
+          ],
+          "right_items": [
+            "Triangle de même taille",
+            "Carré de même taille",
+            "Cercle de même rayon"
+          ],
+          "correct_answer": {
+            "Triangle": "Triangle de même taille",
+            "Carré": "Carré de même taille",
+            "Cercle": "Cercle de même rayon"
+          },
+          "explanation": "La symétrie centrale conserve la forme et les dimensions.",
+          "hint": "Associe."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-POINT::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "Après une symétrie centrale, les longueurs sont conservées.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": true,
+          "explanation": "La symétrie centrale est une isométrie : elle conserve les distances.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève dit que le symétrique d'un carré de 4 cm de côté est un carré de 8 cm de côté.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Carré de 8 cm",
+          "correct_answer": "Carré de 4 cm",
+          "explanation": "La symétrie centrale conserve les longueurs, donc le carré image a aussi 4 cm de côté.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Après une symétrie centrale, l'aire d'une figure :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Reste la même",
+            "Double",
+            "Diminue de moitié",
+            "Change selon le centre"
+          ],
+          "correct_answer": "Reste la même",
+          "explanation": "La symétrie centrale conserve les aires.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "La symétrie centrale conserve les angles.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": true,
+          "explanation": "Les angles sont conservés par symétrie centrale.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-POINT::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "La symétrie axiale et la symétrie centrale sont différentes car :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "L'une utilise un axe (droite), l'autre un centre (point)",
+            "Elles sont identiques",
+            "La symétrie axiale n'existe pas",
+            "La symétrie centrale utilise un axe"
+          ],
+          "correct_answer": "L'une utilise un axe (droite), l'autre un centre (point)",
+          "explanation": "Axiale = par rapport à une droite, centrale = par rapport à un point.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "ordering",
+          "difficulty": "hard",
+          "text": "Classe ces transformations.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "items": [
+            "Symétrie axiale",
+            "Symétrie centrale",
+            "Translation",
+            "Rotation"
+          ],
+          "correct_answer": [
+            "Symétrie axiale",
+            "Symétrie centrale",
+            "Translation",
+            "Rotation"
+          ],
+          "explanation": "Les 4 transformations du plan au programme.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève confond symétrie axiale et centrale : il trace le symétrique d'un point par rapport à une droite en utilisant la méthode du centre.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Méthode du centre appliquée à un axe",
+          "correct_answer": "Il faut tracer la perpendiculaire à l'axe et reporter la distance",
+          "explanation": "En symétrie axiale, on trace la perpendiculaire à l'axe passant par le point.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "En symétrie axiale, l'axe est la médiatrice du segment reliant un point à son image.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": true,
+          "explanation": "L'axe est bien la médiatrice de [MM'] pour tout point M et son image M'.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-CENTRE-SYMM::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Laquelle de ces figures admet un centre de symétrie ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Le rectangle",
+            "Le triangle scalène",
+            "Le trapèze quelconque",
+            "Le triangle isocèle"
+          ],
+          "correct_answer": "Le rectangle",
+          "explanation": "Le rectangle a un centre de symétrie : l'intersection de ses diagonales.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Parmi : carré, rectangle, parallélogramme, triangle équilatéral — lesquels admettent un centre de symétrie ? Classe-les.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "Carré",
+            "Rectangle",
+            "Parallélogramme",
+            "Triangle équilatéral"
+          ],
+          "correct_answer": [
+            "Carré",
+            "Rectangle",
+            "Parallélogramme",
+            "Triangle équilatéral"
+          ],
+          "explanation": "Le carré, le rectangle et le parallélogramme ont un centre de symétrie. Attention : le triangle équilatéral n'en a pas.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Un cercle admet son centre comme centre de symétrie.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Le centre du cercle est un centre de symétrie du cercle.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Le parallélogramme admet-il un centre de symétrie ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Oui, l'intersection des diagonales",
+            "Non",
+            "Oui, un sommet",
+            "Oui, le milieu d'un côté"
+          ],
+          "correct_answer": "Oui, l'intersection des diagonales",
+          "explanation": "Les diagonales d'un parallélogramme se coupent en leur milieu, qui est le centre de symétrie.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-CENTRE-SYMM::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Construis le centre de symétrie d'un rectangle ABCD.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Trace la diagonale [AC]",
+              "expected": "Diagonale AC tracée"
+            },
+            {
+              "instruction": "Trace la diagonale [BD]",
+              "expected": "Diagonale BD tracée"
+            },
+            {
+              "instruction": "Le centre de symétrie est l'intersection des diagonales",
+              "expected": "Point O marqué"
+            }
+          ],
+          "correct_answer": "Point O, intersection des diagonales",
+          "explanation": "Le centre de symétrie d'un rectangle est l'intersection de ses diagonales.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Marque le centre de symétrie du carré.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 8,
+            "step": 1,
+            "target": 4
+          },
+          "correct_answer": 4,
+          "explanation": "Le centre est au milieu du carré, à l'intersection des diagonales.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour trouver le centre de symétrie d'un parallélogramme, on cherche :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "L'intersection des diagonales",
+            "Le milieu d'un côté",
+            "Un sommet",
+            "Le point le plus éloigné"
+          ],
+          "correct_answer": "L'intersection des diagonales",
+          "explanation": "Les diagonales se coupent en leur milieu = centre de symétrie.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Le centre de symétrie d'un cercle est le centre du cercle.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Le centre du cercle est son centre de symétrie.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-CENTRE-SYMM::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Pourquoi un triangle équilatéral n'a-t-il pas de centre de symétrie ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Il a 3 côtés et une symétrie d'ordre impair, il n'admet pas de centre de symétrie",
+          "explanation": "Un triangle n'a pas de centre de symétrie car aucun point ne permet de transformer chaque sommet en un autre sommet.",
+          "hint": "Écris.",
+          "accepted_answers": [
+            "pas de centre de symétrie",
+            "symétrie d'ordre impair"
+          ]
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève dit que le triangle isocèle a un centre de symétrie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Le triangle isocèle a un centre de symétrie",
+          "correct_answer": "Le triangle isocèle n'a PAS de centre de symétrie",
+          "explanation": "Aucun triangle n'a de centre de symétrie : un sommet ne peut correspondre à aucun autre par symétrie centrale.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Laquelle de ces figures n'admet PAS de centre de symétrie ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Le triangle",
+            "Le rectangle",
+            "Le carré",
+            "Le cercle"
+          ],
+          "correct_answer": "Le triangle",
+          "explanation": "Aucun triangle n'a de centre de symétrie.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "justification",
+          "difficulty": "hard",
+          "text": "Le trapèze non parallélogramme admet-il un centre de symétrie ? Justifie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Non, le trapèze non parallélogramme n'a pas de centre de symétrie",
+          "explanation": "Un trapèze non parallélogramme n'a qu'une seule paire de côtés parallèles, ce qui empêche la symétrie centrale.",
+          "hint": "Justifie.",
+          "scoring_rubric": "1pt: réponse correcte, 1pt: justification"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-DROITE::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "En symétrie axiale, l'axe de symétrie est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "La médiatrice du segment [MM']",
+            "Le milieu de [MM']",
+            "Un côté de la figure",
+            "Le centre de la figure"
+          ],
+          "correct_answer": "La médiatrice du segment [MM']",
+          "explanation": "L'axe est la médiatrice du segment reliant tout point à son image.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "L'axe de symétrie est ___ au segment [PP'] et passe par son ___.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "perpendiculaire, milieu",
+          "explanation": "L'axe est perpendiculaire à [PP'] et passe par le milieu de [PP'].",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "En symétrie axiale, le point et son image sont à égale distance de l'axe.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Par définition, d(P,axe) = d(P',axe).",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Si M est sur l'axe de symétrie, alors son image M' est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "M lui-même",
+            "De l'autre côté de l'axe",
+            "Le centre de la figure",
+            "Inexistant"
+          ],
+          "correct_answer": "M lui-même",
+          "explanation": "Tout point de l'axe est son propre symétrique.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-DROITE::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Trace la perpendiculaire à la droite (d) passant par le point A.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Place l'équerre avec un côté de l'angle droit sur (d)",
+              "expected": "Équerre placée"
+            },
+            {
+              "instruction": "Fais glisser l'équerre pour que l'autre côté passe par A",
+              "expected": "Alignement avec A"
+            },
+            {
+              "instruction": "Trace la perpendiculaire",
+              "expected": "Droite perpendiculaire tracée"
+            }
+          ],
+          "correct_answer": "Perpendiculaire à (d) passant par A",
+          "explanation": "On utilise l'équerre pour tracer la perpendiculaire.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Trace la perpendiculaire à l'axe passant par le point donné.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "target": 5
+          },
+          "correct_answer": 5,
+          "explanation": "La perpendiculaire forme un angle de 90° avec l'axe.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour tracer la perpendiculaire à une droite, on utilise :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "L'équerre",
+            "Le compas seul",
+            "La règle seule",
+            "Le rapporteur"
+          ],
+          "correct_answer": "L'équerre",
+          "explanation": "L'équerre permet de tracer des angles droits (perpendiculaires).",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Deux droites perpendiculaires forment un angle de 90°.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Perpendiculaire = angle droit = 90°.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-DROITE::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Construis le symétrique du point A par rapport à l'axe (d).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Trace la perpendiculaire à (d) passant par A",
+              "expected": "Perpendiculaire tracée"
+            },
+            {
+              "instruction": "Mesure la distance d(A, axe)",
+              "expected": "Distance mesurée"
+            },
+            {
+              "instruction": "Reporte cette distance de l'autre côté de l'axe sur la perpendiculaire",
+              "expected": "A' placé"
+            }
+          ],
+          "correct_answer": "Point A' symétrique de A",
+          "explanation": "On trace la perpendiculaire, on mesure et on reporte la distance.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Le point A est à 4 cm de l'axe. À quelle distance de l'axe se trouve A' ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 4,
+          "explanation": "En symétrie axiale, le point et son image sont à la même distance de l'axe.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Reporte la distance du point à l'axe de l'autre côté.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "target": 5
+          },
+          "correct_answer": 5,
+          "explanation": "La distance à l'axe est conservée.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Le symétrique d'un point situé à 3 cm de l'axe est à 3 cm de l'axe de l'autre côté.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Les distances à l'axe sont conservées en symétrie axiale.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-SYMM-DROITE::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Construis le symétrique du triangle ABC par rapport à l'axe (d).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Construis A' symétrique de A",
+              "expected": "A' placé"
+            },
+            {
+              "instruction": "Construis B' symétrique de B",
+              "expected": "B' placé"
+            },
+            {
+              "instruction": "Construis C' symétrique de C",
+              "expected": "C' placé"
+            },
+            {
+              "instruction": "Trace le triangle A'B'C'",
+              "expected": "Triangle image tracé"
+            }
+          ],
+          "correct_answer": "Triangle A'B'C'",
+          "explanation": "On construit le symétrique de chaque sommet.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève a construit le symétrique d'un triangle mais n'a pas respecté les distances à l'axe.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Distances non respectées",
+          "correct_answer": "Mesurer chaque distance à l'axe et reporter exactement",
+          "explanation": "Chaque point doit être à la même distance de l'axe que son image.",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "Le symétrique d'un carré par rapport à un axe est aussi un carré.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": true,
+          "explanation": "La symétrie axiale conserve les longueurs et les angles : le carré image est identique.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Quel outil est indispensable pour construire un symétrique par rapport à un axe ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "L'équerre (pour la perpendiculaire)",
+            "Le rapporteur",
+            "La calculatrice",
+            "Le compas uniquement"
+          ],
+          "correct_answer": "L'équerre (pour la perpendiculaire)",
+          "explanation": "L'équerre sert à tracer les perpendiculaires à l'axe.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-AXES-SYMM::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Combien d'axes de symétrie possède un carré ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 4,
+          "explanation": "Le carré a 4 axes : 2 diagonales + 2 médiatrices des côtés.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Les axes de symétrie du carré sont :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Ses 2 diagonales et les 2 médiatrices de ses côtés",
+            "Seulement ses diagonales",
+            "Seulement les médiatrices",
+            "1 seul axe"
+          ],
+          "correct_answer": "Ses 2 diagonales et les 2 médiatrices de ses côtés",
+          "explanation": "Le carré a 4 axes de symétrie.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Trace les 4 axes de symétrie du carré.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 0,
+            "max": 8,
+            "step": 1,
+            "target": 4
+          },
+          "correct_answer": 4,
+          "explanation": "2 diagonales + 2 médiatrices des côtés.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Le carré a exactement 4 axes de symétrie.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "2 diagonales + 2 médiatrices = 4 axes.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-AXES-SYMM::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Combien d'axes de symétrie possède un rectangle qui n'est pas un carré ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 2,
+          "explanation": "Le rectangle (non carré) a 2 axes : les 2 médiatrices des côtés. Ses diagonales ne sont pas des axes de symétrie.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Les diagonales d'un rectangle (non carré) sont des axes de symétrie.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": false,
+          "explanation": "Les diagonales d'un rectangle non carré ne sont PAS des axes de symétrie (les côtés adjacents n'ont pas la même longueur).",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "tracing",
+          "difficulty": "medium",
+          "text": "Trace les 2 axes de symétrie du rectangle.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "number_line": {
+            "min": 0,
+            "max": 8,
+            "step": 1,
+            "target": 4
+          },
+          "correct_answer": 4,
+          "explanation": "Les 2 axes passent par les milieux des côtés opposés.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Les axes de symétrie du rectangle passent par :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Les milieux des côtés opposés",
+            "Les sommets",
+            "Les diagonales",
+            "N'importe quel point"
+          ],
+          "correct_answer": "Les milieux des côtés opposés",
+          "explanation": "Les axes sont les médiatrices des côtés.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-AXES-SYMM::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Combien d'axes de symétrie possède un cercle ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Une infinité",
+            "4",
+            "2",
+            "1"
+          ],
+          "correct_answer": "Une infinité",
+          "explanation": "Tout diamètre est un axe de symétrie du cercle.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Pourquoi tout diamètre du cercle est-il un axe de symétrie ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "Chaque diamètre sépare le cercle en deux demi-cercles identiques",
+          "explanation": "Un diamètre coupe le cercle en deux parties superposables.",
+          "hint": "Écris.",
+          "accepted_answers": [
+            "diamètre coupe en deux",
+            "deux moitiés identiques",
+            "demi-cercles identiques"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Le cercle a exactement 2 axes de symétrie.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": false,
+          "explanation": "Le cercle a une infinité d'axes de symétrie (tout diamètre).",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quel est l'axe de symétrie d'un cercle ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "N'importe quel diamètre",
+            "Le rayon",
+            "La tangente",
+            "La corde"
+          ],
+          "correct_answer": "N'importe quel diamètre",
+          "explanation": "Tout diamètre est un axe de symétrie du cercle.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-AXES-SYMM::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "Range ces triangles par nombre d'axes de symétrie croissant.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "Triangle scalène (0)",
+            "Triangle isocèle (1)",
+            "Triangle équilatéral (3)"
+          ],
+          "correct_answer": [
+            "Triangle scalène (0)",
+            "Triangle isocèle (1)",
+            "Triangle équilatéral (3)"
+          ],
+          "explanation": "Scalène: 0, isocèle: 1, équilatéral: 3.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Combien d'axes de symétrie possède un triangle équilatéral ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "3",
+            "1",
+            "2",
+            "6"
+          ],
+          "correct_answer": "3",
+          "explanation": "Le triangle équilatéral a 3 axes de symétrie (les médiatrices de chaque côté).",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Le triangle isocèle a :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "1 axe de symétrie",
+            "2 axes de symétrie",
+            "3 axes de symétrie",
+            "Aucun axe"
+          ],
+          "correct_answer": "1 axe de symétrie",
+          "explanation": "L'axe passe par le sommet principal et le milieu de la base.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Un triangle scalène (3 côtés différents) n'a aucun axe de symétrie.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "Avec 3 côtés de longueurs différentes, aucune droite ne peut être axe de symétrie.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-GLISSEMENT::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Un glissement (translation) consiste à :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Déplacer une figure sans la tourner ni la retourner",
+            "Tourner une figure",
+            "Retourner une figure",
+            "Agrandir une figure"
+          ],
+          "correct_answer": "Déplacer une figure sans la tourner ni la retourner",
+          "explanation": "Une translation déplace sans rotation ni retournement.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Lors d'un glissement, la figure change de taille.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": false,
+          "explanation": "Le glissement conserve la forme et la taille de la figure.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "matching",
+          "difficulty": "medium",
+          "text": "Associe chaque transformation à sa description.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "left_items": [
+            "Glissement",
+            "Symétrie axiale",
+            "Rotation"
+          ],
+          "right_items": [
+            "Déplacer sans tourner",
+            "Retourner par rapport à un axe",
+            "Tourner autour d'un point"
+          ],
+          "correct_answer": {
+            "Glissement": "Déplacer sans tourner",
+            "Symétrie axiale": "Retourner par rapport à un axe",
+            "Rotation": "Tourner autour d'un point"
+          },
+          "explanation": "Glissement = déplacement, symétrie = retournement, rotation = tourner.",
+          "hint": "Associe."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Après un glissement, les longueurs sont :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Conservées",
+            "Doublées",
+            "Divisées par 2",
+            "Changées"
+          ],
+          "correct_answer": "Conservées",
+          "explanation": "Le glissement est une isométrie.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-GLISSEMENT::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Le vecteur de glissement indique :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "La direction, le sens et la distance du déplacement",
+            "Seulement la distance",
+            "Seulement la direction",
+            "La forme de la figure"
+          ],
+          "correct_answer": "La direction, le sens et la distance du déplacement",
+          "explanation": "Le vecteur caractérise complètement le glissement.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Un vecteur de glissement a trois caractéristiques : ___, ___ et ___.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "direction, sens, longueur",
+          "explanation": "Un vecteur est défini par sa direction, son sens et sa norme (longueur).",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Sur un quadrillage, le glissement est de 3 carreaux à droite et 2 carreaux vers le haut.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "target": 3
+          },
+          "correct_answer": 3,
+          "explanation": "Le vecteur se décompose en composantes horizontale et verticale.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Si le vecteur de glissement pointe vers la droite sur 5 cm, la figure se déplace :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "De 5 cm vers la droite",
+            "De 5 cm vers la gauche",
+            "De 10 cm vers la droite",
+            "Elle ne bouge pas"
+          ],
+          "correct_answer": "De 5 cm vers la droite",
+          "explanation": "Le sens du vecteur donne le sens du déplacement.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-GLISSEMENT::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Construis l'image du triangle ABC par le glissement de vecteur (4 carreaux à droite, 2 carreaux en haut).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Déplace A de 4 carreaux à droite et 2 en haut → A'",
+              "expected": "A' placé"
+            },
+            {
+              "instruction": "Déplace B de 4 carreaux à droite et 2 en haut → B'",
+              "expected": "B' placé"
+            },
+            {
+              "instruction": "Déplace C de la même manière → C'",
+              "expected": "C' placé"
+            },
+            {
+              "instruction": "Trace le triangle A'B'C'",
+              "expected": "Triangle image tracé"
+            }
+          ],
+          "correct_answer": "Triangle A'B'C'",
+          "explanation": "Chaque sommet est déplacé du même vecteur.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "tracing",
+          "difficulty": "hard",
+          "text": "Déplace le point de 3 carreaux vers la droite.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "number_line": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "target": 3
+          },
+          "correct_answer": 3,
+          "explanation": "On ajoute 3 à la coordonnée horizontale.",
+          "hint": "Observe."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour construire l'image d'une figure par glissement, on déplace :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Chaque sommet du même vecteur",
+            "Un seul sommet",
+            "Le centre de la figure",
+            "Les côtés seulement"
+          ],
+          "correct_answer": "Chaque sommet du même vecteur",
+          "explanation": "Tous les points se déplacent du même vecteur.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "Lors d'un glissement sur quadrillage, tous les points se déplacent du même nombre de carreaux.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": true,
+          "explanation": "Le vecteur est le même pour tous les points.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-GLISSEMENT::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "Après un glissement, les longueurs des côtés sont conservées.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": true,
+          "explanation": "Le glissement (translation) est une isométrie : il conserve les distances.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève dit qu'après un glissement, l'aire du carré de 3 cm de côté devient 12 cm².",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Aire = 12 cm²",
+          "correct_answer": "Aire = 9 cm²",
+          "explanation": "Le glissement conserve les aires. 3² = 9 cm².",
+          "hint": "Trouve l'erreur."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Après un glissement, les angles sont :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Conservés",
+            "Doublés",
+            "Réduits de moitié",
+            "Nuls"
+          ],
+          "correct_answer": "Conservés",
+          "explanation": "Le glissement conserve les angles.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "hard",
+          "text": "Un glissement modifie le périmètre d'un rectangle.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": false,
+          "explanation": "Le glissement conserve toutes les mesures : longueurs, aires, angles, périmètres.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-RESEAUX-CONNEXE::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "Dans un réseau, les points sont appelés :",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "Sommets",
+            "Côtés",
+            "Arêtes",
+            "Faces"
+          ],
+          "correct_answer": "Sommets",
+          "explanation": "Les points d'un réseau (graphe) sont les sommets.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "Les liens entre les sommets d'un réseau sont appelés ___.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": "arêtes",
+          "explanation": "Les connexions entre sommets sont des arêtes.",
+          "hint": "Complète."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Un réseau a 4 sommets : A, B, C, D. Les arêtes sont AB, BC, CD, DA, AC. Combien d'arêtes y a-t-il ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 5,
+          "explanation": "On compte les liens : AB, BC, CD, DA, AC = 5 arêtes.",
+          "hint": "Calcule."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Dans un réseau de 3 sommets tous reliés entre eux, combien y a-t-il d'arêtes ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "3",
+            "6",
+            "2",
+            "1"
+          ],
+          "correct_answer": "3",
+          "explanation": "AB, AC, BC = 3 arêtes.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-RESEAUX-CONNEXE::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Un réseau est connexe si :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "On peut aller de n'importe quel sommet à n'importe quel autre en suivant les arêtes",
+            "Tous les sommets sont reliés directement",
+            "Il y a autant de sommets que d'arêtes",
+            "Il n'a pas de cycle"
+          ],
+          "correct_answer": "On peut aller de n'importe quel sommet à n'importe quel autre en suivant les arêtes",
+          "explanation": "Un réseau connexe permet de relier n'importe quelle paire de sommets par un chemin.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Si chaque sommet d'un réseau a au moins une arête, le réseau est forcément connexe.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": false,
+          "explanation": "Faux : on peut avoir deux groupes séparés où chaque sommet a une arête sans être connectés entre eux.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "ordering",
+          "difficulty": "medium",
+          "text": "4 villages A, B, C, D. Routes : A-B, B-C, C-D. Ce réseau est-il connexe ? Range les villages de A à D.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "items": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "correct_answer": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "explanation": "Oui, le réseau est connexe : A→B→C→D.",
+          "hint": "Mets dans l'ordre."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Combien d'arêtes minimum faut-il pour relier 4 sommets en un réseau connexe ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "3",
+            "4",
+            "6",
+            "2"
+          ],
+          "correct_answer": "3",
+          "explanation": "Avec 3 arêtes on peut faire une chaîne A-B-C-D (minimum = n-1 arêtes).",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-RESEAUX-CONNEXE::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Un réseau avec 5 sommets et deux groupes séparés de sommets est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Non connexe",
+            "Connexe",
+            "Impossible",
+            "Complet"
+          ],
+          "correct_answer": "Non connexe",
+          "explanation": "S'il y a des sommets isolés (non reliés au reste), le réseau est non connexe.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "text": "Sommets : A,B,C,D,E. Arêtes : A-B, B-C, D-E. Les sommets ___ et ___ forment un sous-ensemble isolé.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "D et E",
+          "explanation": "D et E ne sont reliés qu'entre eux, pas au groupe A-B-C.",
+          "hint": "Complète.",
+          "blanks": [
+            "D",
+            "E"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "Un réseau où le sommet F n'est relié à aucun autre est non connexe.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "Un sommet isolé rend le réseau non connexe.",
+          "hint": "Réfléchis bien."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Comment rendre connexe un réseau qui a 2 composantes séparées {A,B} et {C,D} ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Ajouter une arête entre un sommet de chaque composante",
+            "Supprimer une arête",
+            "Ajouter un sommet isolé",
+            "Rien à faire"
+          ],
+          "correct_answer": "Ajouter une arête entre un sommet de chaque composante",
+          "explanation": "Une seule arête entre les deux composantes suffit à les connecter.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "GEO-RESEAUX-CONNEXE::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Montre que le réseau {A,B,C,D} avec arêtes A-B, B-C, C-D, A-D est connexe en exhibant un chemin de A à C.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Pars du sommet A",
+              "expected": "A"
+            },
+            {
+              "instruction": "Utilise l'arête A-B pour aller en B",
+              "expected": "A → B"
+            },
+            {
+              "instruction": "Utilise l'arête B-C pour aller en C",
+              "expected": "A → B → C"
+            }
+          ],
+          "correct_answer": "Chemin : A → B → C",
+          "explanation": "On peut aller de A à C par le chemin A-B-C.",
+          "hint": "Suis les étapes."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Réseau : sommets A,B,C,D,E ; arêtes A-B, A-C, C-D, D-E. Donne un chemin de B à E.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "B → A → C → D → E",
+          "explanation": "B-A-C-D-E est un chemin valide.",
+          "hint": "Écris.",
+          "accepted_answers": [
+            "B-A-C-D-E",
+            "B→A→C→D→E",
+            "B A C D E"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "justification",
+          "difficulty": "hard",
+          "text": "Le réseau {A,B,C} avec arêtes A-B et B-C est-il connexe ? Justifie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Oui, il est connexe car on peut relier A à C par A→B→C",
+          "explanation": "De A on va à B (arête A-B), de B on va à C (arête B-C). Tout sommet est accessible.",
+          "hint": "Justifie.",
+          "scoring_rubric": "1pt: réponse correcte, 1pt: chemin exhibé"
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour prouver qu'un réseau de 4 sommets est connexe, combien de chemins minimum faut-il trouver ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Un chemin entre chaque paire de sommets, soit 6 paires",
+            "4 chemins",
+            "1 chemin",
+            "2 chemins"
+          ],
+          "correct_answer": "Un chemin entre chaque paire de sommets, soit 6 paires",
+          "explanation": "Il faut montrer que chaque paire de sommets est connectée. C(4,2) = 6 paires.",
+          "hint": "Réfléchis bien."
+        }
+      ]
+    }
+  ]
+}
