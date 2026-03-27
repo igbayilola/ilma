@@ -1,0 +1,127 @@
+{
+  "title": "CEP 2021 Session Normale — EST",
+  "year": 2021,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Maman est jardinière. Elle cultive son jardin, puise de l'eau au puits, ramasse du bois et va au marché vendre ses récoltes.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "nutrition_health",
+      "context_text": "Au marché, maman achète les aliments suivants : piment, tomate, gombo, haricot, manioc, huile d'arachide, riz, poisson, sel.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite les produits alimentaires achetés par maman.",
+          "question_type": "fill_blank",
+          "correct_answer": "Piment, tomate, gombo, haricot, manioc, huile d'arachide, riz, poisson, sel",
+          "explanation": "Tous les produits achetés par maman sont des produits alimentaires : piment, tomate, gombo, haricot, manioc, huile d'arachide, riz, poisson et sel.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Classe ces aliments selon leur origine : végétale, animale, minérale.",
+          "question_type": "fill_blank",
+          "correct_answer": "Origine végétale: piment, tomate, gombo, haricot, manioc, riz, huile d'arachide. Origine animale: poisson. Origine minérale: sel",
+          "explanation": "Les aliments d'origine végétale proviennent des plantes. Les aliments d'origine animale proviennent des animaux. Le sel est d'origine minérale car il provient de la terre ou de la mer.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Propose 2 menus équilibrés à partir de ces aliments.",
+          "question_type": "fill_blank",
+          "correct_answer": "Menu 1: Riz + sauce de poisson + gombo + tomate + huile. Menu 2: Pâte de manioc + sauce de haricot + piment + huile d'arachide",
+          "explanation": "Un menu équilibré doit contenir des glucides (riz, manioc), des protides (poisson, haricot), des lipides (huile) et des vitamines (tomate, gombo, piment).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "technology_prehistory",
+      "context_text": "De retour à la maison, maman allume un feu de bois pour préparer le repas.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quelle forme d'énergie utilise maman pour cuire les aliments ?",
+          "question_type": "mcq",
+          "choices": ["Énergie calorifique (thermique)", "Énergie électrique", "Énergie éolienne", "Énergie mécanique"],
+          "correct_answer": "Énergie calorifique (thermique)",
+          "explanation": "En brûlant du bois, maman produit de la chaleur (énergie calorifique ou thermique) qui sert à cuire les aliments.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelle est la source de cette énergie ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Le bois (combustible)",
+          "explanation": "La source de l'énergie calorifique est le bois, qui est un combustible. En brûlant, il libère de la chaleur.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite 2 autres formes d'énergie que tu connais.",
+          "question_type": "fill_blank",
+          "correct_answer": "Énergie électrique et énergie solaire",
+          "explanation": "Il existe plusieurs formes d'énergie : électrique (pour les appareils), solaire (du soleil), éolienne (du vent), mécanique (du mouvement), etc.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "technology_prehistory",
+      "context_text": "Pour puiser de l'eau au puits, maman utilise des machines simples. On observe un croquis d'une poulie avec les annotations a, b, c, d.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 2 machines simples que maman peut utiliser au puits.",
+          "question_type": "fill_blank",
+          "correct_answer": "La poulie et le treuil",
+          "explanation": "Au puits, on utilise couramment la poulie (pour changer la direction de la force) et le treuil (manivelle qui enroule la corde) pour remonter le seau d'eau.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quel est le nom de la machine simple représentée sur le croquis ?",
+          "question_type": "mcq",
+          "choices": ["La poulie", "Le levier", "La brouette", "Le treuil"],
+          "correct_answer": "La poulie",
+          "explanation": "Le croquis représente une poulie, reconnaissable à sa roue à gorge dans laquelle passe une corde.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Annote le croquis de la poulie : a, b, c, d.",
+          "question_type": "fill_blank",
+          "correct_answer": "a: crochet de fixation, b: chape, c: gorge (roue), d: axe",
+          "explanation": "Les parties de la poulie sont : le crochet de fixation (pour accrocher la poulie), la chape (support de la roue), la gorge ou roue (où passe la corde) et l'axe (autour duquel tourne la roue).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

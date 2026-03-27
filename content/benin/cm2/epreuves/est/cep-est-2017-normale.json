@@ -1,0 +1,126 @@
+{
+  "title": "CEP 2017 Session Normale — EST",
+  "year": 2017,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Fête des retrouvailles au village. Des tee-shirts avec des photos d'ancêtres préhistoriques sont distribués. Une bâche électrifiée est installée. Un homme est blessé et un enfant malnutri est observé.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "nutrition_health",
+      "context_text": "Un sandwich au poisson et un jus de citron sont servis lors de la fête. Un enfant présente un gros ventre, des cheveux roux et des pieds gonflés.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Le sandwich au poisson accompagné d'un jus de citron constitue-t-il un repas complet ? Justifie ta réponse.",
+          "question_type": "fill_blank",
+          "correct_answer": "Non, ce n'est pas un repas complet. Il manque des glucides (féculents) et des lipides",
+          "explanation": "Un repas complet doit contenir les quatre groupes de substances nutritives : glucides, protides, lipides et vitamines. Le sandwich au poisson apporte des protides et le jus de citron des vitamines, mais il manque les glucides (féculents) et les lipides.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "L'enfant a un gros ventre, des cheveux roux et des pieds gonflés. De quelle maladie souffre-t-il ?",
+          "question_type": "mcq",
+          "choices": ["Le kwashiorkor", "Le marasme", "Le béribéri", "La rougeole"],
+          "correct_answer": "Le kwashiorkor",
+          "explanation": "Le kwashiorkor se manifeste par un ventre ballonné, des cheveux roux et des œdèmes (pieds gonflés). Il est causé par une carence en protéines.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite deux autres maladies infantiles liées à la malnutrition et leur cause.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le marasme (carence alimentaire globale) et le béribéri (carence en vitamine B1)",
+          "explanation": "Le marasme est dû à une carence alimentaire globale (insuffisance de tous les nutriments). Le béribéri est causé par une carence en vitamine B1.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "electricity",
+      "context_text": "Un homme est blessé en changeant une lampe sous la bâche électrifiée. Une lampe est grillée mais les autres fonctionnent normalement.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Donne la composition du sang.",
+          "question_type": "fill_blank",
+          "correct_answer": "Globules rouges, globules blancs, plaquettes, plasma",
+          "explanation": "Le sang est composé de quatre éléments principaux : les globules rouges (transport de l'oxygène), les globules blancs (défense immunitaire), les plaquettes (coagulation) et le plasma (liquide).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Fais le schéma de l'appareil circulatoire et annote-le.",
+          "question_type": "fill_blank",
+          "correct_answer": "Cœur, artères, veines, capillaires",
+          "explanation": "L'appareil circulatoire comprend le cœur (pompe), les artères (transport du sang oxygéné), les veines (retour du sang) et les capillaires (échanges au niveau des organes).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Une lampe est grillée mais les autres fonctionnent. Quel est le type de montage sous la bâche ? Fais le schéma du montage contraire.",
+          "question_type": "fill_blank",
+          "correct_answer": "Montage en dérivation. Le montage contraire est le montage en série",
+          "explanation": "Dans un montage en dérivation, si une lampe grille, les autres continuent de fonctionner car chaque lampe a son propre circuit. Le montage contraire est le montage en série où les lampes sont reliées les unes après les autres.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "technology_prehistory",
+      "context_text": "Les tee-shirts noirs absorbent plus de chaleur que les tee-shirts clairs. Des photos d'ancêtres préhistoriques y sont imprimées.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Pourquoi le tee-shirt noir absorbe-t-il plus de chaleur que les autres ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les couleurs sombres absorbent davantage les rayons du soleil (chaleur) que les couleurs claires qui les réfléchissent",
+          "explanation": "Les objets de couleur sombre absorbent la plupart des rayons lumineux et les transforment en chaleur, tandis que les objets de couleur claire réfléchissent ces rayons.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Qu'est-ce qui a permis de reconstituer l'histoire de l'homme préhistorique ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les fouilles archéologiques (découverte de fossiles, d'outils en pierre, de peintures rupestres)",
+          "explanation": "Les fouilles archéologiques ont permis de découvrir des fossiles, des outils en pierre taillée et des peintures rupestres qui témoignent de la vie des hommes préhistoriques.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Quelle est la conséquence des fouilles sur l'environnement ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les fouilles peuvent détruire les sols et modifier les paysages naturels",
+          "explanation": "Les fouilles archéologiques nécessitent de creuser le sol, ce qui peut entraîner la destruction des sols et la modification des paysages naturels environnants.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

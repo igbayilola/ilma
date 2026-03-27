@@ -1,0 +1,130 @@
+{
+  "title": "CEP 2024 Session Normale — EST",
+  "year": 2024,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "L'ONG Fifa intervient dans le village de Zénaboutou. Les agents de l'ONG découvrent un bébé malnutri présentant un ventre ballonné et des cheveux roux. L'ONG apporte des vivres et installe l'électricité dans le centre de santé.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "nutrition_health",
+      "context_text": "Les agents de l'ONG Fifa trouvent un enfant malnutri au ventre ballonné et aux cheveux roux.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "De quelle maladie souffre cet enfant ?",
+          "question_type": "mcq",
+          "choices": ["Le kwashiorkor", "Le marasme", "Le béribéri", "Le rachitisme"],
+          "correct_answer": "Le kwashiorkor",
+          "explanation": "Le kwashiorkor se manifeste par un ventre ballonné, des cheveux roux et des œdèmes. Il est causé par une carence en protéines.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Comment peut-on traiter cette maladie ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Donner une alimentation riche et variée (protéines, vitamines). Consulter un médecin ou un centre de santé",
+          "explanation": "Le traitement du kwashiorkor consiste à réintroduire progressivement une alimentation riche en protéines (viande, poisson, œufs, lait) et en vitamines, sous suivi médical.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Relie chaque maladie à sa description : Béribéri, Rachitisme, Marasme.",
+          "question_type": "matching",
+          "choices": {
+            "left": ["Béribéri", "Rachitisme", "Marasme"],
+            "right": ["Troubles nerveux", "Déformation des os", "Maigreur extrême"]
+          },
+          "correct_answer": "Béribéri: Troubles nerveux, Rachitisme: Déformation des os, Marasme: Maigreur extrême",
+          "explanation": "Le béribéri (carence en vitamine B1) provoque des troubles nerveux. Le rachitisme (carence en vitamine D) entraîne la déformation des os. Le marasme (carence globale) provoque une maigreur extrême.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "nutrition_health",
+      "context_text": "L'ONG distribue les aliments suivants : huile de palme, banane, farine de maïs, poulet, riz, soja, graines d'arachides, poisson, igname.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Relève les aliments riches en glucides, en protides et en lipides.",
+          "question_type": "fill_blank",
+          "correct_answer": "Glucides: banane, farine de maïs, riz, igname. Protides: poulet, soja, poisson. Lipides: huile de palme, graines d'arachides",
+          "explanation": "Les glucides se trouvent dans les féculents et fruits (banane, farine, riz, igname). Les protides dans les viandes et légumineuses (poulet, soja, poisson). Les lipides dans les corps gras (huile, arachides).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Propose un menu équilibré pour le bébé malnutri.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bouillie de farine de maïs + poisson écrasé + banane écrasée + un peu d'huile de palme",
+          "explanation": "Le menu doit être adapté au bébé (aliments écrasés ou en bouillie) et contenir des glucides, des protides, des lipides et des vitamines pour combattre la malnutrition.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Que deviennent les aliments dans l'estomac ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les aliments sont transformés en bouillie (chyme) par les sucs gastriques. C'est la digestion chimique",
+          "explanation": "Dans l'estomac, les aliments subissent une action mécanique (brassage) et chimique (sucs gastriques) pour être transformés en une bouillie appelée chyme.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "electricity",
+      "context_text": "L'ONG installe l'électricité dans le centre de santé avec 3 lampes montées en série (L1, L2, L3).",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Nomme ce type de montage et dis pourquoi il est avantageux.",
+          "question_type": "fill_blank",
+          "correct_answer": "C'est un montage en série. Il utilise moins de fil électrique",
+          "explanation": "Dans un montage en série, les lampes sont reliées les unes après les autres sur un seul circuit. L'avantage principal est l'économie de fil électrique.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Propose un autre type de montage pour ces lampes.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le montage en dérivation (ou parallèle)",
+          "explanation": "Le montage en dérivation (parallèle) est l'alternative au montage en série. Chaque lampe est branchée directement sur les bornes du générateur.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Fais le schéma annoté d'une lampe électrique à filament en citant ses parties.",
+          "question_type": "fill_blank",
+          "correct_answer": "Parties: ampoule (globe en verre), filament, culot, plot central, isolant",
+          "explanation": "Une lampe à filament comprend : l'ampoule (globe en verre) qui protège le filament, le filament qui produit la lumière en chauffant, le culot métallique, le plot central pour le contact électrique, et l'isolant qui sépare le culot du plot.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

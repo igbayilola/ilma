@@ -1,0 +1,95 @@
+{
+  "title": "CEP 2009 Session Normale — EST",
+  "year": 2009,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Abou passe ses vacances chez son oncle. Un chantier de construction est en cours dans le quartier.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "electricity",
+      "context_text": "L'électricien du chantier présente deux circuits : C1 (montage en série) et C2 (montage en dérivation).",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Comment sont montées les lampes dans les circuits C1 et C2 ?",
+          "question_type": "fill_blank",
+          "correct_answer": "C1: montage en série (les lampes sont l'une après l'autre). C2: montage en dérivation (les lampes sont branchées en parallèle)",
+          "explanation": "Dans le circuit C1, les lampes sont reliées en série (l'une après l'autre sur un seul chemin). Dans le circuit C2, les lampes sont en dérivation (chacune sur une branche parallèle).",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "L'électricien choisit le circuit C2. Pourquoi ?",
+          "question_type": "fill_blank",
+          "correct_answer": "En dérivation, si une lampe grille les autres continuent de fonctionner. Chaque lampe brille avec son éclat normal",
+          "explanation": "Le montage en dérivation (C2) est préférable car chaque lampe fonctionne indépendamment. Si une lampe grille, les autres continuent de briller normalement.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "nutrition_health",
+      "context_text": "Le menu du repas est composé de riz, sauce de légumes à la viande et orange.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Ce menu est-il équilibré ? Justifie ta réponse.",
+          "question_type": "fill_blank",
+          "correct_answer": "Oui, ce menu est équilibré: glucides (riz), protides (viande), lipides (sauce), vitamines (légumes, orange)",
+          "explanation": "Ce menu est équilibré car il contient des glucides (riz), des protides (viande), des lipides (huile de la sauce) et des vitamines (légumes et orange).",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Où les substances nutritives passent-elles dans le sang ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Au niveau de l'intestin grêle, grâce aux villosités intestinales",
+          "explanation": "Les nutriments issus de la digestion passent dans le sang au niveau de l'intestin grêle, à travers les villosités intestinales qui augmentent la surface d'absorption.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "technology_prehistory",
+      "context_text": "Sur le chantier de construction, les ouvriers utilisent des machines simples.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite deux machines simples utilisées sur un chantier.",
+          "question_type": "fill_blank",
+          "correct_answer": "La poulie et la brouette",
+          "explanation": "La poulie sert à soulever des charges lourdes et la brouette à les transporter. Ce sont deux machines simples couramment utilisées sur les chantiers.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Explique le fonctionnement de la poulie.",
+          "question_type": "fill_blank",
+          "correct_answer": "La poulie est fixée en hauteur. Une corde passe dans la gorge de la roue. On tire la corde vers le bas pour faire monter la charge",
+          "explanation": "La poulie est une roue à gorge fixée en hauteur. Une corde passe dans la gorge de la roue. En tirant la corde vers le bas, on change la direction de la force et on fait monter la charge attachée à l'autre extrémité.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

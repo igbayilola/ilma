@@ -1,0 +1,105 @@
+{
+  "title": "CEP 2015 Session Normale — EST",
+  "year": 2015,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "C'est l'anniversaire de Bignon. Un électricien installe l'éclairage, une poulie est utilisée pour les travaux et on prépare un repas de fête.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "nutrition_health",
+      "context_text": "Pour la fête, on dispose des aliments suivants : riz, jus de fruits, pâte de maïs, sauce aux légumes, sauce de tomate, viande, œufs, ananas, poisson.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Compose deux menus équilibrés à partir de ces aliments.",
+          "question_type": "fill_blank",
+          "correct_answer": "Menu 1: Riz + sauce de viande aux légumes + jus de fruits. Menu 2: Pâte de maïs + sauce de poisson à la tomate + ananas",
+          "explanation": "Chaque menu doit contenir des glucides (riz ou pâte de maïs), des protides (viande ou poisson), des lipides (sauce) et des vitamines (fruits ou légumes).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite deux maladies causées par la malnutrition.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le kwashiorkor et le marasme",
+          "explanation": "Le kwashiorkor est causé par une carence en protéines et le marasme par une carence alimentaire globale.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite deux aliments riches en protides.",
+          "question_type": "fill_blank",
+          "correct_answer": "La viande et le poisson",
+          "explanation": "La viande et le poisson sont des aliments d'origine animale très riches en protides (protéines), essentiels pour la croissance et la réparation des tissus.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "electricity",
+      "context_text": "L'électricien présente deux schémas de montage : le montage A (en série) et le montage B (en dérivation).",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Nomme chaque type de montage représenté par les schémas A et B.",
+          "question_type": "fill_blank",
+          "correct_answer": "Montage A: montage en série. Montage B: montage en dérivation (parallèle)",
+          "explanation": "Dans le montage en série (A), les lampes sont reliées les unes après les autres. Dans le montage en dérivation (B), chaque lampe est branchée en parallèle sur le générateur.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Lequel des deux montages préfères-tu ? Justifie ta réponse.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le montage B (dérivation) car si une lampe grille, les autres continuent de fonctionner",
+          "explanation": "Le montage en dérivation est préférable car chaque lampe fonctionne indépendamment des autres. Si une lampe grille, les autres continuent de fonctionner normalement.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "technology_prehistory",
+      "context_text": "Un tableau présente différentes sources d'énergie : le Soleil, l'Essence et le Vent. Une poulie est utilisée pour les travaux.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Complète le tableau en indiquant si chaque source d'énergie est renouvelable ou non renouvelable : Soleil, Essence, Vent.",
+          "question_type": "fill_blank",
+          "correct_answer": "Soleil: énergie renouvelable. Essence: énergie non renouvelable. Le vent: énergie renouvelable",
+          "explanation": "Le Soleil et le Vent sont des sources d'énergie renouvelables car elles sont inépuisables. L'Essence (dérivée du pétrole) est non renouvelable car les réserves sont limitées.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Fais le schéma annoté d'une poulie.",
+          "question_type": "fill_blank",
+          "correct_answer": "Poulie: roue à gorge, chape, crochet, axe, corde",
+          "explanation": "La poulie comprend : une roue à gorge (réa) qui tourne sur un axe, une chape qui maintient la roue, un crochet de fixation et une corde qui passe dans la gorge.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

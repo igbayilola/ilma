@@ -1,0 +1,127 @@
+{
+  "title": "CEP 2010 Session Normale — EST",
+  "year": 2010,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Dans le cadre d'une correspondance inter-scolaire, les élèves échangent sur les premiers hommes, l'énergie, les machines simples et l'alimentation.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "technology_prehistory",
+      "context_text": "Les élèves étudient la vie des premiers hommes.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "À quelle période vivaient les premiers hommes ?",
+          "question_type": "mcq",
+          "choices": ["La Préhistoire", "L'Antiquité", "L'époque moderne"],
+          "correct_answer": "La Préhistoire",
+          "explanation": "Les premiers hommes vivaient pendant la Préhistoire, période qui s'étend de l'apparition de l'homme jusqu'à l'invention de l'écriture.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelles traces ont permis de reconnaître la vie de ces hommes ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les fossiles, les outils en pierre taillée, les peintures rupestres",
+          "explanation": "Les fossiles (restes d'êtres vivants), les outils en pierre taillée et les peintures rupestres (dessins sur les parois des grottes) sont les principales traces laissées par les premiers hommes.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Pourquoi dit-on que l'Afrique est le berceau de l'humanité ?",
+          "question_type": "fill_blank",
+          "correct_answer": "C'est en Afrique que les plus anciens fossiles d'hominidés ont été découverts",
+          "explanation": "L'Afrique est considérée comme le berceau de l'humanité car c'est sur ce continent que les plus anciens fossiles d'hominidés (ancêtres de l'homme) ont été découverts, notamment en Éthiopie, au Kenya et en Tanzanie.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "technology_prehistory",
+      "context_text": "Un levier est représenté avec un point d'appui O et trois points A, B et C situés à différentes distances du point d'appui.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "En quel point faut-il appuyer pour soulever la charge plus facilement ?",
+          "question_type": "mcq",
+          "choices": ["Point A", "Point B", "Point C"],
+          "correct_answer": "Point C",
+          "explanation": "Le point C est le plus éloigné du point d'appui. Plus le bras de levier est long, moins il faut de force pour soulever la charge.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Justifie ta réponse.",
+          "question_type": "fill_blank",
+          "correct_answer": "Plus le bras de levier est long (distance du point d'appui), moins on a besoin de force pour soulever la charge",
+          "explanation": "C'est le principe du levier : plus la distance entre le point d'application de la force et le point d'appui est grande, moins la force nécessaire est importante.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite deux autres machines simples utilisées de nos jours.",
+          "question_type": "fill_blank",
+          "correct_answer": "La poulie et la brouette",
+          "explanation": "La poulie permet de soulever des charges en changeant la direction de la force. La brouette utilise le principe du levier pour transporter des charges lourdes.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "nutrition_health",
+      "context_text": "Les élèves étudient la nourriture des premiers hommes et la transformation des aliments dans le tube digestif.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "De quoi vivaient les premiers hommes ?",
+          "question_type": "fill_blank",
+          "correct_answer": "De chasse, de pêche et de cueillette",
+          "explanation": "Les premiers hommes étaient des chasseurs-cueilleurs. Ils chassaient les animaux, pêchaient dans les rivières et cueillaient des fruits, des racines et des baies.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Décris la transformation des aliments dans la bouche, l'estomac et l'intestin grêle.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bouche: mastication et insalivation (le bol alimentaire). Estomac: brassage par les sucs gastriques (le chyme). Intestin grêle: absorption des nutriments dans le sang",
+          "explanation": "Dans la bouche, les aliments sont broyés et mélangés à la salive pour former le bol alimentaire. Dans l'estomac, ils sont brassés avec les sucs gastriques pour devenir le chyme. Dans l'intestin grêle, les nutriments sont absorbés et passent dans le sang.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Fais le schéma annoté de l'appareil digestif.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bouche, œsophage, estomac, intestin grêle, gros intestin, anus, foie, pancréas",
+          "explanation": "L'appareil digestif comprend le tube digestif (bouche, œsophage, estomac, intestin grêle, gros intestin, anus) et les glandes annexes (foie, pancréas) qui produisent les sucs digestifs.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

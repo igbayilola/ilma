@@ -1,0 +1,109 @@
+{
+  "title": "CEP 2008 Session Normale — EST",
+  "year": 2008,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Maman confie des tâches à Fali et Madou. Ils utilisent une poulie pour puiser l'eau, font la lessive et préparent le repas.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "technology_prehistory",
+      "context_text": "Fali et Madou utilisent une poulie pour puiser l'eau du puits.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Fais le croquis d'une poulie et nomme ses différentes parties.",
+          "question_type": "fill_blank",
+          "correct_answer": "Parties: crochet de fixation, chape, roue à gorge (réa), axe, corde",
+          "explanation": "La poulie se compose d'un crochet de fixation (pour l'accrocher), d'une chape (support), d'une roue à gorge appelée réa, d'un axe (autour duquel tourne la roue) et d'une corde.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Explique le fonctionnement de la poulie.",
+          "question_type": "fill_blank",
+          "correct_answer": "La poulie change la direction de la force. En tirant la corde vers le bas, on fait monter le seau d'eau",
+          "explanation": "La poulie change la direction de la force exercée. En tirant la corde vers le bas, on fait monter le seau d'eau attaché à l'autre extrémité de la corde.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite une autre machine simple qui fonctionne de la même manière.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le treuil",
+          "explanation": "Le treuil fonctionne sur le même principe que la poulie : il permet de soulever des charges en enroulant une corde autour d'un cylindre.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "technology_prehistory",
+      "context_text": "Les habits noirs sèchent plus vite que les habits blancs au soleil.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Pourquoi les habits noirs sèchent-ils plus vite que les habits blancs ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les habits noirs absorbent davantage la chaleur du soleil que les habits blancs qui la réfléchissent. L'eau s'évapore donc plus vite des habits noirs",
+          "explanation": "Les couleurs sombres absorbent plus de rayons solaires et se réchauffent davantage, ce qui accélère l'évaporation de l'eau. Les couleurs claires réfléchissent les rayons.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Donne un exemple d'énergie renouvelable et un exemple d'énergie non renouvelable.",
+          "question_type": "fill_blank",
+          "correct_answer": "Renouvelable: le soleil. Non renouvelable: le pétrole",
+          "explanation": "Le soleil est une source d'énergie renouvelable car il est inépuisable. Le pétrole est une source non renouvelable car ses réserves sont limitées et ne se renouvellent pas à l'échelle humaine.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Relie chaque forme d'énergie à sa source : Énergie mécanique, Énergie calorifique, Énergie solaire, Énergie électrique.",
+          "question_type": "matching",
+          "choices": {
+            "left": ["Énergie mécanique", "Énergie calorifique", "Énergie solaire", "Énergie électrique"],
+            "right": ["Le soleil", "Un homme qui court", "Une batterie", "Le feu de bois"]
+          },
+          "correct_answer": "Mécanique: Un homme qui court, Calorifique: Le feu de bois, Solaire: Le soleil, Électrique: Une batterie",
+          "explanation": "L'énergie mécanique est liée au mouvement (un homme qui court). L'énergie calorifique est la chaleur (le feu de bois). L'énergie solaire provient du soleil. L'énergie électrique est stockée dans une batterie.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "nutrition_health",
+      "context_text": "Les aliments disponibles pour préparer le repas sont : tomate, huile, poisson, banane, haricot, riz, igname, orange, gari, viande.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Compose deux repas équilibrés à partir de ces aliments.",
+          "question_type": "fill_blank",
+          "correct_answer": "Repas 1: Riz + sauce de poisson à la tomate + huile + banane. Repas 2: Igname + sauce de viande au haricot + huile + orange",
+          "explanation": "Chaque repas doit contenir des glucides (riz, igname), des protides (poisson, viande), des lipides (huile) et des vitamines (tomate, banane, orange) pour être équilibré.",
+          "points": 6.67,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    }
+  ]
+}

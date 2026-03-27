@@ -1,0 +1,126 @@
+{
+  "title": "CEP 2012 Session Normale — EST",
+  "year": 2012,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Un championnat de football UASCEP est organisé. Le bâtiment est éclairé et les participants sont nourris pendant trois jours. Un ami, Coffi, est blessé pendant le match.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "electricity",
+      "context_text": "Le bâtiment est éclairé avec un interrupteur et trois lampes montées en série. Quand une lampe grille, les autres ne fonctionnent plus.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quel est le nom de ce type de montage ?",
+          "question_type": "mcq",
+          "choices": ["Montage en série", "Montage en dérivation", "Montage mixte"],
+          "correct_answer": "Montage en série",
+          "explanation": "Dans un montage en série, les lampes sont reliées les unes après les autres sur un seul circuit. Si une lampe grille, le circuit est interrompu et toutes les lampes s'éteignent.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Ce montage est-il avantageux ? Justifie ta réponse.",
+          "question_type": "fill_blank",
+          "correct_answer": "Non, car si une lampe grille, toutes les autres s'éteignent",
+          "explanation": "Le montage en série n'est pas avantageux pour l'éclairage car si une seule lampe grille, le circuit est coupé et toutes les lampes s'éteignent.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite trois sources d'énergie.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le soleil, le pétrole, le vent",
+          "explanation": "Le soleil (énergie solaire) et le vent (énergie éolienne) sont des sources renouvelables. Le pétrole (énergie fossile) est une source non renouvelable.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "nutrition_health",
+      "context_text": "Les aliments disponibles pour nourrir les participants sont : lait, maïs, poulet, mangue, orange, haricot, poisson, légume, riz, huile d'arachide, cossette d'igname, ananas, gari, igname, viande de cabri, pain, huile de palme, œuf.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Compose trois menus équilibrés pour les trois jours.",
+          "question_type": "fill_blank",
+          "correct_answer": "Menu 1: Riz + sauce de poulet aux légumes + huile + mangue. Menu 2: Pâte de maïs + sauce de poisson + haricot + orange. Menu 3: Igname pilée + sauce de viande de cabri + huile de palme + ananas",
+          "explanation": "Chaque menu doit contenir des glucides, des protides, des lipides et des vitamines pour être équilibré.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Pourquoi dit-on qu'un menu est équilibré ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Un menu est équilibré quand il contient les 4 groupes de substances nutritives: glucides, protides, lipides et vitamines",
+          "explanation": "Un menu équilibré apporte à l'organisme toutes les substances nutritives nécessaires : les glucides pour l'énergie, les protides pour la croissance, les lipides pour les réserves et les vitamines pour le bon fonctionnement.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite deux rôles essentiels des aliments dans l'organisme.",
+          "question_type": "fill_blank",
+          "correct_answer": "1) Fournir de l'énergie au corps (glucides, lipides). 2) Permettre la croissance et la réparation du corps (protides)",
+          "explanation": "Les aliments jouent deux rôles essentiels : fournir l'énergie nécessaire aux activités quotidiennes (rôle énergétique des glucides et lipides) et permettre la croissance et la réparation des tissus (rôle constructeur des protides).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "nutrition_health",
+      "context_text": "Pendant le match, un garçon est blessé et perd du sang.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Que faut-il faire pour arrêter l'écoulement du sang ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Comprimer la plaie avec un linge propre et surélever le membre blessé",
+          "explanation": "Pour arrêter un saignement, il faut comprimer la plaie avec un linge propre et surélever le membre blessé pour ralentir le flux sanguin.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Donne la composition du sang.",
+          "question_type": "fill_blank",
+          "correct_answer": "Globules rouges, globules blancs, plaquettes, plasma",
+          "explanation": "Le sang est composé de globules rouges (transport d'oxygène), de globules blancs (défense immunitaire), de plaquettes (coagulation) et de plasma (partie liquide).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite les parties de l'appareil circulatoire.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le cœur, les artères, les veines et les capillaires",
+          "explanation": "L'appareil circulatoire comprend le cœur (pompe), les artères (transport du sang oxygéné), les veines (retour du sang) et les capillaires (échanges entre le sang et les organes).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

@@ -139,8 +139,10 @@ def _load_exams_from_content() -> list:
     return exams
 
 
-async def seed_cep_exams(session, cm2_grade, math_subject) -> None:
-    """Seed CEP exams from content/benin/cm2/epreuves/ JSON files."""
+async def seed_cep_exams(session, cm2_grade, subject_map: dict) -> None:
+    """Seed CEP exams from content/benin/cm2/epreuves/ JSON files.
+    subject_map: {"mathematiques": Subject, "est": Subject, ...}
+    """
     cep_exams = _load_exams_from_content()
     if not cep_exams:
         print("  [warn] no CEP exam files found")
@@ -156,10 +158,17 @@ async def seed_cep_exams(session, cm2_grade, math_subject) -> None:
             print(f"  [skip] CEP exam: {exam_data['title']}")
             continue
 
+        # Resolve subject from JSON "subject" field
+        exam_subject_key = exam_data.get("subject", "mathematiques")
+        subject = subject_map.get(exam_subject_key)
+        if not subject:
+            print(f"  [warn] unknown subject '{exam_subject_key}' in {exam_data['title']}, skipping")
+            continue
+
         mock_exam = MockExam(
             id=uuid.uuid4(),
             grade_level_id=cm2_grade.id,
-            subject_id=math_subject.id,
+            subject_id=subject.id,
             title=exam_data["title"],
             duration_minutes=exam_data.get("duration_minutes", 60),
             total_questions=sum(len(item.get("sub_questions", [])) for item in exam_data.get("items", [])),
@@ -431,10 +440,24 @@ async def seed() -> None:
 
         # CEP-format exams (real annales) from content/benin/cm2/epreuves/
         print("── CEP Exams (Annales) ──")
-        if math_subject and cm2_grade:
-            await seed_cep_exams(session, cm2_grade, math_subject)
+        if cm2_grade:
+            # Build subject map for all subjects
+            from app.models.content import Subject
+            all_subjects_result = await session.execute(select(Subject).where(Subject.is_active.is_(True)))
+            all_subjects = list(all_subjects_result.scalars().all())
+            subject_map = {}
+            for s in all_subjects:
+                if "math" in s.name.lower():
+                    subject_map["mathematiques"] = s
+                elif "scientifique" in s.name.lower() or "technologique" in s.name.lower():
+                    subject_map["est"] = s
+                elif "français" in s.name.lower() or "francais" in s.name.lower():
+                    subject_map["francais"] = s
+                elif "sociale" in s.name.lower():
+                    subject_map["education_sociale"] = s
+            await seed_cep_exams(session, cm2_grade, subject_map)
         else:
-            print("  [warn] math subject or cm2 grade not found, skipping CEP exams")
+            print("  [warn] cm2 grade not found, skipping CEP exams")
 
         await session.commit()
     print("\nSeed complete.")

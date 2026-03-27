@@ -1,0 +1,120 @@
+{
+  "title": "CEP 2013 Session Normale — EST",
+  "year": 2013,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Lors d'une excursion à Gangban, les élèves découvrent un centre qui n'est raccordé ni à la SBEE ni à un groupe électrogène, mais qui est pourtant électrifié. On dispose des aliments suivants : maïs, orange, fromage, riz, igname, viande, papaye, huile rouge, poisson, beurre, haricot, sorgho.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "technology_prehistory",
+      "context_text": "Le centre est électrifié sans raccordement à la SBEE ni groupe électrogène.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quel type d'énergie utilise ce centre et quelle en est la source ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Énergie solaire, source: le soleil (panneaux solaires)",
+          "explanation": "Le centre utilise l'énergie solaire captée par des panneaux solaires qui transforment la lumière du soleil en électricité.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cette énergie est-elle renouvelable ?",
+          "question_type": "true_false",
+          "correct_answer": "Vrai",
+          "explanation": "L'énergie solaire est une énergie renouvelable car le soleil est une source inépuisable d'énergie à l'échelle humaine.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite deux autres sources d'énergie.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le vent (énergie éolienne) et le pétrole (énergie fossile)",
+          "explanation": "Le vent est une source d'énergie renouvelable (éolienne) et le pétrole est une source d'énergie non renouvelable (fossile).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "nutrition_health",
+      "context_text": "Les aliments disponibles sont : maïs, orange, fromage, riz, igname, viande, papaye, huile rouge, poisson, beurre, haricot, sorgho.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Classe ces aliments selon les substances nutritives dominantes.",
+          "question_type": "fill_blank",
+          "correct_answer": "Glucides: maïs, riz, igname, sorgho. Protides: fromage, viande, poisson, haricot. Lipides: huile rouge, beurre. Vitamines: orange, papaye",
+          "explanation": "Les aliments se classent en quatre groupes selon la substance nutritive dominante : glucides (féculents), protides (viandes et légumineuses), lipides (corps gras) et vitamines (fruits).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Propose un menu équilibré à partir de ces aliments.",
+          "question_type": "fill_blank",
+          "correct_answer": "Riz + sauce de poisson aux légumes + huile rouge + orange",
+          "explanation": "Un menu équilibré contient des glucides (riz), des protides (poisson), des lipides (huile rouge) et des vitamines (orange).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Quelle substance nutritive est obtenue à la dernière étape de la digestion ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les nutriments (glucose, acides aminés, acides gras) qui passent dans le sang au niveau de l'intestin grêle",
+          "explanation": "À la dernière étape de la digestion, dans l'intestin grêle, les aliments sont transformés en nutriments simples (glucose, acides aminés, acides gras) qui traversent la paroi intestinale pour passer dans le sang.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "nutrition_health",
+      "context_text": "Un enfant souffre d'une maladie due à une carence en protides. Un tableau montre la correspondance entre vitamines et maladies.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quelle maladie est causée par une carence en protides chez l'enfant ?",
+          "question_type": "mcq",
+          "choices": ["Le kwashiorkor", "Le béribéri", "Le rachitisme", "Le marasme"],
+          "correct_answer": "Le kwashiorkor",
+          "explanation": "Le kwashiorkor est une maladie causée par une carence en protides (protéines). Elle se manifeste par un ventre ballonné, des œdèmes et des cheveux roux.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Relie chaque vitamine ou élément à la maladie correspondante : Vitamine A, Vitamine B1, Vitamine D, Fer.",
+          "question_type": "matching",
+          "choices": {
+            "left": ["Vitamine A", "Vitamine B1", "Vitamine D", "Fer"],
+            "right": ["Rachitisme", "Anémie", "Trouble de la vision", "Troubles nerveux"]
+          },
+          "correct_answer": "Vitamine A: Trouble de la vision, Vitamine B1: Troubles nerveux, Vitamine D: Rachitisme, Fer: Anémie",
+          "explanation": "La carence en Vitamine A provoque des troubles de la vision. La carence en Vitamine B1 provoque des troubles nerveux (béribéri). La carence en Vitamine D provoque le rachitisme. La carence en Fer provoque l'anémie.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

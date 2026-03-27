@@ -1,0 +1,128 @@
+{
+  "title": "CEP 2016 Session Normale — EST",
+  "year": 2016,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Grâce aux progrès de la science et de la technologie, l'homme a amélioré son alimentation, sa santé et son habitat. Mais les premiers hommes vivaient bien avant ces progrès.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "technology_prehistory",
+      "context_text": "Nos ancêtres vivaient bien avant l'invention de l'écriture.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Comment appelle-t-on la période avant l'invention de l'écriture ?",
+          "question_type": "mcq",
+          "choices": ["La Préhistoire", "L'Antiquité", "Le Moyen Âge", "Les Temps modernes"],
+          "correct_answer": "La Préhistoire",
+          "explanation": "La Préhistoire est la période qui s'étend de l'apparition de l'homme jusqu'à l'invention de l'écriture (vers 3300 av. J.-C.).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Comment les premiers hommes se nourrissaient-ils ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Ils se nourrissaient de chasse, de pêche et de cueillette (fruits, racines, baies)",
+          "explanation": "Les premiers hommes étaient des chasseurs-cueilleurs. Ils chassaient les animaux, pêchaient et cueillaient des fruits, des racines et des baies pour se nourrir.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Qu'est-ce qu'un fossile ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Un fossile est un reste ou une empreinte d'un être vivant conservé dans la roche depuis des milliers ou des millions d'années",
+          "explanation": "Les fossiles sont des traces d'êtres vivants (os, dents, coquilles, empreintes) conservées dans les roches sédimentaires au fil du temps.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "nutrition_health",
+      "context_text": "Les aliments contiennent des substances nutritives indispensables à l'organisme.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Indique la substance nutritive dominante dans chaque aliment : céréales, arachide, orange, eau.",
+          "question_type": "fill_blank",
+          "correct_answer": "Céréales: glucides. Arachide: lipides. Orange: vitamines. Eau: eau et sels minéraux",
+          "explanation": "Les céréales sont riches en glucides (amidon). L'arachide est riche en lipides (huile). L'orange est riche en vitamines (vitamine C). L'eau apporte de l'eau et des sels minéraux.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Dans la liste suivante, relève deux maladies causées par la malnutrition : paludisme, marasme, SIDA, béribéri, kwashiorkor, rougeole.",
+          "question_type": "mcq",
+          "choices": ["Le marasme et le kwashiorkor", "Le paludisme et le SIDA", "La rougeole et le béribéri", "Le SIDA et le marasme"],
+          "correct_answer": "Le marasme et le kwashiorkor",
+          "explanation": "Le marasme et le kwashiorkor sont des maladies causées par la malnutrition. Le paludisme est causé par un parasite, le SIDA par un virus, et la rougeole par un virus.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Propose un menu équilibré à partir des aliments suivants : igname, huile de palme, viande, poisson, maïs, haricot, ananas, orange, œuf, tomate, oignon, crevette, eau.",
+          "question_type": "fill_blank",
+          "correct_answer": "Igname pilée + sauce de viande à la tomate + huile de palme + orange",
+          "explanation": "Un menu équilibré doit contenir des glucides (igname), des protides (viande), des lipides (huile de palme) et des vitamines (tomate, orange).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "technology_prehistory",
+      "context_text": "Pour soulever des charges lourdes, l'homme utilise des machines simples.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quelle machine simple permet de soulever des charges lourdes en tirant vers le bas ?",
+          "question_type": "mcq",
+          "choices": ["La poulie", "Le levier", "La brouette", "Le plan incliné"],
+          "correct_answer": "La poulie",
+          "explanation": "La poulie est une machine simple composée d'une roue à gorge qui permet de soulever des charges lourdes en tirant une corde vers le bas.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Fais le schéma de cette machine simple.",
+          "question_type": "fill_blank",
+          "correct_answer": "Poulie: roue à gorge fixée en hauteur, corde passant dans la gorge, charge attachée à une extrémité",
+          "explanation": "Le schéma d'une poulie montre une roue à gorge fixée en hauteur par un crochet, une corde qui passe dans la gorge de la roue, avec la charge d'un côté et l'effort de l'autre.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite une autre machine simple permettant de soulever des charges lourdes.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le levier (ou le treuil)",
+          "explanation": "Le levier et le treuil sont d'autres machines simples qui permettent de soulever des charges lourdes en utilisant le principe du bras de levier.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

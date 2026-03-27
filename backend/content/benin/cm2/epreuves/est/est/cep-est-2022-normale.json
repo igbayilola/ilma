@@ -1,0 +1,125 @@
+{
+  "title": "CEP 2022 Session Normale — EST",
+  "year": 2022,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Bio aide un maçon sur un chantier de construction. Sur le chantier, on utilise des machines simples comme la brouette et la poulie. À midi, Bio mange à la cantine du chantier.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "electricity",
+      "context_text": "Sur le chantier, l'électricien montre à Bio 2 circuits électriques : le Circuit 1 où les lampes sont montées en série, et le Circuit 2 où les lampes sont montées en dérivation.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Comment sont montées les lampes dans le Circuit 1 et dans le Circuit 2 ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Circuit 1: les lampes sont montées en série (l'une après l'autre). Circuit 2: les lampes sont montées en dérivation (parallèle)",
+          "explanation": "En série, les lampes sont branchées les unes à la suite des autres sur un seul chemin. En dérivation, chaque lampe est branchée sur ses propres fils reliés au générateur.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "L'électricien choisit le Circuit 2 pour le chantier. Pourquoi ?",
+          "question_type": "fill_blank",
+          "correct_answer": "En dérivation, si une lampe grille, les autres continuent de fonctionner. Chaque lampe brille normalement",
+          "explanation": "Le montage en dérivation est préféré car chaque lampe fonctionne indépendamment. Si l'une tombe en panne, les autres restent allumées, et chaque lampe reçoit la même tension donc brille à son éclat normal.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite les éléments nécessaires pour constituer un circuit électrique simple.",
+          "question_type": "fill_blank",
+          "correct_answer": "Générateur (pile), fils conducteurs, interrupteur, récepteur (lampe)",
+          "explanation": "Un circuit électrique simple est composé d'un générateur (source de courant), de fils conducteurs (pour relier les éléments), d'un interrupteur (pour ouvrir ou fermer le circuit) et d'un récepteur (appareil qui utilise le courant).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "nutrition_health",
+      "context_text": "À midi, la cantine sert à Bio un repas composé de riz et de sauce à la viande.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Ce menu est-il équilibré ? Justifie ta réponse.",
+          "question_type": "fill_blank",
+          "correct_answer": "Non, ce menu n'est pas équilibré. Il manque des vitamines (fruits ou légumes) et des lipides",
+          "explanation": "Un menu équilibré doit contenir les quatre groupes d'aliments : glucides (riz), protides (viande), lipides (huile ou beurre) et vitamines (fruits ou légumes). Ce menu ne contient que des glucides et des protides.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Propose un menu équilibré pour Bio.",
+          "question_type": "fill_blank",
+          "correct_answer": "Riz + sauce de légumes à la viande + huile + orange",
+          "explanation": "Ce menu contient : riz (glucides), viande (protides), huile (lipides), légumes et orange (vitamines). Les quatre groupes alimentaires sont représentés.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Fais le croquis de l'appareil digestif en citant ses organes dans l'ordre.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bouche, œsophage, estomac, intestin grêle, gros intestin, anus",
+          "explanation": "L'appareil digestif est un tube qui va de la bouche à l'anus. Les aliments passent successivement par : la bouche (mastication), l'œsophage (transport), l'estomac (brassage), l'intestin grêle (absorption), le gros intestin (absorption d'eau) et l'anus (évacuation).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "technology_prehistory",
+      "context_text": "Sur le chantier, les ouvriers utilisent des machines simples pour faciliter leur travail.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 2 machines simples utilisées sur le chantier.",
+          "question_type": "fill_blank",
+          "correct_answer": "La brouette et la poulie",
+          "explanation": "La brouette (levier) et la poulie sont des machines simples couramment utilisées sur les chantiers de construction pour déplacer et soulever des charges lourdes.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Explique le fonctionnement de la poulie pour monter du sable en hauteur.",
+          "question_type": "fill_blank",
+          "correct_answer": "La poulie est fixée en haut. On attache la charge (sable) à une corde passant sur la roue de la poulie. En tirant la corde vers le bas, la charge monte",
+          "explanation": "La poulie est une roue à gorge fixée en hauteur. Une corde passe dans la gorge. On accroche la charge d'un côté et on tire l'autre côté vers le bas. La poulie change la direction de la force : on tire vers le bas pour faire monter la charge.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite 2 types d'énergie utilisés sur le chantier.",
+          "question_type": "fill_blank",
+          "correct_answer": "Énergie musculaire (des ouvriers) et énergie électrique (pour les machines)",
+          "explanation": "Sur un chantier, les ouvriers utilisent leur énergie musculaire pour les travaux manuels, et l'énergie électrique alimente les machines et outils électriques.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

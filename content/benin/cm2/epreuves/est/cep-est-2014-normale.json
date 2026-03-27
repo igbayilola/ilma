@@ -1,0 +1,127 @@
+{
+  "title": "CEP 2014 Session Normale — EST",
+  "year": 2014,
+  "session": "normale",
+  "subject": "est",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Abla rend visite à son oncle Codjo. Il pleut et ils regardent un documentaire à la télé sur les premiers hommes. Le soir, on sert de l'igname pilée avec une sauce d'agouti.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "nutrition_health",
+      "context_text": "Le repas du soir est composé d'igname pilée, de sauce d'agouti, de légumes et d'huile de palme.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Indique les substances nutritives contenues dans ce repas.",
+          "question_type": "fill_blank",
+          "correct_answer": "Glucides (igname), protides (agouti), lipides (huile de palme), vitamines (légumes)",
+          "explanation": "L'igname apporte des glucides, l'agouti des protides, l'huile de palme des lipides et les légumes des vitamines et sels minéraux.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Ce repas est-il équilibré ?",
+          "question_type": "true_false",
+          "correct_answer": "Vrai",
+          "explanation": "Oui, ce repas est équilibré car il contient des glucides (igname), des protides (agouti), des lipides (huile de palme) et des vitamines (légumes), soit les quatre groupes de substances nutritives.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite deux maladies causées par la malnutrition et leur cause.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le kwashiorkor (carence en protides) et le béribéri (carence en vitamine B1)",
+          "explanation": "Le kwashiorkor est causé par une carence en protides (protéines). Le béribéri est causé par une carence en vitamine B1.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "technology_prehistory",
+      "context_text": "Le documentaire télévisé montre la vie des premiers hommes.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Comment les scientifiques ont-ils retracé l'histoire des premiers hommes ?",
+          "question_type": "mcq",
+          "choices": ["Au récit des événements passés", "Aux fouilles", "Aux écritures"],
+          "correct_answer": "Aux fouilles",
+          "explanation": "Les scientifiques ont retracé l'histoire des premiers hommes grâce aux fouilles archéologiques qui ont permis de découvrir des fossiles, des outils et d'autres traces de leur existence.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Donne la définition d'un fossile.",
+          "question_type": "fill_blank",
+          "correct_answer": "Un fossile est un reste ou une empreinte d'un être vivant ancien conservé dans la roche",
+          "explanation": "Les fossiles sont des restes (os, dents, coquilles) ou des empreintes d'êtres vivants qui se sont conservés dans les roches au cours de millions d'années.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Quelle est la conséquence des fouilles sur l'environnement naturel ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les fouilles détruisent le sol et perturbent l'environnement naturel",
+          "explanation": "Les fouilles archéologiques nécessitent de creuser et de retourner le sol, ce qui détruit la végétation, modifie le paysage et perturbe l'environnement naturel.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "electricity",
+      "context_text": "On observe le schéma d'une lampe électrique avec les parties numérotées : 1 (ampoule), 2 (culot), 3 (plot). Trois schémas de circuits électriques sont présentés.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Annote le schéma de la lampe électrique : 1, 2, 3.",
+          "question_type": "fill_blank",
+          "correct_answer": "1: ampoule (globe en verre), 2: culot, 3: plot central",
+          "explanation": "La lampe électrique se compose de l'ampoule (globe en verre) qui contient le filament, du culot métallique qui assure la fixation et du plot central qui permet le contact électrique.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Parmi les trois schémas de circuits, lesquels permettent à la lampe de s'allumer ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les circuits 1 et 3",
+          "hint": "Un circuit doit être fermé pour que la lampe s'allume",
+          "explanation": "Pour qu'une lampe s'allume, le circuit doit être fermé (sans interruption). Les circuits 1 et 3 sont des circuits fermés, tandis que le circuit 2 est ouvert.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite les éléments d'un circuit électrique simple.",
+          "question_type": "fill_blank",
+          "correct_answer": "Générateur (pile), fils conducteurs, interrupteur, récepteur (lampe)",
+          "explanation": "Un circuit électrique simple est composé d'un générateur (pile ou batterie), de fils conducteurs, d'un interrupteur (pour ouvrir ou fermer le circuit) et d'un récepteur (lampe, moteur).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}
