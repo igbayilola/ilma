@@ -1,0 +1,105 @@
+{
+  "title": "CEP 2013 Session Normale — Éducation Sociale",
+  "year": 2013,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Le Bénin est un pays sous-développé mais qui dispose de nombreux atouts : des cours d'eau, des ressources minières, des terres cultivables. Ses principaux produits d'exportation sont le coton, le palmier à huile, le karité, le manioc et le maïs. Le pays dispose aussi d'un port. Après la colonisation, le Bénin est devenu un pays démocratique.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "civics_institutions",
+      "context_text": "Le Bénin est un pays démocratique qui promeut des valeurs morales et citoyennes.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Qu'est-ce qu'un pays démocratique ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Un pays démocratique est un pays où le peuple choisit librement ses dirigeants par des élections, où les libertés fondamentales sont respectées et où le pouvoir est partagé entre plusieurs institutions",
+          "explanation": "La démocratie repose sur le choix libre des dirigeants, le respect des libertés et la séparation des pouvoirs.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Relève dans la liste suivante 2 valeurs morales et citoyennes : respect du bien public, médisance, corruption, calomnie, tolérance, port du casque.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le respect du bien public et la tolérance",
+          "explanation": "Parmi les éléments proposés, seuls le respect du bien public et la tolérance sont des valeurs morales et citoyennes. La médisance, la corruption et la calomnie sont des anti-valeurs.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "history_heritage",
+      "context_text": "Le Bénin a connu la colonisation française. Plusieurs rois et chefs ont résisté à cette colonisation. Le pays a changé plusieurs fois d'appellation depuis son indépendance.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 4 résistants à la colonisation française au Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "Béhanzin, Bio Guéra, Kaba, Toffa (ou Gbêhanzin, Agoli-Agbo)",
+          "explanation": "Béhanzin (roi d'Abomey), Bio Guéra (chef du Borgou), Kaba (chef de Nikki) et Toffa (roi de Porto-Novo) ont résisté à la colonisation française.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Donne les différentes appellations du pays de 1960 à nos jours.",
+          "question_type": "fill_blank",
+          "correct_answer": "République du Dahomey (1960-1975), République Populaire du Bénin (1975-1990), République du Bénin (depuis 1990)",
+          "explanation": "Le pays a porté trois noms : République du Dahomey à l'indépendance, République Populaire du Bénin sous le régime marxiste, puis République du Bénin avec le Renouveau démocratique.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geography_economy",
+      "context_text": "Le Bénin exporte plusieurs produits agricoles et dispose de ressources minières. Le pays possède également un réseau hydrographique important, notamment dans le sud.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite les produits d'exportation mentionnés dans le support.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le coton, le palmier à huile, le karité, le manioc, le maïs",
+          "explanation": "Le support mentionne cinq produits d'exportation du Bénin.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite 2 ressources minières du Bénin et leur localisation.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le calcaire à Onigbolo (département du Plateau). Le pétrole en offshore (côte atlantique)",
+          "explanation": "Le calcaire est exploité à Onigbolo dans le Plateau pour la cimenterie. Le pétrole est exploité en offshore au large de la côte atlantique.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "À partir de la carte du Bénin, identifie le bassin fluvial du sud du pays.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le bassin côtier: fleuve Ouémé, fleuve Mono, fleuve Couffo, lac Nokoué, lac Ahémé",
+          "explanation": "Le bassin côtier du sud du Bénin comprend les fleuves Ouémé, Mono et Couffo, ainsi que les lacs Nokoué et Ahémé.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

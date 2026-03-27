@@ -1,0 +1,128 @@
+{
+  "title": "CEP 2017 Session Normale — Éducation Sociale",
+  "year": 2017,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Le Bénin, situé en Afrique occidentale, est arrosé par de nombreux cours d'eau. Son histoire est marquée par la résistance à la colonisation. Le pays dispose d'institutions démocratiques et de ressources minières variées.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "history_heritage",
+      "context_text": "Le Bénin a eu de grands personnages célèbres comme Béhanzin, Bio Guéra et Kaba qui ont marqué l'histoire de la résistance à la colonisation.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Parmi Béhanzin, Bio Guéra et Kaba, lequel est originaire du Borgou ?",
+          "question_type": "mcq",
+          "choices": ["Bio Guéra", "Béhanzin", "Kaba"],
+          "correct_answer": "Bio Guéra",
+          "explanation": "Bio Guéra est le héros originaire du Borgou. Béhanzin est du royaume du Danhomè (sud) et Kaba est originaire du nord (Nikki).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Lequel a sa statue à la place Goho à Abomey ?",
+          "question_type": "mcq",
+          "choices": ["Béhanzin", "Bio Guéra", "Kaba"],
+          "correct_answer": "Béhanzin",
+          "explanation": "La statue du roi Béhanzin se trouve à la place Goho à Abomey, ancienne capitale du royaume du Danhomè.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Pourquoi ces personnages sont-ils célèbres ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Ils ont résisté farouchement à la colonisation française pour défendre la souveraineté de leur peuple",
+          "explanation": "Béhanzin, Bio Guéra et Kaba sont célèbres pour leur résistance héroïque à la colonisation française, défendant la liberté et la souveraineté de leurs peuples respectifs.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "civics_institutions",
+      "context_text": "Le Bénin est une République démocratique avec des institutions qui exercent différents pouvoirs et des institutions de contre-pouvoir.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quelle institution exerce le pouvoir exécutif ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Le Gouvernement (dirigé par le Président de la République)",
+          "explanation": "Le pouvoir exécutif est exercé par le Gouvernement, dirigé par le Président de la République, Chef de l'État et Chef du Gouvernement.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite une institution de contre-pouvoir.",
+          "question_type": "mcq",
+          "choices": ["La Cour Constitutionnelle", "Le Gouvernement", "La Présidence", "Le Ministère de l'Intérieur"],
+          "correct_answer": "La Cour Constitutionnelle",
+          "explanation": "La Cour Constitutionnelle est une institution de contre-pouvoir. Elle veille au respect de la Constitution et contrôle la régularité des élections.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Quel est le rôle des députés ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Les députés votent les lois et contrôlent l'action du gouvernement",
+          "explanation": "Les députés siègent à l'Assemblée Nationale. Leur rôle principal est de voter les lois et de contrôler l'action du gouvernement.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geography_economy",
+      "context_text": "Le Bénin possède des ressources minières réparties sur l'ensemble de son territoire et de nombreux cours d'eau.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 2 ressources minières du nord et 1 du sud du Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "Nord: or (Perma), phosphate. Sud: calcaire (Onigbolo) ou pétrole (offshore)",
+          "explanation": "Au nord du Bénin, on trouve l'or à Perma et le phosphate. Au sud, on trouve le calcaire à Onigbolo et le pétrole exploité en offshore.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Indique les localités où se trouvent ces ressources.",
+          "question_type": "fill_blank",
+          "correct_answer": "Or: Perma (Natitingou). Calcaire: Onigbolo (Plateau). Pétrole: offshore (côte atlantique)",
+          "explanation": "L'or se trouve à Perma près de Natitingou, le calcaire à Onigbolo dans le département du Plateau, et le pétrole est exploité en offshore au large de la côte atlantique.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Sur la carte du Bénin, localise les cours d'eau du bassin du Niger.",
+          "question_type": "fill_blank",
+          "correct_answer": "Affluents du Niger au nord du Bénin: la Mékrou, l'Alibori, la Sota",
+          "explanation": "Les principaux cours d'eau du bassin du Niger au nord du Bénin sont la Mékrou, l'Alibori et la Sota.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

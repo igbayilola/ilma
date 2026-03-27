@@ -1,0 +1,85 @@
+{
+  "title": "CEP 2010 Session Normale — Éducation Sociale",
+  "year": 2010,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Le Bénin est un pays démocratique qui dispose de ressources minières, de sites touristiques, de terres fertiles et de produits vivriers variés (maïs, manioc, sorgho, igname).",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "geography_economy",
+      "context_text": "Le Bénin produit plusieurs produits vivriers dans différentes régions du pays. Une carte montre les zones de culture.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Indique les régions de culture des produits vivriers suivants : maïs, manioc, sorgho, igname.",
+          "question_type": "fill_blank",
+          "correct_answer": "Maïs: partout au Bénin. Manioc: sud et centre. Sorgho: nord. Igname: centre et nord",
+          "explanation": "Le maïs est cultivé sur l'ensemble du territoire. Le manioc est surtout cultivé dans le sud et le centre. Le sorgho est cultivé dans le nord. L'igname est cultivée dans le centre et le nord.",
+          "points": 6.67,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "history_heritage",
+      "context_text": "Le Bénin dispose de nombreux sites touristiques et historiques répartis sur le territoire.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 3 localités du Bénin possédant un musée, une place historique ou un parc.",
+          "question_type": "fill_blank",
+          "correct_answer": "Abomey (palais royal/musée), Ouidah (Porte de non-retour), Pendjari (parc national)",
+          "explanation": "Abomey possède le palais royal classé au patrimoine mondial, Ouidah abrite la Porte de non-retour sur la Route des Esclaves, et la Pendjari abrite un parc national.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Donne le nom du site visité dans chaque localité citée.",
+          "question_type": "fill_blank",
+          "correct_answer": "Abomey: musée historique d'Abomey. Ouidah: Porte de non-retour (Route des Esclaves). Pendjari: Parc national de la Pendjari",
+          "explanation": "Le musée historique d'Abomey est installé dans les palais royaux. La Porte de non-retour à Ouidah rappelle la traite négrière. Le Parc national de la Pendjari est une réserve de biosphère.",
+          "points": 3.33,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "civics_institutions",
+      "context_text": "Le Bénin est une démocratie où les dirigeants sont désignés selon des modes précis et les résultats proclamés par des institutions spécifiques.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Indique le mode de désignation du Président de la République, des députés et des maires.",
+          "question_type": "fill_blank",
+          "correct_answer": "Président: suffrage universel direct. Députés: suffrage universel direct. Maires: élus par les conseillers communaux",
+          "explanation": "Le Président et les députés sont élus directement par le peuple (suffrage universel direct). Les maires sont élus par les conseillers communaux (suffrage indirect).",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelle institution proclame les résultats des élections ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Élections législatives: Cour Constitutionnelle. Élections présidentielles: Cour Constitutionnelle. Élections locales: CENA puis tribunaux",
+          "explanation": "La Cour Constitutionnelle proclame les résultats définitifs des élections présidentielles et législatives. Pour les élections locales, la CENA proclame les résultats provisoires et les tribunaux les résultats définitifs.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

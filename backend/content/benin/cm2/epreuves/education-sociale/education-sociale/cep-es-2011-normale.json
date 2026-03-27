@@ -1,0 +1,117 @@
+{
+  "title": "CEP 2011 Session Normale — Éducation Sociale",
+  "year": 2011,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Le Bénin a une histoire riche marquée par les conquêtes françaises, la colonisation, l'indépendance et la démocratie. Le pays dispose de potentialités hydrographiques, minières et agricoles importantes.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "civics_institutions",
+      "context_text": "Le Bénin est un pays indépendant et démocratique. Le respect du bien public est un devoir civique de tout citoyen.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Donne 2 exemples d'attitude d'un bon citoyen vis-à-vis du bien public.",
+          "question_type": "fill_blank",
+          "correct_answer": "Ne pas salir les lieux publics (écoles, hôpitaux). Protéger les infrastructures publiques (routes, ponts, bâtiments)",
+          "explanation": "Un bon citoyen respecte les biens publics en ne les détériorant pas et en contribuant à leur protection.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelle est la date de l'indépendance du Bénin ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Le 1er août 1960",
+          "explanation": "Le Bénin (alors République du Dahomey) a accédé à l'indépendance le 1er août 1960.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Comment appelait-on le pays à cette date ?",
+          "question_type": "mcq",
+          "choices": ["La République du Dahomey", "La République du Bénin", "La République Populaire du Bénin", "Le Dahomey français"],
+          "correct_answer": "La République du Dahomey",
+          "explanation": "À l'indépendance en 1960, le pays s'appelait la République du Dahomey. Il deviendra République Populaire du Bénin en 1975, puis République du Bénin en 1990.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "history_heritage",
+      "context_text": "Plusieurs rois et chefs du Bénin ont résisté à la colonisation française dans différentes régions du pays.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite un roi ou chef du centre du pays ayant résisté à la colonisation française.",
+          "question_type": "fill_blank",
+          "correct_answer": "Béhanzin (Abomey, centre-sud)",
+          "explanation": "Le roi Béhanzin du royaume d'Abomey (centre-sud du Bénin) est le plus célèbre résistant à la colonisation française.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite un roi ou chef du nord du pays ayant résisté à la colonisation française.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bio Guéra (Borgou, nord) ou Kaba (Nikki, nord)",
+          "explanation": "Bio Guéra dans le Borgou et Kaba à Nikki sont des résistants du nord du Bénin.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "civics_institutions",
+      "context_text": "Le Bénin est un pays démocratique doté d'institutions et d'un réseau hydrographique important.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Qu'est-ce qui donne la liberté de presse et d'opinion au Bénin ?",
+          "question_type": "fill_blank",
+          "correct_answer": "La Constitution du 11 décembre 1990",
+          "explanation": "La Constitution du 11 décembre 1990, adoptée lors du Renouveau démocratique, garantit la liberté de presse et d'opinion au Bénin.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelle institution est capable de juger le Président de la République et les ministres en cas de fautes graves ?",
+          "question_type": "mcq",
+          "choices": ["La Haute Cour de Justice", "La Cour Suprême", "La Cour Constitutionnelle", "Le Tribunal de première instance"],
+          "correct_answer": "La Haute Cour de Justice",
+          "explanation": "La Haute Cour de Justice est l'institution compétente pour juger le Président de la République et les membres du gouvernement en cas de haute trahison ou de fautes graves.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "À partir de la carte du Bénin, identifie les principaux cours d'eau et plans d'eau du sud.",
+          "question_type": "fill_blank",
+          "correct_answer": "Fleuve Ouémé, fleuve Mono, fleuve Couffo, lac Nokoué, lagune de Porto-Novo",
+          "explanation": "Le sud du Bénin possède un réseau hydrographique dense comprenant les fleuves Ouémé, Mono et Couffo, le lac Nokoué et la lagune de Porto-Novo.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

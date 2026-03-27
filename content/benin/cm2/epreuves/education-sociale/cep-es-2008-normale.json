@@ -1,0 +1,103 @@
+{
+  "title": "CEP 2008 Session Normale — Éducation Sociale",
+  "year": 2008,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Bio est un cotonculteur de Banikoara. Il exploite 15 hectares de coton. Cette année, il a récolté 5 tonnes au lieu des 16 tonnes attendues. Bio dépense une grande partie de ses revenus en alcool et en tabac. Il n'a plus d'argent pour acheter les intrants agricoles.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "geography_economy",
+      "context_text": "Bio doit transporter son coton de Banikoara à Cotonou en passant par Bassila.",
+      "points": 5.0,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Trace la route de Banikoara à Cotonou en passant par Bassila.",
+          "question_type": "fill_blank",
+          "correct_answer": "Banikoara → Kandi → Bassila → Dassa-Zoumè → Bohicon → Cotonou",
+          "explanation": "L'itinéraire Banikoara-Cotonou via Bassila passe par les villes de Kandi, Bassila, Dassa-Zoumè et Bohicon avant d'arriver à Cotonou.",
+          "points": 5.0,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "geography_economy",
+      "context_text": "Bio a eu un mauvais rendement agricole cette année. Il a récolté 5 tonnes au lieu des 16 tonnes attendues sur ses 15 hectares.",
+      "points": 5.0,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Donne 2 raisons qui peuvent expliquer le mauvais rendement de Bio.",
+          "question_type": "fill_blank",
+          "correct_answer": "Manque d'utilisation d'engrais et de produits phytosanitaires. Mauvaises techniques culturales (ou sécheresse, appauvrissement du sol)",
+          "explanation": "Le mauvais rendement peut s'expliquer par le manque d'intrants (engrais, produits phytosanitaires) et de mauvaises pratiques agricoles.",
+          "points": 2.5,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Donne 2 conseils à Bio pour améliorer sa production.",
+          "question_type": "fill_blank",
+          "correct_answer": "Utiliser des semences améliorées et des engrais. Suivre les conseils des agents d'encadrement agricole (CARDER)",
+          "explanation": "Pour améliorer sa production, Bio devrait utiliser des semences améliorées, des engrais et suivre les recommandations techniques des agents du CARDER.",
+          "points": 2.5,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "history_heritage",
+      "context_text": "Le Bénin dispose de nombreux musées, monuments et sites touristiques, notamment dans le sud du pays.",
+      "points": 5.0,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 2 musées, 1 monument et 1 site touristique du sud du Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "Musées: musée d'Abomey, musée de Porto-Novo. Monument: la Porte de non-retour à Ouidah. Site: la cité lacustre de Ganvié",
+          "explanation": "Le sud du Bénin possède le musée historique d'Abomey et le musée ethnographique de Porto-Novo. La Porte de non-retour à Ouidah est un monument emblématique. Ganvié est une cité lacustre unique.",
+          "points": 5.0,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    },
+    {
+      "item_number": 4,
+      "domain": "civics_institutions",
+      "context_text": "Bio dépense une grande partie de ses revenus en alcool et en tabac, ce qui affecte sa production agricole et sa santé.",
+      "points": 5.0,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Caractérise le comportement de Bio.",
+          "question_type": "fill_blank",
+          "correct_answer": "C'est un comportement irresponsable et dangereux pour sa santé et celle de sa famille. Il gaspille ses revenus au lieu de les investir dans sa production",
+          "explanation": "Le comportement de Bio est irresponsable car il gaspille ses revenus en alcool et tabac au lieu de les investir dans les intrants nécessaires à sa production agricole.",
+          "points": 2.5,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite 2 maladies liées à la consommation d'alcool et de tabac.",
+          "question_type": "fill_blank",
+          "correct_answer": "La cirrhose du foie (alcool) et le cancer du poumon (tabac)",
+          "explanation": "L'alcool peut causer la cirrhose du foie et le tabac peut provoquer le cancer du poumon. Ces deux substances sont nocives pour la santé.",
+          "points": 2.5,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

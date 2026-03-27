@@ -1,0 +1,126 @@
+{
+  "title": "CEP 2022 Session Normale — Éducation Sociale",
+  "year": 2022,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Un touriste émerveillé visite la statue du roi Béhanzin à Abomey. Il s'intéresse à l'histoire du Bénin, à sa démocratie et à sa géographie.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "history_heritage",
+      "context_text": "Le roi Béhanzin est un personnage historique majeur du Bénin. Le pays a connu plusieurs étapes importantes dans son histoire vers l'indépendance.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Pendant quelle période le roi Béhanzin a-t-il régné ?",
+          "question_type": "fill_blank",
+          "correct_answer": "De 1889 à 1894",
+          "explanation": "Le roi Béhanzin a régné sur le royaume du Danhomè de 1889 à 1894, avant d'être vaincu et exilé par les troupes coloniales françaises.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "À quelle date le Bénin a-t-il accédé à l'indépendance ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Le 1er août 1960",
+          "explanation": "Le Bénin (alors République du Dahomey) a proclamé son indépendance le 1er août 1960.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite 3 monuments du Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le palais royal d'Abomey, la Porte de non-retour à Ouidah, la Place des Martyrs à Cotonou",
+          "explanation": "Le Bénin possède de nombreux monuments historiques dont le palais royal d'Abomey (classé au patrimoine mondial de l'UNESCO), la Porte de non-retour à Ouidah et la Place des Martyrs à Cotonou.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "civics_institutions",
+      "context_text": "La démocratie au Bénin est née d'un grand événement historique qui a marqué un tournant dans la vie politique du pays.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quel est l'événement fondateur de la démocratie au Bénin ?",
+          "question_type": "fill_blank",
+          "correct_answer": "La Conférence Nationale des Forces Vives de la Nation (février 1990)",
+          "explanation": "La Conférence Nationale des Forces Vives de la Nation, tenue en février 1990, est l'événement fondateur de la démocratie béninoise. Elle a permis la transition pacifique vers un régime démocratique.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quel était le système politique en place avant la démocratie ?",
+          "question_type": "mcq",
+          "choices": ["Le marxisme-léninisme", "La monarchie", "Le capitalisme", "La dictature militaire simple"],
+          "correct_answer": "Le marxisme-léninisme (régime militaire révolutionnaire)",
+          "explanation": "Avant la démocratie, le Bénin vivait sous un régime marxiste-léniniste instauré par le coup d'État militaire du 26 octobre 1972 dirigé par Mathieu Kérékou.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite une personnalité ayant œuvré pour l'avènement de la démocratie au Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "Monseigneur Isidore de Souza (ou Nicéphore Soglo)",
+          "explanation": "Monseigneur Isidore de Souza a présidé la Conférence Nationale et a joué un rôle déterminant dans la transition démocratique. Nicéphore Soglo a été le premier président démocratiquement élu.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geography_economy",
+      "context_text": "Le Bénin est un pays agricole avec des produits vivriers variés, des limites naturelles et de nombreux cours d'eau.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 2 produits vivriers cultivés au Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le maïs et le manioc",
+          "explanation": "Le maïs et le manioc sont les deux principaux produits vivriers cultivés au Bénin, constituant la base de l'alimentation de la population.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Sur la carte du Bénin, indique les limites naturelles.",
+          "question_type": "fill_blank",
+          "correct_answer": "Nord: fleuve Niger. Sud: océan Atlantique. Est: fleuve Ouémé/frontière Nigeria. Ouest: chaîne de l'Atacora/frontière Togo",
+          "explanation": "Le Bénin est délimité au nord par le fleuve Niger, au sud par l'océan Atlantique, à l'est par la frontière avec le Nigeria et à l'ouest par la chaîne de l'Atacora et la frontière avec le Togo.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Localise le fleuve Ouémé et cite ses affluents.",
+          "question_type": "fill_blank",
+          "correct_answer": "L'Ouémé (plus long fleuve du Bénin, 510 km) et ses affluents: le Zou et l'Okpara",
+          "explanation": "L'Ouémé est le plus long fleuve du Bénin avec environ 510 km. Ses principaux affluents sont le Zou et l'Okpara.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

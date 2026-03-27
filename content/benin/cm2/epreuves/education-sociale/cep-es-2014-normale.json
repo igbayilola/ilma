@@ -1,0 +1,106 @@
+{
+  "title": "CEP 2014 Session Normale — Éducation Sociale",
+  "year": 2014,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Gnonmi reçoit un écolier étranger qui s'intéresse aux institutions démocratiques du Bénin, au palais royal d'Abomey et aux activités rurales du pays.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "civics_institutions",
+      "context_text": "Le Bénin est une République démocratique dotée de grandes institutions qui assurent le fonctionnement de l'État.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 3 grandes institutions démocratiques du Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "La Présidence de la République, l'Assemblée Nationale, la Cour Constitutionnelle",
+          "explanation": "Les trois grandes institutions démocratiques du Bénin sont la Présidence de la République (pouvoir exécutif), l'Assemblée Nationale (pouvoir législatif) et la Cour Constitutionnelle (contrôle de constitutionnalité).",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelle institution proclame les résultats définitifs de l'élection présidentielle ?",
+          "question_type": "mcq",
+          "choices": ["La Cour Constitutionnelle", "La CENA", "L'Assemblée Nationale", "Le Gouvernement"],
+          "correct_answer": "La Cour Constitutionnelle",
+          "explanation": "La Cour Constitutionnelle est l'institution habilitée à proclamer les résultats définitifs de l'élection présidentielle au Bénin.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "history_heritage",
+      "context_text": "Un roi du Bénin a résisté à la colonisation française et est devenu un symbole de la résistance africaine.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quel est le nom de ce roi qui a résisté à la colonisation ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Le roi Béhanzin",
+          "explanation": "Le roi Béhanzin est le dernier roi indépendant du royaume du Danhomè. Il a résisté farouchement à la colonisation française.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Indique le lieu et la date de son décès.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le 10 décembre 1906 à Alger (Algérie)",
+          "explanation": "Le roi Béhanzin est décédé le 10 décembre 1906 à Alger, en Algérie, où il était en exil.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geography_economy",
+      "context_text": "Le Bénin est un pays à vocation agricole avec des limites naturelles bien définies et de nombreux cours d'eau.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 2 activités rurales pratiquées au Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "L'agriculture et l'élevage",
+          "explanation": "Les deux principales activités rurales au Bénin sont l'agriculture (cultures vivrières et de rente) et l'élevage (bovins, ovins, caprins).",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite les limites naturelles de la République du Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "Nord: fleuve Niger. Sud: océan Atlantique. Est: frontière avec le Nigeria. Ouest: frontière avec le Togo",
+          "explanation": "Le Bénin est limité au nord par le fleuve Niger, au sud par l'océan Atlantique, à l'est par la frontière avec le Nigeria et à l'ouest par la frontière avec le Togo.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Sur la carte du Bénin, localise les cours d'eau du bassin fluvial du nord.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bassin du Niger: la Mékrou, l'Alibori, la Sota, la Pendjari",
+          "explanation": "Les principaux cours d'eau du bassin du Niger au nord du Bénin sont la Mékrou, l'Alibori, la Sota et la Pendjari.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

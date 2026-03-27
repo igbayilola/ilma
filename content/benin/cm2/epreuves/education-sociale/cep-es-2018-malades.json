@@ -1,0 +1,105 @@
+{
+  "title": "CEP 2018 Session Malades — Éducation Sociale",
+  "year": 2018,
+  "session": "malades",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Dans un taxi reliant Cotonou à Parakou, deux passagers Cossi et Codjo discutent du pouvoir du Président de la République. Cossi affirme que le pouvoir du Président est limité, tandis que Codjo soutient qu'il est absolu. Le conducteur du taxi se retourne souvent pour participer à la discussion.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "civics_institutions",
+      "context_text": "Cossi et Codjo discutent du pouvoir du Président de la République. Cossi affirme que son pouvoir est limité, Codjo dit qu'il est absolu.",
+      "points": 8,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Caractérise les propos de Cossi et ceux de Codjo.",
+          "question_type": "fill_blank",
+          "correct_answer": "Cossi a raison: dans une démocratie, le pouvoir du Président est limité par la Constitution et contrôlé par les institutions. Codjo a tort",
+          "explanation": "Dans une démocratie, le pouvoir du Président est encadré par la Constitution et contrôlé par d'autres institutions. Il n'est donc pas absolu. Cossi a raison et Codjo a tort.",
+          "points": 2.67,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite 2 institutions de contre-pouvoir au Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "La Cour Constitutionnelle et l'Assemblée Nationale",
+          "explanation": "La Cour Constitutionnelle et l'Assemblée Nationale sont deux institutions de contre-pouvoir qui contrôlent et limitent le pouvoir exécutif.",
+          "points": 2.67,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Comment est élu le Président de la République au Bénin ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Au suffrage universel direct, pour un mandat de 5 ans renouvelable une fois",
+          "explanation": "Le Président de la République du Bénin est élu au suffrage universel direct pour un mandat de 5 ans, renouvelable une seule fois.",
+          "points": 2.67,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "civics_institutions",
+      "context_text": "Le conducteur du taxi se retourne souvent pour participer à la discussion entre Cossi et Codjo, ce qui inquiète les passagers.",
+      "points": 5.33,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Les passagers ont-ils raison de dénoncer le comportement du conducteur ? Justifie ta réponse.",
+          "question_type": "fill_blank",
+          "correct_answer": "Oui, car le conducteur ne respecte pas le code de la route en se retournant pendant qu'il conduit. Cela met en danger tous les passagers",
+          "explanation": "Les passagers ont raison car le conducteur met en danger la vie de tous les occupants du véhicule en ne regardant pas la route.",
+          "points": 2.67,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite 2 règles du code de la route.",
+          "question_type": "fill_blank",
+          "correct_answer": "Respecter les feux tricolores (rouge = arrêt). Ne pas utiliser le téléphone au volant",
+          "explanation": "Le code de la route impose de nombreuses règles, dont le respect des feux tricolores et l'interdiction d'utiliser le téléphone au volant.",
+          "points": 2.67,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geography_economy",
+      "context_text": "Le taxi relie Cotonou à Parakou, traversant plusieurs grandes villes. Le Bénin est un pays agricole avec différentes cultures selon les régions.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 4 grandes villes entre Cotonou et Parakou.",
+          "question_type": "fill_blank",
+          "correct_answer": "Bohicon, Dassa-Zoumè, Savè, Parakou",
+          "explanation": "Sur la route nationale inter-États (RNIE 2) reliant Cotonou à Parakou, on traverse les villes de Bohicon, Dassa-Zoumè, Savè et Parakou.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Sur la carte du Bénin, localise les régions de culture de l'ananas et du coton.",
+          "question_type": "fill_blank",
+          "correct_answer": "Ananas: sud du Bénin (Atlantique, Ouémé). Coton: nord du Bénin (Borgou, Alibori, Atacora)",
+          "explanation": "L'ananas est cultivé principalement dans le sud du Bénin (départements de l'Atlantique et de l'Ouémé). Le coton est cultivé dans le nord (Borgou, Alibori, Atacora).",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

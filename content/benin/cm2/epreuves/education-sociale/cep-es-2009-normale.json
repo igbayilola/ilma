@@ -1,0 +1,107 @@
+{
+  "title": "CEP 2009 Session Normale — Éducation Sociale",
+  "year": 2009,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Monsieur Ousmane est un opérateur économique étranger qui souhaite investir au Bénin dans les domaines de l'agriculture, de l'industrie et du commerce. Il s'intéresse aux institutions du pays et au code de la route.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "civics_institutions",
+      "context_text": "Le Bénin dispose d'institutions qui veillent au respect des libertés, notamment la liberté de presse.",
+      "points": 5.0,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quel est le nom de l'institution qui veille au respect des lois de la presse au Bénin ?",
+          "question_type": "fill_blank",
+          "correct_answer": "La HAAC (Haute Autorité de l'Audiovisuel et de la Communication)",
+          "explanation": "La HAAC est l'institution constitutionnelle chargée de réguler les médias et de veiller au respect de la déontologie de la presse au Bénin.",
+          "points": 2.5,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "La HAAC est-elle un pouvoir ou un contre-pouvoir ?",
+          "question_type": "mcq",
+          "choices": ["Contre-pouvoir", "Pouvoir politique", "Pouvoir judiciaire"],
+          "correct_answer": "Contre-pouvoir",
+          "explanation": "La HAAC est une institution de contre-pouvoir. Elle ne fait pas partie des trois pouvoirs traditionnels (exécutif, législatif, judiciaire) mais contribue à l'équilibre démocratique.",
+          "points": 2.5,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "civics_institutions",
+      "context_text": "La circulation routière est réglementée pour assurer la sécurité de tous les usagers de la route.",
+      "points": 5.0,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Comment appelle-t-on l'ensemble des règles permettant d'éviter les accidents de la route ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Le code de la route",
+          "explanation": "Le code de la route est l'ensemble des lois et règlements qui régissent la circulation routière.",
+          "points": 2.5,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Cite 2 catégories de véhicules autorisées à ne pas respecter toutes les règles du code de la route.",
+          "question_type": "fill_blank",
+          "correct_answer": "Les véhicules de secours (ambulances, pompiers) et les véhicules officiels (convois présidentiels, police)",
+          "explanation": "Les véhicules prioritaires comme les ambulances, les véhicules de pompiers et les véhicules officiels en mission peuvent déroger à certaines règles du code de la route.",
+          "points": 2.5,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geography_economy",
+      "context_text": "Le Bénin produit des produits vivriers variés dans le nord et le sud du pays. L'agriculture a une longue histoire au Bénin.",
+      "points": 5.0,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Cite 1 produit vivrier du nord et 1 produit vivrier du sud du Bénin.",
+          "question_type": "fill_blank",
+          "correct_answer": "Nord: le sorgho (ou mil, igname). Sud: le maïs (ou manioc)",
+          "explanation": "Le nord du Bénin est caractérisé par la culture du sorgho, du mil et de l'igname. Le sud est caractérisé par la culture du maïs et du manioc.",
+          "points": 1.67,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quel roi du Dahomey est célèbre pour avoir développé la culture du palmier à huile ?",
+          "question_type": "mcq",
+          "choices": ["Le roi Guézo", "Le roi Béhanzin", "Le roi Glèlè", "Le roi Toffa"],
+          "correct_answer": "Le roi Guézo",
+          "explanation": "Le roi Guézo (1818-1858) a développé la culture du palmier à huile qui est devenu un pilier de l'économie du royaume du Dahomey.",
+          "points": 1.67,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Justifie ta réponse.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le roi Guézo a développé la culture du palmier à huile qui est devenu un pilier de l'économie du royaume du Dahomey",
+          "explanation": "Sous le règne de Guézo, le palmier à huile a remplacé la traite des esclaves comme principale source de revenus du royaume.",
+          "points": 1.67,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

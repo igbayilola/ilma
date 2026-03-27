@@ -1,0 +1,86 @@
+{
+  "title": "CEP 2015 Session Normale — Éducation Sociale",
+  "year": 2015,
+  "session": "normale",
+  "subject": "education_sociale",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Le Bénin dispose d'une loi fondamentale qui organise les institutions de la République. L'indépendance a permis au pays de se gouverner lui-même et de gérer ses propres ressources.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "civics_institutions",
+      "context_text": "La Constitution est la loi fondamentale du Bénin. Elle organise les institutions de pouvoir et de contre-pouvoir.",
+      "points": 8,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Quelle est la date d'adoption de la loi fondamentale du Bénin ?",
+          "question_type": "fill_blank",
+          "correct_answer": "Le 11 décembre 1990",
+          "explanation": "La Constitution du Bénin a été adoptée par référendum le 11 décembre 1990, après la Conférence Nationale des Forces Vives de la Nation.",
+          "points": 2.67,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelle institution est chargée de faire respecter la Constitution ?",
+          "question_type": "mcq",
+          "choices": ["La Cour Constitutionnelle", "L'Assemblée Nationale", "Le Gouvernement", "La Cour Suprême"],
+          "correct_answer": "La Cour Constitutionnelle",
+          "explanation": "La Cour Constitutionnelle est l'institution chargée de veiller au respect de la Constitution et de contrôler la constitutionnalité des lois.",
+          "points": 2.67,
+          "depends_on_previous": false,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Cite 2 institutions de pouvoir politique et 2 institutions de contre-pouvoir, puis donne le rôle du contre-pouvoir.",
+          "question_type": "fill_blank",
+          "correct_answer": "Pouvoir: Présidence de la République, Assemblée Nationale. Contre-pouvoir: Cour Constitutionnelle, Haute Autorité de l'Audiovisuel et de la Communication (HAAC). Rôle: contrôler et limiter l'exercice du pouvoir pour éviter les abus",
+          "explanation": "Les institutions de pouvoir sont la Présidence de la République et l'Assemblée Nationale. Les institutions de contre-pouvoir (Cour Constitutionnelle, HAAC) ont pour rôle de contrôler et limiter l'exercice du pouvoir afin d'éviter les abus.",
+          "points": 2.67,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "history_heritage",
+      "context_text": "L'indépendance est un événement majeur dans l'histoire du Bénin.",
+      "points": 6,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Que donne l'indépendance à un pays ?",
+          "question_type": "fill_blank",
+          "correct_answer": "L'indépendance donne la souveraineté nationale: le droit de se gouverner soi-même, de faire ses propres lois et de gérer ses ressources",
+          "explanation": "L'indépendance confère à un pays la souveraineté nationale, c'est-à-dire le droit de se gouverner, de légiférer et de gérer librement ses ressources.",
+          "points": 6,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geography_economy",
+      "context_text": "Le Bénin possède des ressources minières réparties sur son territoire.",
+      "points": 6,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Localise les ressources minières du Bénin sur la carte.",
+          "question_type": "fill_blank",
+          "correct_answer": "Or (Perma, nord-ouest), calcaire (Onigbolo, centre-sud), pétrole (offshore, sud), fer (nord), marbre (nord)",
+          "explanation": "Les ressources minières du Bénin sont réparties sur le territoire : l'or à Perma au nord-ouest, le calcaire à Onigbolo au centre-sud, le pétrole en offshore au sud, le fer et le marbre au nord.",
+          "points": 6,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    }
+  ]
+}
