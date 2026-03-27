@@ -253,14 +253,14 @@ export const AdminEditorialPage: React.FC = () => {
         const mappedType = QUESTION_TYPE_MAP_PREVIEW[data.questionType.toLowerCase()] || 'MCQ';
         loaded.push({
           id: q.id,
-          text: data.text,
-          questionType: mappedType as any,
-          choices: data.choices || [],
+          type: mappedType as any,
+          prompt: data.text,
+          options: Array.isArray(data.choices) ? data.choices : undefined,
+          choices: data.choices,
           correctAnswer: data.correctAnswer,
           explanation: data.explanation,
           hint: data.hint,
-          difficulty: data.difficulty,
-          points: data.points || 1,
+          imageUrl: data.mediaUrl || undefined,
         } as Question);
       } catch { /* skip failed loads */ }
     }
@@ -394,12 +394,9 @@ export const AdminEditorialPage: React.FC = () => {
 
   const isPreviewCorrect = (): boolean => {
     if (!previewQuestion || previewAnswer === null) return false;
-    const correct = previewQuestion.correctAnswer;
-    const answer = previewAnswer;
-    if (typeof correct === 'string' && typeof answer === 'string') {
-      return correct.trim().toLowerCase() === answer.trim().toLowerCase();
-    }
-    return String(correct) === String(answer);
+    const correct = String(previewQuestion.correctAnswer).trim().toLowerCase();
+    const answer = String(previewAnswer).trim().toLowerCase();
+    return correct === answer;
   };
 
   const loadAll = useCallback(async () => {
@@ -446,7 +443,7 @@ export const AdminEditorialPage: React.FC = () => {
     setQuestionModal(true);
   };
 
-  const openEditForm = (q: KanbanQuestionDTO) => {
+  const openEditForm = async (q: KanbanQuestionDTO) => {
     setEditingQuestionId(q.id);
     setFormData({
       skill_id: q.skillId || '',
@@ -460,6 +457,17 @@ export const AdminEditorialPage: React.FC = () => {
     });
     setFormError('');
     setQuestionModal(true);
+    // Load full question data to pre-populate choices, correct_answer, explanation, points
+    try {
+      const data = await contentService.previewQuestion(q.id);
+      setFormData(prev => ({
+        ...prev,
+        choices: Array.isArray(data.choices) ? data.choices.join('\n') : '',
+        correct_answer: data.correctAnswer != null ? String(data.correctAnswer) : '',
+        explanation: data.explanation || '',
+        points: data.points || 1,
+      }));
+    } catch { /* keep defaults if preview fails */ }
   };
 
   const updateField = (field: keyof QuestionFormData, value: string | number) => {
@@ -1371,7 +1379,7 @@ export const AdminEditorialPage: React.FC = () => {
                     ) : (
                       <AlertCircle size={16} className="text-red-600 shrink-0" />
                     )}
-                    <span className="truncate flex-1">{q.text}</span>
+                    <span className="truncate flex-1">{q.prompt}</span>
                     {!batchResults[i]?.correct && (
                       <span className="text-xs text-red-600 shrink-0">→ {String(q.correctAnswer)}</span>
                     )}

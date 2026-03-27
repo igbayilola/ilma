@@ -21,6 +21,11 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
 
   useEffect(() => {
     setShowHint(false);
+    // Initialize ORDERING with shuffled items
+    if (question.type === 'ORDERING' && !selectedAnswer && question.choices) {
+      const shuffled = [...(Array.isArray(question.choices) ? question.choices : [])].sort(() => Math.random() - 0.5);
+      onAnswerChange(shuffled);
+    }
   }, [question.id]);
 
   const handleSelect = (val: any) => {
@@ -156,12 +161,6 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
       handleSelect(newItems);
     };
 
-    // Initialize with shuffled items if no answer yet
-    if (!selectedAnswer && question.choices) {
-      const shuffled = [...(Array.isArray(question.choices) ? question.choices : [])].sort(() => Math.random() - 0.5);
-      setTimeout(() => handleSelect(shuffled), 0);
-    }
-
     const correctOrder = question.correctAnswer as string[];
 
     return (
@@ -244,6 +243,7 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
   const renderGuidedSteps = () => {
     const steps: Array<{ instruction: string; expected?: string }> = question.choices || [];
     const answers: string[] = selectedAnswer || steps.map(() => '');
+    const correctAnswers: string[] = Array.isArray(question.correctAnswer) ? question.correctAnswer as string[] : [];
 
     const handleStepAnswer = (idx: number, val: string) => {
       if (isFeedbackMode) return;
@@ -254,21 +254,34 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
 
     return (
       <div className="max-w-md mx-auto space-y-4">
-        {steps.map((step, idx) => (
-          <div key={idx} className="p-4 rounded-xl border border-gray-200 bg-white">
-            <div className="flex items-center mb-2">
-              <span className="w-7 h-7 rounded-full bg-sitou-primary text-white flex items-center justify-center text-sm font-bold mr-3">{idx + 1}</span>
-              <p className="text-sm font-medium text-gray-700">{step.instruction}</p>
+        {steps.map((step, idx) => {
+          const stepCorrect = isFeedbackMode && correctAnswers[idx] !== undefined
+            ? String(answers[idx] || '').trim().toLowerCase() === String(correctAnswers[idx]).trim().toLowerCase()
+            : null;
+
+          return (
+            <div key={idx} className={`p-4 rounded-xl border-2 transition-all ${
+              isFeedbackMode
+                ? stepCorrect ? 'border-green-300 bg-green-50' : 'border-red-300 bg-red-50'
+                : 'border-gray-200 bg-white'
+            }`}>
+              <div className="flex items-center mb-2">
+                <span className="w-7 h-7 rounded-full bg-sitou-primary text-white flex items-center justify-center text-sm font-bold mr-3">{idx + 1}</span>
+                <p className="text-sm font-medium text-gray-700">{step.instruction}</p>
+              </div>
+              <Input
+                placeholder="Ta réponse..."
+                value={answers[idx] || ''}
+                onChange={(e) => handleStepAnswer(idx, e.target.value)}
+                disabled={isFeedbackMode}
+                className={`text-sm ${isFeedbackMode ? stepCorrect ? 'border-green-400 text-green-700' : 'border-red-400 text-red-700' : ''}`}
+              />
+              {isFeedbackMode && !stepCorrect && correctAnswers[idx] !== undefined && (
+                <p className="text-xs text-red-600 mt-1">Réponse attendue : <b>{correctAnswers[idx]}</b></p>
+              )}
             </div>
-            <Input
-              placeholder="Ta réponse..."
-              value={answers[idx] || ''}
-              onChange={(e) => handleStepAnswer(idx, e.target.value)}
-              disabled={isFeedbackMode}
-              className="text-sm"
-            />
-          </div>
-        ))}
+          );
+        })}
       </div>
     );
   };

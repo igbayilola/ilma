@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
-import { ButtonVariant } from '../../types';
+import { ButtonVariant, SubscriptionTier } from '../../types';
 import { ClipboardList, Clock, Lock, Trophy, ChevronRight, History, FileText } from 'lucide-react';
 import { examService, MockExamDTO, ExamHistoryItemDTO } from '../../services/examService';
 import { useAuthStore } from '../../store/authStore';
@@ -12,7 +12,7 @@ export const ExamListPage: React.FC = () => {
   const navigate = useNavigate();
   const { user, activeProfile } = useAuthStore();
   const effectiveTier = activeProfile?.subscriptionTier || user?.subscriptionTier;
-  const isPremium = effectiveTier !== 'free';
+  const isPremium = effectiveTier !== SubscriptionTier.FREE;
 
   const [exams, setExams] = useState<MockExamDTO[]>([]);
   const [history, setHistory] = useState<ExamHistoryItemDTO[]>([]);

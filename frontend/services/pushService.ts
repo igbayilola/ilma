@@ -103,10 +103,10 @@ export const pushService = {
       if (subscription) {
         // Remove from backend
         await apiClient.delete('/notifications/push-subscription', {
-          data: {
+          body: JSON.stringify({
             endpoint: subscription.endpoint,
             keys: subscription.toJSON().keys,
-          },
+          }),
         }).catch(() => {});
         await subscription.unsubscribe();
       }

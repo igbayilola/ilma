@@ -197,13 +197,41 @@ class QuestionBase(BaseModel):
     explanation: Optional[str] = None
     hint: Optional[str] = None
     media_url: Optional[str] = None
-    points: int = 1
+    points: int = Field(default=1, ge=1)
     time_limit_seconds: Optional[int] = 60
     bloom_level: Optional[str] = None
     ilma_level: Optional[str] = None
     tags: Optional[List[str]] = None
     common_mistake_targeted: Optional[str] = None
     is_active: bool = True
+
+    @model_validator(mode="after")
+    def validate_question_consistency(self):
+        qt = self.question_type
+        choices = self.choices
+        correct = self.correct_answer
+
+        # MCQ and TRUE_FALSE require choices list
+        if qt in (QuestionType.MCQ, QuestionType.TRUE_FALSE):
+            if not isinstance(choices, list) or len(choices) == 0:
+                raise ValueError(f"{qt.value} questions require a non-empty choices list")
+            # correct_answer must be one of the choices (or convertible to string match)
+            if isinstance(correct, str) and correct not in [str(c) for c in choices]:
+                pass  # Allow — correct_answer may use index or label
+        elif qt == QuestionType.ORDERING:
+            if not isinstance(choices, list) or len(choices) < 2:
+                raise ValueError("ORDERING questions require a choices list with at least 2 items")
+        elif qt == QuestionType.MATCHING:
+            if not isinstance(choices, dict) or "left" not in choices or "right" not in choices:
+                pass  # Allow legacy flat list format
+        elif qt == QuestionType.NUMERIC_INPUT:
+            # correct_answer should be numeric or convertible
+            try:
+                float(str(correct))
+            except (ValueError, TypeError):
+                raise ValueError(f"NUMERIC_INPUT correct_answer must be numeric, got: {correct}")
+
+        return self
 
 
 class QuestionCreate(QuestionBase):
