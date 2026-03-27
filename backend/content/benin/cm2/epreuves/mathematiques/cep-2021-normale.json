@@ -1,0 +1,118 @@
+{
+  "title": "CEP 2021 Session Normale — Mathématiques",
+  "year": 2021,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "La coopérative Binazon exploite un terrain de 5 hectares. Les produits récoltés sont : maïs 3 t, arachides 2 t, patate douce 1 t, manioc 4 t. La coopérative dispose d'une citerne cylindrique de diamètre 6 m et de profondeur 8 m.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Les produits récoltés par la coopérative Binazon sont : maïs 3 t, arachides 2 t, patate douce 1 t, manioc 4 t. Le transport se fait par tricycle de capacité 10 quintaux par voyage.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Dresse le tableau de fréquence en fraction puis en pourcentage.",
+          "question_type": "fill_blank",
+          "correct_answer": "Maïs: 3/10 (30%), Arachides: 2/10 (20%), Patate douce: 1/10 (10%), Manioc: 4/10 (40%)",
+          "explanation": "Total = 3 + 2 + 1 + 4 = 10 t. Maïs : 3/10 = 30%. Arachides : 2/10 = 20%. Patate douce : 1/10 = 10%. Manioc : 4/10 = 40%.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le nombre de voyages nécessaires avec un tricycle de capacité 10 quintaux par voyage.",
+          "question_type": "numeric_input",
+          "correct_answer": "10",
+          "explanation": "Total = 10 t = 100 quintaux. Nombre de voyages : 100 ÷ 10 = 10 voyages.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "La coopérative dispose d'une citerne cylindrique de diamètre 6 m et de profondeur 8 m.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule l'aire de la surface de base de la citerne.",
+          "question_type": "numeric_input",
+          "correct_answer": "28.26",
+          "explanation": "Rayon = 6 ÷ 2 = 3 m. Aire = π × r² = 3,14 × 3² = 3,14 × 9 = 28,26 m².",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le volume de la citerne.",
+          "question_type": "numeric_input",
+          "correct_answer": "226.08",
+          "explanation": "V = Aire de base × hauteur = 28,26 × 8 = 226,08 m³.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule la quantité d'eau en litres si la citerne est remplie aux 2/3.",
+          "question_type": "numeric_input",
+          "correct_answer": "150720",
+          "explanation": "Volume aux 2/3 : 226,08 × 2/3 = 150,72 m³. En litres : 150,72 × 1 000 = 150 720 L.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "On considère la base circulaire de la citerne cylindrique de diamètre 6 m.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Représente la base (B) de la citerne à l'échelle 1/100.",
+          "question_type": "mcq",
+          "choices": ["Cercle de rayon 3 cm", "Cercle de rayon 6 cm", "Cercle de rayon 0,3 cm", "Cercle de rayon 30 cm"],
+          "correct_answer": "Cercle de rayon 3 cm",
+          "explanation": "Rayon réel = 3 m = 300 cm. Échelle 1/100 : 300 ÷ 100 = 3 cm.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Trace une droite (H) en dehors de la représentation de cette base.",
+          "question_type": "mcq",
+          "choices": ["Une droite ne coupant pas le cercle", "Une droite tangente au cercle", "Un diamètre"],
+          "correct_answer": "Une droite ne coupant pas le cercle",
+          "explanation": "Une droite tracée en dehors du cercle est une droite qui ne coupe pas le cercle.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Construis le symétrique (B') de (B) par rapport à la droite (H).",
+          "question_type": "mcq",
+          "choices": ["Un cercle de même rayon de l'autre côté de (H)", "Un cercle concentrique", "Un demi-cercle"],
+          "correct_answer": "Un cercle de même rayon de l'autre côté de (H)",
+          "explanation": "Le symétrique d'un cercle par rapport à une droite est un cercle de même rayon situé de l'autre côté de cette droite.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

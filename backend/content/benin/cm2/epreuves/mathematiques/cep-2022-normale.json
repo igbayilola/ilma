@@ -1,0 +1,126 @@
+{
+  "title": "CEP 2022 Session Normale — Mathématiques",
+  "year": 2022,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Un module de 3 classes est construit grâce à la coopération étrangère à Cotonou. Codjo est un élève de CM2 dans l'une de ces classes.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Voici les âges des élèves de la classe de Codjo : 9, 11, 10, 10, 11, 10, 11, 10, 11, 10, 11, 12, 10, 12, 10, 13, 10, 11, 13, 10, 10, 11, 10, 12, 11, 11, 10, 9, 13, 10.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Combien d'élèves y a-t-il dans cette salle de classe ?",
+          "question_type": "numeric_input",
+          "correct_answer": "30",
+          "explanation": "En comptant tous les âges listés, on trouve 30 élèves.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Dresse le tableau des effectifs et des fréquences des âges.",
+          "question_type": "fill_blank",
+          "correct_answer": "9 ans: 3, 10 ans: 12, 11 ans: 8, 12 ans: 3, 13 ans: 4",
+          "explanation": "9 ans : 3 élèves, 10 ans : 12 élèves, 11 ans : 8 élèves, 12 ans : 3 élèves, 13 ans : 4 élèves. Total : 30 élèves.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Complète ce tableau par les fréquences en pourcentage.",
+          "question_type": "fill_blank",
+          "correct_answer": "9 ans: 10%, 10 ans: 40%, 11 ans: 26,67%, 12 ans: 10%, 13 ans: 13,33%",
+          "explanation": "9 ans : 3/30 = 10%. 10 ans : 12/30 = 40%. 11 ans : 8/30 ≈ 26,67%. 12 ans : 3/30 = 10%. 13 ans : 4/30 ≈ 13,33%.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Le module de 3 classes a coûté 45 millions de FCFA. L'État béninois a payé 3/15 du coût total.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule la somme versée par l'État béninois.",
+          "question_type": "numeric_input",
+          "correct_answer": "9000000",
+          "explanation": "45 000 000 × 3/15 = 45 000 000 × 1/5 = 9 000 000 FCFA.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le montant de l'aide de la coopération étrangère.",
+          "question_type": "numeric_input",
+          "correct_answer": "36000000",
+          "explanation": "45 000 000 − 9 000 000 = 36 000 000 FCFA.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule la différence entre le montant de la coopération étrangère et celui de l'État béninois.",
+          "question_type": "numeric_input",
+          "correct_answer": "27000000",
+          "explanation": "36 000 000 − 9 000 000 = 27 000 000 FCFA.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "Les salles de classe sont rectangulaires. Sur la représentation, on a : AD = 4,5 cm et AB = 3,5 cm. La largeur réelle de la salle est 7 m.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule l'échelle de la représentation.",
+          "question_type": "fill_blank",
+          "correct_answer": "1/200",
+          "explanation": "Largeur réelle = 7 m = 700 cm. Échelle = 3,5 cm ÷ 700 cm = 1/200.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule l'aire de la salle de classe.",
+          "question_type": "numeric_input",
+          "correct_answer": "63",
+          "explanation": "Longueur réelle : 4,5 × 200 = 900 cm = 9 m. Aire = 9 × 7 = 63 m².",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Reproduis ce rectangle ABCD et construis son symétrique A'B'C'D' par rapport à un point O placé à l'extérieur.",
+          "question_type": "mcq",
+          "choices": ["Un rectangle de mêmes dimensions centré sur O", "Un rectangle plus grand", "Un carré de même périmètre"],
+          "correct_answer": "Un rectangle de mêmes dimensions centré sur O",
+          "explanation": "Le symétrique d'un rectangle par rapport à un point O est un rectangle de mêmes dimensions, où chaque sommet est le symétrique du sommet correspondant par rapport à O.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

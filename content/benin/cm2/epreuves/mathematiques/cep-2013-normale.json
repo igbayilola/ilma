@@ -1,0 +1,107 @@
+{
+  "title": "CEP 2013 Session Normale — Mathématiques",
+  "year": 2013,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Bio et Lafia exploitent un terrain au cours de la campagne agricole 2011-2012. Le terrain a la forme d'un rectangle accolé à un demi-cercle. Le rectangle mesure 600 m × 200 m. Le diamètre du demi-cercle est 200 m. Ils récoltent 35 tonnes de coton. Le coton de 1er choix se vend à 200 F/kg et celui de 2ème choix à 160 F/kg. La masse du coton de 2ème choix représente 2/5 de celle du 1er choix. On prend π = 3,14.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "measures_operations",
+      "context_text": "Le terrain a la forme d'un rectangle de 600 m × 200 m accolé à un demi-cercle de diamètre 200 m. On prend π = 3,14.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule l'aire de chaque partie du terrain (rectangle et demi-cercle).",
+          "question_type": "fill_blank",
+          "correct_answer": "Rectangle: 120 000 m², Demi-cercle: 15 700 m²",
+          "explanation": "Aire du rectangle = 600 × 200 = 120 000 m². Aire du demi-cercle = π × r² / 2 = 3,14 × 100² / 2 = 3,14 × 10 000 / 2 = 15 700 m².",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule l'aire totale du terrain en mètres carrés.",
+          "question_type": "numeric_input",
+          "correct_answer": "135700",
+          "explanation": "Aire totale = 120 000 + 15 700 = 135 700 m².",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule le périmètre du terrain en mètres.",
+          "question_type": "numeric_input",
+          "correct_answer": "1714",
+          "explanation": "Périmètre = longueur (600) + largeur (200) + longueur (600) + arc du demi-cercle (π × d / 2 = 3,14 × 200 / 2 = 314) = 600 + 200 + 600 + 314 = 1 714 m.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "data_proportionality",
+      "context_text": "Bio et Lafia récoltent 35 tonnes de coton. Le coton de 1er choix se vend à 200 F/kg et celui de 2ème choix à 160 F/kg. La masse du coton de 2ème choix représente 2/5 de celle du 1er choix.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule la masse de coton de chaque choix.",
+          "question_type": "fill_blank",
+          "correct_answer": "1er choix: 25 000 kg (25 t), 2ème choix: 10 000 kg (10 t)",
+          "explanation": "Soit x la masse du 1er choix. 2ème choix = 2x/5. x + 2x/5 = 35 t. 7x/5 = 35. x = 25 t = 25 000 kg. 2ème choix = 2 × 25 / 5 = 10 t = 10 000 kg.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le prix de vente total du coton en francs.",
+          "question_type": "numeric_input",
+          "correct_answer": "6600000",
+          "explanation": "Prix du 1er choix = 25 000 × 200 = 5 000 000 F. Prix du 2ème choix = 10 000 × 160 = 1 600 000 F. Total = 5 000 000 + 1 600 000 = 6 600 000 F.",
+          "points": 3.33,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "On considère le terrain en forme de rectangle (600 m × 200 m) accolé à un demi-cercle de diamètre 200 m. Échelle : 1/10 000.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Trace le terrain à l'échelle 1/10 000.",
+          "question_type": "mcq",
+          "choices": ["Rectangle 6 cm × 2 cm avec demi-cercle de rayon 1 cm", "Rectangle 60 cm × 20 cm", "Rectangle 0,6 cm × 0,2 cm"],
+          "correct_answer": "Rectangle 6 cm × 2 cm avec demi-cercle de rayon 1 cm",
+          "explanation": "Échelle 1/10 000 : 600 m = 60 000 cm → 60 000 / 10 000 = 6 cm. 200 m = 20 000 cm → 20 000 / 10 000 = 2 cm. Rayon demi-cercle : 100 m = 10 000 cm → 10 000 / 10 000 = 1 cm.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Trace le symétrique de cette figure par rapport à une droite (D) parallèle au diamètre, placée du côté semi-circulaire.",
+          "question_type": "mcq",
+          "choices": ["Figure de mêmes dimensions de l'autre côté de (D)", "Figure agrandie", "Figure réduite"],
+          "correct_answer": "Figure de mêmes dimensions de l'autre côté de (D)",
+          "explanation": "Le symétrique d'une figure par rapport à une droite est une figure de mêmes dimensions et forme, située de l'autre côté de la droite de symétrie.",
+          "points": 3.33,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

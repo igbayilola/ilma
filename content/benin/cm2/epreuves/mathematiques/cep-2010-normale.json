@@ -1,0 +1,86 @@
+{
+  "title": "CEP 2010 Session Normale — Mathématiques",
+  "year": 2010,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Un jardinier dispose d'un terrain rectangulaire de 50 m sur 15 m pour cultiver des carottes, des tomates, de la laitue et du chou. Les planches occupent une superficie de 598 m². Un diagramme semi-circulaire montre la répartition : Tomate 35%, Laitue 30%, Carotte 3/20, Chou 20%.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Les planches occupent 598 m². Le diagramme semi-circulaire indique : Tomate 35%, Laitue 30%, Carotte 3/20 (15%), Chou 20%.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule la superficie prévue pour chaque produit.",
+          "question_type": "fill_blank",
+          "correct_answer": "Tomate: 209,3 m², Laitue: 179,4 m², Carotte: 89,7 m², Chou: 119,6 m²",
+          "explanation": "Tomate : 598 × 35/100 = 209,3 m². Laitue : 598 × 30/100 = 179,4 m². Carotte : 598 × 15/100 = 89,7 m². Chou : 598 × 20/100 = 119,6 m².",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Inscris les données dans un tableau de fréquences.",
+          "question_type": "fill_blank",
+          "correct_answer": "Tomate: 35%, Laitue: 30%, Carotte: 15%, Chou: 20%",
+          "explanation": "Les fréquences en pourcentage sont directement données par le diagramme : Tomate 35%, Laitue 30%, Carotte 15%, Chou 20%.",
+          "points": 3.34,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "geometry",
+      "context_text": "Le terrain rectangulaire mesure 50 m sur 15 m. Des allées de 2 m de large séparent les 6 parcelles.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Reproduis le plan du terrain à l'échelle 1/500.",
+          "question_type": "mcq",
+          "choices": ["Rectangle 10 cm × 3 cm", "Rectangle 50 cm × 15 cm", "Rectangle 1 cm × 0,3 cm"],
+          "correct_answer": "Rectangle 10 cm × 3 cm",
+          "explanation": "Échelle 1/500 : 50 m = 5 000 cm → 5 000 ÷ 500 = 10 cm. 15 m = 1 500 cm → 1 500 ÷ 500 = 3 cm.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule en ares l'aire de la surface cultivable.",
+          "question_type": "numeric_input",
+          "correct_answer": "5.98",
+          "explanation": "Aire totale : 50 × 15 = 750 m². Allées : 1 allée horizontale (50 × 2 = 100 m²) + 2 allées verticales (15 × 2 = 30 m² chacune) − 2 intersections (2 × 2 = 4 m² chacune) = 100 + 60 − 8 = 152 m². Surface cultivable : 750 − 152 = 598 m² = 5,98 ares.",
+          "points": 3.34,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "data_proportionality",
+      "context_text": "Un tableau de correspondance indique la consommation d'eau en fonction des jours d'arrosage. Jours : 5, 8, 20, 12, ?. Eau (L) : 650, ?, ?, 1 560, 1 950.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Reproduis ce tableau et complète-le.",
+          "question_type": "fill_blank",
+          "correct_answer": "Jours: 5, 8, 20, 12, 15 | Eau: 650, 1040, 2600, 1560, 1950",
+          "explanation": "C'est une situation de proportionnalité. Coefficient : 650 ÷ 5 = 130 L/jour. 8 jours → 8 × 130 = 1 040 L. 20 jours → 20 × 130 = 2 600 L. 1 950 ÷ 130 = 15 jours.",
+          "points": 6.67,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    }
+  ]
+}

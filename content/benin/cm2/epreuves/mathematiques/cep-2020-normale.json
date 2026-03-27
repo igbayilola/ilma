@@ -1,0 +1,95 @@
+{
+  "title": "CEP 2020 Session Normale — Mathématiques",
+  "year": 2020,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "À l'occasion de la fête du 1er août, le maire d'une commune récompense des paysans méritants. Des boissons en boîte sont consommées au cours de la cérémonie.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Les âges des 40 paysans récompensés sont : 23, 28, 32, 48, 60, 39, 40, 25, 23, 57, 40, 60, 33, 55, 23, 48, 33, 28, 25, 57, 33, 31, 37, 32, 25, 40, 39, 48, 28, 31, 39, 23, 60, 39, 57, 25, 40, 60, 23, 37.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Dresse le tableau des fréquences de cette série statistique.",
+          "question_type": "fill_blank",
+          "correct_answer": "23: 5/40, 25: 4/40, 28: 3/40, 31: 2/40, 32: 2/40, 33: 3/40, 37: 2/40, 39: 4/40, 40: 4/40, 48: 3/40, 55: 1/40, 57: 3/40, 60: 4/40",
+          "explanation": "On compte les effectifs de chaque âge puis on divise par l'effectif total (40). 23 apparaît 5 fois → 5/40, 25 apparaît 4 fois → 4/40, 28 apparaît 3 fois → 3/40, 31 apparaît 2 fois → 2/40, 32 apparaît 2 fois → 2/40, 33 apparaît 3 fois → 3/40, 37 apparaît 2 fois → 2/40, 39 apparaît 4 fois → 4/40, 40 apparaît 4 fois → 4/40, 48 apparaît 3 fois → 3/40, 55 apparaît 1 fois → 1/40, 57 apparaît 3 fois → 3/40, 60 apparaît 4 fois → 4/40.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Exprime chaque fréquence en pourcentage.",
+          "question_type": "fill_blank",
+          "correct_answer": "23: 12.5%, 25: 10%, 28: 7.5%, 31: 5%, 32: 5%, 33: 7.5%, 37: 5%, 39: 10%, 40: 10%, 48: 7.5%, 55: 2.5%, 57: 7.5%, 60: 10%",
+          "explanation": "On multiplie chaque fréquence par 100. 5/40 × 100 = 12,5%, 4/40 × 100 = 10%, 3/40 × 100 = 7,5%, 2/40 × 100 = 5%, 1/40 × 100 = 2,5%.",
+          "points": 3.33,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Une boîte de boisson pèse 325 g. 100 personnes sont présentes à la cérémonie et chacune consomme 2 boîtes de boisson. Le prix d'une boîte est de 500 F.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule la masse totale de boisson consommée en kg.",
+          "question_type": "numeric_input",
+          "correct_answer": "65",
+          "explanation": "Nombre total de boîtes : 100 × 2 = 200 boîtes. Masse totale : 200 × 325 = 65 000 g = 65 kg.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le coût total des boissons consommées.",
+          "question_type": "numeric_input",
+          "correct_answer": "100000",
+          "explanation": "Nombre total de boîtes : 100 × 2 = 200 boîtes. Coût total : 200 × 500 = 100 000 F.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "Les boîtes de boisson ont la forme d'un cylindre droit. Le patron de cette boîte est constitué d'un rectangle de 18,84 cm de longueur et 5 cm de largeur, et de deux cercles de rayon 3 cm.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Justifie que cette figure peut être le patron d'un cylindre droit.",
+          "question_type": "fill_blank",
+          "correct_answer": "Le périmètre du cercle (2 × 3,14 × 3 = 18,84 cm) est égal à la longueur du rectangle",
+          "explanation": "Le périmètre du cercle de base = 2 × π × r = 2 × 3,14 × 3 = 18,84 cm. Cette valeur est égale à la longueur du rectangle, ce qui confirme que la figure est bien le patron d'un cylindre droit.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le volume de ce cylindre en cm³.",
+          "question_type": "numeric_input",
+          "correct_answer": "141.3",
+          "explanation": "V = π × r² × h = 3,14 × 3² × 5 = 3,14 × 9 × 5 = 141,3 cm³.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

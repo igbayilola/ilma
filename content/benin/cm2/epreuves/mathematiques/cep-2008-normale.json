@@ -1,0 +1,95 @@
+{
+  "title": "CEP 2008 Session Normale — Mathématiques",
+  "year": 2008,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Le commerçant Agbété revient d'un voyage d'affaires avec 320 dollars et 925 euros. 1 dollar = 630 F CFA. 1 euro = 656 F CFA. Il dépense 1/5 de la somme pour les vacances de ses enfants, puis 525 000 F CFA pour une parcelle rectangulaire de 12 m de large au prix de 1 750 F/m².",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Un plan de la ville montre le réseau de chemins (graphe) reliant la maison d'Agbété au marché.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Identifie deux chemins possibles de la maison au marché.",
+          "question_type": "fill_blank",
+          "correct_answer": "Chemin 1: B-C-D-G-H-I-K-J (Marché). Chemin 2: B-C-E-F-Marché-J",
+          "explanation": "On peut identifier au moins deux chemins distincts en suivant les arêtes du graphe de la maison au marché.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelle est la nature de ce réseau ?",
+          "question_type": "fill_blank",
+          "correct_answer": "C'est un réseau routier (graphe connexe)",
+          "explanation": "Le réseau forme un graphe connexe car on peut relier n'importe quel point à un autre en suivant les chemins.",
+          "points": 3.34,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Agbété ramène 320 dollars et 925 euros. 1 dollar = 630 F CFA. 1 euro = 656 F CFA. Il dépense 1/5 de la somme pour les vacances de ses enfants.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule la somme totale ramenée en F CFA.",
+          "question_type": "numeric_input",
+          "correct_answer": "808400",
+          "explanation": "Dollars : 320 × 630 = 201 600 F CFA. Euros : 925 × 656 = 606 800 F CFA. Total : 201 600 + 606 800 = 808 400 F CFA.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule la somme dépensée pour les vacances des enfants.",
+          "question_type": "numeric_input",
+          "correct_answer": "161680",
+          "explanation": "Vacances : 1/5 × 808 400 = 161 680 F CFA.",
+          "points": 3.34,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "Agbété achète une parcelle rectangulaire de 12 m de large au prix de 525 000 F CFA, soit 1 750 F/m².",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule l'aire de la parcelle (en m²).",
+          "question_type": "numeric_input",
+          "correct_answer": "300",
+          "explanation": "Aire = Prix total ÷ Prix au m² = 525 000 ÷ 1 750 = 300 m².",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule la longueur de la parcelle (en m).",
+          "question_type": "numeric_input",
+          "correct_answer": "25",
+          "explanation": "Longueur = Aire ÷ largeur = 300 ÷ 12 = 25 m.",
+          "points": 3.34,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

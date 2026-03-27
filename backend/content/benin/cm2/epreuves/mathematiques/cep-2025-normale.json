@@ -1,0 +1,118 @@
+{
+  "title": "CEP 2025 Session Normale — Mathématiques",
+  "year": 2025,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Ali commande 3 camions citernes d'occasion à 38 380 dollars US. Les frais de douane s'élèvent à 28 880 000 FCFA. Chaque camion citerne possède une cuve cylindrique de longueur 4 m et de rayon 1,4 m. On donne : 1 dollar = 652 FCFA.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Ali commande 3 camions citernes d'occasion à 38 380 dollars US. Les frais de douane s'élèvent à 28 880 000 FCFA. On donne : 1 dollar = 652 FCFA.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule en FCFA le prix de revient des 3 camions.",
+          "question_type": "numeric_input",
+          "correct_answer": "53903760",
+          "explanation": "Prix en FCFA : 38 380 × 652 = 25 023 760 FCFA. Prix de revient : 25 023 760 + 28 880 000 = 53 903 760 FCFA.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Ali affirme qu'un camion lui est revenu à 17 967 920 FCFA. Dis si tu es de son avis.",
+          "question_type": "true_false",
+          "correct_answer": "Vrai",
+          "explanation": "53 903 760 ÷ 3 = 17 967 920 FCFA. Ali a raison.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Écris la valeur de position du chiffre 7 dans 17 967 920.",
+          "question_type": "fill_blank",
+          "correct_answer": "7 000 000 et 7 000",
+          "explanation": "Dans 17 967 920 : le premier 7 occupe la position des millions (7 000 000) et le second 7 occupe la position des milliers (7 000).",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Chaque camion citerne possède une cuve cylindrique de longueur 4 m et de rayon 1,4 m.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule le volume d'eau contenu dans une cuve cylindrique entièrement remplie.",
+          "question_type": "numeric_input",
+          "correct_answer": "24.6176",
+          "explanation": "V = π × r² × L = 3,14 × 1,4² × 4 = 3,14 × 1,96 × 4 = 24,6176 m³.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Quelle est en litres la capacité des 3 camions citernes ?",
+          "question_type": "numeric_input",
+          "correct_answer": "73852.8",
+          "explanation": "1 m³ = 1 000 L. Capacité d'une cuve : 24,6176 × 1 000 = 24 617,6 L. Capacité des 3 cuves : 24 617,6 × 3 = 73 852,8 L.",
+          "points": 3.33,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "On considère la base circulaire de la cuve cylindrique de rayon 1,4 m.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Construis un cercle de même rayon que la base de la cuve à l'échelle 1/50.",
+          "question_type": "mcq",
+          "choices": ["Cercle de rayon 2,8 cm", "Cercle de rayon 1,4 cm", "Cercle de rayon 14 cm", "Cercle de rayon 0,28 cm"],
+          "correct_answer": "Cercle de rayon 2,8 cm",
+          "explanation": "Rayon réel = 1,4 m = 140 cm. Échelle 1/50 : 140 ÷ 50 = 2,8 cm.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Trace à l'extérieur de ce cercle une droite (AB).",
+          "question_type": "mcq",
+          "choices": ["Une droite ne coupant pas le cercle", "Une droite passant par le centre", "Un diamètre du cercle"],
+          "correct_answer": "Une droite ne coupant pas le cercle",
+          "explanation": "Une droite tracée à l'extérieur du cercle ne coupe pas le cercle.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Construis le symétrique de ce cercle par rapport à la droite (AB).",
+          "question_type": "mcq",
+          "choices": ["Un cercle de même rayon de l'autre côté de (AB)", "Un cercle de rayon double", "Le même cercle"],
+          "correct_answer": "Un cercle de même rayon de l'autre côté de (AB)",
+          "explanation": "Le symétrique d'un cercle par rapport à une droite est un cercle de même rayon situé de l'autre côté de la droite.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

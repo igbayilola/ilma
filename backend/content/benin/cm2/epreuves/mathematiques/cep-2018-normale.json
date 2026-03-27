@@ -1,0 +1,107 @@
+{
+  "title": "CEP 2018 Session Normale — Mathématiques",
+  "year": 2018,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Elisabeth est une commerçante à Cotonou. Elle dispose d'une épargne de 34 000 000 FCFA. Elle place le 1/4 de cette somme en banque au taux annuel de 4%. Le reste est placé dans une autre institution financière. Au bout d'un an, elle reçoit un intérêt total de 1 360 000 FCFA.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Elisabeth place le 1/4 de 34 000 000 FCFA en banque au taux annuel de 4%. Le reste est placé dans une autre institution financière. L'intérêt total au bout d'un an est de 1 360 000 FCFA.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule l'intérêt annuel du placement en banque.",
+          "question_type": "numeric_input",
+          "correct_answer": "340000",
+          "explanation": "Somme placée en banque : 34 000 000 × 1/4 = 8 500 000 FCFA. Intérêt annuel : 8 500 000 × 4/100 = 340 000 FCFA.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le montant de l'intérêt de l'institution financière.",
+          "question_type": "numeric_input",
+          "correct_answer": "1020000",
+          "explanation": "Intérêt de l'institution = Intérêt total − Intérêt banque = 1 360 000 − 340 000 = 1 020 000 FCFA.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule le taux annuel de l'institution financière.",
+          "question_type": "numeric_input",
+          "correct_answer": "4",
+          "explanation": "Somme placée dans l'institution : 34 000 000 − 8 500 000 = 25 500 000 FCFA. Taux = (1 020 000 × 100) / 25 500 000 = 4%.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Elisabeth se rend de Cotonou à Parakou. Elle part à 8h30 et arrive à 15h. Elle effectue 2 arrêts de 15 minutes chacun. La distance Cotonou-Parakou est de 417 km. Sa voiture consomme 15 litres aux 100 km.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule la vitesse moyenne de la voiture en km/h.",
+          "question_type": "numeric_input",
+          "correct_answer": "69.5",
+          "explanation": "Durée totale du trajet : de 8h30 à 15h = 6h30. Durée des arrêts : 2 × 15 min = 30 min. Durée de route effective : 6h30 − 30 min = 6h. Vitesse = 417 / 6 = 69,5 km/h.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule la consommation d'essence pour ce trajet en litres.",
+          "question_type": "numeric_input",
+          "correct_answer": "62.55",
+          "explanation": "Consommation : 15 × 417 / 100 = 62,55 litres.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "Elisabeth possède une parcelle rectangulaire de 400 m de longueur et 200 m de largeur. AD est une droite oblique passant par un sommet de la parcelle.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Reproduis la parcelle à l'échelle 1/10 000.",
+          "question_type": "mcq",
+          "choices": ["Rectangle 4 cm × 2 cm", "Rectangle 40 cm × 20 cm", "Rectangle 0,4 cm × 0,2 cm", "Carré 4 cm"],
+          "correct_answer": "Rectangle 4 cm × 2 cm",
+          "explanation": "400 m = 40 000 cm. 40 000 / 10 000 = 4 cm. 200 m = 20 000 cm. 20 000 / 10 000 = 2 cm. La parcelle à l'échelle mesure 4 cm × 2 cm.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Trace le symétrique de la parcelle par rapport à la droite oblique AD.",
+          "question_type": "mcq",
+          "choices": ["Un rectangle de mêmes dimensions de l'autre côté de AD", "Un rectangle plus grand", "Un parallélogramme"],
+          "correct_answer": "Un rectangle de mêmes dimensions de l'autre côté de AD",
+          "explanation": "Le symétrique d'un rectangle par rapport à une droite est un rectangle de mêmes dimensions situé de l'autre côté de l'axe de symétrie.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

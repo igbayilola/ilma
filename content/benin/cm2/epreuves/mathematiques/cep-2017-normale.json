@@ -1,0 +1,107 @@
+{
+  "title": "CEP 2017 Session Normale — Mathématiques",
+  "year": 2017,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "À l'occasion de la fête de l'indépendance du Bénin célébrée à Abomey, la SONEB signale que le château d'eau de la ville est en panne. Paulin, habitant de Lokossa, décide de se rendre à Abomey, située à 150 km de Lokossa.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Paulin parcourt 40 km en 2h, 30 km en 1h30 et 80 km en 4h pour se rendre à Abomey. La distance totale est de 150 km.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Représente les données dans un tableau de correspondance.",
+          "question_type": "fill_blank",
+          "correct_answer": "Distance (km): 40, 30, 80, 150 | Durée: 2h, 1h30, 4h, 7h30",
+          "explanation": "On organise les données dans un tableau avec deux lignes : Distance (km) : 40, 30, 80, 150 et Durée : 2h, 1h30, 4h, 7h30.",
+          "points": 2.22,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Justifie que c'est une situation de proportionnalité.",
+          "question_type": "fill_blank",
+          "correct_answer": "Oui, le coefficient de proportionnalité est 20 (vitesse constante de 20 km/h)",
+          "explanation": "40/2 = 20, 30/1,5 = 20, 80/4 = 20. Le rapport distance/durée est constant et égal à 20. C'est donc une situation de proportionnalité avec un coefficient de 20 km/h.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 1
+        },
+        {
+          "sub_label": "c",
+          "text": "Calcule la durée totale du parcours des 150 km.",
+          "question_type": "fill_blank",
+          "correct_answer": "7h30",
+          "explanation": "Durée = Distance / Vitesse = 150 / 20 = 7,5 h = 7h30.",
+          "points": 2.22,
+          "depends_on_previous": true,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Le château d'eau d'Abomey a la forme d'un cylindre droit de diamètre 8 m et de hauteur 11,6 m. On prend π = 22/7.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule l'aire de la surface de base du château d'eau en m².",
+          "question_type": "numeric_input",
+          "correct_answer": "50.29",
+          "explanation": "Rayon = 8 / 2 = 4 m. Aire = π × r² = 22/7 × 4² = 22/7 × 16 = 352/7 ≈ 50,29 m².",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule la quantité d'eau que peut contenir ce château d'eau en litres puis en hectolitres.",
+          "question_type": "fill_blank",
+          "correct_answer": "583360 L soit 5833,6 hL",
+          "explanation": "Volume = Aire de base × hauteur = 50,29 × 11,6 = 583,36 m³. 1 m³ = 1 000 L, donc 583,36 × 1 000 = 583 360 L. 1 hL = 100 L, donc 583 360 / 100 = 5 833,6 hL.",
+          "points": 3.33,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "Le domaine du château d'eau est un carré de 40 m de côté.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Construis ce carré à l'échelle 1/1 000.",
+          "question_type": "mcq",
+          "choices": ["Carré de 4 cm de côté", "Carré de 40 cm de côté", "Carré de 0,4 cm de côté", "Rectangle 4 cm × 2 cm"],
+          "correct_answer": "Carré de 4 cm de côté",
+          "explanation": "40 m = 4 000 cm. À l'échelle 1/1 000 : 4 000 / 1 000 = 4 cm. Le carré à l'échelle mesure 4 cm de côté.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Place un point O en dehors du carré. Construis la figure symétrique du carré par rapport au point O.",
+          "question_type": "mcq",
+          "choices": ["Un carré de mêmes dimensions centré sur O", "Un carré plus grand", "Un losange"],
+          "correct_answer": "Un carré de mêmes dimensions centré sur O",
+          "explanation": "Le symétrique d'un carré par rapport à un point O est un carré de mêmes dimensions. Chaque sommet du carré a son symétrique par rapport à O, tel que O est le milieu du segment joignant chaque sommet à son symétrique.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

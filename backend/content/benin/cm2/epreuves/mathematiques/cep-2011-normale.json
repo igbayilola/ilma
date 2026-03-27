@@ -1,0 +1,86 @@
+{
+  "title": "CEP 2011 Session Normale — Mathématiques",
+  "year": 2011,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Le Ministère de la santé publique a organisé le dépistage de certaines maladies dans deux villages. 50 cas graves ont été identifiés. Un appui financier de 117 000 euros a été accordé : 1/5 pour les médicaments, 1/3 pour nourrir les malades et le reste pour le logement social. 1 euro = 655,9 F CFA. Les maladies dépistées sont : Pa = Paludisme, Si = Sida, Tu = Tuberculose, Fi = Fièvre jaune, Po = Poliomyélite.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "data_proportionality",
+      "context_text": "Les résultats du dépistage des 50 cas graves sont les suivants : Pa, Pa, Pa, Tu, Po, Tu, Si, Tu, Fi, Pa, Po, Pa, Tu, Pa, Pa, Pa, Pa, Pa, Fi, Tu, Po, Pa, Pa, Pa, Fi, Tu, Tu, Fi, Pa, Si, Si, Fi, Fi, Pa, Tu, Pa, Po, Pa, Si, Pa, Po, Po, Tu, Pa, Po, Fi, Pa, Si, Pa, Po. (Pa = Paludisme, Tu = Tuberculose, Si = Sida, Fi = Fièvre jaune, Po = Poliomyélite)",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Dresse le tableau des effectifs de cette série statistique.",
+          "question_type": "fill_blank",
+          "correct_answer": "Pa: 21, Tu: 10, Si: 5, Fi: 7, Po: 7, Total: 50",
+          "explanation": "En comptant chaque maladie dans la série : Paludisme (Pa) apparaît 21 fois, Tuberculose (Tu) 10 fois, Sida (Si) 5 fois, Fièvre jaune (Fi) 7 fois, Poliomyélite (Po) 7 fois. Total : 21 + 10 + 5 + 7 + 7 = 50.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Complète le tableau par des fréquences exprimées en pourcentages.",
+          "question_type": "fill_blank",
+          "correct_answer": "Pa: 42%, Tu: 20%, Si: 10%, Fi: 14%, Po: 14%",
+          "explanation": "Pa : 21/50 = 42%. Tu : 10/50 = 20%. Si : 5/50 = 10%. Fi : 7/50 = 14%. Po : 7/50 = 14%.",
+          "points": 3.34,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Un appui financier de 117 000 euros a été accordé au ministère. 1/5 de la somme est destiné aux médicaments, 1/3 pour nourrir les malades et le reste pour le logement social. 1 euro = 655,9 F CFA.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule la somme reçue par le ministère en euros et en F CFA.",
+          "question_type": "fill_blank",
+          "correct_answer": "117 000 euros soit 76 740 300 F CFA",
+          "explanation": "La somme en euros est 117 000 €. En F CFA : 117 000 × 655,9 = 76 740 300 F CFA.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule le montant destiné au logement social.",
+          "question_type": "numeric_input",
+          "correct_answer": "35812140",
+          "explanation": "Médicaments : 1/5 × 76 740 300 = 15 348 060 F CFA. Nourriture : 1/3 × 76 740 300 = 25 580 100 F CFA. Logement social : 76 740 300 − 15 348 060 − 25 580 100 = 35 812 140 F CFA.",
+          "points": 3.34,
+          "depends_on_previous": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "Les médicaments sont rangés dans des cartons en forme de pavé droit. La face rectangulaire ABCD a une longueur de 8 dm et une largeur de 5,5 dm.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Représente cette face ABCD sur ta feuille à l'échelle de 1/10.",
+          "question_type": "mcq",
+          "choices": ["Rectangle 8 cm × 5,5 cm", "Rectangle 80 cm × 55 cm", "Rectangle 0,8 cm × 0,55 cm"],
+          "correct_answer": "Rectangle 8 cm × 5,5 cm",
+          "explanation": "Échelle 1/10 : 8 dm = 80 cm → 80 ÷ 10 = 8 cm. 5,5 dm = 55 cm → 55 ÷ 10 = 5,5 cm.",
+          "points": 6.67,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    }
+  ]
+}

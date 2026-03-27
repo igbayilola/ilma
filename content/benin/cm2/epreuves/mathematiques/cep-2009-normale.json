@@ -1,0 +1,86 @@
+{
+  "title": "CEP 2009 Session Normale — Mathématiques",
+  "year": 2009,
+  "session": "normale",
+  "subject": "mathematiques",
+  "duration_minutes": 60,
+  "total_points": 20,
+  "context_text": "Agossou est un retraité qui a installé une ferme à Manigri. Il a commandé 8 000 poussins au prix total de 5 000 000 F CFA. Il a versé 5/8 de la somme à la commande. Le reste est majoré de 8%. Chaque poussin consomme 50 g de provende et 85 ml d'eau par jour. L'aire de séchage est un rectangle ABCD de 40 m sur 14 m complété par deux demi-cercles de diamètre 14 m aux extrémités. π = 22/7.",
+  "items": [
+    {
+      "item_number": 1,
+      "domain": "measures_operations",
+      "context_text": "Agossou a commandé 8 000 poussins au prix total de 5 000 000 F CFA. Il a versé 5/8 de la somme à la commande. Le reste est majoré de 8%.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule le prix de revient des 8 000 poussins.",
+          "question_type": "numeric_input",
+          "correct_answer": "5150000",
+          "explanation": "Versement à la commande : 5 000 000 × 5/8 = 3 125 000 F CFA. Reste : 5 000 000 − 3 125 000 = 1 875 000 F CFA. Majoration de 8% : 1 875 000 × 108/100 = 2 025 000 F CFA. Prix de revient : 3 125 000 + 2 025 000 = 5 150 000 F CFA.",
+          "points": 6.67,
+          "depends_on_previous": false,
+          "order": 0
+        }
+      ]
+    },
+    {
+      "item_number": 2,
+      "domain": "measures_operations",
+      "context_text": "Chaque poussin consomme 50 g de provende et 85 ml d'eau par jour. On considère le mois de janvier (31 jours).",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule la quantité de provende nécessaire pour le mois de janvier (en tonnes).",
+          "question_type": "numeric_input",
+          "correct_answer": "12.4",
+          "explanation": "8 000 × 50 g × 31 jours = 12 400 000 g = 12,4 tonnes.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Calcule la quantité d'eau nécessaire pour le mois de janvier (en litres).",
+          "question_type": "numeric_input",
+          "correct_answer": "21080",
+          "explanation": "8 000 × 85 ml × 31 jours = 21 080 000 ml = 21 080 litres.",
+          "points": 3.34,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "item_number": 3,
+      "domain": "geometry",
+      "context_text": "L'aire de séchage est constituée d'un rectangle ABCD de 40 m de long et 14 m de large, complété par deux demi-cercles de diamètre 14 m aux extrémités. π = 22/7.",
+      "points": 6.67,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Calcule le périmètre de l'aire de séchage.",
+          "question_type": "numeric_input",
+          "correct_answer": "124",
+          "explanation": "Le périmètre comprend les 2 longueurs du rectangle et les 2 demi-cercles (= 1 cercle complet). P = 2 × 40 + π × 14 = 80 + 22/7 × 14 = 80 + 44 = 124 m.",
+          "points": 3.33,
+          "depends_on_previous": false,
+          "order": 0
+        },
+        {
+          "sub_label": "b",
+          "text": "Construis le symétrique A'B'C'D' de la partie rectangulaire ABCD par rapport à un point I.",
+          "question_type": "mcq",
+          "choices": ["Un rectangle de mêmes dimensions centré sur I", "Un rectangle plus grand", "Un parallélogramme"],
+          "correct_answer": "Un rectangle de mêmes dimensions centré sur I",
+          "explanation": "Le symétrique d'un rectangle par rapport à un point est un rectangle de mêmes dimensions. Chaque sommet A', B', C', D' est tel que I est le milieu de [AA'], [BB'], [CC'], [DD'].",
+          "points": 3.34,
+          "depends_on_previous": false,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}
