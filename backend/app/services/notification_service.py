@@ -164,7 +164,16 @@ class NotificationService:
             notif.delivered_at = now
         elif channel == NotificationChannel.SMS:
             try:
-                success = await self.sms_provider.send(str(user_id), title, body or "")
+                # Fetch user's phone number
+                from app.models.user import User
+                user_result = await db.execute(select(User.phone).where(User.id == user_id))
+                phone = user_result.scalar_one_or_none()
+                if not phone:
+                    notif.status = "failed"
+                    notif.error_message = "No phone number on file"
+                    await db.flush()
+                    return notif
+                success = await self.sms_provider.send(phone, title, body or "")
                 notif.sent_at = now
                 if success:
                     notif.status = "sent"
