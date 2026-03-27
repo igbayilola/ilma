@@ -1,0 +1,1023 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "description": "Exercices Préparation au CEP CM2 — Tous les skills",
+    "author": "ILMA",
+    "created_date": "2026-02-28",
+    "grade": "CM2",
+    "subject": "Mathématiques",
+    "domain": "Préparation au CEP"
+  },
+  "exercises": [
+    {
+      "micro_skill_external_id": "CEP-ANNALES-2010-2025::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "easy",
+          "bloom_level": "application",
+          "ilma_level": "1",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "tags": [
+            "gestion-temps",
+            "examen",
+            "stratégie"
+          ],
+          "common_mistake_targeted": "Passer trop de temps sur un seul exercice difficile",
+          "text": "L'épreuve de mathématiques du CEP dure 1 heure 30 minutes. Le sujet contient 5 exercices notés respectivement sur 4, 4, 4, 4 et 4 points. Combien de minutes environ devrais-tu accorder à chaque exercice pour avoir le temps de tout finir et relire ?",
+          "choices": [
+            "30 minutes par exercice",
+            "15 minutes par exercice, puis 15 minutes de relecture",
+            "20 minutes par exercice, sans relecture",
+            "10 minutes par exercice, puis 40 minutes de relecture"
+          ],
+          "correct_answer": "15 minutes par exercice, puis 15 minutes de relecture",
+          "explanation": "90 minutes ÷ 5 exercices = 18 minutes par exercice. Mais il faut garder du temps pour la relecture. 15 minutes × 5 = 75 minutes, ce qui laisse 15 minutes pour relire. C'est la meilleure répartition.",
+          "hint": "Divise le temps total par le nombre d'exercices, mais n'oublie pas de garder du temps pour vérifier tes réponses."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "ordering",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "gestion-temps",
+            "priorité",
+            "stratégie"
+          ],
+          "common_mistake_targeted": "Ne pas prioriser les exercices selon leur difficulté",
+          "text": "Voici les 5 exercices d'un sujet de CEP. Classe-les dans l'ordre dans lequel tu devrais les traiter pour maximiser tes points (du plus facile au plus difficile).",
+          "items": [
+            "Exercice 3 : Problème contextuel avec plusieurs questions (noté sur 4)",
+            "Exercice 1 : Calcul mental — additions et soustractions simples (noté sur 4)",
+            "Exercice 5 : Géométrie — construire un triangle et calculer son périmètre (noté sur 4)",
+            "Exercice 2 : Convertir des unités de mesure (noté sur 4)",
+            "Exercice 4 : Opérations posées — multiplication et division (noté sur 4)"
+          ],
+          "correct_answer": [
+            "Exercice 1 : Calcul mental — additions et soustractions simples (noté sur 4)",
+            "Exercice 4 : Opérations posées — multiplication et division (noté sur 4)",
+            "Exercice 2 : Convertir des unités de mesure (noté sur 4)",
+            "Exercice 5 : Géométrie — construire un triangle et calculer son périmètre (noté sur 4)",
+            "Exercice 3 : Problème contextuel avec plusieurs questions (noté sur 4)"
+          ],
+          "explanation": "On commence par les exercices les plus rapides et sûrs (calcul mental, opérations posées), puis les exercices de difficulté moyenne (conversions, géométrie), et on finit par le problème contextuel qui demande plus de réflexion. Ainsi, on s'assure de gagner des points faciles d'abord.",
+          "hint": "Commence par les exercices que tu maîtrises le mieux pour gagner des points rapidement."
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "contextual_problem",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 3,
+          "time_limit_seconds": 120,
+          "tags": [
+            "gestion-temps",
+            "répartition",
+            "planification"
+          ],
+          "common_mistake_targeted": "Ne pas adapter le temps selon la difficulté de chaque exercice",
+          "text": "Amina passe l'épreuve de maths du CEP. Elle a 1h30 (90 minutes). Le sujet a 5 exercices. L'exercice 1 (calcul) est facile, l'exercice 2 (conversions) est moyen, l'exercice 3 (problème) est difficile, l'exercice 4 (opérations) est facile, l'exercice 5 (géométrie) est moyen. Elle veut garder 10 minutes pour relire.",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Combien de minutes reste-t-il pour les 5 exercices après avoir réservé le temps de relecture ?",
+              "correct_answer": "80 minutes"
+            },
+            {
+              "id": "b",
+              "text": "Si Amina accorde 10 minutes aux exercices faciles, 18 minutes aux exercices moyens et 24 minutes au problème difficile, combien de minutes utilise-t-elle au total pour les exercices ?",
+              "correct_answer": "80 minutes"
+            },
+            {
+              "id": "c",
+              "text": "Amina a mis 25 minutes sur l'exercice 3 au lieu de 24. Combien de minutes lui reste-t-il pour les exercices restants et la relecture ?",
+              "correct_answer": "Elle a dépassé d'1 minute, il lui reste 9 minutes de relecture au lieu de 10"
+            }
+          ],
+          "correct_answer": "Voir sous-questions",
+          "explanation": "Gérer son temps au CEP, c'est planifier avant de commencer : réserver du temps pour relire, donner plus de temps aux exercices difficiles, et surveiller sa montre régulièrement.",
+          "hint": "Commence par calculer le temps disponible après la relecture, puis répartis selon la difficulté."
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "hard",
+          "bloom_level": "évaluation",
+          "ilma_level": "3",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "tags": [
+            "gestion-temps",
+            "stratégie",
+            "décision"
+          ],
+          "common_mistake_targeted": "S'acharner sur un exercice au détriment des autres",
+          "text": "Koffi passe le CEP. Après 30 minutes, il est bloqué sur l'exercice 2 depuis 20 minutes et n'a traité que l'exercice 1. Il lui reste 3 exercices à faire en 60 minutes. Affirmation : Koffi devrait continuer à chercher l'exercice 2 jusqu'à trouver la réponse avant de passer aux autres exercices.",
+          "correct_answer": false,
+          "explanation": "FAUX. Koffi a déjà passé 20 minutes sur un seul exercice, c'est beaucoup trop. Il devrait passer aux exercices 3, 4 et 5, puis revenir à l'exercice 2 s'il lui reste du temps. Rester bloqué, c'est risquer de perdre des points sur des exercices qu'on sait faire.",
+          "hint": "Pense à ce qui se passe si Koffi continue : combien de temps lui restera-t-il pour les 3 autres exercices ?"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "CEP-ANNALES-2010-2025::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX005",
+          "type": "mcq",
+          "difficulty": "easy",
+          "bloom_level": "compréhension",
+          "ilma_level": "1",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "tags": [
+            "consigne",
+            "lecture",
+            "mots-clés"
+          ],
+          "common_mistake_targeted": "Ne pas repérer l'unité demandée dans la consigne",
+          "text": "Voici une consigne du CEP : « Calcule le périmètre du rectangle ABCD et donne le résultat en centimètres. AB = 1,5 m et BC = 80 cm. » Quel est le mot-clé le plus important à souligner dans cette consigne ?",
+          "choices": [
+            "rectangle",
+            "centimètres",
+            "calcule",
+            "résultat"
+          ],
+          "correct_answer": "centimètres",
+          "explanation": "Le mot-clé le plus important est « centimètres » car c'est l'unité demandée pour la réponse. Beaucoup d'élèves perdent des points parce qu'ils donnent la réponse en mètres au lieu de centimètres. Il faut d'abord convertir AB = 1,5 m = 150 cm.",
+          "hint": "Cherche le mot qui indique dans quelle unité tu dois donner ta réponse."
+        },
+        {
+          "exercise_id": "EX006",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "bloom_level": "compréhension",
+          "ilma_level": "1",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "consigne",
+            "lecture",
+            "repérage"
+          ],
+          "common_mistake_targeted": "Confondre les différentes questions d'un même exercice",
+          "text": "Lis cette consigne de CEP : « Un commerçant du marché Dantokpa achète 25 sacs de riz à 18 000 FCFA le sac. Il revend chaque sac à 21 500 FCFA. a) Calcule le prix d'achat total. b) Calcule le bénéfice par sac. c) Calcule le bénéfice total. » Complète : La question (a) demande de calculer ___. La question (b) demande de calculer ___.",
+          "blanks": [
+            "le prix d'achat total",
+            "le bénéfice par sac"
+          ],
+          "correct_answer": [
+            "le prix d'achat total",
+            "le bénéfice par sac"
+          ],
+          "explanation": "Il faut bien lire chaque sous-question séparément. (a) demande le prix d'ACHAT total (pas le prix de vente), et (b) demande le bénéfice par SAC (pas le bénéfice total). Confondre les questions est une erreur fréquente au CEP.",
+          "hint": "Relis chaque question une par une. Attention aux mots « total » et « par sac »."
+        },
+        {
+          "exercise_id": "EX007",
+          "type": "error_correction",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 3,
+          "time_limit_seconds": 120,
+          "tags": [
+            "consigne",
+            "unité",
+            "erreur-lecture"
+          ],
+          "common_mistake_targeted": "Donner la réponse dans la mauvaise unité",
+          "text": "Voici la consigne du CEP et la réponse d'un élève. Trouve l'erreur.\n\nConsigne : « L'école EPP Gbégamey a un terrain rectangulaire de 120 m de longueur et 85 m de largeur. Calcule l'aire de ce terrain en hectares. »\n\nRéponse de l'élève : « Aire = 120 × 85 = 10 200. L'aire du terrain est 10 200 m². »",
+          "erroneous_content": "L'aire du terrain est 10 200 m².",
+          "correct_answer": "L'aire du terrain est 10 200 m² = 1,02 ha.",
+          "explanation": "L'élève a bien calculé l'aire en m², mais la consigne demandait le résultat EN HECTARES. Il fallait convertir : 1 ha = 10 000 m², donc 10 200 m² = 10 200 ÷ 10 000 = 1,02 ha. Toujours vérifier l'unité demandée dans la consigne !",
+          "hint": "Relis la consigne : dans quelle unité le résultat est-il demandé ? L'élève a-t-il donné la bonne unité ?"
+        },
+        {
+          "exercise_id": "EX008",
+          "type": "matching",
+          "difficulty": "hard",
+          "bloom_level": "analyse",
+          "ilma_level": "3",
+          "points": 3,
+          "time_limit_seconds": 120,
+          "tags": [
+            "consigne",
+            "mots-clés",
+            "opération"
+          ],
+          "common_mistake_targeted": "Ne pas associer les mots-clés de la consigne à l'opération mathématique correspondante",
+          "text": "Associe chaque mot-clé de consigne du CEP à l'opération mathématique qu'il indique.",
+          "left_items": [
+            "« Combien reste-t-il ? »",
+            "« Quel est le prix total de 12 cahiers ? »",
+            "« Partage équitablement entre 4 élèves »",
+            "« Quel est le montant global ? »"
+          ],
+          "right_items": [
+            "Addition",
+            "Soustraction",
+            "Multiplication",
+            "Division"
+          ],
+          "correct_answer": {
+            "« Combien reste-t-il ? »": "Soustraction",
+            "« Quel est le prix total de 12 cahiers ? »": "Multiplication",
+            "« Partage équitablement entre 4 élèves »": "Division",
+            "« Quel est le montant global ? »": "Addition"
+          },
+          "explanation": "Les mots-clés dans les consignes du CEP indiquent l'opération à utiliser : « reste » → soustraction, « prix total de N objets » → multiplication (prix unitaire × quantité), « partage équitablement » → division, « montant global » → addition de plusieurs montants.",
+          "hint": "Pense à ce que chaque expression veut dire concrètement : enlever, répéter, répartir, ou regrouper."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "CEP-ANNALES-2010-2025::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX009",
+          "type": "mcq",
+          "difficulty": "easy",
+          "bloom_level": "application",
+          "ilma_level": "1",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "tags": [
+            "stratégie",
+            "blocage",
+            "méthode"
+          ],
+          "common_mistake_targeted": "Rester bloqué sans essayer une autre approche",
+          "text": "Pendant l'épreuve du CEP, tu es bloqué(e) sur un exercice de géométrie depuis 10 minutes. Quelle est la meilleure stratégie ?",
+          "choices": [
+            "Continuer à réfléchir jusqu'à trouver, même si ça prend 20 minutes de plus",
+            "Passer à l'exercice suivant et revenir à celui-ci plus tard",
+            "Copier sur le voisin",
+            "Ne rien écrire et laisser l'exercice vide"
+          ],
+          "correct_answer": "Passer à l'exercice suivant et revenir à celui-ci plus tard",
+          "explanation": "Quand on est bloqué, il faut passer à l'exercice suivant. En faisant les autres exercices, ton cerveau continue à réfléchir au problème en arrière-plan. Quand tu y reviendras, tu auras peut-être une nouvelle idée. Et surtout, tu ne perds pas de points sur les exercices que tu sais faire !",
+          "hint": "Pense au temps que tu perds et aux points que tu pourrais gagner sur les autres exercices."
+        },
+        {
+          "exercise_id": "EX010",
+          "type": "ordering",
+          "difficulty": "medium",
+          "bloom_level": "application",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "stratégie",
+            "résolution",
+            "étapes"
+          ],
+          "common_mistake_targeted": "Ne pas avoir de méthode face à un problème contextuel",
+          "text": "Voici les étapes pour résoudre un problème contextuel au CEP. Remets-les dans le bon ordre.",
+          "items": [
+            "Vérifier que la réponse est vraisemblable",
+            "Lire le problème en entier une première fois",
+            "Effectuer les calculs",
+            "Identifier les données utiles (nombres, unités)",
+            "Relire chaque question et choisir l'opération",
+            "Écrire la phrase-réponse avec l'unité"
+          ],
+          "correct_answer": [
+            "Lire le problème en entier une première fois",
+            "Identifier les données utiles (nombres, unités)",
+            "Relire chaque question et choisir l'opération",
+            "Effectuer les calculs",
+            "Écrire la phrase-réponse avec l'unité",
+            "Vérifier que la réponse est vraisemblable"
+          ],
+          "explanation": "La méthode de résolution d'un problème au CEP suit toujours cet ordre : 1) Lire pour comprendre la situation, 2) Repérer les données, 3) Choisir l'opération, 4) Calculer, 5) Rédiger la réponse, 6) Vérifier. Cette méthode t'aide à ne rien oublier.",
+          "hint": "Commence par ce qu'il faut faire AVANT de calculer, puis les calculs, puis ce qu'il faut faire APRÈS."
+        },
+        {
+          "exercise_id": "EX011",
+          "type": "mcq",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "stratégie",
+            "schéma",
+            "visualisation"
+          ],
+          "common_mistake_targeted": "Ne pas utiliser de schéma pour comprendre un problème de géométrie",
+          "text": "Au CEP, l'exercice dit : « Un jardin a la forme d'un carré de 15 m de côté. On trace un chemin de 2 m de large tout autour. Calcule l'aire du chemin. » Tu es bloqué(e). Quelle stratégie t'aiderait le mieux ?",
+          "choices": [
+            "Relire la consigne 5 fois de suite",
+            "Dessiner un schéma du jardin avec le chemin autour",
+            "Essayer toutes les opérations au hasard",
+            "Demander au surveillant de t'aider"
+          ],
+          "correct_answer": "Dessiner un schéma du jardin avec le chemin autour",
+          "explanation": "Dessiner un schéma est la meilleure stratégie pour les problèmes de géométrie. En dessinant le carré (15 m) et le chemin (2 m autour), tu vois que le grand carré fait 15 + 2 + 2 = 19 m de côté. Aire du chemin = Aire du grand carré − Aire du jardin = 19² − 15² = 361 − 225 = 136 m².",
+          "hint": "Quand un problème parle de formes, la meilleure idée c'est de les dessiner sur ton brouillon."
+        },
+        {
+          "exercise_id": "EX012",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "bloom_level": "application",
+          "ilma_level": "3",
+          "points": 4,
+          "time_limit_seconds": 180,
+          "tags": [
+            "stratégie",
+            "déblocage",
+            "méthode"
+          ],
+          "common_mistake_targeted": "Paniquer face à un problème qui semble trop difficile",
+          "text": "Voici un problème type CEP qui semble difficile. Suis les étapes de déblocage pour le résoudre.\n\nProblème : « Maman Adjovi achète 3 pagnes à 4 500 FCFA chacun et 2 chemises à 3 200 FCFA chacune. Elle paie avec un billet de 25 000 FCFA. Combien la marchande doit-elle lui rendre ? »",
+          "steps": [
+            {
+              "instruction": "Étape 1 — Repère les données. Quels sont les nombres importants et que représentent-ils ?",
+              "expected_answer": "3 pagnes à 4 500 FCFA, 2 chemises à 3 200 FCFA, elle paie avec 25 000 FCFA",
+              "hint": "Cherche tous les nombres dans l'énoncé et note ce qu'ils représentent."
+            },
+            {
+              "instruction": "Étape 2 — Calcule le prix total des pagnes.",
+              "expected_answer": "3 × 4 500 = 13 500 FCFA",
+              "hint": "Combien coûte 1 pagne ? Combien en achète-t-elle ?"
+            },
+            {
+              "instruction": "Étape 3 — Calcule le prix total des chemises.",
+              "expected_answer": "2 × 3 200 = 6 400 FCFA",
+              "hint": "Combien coûte 1 chemise ? Combien en achète-t-elle ?"
+            },
+            {
+              "instruction": "Étape 4 — Calcule le montant total des achats, puis la monnaie rendue.",
+              "expected_answer": "Total = 13 500 + 6 400 = 19 900 FCFA. Monnaie = 25 000 − 19 900 = 5 100 FCFA",
+              "hint": "Additionne les deux totaux, puis soustrais du montant payé."
+            }
+          ],
+          "correct_answer": "La marchande doit rendre 5 100 FCFA à Maman Adjovi.",
+          "explanation": "Face à un problème qui semble difficile, décompose-le en petites étapes simples. Chaque étape est un calcul facile. C'est la stratégie « diviser pour mieux résoudre ». Au CEP, la plupart des problèmes se résolvent en 2 à 4 étapes simples.",
+          "hint": "Ne panique pas ! Décompose le problème en petits calculs simples, un à la fois."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "CEP-ANNALES-2010-2025::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX013",
+          "type": "true_false",
+          "difficulty": "easy",
+          "bloom_level": "évaluation",
+          "ilma_level": "1",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "tags": [
+            "auto-contrôle",
+            "vraisemblance",
+            "vérification"
+          ],
+          "common_mistake_targeted": "Ne pas vérifier si la réponse est réaliste",
+          "text": "Un élève au CEP a calculé que le prix de 5 cahiers à 250 FCFA chacun est 12 500 FCFA. Cette réponse est-elle vraisemblable ?",
+          "correct_answer": false,
+          "explanation": "FAUX, cette réponse n'est pas vraisemblable. 5 × 250 = 1 250 FCFA, pas 12 500 FCFA. L'élève a probablement ajouté un zéro de trop. 12 500 FCFA pour 5 cahiers, c'est beaucoup trop cher ! Vérifie toujours si ta réponse a du sens dans la vie réelle.",
+          "hint": "Estime mentalement : 5 fois 250, c'est environ 5 fois 200 = 1 000. Est-ce que 12 500 est proche de 1 000 ?"
+        },
+        {
+          "exercise_id": "EX014",
+          "type": "error_correction",
+          "difficulty": "medium",
+          "bloom_level": "évaluation",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "auto-contrôle",
+            "unité",
+            "relecture"
+          ],
+          "common_mistake_targeted": "Oublier d'écrire l'unité dans la réponse",
+          "text": "Voici la copie de Sèna au CEP. Trouve ce qu'il a oublié et corrige.\n\nQuestion : « Calcule la distance parcourue par un taxi-moto en 3 heures à la vitesse de 40 km/h. »\n\nRéponse de Sèna : « Distance = vitesse × temps = 40 × 3 = 120. La distance parcourue est 120. »",
+          "erroneous_content": "La distance parcourue est 120.",
+          "correct_answer": "La distance parcourue est 120 km.",
+          "explanation": "Sèna a fait le bon calcul mais a oublié l'UNITÉ dans sa réponse. Au CEP, une réponse sans unité fait perdre des points. La distance se mesure en km (puisque la vitesse est en km/h). Avant de rendre ta copie, vérifie que chaque réponse a son unité.",
+          "hint": "Le calcul est bon. Que manque-t-il après le nombre 120 ?"
+        },
+        {
+          "exercise_id": "EX015",
+          "type": "mcq",
+          "difficulty": "medium",
+          "bloom_level": "évaluation",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "auto-contrôle",
+            "vérification",
+            "opération-inverse"
+          ],
+          "common_mistake_targeted": "Ne pas utiliser l'opération inverse pour vérifier",
+          "text": "Au CEP, tu as calculé : 4 752 ÷ 12 = 396. Comment peux-tu vérifier rapidement que ta division est correcte ?",
+          "choices": [
+            "Refaire la division une deuxième fois",
+            "Calculer 396 × 12 et vérifier qu'on obtient 4 752",
+            "Demander au voisin son résultat",
+            "Estimer que la réponse semble correcte sans vérifier"
+          ],
+          "correct_answer": "Calculer 396 × 12 et vérifier qu'on obtient 4 752",
+          "explanation": "Pour vérifier une division, on utilise l'opération inverse : la multiplication. Si 4 752 ÷ 12 = 396, alors 396 × 12 doit donner 4 752. C'est la méthode la plus fiable. 396 × 12 = 396 × 10 + 396 × 2 = 3 960 + 792 = 4 752. C'est bon !",
+          "hint": "Quelle opération est l'inverse de la division ?"
+        },
+        {
+          "exercise_id": "EX016",
+          "type": "contextual_problem",
+          "difficulty": "hard",
+          "bloom_level": "évaluation",
+          "ilma_level": "3",
+          "points": 3,
+          "time_limit_seconds": 150,
+          "tags": [
+            "auto-contrôle",
+            "relecture",
+            "checklist"
+          ],
+          "common_mistake_targeted": "Rendre sa copie sans relecture systématique",
+          "text": "Voici la copie de Fatimatou au CEP. Elle a 10 minutes pour relire avant de rendre. Vérifie sa copie en répondant aux questions de contrôle.",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Exercice 1 : « 45 × 36 = 1 620 ». Vérifie ce calcul. Est-il correct ? (Réponds par oui ou non)",
+              "correct_answer": "oui"
+            },
+            {
+              "id": "b",
+              "text": "Exercice 2 : « L'aire du rectangle de 12 m par 8 m est 96 m. » Y a-t-il une erreur ? Si oui, laquelle ?",
+              "correct_answer": "Oui, l'unité est fausse. Ce n'est pas 96 m mais 96 m² (mètres carrés)"
+            },
+            {
+              "id": "c",
+              "text": "Exercice 3 : « Le prix de 8 mangues à 75 FCFA est 600 FCFA. » Le calcul est-il correct et la réponse vraisemblable ?",
+              "correct_answer": "oui, 8 × 75 = 600 FCFA, c'est correct et vraisemblable"
+            },
+            {
+              "id": "d",
+              "text": "Exercice 4 est laissé vide. Fatimatou devrait-elle y écrire quelque chose ?",
+              "correct_answer": "Oui, elle devrait au moins écrire les données et le début du raisonnement pour espérer des points partiels"
+            }
+          ],
+          "correct_answer": "Voir sous-questions",
+          "explanation": "La relecture est essentielle au CEP. Vérifie : 1) Les calculs (avec l'opération inverse), 2) Les unités (m², km, FCFA...), 3) La vraisemblance (le résultat a-t-il du sens ?), 4) Qu'aucun exercice n'est laissé vide (écrire quelque chose vaut mieux que rien).",
+          "hint": "Pour chaque réponse, vérifie trois choses : le calcul est-il bon ? L'unité est-elle correcte ? La réponse a-t-elle du sens ?"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "CEP-CORRIGES-2010-2025::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX017",
+          "type": "mcq",
+          "difficulty": "easy",
+          "bloom_level": "analyse",
+          "ilma_level": "1",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "tags": [
+            "corrigé",
+            "comparaison",
+            "démarche"
+          ],
+          "common_mistake_targeted": "Regarder seulement le résultat final sans comparer la démarche",
+          "text": "Tu compares ta copie au corrigé du CEP 2022. Ta réponse finale est correcte (12 500 FCFA) mais ta démarche est différente du corrigé. Que dois-tu faire ?",
+          "choices": [
+            "Rien, seul le résultat compte",
+            "Comprendre la démarche du corrigé car elle peut être plus rapide ou plus claire",
+            "Changer ta démarche pour copier exactement celle du corrigé",
+            "Ignorer le corrigé puisque ta réponse est bonne"
+          ],
+          "correct_answer": "Comprendre la démarche du corrigé car elle peut être plus rapide ou plus claire",
+          "explanation": "Même si ton résultat est bon, la démarche du corrigé peut t'apprendre une méthode plus rapide ou mieux structurée. Au CEP, la démarche compte aussi pour les points. Compare les deux méthodes pour choisir la meilleure.",
+          "hint": "Au CEP, les correcteurs regardent aussi comment tu as trouvé la réponse, pas seulement le résultat."
+        },
+        {
+          "exercise_id": "EX018",
+          "type": "contextual_problem",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 3,
+          "time_limit_seconds": 150,
+          "tags": [
+            "corrigé",
+            "comparaison",
+            "écarts"
+          ],
+          "common_mistake_targeted": "Ne pas identifier précisément où l'erreur s'est produite dans la démarche",
+          "text": "Voici un problème du CEP 2019, la démarche de l'élève Basile, et le corrigé officiel. Compare les deux démarches.\n\nProblème : « Papa achète un terrain rectangulaire de 30 m sur 20 m à 5 000 FCFA le m². Calcule le prix du terrain. »\n\nDémarche de Basile : « Périmètre = (30 + 20) × 2 = 100 m. Prix = 100 × 5 000 = 500 000 FCFA. »\n\nCorrigé officiel : « Aire = 30 × 20 = 600 m². Prix = 600 × 5 000 = 3 000 000 FCFA. »",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Quelle est la première erreur de Basile ?",
+              "correct_answer": "Il a calculé le périmètre au lieu de l'aire"
+            },
+            {
+              "id": "b",
+              "text": "Pourquoi fallait-il calculer l'aire et non le périmètre ?",
+              "correct_answer": "Parce que le prix est donné au m² (par mètre carré), donc il faut la surface, pas le tour"
+            },
+            {
+              "id": "c",
+              "text": "Quel mot-clé dans la consigne indiquait qu'il fallait calculer l'aire ?",
+              "correct_answer": "Le mot « m² » (mètre carré) dans « 5 000 FCFA le m² »"
+            }
+          ],
+          "correct_answer": "Voir sous-questions",
+          "explanation": "Basile a confondu périmètre et aire. L'indice « le m² » montre qu'on parle de surface. Comparer sa démarche au corrigé permet d'identifier exactement où l'erreur commence (ici, dès le premier calcul). C'est plus utile que de simplement voir que le résultat est faux.",
+          "hint": "Regarde la première étape de chaque démarche. Basile a calculé le périmètre, le corrigé a calculé l'aire. Pourquoi ?"
+        },
+        {
+          "exercise_id": "EX019",
+          "type": "matching",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "corrigé",
+            "écarts",
+            "identification"
+          ],
+          "common_mistake_targeted": "Ne pas savoir identifier le type d'écart entre sa copie et le corrigé",
+          "text": "Associe chaque situation à son type d'écart par rapport au corrigé.",
+          "left_items": [
+            "Tu as trouvé 450 au lieu de 540 (inversion de chiffres)",
+            "Tu as utilisé une soustraction au lieu d'une addition",
+            "Tu as oublié de convertir les cm en m",
+            "Tu n'as pas répondu à la question (c) du problème"
+          ],
+          "right_items": [
+            "Erreur de calcul",
+            "Erreur de méthode (mauvaise opération)",
+            "Erreur de conversion d'unité",
+            "Oubli / question non traitée"
+          ],
+          "correct_answer": {
+            "Tu as trouvé 450 au lieu de 540 (inversion de chiffres)": "Erreur de calcul",
+            "Tu as utilisé une soustraction au lieu d'une addition": "Erreur de méthode (mauvaise opération)",
+            "Tu as oublié de convertir les cm en m": "Erreur de conversion d'unité",
+            "Tu n'as pas répondu à la question (c) du problème": "Oubli / question non traitée"
+          },
+          "explanation": "Quand tu compares ta copie au corrigé, identifie le TYPE d'écart : erreur de calcul (tu sais quoi faire mais tu te trompes en calculant), erreur de méthode (tu choisis la mauvaise opération), erreur d'unité (tu oublies de convertir), ou oubli (tu sautes une question). Chaque type d'écart se corrige différemment.",
+          "hint": "Lis chaque situation et demande-toi : est-ce que l'élève s'est trompé en calculant, en choisissant l'opération, en convertissant, ou a-t-il simplement oublié ?"
+        },
+        {
+          "exercise_id": "EX020",
+          "type": "justification",
+          "difficulty": "hard",
+          "bloom_level": "évaluation",
+          "ilma_level": "3",
+          "points": 3,
+          "time_limit_seconds": 180,
+          "tags": [
+            "corrigé",
+            "analyse",
+            "réflexion"
+          ],
+          "common_mistake_targeted": "Analyser superficiellement ses erreurs sans comprendre la cause profonde",
+          "text": "Voici la copie d'Akouavi au CEP 2023 et le corrigé.\n\nProblème : « Une citerne contient 2 500 litres d'eau. Chaque jour, une famille utilise 75 litres. Au bout de combien de jours la citerne sera-t-elle vide ? »\n\nAkouavi a écrit : « 2 500 × 75 = 187 500. La citerne sera vide au bout de 187 500 jours. »\n\nCorrigé : « 2 500 ÷ 75 = 33 jours et 25 litres restants, soit environ 34 jours. »\n\nAnalyse la copie d'Akouavi et explique : 1) Quelle erreur a-t-elle commise ? 2) Pourquoi a-t-elle choisi la multiplication ? 3) Comment aurait-elle pu vérifier que sa réponse n'a pas de sens ?",
+          "correct_answer": "1) Elle a multiplié au lieu de diviser. 2) Elle n'a pas compris que « répartir une quantité totale en parts égales » demande une division. 3) 187 500 jours, c'est plus de 500 ans — une citerne ne met pas 500 ans à se vider !",
+          "scoring_rubric": "1 point si l'élève identifie l'erreur (multiplication au lieu de division). 1 point si l'élève explique pourquoi c'est une division (répartir/distribuer = diviser). 1 point si l'élève mentionne la vérification de vraisemblance (187 500 jours est absurde).",
+          "explanation": "Akouavi a fait une erreur de méthode : elle a choisi la mauvaise opération. Quand on distribue ou répartit une quantité, c'est une division. De plus, sa réponse (187 500 jours ≈ 513 ans) est absurde — une simple vérification de vraisemblance aurait révélé l'erreur.",
+          "hint": "Demande-toi : si on utilise 75 litres par jour, est-ce qu'il faut plus ou moins de jours que de litres pour vider la citerne ?"
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "CEP-CORRIGES-2010-2025::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX021",
+          "type": "mcq",
+          "difficulty": "easy",
+          "bloom_level": "compréhension",
+          "ilma_level": "1",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "tags": [
+            "classification",
+            "erreurs",
+            "catégories"
+          ],
+          "common_mistake_targeted": "Ne pas distinguer les différents types d'erreurs",
+          "text": "Au CEP 2021, Kossi a écrit : « 347 + 268 = 515 ». Le corrigé donne 615. Quel type d'erreur Kossi a-t-il commis ?",
+          "choices": [
+            "Erreur de lecture de consigne",
+            "Erreur de calcul (retenue oubliée)",
+            "Erreur de méthode (mauvaise opération)",
+            "Erreur d'unité"
+          ],
+          "correct_answer": "Erreur de calcul (retenue oubliée)",
+          "explanation": "Kossi a choisi la bonne opération (addition) mais s'est trompé dans le calcul. 7 + 8 = 15, on pose 5 et on retient 1. 4 + 6 + 1 (retenue) = 11, on pose 1 et on retient 1. 3 + 2 + 1 = 6. Résultat : 615. Il a oublié la retenue des dizaines. C'est une erreur de calcul.",
+          "hint": "Kossi a bien compris qu'il fallait additionner. Où exactement s'est-il trompé dans le calcul ?"
+        },
+        {
+          "exercise_id": "EX022",
+          "type": "matching",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 3,
+          "time_limit_seconds": 120,
+          "tags": [
+            "classification",
+            "erreurs",
+            "diagnostic"
+          ],
+          "common_mistake_targeted": "Confondre les types d'erreurs entre eux",
+          "text": "Voici 5 erreurs commises par des élèves au CEP. Classe chaque erreur dans la bonne catégorie.",
+          "left_items": [
+            "Écrire 42 × 3 = 136 (au lieu de 126)",
+            "Faire une addition alors que la consigne dit « Quel est le reste ? »",
+            "Écrire « l'aire est 48 m » au lieu de « 48 m² »",
+            "Oublier de répondre à la question (b) d'un exercice",
+            "Calculer le périmètre au lieu de l'aire parce qu'on n'a pas lu « surface »"
+          ],
+          "right_items": [
+            "Erreur de calcul",
+            "Erreur de méthode",
+            "Erreur d'unité",
+            "Oubli",
+            "Erreur de lecture de consigne"
+          ],
+          "correct_answer": {
+            "Écrire 42 × 3 = 136 (au lieu de 126)": "Erreur de calcul",
+            "Faire une addition alors que la consigne dit « Quel est le reste ? »": "Erreur de méthode",
+            "Écrire « l'aire est 48 m » au lieu de « 48 m² »": "Erreur d'unité",
+            "Oublier de répondre à la question (b) d'un exercice": "Oubli",
+            "Calculer le périmètre au lieu de l'aire parce qu'on n'a pas lu « surface »": "Erreur de lecture de consigne"
+          },
+          "explanation": "Les 5 types d'erreurs au CEP sont : 1) Calcul : le chiffre est faux, 2) Méthode : mauvaise opération choisie, 3) Unité : mauvaise unité ou unité absente, 4) Oubli : question sautée, 5) Lecture de consigne : on n'a pas lu un mot-clé important. Savoir classifier ses erreurs aide à les corriger.",
+          "hint": "Pour chaque erreur, demande-toi : l'élève s'est-il trompé en calculant, en choisissant l'opération, en écrivant l'unité, en lisant la consigne, ou a-t-il simplement oublié ?"
+        },
+        {
+          "exercise_id": "EX023",
+          "type": "contextual_problem",
+          "difficulty": "hard",
+          "bloom_level": "analyse",
+          "ilma_level": "3",
+          "points": 3,
+          "time_limit_seconds": 150,
+          "tags": [
+            "classification",
+            "erreurs",
+            "bilan"
+          ],
+          "common_mistake_targeted": "Ne pas faire le bilan de ses erreurs après un examen blanc",
+          "text": "Gbèdiga a fait un examen blanc du CEP. Voici ses 5 erreurs. Classe chacune et compte combien d'erreurs de chaque type il a faites.",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Erreur 1 : Il a écrit 56 × 7 = 382 (au lieu de 392). Quel type d'erreur ?",
+              "correct_answer": "Erreur de calcul"
+            },
+            {
+              "id": "b",
+              "text": "Erreur 2 : La consigne demandait le résultat en litres, il a répondu en centilitres. Quel type d'erreur ?",
+              "correct_answer": "Erreur d'unité"
+            },
+            {
+              "id": "c",
+              "text": "Erreur 3 : Il a multiplié au lieu de diviser pour trouver le prix unitaire. Quel type d'erreur ?",
+              "correct_answer": "Erreur de méthode"
+            },
+            {
+              "id": "d",
+              "text": "Erreur 4 : Il a écrit 28 × 4 = 102 (au lieu de 112). Quel type d'erreur ?",
+              "correct_answer": "Erreur de calcul"
+            },
+            {
+              "id": "e",
+              "text": "Quel type d'erreur Gbèdiga fait-il le plus souvent ? Que devrait-il réviser en priorité ?",
+              "correct_answer": "Erreur de calcul (2 fois). Il devrait s'entraîner aux tables de multiplication et vérifier ses calculs avec l'opération inverse."
+            }
+          ],
+          "correct_answer": "Voir sous-questions",
+          "explanation": "En classifiant ses erreurs, Gbèdiga découvre qu'il fait surtout des erreurs de calcul (2 sur 4). Il doit donc s'entraîner au calcul (tables, retenues) plutôt que de tout réviser. C'est la force de la classification : elle montre où concentrer ses efforts.",
+          "hint": "Classe d'abord chaque erreur, puis compte combien de fois chaque catégorie apparaît."
+        },
+        {
+          "exercise_id": "EX024",
+          "type": "fill_blank",
+          "difficulty": "medium",
+          "bloom_level": "application",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "classification",
+            "erreurs",
+            "tableau"
+          ],
+          "common_mistake_targeted": "Ne pas tenir un tableau de suivi de ses erreurs",
+          "text": "Après 3 examens blancs du CEP, Houéfa a noté ses erreurs. Complète le bilan :\n- Examen 1 : 2 erreurs de calcul, 1 erreur d'unité, 0 oubli\n- Examen 2 : 1 erreur de calcul, 2 erreurs d'unité, 1 oubli\n- Examen 3 : 0 erreur de calcul, 2 erreurs d'unité, 0 oubli\n\nTotal erreurs de calcul sur 3 examens : ___\nTotal erreurs d'unité sur 3 examens : ___\nType d'erreur le plus fréquent : ___",
+          "blanks": [
+            "3",
+            "5",
+            "erreur d'unité"
+          ],
+          "correct_answer": [
+            "3",
+            "5",
+            "erreur d'unité"
+          ],
+          "explanation": "Calcul : 2 + 1 + 0 = 3 erreurs de calcul. Unité : 1 + 2 + 2 = 5 erreurs d'unité. Le type le plus fréquent est l'erreur d'unité (5 fois). Houéfa doit donc travailler en priorité sur les conversions et les unités de mesure. On voit aussi qu'elle progresse en calcul (2 → 1 → 0).",
+          "hint": "Additionne les nombres pour chaque type d'erreur sur les 3 examens."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "CEP-CORRIGES-2010-2025::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX025",
+          "type": "mcq",
+          "difficulty": "easy",
+          "bloom_level": "compréhension",
+          "ilma_level": "1",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "tags": [
+            "lacunes",
+            "identification",
+            "erreurs-récurrentes"
+          ],
+          "common_mistake_targeted": "Ne pas repérer les erreurs qui se répètent d'un examen à l'autre",
+          "text": "Après 3 examens blancs, Dossou fait toujours la même erreur : il confond périmètre et aire. Que signifie cette erreur récurrente ?",
+          "choices": [
+            "C'est juste de la malchance, ça passera tout seul",
+            "C'est une lacune : il ne comprend pas bien la différence entre périmètre et aire",
+            "Il devrait éviter les exercices de géométrie au CEP",
+            "Les exercices sont trop difficiles pour lui"
+          ],
+          "correct_answer": "C'est une lacune : il ne comprend pas bien la différence entre périmètre et aire",
+          "explanation": "Une erreur qui se répète d'un examen à l'autre n'est pas de la malchance : c'est une lacune, c'est-à-dire quelque chose qu'on n'a pas bien compris. Dossou doit retravailler la différence entre périmètre (le tour, en m) et aire (la surface, en m²).",
+          "hint": "Si tu fais la même erreur 3 fois, est-ce du hasard ou un signe que quelque chose n'est pas bien compris ?"
+        },
+        {
+          "exercise_id": "EX026",
+          "type": "contextual_problem",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 3,
+          "time_limit_seconds": 150,
+          "tags": [
+            "lacunes",
+            "liste",
+            "diagnostic"
+          ],
+          "common_mistake_targeted": "Ne pas formaliser ses lacunes en liste écrite",
+          "text": "Voici les erreurs de Nadège sur ses 4 derniers examens blancs du CEP. Aide-la à créer sa liste de lacunes.\n\n- Examen 1 : oubli de retenue dans l'addition, mauvaise unité pour l'aire\n- Examen 2 : confusion périmètre/aire, oubli de retenue dans la multiplication\n- Examen 3 : mauvaise unité pour l'aire, confusion addition/soustraction dans un problème\n- Examen 4 : oubli de retenue dans l'addition, confusion périmètre/aire",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Quelle erreur apparaît le plus souvent ? Combien de fois ?",
+              "correct_answer": "L'oubli de retenue (3 fois : examen 1, 2 et 4)"
+            },
+            {
+              "id": "b",
+              "text": "Quelles sont les deux lacunes principales de Nadège ? (les erreurs qui reviennent au moins 2 fois)",
+              "correct_answer": "1) Les retenues dans les opérations (3 fois), 2) La confusion périmètre/aire (2 fois), 3) Les unités de mesure de l'aire (2 fois)"
+            },
+            {
+              "id": "c",
+              "text": "Écris la lacune n°1 de la liste de Nadège sous forme d'objectif de révision.",
+              "correct_answer": "Revoir les retenues dans les additions et les multiplications"
+            }
+          ],
+          "correct_answer": "Voir sous-questions",
+          "explanation": "Pour créer une liste de lacunes, on : 1) Note toutes ses erreurs sur plusieurs examens, 2) Compte combien de fois chaque erreur revient, 3) Les erreurs qui reviennent 2 fois ou plus sont des lacunes, 4) On les formule comme objectifs de révision. Nadège a 3 lacunes principales à travailler.",
+          "hint": "Cherche les erreurs qui se répètent d'un examen à l'autre. Ce sont tes lacunes."
+        },
+        {
+          "exercise_id": "EX027",
+          "type": "ordering",
+          "difficulty": "medium",
+          "bloom_level": "analyse",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "lacunes",
+            "priorité",
+            "plan"
+          ],
+          "common_mistake_targeted": "Ne pas prioriser ses lacunes par fréquence et impact",
+          "text": "Voici la liste de lacunes de Tchégnon après analyse de ses examens blancs. Classe-les de la plus urgente à la moins urgente pour ses révisions du CEP.",
+          "items": [
+            "Confusion gauche/droite dans la symétrie (1 erreur sur 4 examens)",
+            "Oubli systématique des unités dans les réponses (4 erreurs sur 4 examens)",
+            "Difficulté avec la division par un nombre à 2 chiffres (3 erreurs sur 4 examens)",
+            "Erreur ponctuelle sur la lecture d'un graphique (1 erreur sur 4 examens)"
+          ],
+          "correct_answer": [
+            "Oubli systématique des unités dans les réponses (4 erreurs sur 4 examens)",
+            "Difficulté avec la division par un nombre à 2 chiffres (3 erreurs sur 4 examens)",
+            "Confusion gauche/droite dans la symétrie (1 erreur sur 4 examens)",
+            "Erreur ponctuelle sur la lecture d'un graphique (1 erreur sur 4 examens)"
+          ],
+          "explanation": "On priorise les lacunes par fréquence : celles qui reviennent à chaque examen sont les plus urgentes car elles font perdre le plus de points. Les unités (4/4 examens) sont la priorité absolue, puis la division (3/4). Les erreurs ponctuelles (1/4) sont moins urgentes.",
+          "hint": "Plus une erreur revient souvent, plus elle est urgente à corriger. Regarde le nombre d'erreurs sur 4 examens."
+        },
+        {
+          "exercise_id": "EX028",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "bloom_level": "synthèse",
+          "ilma_level": "3",
+          "points": 4,
+          "time_limit_seconds": 180,
+          "tags": [
+            "lacunes",
+            "auto-diagnostic",
+            "bilan"
+          ],
+          "common_mistake_targeted": "Ne pas savoir transformer ses erreurs en plan d'action concret",
+          "text": "Crée ta propre liste de lacunes à partir de ce bilan d'examens blancs.\n\nRésultats de Yémisi sur 3 examens blancs :\n- Numération : 3/4, 4/4, 3/4\n- Opérations : 2/4, 2/4, 1/4\n- Mesures : 4/4, 3/4, 4/4\n- Géométrie : 1/4, 2/4, 1/4\n- Problèmes : 3/4, 2/4, 3/4",
+          "steps": [
+            {
+              "instruction": "Étape 1 — Calcule la moyenne de Yémisi pour chaque domaine (sur 4).",
+              "expected_answer": "Numération : 10/12 = 3,3/4. Opérations : 5/12 = 1,7/4. Mesures : 11/12 = 3,7/4. Géométrie : 4/12 = 1,3/4. Problèmes : 8/12 = 2,7/4.",
+              "hint": "Additionne les 3 notes de chaque domaine, puis divise par 3."
+            },
+            {
+              "instruction": "Étape 2 — Identifie les domaines où Yémisi a moins de 2,5/4 en moyenne. Ce sont ses lacunes.",
+              "expected_answer": "Opérations (1,7/4) et Géométrie (1,3/4)",
+              "hint": "Quels domaines ont une moyenne inférieure à 2,5 ?"
+            },
+            {
+              "instruction": "Étape 3 — Classe les lacunes de la plus grave à la moins grave.",
+              "expected_answer": "1) Géométrie (1,3/4 — la plus faible), 2) Opérations (1,7/4)",
+              "hint": "Le domaine avec la moyenne la plus basse est la lacune la plus grave."
+            },
+            {
+              "instruction": "Étape 4 — Pour chaque lacune, propose un objectif de révision concret.",
+              "expected_answer": "1) Géométrie : revoir les formules de périmètre, aire et les constructions. 2) Opérations : s'entraîner aux multiplications et divisions posées, revoir les retenues.",
+              "hint": "Que doit-elle apprendre ou pratiquer pour s'améliorer dans chaque domaine ?"
+            }
+          ],
+          "correct_answer": "Les lacunes de Yémisi sont : 1) Géométrie (1,3/4), 2) Opérations (1,7/4). Elle doit réviser en priorité les constructions géométriques et les opérations posées.",
+          "explanation": "Créer une liste de lacunes, c'est : 1) Calculer ses résultats par domaine, 2) Identifier les domaines faibles (sous un seuil), 3) Les classer par gravité, 4) Définir des objectifs concrets. Cette méthode transforme un vague « je suis nul en maths » en un plan d'action précis.",
+          "hint": "Procède étape par étape. D'abord les moyennes, puis les domaines faibles, puis le classement."
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "CEP-CORRIGES-2010-2025::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX029",
+          "type": "mcq",
+          "difficulty": "easy",
+          "bloom_level": "application",
+          "ilma_level": "1",
+          "points": 1,
+          "time_limit_seconds": 60,
+          "tags": [
+            "révision",
+            "planification",
+            "stratégie"
+          ],
+          "common_mistake_targeted": "Réviser tout au hasard au lieu de cibler ses faiblesses",
+          "text": "Le CEP est dans 4 semaines. Aïcha a identifié 2 lacunes : les conversions d'unités et la division posée. Quelle est la meilleure façon de réviser ?",
+          "choices": [
+            "Relire tout le cahier de maths du début à la fin",
+            "Faire des exercices ciblés sur les conversions et la division chaque jour",
+            "Réviser seulement la veille de l'examen",
+            "Ne réviser que ce qu'elle sait déjà bien pour se rassurer"
+          ],
+          "correct_answer": "Faire des exercices ciblés sur les conversions et la division chaque jour",
+          "explanation": "La révision ciblée est la plus efficace : travailler chaque jour sur ses lacunes identifiées (conversions et division) avec des exercices pratiques. Relire tout le cahier prend trop de temps et n'est pas ciblé. Réviser la veille est trop tard. Réviser ses points forts ne comble pas les lacunes.",
+          "hint": "Que vaut-il mieux : travailler ce qu'on sait déjà ou ce qu'on ne sait pas encore ?"
+        },
+        {
+          "exercise_id": "EX030",
+          "type": "contextual_problem",
+          "difficulty": "medium",
+          "bloom_level": "synthèse",
+          "ilma_level": "2",
+          "points": 3,
+          "time_limit_seconds": 150,
+          "tags": [
+            "révision",
+            "planning",
+            "organisation"
+          ],
+          "common_mistake_targeted": "Ne pas répartir ses révisions dans le temps",
+          "text": "Boni a 3 semaines avant le CEP. Ses lacunes sont : 1) Division posée (grave), 2) Conversions de mesures (moyenne), 3) Périmètre et aire (légère). Il peut réviser 30 minutes par jour, 5 jours par semaine.",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Combien de séances de révision Boni a-t-il au total sur 3 semaines ?",
+              "correct_answer": "15 séances (5 jours × 3 semaines)"
+            },
+            {
+              "id": "b",
+              "text": "S'il donne plus de séances à sa lacune la plus grave, combien de séances devrait-il accorder à chaque lacune ? Propose une répartition.",
+              "correct_answer": "Division posée : 7 séances, Conversions : 5 séances, Périmètre/aire : 3 séances"
+            },
+            {
+              "id": "c",
+              "text": "Pendant la dernière semaine (5 séances), que devrait faire Boni pour bien se préparer ?",
+              "correct_answer": "Faire des sujets complets de CEP (examens blancs) pour s'entraîner dans les conditions de l'examen"
+            }
+          ],
+          "correct_answer": "Voir sous-questions",
+          "explanation": "Un bon plan de révision : 1) Calculer le temps disponible, 2) Donner plus de temps aux lacunes graves, 3) Garder la dernière semaine pour des examens blancs complets. Boni a 15 séances. Il donne 7 à la division (sa lacune principale), 5 aux conversions, et 3 au périmètre/aire.",
+          "hint": "Calcule d'abord le nombre total de séances, puis répartis-les en donnant plus aux lacunes graves."
+        },
+        {
+          "exercise_id": "EX031",
+          "type": "ordering",
+          "difficulty": "medium",
+          "bloom_level": "application",
+          "ilma_level": "2",
+          "points": 2,
+          "time_limit_seconds": 90,
+          "tags": [
+            "révision",
+            "méthode",
+            "progression"
+          ],
+          "common_mistake_targeted": "Ne pas structurer sa séance de révision",
+          "text": "Voici les activités d'une bonne séance de révision de 30 minutes pour préparer le CEP. Remets-les dans l'ordre logique.",
+          "items": [
+            "Faire 3 à 5 exercices d'entraînement sur la lacune du jour",
+            "Relire la leçon ou la règle concernée (5 minutes)",
+            "Corriger ses exercices et noter les erreurs restantes",
+            "Choisir la lacune à travailler aujourd'hui",
+            "Faire un mini-bilan : est-ce que j'ai progressé ?"
+          ],
+          "correct_answer": [
+            "Choisir la lacune à travailler aujourd'hui",
+            "Relire la leçon ou la règle concernée (5 minutes)",
+            "Faire 3 à 5 exercices d'entraînement sur la lacune du jour",
+            "Corriger ses exercices et noter les erreurs restantes",
+            "Faire un mini-bilan : est-ce que j'ai progressé ?"
+          ],
+          "explanation": "Une séance de révision efficace suit cet ordre : 1) Choisir quoi travailler (selon son plan), 2) Relire la théorie rapidement, 3) Pratiquer avec des exercices, 4) Se corriger pour apprendre de ses erreurs, 5) Faire le bilan pour mesurer sa progression. 30 minutes bien organisées valent mieux que 2 heures sans méthode.",
+          "hint": "Commence par la préparation, puis la théorie, puis la pratique, puis la correction, puis le bilan."
+        },
+        {
+          "exercise_id": "EX032",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "bloom_level": "synthèse",
+          "ilma_level": "3",
+          "points": 4,
+          "time_limit_seconds": 240,
+          "tags": [
+            "révision",
+            "plan-complet",
+            "autonomie"
+          ],
+          "common_mistake_targeted": "Ne pas savoir créer un plan de révision autonome et complet",
+          "text": "Crée un plan de révision complet pour Fifamè qui passe le CEP dans 2 semaines. Voici ses résultats aux examens blancs :\n\nExamen blanc 1 : Numération 4/4, Opérations 2/4, Mesures 3/4, Géométrie 1/4, Problème 3/4 → Total : 13/20\nExamen blanc 2 : Numération 3/4, Opérations 1/4, Mesures 4/4, Géométrie 2/4, Problème 2/4 → Total : 12/20",
+          "steps": [
+            {
+              "instruction": "Étape 1 — Identifie les lacunes de Fifamè (domaines sous 3/4 au moins une fois).",
+              "expected_answer": "Opérations (2/4 puis 1/4 — en baisse), Géométrie (1/4 puis 2/4 — faible), Problème (3/4 puis 2/4 — en baisse)",
+              "hint": "Regarde les notes domaine par domaine. Lesquelles sont souvent en dessous de 3/4 ?"
+            },
+            {
+              "instruction": "Étape 2 — Classe les lacunes par urgence (la plus grave d'abord).",
+              "expected_answer": "1) Opérations (moyenne 1,5/4 — la plus faible et en baisse), 2) Géométrie (moyenne 1,5/4 — très faible), 3) Problèmes (moyenne 2,5/4 — en baisse)",
+              "hint": "Calcule la moyenne de chaque domaine. Le plus faible est le plus urgent."
+            },
+            {
+              "instruction": "Étape 3 — Fifamè a 10 séances de 30 minutes (5 jours × 2 semaines). Propose une répartition par lacune pour la semaine 1 (5 séances).",
+              "expected_answer": "Semaine 1 : 2 séances Opérations, 2 séances Géométrie, 1 séance Problèmes",
+              "hint": "Donne plus de séances aux lacunes les plus graves. Garde les problèmes pour la fin car ils utilisent les opérations et la géométrie."
+            },
+            {
+              "instruction": "Étape 4 — Que devrait faire Fifamè pendant la semaine 2 (les 5 dernières séances avant le CEP) ?",
+              "expected_answer": "Semaine 2 : 2 séances pour finir les exercices ciblés, puis 3 séances d'examens blancs complets en conditions réelles (1h30, sans aide) pour s'habituer au format du CEP",
+              "hint": "La dernière semaine avant l'examen, il est important de s'entraîner dans les conditions réelles."
+            }
+          ],
+          "correct_answer": "Fifamè doit travailler en priorité les opérations et la géométrie (semaine 1), puis faire des examens blancs complets (semaine 2) pour arriver confiante au CEP.",
+          "explanation": "Un plan de révision complet pour le CEP : 1) Identifier ses lacunes à partir des examens blancs, 2) Les classer par urgence, 3) Répartir le temps disponible en donnant la priorité aux lacunes graves, 4) Garder les derniers jours pour des simulations en conditions réelles. Avec ce plan, Fifamè sait exactement quoi faire chaque jour.",
+          "hint": "Suis les étapes une par une. D'abord le diagnostic, puis le classement, puis le planning."
+        }
+      ]
+    }
+  ]
+}

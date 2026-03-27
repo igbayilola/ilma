@@ -1,0 +1,3596 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "domain": "Opérations",
+    "grade": "CM2",
+    "country": "Bénin",
+    "generated": true
+  },
+  "exercises": [
+    {
+      "micro_skill_external_id": "OPS-CALCUL-MENTAL-TABLES::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "7 × 8 = ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 56,
+          "explanation": "7×8 = 56. C'est une table de multiplication à connaître par cœur.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "9 × 6 = ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 54,
+          "explanation": "9×6 = 54.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Quel est le produit de 12 × 7 ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "84",
+            "72",
+            "96",
+            "77"
+          ],
+          "correct_answer": "84",
+          "explanation": "12×7 = 84.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "11 × 9 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 99,
+          "explanation": "11×9 = 99.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-CALCUL-MENTAL-TABLES::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Le double de 35 est :",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 70,
+          "explanation": "35 × 2 = 70.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "La moitié de 64 est :",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 32,
+          "explanation": "64 ÷ 2 = 32.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Le double de 450 est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "900",
+            "225",
+            "4500",
+            "90"
+          ],
+          "correct_answer": "900",
+          "explanation": "450 × 2 = 900.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "La moitié de 3 500 est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 1750,
+          "explanation": "3 500 ÷ 2 = 1 750.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-CALCUL-MENTAL-TABLES::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Le quadruple de 25 est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 100,
+          "explanation": "25 × 4 = 100. (25×2=50, 50×2=100)",
+          "hint": "Double deux fois."
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Le quart de 200 est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 50,
+          "explanation": "200 ÷ 4 = 50. (200÷2=100, 100÷2=50)",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Le quadruple de 125 est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "500",
+            "250",
+            "1250",
+            "50"
+          ],
+          "correct_answer": "500",
+          "explanation": "125×4 = 500. (125×2=250, 250×2=500)",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Le quart de 1 600 est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 400,
+          "explanation": "1600÷4 = 400.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-CALCUL-MENTAL-TABLES::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Le complément à 100 de 37 est :",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 63,
+          "explanation": "100 - 37 = 63.",
+          "hint": "100 - ? = 63"
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Le complément à 1 000 de 645 est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 355,
+          "explanation": "1 000 - 645 = 355.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "78 + ___ = 100.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": "22",
+          "explanation": "100 - 78 = 22.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Le complément à 10 de 3,7 est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 6.3,
+          "explanation": "10 - 3,7 = 6,3.",
+          "hint": "",
+          "tolerance": 0.1
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "45 × 10 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 450,
+          "explanation": "On ajoute un zéro : 45 × 10 = 450.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "3,5 × 100 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 350,
+          "explanation": "On décale la virgule de 2 rangs : 3,5 × 100 = 350.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève écrit : 7,2 × 1000 = 72.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "7,2 × 1000 = 72",
+          "correct_answer": "7,2 × 1000 = 7 200",
+          "explanation": "On décale la virgule de 3 rangs vers la droite : 7,200 → 7 200.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "450 ÷ 100 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 4.5,
+          "explanation": "On décale la virgule de 2 rangs vers la gauche : 4,50.",
+          "hint": "",
+          "tolerance": 0.01
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-ESTIMER-VERIFIER::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "easy",
+          "text": "Arrondis 3 478 à la centaine la plus proche.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": 3500,
+          "explanation": "3 478 → 3 500 (le chiffre des dizaines est 7 ≥ 5).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Arrondis 56 743 au millier le plus proche.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "57 000",
+            "56 000",
+            "56 700",
+            "56 800"
+          ],
+          "correct_answer": "57 000",
+          "explanation": "56 743 → 57 000 (743 ≥ 500).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Arrondis 8 250 au millier le plus proche.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 8000,
+          "explanation": "8 250 → 8 000 (250 < 500).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "fill_blank",
+          "difficulty": "easy",
+          "text": "Pour estimer 489 + 312, j'arrondis : 500 + ___ ≈ ___.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": "300, 800",
+          "explanation": "489 ≈ 500, 312 ≈ 300, total ≈ 800.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-ESTIMER-VERIFIER::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Arrondis 7,83 à l'unité pour estimer.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 8,
+          "explanation": "7,83 ≈ 8 (0,83 ≥ 0,5).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour estimer 4,67 × 2,1, on arrondit à :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "5 × 2 = 10",
+            "4 × 2 = 8",
+            "5 × 3 = 15",
+            "4,7 × 2 = 9,4"
+          ],
+          "correct_answer": "5 × 2 = 10",
+          "explanation": "4,67 ≈ 5, 2,1 ≈ 2. Estimation : 10.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève arrondit 3,45 à l'unité et obtient 3.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "3,45 ≈ 3",
+          "correct_answer": "3,45 ≈ 3 (car 0,45 < 0,5, l'élève a raison !)",
+          "explanation": "En fait l'élève a raison : 0,45 < 0,5, donc on arrondit vers le bas à 3.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Arrondis 12,345 au dixième.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 12.3,
+          "explanation": "12,345 → 12,3 (le centième est 4 < 5).",
+          "hint": "",
+          "tolerance": 0.01
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-ESTIMER-VERIFIER::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Avant de calculer 498 × 21, l'ordre de grandeur est environ :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "10 000",
+            "1 000",
+            "100 000",
+            "500"
+          ],
+          "correct_answer": "10 000",
+          "explanation": "500 × 20 = 10 000.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Donne un ordre de grandeur de 3 890 ÷ 19.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "200",
+          "explanation": "4 000 ÷ 20 = 200.",
+          "hint": "",
+          "accepted_answers": [
+            "200",
+            "environ 200",
+            "≈ 200"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "L'ordre de grandeur de 52 × 48 est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "2 500",
+            "250",
+            "25 000",
+            "500"
+          ],
+          "correct_answer": "2 500",
+          "explanation": "50 × 50 = 2 500.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "L'ordre de grandeur de 9,8 × 5,1 est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "50",
+            "10",
+            "100",
+            "500"
+          ],
+          "correct_answer": "50",
+          "explanation": "10 × 5 = 50.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-ESTIMER-VERIFIER::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Vérifie que 456 + 289 = 745 en utilisant l'opération inverse.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "L'opération inverse de l'addition est la soustraction",
+              "expected": "Soustraction"
+            },
+            {
+              "instruction": "Calcule 745 - 289",
+              "expected": "456"
+            },
+            {
+              "instruction": "Le résultat correspond au premier terme, donc c'est correct",
+              "expected": "Vérifié"
+            }
+          ],
+          "correct_answer": "745 - 289 = 456 ✓",
+          "explanation": "On vérifie une addition par la soustraction.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève trouve 234 × 5 = 1 270. Vérifie par l'opération inverse.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "234 × 5 = 1 270",
+          "correct_answer": "234 × 5 = 1 170",
+          "explanation": "1 270 ÷ 5 = 254 ≠ 234. Le bon résultat est 1 170 (1 170 ÷ 5 = 234).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Comment vérifier que 756 ÷ 12 = 63 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "63 × 12 = 756",
+          "explanation": "On multiplie le quotient par le diviseur : 63 × 12 = 756 ✓.",
+          "hint": "",
+          "accepted_answers": [
+            "63 × 12",
+            "63 × 12 = 756",
+            "12 × 63"
+          ]
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour vérifier une soustraction a - b = c, on calcule :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "c + b et on vérifie qu'on obtient a",
+            "a + b",
+            "c - b",
+            "a × b"
+          ],
+          "correct_answer": "c + b et on vérifie qu'on obtient a",
+          "explanation": "La vérification d'une soustraction se fait par addition.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-ESTIMER-VERIFIER::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève calcule 45 + 78 = 1 023. Ce résultat est-il plausible ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "45 + 78 = 1 023",
+          "correct_answer": "45 + 78 = 123",
+          "explanation": "1 023 est absurde : 50 + 80 = 130. Le bon résultat est 123.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Un élève trouve 12 × 8 = 106. Ce résultat est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Absurde (trop grand)",
+            "Correct",
+            "Trop petit",
+            "Presque correct"
+          ],
+          "correct_answer": "Absurde (trop grand)",
+          "explanation": "10 × 8 = 80, 12 × 8 devrait être un peu plus, autour de 96.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Problème : « Kofi a 250 F et achète 3 cahiers à 75 F chacun. Il lui reste 25 F. » Vérifie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "250 - 3×75 = 25",
+          "correct_answer": "250 - 225 = 25 ✓",
+          "explanation": "3 × 75 = 225. 250 - 225 = 25. C'est correct.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour estimer si 789 - 456 ≈ 333 est correct, on calcule :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "800 - 450 = 350, c'est proche de 333",
+            "789 + 456",
+            "333 × 2",
+            "789 ÷ 456"
+          ],
+          "correct_answer": "800 - 450 = 350, c'est proche de 333",
+          "explanation": "L'estimation confirme que 333 est plausible.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Pose et effectue : 4 567 + 3 895 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 8462,
+          "explanation": "4 567 + 3 895 = 8 462 (avec retenues).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "medium",
+          "text": "Calcule 2 786 + 5 437 en posant l'addition.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "steps": [
+            {
+              "instruction": "Unités : 6+7=13, on pose 3 retenue 1",
+              "expected": "3, retenue 1"
+            },
+            {
+              "instruction": "Dizaines : 8+3+1=12, on pose 2 retenue 1",
+              "expected": "2, retenue 1"
+            },
+            {
+              "instruction": "Centaines : 7+4+1=12, on pose 2 retenue 1",
+              "expected": "2, retenue 1"
+            },
+            {
+              "instruction": "Milliers : 2+5+1=8",
+              "expected": "8"
+            }
+          ],
+          "correct_answer": "8 223",
+          "explanation": "2 786 + 5 437 = 8 223.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève pose 3 456 + 2 789 et obtient 5 145.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "3 456 + 2 789 = 5 145",
+          "correct_answer": "3 456 + 2 789 = 6 245",
+          "explanation": "L'élève a oublié une retenue. Le bon résultat est 6 245.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "678 + 9 456 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 10134,
+          "explanation": "678 + 9 456 = 10 134.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Pose et effectue : 8 003 - 4 567 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 3436,
+          "explanation": "8 003 - 4 567 = 3 436 (avec emprunts).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 5 000 - 2 347 en posant la soustraction.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Unités : 0-7 impossible, emprunt → 10-7=3",
+              "expected": "3"
+            },
+            {
+              "instruction": "Dizaines : 9(après emprunt)-4=5 → mais 0-1 pour l'emprunt : 9-4=5",
+              "expected": "5"
+            },
+            {
+              "instruction": "Centaines : 9-3=6",
+              "expected": "6"
+            },
+            {
+              "instruction": "Milliers : 4-2=2",
+              "expected": "2"
+            }
+          ],
+          "correct_answer": "2 653",
+          "explanation": "5 000 - 2 347 = 2 653.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève trouve 7 200 - 3 856 = 4 456.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "7 200 - 3 856 = 4 456",
+          "correct_answer": "7 200 - 3 856 = 3 344",
+          "explanation": "L'élève a fait une erreur d'emprunt. Le bon résultat est 3 344.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "10 000 - 6 789 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 3211,
+          "explanation": "10 000 - 6 789 = 3 211.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "356 × 7 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 2492,
+          "explanation": "356 × 7 = 2 492.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Pose et effectue 245 × 36.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "245 × 6 = 1 470",
+              "expected": "1 470"
+            },
+            {
+              "instruction": "245 × 30 = 7 350",
+              "expected": "7 350"
+            },
+            {
+              "instruction": "1 470 + 7 350 = 8 820",
+              "expected": "8 820"
+            }
+          ],
+          "correct_answer": "8 820",
+          "explanation": "245 × 36 = 8 820.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève calcule 123 × 45 et obtient 5 435.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "123 × 45 = 5 435",
+          "correct_answer": "123 × 45 = 5 535",
+          "explanation": "123×5=615, 123×40=4920, 615+4920=5535.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "508 × 23 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 11684,
+          "explanation": "508 × 23 = 11 684.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Effectue 847 ÷ 7. Donne le quotient.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 121,
+          "explanation": "847 ÷ 7 = 121.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Pose la division 965 ÷ 5.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "9 ÷ 5 = 1, reste 4",
+              "expected": "1, reste 4"
+            },
+            {
+              "instruction": "46 ÷ 5 = 9, reste 1",
+              "expected": "9, reste 1"
+            },
+            {
+              "instruction": "15 ÷ 5 = 3, reste 0",
+              "expected": "3, reste 0"
+            }
+          ],
+          "correct_answer": "193",
+          "explanation": "965 ÷ 5 = 193.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Quel est le reste de 500 ÷ 7 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 3,
+          "explanation": "500 = 7 × 71 + 3. Le reste est 3.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève dit que 156 ÷ 6 = 27.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "156÷6=27",
+          "correct_answer": "156÷6=26",
+          "explanation": "6 × 27 = 162 ≠ 156. 6 × 26 = 156.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Effectue 4 536 ÷ 24. Donne le quotient.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 189,
+          "explanation": "4 536 ÷ 24 = 189.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Pose 7 350 ÷ 35.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "73 ÷ 35 = 2, reste 3",
+              "expected": "2, reste 3"
+            },
+            {
+              "instruction": "35 ÷ 35 = 1, reste 0",
+              "expected": "1, reste 0"
+            },
+            {
+              "instruction": "0 ÷ 35 = 0",
+              "expected": "0"
+            }
+          ],
+          "correct_answer": "210",
+          "explanation": "7 350 ÷ 35 = 210.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Quel est le quotient de 1 248 ÷ 16 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 78,
+          "explanation": "1 248 ÷ 16 = 78.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève trouve 2 520 ÷ 42 = 70.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "2520÷42=70",
+          "correct_answer": "2520÷42=60",
+          "explanation": "42 × 70 = 2 940 ≠ 2 520. 42 × 60 = 2 520.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS06",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève additionne : 345 + 67 et aligne le 6 sous le 4 et le 7 sous le 5.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Mauvais alignement : 345 + 67 en décalant",
+          "correct_answer": "Il faut aligner les unités : 5 sous 7, 4 sous 6.",
+          "explanation": "En posant une opération, les unités doivent être alignées.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "L'erreur la plus fréquente en soustraction est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Oublier les emprunts",
+            "Additionner au lieu de soustraire",
+            "Inverser les chiffres",
+            "Écrire à l'envers"
+          ],
+          "correct_answer": "Oublier les emprunts",
+          "explanation": "L'oubli d'emprunt est l'erreur la plus courante en soustraction.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève multiplie 23 × 45 : il fait 23×5=105, 23×4=82, et additionne 105+82=187.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "23×4=82 et position",
+          "correct_answer": "23×40=920, pas 23×4. 105+920=1035.",
+          "explanation": "Le 4 de 45 vaut 40, pas 4. On doit décaler d'un rang.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Quelle erreur courante fait-on souvent en division ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Oublier de descendre un chiffre ou mal estimer le quotient partiel",
+          "explanation": "Les erreurs courantes : oublier de descendre un chiffre, mal estimer le quotient.",
+          "hint": "",
+          "accepted_answers": [
+            "oublier de descendre",
+            "mal estimer",
+            "quotient partiel"
+          ]
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-MULTIPLIER::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "medium",
+          "text": "Calcule 3,5 × 4,2 (étape 1 : ignore la virgule).",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "steps": [
+            {
+              "instruction": "Calcule 35 × 42 (sans virgule)",
+              "expected": "1 470"
+            }
+          ],
+          "correct_answer": "1 470",
+          "explanation": "On multiplie d'abord comme des entiers : 35 × 42 = 1 470.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Pour calculer 2,7 × 3,1, multiplie d'abord 27 × 31 =",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 837,
+          "explanation": "27 × 31 = 837.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Pour 0,45 × 1,2, multiplie 45 × 12 =",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 540,
+          "explanation": "45 × 12 = 540.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 6,25 × 0,8 : étape 1.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Ignore les virgules : 625 × 8",
+              "expected": "5 000"
+            }
+          ],
+          "correct_answer": "5 000",
+          "explanation": "625 × 8 = 5 000.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-MULTIPLIER::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Dans 3,5 × 4,2, combien de chiffres après la virgule au total dans les facteurs ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "2",
+            "1",
+            "3",
+            "0"
+          ],
+          "correct_answer": "2",
+          "explanation": "3,5 a 1 décimale + 4,2 a 1 décimale = 2 décimales.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "Dans 0,45 × 1,2, le nombre total de décimales est ___.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "3",
+          "explanation": "0,45 a 2 décimales + 1,2 a 1 décimale = 3 décimales.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "6,1 × 2,05 : combien de décimales dans le produit ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "3",
+            "2",
+            "1",
+            "4"
+          ],
+          "correct_answer": "3",
+          "explanation": "6,1 (1 décimale) × 2,05 (2 décimales) = 3 décimales.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Dans 0,003 × 0,02, combien de décimales au total ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 5,
+          "explanation": "3 + 2 = 5 décimales.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "3,5 × 4,2 = ? (on a trouvé 35×42=1470, 2 décimales)",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 14.7,
+          "explanation": "1 470 avec 2 décimales → 14,70.",
+          "hint": "",
+          "tolerance": 0.01
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "0,45 × 1,2 = ? (on a trouvé 45×12=540, 3 décimales)",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 0.54,
+          "explanation": "540 avec 3 décimales → 0,540.",
+          "hint": "",
+          "tolerance": 0.001
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève calcule 2,5 × 1,3 et obtient 325.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "2,5×1,3=325",
+          "correct_answer": "2,5×1,3=3,25",
+          "explanation": "25×13=325, 2 décimales → 3,25.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "6,25 × 0,8 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 5.0,
+          "explanation": "625×8=5000, 3 décimales → 5,000.",
+          "hint": "",
+          "tolerance": 0.01
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-MULTIPLIER::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour vérifier 3,5 × 4,2 = 14,7, on estime : 4 × 4 = 16. 14,7 est-il plausible ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Oui, c'est proche de 16",
+            "Non, c'est trop loin",
+            "On ne peut pas savoir",
+            "Il faudrait 16 exactement"
+          ],
+          "correct_answer": "Oui, c'est proche de 16",
+          "explanation": "14,7 est proche de 16, le résultat est plausible.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève trouve 5,2 × 3,8 = 1,976. Vérifie par estimation.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "5,2×3,8=1,976",
+          "correct_answer": "5,2×3,8=19,76",
+          "explanation": "Estimation : 5 × 4 = 20. 1,976 est trop petit. Le bon résultat est 19,76.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Estime 9,8 × 5,1 et compare avec le résultat exact 49,98.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "50",
+          "explanation": "10 × 5 = 50. 49,98 ≈ 50 ✓.",
+          "hint": "",
+          "accepted_answers": [
+            "50",
+            "≈50",
+            "environ 50"
+          ]
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "2,1 × 0,9 devrait être :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Proche de 2",
+            "Proche de 20",
+            "Proche de 0,2",
+            "Proche de 200"
+          ],
+          "correct_answer": "Proche de 2",
+          "explanation": "2 × 1 = 2. Le résultat (1,89) est proche de 2.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-DIVISER::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Divise 7,56 par 4.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "7 ÷ 4 = 1, reste 3",
+              "expected": "1, reste 3"
+            },
+            {
+              "instruction": "Place la virgule dans le quotient (après les unités)",
+              "expected": "1,"
+            },
+            {
+              "instruction": "35 ÷ 4 = 8, reste 3",
+              "expected": "1,8 reste 3"
+            },
+            {
+              "instruction": "36 ÷ 4 = 9",
+              "expected": "1,89"
+            }
+          ],
+          "correct_answer": "1,89",
+          "explanation": "7,56 ÷ 4 = 1,89.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "14,4 ÷ 6 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 2.4,
+          "explanation": "14,4 ÷ 6 = 2,4.",
+          "hint": "",
+          "tolerance": 0.01
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève divise 9,6 par 3 et obtient 32.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "9,6÷3=32",
+          "correct_answer": "9,6÷3=3,2",
+          "explanation": "L'élève a oublié la virgule. 9,6÷3 = 3,2.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "25,5 ÷ 5 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 5.1,
+          "explanation": "25,5 ÷ 5 = 5,1.",
+          "hint": "",
+          "tolerance": 0.01
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-DIVISER::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 7 ÷ 4 en prolongeant la division.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "7 ÷ 4 = 1, reste 3",
+              "expected": "1, reste 3"
+            },
+            {
+              "instruction": "Ajoute un 0 : 30 ÷ 4 = 7, reste 2",
+              "expected": "1,7 reste 2"
+            },
+            {
+              "instruction": "Ajoute un 0 : 20 ÷ 4 = 5",
+              "expected": "1,75"
+            }
+          ],
+          "correct_answer": "1,75",
+          "explanation": "7 ÷ 4 = 1,75.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Calcule 5 ÷ 8 en quotient décimal.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 0.625,
+          "explanation": "5 ÷ 8 = 0,625.",
+          "hint": "",
+          "tolerance": 0.001
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "22 ÷ 8 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 2.75,
+          "explanation": "22 ÷ 8 = 2,75.",
+          "hint": "",
+          "tolerance": 0.01
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 3 ÷ 4.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "3 ÷ 4 = 0, reste 3",
+              "expected": "0,"
+            },
+            {
+              "instruction": "30 ÷ 4 = 7, reste 2",
+              "expected": "0,7"
+            },
+            {
+              "instruction": "20 ÷ 4 = 5",
+              "expected": "0,75"
+            }
+          ],
+          "correct_answer": "0,75",
+          "explanation": "3 ÷ 4 = 0,75.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-DIVISER::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Si on multiplie le dividende et le diviseur par 10, le quotient :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Ne change pas",
+            "Est multiplié par 10",
+            "Est divisé par 10",
+            "Est multiplié par 100"
+          ],
+          "correct_answer": "Ne change pas",
+          "explanation": "a/b = (a×10)/(b×10). Le quotient reste identique.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 4,5 ÷ 0,5 en utilisant la propriété des quotients égaux.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Multiplie les deux par 10 : 45 ÷ 5",
+              "expected": "45 ÷ 5"
+            },
+            {
+              "instruction": "Calcule 45 ÷ 5",
+              "expected": "9"
+            }
+          ],
+          "correct_answer": "9",
+          "explanation": "4,5 ÷ 0,5 = 45 ÷ 5 = 9.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "6,3 ÷ 0,9 = ? (utilise la propriété des quotients égaux).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "7",
+          "explanation": "63 ÷ 9 = 7.",
+          "hint": "",
+          "accepted_answers": [
+            "7"
+          ]
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "0,8 ÷ 0,4 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "2",
+            "0,2",
+            "20",
+            "0,02"
+          ],
+          "correct_answer": "2",
+          "explanation": "8 ÷ 4 = 2.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-DIVISER::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Donne le quotient approché au dixième de 10 ÷ 3.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 3.3,
+          "explanation": "10 ÷ 3 = 3,333… ≈ 3,3.",
+          "hint": "",
+          "tolerance": 0.05
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Le quotient de 7 ÷ 3 est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Un quotient approché (2,333…)",
+            "Un quotient exact (2,33)",
+            "Un nombre entier",
+            "Impossible"
+          ],
+          "correct_answer": "Un quotient approché (2,333…)",
+          "explanation": "7/3 = 2,333… est un nombre décimal périodique.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Arrondis 22 ÷ 7 au centième.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 3.14,
+          "explanation": "22 ÷ 7 = 3,142… ≈ 3,14.",
+          "hint": "",
+          "tolerance": 0.01
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève dit que 10 ÷ 3 = 3,3 exactement.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "10÷3 = 3,3 exactement",
+          "correct_answer": "10÷3 ≈ 3,3 (quotient approché)",
+          "explanation": "10 ÷ 3 = 3,333… c'est un quotient approché, pas exact.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-DECIMAUX-DIVISER::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Vérifie que 7,56 ÷ 4 = 1,89 par multiplication.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Calcule 1,89 × 4",
+              "expected": "7,56"
+            },
+            {
+              "instruction": "Compare avec le dividende",
+              "expected": "7,56 = 7,56 ✓"
+            }
+          ],
+          "correct_answer": "1,89 × 4 = 7,56 ✓",
+          "explanation": "La vérification par multiplication confirme le résultat.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève trouve 12,5 ÷ 5 = 2,6. Vérifie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "12,5÷5=2,6",
+          "correct_answer": "12,5÷5=2,5",
+          "explanation": "2,6 × 5 = 13 ≠ 12,5. Le bon résultat est 2,5 (2,5 × 5 = 12,5).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Comment vérifier 24,8 ÷ 8 = 3,1 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "3,1 × 8 = 24,8",
+          "explanation": "On multiplie quotient × diviseur.",
+          "hint": "",
+          "accepted_answers": [
+            "3,1 × 8",
+            "3,1 × 8 = 24,8",
+            "8 × 3,1"
+          ]
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Si 6,3 ÷ 0,9 = 7, alors 7 × 0,9 devrait donner :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "6,3",
+            "7",
+            "0,9",
+            "63"
+          ],
+          "correct_answer": "6,3",
+          "explanation": "Vérification : 7 × 0,9 = 6,3 ✓.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "3/7 + 2/7 = ?/7. Quel est le numérateur ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 5,
+          "explanation": "3/7 + 2/7 = 5/7.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "medium",
+          "text": "Calcule 4/9 + 3/9.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "steps": [
+            {
+              "instruction": "Les dénominateurs sont identiques (9)",
+              "expected": "Même dénominateur"
+            },
+            {
+              "instruction": "Additionne les numérateurs : 4+3",
+              "expected": "7"
+            },
+            {
+              "instruction": "Le résultat est 7/9",
+              "expected": "7/9"
+            }
+          ],
+          "correct_answer": "7/9",
+          "explanation": "Même dénominateur : on additionne les numérateurs.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "1/5 + 3/5 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "4/5",
+            "4/10",
+            "3/5",
+            "1/5"
+          ],
+          "correct_answer": "4/5",
+          "explanation": "1+3=4, dénominateur 5. Résultat : 4/5.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "5/12 + 4/12 = ?/12.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 9,
+          "explanation": "5+4=9 → 9/12.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "7/8 - 3/8 = ?/8.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 4,
+          "explanation": "7-3=4 → 4/8 = 1/2.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "medium",
+          "text": "Calcule 5/6 - 2/6.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "steps": [
+            {
+              "instruction": "Les dénominateurs sont identiques (6)",
+              "expected": "Même dénominateur"
+            },
+            {
+              "instruction": "Soustrais les numérateurs : 5-2",
+              "expected": "3"
+            },
+            {
+              "instruction": "Résultat : 3/6 = 1/2",
+              "expected": "3/6"
+            }
+          ],
+          "correct_answer": "3/6",
+          "explanation": "5/6 - 2/6 = 3/6 = 1/2.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "9/10 - 4/10 = ?/10.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 5,
+          "explanation": "9-4=5 → 5/10.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "11/15 - 6/15 = ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "5/15",
+            "5/30",
+            "17/15",
+            "6/15"
+          ],
+          "correct_answer": "5/15",
+          "explanation": "11-6=5, dénominateur 15.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "7/4 en nombre mixte : partie entière ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 1,
+          "explanation": "7÷4=1 reste 3 → 1 3/4.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "9/5 = ___ ___/5.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "1 4/5",
+          "explanation": "9÷5=1 reste 4 → 1 4/5.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "11/3 en nombre mixte :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "3 2/3",
+            "3 1/3",
+            "2 3/3",
+            "4 1/3"
+          ],
+          "correct_answer": "3 2/3",
+          "explanation": "11÷3=3 reste 2.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "13/6 : partie entière ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 2,
+          "explanation": "13÷6=2 reste 1 → 2 1/6.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Simplifie 6/8. Numérateur de la fraction irréductible ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 3,
+          "explanation": "6/8 = 3/4 (÷2).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève simplifie 4/12 et obtient 2/4.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "4/12=2/4",
+          "correct_answer": "4/12=1/3",
+          "explanation": "4÷4=1, 12÷4=3 → 1/3.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "8/12 simplifié = ___",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "2/3",
+          "explanation": "PGCD(8,12)=4. 8÷4=2, 12÷4=3.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "10/15 simplifié :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "2/3",
+            "1/3",
+            "5/3",
+            "10/15"
+          ],
+          "correct_answer": "2/3",
+          "explanation": "÷5: 10/15=2/3.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève calcule 2/5 + 3/5 = 5/10.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "2/5+3/5=5/10",
+          "correct_answer": "2/5+3/5=5/5=1",
+          "explanation": "On n'additionne PAS les dénominateurs. On garde le dénominateur commun : 5.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "L'erreur dans 3/7 + 2/7 = 5/14 est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Le dénominateur a été additionné (7+7=14)",
+            "Le numérateur est faux",
+            "Le calcul est correct",
+            "Les fractions ne sont pas compatibles"
+          ],
+          "correct_answer": "Le dénominateur a été additionné (7+7=14)",
+          "explanation": "On garde le dénominateur commun, on ne l'additionne pas.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Erreur : 4/9 + 5/9 = 9/18.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "4/9+5/9=9/18",
+          "correct_answer": "4/9+5/9=9/9=1",
+          "explanation": "Le dénominateur reste 9, pas 18. 4+5=9, résultat 9/9=1.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Quelle est l'erreur typique quand on additionne des fractions de même dénominateur ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Additionner aussi les dénominateurs",
+          "explanation": "L'erreur fréquente est d'additionner les dénominateurs au lieu de les garder.",
+          "hint": "",
+          "accepted_answers": [
+            "additionner les dénominateurs",
+            "dénominateurs additionnés"
+          ]
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Trouve un dénominateur commun pour 1/3 et 1/4.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Multiples de 3 : 3, 6, 9, 12...",
+              "expected": "3,6,9,12"
+            },
+            {
+              "instruction": "Multiples de 4 : 4, 8, 12...",
+              "expected": "4,8,12"
+            },
+            {
+              "instruction": "Le plus petit commun est 12",
+              "expected": "12"
+            }
+          ],
+          "correct_answer": "12",
+          "explanation": "Le PPCM de 3 et 4 est 12.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "Dénominateur commun pour 1/2 et 1/5 : ___",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "10",
+          "explanation": "Multiples de 2 : 2,4,6,8,10. Multiples de 5 : 5,10. PPCM = 10.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Quel dénominateur commun pour 2/3 et 5/6 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "6",
+            "18",
+            "9",
+            "3"
+          ],
+          "correct_answer": "6",
+          "explanation": "6 est un multiple de 3 et de 6.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Dénominateur commun pour 3/4 et 5/8 ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 8,
+          "explanation": "8 est un multiple de 4 et de 8.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Réduis 1/3 et 1/4 au même dénominateur (12).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "1/3 = ?/12 → 1×4=4, 3×4=12",
+              "expected": "4/12"
+            },
+            {
+              "instruction": "1/4 = ?/12 → 1×3=3, 4×3=12",
+              "expected": "3/12"
+            }
+          ],
+          "correct_answer": "4/12 et 3/12",
+          "explanation": "1/3 = 4/12, 1/4 = 3/12.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "2/5 = ___/10",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "4/10",
+          "explanation": "2×2=4, 5×2=10 → 4/10.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "3/4 au dénominateur 12 : numérateur ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 9,
+          "explanation": "3×3=9, 4×3=12 → 9/12.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Réduis 2/3 et 5/6 au même dénominateur.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Dénominateur commun = 6",
+              "expected": "6"
+            },
+            {
+              "instruction": "2/3 = 4/6",
+              "expected": "4/6"
+            },
+            {
+              "instruction": "5/6 reste 5/6",
+              "expected": "5/6"
+            }
+          ],
+          "correct_answer": "4/6 et 5/6",
+          "explanation": "2/3 = 4/6 (×2), 5/6 reste 5/6.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 1/3 + 1/4.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Dénominateur commun : 12",
+              "expected": "12"
+            },
+            {
+              "instruction": "1/3 = 4/12, 1/4 = 3/12",
+              "expected": "4/12 et 3/12"
+            },
+            {
+              "instruction": "4/12 + 3/12 = 7/12",
+              "expected": "7/12"
+            }
+          ],
+          "correct_answer": "7/12",
+          "explanation": "1/3 + 1/4 = 4/12 + 3/12 = 7/12.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "1/2 + 1/3 = ?/6.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 5,
+          "explanation": "3/6 + 2/6 = 5/6.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "2/5 + 1/10 = ?/10.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 5,
+          "explanation": "4/10 + 1/10 = 5/10.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "3/4 + 1/6 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "11/12",
+            "4/10",
+            "7/12",
+            "3/10"
+          ],
+          "correct_answer": "11/12",
+          "explanation": "9/12 + 2/12 = 11/12.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 3/4 - 1/3.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Dénominateur commun : 12",
+              "expected": "12"
+            },
+            {
+              "instruction": "3/4 = 9/12, 1/3 = 4/12",
+              "expected": "9/12 et 4/12"
+            },
+            {
+              "instruction": "9/12 - 4/12 = 5/12",
+              "expected": "5/12"
+            }
+          ],
+          "correct_answer": "5/12",
+          "explanation": "3/4 - 1/3 = 9/12 - 4/12 = 5/12.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "5/6 - 1/2 = ?/6.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 2,
+          "explanation": "5/6 - 3/6 = 2/6 = 1/3.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "7/8 - 1/4 = ?/8.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 5,
+          "explanation": "7/8 - 2/8 = 5/8.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "2/3 - 1/4 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "5/12",
+            "1/7",
+            "3/12",
+            "1/12"
+          ],
+          "correct_answer": "5/12",
+          "explanation": "8/12 - 3/12 = 5/12.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève réduit 1/3 au dénominateur 6 et obtient 1/6.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "1/3 = 1/6",
+          "correct_answer": "1/3 = 2/6",
+          "explanation": "Il faut multiplier numérateur et dénominateur par 2 : 1×2=2, 3×2=6.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "L'erreur dans la réduction 2/5 = 4/15 est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Le numérateur a été multiplié par 2 mais le dénominateur par 3",
+            "Le numérateur est faux",
+            "Le dénominateur est faux",
+            "C'est correct"
+          ],
+          "correct_answer": "Le numérateur a été multiplié par 2 mais le dénominateur par 3",
+          "explanation": "Il faut multiplier les deux par le MÊME nombre. 2/5 = 6/15 (×3).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Erreur : 3/4 + 2/3 = 5/7 (l'élève a additionné numérateurs ET dénominateurs).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "3/4+2/3=5/7",
+          "correct_answer": "3/4+2/3 = 9/12+8/12 = 17/12",
+          "explanation": "On ne peut pas additionner directement des fractions de dénominateurs différents. Il faut réduire au même dénominateur.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Quelle est l'erreur la plus courante en addition de fractions de dénominateurs différents ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Additionner directement les numérateurs et les dénominateurs sans réduire",
+          "explanation": "L'erreur classique : a/b + c/d = (a+c)/(b+d), ce qui est faux.",
+          "hint": "",
+          "accepted_answers": [
+            "additionner numérateurs et dénominateurs",
+            "sans réduire",
+            "pas réduire"
+          ]
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-X-ENT::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "2/5 × 3 signifie :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "2/5 + 2/5 + 2/5",
+            "2 × 3 / 5 × 3",
+            "2/15",
+            "5/3"
+          ],
+          "correct_answer": "2/5 + 2/5 + 2/5",
+          "explanation": "Multiplier une fraction par un entier = additionner la fraction autant de fois.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Explique 3/4 × 2 comme une addition répétée.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "3/4 + 3/4",
+          "explanation": "3/4 × 2 = 3/4 + 3/4 = 6/4.",
+          "hint": "",
+          "accepted_answers": [
+            "3/4 + 3/4",
+            "3/4+3/4"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "true_false",
+          "difficulty": "medium",
+          "text": "5/7 × 4 = 5/7 + 5/7 + 5/7 + 5/7.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": true,
+          "explanation": "C'est la définition de la multiplication par un entier.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "easy",
+          "text": "1/3 × 3 = ?",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "choices": [
+            "1",
+            "3/9",
+            "1/9",
+            "3"
+          ],
+          "correct_answer": "1",
+          "explanation": "1/3 + 1/3 + 1/3 = 3/3 = 1.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-X-ENT::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 3/5 × 4.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Multiplie le numérateur par l'entier : 3×4",
+              "expected": "12"
+            },
+            {
+              "instruction": "Le dénominateur ne change pas : 5",
+              "expected": "5"
+            },
+            {
+              "instruction": "Résultat : 12/5",
+              "expected": "12/5"
+            }
+          ],
+          "correct_answer": "12/5",
+          "explanation": "3/5 × 4 = 12/5.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "2/7 × 5 = ?/7.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 10,
+          "explanation": "2×5=10, dénominateur 7 → 10/7.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "4/9 × 3 = ?/9.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 12,
+          "explanation": "4×3=12 → 12/9 = 4/3.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "5/8 × 6 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "30/8",
+            "11/8",
+            "5/48",
+            "30/48"
+          ],
+          "correct_answer": "30/8",
+          "explanation": "5×6=30, dénominateur 8 → 30/8 = 15/4.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-X-ENT::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "12/5 en nombre mixte = ___ ___/5.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "2 2/5",
+          "explanation": "12÷5=2 reste 2 → 2 2/5.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "30/8 simplifié : numérateur ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 15,
+          "explanation": "30/8 = 15/4 (÷2). En mixte : 3 3/4.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "7/3 × 2 = 14/3 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "4 2/3",
+            "4 1/3",
+            "5 2/3",
+            "3 2/3"
+          ],
+          "correct_answer": "4 2/3",
+          "explanation": "14÷3=4 reste 2 → 4 2/3.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "20/6 simplifié = ___",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "10/3",
+          "explanation": "÷2 : 20/6=10/3 = 3 1/3.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-X-ENT::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève calcule 2/3 × 5 = 10/15.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "2/3×5=10/15",
+          "correct_answer": "2/3×5=10/3",
+          "explanation": "On multiplie SEULEMENT le numérateur : 2×5=10. Le dénominateur reste 3.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "L'erreur dans 4/7 × 3 = 12/21 est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Le dénominateur a aussi été multiplié par 3",
+            "Le numérateur est faux",
+            "C'est correct",
+            "Le résultat devrait être entier"
+          ],
+          "correct_answer": "Le dénominateur a aussi été multiplié par 3",
+          "explanation": "Seul le numérateur est multiplié. 4×3=12, dénominateur reste 7 → 12/7.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Erreur : 3/8 × 4 = 12/32.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "3/8×4=12/32",
+          "correct_answer": "3/8×4=12/8=3/2",
+          "explanation": "Le dénominateur ne change pas quand on multiplie par un entier.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Quelle erreur fait-on souvent quand on multiplie une fraction par un entier ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Multiplier aussi le dénominateur",
+          "explanation": "L'erreur classique : multiplier numérateur ET dénominateur, au lieu du numérateur seul.",
+          "hint": "",
+          "accepted_answers": [
+            "multiplier le dénominateur",
+            "dénominateur multiplié",
+            "numérateur et dénominateur"
+          ]
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-PART-QUANT::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Pour calculer les 3/4 de 80, le « tout » est :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "80",
+            "3",
+            "4",
+            "60"
+          ],
+          "correct_answer": "80",
+          "explanation": "Le « tout » est la quantité de référence : 80.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Dans « les 2/5 de 150 élèves », que représente le « tout » ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "150",
+          "explanation": "150 élèves est la quantité de référence.",
+          "hint": "",
+          "accepted_answers": [
+            "150",
+            "150 élèves"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "La fraction « 2/5 » signifie :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "2 parts sur un total de 5",
+            "5 parts sur un total de 2",
+            "2+5",
+            "2÷5 seulement"
+          ],
+          "correct_answer": "2 parts sur un total de 5",
+          "explanation": "Le numérateur = parts prises, le dénominateur = parts totales.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "true_false",
+          "difficulty": "easy",
+          "text": "Pour trouver 1/4 de 100, je divise 100 par 4.",
+          "points": 1,
+          "time_limit_seconds": 45,
+          "correct_answer": true,
+          "explanation": "1/4 de 100 = 100÷4 = 25.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-PART-QUANT::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "numeric_input",
+          "difficulty": "medium",
+          "text": "Calcule 1/5 de 350.",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": 70,
+          "explanation": "350 ÷ 5 = 70.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 1/8 de 240.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Divise 240 par le dénominateur (8)",
+              "expected": "240 ÷ 8 = 30"
+            }
+          ],
+          "correct_answer": "30",
+          "explanation": "1/8 de 240 = 240÷8 = 30.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "contextual_problem",
+          "difficulty": "hard",
+          "text": "Moussa a 600 F. Il dépense 1/3 de son argent. Combien a-t-il dépensé ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "sub_questions": [
+            {
+              "text": "Que faut-il calculer ?",
+              "answer": "1/3 de 600"
+            },
+            {
+              "text": "Calcule",
+              "answer": "600 ÷ 3 = 200 F"
+            }
+          ],
+          "correct_answer": "200 F",
+          "explanation": "1/3 de 600 = 200 F.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "1/6 de 420 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 70,
+          "explanation": "420 ÷ 6 = 70.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-PART-QUANT::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Calcule 3/4 de 80.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "1/4 de 80 = 80÷4",
+              "expected": "20"
+            },
+            {
+              "instruction": "3/4 de 80 = 3 × 20",
+              "expected": "60"
+            }
+          ],
+          "correct_answer": "60",
+          "explanation": "3/4 de 80 = 60.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "2/5 de 150 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 60,
+          "explanation": "150÷5=30, 30×2=60.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "contextual_problem",
+          "difficulty": "hard",
+          "text": "Une classe a 40 élèves. Les 3/8 sont des filles. Combien y a-t-il de filles ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "sub_questions": [
+            {
+              "text": "1/8 de 40 ?",
+              "answer": "5"
+            },
+            {
+              "text": "3/8 de 40 ?",
+              "answer": "15"
+            }
+          ],
+          "correct_answer": "15 filles",
+          "explanation": "40÷8=5, 5×3=15.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "5/6 de 180 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 150,
+          "explanation": "180÷6=30, 30×5=150.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-PART-QUANT::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour calculer 3/4 de 2,8 km, il vaut mieux :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Convertir en mètres (2 800 m) puis calculer 3/4",
+            "Garder en km et diviser par 3",
+            "Multiplier 3 × 4 × 2,8",
+            "Additionner 3 + 4 + 2,8"
+          ],
+          "correct_answer": "Convertir en mètres (2 800 m) puis calculer 3/4",
+          "explanation": "2 800 m ÷ 4 = 700 m, 700 × 3 = 2 100 m = 2,1 km.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "contextual_problem",
+          "difficulty": "hard",
+          "text": "Un commerçant a 0,75 kg de sucre. Il vend les 2/3. Combien vend-il ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "sub_questions": [
+            {
+              "text": "Convertis en grammes",
+              "answer": "750 g"
+            },
+            {
+              "text": "2/3 de 750 g",
+              "answer": "750÷3=250, 250×2=500 g"
+            }
+          ],
+          "correct_answer": "500 g",
+          "explanation": "750÷3=250, 250×2=500 g = 0,5 kg.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour les 3/5 de 1,5 L :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "On calcule 1,5÷5×3 = 0,9 L",
+            "On calcule 1,5×5÷3",
+            "On calcule 3÷5×1,5",
+            "On ne peut pas"
+          ],
+          "correct_answer": "On calcule 1,5÷5×3 = 0,9 L",
+          "explanation": "1,5÷5=0,3, 0,3×3=0,9 L.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Est-il plus facile de calculer 3/4 de 2,4 en fraction ou en décimal ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "En décimal : 2,4 ÷ 4 = 0,6, puis 0,6 × 3 = 1,8",
+          "explanation": "En décimal, le calcul est direct.",
+          "hint": "",
+          "accepted_answers": [
+            "décimal",
+            "en décimal"
+          ]
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-PART-QUANT::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève calcule 1/4 de 200 : il fait 200 × 4 = 800.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "200×4=800",
+          "correct_answer": "200÷4=50",
+          "explanation": "Pour 1/n d'une quantité, on DIVISE par n, on ne multiplie pas.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Erreur : 2/3 de 90 = 90÷2×3 = 135.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "90÷2×3=135",
+          "correct_answer": "90÷3×2=60",
+          "explanation": "On divise par le dénominateur (3), pas le numérateur (2). 90÷3=30, 30×2=60.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "L'erreur dans « 3/5 de 100 = 100÷3×5 = 166 » est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "L'élève a divisé par le numérateur au lieu du dénominateur",
+            "Le calcul est correct",
+            "Il faut multiplier",
+            "L'unité est fausse"
+          ],
+          "correct_answer": "L'élève a divisé par le numérateur au lieu du dénominateur",
+          "explanation": "Correct : 100÷5=20, 20×3=60.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Quelle erreur courante fait-on avec les fractions d'une quantité ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Confondre multiplier et diviser, ou inverser numérateur et dénominateur",
+          "explanation": "Les erreurs fréquentes : diviser par le numérateur, oublier l'unité.",
+          "hint": "",
+          "accepted_answers": [
+            "inverser",
+            "confondre multiplier et diviser",
+            "diviser par le numérateur"
+          ]
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-RETROUVER-TOUT::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Les 3/5 d'un nombre valent 60. La fraction connue est :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "3/5",
+            "60/3",
+            "5/3",
+            "60/5"
+          ],
+          "correct_answer": "3/5",
+          "explanation": "3/5 est la fraction donnée, 60 est la valeur correspondante.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Les 2/7 de la récolte = 140 kg. Identifie la fraction et la valeur.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Fraction : 2/7, valeur : 140 kg",
+          "explanation": "2/7 est la fraction, 140 kg est la valeur.",
+          "hint": "",
+          "accepted_answers": [
+            "2/7 et 140",
+            "fraction 2/7, valeur 140"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Si 4/9 d'un prix = 200 F, que faut-il trouver ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Le prix total (le tout)",
+            "4 fois 200",
+            "9 fois 200",
+            "200 ÷ 4"
+          ],
+          "correct_answer": "Le prix total (le tout)",
+          "explanation": "On cherche le tout dont 4/9 vaut 200 F.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "Les 5/8 de la distance = 250 m. La fraction connue est ___, la valeur est ___.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "5/8, 250 m",
+          "explanation": "La fraction est 5/8, la valeur est 250 m.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-RETROUVER-TOUT::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Les 3/5 d'un nombre valent 60. Retrouve 1/5.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "3/5 = 60, donc 1/5 = 60 ÷ 3",
+              "expected": "20"
+            }
+          ],
+          "correct_answer": "20",
+          "explanation": "1/5 = 60 ÷ 3 = 20.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Les 2/7 d'un poids = 140 g. 1/7 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 70,
+          "explanation": "140 ÷ 2 = 70 g.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Les 4/9 d'un prix = 360 F. 1/9 = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 90,
+          "explanation": "360 ÷ 4 = 90 F.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Les 5/6 d'un trajet = 250 km. Retrouve 1/6.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "5/6 = 250, donc 1/6 = 250 ÷ 5",
+              "expected": "50"
+            }
+          ],
+          "correct_answer": "50 km",
+          "explanation": "250 ÷ 5 = 50 km.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-RETROUVER-TOUT::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Les 3/5 d'un nombre valent 60. Retrouve le tout.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "1/5 = 60 ÷ 3 = 20",
+              "expected": "20"
+            },
+            {
+              "instruction": "Le tout = 5/5 = 20 × 5",
+              "expected": "100"
+            }
+          ],
+          "correct_answer": "100",
+          "explanation": "1/5=20, le tout=20×5=100.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Les 2/7 = 140. Le tout = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 490,
+          "explanation": "1/7=70, tout=70×7=490.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "contextual_problem",
+          "difficulty": "hard",
+          "text": "Akouavi a dépensé les 3/4 de son argent, soit 450 F. Combien avait-elle au départ ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "sub_questions": [
+            {
+              "text": "1/4 = ?",
+              "answer": "450÷3=150"
+            },
+            {
+              "text": "Le tout (4/4) = ?",
+              "answer": "150×4=600"
+            }
+          ],
+          "correct_answer": "600 F",
+          "explanation": "1/4=150, tout=600 F.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Les 5/8 d'une récolte = 200 kg. Récolte totale = ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 320,
+          "explanation": "1/8=40, tout=40×8=320 kg.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-RETROUVER-TOUT::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Vérifie : si le tout = 100 et la fraction est 3/5, alors 3/5 de 100 = 60.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Calcule 3/5 de 100",
+              "expected": "100÷5=20, 20×3=60"
+            },
+            {
+              "instruction": "Compare avec la valeur donnée",
+              "expected": "60 = 60 ✓"
+            }
+          ],
+          "correct_answer": "Vérifié : 3/5 de 100 = 60 ✓",
+          "explanation": "On vérifie en recalculant la fraction du tout trouvé.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève trouve le tout = 80 pour 2/5 = 40. Vérifie.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Le tout = 80",
+          "correct_answer": "2/5 de 80 = 32 ≠ 40. Le tout est faux.",
+          "explanation": "2/5 de 80 = 32, pas 40. Le vrai tout = 100 (40÷2×5).",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Comment vérifier le tout quand on connaît k/n = valeur ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Calculer k/n du tout trouvé et vérifier qu'on obtient la valeur",
+          "explanation": "On recalcule la fraction du résultat pour vérifier.",
+          "hint": "",
+          "accepted_answers": [
+            "recalculer",
+            "vérifier",
+            "k/n du tout"
+          ]
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "3/4 d'un prix = 150 F. Un élève dit le tout = 400 F. Vrai ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Tout = 400",
+          "correct_answer": "3/4 de 400 = 300 ≠ 150. Le tout = 200 F.",
+          "explanation": "3/4 de 200 = 150 ✓. Le tout est 200 F.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-FRAC-RETROUVER-TOUT::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Les 3/5 = 60. L'élève calcule : 60 ÷ 5 = 12, tout = 12 × 3 = 36.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "60÷5×3=36",
+          "correct_answer": "60÷3×5=100",
+          "explanation": "L'élève a divisé par le dénominateur (5) au lieu du numérateur (3). Correct : 60÷3=20, 20×5=100.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Erreur typique : diviser par n au lieu de k dans k/n = valeur. Si 2/7 = 140, l'élève fait :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "140÷7=20, tout=20×2=40",
+            "140÷2=70, tout=70×7=490",
+            "140×2÷7=40",
+            "140+7=147"
+          ],
+          "correct_answer": "140÷7=20, tout=20×2=40",
+          "explanation": "L'erreur est d'inverser les rôles de k et n. Correct : 140÷2=70, 70×7=490.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "4/5 = 80. L'élève confond part et tout : il dit le tout = 80.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "Tout=80",
+          "correct_answer": "Tout=100",
+          "explanation": "80 est la PARTIE (4/5), pas le tout. 1/5=20, tout=100.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Quelles sont les deux erreurs courantes pour retrouver le tout à partir de k/n ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "1) Diviser par n au lieu de k. 2) Confondre la partie et le tout.",
+          "explanation": "Erreurs : inverser k et n dans la division, confondre la partie avec le tout.",
+          "hint": "",
+          "accepted_answers": [
+            "diviser par n",
+            "confondre partie et tout",
+            "inverser"
+          ]
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-PB-MULTI::MS01",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "Dans le problème « Kofi achète 3 cahiers à 250 F et 2 stylos à 150 F. Combien dépense-t-il ? », les données sont :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "3 cahiers, 250 F/cahier, 2 stylos, 150 F/stylo",
+            "Seulement 3 et 2",
+            "Le total",
+            "Kofi"
+          ],
+          "correct_answer": "3 cahiers, 250 F/cahier, 2 stylos, 150 F/stylo",
+          "explanation": "Les données numériques utiles sont les quantités et les prix.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Quel est la question posée dans : « Un jardin fait 15 m de long et 8 m de large. Quelle est son aire ? » ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "Quelle est l'aire du jardin",
+          "explanation": "On cherche l'aire du rectangle.",
+          "hint": "",
+          "accepted_answers": [
+            "aire",
+            "aire du jardin",
+            "quelle est son aire"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Identifie les données et la question : « Moussa parcourt 2,5 km en 30 min. Quelle est sa vitesse en km/h ? »",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Données",
+              "expected": "2,5 km, 30 min"
+            },
+            {
+              "instruction": "Question",
+              "expected": "Vitesse en km/h"
+            },
+            {
+              "instruction": "Unités",
+              "expected": "km et min → km/h"
+            }
+          ],
+          "correct_answer": "Données : 2,5 km, 30 min. Question : vitesse en km/h.",
+          "explanation": "Il faut repérer les nombres, les unités et ce qu'on cherche.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "medium",
+          "text": "La question « Combien reste-t-il ? » demande :",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "choices": [
+            "Une soustraction",
+            "Une addition",
+            "Une multiplication",
+            "Une division"
+          ],
+          "correct_answer": "Une soustraction",
+          "explanation": "« Reste » indique une soustraction.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-PB-MULTI::MS02",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Organise : « Un marchand achète 50 mangues à 100 F pièce. Il en vend 35 à 150 F. Quel est son bénéfice ? »",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Coût d'achat : 50 × 100 F",
+              "expected": "5 000 F"
+            },
+            {
+              "instruction": "Recette de vente : 35 × 150 F",
+              "expected": "5 250 F"
+            },
+            {
+              "instruction": "Bénéfice = recette - coût",
+              "expected": "250 F"
+            }
+          ],
+          "correct_answer": "250 F",
+          "explanation": "On organise : achat, vente, puis bénéfice.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour organiser un problème à étapes, il est utile de :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Faire un schéma ou un tableau",
+            "Deviner la réponse",
+            "Lire une seule fois",
+            "Copier l'énoncé"
+          ],
+          "correct_answer": "Faire un schéma ou un tableau",
+          "explanation": "Un tableau ou schéma aide à structurer les informations.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "fill_blank",
+          "difficulty": "hard",
+          "text": "Pour le problème : « 4 amis partagent 2 400 F. Chacun en dépense 1/3. Combien reste-t-il à chacun ? » — Nombre d'étapes : ___",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "2",
+          "explanation": "Étape 1 : part de chacun = 2400÷4=600. Étape 2 : reste = 600 - 600÷3 = 400.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "short_answer",
+          "difficulty": "medium",
+          "text": "Quel outil utilises-tu pour organiser les données d'un problème ?",
+          "points": 2,
+          "time_limit_seconds": 60,
+          "correct_answer": "Un tableau ou un schéma",
+          "explanation": "Un tableau ou un schéma permet de structurer les données.",
+          "hint": "",
+          "accepted_answers": [
+            "tableau",
+            "schéma",
+            "dessin"
+          ]
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-PB-MULTI::MS03",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Kofi a 5 000 F. Il achète 3 livres à 1 200 F chacun. Combien lui reste-t-il ? Opérations :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Multiplication puis soustraction",
+            "Addition puis multiplication",
+            "Soustraction puis division",
+            "Addition seule"
+          ],
+          "correct_answer": "Multiplication puis soustraction",
+          "explanation": "3 × 1 200 = 3 600, puis 5 000 - 3 600 = 1 400 F.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Un rectangle a un périmètre de 50 cm et une longueur de 15 cm. Quelle opération pour trouver la largeur ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Soustraction puis division",
+          "explanation": "P = 2(L+l), donc l = (50-2×15)/2 = 10 cm.",
+          "hint": "",
+          "accepted_answers": [
+            "soustraction",
+            "soustraction et division"
+          ]
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Quelles opérations pour : « 240 billes partagées en 6 sacs. On retire 5 billes de chaque sac. Combien dans chaque sac ? »",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Opération 1 : 240 ÷ 6",
+              "expected": "Division"
+            },
+            {
+              "instruction": "Opération 2 : résultat - 5",
+              "expected": "Soustraction"
+            }
+          ],
+          "correct_answer": "Division puis soustraction",
+          "explanation": "240÷6=40, 40-5=35 billes.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Pour un prix TTC (prix HT + 10% de taxe), on utilise :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Multiplication puis addition",
+            "Division seule",
+            "Soustraction",
+            "Aucune de ces réponses"
+          ],
+          "correct_answer": "Multiplication puis addition",
+          "explanation": "Taxe = prix × 10/100, puis TTC = prix + taxe.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-PB-MULTI::MS04",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "contextual_problem",
+          "difficulty": "hard",
+          "text": "Un terrain rectangulaire fait 45 m de long et 30 m de large. On veut le clôturer (prix : 250 F/m) et semer du gazon (150 F/m²).",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "sub_questions": [
+            {
+              "text": "Périmètre ?",
+              "answer": "2×(45+30) = 150 m"
+            },
+            {
+              "text": "Coût clôture ?",
+              "answer": "150 × 250 = 37 500 F"
+            },
+            {
+              "text": "Aire ?",
+              "answer": "45 × 30 = 1 350 m²"
+            },
+            {
+              "text": "Coût gazon ?",
+              "answer": "1 350 × 150 = 202 500 F"
+            }
+          ],
+          "correct_answer": "Clôture : 37 500 F, gazon : 202 500 F, total : 240 000 F",
+          "explanation": "Périmètre pour la clôture, aire pour le gazon.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Adjo achète 4 kg de riz à 350 F/kg et 2 kg de sucre à 500 F/kg. Combien dépense-t-elle ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 2400,
+          "explanation": "4×350=1400, 2×500=1000, total=2400 F.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Un bus transporte 45 élèves. Au 1er arrêt, 12 descendent et 8 montent. Au 2e arrêt, 15 descendent.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Après 1er arrêt : 45-12+8",
+              "expected": "41"
+            },
+            {
+              "instruction": "Après 2e arrêt : 41-15",
+              "expected": "26"
+            }
+          ],
+          "correct_answer": "26 élèves",
+          "explanation": "45-12+8=41, 41-15=26.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "numeric_input",
+          "difficulty": "hard",
+          "text": "Prix total : 3 stylos à 75 F + 5 cahiers à 200 F + 1 sac à 2 500 F.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": 3725,
+          "explanation": "3×75=225, 5×200=1000, 1×2500=2500. Total=3725 F.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-PB-MULTI::MS05",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Le résultat du problème est 35 billes. Rédige une réponse complète.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Il reste 35 billes dans chaque sac.",
+          "explanation": "La réponse doit être une phrase avec l'unité.",
+          "hint": "",
+          "accepted_answers": [
+            "35 billes",
+            "Il reste 35 billes"
+          ]
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Une bonne réponse à un problème de maths contient :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Une phrase, le nombre et l'unité",
+            "Juste le nombre",
+            "Juste le calcul",
+            "Le dessin"
+          ],
+          "correct_answer": "Une phrase, le nombre et l'unité",
+          "explanation": "La réponse est une phrase complète avec l'unité.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève répond « 150 » au lieu de « Il reste 150 F à Kofi ».",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "150",
+          "correct_answer": "Il reste 150 F à Kofi.",
+          "explanation": "La réponse doit être une phrase avec l'unité et le contexte.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Rédige la réponse : « L'aire du terrain est de 1 350 m². »",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Commence par une phrase de réponse",
+              "expected": "L'aire du terrain est de..."
+            },
+            {
+              "instruction": "Indique le nombre",
+              "expected": "1 350"
+            },
+            {
+              "instruction": "Ajoute l'unité",
+              "expected": "m²"
+            }
+          ],
+          "correct_answer": "L'aire du terrain est de 1 350 m².",
+          "explanation": "Phrase + nombre + unité.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "micro_skill_external_id": "OPS-PB-MULTI::MS06",
+      "exercises": [
+        {
+          "exercise_id": "EX001",
+          "type": "error_correction",
+          "difficulty": "hard",
+          "text": "Un élève trouve que 3 cahiers à 200 F coûtent 900 F.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "erroneous_content": "3×200=900",
+          "correct_answer": "3×200=600",
+          "explanation": "3 × 200 = 600, pas 900. L'élève a multiplié par un mauvais nombre.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX002",
+          "type": "guided_steps",
+          "difficulty": "hard",
+          "text": "Vérifie : périmètre d'un rectangle 12×8 = 32 cm.",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "steps": [
+            {
+              "instruction": "Calcule 2×(12+8)",
+              "expected": "2×20=40"
+            },
+            {
+              "instruction": "Compare avec 32",
+              "expected": "40 ≠ 32, erreur !"
+            }
+          ],
+          "correct_answer": "Le périmètre est 40 cm, pas 32.",
+          "explanation": "2×(12+8) = 40.",
+          "hint": ""
+        },
+        {
+          "exercise_id": "EX003",
+          "type": "short_answer",
+          "difficulty": "hard",
+          "text": "Comment vérifier la réponse d'un problème ?",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "correct_answer": "Refaire le calcul ou utiliser l'opération inverse",
+          "explanation": "On peut refaire le calcul ou vérifier par l'opération inverse.",
+          "hint": "",
+          "accepted_answers": [
+            "refaire",
+            "opération inverse",
+            "vérifier"
+          ]
+        },
+        {
+          "exercise_id": "EX004",
+          "type": "mcq",
+          "difficulty": "hard",
+          "text": "Un résultat est vraisemblable si :",
+          "points": 3,
+          "time_limit_seconds": 90,
+          "choices": [
+            "Il est cohérent avec les données et l'ordre de grandeur",
+            "Il est un nombre rond",
+            "Il est positif",
+            "Il est inférieur à 100"
+          ],
+          "correct_answer": "Il est cohérent avec les données et l'ordre de grandeur",
+          "explanation": "La vraisemblance = cohérence avec les données.",
+          "hint": ""
+        }
+      ]
+    }
+  ]
+}
