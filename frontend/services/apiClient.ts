@@ -84,7 +84,7 @@ async function client<T>(endpoint: string, config: RequestConfig = {}): Promise<
     if (!response.ok) {
       
       // --- START: 401 Interceptor Logic ---
-      if (response.status === 401 && !skipAuth && !_isRetry) {
+      if (response.status === 401 && !skipAuth && !_isRetry && !endpoint.includes('/auth/logout')) {
         if (isRefreshing) {
           // If already refreshing, queue this request
           return new Promise((resolve, reject) => {

@@ -178,10 +178,27 @@ async def refresh_token_endpoint(
 async def logout(
     request: Request,
     db: AsyncSession = Depends(get_db_session),
-    current_user: UserModel = Depends(get_current_user),
 ):
-    await audit_service.log(db, "logout", user_id=current_user.id, ip_address=request.client.host)
-    await db.commit()
+    """Logout is best-effort: always return 200 even if the access token is
+    missing or expired. The real session teardown happens client-side; this
+    endpoint exists only to record an audit entry when possible."""
+    user_id = None
+    auth_header = request.headers.get("authorization") or request.headers.get("Authorization")
+    if auth_header and auth_header.lower().startswith("bearer "):
+        token = auth_header.split(" ", 1)[1].strip()
+        try:
+            payload = jwt.decode(
+                token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM]
+            )
+            user_id = payload.get("sub")
+        except JWTError:
+            user_id = None
+
+    if user_id:
+        await audit_service.log(
+            db, "logout", user_id=user_id, ip_address=request.client.host
+        )
+        await db.commit()
     return ok(message="Déconnexion réussie")
 
 

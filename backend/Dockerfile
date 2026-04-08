@@ -13,7 +13,6 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 # Copy the application code and config into the container
 COPY ./app /app/app
 COPY alembic.ini /app/alembic.ini
-COPY cm2_maths /app/cm2_maths
 COPY content /app/content
 
 # Expose the port the app runs on
