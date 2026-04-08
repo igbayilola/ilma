@@ -84,7 +84,7 @@ async function client<T>(endpoint: string, config: RequestConfig = {}): Promise<
     if (!response.ok) {
       
       // --- START: 401 Interceptor Logic ---
-      if (response.status === 401 && !skipAuth && !_isRetry && !endpoint.includes('/auth/logout')) {
+      if (response.status === 401 && !skipAuth && !_isRetry && !endpoint.startsWith('/auth/')) {
         if (isRefreshing) {
           // If already refreshing, queue this request
           return new Promise((resolve, reject) => {
@@ -152,7 +152,7 @@ async function client<T>(endpoint: string, config: RequestConfig = {}): Promise<
 
       switch (response.status) {
         case 400: throw new ApiClientError(errMsg, ErrorCode.VALIDATION_ERROR, 400, errDetails);
-        case 401: throw new ApiClientError('Session expirée', ErrorCode.UNAUTHORIZED, 401);
+        case 401: throw new ApiClientError(errMsg || 'Session expirée', ErrorCode.UNAUTHORIZED, 401);
         case 403: throw new ApiClientError(errMsg || 'Accès refusé', ErrorCode.FORBIDDEN, 403);
         case 404: throw new ApiClientError(errMsg || 'Ressource introuvable', ErrorCode.NOT_FOUND, 404);
         case 409: throw new ApiClientError(errMsg, ErrorCode.VALIDATION_ERROR, 409);

@@ -5,9 +5,10 @@ import json
 from typing import Any, Dict, List, Optional
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, Query, UploadFile
+from fastapi import APIRouter, Depends, Query, Request, UploadFile
 from sqlalchemy import case, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from app.core.deps import require_role
 from app.core.exceptions import AppException, NotFoundException
@@ -58,7 +59,29 @@ from app.services.exercise_import_service import (
     import_exercises_for_micro_skill,
 )
 
-router = APIRouter(prefix="/admin/content", tags=["Admin - Content"])
+async def _invalidate_content_cache_on_write(request: Request):
+    """Dependency: invalidate content Redis cache after a successful write.
+
+    Registered via BackgroundTasks-style: we schedule invalidation on the
+    response. Since APIRouter has no .middleware() hook, we run this as a
+    dependency and trigger invalidation post-response via a response hook
+    set on request.state — the actual invalidation runs when the endpoint
+    returns successfully on write methods.
+    """
+    yield
+    if request.method in ("POST", "PUT", "PATCH", "DELETE"):
+        from app.services.content_cache import invalidate_all
+        try:
+            await invalidate_all()
+        except Exception:
+            pass  # best-effort
+
+
+router = APIRouter(
+    prefix="/admin/content",
+    tags=["Admin - Content"],
+    dependencies=[Depends(_invalidate_content_cache_on_write)],
+)
 
 _admin = require_role(UserRole.ADMIN, UserRole.EDITOR)
 
@@ -77,6 +100,7 @@ def _question_to_snapshot(q: Question) -> dict:
         "correct_answer": q.correct_answer,
         "explanation": q.explanation,
         "hint": q.hint,
+        "hints": q.hints,
         "media_url": q.media_url,
         "points": q.points,
         "time_limit_seconds": q.time_limit_seconds,
@@ -194,11 +218,17 @@ async def get_curriculum_tree(
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(_admin),
 ):
-    """Return the full nested curriculum tree: grades → subjects → domains → skills → micro_skills.
-
-    Relationships use lazy='selectin' so eager loading happens automatically.
-    """
-    stmt = select(GradeLevel).order_by(GradeLevel.order)
+    """Return the full nested curriculum tree: grades → subjects → domains → skills → micro_skills."""
+    stmt = (
+        select(GradeLevel)
+        .options(
+            selectinload(GradeLevel.subjects)
+            .selectinload(Subject.domains)
+            .selectinload(Domain.skills)
+            .selectinload(Skill.micro_skills)
+        )
+        .order_by(GradeLevel.order)
+    )
     if grade_level_id:
         stmt = stmt.where(GradeLevel.id == grade_level_id)
     result = await db.execute(stmt)
@@ -939,6 +969,7 @@ async def preview_question(
         "correct_answer": q.correct_answer,
         "explanation": q.explanation,
         "hint": q.hint,
+        "hints": q.hints,
         "media_url": q.media_url,
         "points": q.points,
         "time_limit_seconds": q.time_limit_seconds,
@@ -1136,7 +1167,7 @@ async def rollback_question(
     # Restore fields from the snapshot
     data = cv.data_json
     for field in [
-        "text", "choices", "correct_answer", "explanation", "hint",
+        "text", "choices", "correct_answer", "explanation", "hint", "hints",
         "media_url", "points", "time_limit_seconds", "bloom_level",
         "ilma_level", "tags", "common_mistake_targeted", "is_active",
         "reviewer_notes",
