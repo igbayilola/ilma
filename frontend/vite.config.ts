@@ -16,6 +16,35 @@ export default defineConfig(({ mode }) => {
         },
       },
       plugins: [react()],
+      build: {
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+              'vendor-ui': ['lucide-react', 'zustand'],
+              'math': [
+                './pages/student/ExercisePlayer.tsx',
+                './components/exercise/QuestionRenderer.tsx',
+              ],
+              'exam': [
+                './pages/student/ExamPlayer.tsx',
+                './pages/student/ExamList.tsx',
+                './pages/student/ExamCorrection.tsx',
+              ],
+              'admin': [
+                './pages/admin/Dashboard.tsx',
+                './pages/admin/Analytics.tsx',
+                './pages/admin/Content.tsx',
+                './pages/admin/Users.tsx',
+              ],
+              'teacher': [
+                './pages/teacher/Dashboard.tsx',
+                './pages/teacher/ClassroomDetail.tsx',
+              ],
+            },
+          },
+        },
+      },
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)

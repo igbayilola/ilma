@@ -90,6 +90,18 @@ async def list_payments(
 
 
 # ── Analytics ──────────────────────────────────────────────
+
+@router.get("/analytics/summary")
+async def get_analytics_summary(
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    """Single endpoint aggregating KPIs + engagement for 2G-friendly dashboard."""
+    kpis = await admin_service.get_kpis(db)
+    engagement = await admin_service.get_engagement(db)
+    return ok(data={"kpis": kpis, "engagement": engagement})
+
+
 @router.get("/analytics/kpis")
 async def get_kpis(
     db: AsyncSession = Depends(get_db_session),
