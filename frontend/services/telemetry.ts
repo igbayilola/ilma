@@ -49,7 +49,7 @@ class TelemetryService {
 
   setUser(user: { id: string; role: string; email?: string } | null) {
     if (SENTRY_DSN) {
-      SentrySDK.setUser(user ? { id: user.id, username: user.email, data: { role: user.role } } : null);
+      SentrySDK.setUser(user ? { id: user.id, data: { role: user.role } } : null);
     }
   }
 

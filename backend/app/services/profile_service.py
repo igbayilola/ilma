@@ -141,7 +141,7 @@ class ProfileService:
         return {
             "id": str(profile.id),
             "display_name": profile.display_name,
-            "avatar_url": profile.avatar_url or f"https://api.dicebear.com/7.x/avataaars/svg?seed={profile.id}",
+            "avatar_url": profile.avatar_url or f"https://api.dicebear.com/7.x/avataaars/svg?seed={str(profile.id)[:8]}",
             "grade_level_id": str(profile.grade_level_id) if profile.grade_level_id else None,
             "is_active": profile.is_active,
             "has_pin": profile.pin_hash is not None,

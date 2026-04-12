@@ -95,7 +95,7 @@ async function syncPendingItems() {
   try {
     // Open IndexedDB and get pending items
     const db = await new Promise((resolve, reject) => {
-      const req = indexedDB.open('sitou-db', 2);
+      const req = indexedDB.open('sitou-db', 3);
       req.onsuccess = () => resolve(req.result);
       req.onerror = () => reject(req.error);
     });

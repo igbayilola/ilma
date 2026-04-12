@@ -41,7 +41,7 @@ def _build_auth_response(user: UserModel, access_token: str, refresh_token: str)
                 profiles.append({
                     "id": str(p.id),
                     "display_name": p.display_name,
-                    "avatar_url": p.avatar_url or f"https://api.dicebear.com/7.x/avataaars/svg?seed={p.id}",
+                    "avatar_url": p.avatar_url or f"https://api.dicebear.com/7.x/avataaars/svg?seed={str(p.id)[:8]}",
                     "grade_level_id": str(p.grade_level_id) if p.grade_level_id else None,
                     "is_active": p.is_active,
                     "has_pin": p.pin_hash is not None,
