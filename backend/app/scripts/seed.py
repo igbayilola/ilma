@@ -22,7 +22,6 @@ from app.models.subscription import Plan, PlanTier
 from app.models.user import User, UserRole
 from app.schemas.content import CurriculumImportRequest
 from app.services.curriculum_import_service import import_curriculum
-from app.scripts.convert_legacy_json import convert as convert_legacy
 
 # Resolve path to the content directory
 # Inside container: /app/content/  |  Local dev: backend/content/
@@ -34,8 +33,6 @@ _PROGRAMME_DIR = _CONTENT_DIR / "benin" / "cm2" / "programme"
 _EXERCICES_DIR = _CONTENT_DIR / "benin" / "cm2" / "exercices"
 _EPREUVES_DIR = _CONTENT_DIR / "benin" / "cm2" / "epreuves"
 
-# Legacy fallback path (kept for backward compatibility)
-_CM2_MATHS_DIR = _WORKDIR / "cm2_maths"
 
 # ── Users ──────────────────────────────────────────────────
 SEED_USERS = [
@@ -69,20 +66,28 @@ SEED_BADGES = [
 # ── Plans ──────────────────────────────────────────────────
 SEED_PLANS = [
     {"name": "Gratuit", "tier": PlanTier.FREE, "price_xof": 0, "duration_days": 365, "features": {"max_exercises_day": 5, "exam_blanc": False}},
+    {"name": "Pass Journalier", "tier": PlanTier.BASIC, "price_xof": 100, "duration_days": 1, "features": {"max_exercises_day": 20, "exam_blanc": False}},
+    {"name": "Pass Hebdomadaire", "tier": PlanTier.BASIC, "price_xof": 500, "duration_days": 7, "features": {"max_exercises_day": 20, "exam_blanc": False}},
     {"name": "Basique", "tier": PlanTier.BASIC, "price_xof": 1000, "duration_days": 30, "features": {"max_exercises_day": 20, "exam_blanc": False}},
     {"name": "Premium", "tier": PlanTier.PREMIUM, "price_xof": 2500, "duration_days": 30, "features": {"max_exercises_day": -1, "exam_blanc": True}},
 ]
 
 # ── Map question_type strings from JSON to QuestionType enum ──
 _QTYPE_MAP = {
-    "MCQ": QuestionType.MCQ,
-    "TRUE_FALSE": QuestionType.TRUE_FALSE,
-    "FILL_BLANK": QuestionType.FILL_BLANK,
+    "MCQ": QuestionType.MCQ, "TRUE_FALSE": QuestionType.TRUE_FALSE,
+    "FILL_BLANK": QuestionType.FILL_BLANK, "NUMERIC_INPUT": QuestionType.NUMERIC_INPUT,
+    "SHORT_ANSWER": QuestionType.SHORT_ANSWER, "ORDERING": QuestionType.ORDERING,
+    "MATCHING": QuestionType.MATCHING, "ERROR_CORRECTION": QuestionType.ERROR_CORRECTION,
+    "CONTEXTUAL_PROBLEM": QuestionType.CONTEXTUAL_PROBLEM,
+    "GUIDED_STEPS": QuestionType.GUIDED_STEPS, "JUSTIFICATION": QuestionType.JUSTIFICATION,
+    "TRACING": QuestionType.TRACING,
+    "DRAG_DROP": QuestionType.DRAG_DROP, "INTERACTIVE_DRAW": QuestionType.INTERACTIVE_DRAW,
+    "CHART_INPUT": QuestionType.CHART_INPUT, "AUDIO_COMPREHENSION": QuestionType.AUDIO_COMPREHENSION,
 }
 _DIFF_MAP = {
-    "EASY": DifficultyLevel.EASY,
-    "MEDIUM": DifficultyLevel.MEDIUM,
-    "HARD": DifficultyLevel.HARD,
+    "EASY": DifficultyLevel.EASY, "easy": DifficultyLevel.EASY,
+    "MEDIUM": DifficultyLevel.MEDIUM, "medium": DifficultyLevel.MEDIUM,
+    "HARD": DifficultyLevel.HARD, "hard": DifficultyLevel.HARD,
 }
 
 
@@ -137,6 +142,100 @@ def _load_exams_from_content() -> list:
             data = json.load(f)
         exams.append(data)
     return exams
+
+
+async def seed_v2_exercises(session) -> None:
+    """Seed exercises from v2-converted files (v1.0 format with micro_skill_external_id)."""
+    from app.models.content import MicroSkill, ContentStatus
+
+    v2_files = sorted(_EXERCICES_DIR.rglob("v2_*.json"))
+    if not v2_files:
+        print("  [skip] no v2_*.json exercise files found")
+        return
+
+    total_created = 0
+    total_skipped = 0
+    for json_file in v2_files:
+        with open(json_file, encoding="utf-8") as f:
+            data = json.load(f)
+
+        file_created = 0
+        for block in data.get("exercises", []):
+            ms_ext_id = block.get("micro_skill_external_id", "")
+            if ms_ext_id.startswith("_UNMAPPED"):
+                continue
+
+            # Resolve micro-skill
+            ms_result = await session.execute(
+                select(MicroSkill).where(MicroSkill.external_id == ms_ext_id)
+            )
+            ms_obj = ms_result.scalar_one_or_none()
+
+            # If no micro-skill, try to find the parent skill
+            skill_obj = None
+            if ms_obj:
+                skill_obj_result = await session.execute(
+                    select(Skill).where(Skill.id == ms_obj.skill_id)
+                )
+                skill_obj = skill_obj_result.scalar_one_or_none()
+            else:
+                # Try skill by external_id (the part before ::)
+                skill_ext = ms_ext_id.split("::")[0] if "::" in ms_ext_id else ms_ext_id
+                skill_result = await session.execute(
+                    select(Skill).where(Skill.external_id == skill_ext).limit(1)
+                )
+                skill_obj = skill_result.scalar_one_or_none()
+
+            if not skill_obj:
+                total_skipped += len(block.get("exercises", []))
+                continue
+
+            for ex in block.get("exercises", []):
+                ext_id = f"{ms_ext_id}::{ex.get('exercise_id', '')}" if ms_obj else None
+
+                # Skip if already exists
+                if ext_id:
+                    existing = await session.execute(
+                        select(Question).where(Question.external_id == ext_id)
+                    )
+                    if existing.scalar_one_or_none():
+                        total_skipped += 1
+                        continue
+
+                q_type = _QTYPE_MAP.get(ex.get("type", "MCQ"), QuestionType.SHORT_ANSWER)
+                q_diff = _DIFF_MAP.get(ex.get("difficulty", "medium"), DifficultyLevel.MEDIUM)
+
+                q = Question(
+                    id=uuid.uuid4(),
+                    skill_id=skill_obj.id,
+                    micro_skill_id=ms_obj.id if ms_obj else None,
+                    external_id=ext_id,
+                    question_type=q_type,
+                    difficulty=q_diff,
+                    text=ex.get("text", ""),
+                    choices=ex.get("choices"),
+                    correct_answer=ex.get("correct_answer", ""),
+                    explanation=ex.get("explanation", ""),
+                    hint=ex.get("hint", ""),
+                    hints=[ex["hint"]] if ex.get("hint") else None,
+                    points=ex.get("points", 1),
+                    time_limit_seconds=ex.get("time_limit_seconds", 60),
+                    bloom_level=ex.get("bloom_level"),
+                    ilma_level=ex.get("ilma_level"),
+                    media_references=ex.get("media_references"),
+                    interactive_config=ex.get("interactive_config"),
+                    status=ContentStatus.PUBLISHED,
+                )
+                session.add(q)
+                file_created += 1
+
+            await session.flush()
+
+        total_created += file_created
+        if file_created > 0:
+            print(f"  [seed] {json_file.name}: {file_created} questions")
+
+    print(f"  Total V2 exercises: {total_created} created, {total_skipped} skipped")
 
 
 async def seed_cep_exams(session, cm2_grade, subject_map: dict) -> None:
@@ -260,54 +359,26 @@ async def seed_curriculum_via_import(session) -> None:
     result = await import_curriculum(session, payload)
     print(f"  Created: {result.created}, Updated: {result.updated}, Errors: {len(result.errors)}")
 
-    # Import math domain files from content/benin/cm2/programme/mathematiques/
+    # Import all programme files (v2.0 format): maths domains + other subjects
+    all_programme_files = []
     math_programme_dir = _PROGRAMME_DIR / "mathematiques"
     if math_programme_dir.exists():
-        domain_files = sorted(math_programme_dir.glob("*.json"))
-        for domain_file in domain_files:
-            domain_tag = domain_file.stem.upper()
-            print(f"  ── Curriculum import (maths/{domain_file.stem}) ──")
-            with open(domain_file, encoding="utf-8") as f:
-                legacy_data = json.load(f)
-            v2_data = convert_legacy(legacy_data)
-            legacy_payload = CurriculumImportRequest(**v2_data)
-            result_domain = await import_curriculum(session, legacy_payload)
-            print(f"  Created: {result_domain.created}, Updated: {result_domain.updated}, "
-                  f"Skills: {result_domain.skills}, Micro-skills: {result_domain.micro_skills}, "
-                  f"Errors: {len(result_domain.errors)}")
-    elif _CM2_MATHS_DIR.exists():
-        # Fallback to legacy cm2_maths/ directory
-        print("  [fallback] Using legacy cm2_maths/ directory")
-        domain_files = sorted(_CM2_MATHS_DIR.glob("progamme_mathematiquesCM2_deeeep_*.json"))
-        for domain_file in domain_files:
-            domain_tag = domain_file.stem.split("_")[-1]
-            print(f"  ── Curriculum import ({domain_tag}) ──")
-            with open(domain_file, encoding="utf-8") as f:
-                legacy_data = json.load(f)
-            v2_data = convert_legacy(legacy_data)
-            legacy_payload = CurriculumImportRequest(**v2_data)
-            result_domain = await import_curriculum(session, legacy_payload)
-            print(f"  Created: {result_domain.created}, Updated: {result_domain.updated}, "
-                  f"Skills: {result_domain.skills}, Micro-skills: {result_domain.micro_skills}, "
-                  f"Errors: {len(result_domain.errors)}")
-    else:
-        print(f"  [skip] No math curriculum directory found at {math_programme_dir} or {_CM2_MATHS_DIR}")
-
-    # Import other subject files from content/benin/cm2/programme/ (v2.0 format)
+        all_programme_files.extend(sorted(math_programme_dir.glob("*.json")))
     if _PROGRAMME_DIR.exists():
-        for subject_file in sorted(_PROGRAMME_DIR.glob("*.json")):
-            # These are non-math subjects (français, education-sociale, etc.)
-            print(f"  ── Curriculum import ({subject_file.stem}) ──")
-            with open(subject_file, encoding="utf-8") as f:
-                v2_data = json.load(f)
-            # v2.0 format files can be imported directly
-            if v2_data.get("schema_version") == "2.0":
-                subject_payload = CurriculumImportRequest(**v2_data)
-                result_subj = await import_curriculum(session, subject_payload)
-                print(f"  Created: {result_subj.created}, Updated: {result_subj.updated}, "
-                      f"Errors: {len(result_subj.errors)}")
-            else:
-                print(f"  [skip] {subject_file.name} is not v2.0 format, skipping")
+        all_programme_files.extend(sorted(_PROGRAMME_DIR.glob("*.json")))
+
+    for programme_file in all_programme_files:
+        print(f"  ── Curriculum import ({programme_file.relative_to(_PROGRAMME_DIR)}) ──")
+        with open(programme_file, encoding="utf-8") as f:
+            v2_data = json.load(f)
+        if v2_data.get("schema_version") != "2.0":
+            print(f"  [skip] {programme_file.name} is not v2.0 format, skipping")
+            continue
+        file_payload = CurriculumImportRequest(**v2_data)
+        result_file = await import_curriculum(session, file_payload)
+        print(f"  Created: {result_file.created}, Updated: {result_file.updated}, "
+              f"Skills: {result_file.skills}, Micro-skills: {result_file.micro_skills}, "
+              f"Errors: {len(result_file.errors)}")
 
 
 async def seed() -> None:
@@ -384,6 +455,11 @@ async def seed() -> None:
                 }
                 await _upsert(session, MicroLesson, "title", lesson_row)
 
+        await session.flush()
+
+        # V2 exercises (converted to v1.0 format with micro_skill_external_id)
+        print("── V2 Exercises ──")
+        await seed_v2_exercises(session)
         await session.flush()
 
         # Badges

@@ -39,7 +39,7 @@ class Plan(Base, BaseMixin):
     __tablename__ = "plans"
 
     name = Column(String(100), nullable=False)
-    tier = Column(Enum(PlanTier), nullable=False, unique=True)
+    tier = Column(Enum(PlanTier), nullable=False)
     price_xof = Column(Integer, default=0, nullable=False)
     duration_days = Column(Integer, default=30, nullable=False)
     description = Column(Text, nullable=True)
@@ -60,7 +60,7 @@ class Subscription(Base, BaseMixin):
 
     profile = relationship("Profile", back_populates="subscription")
     plan = relationship("Plan")
-    payments = relationship("Payment", back_populates="subscription", lazy="selectin")
+    payments = relationship("Payment", back_populates="subscription", lazy="raise")
 
 
 class Payment(Base, BaseMixin):

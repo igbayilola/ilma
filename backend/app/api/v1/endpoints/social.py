@@ -93,6 +93,17 @@ async def complete_challenge(
     })
 
 
+@router.post("/challenges/{challenge_id}/decline")
+async def decline_challenge(
+    challenge_id: UUID,
+    db: AsyncSession = Depends(get_db_session),
+    profile: Profile = Depends(get_active_profile),
+):
+    challenge = await social_service.decline_challenge(db, challenge_id, profile.id)
+    await db.commit()
+    return ok(data={"id": str(challenge.id), "status": challenge.status.value})
+
+
 @router.get("/challenges")
 async def my_challenges(
     status: str | None = Query(None),

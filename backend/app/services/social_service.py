@@ -277,6 +277,22 @@ class SocialService:
         await db.flush()
         return challenge
 
+    async def decline_challenge(self, db: AsyncSession, challenge_id: UUID, profile_id: UUID) -> Challenge:
+        """Decline a pending challenge."""
+        result = await db.execute(
+            select(Challenge).where(
+                Challenge.id == challenge_id,
+                Challenge.challenged_id == profile_id,
+                Challenge.status == ChallengeStatus.PENDING,
+            )
+        )
+        challenge = result.scalar_one_or_none()
+        if not challenge:
+            raise ValueError("Défi introuvable ou déjà traité")
+        challenge.status = ChallengeStatus.DECLINED
+        await db.flush()
+        return challenge
+
     async def expire_old_challenges(self, db: AsyncSession) -> int:
         """Expire pending challenges past their deadline."""
         now = datetime.now(timezone.utc)
