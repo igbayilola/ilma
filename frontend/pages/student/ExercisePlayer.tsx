@@ -3,16 +3,18 @@ import { useParams, useNavigate, useLocation, useSearchParams } from 'react-rout
 import { Button } from '../../components/ui/Button';
 import { QuestionRenderer } from '../../components/exercise/QuestionRenderer';
 import { ButtonVariant, Question, SubscriptionTier } from '../../types';
-import { X, CheckCircle2, AlertCircle, ArrowRight, RotateCcw, Award, HelpCircle, BookOpen, PenLine, Share2 } from 'lucide-react';
+import { X, CheckCircle2, AlertCircle, ArrowRight, RotateCcw, Award, HelpCircle, BookOpen, PenLine, Share2, Timer, Pause } from 'lucide-react';
 import { Breadcrumb } from '../../components/ui/Breadcrumb';
 import { useAppStore } from '../../store';
 import { SmartScoreMeter } from '../../components/ilma/Gamification';
 import { PaywallModal } from '../../components/subscription/PaywallModal';
-import { contentService, QuestionDTO } from '../../services/contentService';
+import { contentService, QuestionDTO, PrerequisiteCheckDTO } from '../../services/contentService';
 import { sessionService, SessionDTO, NextQuestionDTO } from '../../services/sessionService';
 import { useAuthStore } from '../../store/authStore';
 import { useConfigStore } from '../../store/configStore';
 import { telemetry } from '../../services/telemetry';
+import { analytics } from '../../services/analytics';
+import { saveDraft, loadDraft, clearDraft, ExerciseDraft } from '../../services/exerciseDraft';
 
 type PlayerPhase = 'INTRO' | 'ACTIVE' | 'SUMMARY';
 type AnswerStatus = 'IDLE' | 'CORRECT' | 'INCORRECT';
@@ -34,14 +36,31 @@ function getRandomMessage(messages: typeof CORRECT_MESSAGES) {
   return messages[Math.floor(Math.random() * messages.length)];
 }
 
+/** Speak short feedback via Web Speech API (non-blocking, best effort) */
+function speakFeedback(text: string) {
+  try {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'fr-FR';
+    u.rate = 1.1;
+    u.volume = 0.8;
+    window.speechSynthesis.speak(u);
+  } catch { /* ignore */ }
+}
+
+const PAUSE_SUGGESTION_MS = 5 * 60 * 1000; // 5 minutes
+
 /** Map a NextQuestionDTO (from session engine) to a Question for QuestionRenderer */
 function mapNextToRenderQuestion(nq: NextQuestionDTO, correctAnswer?: any, explanation?: string): Question {
   const QUESTION_TYPE_MAP: Record<string, string> = {
-    mcq: 'MCQ', true_false: 'BOOLEAN', fill_blank: 'FILL_BLANK',
+    mcq: 'MCQ', true_false: 'TRUE_FALSE', fill_blank: 'FILL_BLANK',
     numeric_input: 'NUMERIC_INPUT', short_answer: 'SHORT_ANSWER',
     ordering: 'ORDERING', matching: 'MATCHING', error_correction: 'ERROR_CORRECTION',
     contextual_problem: 'CONTEXTUAL_PROBLEM', guided_steps: 'GUIDED_STEPS',
     justification: 'JUSTIFICATION', tracing: 'TRACING',
+    drag_drop: 'DRAG_DROP', interactive_draw: 'INTERACTIVE_DRAW',
+    chart_input: 'CHART_INPUT', audio_comprehension: 'AUDIO_COMPREHENSION',
   };
   const mappedType = QUESTION_TYPE_MAP[(nq.questionType || '').toLowerCase()] || 'MCQ';
 
@@ -192,19 +211,56 @@ export const ExercisePlayerPage: React.FC = () => {
     const [explanation, setExplanation] = useState('');
     const [isValidating, setIsValidating] = useState(false);
     const [showScratchpad, setShowScratchpad] = useState(false);
+
+    // Question history for non-linear navigation
+    interface AnsweredQuestion {
+        question: NextQuestionDTO;
+        answer: any;
+        isCorrect: boolean;
+        correctAnswer: any;
+        explanation: string;
+    }
+    const [questionHistory, setQuestionHistory] = useState<AnsweredQuestion[]>([]);
+    const [reviewIndex, setReviewIndex] = useState<number | null>(null); // null = viewing current question
+
+    const hintsUsedRef = useRef(0);
+    const totalHintsRef = useRef(0);
+    const sessionStartRef = useRef<number>(Date.now());
     const [smartScoreBefore, setSmartScoreBefore] = useState<number | null>(null);
     const [smartScoreAfter, setSmartScoreAfter] = useState<number | null>(null);
     const [xpEarned, setXpEarned] = useState<number | null>(null);
+    const [pendingDraft, setPendingDraft] = useState<ExerciseDraft | null>(null);
+    const [prereqCheck, setPrereqCheck] = useState<PrerequisiteCheckDTO | null>(null);
+    const [showPauseSuggestion, setShowPauseSuggestion] = useState(false);
+    const [elapsedSeconds, setElapsedSeconds] = useState(0);
+    const pauseSuggestedRef = useRef(false);
 
-    // Load intro data (question count + skill name)
+    // Session timer + pause suggestion after 5min
+    useEffect(() => {
+        if (phase !== 'ACTIVE') return;
+        const interval = setInterval(() => {
+            setElapsedSeconds(Math.floor((Date.now() - sessionStartRef.current) / 1000));
+            if (!pauseSuggestedRef.current && (Date.now() - sessionStartRef.current) >= PAUSE_SUGGESTION_MS) {
+                pauseSuggestedRef.current = true;
+                setShowPauseSuggestion(true);
+            }
+        }, 1000);
+        return () => clearInterval(interval);
+    }, [phase]);
+
+    // Load intro data + check for a resumable draft + check prerequisites
     useEffect(() => {
         if (!id) return;
         Promise.all([
             contentService.listQuestions(id, microSkillId),
             contentService.getSkillWithLessons(id).catch(() => null),
-        ]).then(([qs, skillData]) => {
-            setQuestionCount(qs.length);
+            contentService.checkPrerequisites(id).catch(() => null),
+        ]).then(([qsResult, skillData, prereqs]) => {
+            setQuestionCount(qsResult.total);
             if (skillData) setSkillName(skillData.skill.name);
+            if (prereqs) setPrereqCheck(prereqs);
+            const draft = loadDraft(id);
+            if (draft) setPendingDraft(draft);
         }).catch(() => setQuestionCount(0))
           .finally(() => setIsLoading(false));
     }, [id, microSkillId]);
@@ -225,6 +281,15 @@ export const ExercisePlayerPage: React.FC = () => {
             const sess = await sessionService.startSession(id, 'practice', microSkillId);
             setSession(sess);
             setTotalQuestions(sess.totalQuestions || questionCount);
+            sessionStartRef.current = Date.now();
+            hintsUsedRef.current = 0;
+            totalHintsRef.current = 0;
+
+            analytics.exerciseStart(sess.id, {
+                skill_id: id,
+                micro_skill_id: microSkillId,
+                source: navState.returnPath ? 'browse' : 'dashboard_resume',
+            });
 
             // Fetch first question
             const nq = await sessionService.getNextQuestion(sess.id);
@@ -255,6 +320,78 @@ export const ExercisePlayerPage: React.FC = () => {
         }
     };
 
+    /** Resume from a saved draft */
+    const handleResumeDraft = (draft: ExerciseDraft) => {
+        const sess: SessionDTO = {
+            id: draft.sessionId,
+            skillId: draft.skillId,
+            status: 'in_progress',
+            totalQuestions: draft.totalQuestions,
+        };
+        setSession(sess);
+        setCurrentQuestion({
+            questionId: draft.currentQuestion.questionId,
+            text: draft.currentQuestion.text,
+            questionType: draft.currentQuestion.questionType,
+            difficulty: draft.currentQuestion.difficulty,
+            choices: draft.currentQuestion.choices,
+            mediaUrl: draft.currentQuestion.mediaUrl,
+            timeLimitSeconds: draft.currentQuestion.timeLimitSeconds,
+            points: draft.currentQuestion.points,
+            microSkillId: draft.currentQuestion.microSkillId,
+        });
+        setSelectedAnswer(draft.selectedAnswer);
+        setCurrentQIndex(draft.currentQIndex);
+        setScore(draft.score);
+        setMistakes(draft.mistakes);
+        setTotalQuestions(draft.totalQuestions);
+        setSkillName(draft.skillName);
+        sessionStartRef.current = new Date(draft.sessionStartedAt).getTime();
+        questionStartTime.current = Date.now();
+        setPhase('ACTIVE');
+        setPendingDraft(null);
+    };
+
+    /** Persist current exercise state to localStorage */
+    const persistDraft = () => {
+        if (!session || !currentQuestion || !id || phase !== 'ACTIVE') return;
+        saveDraft({
+            sessionId: session.id,
+            skillId: id,
+            skillName,
+            microSkillId,
+            currentQuestion: {
+                questionId: currentQuestion.questionId,
+                text: currentQuestion.text,
+                questionType: currentQuestion.questionType,
+                difficulty: currentQuestion.difficulty,
+                choices: currentQuestion.choices,
+                mediaUrl: currentQuestion.mediaUrl,
+                timeLimitSeconds: currentQuestion.timeLimitSeconds,
+                points: currentQuestion.points,
+                microSkillId: currentQuestion.microSkillId,
+            },
+            selectedAnswer,
+            currentQIndex,
+            score,
+            mistakes,
+            totalQuestions,
+            sessionStartedAt: new Date(sessionStartRef.current).toISOString(),
+            savedAt: new Date().toISOString(),
+            navState: {
+                returnPath: navState.returnPath,
+                subjectId: navState.subjectId,
+                subjectName: navState.subjectName,
+            },
+        });
+    };
+
+    // Auto-save draft whenever the answer or question changes during ACTIVE phase
+    useEffect(() => {
+        persistDraft();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectedAnswer, currentQIndex, score, mistakes, phase]);
+
     const handleValidate = async () => {
         if (!currentQuestion || !session || selectedAnswer === null || selectedAnswer === '' || isValidating) return;
 
@@ -277,13 +414,37 @@ export const ExercisePlayerPage: React.FC = () => {
                 setAnswerStatus('CORRECT');
                 setScore(prev => prev + 1);
                 setConsecutiveMistakes(0);
-                setFeedbackMessage(getRandomMessage(CORRECT_MESSAGES));
+                const msg = getRandomMessage(CORRECT_MESSAGES);
+                setFeedbackMessage(msg);
+                speakFeedback(msg.text);
             } else {
                 setAnswerStatus('INCORRECT');
                 setMistakes(prev => prev + 1);
                 setConsecutiveMistakes(prev => prev + 1);
-                setFeedbackMessage(getRandomMessage(INCORRECT_MESSAGES));
+                const msg = getRandomMessage(INCORRECT_MESSAGES);
+                setFeedbackMessage(msg);
+                speakFeedback(msg.text);
             }
+
+            // Store in history for non-linear review
+            setQuestionHistory(prev => [...prev, {
+                question: currentQuestion,
+                answer: selectedAnswer,
+                isCorrect: result.isCorrect,
+                correctAnswer: result.correctAnswer,
+                explanation: result.explanation || '',
+            }]);
+
+            analytics.exerciseStepCompleted(session.id, {
+                question_number: currentQIndex + 1,
+                question_id: currentQuestion.questionId,
+                question_type: currentQuestion.questionType,
+                is_correct: result.isCorrect,
+                time_spent_seconds: timeSpent,
+                hints_used: hintsUsedRef.current,
+            });
+            totalHintsRef.current += hintsUsedRef.current;
+            hintsUsedRef.current = 0;
         } catch (err: any) {
             console.error('Attempt recording failed:', err);
             // On error, show as incorrect to let user continue
@@ -321,28 +482,72 @@ export const ExercisePlayerPage: React.FC = () => {
 
     const handleFinish = async () => {
         if (!session) return;
+        const totalTimeSec = Math.round((Date.now() - sessionStartRef.current) / 1000);
         try {
             const result = await sessionService.completeSession(session.id);
-            // Use server-reported score if available
+            const finalCorrect = result.correctAnswers ?? score;
+            const finalTotal = result.totalQuestions ?? totalQuestions;
             if (result.score !== undefined) {
-                setScore(result.correctAnswers || score);
-                setTotalQuestions(result.totalQuestions || totalQuestions);
+                setScore(finalCorrect);
+                setTotalQuestions(finalTotal);
             }
             if (result.smartScoreBefore !== undefined) setSmartScoreBefore(result.smartScoreBefore);
             if (result.smartScoreAfter !== undefined) setSmartScoreAfter(result.smartScoreAfter);
             if (result.xpEarned !== undefined) setXpEarned(result.xpEarned);
+
+            analytics.exerciseCompleted(session.id, {
+                score_percent: finalTotal > 0 ? Math.round(finalCorrect / finalTotal * 100) : 0,
+                time_total_seconds: totalTimeSec,
+                total_questions: finalTotal,
+                correct_answers: finalCorrect,
+                total_hints_used: totalHintsRef.current,
+                status: 'success',
+                smart_score_delta: (result.smartScoreAfter ?? 0) - (result.smartScoreBefore ?? 0),
+            });
         } catch {
-            // Even if complete fails, show summary with local data
+            analytics.exerciseCompleted(session.id, {
+                score_percent: totalQuestions > 0 ? Math.round(score / totalQuestions * 100) : 0,
+                time_total_seconds: totalTimeSec,
+                total_questions: totalQuestions,
+                correct_answers: score,
+                total_hints_used: totalHintsRef.current,
+                status: 'success',
+            });
         }
+        clearDraft();
         incrementDailyExercise();
         setPhase('SUMMARY');
     };
 
     const handleQuit = () => {
         if (window.confirm("Tu veux vraiment quitter ? Ta progression pour cet exercice sera perdue.")) {
+            if (session && phase === 'ACTIVE') {
+                analytics.dropOff(session.id, {
+                    question_number: currentQIndex + 1,
+                    time_on_question_seconds: Math.round((Date.now() - questionStartTime.current) / 1000),
+                    total_time_seconds: Math.round((Date.now() - sessionStartRef.current) / 1000),
+                });
+                analytics.flush();
+            }
+            clearDraft();
             navigate(returnPath);
         }
     };
+
+    // Track drop_off on unmount if exercise is still active
+    useEffect(() => {
+        return () => {
+            const sess = session;
+            if (sess && phase === 'ACTIVE') {
+                analytics.dropOff(sess.id, {
+                    question_number: currentQIndex + 1,
+                    time_on_question_seconds: Math.round((Date.now() - questionStartTime.current) / 1000),
+                    total_time_seconds: Math.round((Date.now() - sessionStartRef.current) / 1000),
+                });
+            }
+        };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [session, phase, currentQIndex]);
 
     const goToLesson = () => {
         navigate(`/app/student/lesson/${id}`, {
@@ -350,10 +555,15 @@ export const ExercisePlayerPage: React.FC = () => {
         });
     };
 
-    // Build render question from current state
-    const renderQuestion: Question | null = currentQuestion
-        ? mapNextToRenderQuestion(currentQuestion, correctAnswer, explanation)
-        : null;
+    // Build render question — either current or from history review
+    const isReviewing = reviewIndex !== null;
+    const reviewedItem = isReviewing ? questionHistory[reviewIndex] : null;
+
+    const renderQuestion: Question | null = isReviewing && reviewedItem
+        ? mapNextToRenderQuestion(reviewedItem.question, reviewedItem.correctAnswer, reviewedItem.explanation)
+        : currentQuestion
+            ? mapNextToRenderQuestion(currentQuestion, correctAnswer, explanation)
+            : null;
 
     if (isLoading) return <div className="p-8 text-center">Chargement...</div>;
     if (questionCount === 0 && phase === 'INTRO') return <div className="p-8 text-center">Aucune question trouv&eacute;e pour cette comp&eacute;tence.</div>;
@@ -384,7 +594,44 @@ export const ExercisePlayerPage: React.FC = () => {
                     </div>
                 )}
 
-                <Button fullWidth onClick={handleStart} className="mb-4 h-14 text-lg">&#128640; Commencer</Button>
+                {prereqCheck && !prereqCheck.met && (
+                    <div className="mb-6 w-full p-4 bg-amber-50 border border-amber-200 rounded-xl text-left" role="alert">
+                        <p className="text-sm font-semibold text-amber-800 mb-2">Comp&eacute;tences recommand&eacute;es avant de commencer :</p>
+                        <ul className="space-y-1.5">
+                            {prereqCheck.prerequisites.filter(p => !p.met).map(p => (
+                                <li key={p.externalId} className="flex items-center justify-between text-sm">
+                                    <button
+                                        onClick={() => navigate(`/app/student/exercise/${p.skillId}`, { state: navState })}
+                                        className="text-amber-700 hover:text-amber-900 underline underline-offset-2 text-left"
+                                    >
+                                        {p.name}
+                                    </button>
+                                    <span className="text-xs text-amber-600 font-medium ml-2 flex-shrink-0">
+                                        {Math.round(p.smartScore)}% / {p.threshold}%
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                        <p className="text-xs text-amber-600 mt-2">Tu peux quand m&ecirc;me commencer si tu le souhaites.</p>
+                    </div>
+                )}
+
+                {pendingDraft && (
+                    <div className="mb-4 w-full">
+                        <Button fullWidth onClick={() => handleResumeDraft(pendingDraft)} className="h-14 text-lg mb-2 bg-green-600 hover:bg-green-700">
+                            Reprendre (question {pendingDraft.currentQIndex + 1}/{pendingDraft.totalQuestions})
+                        </Button>
+                        <button
+                            onClick={() => { clearDraft(); setPendingDraft(null); }}
+                            className="text-xs text-gray-400 hover:text-gray-600 transition-colors w-full text-center"
+                        >
+                            Ignorer et recommencer
+                        </button>
+                    </div>
+                )}
+                {!pendingDraft && (
+                    <Button fullWidth onClick={handleStart} className="mb-4 h-14 text-lg">&#128640; Commencer</Button>
+                )}
                 <Button fullWidth variant={ButtonVariant.GHOST} onClick={() => navigate(-1)}>Retour</Button>
                 <PaywallModal isOpen={isPaywallOpen} onClose={() => setIsPaywallOpen(false)} />
             </div>
@@ -498,12 +745,20 @@ export const ExercisePlayerPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-sitou-surface flex flex-col max-w-3xl mx-auto md:border-x md:border-gray-200 md:bg-white md:shadow-xl md:min-h-0 md:h-screen">
             <header className="p-4 border-b border-gray-100 bg-white sticky top-0 z-20">
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                     <button onClick={handleQuit} className="p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-600" aria-label="Quitter l'exercice">
                         <X size={24} />
                     </button>
-                    <div className="text-sm font-bold text-gray-500">
-                        Question {currentQIndex + 1} / {totalQuestions || '?'}
+                    <div className="text-sm font-bold text-gray-500 flex items-center gap-2">
+                        <span>{isReviewing
+                            ? `Revue question ${reviewIndex! + 1}`
+                            : `Question ${currentQIndex + 1} / ${totalQuestions || '?'}`}</span>
+                        {phase === 'ACTIVE' && elapsedSeconds > 0 && (
+                            <span className="flex items-center gap-1 text-xs text-gray-400">
+                                <Timer size={12} />
+                                {Math.floor(elapsedSeconds / 60)}:{String(elapsedSeconds % 60).padStart(2, '0')}
+                            </span>
+                        )}
                     </div>
                     <div className="flex items-center gap-1">
                         <button onClick={() => setShowScratchpad(!showScratchpad)} className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Ouvrir le brouillon" title="Brouillon">
@@ -514,28 +769,97 @@ export const ExercisePlayerPage: React.FC = () => {
                     </button>
                     </div>
                 </div>
-                <div className="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
+
+                {/* Question map — numbered dots for non-linear navigation */}
+                {totalQuestions > 0 && (
+                    <div className="flex items-center gap-1.5 mb-3 overflow-x-auto pb-1 scrollbar-none" role="tablist" aria-label="Navigation entre les questions">
+                        {Array.from({ length: totalQuestions }).map((_, i) => {
+                            const answered = questionHistory[i];
+                            const isCurrent = !isReviewing && i === currentQIndex;
+                            const isReviewTarget = isReviewing && i === reviewIndex;
+                            const canNavigate = i < questionHistory.length; // only answered questions
+
+                            let dotClass = 'bg-gray-200 text-gray-400'; // future/unanswered
+                            if (answered?.isCorrect) dotClass = 'bg-green-100 text-green-700 border-green-300';
+                            else if (answered && !answered.isCorrect) dotClass = 'bg-red-100 text-red-700 border-red-300';
+                            if (isCurrent) dotClass = 'bg-amber-100 text-amber-700 border-amber-400 ring-2 ring-amber-200';
+                            if (isReviewTarget) dotClass += ' ring-2 ring-indigo-300';
+
+                            return (
+                                <button
+                                    key={i}
+                                    role="tab"
+                                    aria-selected={isCurrent || isReviewTarget}
+                                    aria-label={`Question ${i + 1}${answered ? (answered.isCorrect ? ', correcte' : ', incorrecte') : ''}`}
+                                    disabled={!canNavigate && !isCurrent}
+                                    onClick={() => {
+                                        if (canNavigate) {
+                                            setReviewIndex(i);
+                                        } else if (isCurrent) {
+                                            setReviewIndex(null);
+                                        }
+                                    }}
+                                    className={`min-w-[28px] h-7 rounded-lg text-xs font-bold border transition-all flex-shrink-0 ${dotClass} ${canNavigate ? 'cursor-pointer hover:scale-110' : !isCurrent ? 'cursor-default opacity-50' : 'cursor-pointer'}`}
+                                >
+                                    {i + 1}
+                                </button>
+                            );
+                        })}
+                    </div>
+                )}
+
+                <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
                     <div className="gradient-xp h-full rounded-full transition-all duration-500 ease-out" style={{ width: `${progress}%` }} />
                 </div>
             </header>
 
             <main className="flex-1 overflow-y-auto p-6 md:p-10 flex flex-col">
-                {renderQuestion && (
+                {isReviewing && reviewedItem ? (
+                    <QuestionRenderer
+                        key={`review-${reviewIndex}`}
+                        question={renderQuestion!}
+                        selectedAnswer={reviewedItem.answer}
+                        onAnswerChange={() => {}} // read-only in review
+                        isFeedbackMode={true}
+                    />
+                ) : renderQuestion && (
                     <QuestionRenderer
                         key={currentQuestion?.questionId}
                         question={renderQuestion}
                         selectedAnswer={selectedAnswer}
                         onAnswerChange={setSelectedAnswer}
                         isFeedbackMode={answerStatus !== 'IDLE'}
+                        onHintRequested={() => {
+                            hintsUsedRef.current += 1;
+                            if (session && currentQuestion) {
+                                analytics.hintRequested(session.id, {
+                                    question_number: currentQIndex + 1,
+                                    question_id: currentQuestion.questionId,
+                                    time_before_hint_seconds: Math.round((Date.now() - questionStartTime.current) / 1000),
+                                });
+                            }
+                        }}
                     />
                 )}
             </main>
 
             <footer className={`p-4 md:p-6 border-t border-gray-100 sticky bottom-0 z-20 transition-colors duration-300 ${
+                isReviewing ? 'bg-indigo-50 border-indigo-200' :
                 answerStatus === 'CORRECT' ? 'bg-green-50 border-green-200' :
                 answerStatus === 'INCORRECT' ? 'bg-red-50 border-red-200' : 'bg-white'
             }`}>
-                {answerStatus !== 'IDLE' && (
+                {isReviewing ? (
+                    <div className="w-full md:max-w-xs md:ml-auto">
+                        <Button
+                            fullWidth
+                            onClick={() => setReviewIndex(null)}
+                            className="h-12 text-lg"
+                            leftIcon={<ArrowRight size={20} />}
+                        >
+                            Retour à la question en cours
+                        </Button>
+                    </div>
+                ) : answerStatus !== 'IDLE' && (
                     <div className="mb-4 animate-slide-up">
                         <div className="flex items-start mb-2">
                             {answerStatus === 'CORRECT' ? (
@@ -559,8 +883,8 @@ export const ExercisePlayerPage: React.FC = () => {
                             </div>
                         </div>
 
-                        {answerStatus === 'INCORRECT' && consecutiveMistakes >= 2 && (
-                            <div className="mt-3 ml-11">
+                        {answerStatus === 'INCORRECT' && (
+                            <div className="mt-3 ml-11 flex items-center gap-3">
                                 <Button
                                     size="sm"
                                     variant={ButtonVariant.SECONDARY}
@@ -568,33 +892,54 @@ export const ExercisePlayerPage: React.FC = () => {
                                     className="bg-white border border-red-200 text-sitou-red hover:bg-red-50"
                                     leftIcon={<BookOpen size={16} />}
                                 >
-                                    Relire la le&ccedil;on
+                                    {consecutiveMistakes >= 2 ? 'Relire la le\u00e7on' : 'Voir la le\u00e7on'}
                                 </Button>
+                                {consecutiveMistakes >= 2 && (
+                                    <span className="text-xs text-red-400">La le&ccedil;on peut t&rsquo;aider !</span>
+                                )}
                             </div>
                         )}
                     </div>
                 )}
 
-                <div className="w-full md:max-w-xs md:ml-auto">
-                    {answerStatus === 'IDLE' ? (
-                        <Button fullWidth onClick={handleValidate} disabled={!selectedAnswer || isValidating} isLoading={isValidating} className="h-12 text-lg shadow-xl">
-                            Valider
-                        </Button>
-                    ) : (
-                        <Button
-                            fullWidth
-                            onClick={handleNext}
-                            variant={answerStatus === 'CORRECT' ? ButtonVariant.SUCCESS : ButtonVariant.DANGER}
-                            className="h-12 text-lg shadow-xl"
-                            leftIcon={<ArrowRight size={20} />}
-                        >
-                            Continuer
-                        </Button>
-                    )}
-                </div>
+                {!isReviewing && (
+                    <div className="w-full md:max-w-xs md:ml-auto">
+                        {answerStatus === 'IDLE' ? (
+                            <Button fullWidth onClick={handleValidate} disabled={!selectedAnswer || isValidating} isLoading={isValidating} className="h-12 text-lg shadow-xl">
+                                Valider
+                            </Button>
+                        ) : (
+                            <Button
+                                fullWidth
+                                onClick={handleNext}
+                                variant={answerStatus === 'CORRECT' ? ButtonVariant.SUCCESS : ButtonVariant.DANGER}
+                                className="h-12 text-lg shadow-xl"
+                                leftIcon={<ArrowRight size={20} />}
+                            >
+                                Continuer
+                            </Button>
+                        )}
+                    </div>
+                )}
             </footer>
 
             <Scratchpad isOpen={showScratchpad} onClose={() => setShowScratchpad(false)} />
+
+            {/* Pause suggestion after 5 minutes */}
+            {showPauseSuggestion && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+                    <div className="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-8 text-center animate-fade-in">
+                        <div className="text-5xl mb-4"><Pause size={48} className="mx-auto text-indigo-500" /></div>
+                        <h2 className="text-xl font-extrabold text-gray-900 mb-2">Tu mérites une pause !</h2>
+                        <p className="text-gray-500 text-sm mb-6">
+                            Tu travailles depuis plus de 5 minutes. Étire-toi, respire, et reviens en pleine forme.
+                        </p>
+                        <Button fullWidth onClick={() => setShowPauseSuggestion(false)}>
+                            Je continue
+                        </Button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
