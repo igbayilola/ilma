@@ -44,3 +44,29 @@ class Challenge(Base, BaseMixin):
     challenger = relationship("Profile", foreign_keys=[challenger_id])
     challenged = relationship("Profile", foreign_keys=[challenged_id])
     skill = relationship("Skill")
+
+
+class ReportReason(str, enum.Enum):
+    INSULT = "insult"
+    CHEATING = "cheating"
+    OTHER = "other"
+
+
+class ReportStatus(str, enum.Enum):
+    PENDING = "pending"
+    REVIEWED = "reviewed"
+    DISMISSED = "dismissed"
+
+
+class ContentReport(Base, BaseMixin):
+    """User-submitted content/behavior report."""
+    __tablename__ = "content_reports"
+
+    reporter_id = Column(UUID(as_uuid=True), ForeignKey("profiles.id", ondelete="CASCADE"), nullable=False, index=True)
+    reported_profile_id = Column(UUID(as_uuid=True), ForeignKey("profiles.id", ondelete="CASCADE"), nullable=True)
+    reason = Column(Enum(ReportReason), nullable=False)
+    description = Column(Text, nullable=True)
+    status = Column(Enum(ReportStatus), nullable=False, default=ReportStatus.PENDING)
+
+    reporter = relationship("Profile", foreign_keys=[reporter_id])
+    reported_profile = relationship("Profile", foreign_keys=[reported_profile_id])

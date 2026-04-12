@@ -104,6 +104,31 @@ async def decline_challenge(
     return ok(data={"id": str(challenge.id), "status": challenge.status.value})
 
 
+class ReportRequest(BaseModel):
+    reported_profile_id: UUID | None = None
+    reason: str  # insult | cheating | other
+    description: str | None = None
+
+
+@router.post("/reports", status_code=201)
+async def submit_report(
+    body: ReportRequest,
+    db: AsyncSession = Depends(get_db_session),
+    profile: Profile = Depends(get_active_profile),
+):
+    """Submit a content/behavior report."""
+    from app.models.social import ContentReport, ReportReason
+    report = ContentReport(
+        reporter_id=profile.id,
+        reported_profile_id=body.reported_profile_id,
+        reason=ReportReason(body.reason),
+        description=body.description,
+    )
+    db.add(report)
+    await db.commit()
+    return ok(data={"id": str(report.id), "status": "pending"})
+
+
 @router.get("/challenges")
 async def my_challenges(
     status: str | None = Query(None),
