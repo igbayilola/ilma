@@ -4,7 +4,13 @@ import { useAuthStore } from '../store/authStore';
 // Fix for Property 'env' does not exist on type 'ImportMeta'
 const env = (import.meta as any).env;
 const BASE_URL = env?.VITE_API_URL || '/api/v1';
-const DEFAULT_TIMEOUT = 10000;
+const getAdaptiveTimeout = (): number => {
+  const conn = (navigator as any).connection;
+  if (conn?.effectiveType === '2g' || conn?.effectiveType === 'slow-2g') return 30000;
+  if (conn?.effectiveType === '3g') return 15000;
+  return 10000;
+};
+const DEFAULT_TIMEOUT = getAdaptiveTimeout();
 
 interface RequestConfig extends RequestInit {
   timeout?: number;

@@ -221,7 +221,10 @@ export const RegisterPage: React.FC = () => {
         <label className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl cursor-pointer">
           <input type="checkbox" required className="mt-1 w-4 h-4 accent-sitou-primary" />
           <span className="text-xs text-gray-600 leading-relaxed">
-            Je certifie être le parent ou tuteur légal et je consens au traitement des données conformément à la politique de confidentialité de Sitou.
+            Je certifie être le parent ou tuteur légal et je consens au traitement des données conformément à la{' '}
+            <a href="#/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-sitou-primary underline">
+              politique de confidentialité
+            </a>{' '}de Sitou.
           </span>
         </label>
 

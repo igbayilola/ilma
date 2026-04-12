@@ -16,6 +16,12 @@ DB_USER="ilma_user"
 RETENTION_DAILY=7
 RETENTION_WEEKLY=30
 
+# Off-site backup (Backblaze B2 or S3-compatible)
+# Set these environment variables to enable off-site backup:
+#   OFFSITE_BUCKET  - s3://bucket-name/path
+#   AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY (or use ~/.aws/credentials)
+OFFSITE_BUCKET="${OFFSITE_BUCKET:-}"
+
 mkdir -p "$BACKUP_DIR/$BACKUP_TYPE"
 
 FILENAME="$BACKUP_DIR/$BACKUP_TYPE/ilma_${BACKUP_TYPE}_${DATE}.sql.gz"
@@ -33,6 +39,18 @@ if [ "$BACKUP_TYPE" = "daily" ]; then
 elif [ "$BACKUP_TYPE" = "weekly" ]; then
     find "$BACKUP_DIR/weekly" -name "*.sql.gz" -mtime +$RETENTION_WEEKLY -delete
     echo "[$(date)] Cleaned up weekly backups older than $RETENTION_WEEKLY days"
+fi
+
+# Upload to off-site storage if configured
+if [ -n "$OFFSITE_BUCKET" ]; then
+    if command -v aws &>/dev/null; then
+        echo "[$(date)] Uploading to off-site: $OFFSITE_BUCKET"
+        aws s3 cp "$FILENAME" "$OFFSITE_BUCKET/$BACKUP_TYPE/" --quiet \
+            && echo "[$(date)] Off-site upload complete." \
+            || echo "[$(date)] WARNING: Off-site upload failed!"
+    else
+        echo "[$(date)] WARNING: aws CLI not installed — skipping off-site backup."
+    fi
 fi
 
 echo "[$(date)] Backup complete."

@@ -96,6 +96,9 @@ const EditorDashboard = lazyNamed(() => import('./pages/editor/Dashboard'), 'Edi
 const EditorProgramme = lazyNamed(() => import('./pages/editor/Programme'), 'EditorProgramme');
 const EditorQuestions = lazyNamed(() => import('./pages/editor/Questions'), 'EditorQuestions');
 
+// Legal Pages
+const PrivacyPolicyPage = lazyNamed(() => import('./pages/legal/Privacy'), 'PrivacyPolicyPage');
+
 // Other Pages
 const DebugSyncPage = lazyNamed(() => import('./pages/DebugSync'), 'DebugSyncPage');
 const UnauthorizedPage = lazyNamed(() => import('./pages/Placeholders'), 'UnauthorizedPage');
@@ -176,6 +179,7 @@ const App: React.FC = () => {
                             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                         </Route>
 
+                        <Route path="/legal/privacy" element={<PrivacyPolicyPage />} />
                         <Route path="/styleguide" element={<AppShell><StyleGuide /></AppShell>} />
                         <Route path="/unauthorized" element={<UnauthorizedPage />} />
 
