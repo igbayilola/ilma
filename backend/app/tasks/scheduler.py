@@ -30,6 +30,7 @@ def setup_scheduler() -> None:
 
     from app.tasks.notification_tasks import (
         _send_daily_reminders,
+        _send_parent_inactivity_alerts,
         _send_parent_weekly_digest,
         _send_streak_danger_alerts,
     )
@@ -58,6 +59,15 @@ def setup_scheduler() -> None:
         CronTrigger(day_of_week="sun", hour=17, minute=0),
         id="parent_digest",
         name="Weekly parent digest",
+        replace_existing=True,
+    )
+
+    # Parent inactivity: alert parents when child inactive 3+ days (daily 11:30 UTC / 12:30 WAT)
+    scheduler.add_job(
+        _send_parent_inactivity_alerts,
+        CronTrigger(hour=11, minute=30),
+        id="parent_inactivity",
+        name="Parent inactivity alerts (3+ days)",
         replace_existing=True,
     )
 
