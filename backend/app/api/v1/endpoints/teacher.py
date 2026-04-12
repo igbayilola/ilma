@@ -1,9 +1,12 @@
 """Teacher endpoints: classroom management, assignments, reporting."""
+import csv
+import io
 from datetime import datetime
 from typing import Optional
 from uuid import UUID
 
 from fastapi import APIRouter, Depends
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -180,6 +183,36 @@ async def get_class_report(
 ):
     data = await teacher_service.generate_report_data(db, classroom_id, current_user.id)
     return ok(data=data)
+
+
+@router.get("/classrooms/{classroom_id}/export/csv")
+async def export_class_csv(
+    classroom_id: UUID,
+    db: AsyncSession = Depends(get_db_session),
+    current_user: User = Depends(_teacher_or_admin),
+):
+    """Export classroom report as CSV file."""
+    data = await teacher_service.generate_report_data(db, classroom_id, current_user.id)
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerow(["Nom", "Sessions", "Score moyen", "Meilleur score", "Temps (min)", "Bonnes réponses", "Total questions"])
+    for s in data.get("students", []):
+        writer.writerow([
+            s["display_name"],
+            s["sessions_count"],
+            round(s["avg_score"], 1),
+            round(s["best_score"], 1),
+            round(s["total_time_seconds"] / 60, 1),
+            s["total_correct"],
+            s["total_questions"],
+        ])
+    output.seek(0)
+    filename = f"classe_{data.get('classroom_name', classroom_id)}_{datetime.utcnow().strftime('%Y%m%d')}.csv"
+    return StreamingResponse(
+        iter([output.getvalue()]),
+        media_type="text/csv",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
 
 
 @router.get("/alerts")

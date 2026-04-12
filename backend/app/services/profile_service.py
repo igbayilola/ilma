@@ -1,4 +1,5 @@
 """Profile service: Netflix-style child profiles within a parent account."""
+from datetime import datetime, timedelta, timezone
 from uuid import UUID
 
 from passlib.context import CryptContext
@@ -78,9 +79,10 @@ class ProfileService:
         await db.flush()
         return profile
 
-    # ── Soft-delete a profile ─────────────────────────────────
+    # ── Soft-delete a profile (with 30-day grace period) ─────
     async def delete_profile(self, db: AsyncSession, profile: Profile) -> None:
         profile.is_active = False
+        profile.scheduled_purge_at = datetime.now(timezone.utc) + timedelta(days=30)
         db.add(profile)
         await db.flush()
 

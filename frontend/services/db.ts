@@ -74,6 +74,27 @@ export const initDB = async (): Promise<IDBPDatabase<SitouDB>> => {
   });
 };
 
+/**
+ * Wrapper that catches QuotaExceededError and triggers LRU cleanup before retrying.
+ */
+async function withQuotaRecovery<T>(operation: () => Promise<T>): Promise<T> {
+  try {
+    return await operation();
+  } catch (err: any) {
+    const isQuotaError =
+      err?.name === 'QuotaExceededError' ||
+      err?.code === 22 ||
+      err?.message?.includes('quota');
+    if (isQuotaError) {
+      // Attempt LRU cleanup then retry once
+      const { offlineManager } = await import('./offlineManager');
+      await offlineManager.performLRUCleanup(50 * 1024 * 1024); // Free 50MB
+      return await operation();
+    }
+    throw err;
+  }
+}
+
 export const dbService = {
   async getQueue(): Promise<SyncItem[]> {
     const db = await initDB();
@@ -81,9 +102,11 @@ export const dbService = {
   },
 
   async addToQueue(item: SyncItem): Promise<string> {
-    const db = await initDB();
-    await db.put('syncQueue', item);
-    return item.id;
+    return withQuotaRecovery(async () => {
+      const db = await initDB();
+      await db.put('syncQueue', item);
+      return item.id;
+    });
   },
 
   async removeFromQueue(id: string): Promise<void> {
@@ -115,8 +138,10 @@ export const dbService = {
   },
 
   async savePack(pack: InstalledPack): Promise<void> {
-    const db = await initDB();
-    await db.put('contentPacks', pack);
+    return withQuotaRecovery(async () => {
+      const db = await initDB();
+      await db.put('contentPacks', pack);
+    });
   },
 
   async deletePack(id: string): Promise<void> {
@@ -157,11 +182,13 @@ export const dbService = {
   },
 
   async saveSkillPack(meta: InstalledSkillPack, data: SkillPackData): Promise<void> {
-    const db = await initDB();
-    const tx = db.transaction(['skillPacks', 'skillPackData'], 'readwrite');
-    await tx.objectStore('skillPacks').put(meta);
-    await tx.objectStore('skillPackData').put(data);
-    await tx.done;
+    return withQuotaRecovery(async () => {
+      const db = await initDB();
+      const tx = db.transaction(['skillPacks', 'skillPackData'], 'readwrite');
+      await tx.objectStore('skillPacks').put(meta);
+      await tx.objectStore('skillPackData').put(data);
+      await tx.done;
+    });
   },
 
   async getSkillPackData(skillId: string): Promise<SkillPackData | undefined> {

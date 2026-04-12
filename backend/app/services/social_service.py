@@ -66,15 +66,27 @@ class SocialService:
         await db.flush()
 
     async def get_weekly_leaderboard(
-        self, db: AsyncSession, profile_id: UUID, limit: int = 20
+        self, db: AsyncSession, profile_id: UUID, limit: int = 20,
+        classroom_id: UUID | None = None,
     ) -> dict:
-        """Get current week's top N + the user's own position."""
+        """Get current week's top N + the user's own position.
+        If classroom_id is provided, scope to that classroom only."""
         week = current_week_iso()
+
+        # Base filter: week + optional classroom scope
+        base_filter = [WeeklyLeaderboard.week_iso == week]
+        if classroom_id:
+            from app.models.classroom import ClassroomStudent
+            classroom_profile_ids = (
+                select(ClassroomStudent.profile_id)
+                .where(ClassroomStudent.classroom_id == classroom_id)
+            )
+            base_filter.append(WeeklyLeaderboard.profile_id.in_(classroom_profile_ids))
 
         # Top N
         top_result = await db.execute(
             select(WeeklyLeaderboard)
-            .where(WeeklyLeaderboard.week_iso == week)
+            .where(*base_filter)
             .order_by(WeeklyLeaderboard.xp_earned.desc())
             .limit(limit)
         )
@@ -91,7 +103,7 @@ class SocialService:
                 .over(order_by=WeeklyLeaderboard.xp_earned.desc())
                 .label("rank"),
             )
-            .where(WeeklyLeaderboard.week_iso == week)
+            .where(*base_filter)
             .subquery()
         )
         user_rank_result = await db.execute(
@@ -111,6 +123,7 @@ class SocialService:
 
         return {
             "week": week,
+            "scope": "classroom" if classroom_id else "global",
             "entries": [
                 {
                     "rank": i + 1,

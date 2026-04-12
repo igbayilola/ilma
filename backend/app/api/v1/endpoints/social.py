@@ -20,10 +20,11 @@ router = APIRouter(prefix="/social", tags=["Social"])
 @router.get("/leaderboard/weekly")
 async def weekly_leaderboard(
     limit: int = Query(20, ge=1, le=100),
+    classroom_id: UUID | None = Query(None, description="Scope to a specific classroom"),
     db: AsyncSession = Depends(get_db_session),
     profile: Profile = Depends(get_active_profile),
 ):
-    data = await social_service.get_weekly_leaderboard(db, profile.id, limit)
+    data = await social_service.get_weekly_leaderboard(db, profile.id, limit, classroom_id=classroom_id)
     return ok(data=data)
 
 

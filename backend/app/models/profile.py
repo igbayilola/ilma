@@ -1,5 +1,5 @@
 """Profile model — child profiles within a parent account (Netflix-style)."""
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Text
+from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
@@ -16,12 +16,13 @@ class Profile(Base, BaseMixin):
     pin_hash = Column(String(255), nullable=True)
     grade_level_id = Column(UUID(as_uuid=True), ForeignKey("grade_levels.id", ondelete="SET NULL"), nullable=True, index=True)
     is_active = Column(Boolean, default=True, nullable=False)
+    scheduled_purge_at = Column(DateTime(timezone=True), nullable=True)
     weekly_goal_minutes = Column(Integer, default=120)
 
     # Relationships
     user = relationship("User", back_populates="profiles")
     grade_level = relationship("GradeLevel", lazy="selectin")
-    sessions = relationship("ExerciseSession", back_populates="profile", lazy="selectin")
-    progress_records = relationship("Progress", back_populates="profile", lazy="selectin")
-    student_badges = relationship("StudentBadge", back_populates="profile", lazy="selectin")
+    sessions = relationship("ExerciseSession", back_populates="profile", lazy="raise")
+    progress_records = relationship("Progress", back_populates="profile", lazy="raise")
+    student_badges = relationship("StudentBadge", back_populates="profile", lazy="raise")
     subscription = relationship("Subscription", back_populates="profile", uselist=False, lazy="selectin")

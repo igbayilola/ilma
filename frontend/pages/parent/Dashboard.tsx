@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
-import { Plus, Flame, Clock, TrendingUp, ChevronRight, Lightbulb, Zap, MessageSquare } from 'lucide-react';
+import { Plus, Flame, Clock, TrendingUp, ChevronRight, Lightbulb, Zap, MessageSquare, Volume2, Share2 } from 'lucide-react';
 import { parentService, ChildDTO, ChildHealthDTO } from '../../services/parentService';
 
 const STATUS_CONFIG = {
@@ -79,6 +79,34 @@ export const ParentDashboard: React.FC = () => {
     navigate('/select-profile/create');
   };
 
+  const speakHealthSummary = (children: ChildHealthDTO[]) => {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const lines = children.map(child => {
+      const status = child.status === 'green' ? 'va bien'
+        : child.status === 'orange' ? 'a besoin d\'encouragement'
+        : 'risque de prendre du retard';
+      const score = `Score moyen : ${Math.round(child.averageScore)} pour cent.`;
+      const time = `Temps cette semaine : ${child.timeThisWeekMinutes} minutes.`;
+      const advice = child.advice ? child.advice : '';
+      return `${child.displayName} ${status}. ${score} ${time} ${advice}`;
+    });
+    const text = `Bonjour ! Voici le résumé de vos enfants. ${lines.join('. ')}`;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'fr-FR';
+    utterance.rate = 0.9;
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const shareOnWhatsApp = (children: ChildHealthDTO[]) => {
+    const lines = children.map(child => {
+      const emoji = child.status === 'green' ? '🟢' : child.status === 'orange' ? '🟡' : '🔴';
+      return `${emoji} ${child.displayName} — Score: ${Math.round(child.averageScore)}%, Temps: ${child.timeThisWeekMinutes}min`;
+    });
+    const text = `📚 Résumé Sitou\n\n${lines.join('\n')}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+  };
+
   const handleTriggerDigest = async () => {
     setDigestSending(true);
     setDigestMessage(null);
@@ -133,6 +161,10 @@ export const ParentDashboard: React.FC = () => {
                       src={child.avatarUrl}
                       alt={child.displayName}
                       className="w-14 h-14 rounded-2xl object-cover border-2 border-gray-100"
+                      loading="lazy"
+                      decoding="async"
+                      width={56}
+                      height={56}
                     />
                   </div>
                   <div>
@@ -209,9 +241,25 @@ export const ParentDashboard: React.FC = () => {
           );
         })}
 
-        {/* Digest SMS button */}
+        {/* Action buttons */}
         {healthData.length > 0 && (
           <div className="space-y-2">
+            {'speechSynthesis' in window && (
+              <button
+                onClick={() => speakHealthSummary(healthData)}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition-all"
+              >
+                <Volume2 size={18} />
+                Écouter le résumé
+              </button>
+            )}
+            <button
+              onClick={() => shareOnWhatsApp(healthData)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-green-600 text-white font-bold rounded-2xl hover:bg-green-700 transition-all"
+            >
+              <Share2 size={18} />
+              Partager sur WhatsApp
+            </button>
             <button
               onClick={handleTriggerDigest}
               disabled={digestSending}

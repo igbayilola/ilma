@@ -83,6 +83,26 @@ def setup_scheduler() -> None:
         replace_existing=True,
     )
 
+    # Cleanup: purge soft-deleted profiles past 30-day grace period (daily 3:00 UTC)
+    from app.tasks.cleanup_tasks import _cleanup_old_audit_logs, _purge_expired_profiles
+
+    scheduler.add_job(
+        _purge_expired_profiles,
+        CronTrigger(hour=3, minute=0),
+        id="purge_profiles",
+        name="Purge expired profiles (30-day grace)",
+        replace_existing=True,
+    )
+
+    # Cleanup: delete audit logs older than 90 days (daily 3:30 UTC)
+    scheduler.add_job(
+        _cleanup_old_audit_logs,
+        CronTrigger(hour=3, minute=30),
+        id="cleanup_audit_logs",
+        name="Cleanup old audit logs (90 days)",
+        replace_existing=True,
+    )
+
     logger.info("[Scheduler] Registered %d jobs", len(scheduler.get_jobs()))
 
 
