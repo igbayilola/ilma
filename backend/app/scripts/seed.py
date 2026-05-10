@@ -17,7 +17,7 @@ from app.models.content import (
     QuestionType,
     Skill,
 )
-from app.models.mock_exam import MockExam, ExamItem, ExamSubQuestion
+from app.models.mock_exam import ExamItem, ExamSubQuestion, MockExam
 from app.models.subscription import Plan, PlanTier
 from app.models.user import User, UserRole
 from app.schemas.content import CurriculumImportRequest
@@ -146,7 +146,7 @@ def _load_exams_from_content() -> list:
 
 async def seed_v2_exercises(session) -> None:
     """Seed exercises from v2-converted files (v1.0 format with micro_skill_external_id)."""
-    from app.models.content import MicroSkill, ContentStatus
+    from app.models.content import ContentStatus, MicroSkill
 
     v2_files = sorted(_EXERCICES_DIR.rglob("v2_*.json"))
     if not v2_files:

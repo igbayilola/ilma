@@ -13,6 +13,9 @@ line-length = 120
 select = ["E", "F", "I", "W"]
 ignore = ["E501"]
 
+[tool.ruff.lint.per-file-ignores]
+"app/scripts/*" = ["E701"]
+
 [tool.coverage.run]
 source = ["app"]
 omit = ["app/scripts/*", "app/db/migrations/*"]

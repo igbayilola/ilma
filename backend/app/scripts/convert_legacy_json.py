@@ -13,7 +13,6 @@ def convert(data: dict) -> dict:
     grade_name = data.get("grade", "CM2")
     domain_info = data.get("domain", {})
     domain_name = domain_info.get("domain_name", "Numération")
-    domain_id = domain_info.get("domain_id", "")
 
     # Build micro_skill lookup: micro_skill_id -> definition
     ms_lookup: dict[str, dict] = {}
