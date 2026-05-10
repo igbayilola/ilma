@@ -1,12 +1,9 @@
 """Profile CRUD + PIN verification tests (Netflix-style profiles)."""
-import uuid
 
 import pytest
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.profile import Profile
-from app.models.user import User
 from tests.conftest import auth_header
 
 

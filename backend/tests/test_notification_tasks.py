@@ -14,6 +14,7 @@ import pytest_asyncio
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.security import get_password_hash
 from app.models.content import Domain, GradeLevel, Skill, Subject
 from app.models.notification import Notification, NotificationChannel, NotificationType
 from app.models.parent_student import ParentStudent
@@ -21,7 +22,6 @@ from app.models.profile import Profile
 from app.models.progress import Progress
 from app.models.session import ExerciseSession, SessionMode, SessionStatus
 from app.models.user import User, UserRole
-from app.core.security import get_password_hash
 
 # ---------------------------------------------------------------------------
 # Helpers

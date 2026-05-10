@@ -16,7 +16,6 @@ from app.models.session import ExerciseSession, SessionMode, SessionStatus
 from app.services.badge_service import BADGE_DEFINITIONS, badge_service
 from tests.conftest import auth_header
 
-
 # ── Fixtures ──────────────────────────────────────────────
 
 

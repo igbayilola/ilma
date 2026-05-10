@@ -6,22 +6,11 @@ import pytest
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.content import Domain, Skill, Subject
 from app.models.profile import Profile
 from app.models.session import ExerciseSession, SessionMode, SessionStatus
 from app.models.social import Challenge, ChallengeStatus
-from app.models.subscription import (
-    Payment,
-    PaymentProvider,
-    PaymentStatus,
-    Plan,
-    PlanTier,
-    Subscription,
-    SubscriptionStatus,
-)
-from app.models.user import User, UserRole
+from app.models.user import User
 from tests.conftest import auth_header
-
 
 # ── Helpers ────────────────────────────────────────────────
 
