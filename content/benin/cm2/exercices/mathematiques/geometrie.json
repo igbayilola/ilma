@@ -24,8 +24,8 @@
             "Une diagonale"
           ],
           "correct_answer": "Un sommet",
-          "explanation": "Le point de rencontre de deux côtés est un sommet.",
-          "hint": "Réfléchis bien."
+          "explanation": "Le point de rencontre de deux côtés d'un polygone s'appelle un sommet.",
+          "hint": "Pense à l'endroit où deux côtés se touchent."
         },
         {
           "exercise_id": "EX002",
@@ -50,7 +50,7 @@
             "Diagonale": "Segment reliant 2 sommets non consécutifs"
           },
           "explanation": "Sommet = point d'intersection des côtés; côté = segment entre sommets consécutifs; diagonale = segment entre sommets non consécutifs.",
-          "hint": "Associe."
+          "hint": "Relis chaque définition et pense à la position des points concernés."
         },
         {
           "exercise_id": "EX003",
@@ -61,7 +61,7 @@
           "time_limit_seconds": 45,
           "correct_answer": "centre, rayon, diamètre",
           "explanation": "Les éléments principaux du cercle sont le centre, le rayon et le diamètre.",
-          "hint": "Complète."
+          "hint": "Pense aux trois éléments que tu utilises quand tu traces un cercle au compas."
         },
         {
           "exercise_id": "EX004",
@@ -77,8 +77,8 @@
             "3"
           ],
           "correct_answer": "2",
-          "explanation": "Un rectangle a exactement 2 diagonales.",
-          "hint": "Réfléchis bien."
+          "explanation": "Un rectangle a exactement 2 diagonales qui relient les sommets opposés.",
+          "hint": "Une diagonale relie deux sommets opposés. Combien de paires de sommets opposés y a-t-il ?"
         }
       ]
     },
@@ -100,7 +100,7 @@
           ],
           "correct_answer": "Une équerre",
           "explanation": "L'équerre sert à tracer et vérifier les angles droits.",
-          "hint": "Réfléchis bien."
+          "hint": "Quel instrument a un coin à 90° ?"
         },
         {
           "exercise_id": "EX002",
@@ -111,7 +111,7 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "Le compas permet de tracer un cercle en gardant l'écartement constant.",
-          "hint": "Réfléchis bien."
+          "hint": "Pense à l'instrument qui a deux branches et une pointe."
         },
         {
           "exercise_id": "EX003",
@@ -128,7 +128,7 @@
           },
           "correct_answer": 7,
           "explanation": "Un segment de 7 cm va de 0 à 7 cm sur la règle.",
-          "hint": "Observe."
+          "hint": "Place le zéro de la règle à une extrémité et marque 7 cm."
         },
         {
           "exercise_id": "EX004",
@@ -145,7 +145,7 @@
           ],
           "correct_answer": "L'angle droit de l'équerre dans l'angle",
           "explanation": "L'équerre permet de vérifier un angle droit en le plaçant dans le coin.",
-          "hint": "Réfléchis bien."
+          "hint": "L'équerre possède un angle de 90°. Où dois-tu le poser ?"
         }
       ]
     },
@@ -167,7 +167,7 @@
           ],
           "correct_answer": "Les coordonnées des 3 sommets",
           "explanation": "Pour reproduire, il faut connaître la position de chaque sommet.",
-          "hint": "Réfléchis bien."
+          "hint": "Combien de points définissent un triangle ?"
         },
         {
           "exercise_id": "EX002",
@@ -184,7 +184,7 @@
           },
           "correct_answer": 4,
           "explanation": "Un carré de 4 cm a 4 côtés égaux et 4 angles droits.",
-          "hint": "Observe."
+          "hint": "Chaque côté du carré doit mesurer exactement 4 cm."
         },
         {
           "exercise_id": "EX003",
@@ -195,7 +195,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "La règle mesure les longueurs et le compas reporte les distances.",
-          "hint": "Réfléchis bien."
+          "hint": "Quels outils permettent de mesurer et reporter des longueurs ?"
         },
         {
           "exercise_id": "EX004",
@@ -212,7 +212,7 @@
           ],
           "correct_answer": "Les longueurs des deux diagonales",
           "explanation": "Un losange est défini par ses diagonales (perpendiculaires et se coupant en leur milieu).",
-          "hint": "Réfléchis bien."
+          "hint": "Pense aux segments qui se croisent à l'intérieur du losange."
         }
       ]
     },
@@ -229,7 +229,7 @@
           "erroneous_content": "Rectangle avec un angle non droit",
           "correct_answer": "Refaire le tracé en vérifiant chaque angle avec l'équerre",
           "explanation": "Un rectangle doit avoir 4 angles droits. Utilisez l'équerre pour vérifier.",
-          "hint": "Trouve l'erreur."
+          "hint": "Combien d'angles droits doit avoir un rectangle ?"
         },
         {
           "exercise_id": "EX002",
@@ -246,7 +246,7 @@
           ],
           "correct_answer": "Mesurer chacun avec la règle",
           "explanation": "La règle graduée permet de mesurer et comparer les longueurs.",
-          "hint": "Réfléchis bien."
+          "hint": "Quel instrument gradué sert à mesurer les longueurs ?"
         },
         {
           "exercise_id": "EX003",
@@ -257,7 +257,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Si la règle passe par les 3 points, ils sont alignés.",
-          "hint": "Réfléchis bien."
+          "hint": "Place ta règle contre les 3 points et regarde si elle les touche tous."
         },
         {
           "exercise_id": "EX004",
@@ -269,7 +269,7 @@
           "erroneous_content": "Cercle irrégulier",
           "correct_answer": "Retracer en maintenant l'écartement du compas fixe",
           "explanation": "Le compas doit garder le même écartement pendant tout le tracé.",
-          "hint": "Trouve l'erreur."
+          "hint": "Que doit rester constant quand on trace un cercle au compas ?"
         }
       ]
     },
@@ -291,7 +291,7 @@
           ],
           "correct_answer": "Le rayon",
           "explanation": "Le rayon va du centre à n'importe quel point du cercle.",
-          "hint": "Réfléchis bien."
+          "hint": "Ce segment part du centre. Comment s'appelle-t-il ?"
         },
         {
           "exercise_id": "EX002",
@@ -316,7 +316,7 @@
             "Corde": "Segment entre 2 points du cercle"
           },
           "explanation": "Rayon = centre→point, diamètre = plus grande corde (passe par le centre), corde = segment entre 2 points.",
-          "hint": "Associe."
+          "hint": "Le rayon part du centre, le diamètre traverse tout le cercle par le centre."
         },
         {
           "exercise_id": "EX003",
@@ -327,7 +327,7 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "D = 2 × r, toujours.",
-          "hint": "Réfléchis bien."
+          "hint": "Le diamètre traverse le cercle en passant par le centre : il couvre deux rayons."
         },
         {
           "exercise_id": "EX004",
@@ -338,7 +338,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "diamètre",
           "explanation": "Le diamètre passe par le centre et est la corde la plus longue.",
-          "hint": "Complète."
+          "hint": "Quelle corde passe par le centre du cercle ?"
         }
       ]
     },
@@ -360,7 +360,7 @@
           ],
           "correct_answer": "5 cm",
           "explanation": "L'écartement du compas = le rayon.",
-          "hint": "Réfléchis bien."
+          "hint": "L'écartement du compas correspond à quel élément du cercle ?"
         },
         {
           "exercise_id": "EX002",
@@ -396,7 +396,7 @@
           "time_limit_seconds": 45,
           "correct_answer": false,
           "explanation": "Le compas s'écarte du rayon, pas du diamètre. Rayon = 6/2 = 3 cm.",
-          "hint": "Réfléchis bien."
+          "hint": "Le compas mesure le rayon, pas le diamètre. Quelle est la relation entre les deux ?"
         },
         {
           "exercise_id": "EX004",
@@ -413,7 +413,7 @@
           },
           "correct_answer": 3,
           "explanation": "Écartement du compas = 3 cm.",
-          "hint": "Observe."
+          "hint": "Règle l'écartement du compas sur le rayon demandé."
         }
       ]
     },
@@ -429,7 +429,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 16,
           "explanation": "D = 2 × r = 2 × 8 = 16 cm.",
-          "hint": "Calcule."
+          "hint": "Le diamètre est le double du rayon : D = 2 × r."
         },
         {
           "exercise_id": "EX002",
@@ -440,7 +440,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 7,
           "explanation": "r = D ÷ 2 = 14 ÷ 2 = 7 cm.",
-          "hint": "Calcule."
+          "hint": "Le rayon est la moitié du diamètre : r = D ÷ 2."
         },
         {
           "exercise_id": "EX003",
@@ -457,7 +457,7 @@
           ],
           "correct_answer": "1,25 cm",
           "explanation": "r = D/2 = 2,5/2 = 1,25 cm.",
-          "hint": "Réfléchis bien."
+          "hint": "Divise le diamètre par 2 pour obtenir le rayon."
         },
         {
           "exercise_id": "EX004",
@@ -468,7 +468,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 7,
           "explanation": "D = 2 × 3,5 = 7 cm.",
-          "hint": "Calcule.",
+          "hint": "Multiplie le rayon par 2 pour obtenir le diamètre.",
           "tolerance": 0.1
         }
       ]
@@ -491,7 +491,7 @@
           ],
           "correct_answer": "Aigu",
           "explanation": "Un angle aigu mesure entre 0° et 90°.",
-          "hint": "Réfléchis bien."
+          "hint": "45° est-il plus petit ou plus grand que 90° ?"
         },
         {
           "exercise_id": "EX002",
@@ -530,7 +530,7 @@
           ],
           "correct_answer": "Un angle droit",
           "explanation": "90° = angle droit.",
-          "hint": "Réfléchis bien."
+          "hint": "Quel type d'angle mesure exactement 90° ?"
         },
         {
           "exercise_id": "EX004",
@@ -541,7 +541,7 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "Un angle obtus est entre 90° et 180°. 135° est obtus.",
-          "hint": "Réfléchis bien."
+          "hint": "Un angle obtus est compris entre 90° et 180°. Où se situe 135° ?"
         }
       ]
     },
@@ -574,7 +574,7 @@
           ],
           "correct_answer": "Le sommet de l'angle",
           "explanation": "Le centre du rapporteur se place toujours sur le sommet.",
-          "hint": "Réfléchis bien."
+          "hint": "Le centre du rapporteur doit coïncider avec le point où les deux côtés de l'angle se rencontrent."
         },
         {
           "exercise_id": "EX003",
@@ -585,7 +585,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 40,
           "explanation": "L'angle au sommet est donné : 40°.",
-          "hint": "Calcule.",
+          "hint": "La mesure de l'angle est directement indiquée dans l'énoncé.",
           "tolerance": 1
         },
         {
@@ -598,7 +598,7 @@
           "erroneous_content": "150° au lieu de 30°",
           "correct_answer": "30°",
           "explanation": "L'élève a lu la mauvaise graduation (intérieure/extérieure). Il faut choisir la graduation qui part de 0° sur le bon côté.",
-          "hint": "Trouve l'erreur."
+          "hint": "Le rapporteur a deux graduations. 150° et 30° sont complémentaires à 180°."
         }
       ]
     },
@@ -649,7 +649,7 @@
           },
           "correct_answer": 45,
           "explanation": "45° est la moitié d'un angle droit.",
-          "hint": "Observe."
+          "hint": "Repère la graduation 45° sur le rapporteur."
         },
         {
           "exercise_id": "EX003",
@@ -666,7 +666,7 @@
           ],
           "correct_answer": "120° sur la bonne graduation",
           "explanation": "On lit directement 120° sur le rapporteur.",
-          "hint": "Réfléchis bien."
+          "hint": "Utilise directement la graduation du rapporteur pour repérer 120°."
         },
         {
           "exercise_id": "EX004",
@@ -683,7 +683,7 @@
           },
           "correct_answer": 75,
           "explanation": "75° est entre 60° et 90°.",
-          "hint": "Observe."
+          "hint": "Repère 75° sur le rapporteur, entre les graduations 60° et 90°."
         }
       ]
     },
@@ -732,7 +732,7 @@
           "erroneous_content": "60° + 70° + 60° = 190°",
           "correct_answer": "La somme ne fait pas 180° (elle fait 190°). L'élève s'est trompé.",
           "explanation": "La somme des angles d'un triangle doit toujours être 180°.",
-          "hint": "Trouve l'erreur."
+          "hint": "Additionne les trois angles donnés. La somme est-elle bien égale à 180° ?"
         },
         {
           "exercise_id": "EX004",
@@ -743,7 +743,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 60,
           "explanation": "Triangle équilatéral : 3 angles égaux. 180 ÷ 3 = 60°.",
-          "hint": "Calcule."
+          "hint": "Les 3 angles sont égaux et leur somme vaut 180°. Divise 180 par 3."
         }
       ]
     },
@@ -765,7 +765,7 @@
           ],
           "correct_answer": "O est le milieu de [AA']",
           "explanation": "En symétrie centrale, le centre O est le milieu du segment [AA'].",
-          "hint": "Réfléchis bien."
+          "hint": "Le centre de symétrie est situé exactement au milieu entre un point et son image."
         },
         {
           "exercise_id": "EX002",
@@ -782,7 +782,7 @@
           },
           "correct_answer": 7,
           "explanation": "A'(7,6) : xA' = 2×5-3=7, yA' = 2×4-2=6.",
-          "hint": "Observe."
+          "hint": "Pour trouver A', utilise la formule : coordonnée de A' = 2 × coordonnée de O - coordonnée de A."
         },
         {
           "exercise_id": "EX003",
@@ -814,7 +814,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Par définition, O est le milieu de [AA'], donc OA = OA'.",
-          "hint": "Réfléchis bien."
+          "hint": "Si O est le milieu de [AA'], que peux-tu dire de OA et OA' ?"
         }
       ]
     },
@@ -855,7 +855,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "La symétrie centrale conserve les longueurs : AB = A'B'.",
-          "hint": "Réfléchis bien."
+          "hint": "La symétrie centrale est une isométrie : les distances sont-elles conservées ?"
         },
         {
           "exercise_id": "EX003",
@@ -872,7 +872,7 @@
           ],
           "correct_answer": "Un segment [A'B'] de même longueur",
           "explanation": "La symétrie centrale transforme un segment en un segment de même longueur.",
-          "hint": "Réfléchis bien."
+          "hint": "La symétrie centrale conserve les longueurs et transforme un segment en un segment."
         },
         {
           "exercise_id": "EX004",
@@ -889,7 +889,7 @@
           },
           "correct_answer": 5,
           "explanation": "Le symétrique est de l'autre côté du centre.",
-          "hint": "Observe."
+          "hint": "Place le symétrique de chaque extrémité de l'autre côté du centre, à même distance."
         }
       ]
     },
@@ -934,7 +934,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "La symétrie centrale conserve les longueurs et les angles.",
-          "hint": "Réfléchis bien."
+          "hint": "La symétrie centrale conserve-t-elle les dimensions des figures ?"
         },
         {
           "exercise_id": "EX003",
@@ -951,7 +951,7 @@
           ],
           "correct_answer": "Chaque sommet du carré",
           "explanation": "On transforme chaque sommet pour obtenir la figure image.",
-          "hint": "Réfléchis bien."
+          "hint": "Pour transformer un polygone, il faut transformer tous ses sommets."
         },
         {
           "exercise_id": "EX004",
@@ -976,7 +976,7 @@
             "Cercle": "Cercle de même rayon"
           },
           "explanation": "La symétrie centrale conserve la forme et les dimensions.",
-          "hint": "Associe."
+          "hint": "La symétrie centrale conserve la forme et les dimensions de chaque figure."
         }
       ]
     },
@@ -992,7 +992,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "La symétrie centrale est une isométrie : elle conserve les distances.",
-          "hint": "Réfléchis bien."
+          "hint": "Une isométrie conserve les distances. La symétrie centrale en est-elle une ?"
         },
         {
           "exercise_id": "EX002",
@@ -1004,7 +1004,7 @@
           "erroneous_content": "Carré de 8 cm",
           "correct_answer": "Carré de 4 cm",
           "explanation": "La symétrie centrale conserve les longueurs, donc le carré image a aussi 4 cm de côté.",
-          "hint": "Trouve l'erreur."
+          "hint": "La symétrie centrale change-t-elle la taille des figures ?"
         },
         {
           "exercise_id": "EX003",
@@ -1021,7 +1021,7 @@
           ],
           "correct_answer": "Reste la même",
           "explanation": "La symétrie centrale conserve les aires.",
-          "hint": "Réfléchis bien."
+          "hint": "Si les longueurs sont conservées, que se passe-t-il pour l'aire ?"
         },
         {
           "exercise_id": "EX004",
@@ -1032,7 +1032,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "Les angles sont conservés par symétrie centrale.",
-          "hint": "Réfléchis bien."
+          "hint": "La symétrie centrale conserve les longueurs et les formes. Qu'en est-il des angles ?"
         }
       ]
     },
@@ -1054,29 +1054,32 @@
           ],
           "correct_answer": "L'une utilise un axe (droite), l'autre un centre (point)",
           "explanation": "Axiale = par rapport à une droite, centrale = par rapport à un point.",
-          "hint": "Réfléchis bien."
+          "hint": "L'une utilise une droite, l'autre un point. Laquelle utilise quoi ?"
         },
         {
           "exercise_id": "EX002",
-          "type": "ordering",
+          "type": "matching",
           "difficulty": "hard",
-          "text": "Classe ces transformations.",
+          "text": "Associe chaque transformation à l'élément qui la définit.",
           "points": 3,
           "time_limit_seconds": 90,
-          "items": [
+          "left_items": [
             "Symétrie axiale",
             "Symétrie centrale",
-            "Translation",
-            "Rotation"
+            "Translation"
           ],
-          "correct_answer": [
-            "Symétrie axiale",
-            "Symétrie centrale",
-            "Translation",
-            "Rotation"
+          "right_items": [
+            "Un axe (droite)",
+            "Un centre (point)",
+            "Un vecteur (direction, sens, longueur)"
           ],
-          "explanation": "Les 4 transformations du plan au programme.",
-          "hint": "Mets dans l'ordre."
+          "correct_answer": {
+            "Symétrie axiale": "Un axe (droite)",
+            "Symétrie centrale": "Un centre (point)",
+            "Translation": "Un vecteur (direction, sens, longueur)"
+          },
+          "explanation": "La symétrie axiale se fait par rapport à une droite, la symétrie centrale par rapport à un point, et la translation se fait selon un vecteur.",
+          "hint": "Chaque transformation est définie par un élément géométrique différent."
         },
         {
           "exercise_id": "EX003",
@@ -1088,7 +1091,7 @@
           "erroneous_content": "Méthode du centre appliquée à un axe",
           "correct_answer": "Il faut tracer la perpendiculaire à l'axe et reporter la distance",
           "explanation": "En symétrie axiale, on trace la perpendiculaire à l'axe passant par le point.",
-          "hint": "Trouve l'erreur."
+          "hint": "En symétrie axiale, on utilise une perpendiculaire à l'axe, pas la méthode du milieu."
         },
         {
           "exercise_id": "EX004",
@@ -1099,7 +1102,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "L'axe est bien la médiatrice de [MM'] pour tout point M et son image M'.",
-          "hint": "Réfléchis bien."
+          "hint": "L'axe est perpendiculaire à [MM'] et passe par son milieu. C'est la définition de la médiatrice."
         }
       ]
     },
@@ -1121,29 +1124,24 @@
           ],
           "correct_answer": "Le rectangle",
           "explanation": "Le rectangle a un centre de symétrie : l'intersection de ses diagonales.",
-          "hint": "Réfléchis bien."
+          "hint": "Quelle figure a des diagonales qui se coupent en leur milieu et envoie chaque sommet sur le sommet opposé ?"
         },
         {
           "exercise_id": "EX002",
-          "type": "ordering",
+          "type": "mcq",
           "difficulty": "medium",
-          "text": "Parmi : carré, rectangle, parallélogramme, triangle équilatéral — lesquels admettent un centre de symétrie ? Classe-les.",
+          "text": "Parmi ces figures, laquelle n'admet PAS de centre de symétrie ?",
           "points": 2,
           "time_limit_seconds": 60,
-          "items": [
+          "choices": [
+            "Triangle équilatéral",
             "Carré",
             "Rectangle",
-            "Parallélogramme",
-            "Triangle équilatéral"
+            "Parallélogramme"
           ],
-          "correct_answer": [
-            "Carré",
-            "Rectangle",
-            "Parallélogramme",
-            "Triangle équilatéral"
-          ],
-          "explanation": "Le carré, le rectangle et le parallélogramme ont un centre de symétrie. Attention : le triangle équilatéral n'en a pas.",
-          "hint": "Mets dans l'ordre."
+          "correct_answer": "Triangle équilatéral",
+          "explanation": "Le carré, le rectangle et le parallélogramme ont un centre de symétrie (intersection des diagonales). Le triangle équilatéral n'en a pas.",
+          "hint": "Un centre de symétrie envoie chaque sommet sur un autre sommet. Est-ce possible avec un nombre impair de sommets ?"
         },
         {
           "exercise_id": "EX003",
@@ -1154,7 +1152,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Le centre du cercle est un centre de symétrie du cercle.",
-          "hint": "Réfléchis bien."
+          "hint": "Tout point du cercle a un point diamétralement opposé, aussi sur le cercle."
         },
         {
           "exercise_id": "EX004",
@@ -1171,7 +1169,7 @@
           ],
           "correct_answer": "Oui, l'intersection des diagonales",
           "explanation": "Les diagonales d'un parallélogramme se coupent en leur milieu, qui est le centre de symétrie.",
-          "hint": "Réfléchis bien."
+          "hint": "Les diagonales d'un parallélogramme ont une propriété particulière par rapport à leur point d'intersection."
         }
       ]
     },
@@ -1218,7 +1216,7 @@
           },
           "correct_answer": 4,
           "explanation": "Le centre est au milieu du carré, à l'intersection des diagonales.",
-          "hint": "Observe."
+          "hint": "Trace les deux diagonales du carré et repère leur point d'intersection."
         },
         {
           "exercise_id": "EX003",
@@ -1235,7 +1233,7 @@
           ],
           "correct_answer": "L'intersection des diagonales",
           "explanation": "Les diagonales se coupent en leur milieu = centre de symétrie.",
-          "hint": "Réfléchis bien."
+          "hint": "Où les diagonales d'un parallélogramme se coupent-elles ?"
         },
         {
           "exercise_id": "EX004",
@@ -1246,7 +1244,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Le centre du cercle est son centre de symétrie.",
-          "hint": "Réfléchis bien."
+          "hint": "Tout point du cercle a un point diamétralement opposé. Quel point est au milieu ?"
         }
       ]
     },
@@ -1262,7 +1260,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Il a 3 côtés et une symétrie d'ordre impair, il n'admet pas de centre de symétrie",
           "explanation": "Un triangle n'a pas de centre de symétrie car aucun point ne permet de transformer chaque sommet en un autre sommet.",
-          "hint": "Écris.",
+          "hint": "Un centre de symétrie envoie chaque sommet sur un autre. Avec 3 sommets (nombre impair), est-ce possible ?",
           "accepted_answers": [
             "pas de centre de symétrie",
             "symétrie d'ordre impair"
@@ -1278,7 +1276,7 @@
           "erroneous_content": "Le triangle isocèle a un centre de symétrie",
           "correct_answer": "Le triangle isocèle n'a PAS de centre de symétrie",
           "explanation": "Aucun triangle n'a de centre de symétrie : un sommet ne peut correspondre à aucun autre par symétrie centrale.",
-          "hint": "Trouve l'erreur."
+          "hint": "Aucun triangle n'a de centre de symétrie. Pourquoi ?"
         },
         {
           "exercise_id": "EX003",
@@ -1295,7 +1293,7 @@
           ],
           "correct_answer": "Le triangle",
           "explanation": "Aucun triangle n'a de centre de symétrie.",
-          "hint": "Réfléchis bien."
+          "hint": "Un triangle a un nombre impair de sommets. Peut-on les apparier par symétrie centrale ?"
         },
         {
           "exercise_id": "EX004",
@@ -1329,7 +1327,7 @@
           ],
           "correct_answer": "La médiatrice du segment [MM']",
           "explanation": "L'axe est la médiatrice du segment reliant tout point à son image.",
-          "hint": "Réfléchis bien."
+          "hint": "L'axe est perpendiculaire à [MM'] et passe par son milieu."
         },
         {
           "exercise_id": "EX002",
@@ -1340,7 +1338,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "perpendiculaire, milieu",
           "explanation": "L'axe est perpendiculaire à [PP'] et passe par le milieu de [PP'].",
-          "hint": "Complète."
+          "hint": "L'axe forme un angle de 90° avec [PP'] et coupe ce segment en son centre."
         },
         {
           "exercise_id": "EX003",
@@ -1351,7 +1349,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Par définition, d(P,axe) = d(P',axe).",
-          "hint": "Réfléchis bien."
+          "hint": "L'axe est au milieu entre le point et son image."
         },
         {
           "exercise_id": "EX004",
@@ -1368,7 +1366,7 @@
           ],
           "correct_answer": "M lui-même",
           "explanation": "Tout point de l'axe est son propre symétrique.",
-          "hint": "Réfléchis bien."
+          "hint": "Si M est déjà sur l'axe, sa distance à l'axe est 0."
         }
       ]
     },
@@ -1415,7 +1413,7 @@
           },
           "correct_answer": 5,
           "explanation": "La perpendiculaire forme un angle de 90° avec l'axe.",
-          "hint": "Observe."
+          "hint": "Utilise l'équerre pour tracer un angle de 90° avec l'axe."
         },
         {
           "exercise_id": "EX003",
@@ -1432,7 +1430,7 @@
           ],
           "correct_answer": "L'équerre",
           "explanation": "L'équerre permet de tracer des angles droits (perpendiculaires).",
-          "hint": "Réfléchis bien."
+          "hint": "Quel instrument permet de tracer un angle de 90° ?"
         },
         {
           "exercise_id": "EX004",
@@ -1443,7 +1441,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Perpendiculaire = angle droit = 90°.",
-          "hint": "Réfléchis bien."
+          "hint": "Perpendiculaire signifie que l'angle formé est un angle droit."
         }
       ]
     },
@@ -1484,7 +1482,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 4,
           "explanation": "En symétrie axiale, le point et son image sont à la même distance de l'axe.",
-          "hint": "Calcule."
+          "hint": "Le symétrique d'un point est à la même distance de l'axe, de l'autre côté."
         },
         {
           "exercise_id": "EX003",
@@ -1501,7 +1499,7 @@
           },
           "correct_answer": 5,
           "explanation": "La distance à l'axe est conservée.",
-          "hint": "Observe."
+          "hint": "Mesure la distance du point à l'axe et reporte cette même distance de l'autre côté."
         },
         {
           "exercise_id": "EX004",
@@ -1512,7 +1510,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Les distances à l'axe sont conservées en symétrie axiale.",
-          "hint": "Réfléchis bien."
+          "hint": "En symétrie axiale, l'axe est la médiatrice de [PP']. Les distances sont-elles égales ?"
         }
       ]
     },
@@ -1558,7 +1556,7 @@
           "erroneous_content": "Distances non respectées",
           "correct_answer": "Mesurer chaque distance à l'axe et reporter exactement",
           "explanation": "Chaque point doit être à la même distance de l'axe que son image.",
-          "hint": "Trouve l'erreur."
+          "hint": "Chaque sommet doit être à la même distance de l'axe que son image. Vérifie les mesures."
         },
         {
           "exercise_id": "EX003",
@@ -1569,7 +1567,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "La symétrie axiale conserve les longueurs et les angles : le carré image est identique.",
-          "hint": "Réfléchis bien."
+          "hint": "La symétrie axiale conserve les longueurs et les angles. La figure image a-t-elle la même forme ?"
         },
         {
           "exercise_id": "EX004",
@@ -1586,7 +1584,7 @@
           ],
           "correct_answer": "L'équerre (pour la perpendiculaire)",
           "explanation": "L'équerre sert à tracer les perpendiculaires à l'axe.",
-          "hint": "Réfléchis bien."
+          "hint": "Pour construire un symétrique par rapport à un axe, il faut tracer des perpendiculaires. Quel outil utilise-t-on ?"
         }
       ]
     },
@@ -1602,7 +1600,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 4,
           "explanation": "Le carré a 4 axes : 2 diagonales + 2 médiatrices des côtés.",
-          "hint": "Calcule."
+          "hint": "Pense aux diagonales et aux droites passant par les milieux des côtés opposés."
         },
         {
           "exercise_id": "EX002",
@@ -1619,7 +1617,7 @@
           ],
           "correct_answer": "Ses 2 diagonales et les 2 médiatrices de ses côtés",
           "explanation": "Le carré a 4 axes de symétrie.",
-          "hint": "Réfléchis bien."
+          "hint": "Le carré est très symétrique. Pense aux diagonales et aux médiatrices."
         },
         {
           "exercise_id": "EX003",
@@ -1636,7 +1634,7 @@
           },
           "correct_answer": 4,
           "explanation": "2 diagonales + 2 médiatrices des côtés.",
-          "hint": "Observe."
+          "hint": "Trace les diagonales et les droites passant par les milieux des côtés opposés."
         },
         {
           "exercise_id": "EX004",
@@ -1647,7 +1645,7 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "2 diagonales + 2 médiatrices = 4 axes.",
-          "hint": "Réfléchis bien."
+          "hint": "Compte : 2 diagonales + 2 médiatrices des côtés."
         }
       ]
     },
@@ -1663,7 +1661,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 2,
           "explanation": "Le rectangle (non carré) a 2 axes : les 2 médiatrices des côtés. Ses diagonales ne sont pas des axes de symétrie.",
-          "hint": "Calcule."
+          "hint": "Les diagonales du rectangle non carré ne sont pas des axes. Que reste-t-il ?"
         },
         {
           "exercise_id": "EX002",
@@ -1674,7 +1672,7 @@
           "time_limit_seconds": 60,
           "correct_answer": false,
           "explanation": "Les diagonales d'un rectangle non carré ne sont PAS des axes de symétrie (les côtés adjacents n'ont pas la même longueur).",
-          "hint": "Réfléchis bien."
+          "hint": "Si tu plies le rectangle le long d'une diagonale, les deux parties se superposent-elles ?"
         },
         {
           "exercise_id": "EX003",
@@ -1689,9 +1687,9 @@
             "step": 1,
             "target": 4
           },
-          "correct_answer": 4,
+          "correct_answer": 2,
           "explanation": "Les 2 axes passent par les milieux des côtés opposés.",
-          "hint": "Observe."
+          "hint": "Trace les droites passant par les milieux des côtés opposés."
         },
         {
           "exercise_id": "EX004",
@@ -1708,7 +1706,7 @@
           ],
           "correct_answer": "Les milieux des côtés opposés",
           "explanation": "Les axes sont les médiatrices des côtés.",
-          "hint": "Réfléchis bien."
+          "hint": "Les axes relient les milieux des côtés opposés du rectangle."
         }
       ]
     },
@@ -1730,7 +1728,7 @@
           ],
           "correct_answer": "Une infinité",
           "explanation": "Tout diamètre est un axe de symétrie du cercle.",
-          "hint": "Réfléchis bien."
+          "hint": "Combien de diamètres peut-on tracer dans un cercle ?"
         },
         {
           "exercise_id": "EX002",
@@ -1741,7 +1739,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "Chaque diamètre sépare le cercle en deux demi-cercles identiques",
           "explanation": "Un diamètre coupe le cercle en deux parties superposables.",
-          "hint": "Écris.",
+          "hint": "Pense à ce qui se passe quand tu plies le cercle le long d'un diamètre.",
           "accepted_answers": [
             "diamètre coupe en deux",
             "deux moitiés identiques",
@@ -1757,7 +1755,7 @@
           "time_limit_seconds": 45,
           "correct_answer": false,
           "explanation": "Le cercle a une infinité d'axes de symétrie (tout diamètre).",
-          "hint": "Réfléchis bien."
+          "hint": "Le cercle a bien plus que 2 axes. Chaque diamètre en est un."
         },
         {
           "exercise_id": "EX004",
@@ -1774,7 +1772,7 @@
           ],
           "correct_answer": "N'importe quel diamètre",
           "explanation": "Tout diamètre est un axe de symétrie du cercle.",
-          "hint": "Réfléchis bien."
+          "hint": "Chaque diamètre coupe le cercle en deux demi-cercles identiques."
         }
       ]
     },
@@ -1816,7 +1814,7 @@
           ],
           "correct_answer": "3",
           "explanation": "Le triangle équilatéral a 3 axes de symétrie (les médiatrices de chaque côté).",
-          "hint": "Réfléchis bien."
+          "hint": "Chaque axe passe par un sommet et le milieu du côté opposé."
         },
         {
           "exercise_id": "EX003",
@@ -1833,7 +1831,7 @@
           ],
           "correct_answer": "1 axe de symétrie",
           "explanation": "L'axe passe par le sommet principal et le milieu de la base.",
-          "hint": "Réfléchis bien."
+          "hint": "L'axe passe par le sommet principal et coupe la base en son milieu."
         },
         {
           "exercise_id": "EX004",
@@ -1844,7 +1842,7 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "Avec 3 côtés de longueurs différentes, aucune droite ne peut être axe de symétrie.",
-          "hint": "Réfléchis bien."
+          "hint": "Si les 3 côtés sont tous différents, peut-on plier le triangle en deux parties égales ?"
         }
       ]
     },
@@ -1866,7 +1864,7 @@
           ],
           "correct_answer": "Déplacer une figure sans la tourner ni la retourner",
           "explanation": "Une translation déplace sans rotation ni retournement.",
-          "hint": "Réfléchis bien."
+          "hint": "Un glissement fait juste 'glisser' la figure dans une direction, sans la faire pivoter."
         },
         {
           "exercise_id": "EX002",
@@ -1877,7 +1875,7 @@
           "time_limit_seconds": 45,
           "correct_answer": false,
           "explanation": "Le glissement conserve la forme et la taille de la figure.",
-          "hint": "Réfléchis bien."
+          "hint": "Quand tu fais glisser un objet sur une table, change-t-il de taille ?"
         },
         {
           "exercise_id": "EX003",
@@ -1902,7 +1900,7 @@
             "Rotation": "Tourner autour d'un point"
           },
           "explanation": "Glissement = déplacement, symétrie = retournement, rotation = tourner.",
-          "hint": "Associe."
+          "hint": "Pense à ce que fait chaque transformation : déplacer, retourner ou tourner."
         },
         {
           "exercise_id": "EX004",
@@ -1919,7 +1917,7 @@
           ],
           "correct_answer": "Conservées",
           "explanation": "Le glissement est une isométrie.",
-          "hint": "Réfléchis bien."
+          "hint": "Le glissement ne déforme pas la figure. Les longueurs changent-elles ?"
         }
       ]
     },
@@ -1941,7 +1939,7 @@
           ],
           "correct_answer": "La direction, le sens et la distance du déplacement",
           "explanation": "Le vecteur caractérise complètement le glissement.",
-          "hint": "Réfléchis bien."
+          "hint": "Un vecteur a trois caractéristiques : dans quelle direction, dans quel sens et sur quelle distance."
         },
         {
           "exercise_id": "EX002",
@@ -1952,7 +1950,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "direction, sens, longueur",
           "explanation": "Un vecteur est défini par sa direction, son sens et sa norme (longueur).",
-          "hint": "Complète."
+          "hint": "Pense à une flèche : elle va dans une direction, un sens, et a une certaine longueur."
         },
         {
           "exercise_id": "EX003",
@@ -1969,7 +1967,7 @@
           },
           "correct_answer": 3,
           "explanation": "Le vecteur se décompose en composantes horizontale et verticale.",
-          "hint": "Observe."
+          "hint": "Compte les carreaux : 3 à droite et 2 vers le haut."
         },
         {
           "exercise_id": "EX004",
@@ -1986,7 +1984,7 @@
           ],
           "correct_answer": "De 5 cm vers la droite",
           "explanation": "Le sens du vecteur donne le sens du déplacement.",
-          "hint": "Réfléchis bien."
+          "hint": "Le vecteur indique la direction et la distance exacte du déplacement."
         }
       ]
     },
@@ -2037,7 +2035,7 @@
           },
           "correct_answer": 3,
           "explanation": "On ajoute 3 à la coordonnée horizontale.",
-          "hint": "Observe."
+          "hint": "Ajoute 3 carreaux à droite à la position actuelle du point."
         },
         {
           "exercise_id": "EX003",
@@ -2054,7 +2052,7 @@
           ],
           "correct_answer": "Chaque sommet du même vecteur",
           "explanation": "Tous les points se déplacent du même vecteur.",
-          "hint": "Réfléchis bien."
+          "hint": "Chaque point de la figure doit être déplacé exactement de la même manière."
         },
         {
           "exercise_id": "EX004",
@@ -2065,7 +2063,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "Le vecteur est le même pour tous les points.",
-          "hint": "Réfléchis bien."
+          "hint": "Dans un glissement, le vecteur est identique pour chaque point de la figure."
         }
       ]
     },
@@ -2081,7 +2079,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "Le glissement (translation) est une isométrie : il conserve les distances.",
-          "hint": "Réfléchis bien."
+          "hint": "Le glissement déplace la figure sans changer ses dimensions."
         },
         {
           "exercise_id": "EX002",
@@ -2093,7 +2091,7 @@
           "erroneous_content": "Aire = 12 cm²",
           "correct_answer": "Aire = 9 cm²",
           "explanation": "Le glissement conserve les aires. 3² = 9 cm².",
-          "hint": "Trouve l'erreur."
+          "hint": "Le glissement ne change pas l'aire. Calcule l'aire du carré : côté × côté."
         },
         {
           "exercise_id": "EX003",
@@ -2110,7 +2108,7 @@
           ],
           "correct_answer": "Conservés",
           "explanation": "Le glissement conserve les angles.",
-          "hint": "Réfléchis bien."
+          "hint": "Le glissement ne déforme pas la figure. Les angles restent-ils les mêmes ?"
         },
         {
           "exercise_id": "EX004",
@@ -2121,7 +2119,7 @@
           "time_limit_seconds": 90,
           "correct_answer": false,
           "explanation": "Le glissement conserve toutes les mesures : longueurs, aires, angles, périmètres.",
-          "hint": "Réfléchis bien."
+          "hint": "Si les longueurs des côtés sont conservées, le périmètre change-t-il ?"
         }
       ]
     },
@@ -2143,7 +2141,7 @@
           ],
           "correct_answer": "Sommets",
           "explanation": "Les points d'un réseau (graphe) sont les sommets.",
-          "hint": "Réfléchis bien."
+          "hint": "Les points d'un réseau portent le même nom que les coins d'un polygone."
         },
         {
           "exercise_id": "EX002",
@@ -2154,7 +2152,7 @@
           "time_limit_seconds": 45,
           "correct_answer": "arêtes",
           "explanation": "Les connexions entre sommets sont des arêtes.",
-          "hint": "Complète."
+          "hint": "Les liens entre les sommets portent un nom qui commence par 'a'."
         },
         {
           "exercise_id": "EX003",
@@ -2165,7 +2163,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 5,
           "explanation": "On compte les liens : AB, BC, CD, DA, AC = 5 arêtes.",
-          "hint": "Calcule."
+          "hint": "Compte chaque lien listé dans l'énoncé : AB, BC, CD, DA, AC."
         },
         {
           "exercise_id": "EX004",
@@ -2182,7 +2180,7 @@
           ],
           "correct_answer": "3",
           "explanation": "AB, AC, BC = 3 arêtes.",
-          "hint": "Réfléchis bien."
+          "hint": "Liste toutes les paires possibles entre 3 sommets : AB, AC, BC."
         }
       ]
     },
@@ -2204,7 +2202,7 @@
           ],
           "correct_answer": "On peut aller de n'importe quel sommet à n'importe quel autre en suivant les arêtes",
           "explanation": "Un réseau connexe permet de relier n'importe quelle paire de sommets par un chemin.",
-          "hint": "Réfléchis bien."
+          "hint": "Connexe signifie que tout est relié. Peut-on aller partout en suivant les arêtes ?"
         },
         {
           "exercise_id": "EX002",
@@ -2215,7 +2213,7 @@
           "time_limit_seconds": 60,
           "correct_answer": false,
           "explanation": "Faux : on peut avoir deux groupes séparés où chaque sommet a une arête sans être connectés entre eux.",
-          "hint": "Réfléchis bien."
+          "hint": "Imagine deux paires de sommets reliés séparément : chacun a une arête, mais les paires ne sont pas reliées entre elles."
         },
         {
           "exercise_id": "EX003",
@@ -2254,7 +2252,7 @@
           ],
           "correct_answer": "3",
           "explanation": "Avec 3 arêtes on peut faire une chaîne A-B-C-D (minimum = n-1 arêtes).",
-          "hint": "Réfléchis bien."
+          "hint": "Pour relier n sommets en chaîne, il faut au minimum n-1 arêtes."
         }
       ]
     },
@@ -2276,7 +2274,7 @@
           ],
           "correct_answer": "Non connexe",
           "explanation": "S'il y a des sommets isolés (non reliés au reste), le réseau est non connexe.",
-          "hint": "Réfléchis bien."
+          "hint": "Deux groupes séparés signifient qu'on ne peut pas aller de l'un à l'autre."
         },
         {
           "exercise_id": "EX002",
@@ -2287,7 +2285,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "D et E",
           "explanation": "D et E ne sont reliés qu'entre eux, pas au groupe A-B-C.",
-          "hint": "Complète.",
+          "hint": "Quels sommets ne sont reliés qu'entre eux, sans lien avec A, B ou C ?",
           "blanks": [
             "D",
             "E"
@@ -2302,7 +2300,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Un sommet isolé rend le réseau non connexe.",
-          "hint": "Réfléchis bien."
+          "hint": "Si un sommet n'est relié à rien, peut-on l'atteindre depuis les autres ?"
         },
         {
           "exercise_id": "EX004",
@@ -2319,7 +2317,7 @@
           ],
           "correct_answer": "Ajouter une arête entre un sommet de chaque composante",
           "explanation": "Une seule arête entre les deux composantes suffit à les connecter.",
-          "hint": "Réfléchis bien."
+          "hint": "Il suffit d'un seul lien entre les deux groupes pour les relier."
         }
       ]
     },
@@ -2360,7 +2358,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "B → A → C → D → E",
           "explanation": "B-A-C-D-E est un chemin valide.",
-          "hint": "Écris.",
+          "hint": "Pars de B et suis les arêtes disponibles pour atteindre E.",
           "accepted_answers": [
             "B-A-C-D-E",
             "B→A→C→D→E",
@@ -2393,8 +2391,8 @@
             "2 chemins"
           ],
           "correct_answer": "Un chemin entre chaque paire de sommets, soit 6 paires",
-          "explanation": "Il faut montrer que chaque paire de sommets est connectée. C(4,2) = 6 paires.",
-          "hint": "Réfléchis bien."
+          "explanation": "Pour prouver qu'un réseau de 4 sommets est connexe, il faut montrer qu'un chemin existe entre chaque paire. Avec 4 sommets, il y a C(4,2) = 6 paires distinctes.",
+          "hint": "Combien de paires différentes peut-on former avec 4 sommets ? Chaque paire doit être reliée."
         }
       ]
     }

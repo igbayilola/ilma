@@ -5,121 +5,381 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Fête des retrouvailles au village. Des tee-shirts avec des photos d'ancêtres préhistoriques sont distribués. Une bâche électrifiée est installée. Un homme est blessé et un enfant malnutri est observé.",
+  "context_text": "C'est la fête des retrouvailles. Tous les ressortissants du village se réunissent pour les festivités. Parents et amis sont conviés à diverses manifestations au cours desquelles des mets sont partagés ; des tee-shirts de différentes couleurs frappés de la photo des arrières grands-pères dont certains ressemblaient aux hommes préhistoriques sont distribués. Sous la bâche électrifiée, un homme s'est fait blesser au pied par des débris de bouteille en essayant de remplacer une lampe grillée. Un autre s'est fait électrocuter en touchant aux fils électriques non protégés. Toi aussi, tu as assisté à cette fête. Tu es sollicité pour trouver des apports de solutions à certains problèmes qui se sont posés aux participants.",
   "items": [
     {
       "item_number": 1,
       "domain": "nutrition_health",
-      "context_text": "Un sandwich au poisson et un jus de citron sont servis lors de la fête. Un enfant présente un gros ventre, des cheveux roux et des pieds gonflés.",
-      "points": 6.67,
+      "context_text": "Le premier met servi est composé de sandwiches au poisson et du jus de citron. Sur les lieux, tu as rencontré un enfant qui a un gros ventre, le visage et les pieds gonflés, des cheveux roux et cassants.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Le sandwich au poisson accompagné d'un jus de citron constitue-t-il un repas complet ? Justifie ta réponse.",
-          "question_type": "fill_blank",
-          "correct_answer": "Non, ce n'est pas un repas complet. Il manque des glucides (féculents) et des lipides",
-          "explanation": "Un repas complet doit contenir les quatre groupes de substances nutritives : glucides, protides, lipides et vitamines. Le sandwich au poisson apporte des protides et le jus de citron des vitamines, mais il manque les glucides (féculents) et les lipides.",
-          "points": 2.22,
+          "text": "Le premier met servi est composé de sandwiches au poisson et du jus de citron. Dis si ce met est un repas complet. Justifie ta réponse.",
+          "question_type": "open_ended",
+          "correct_answer": "Non, ce n'est pas un repas complet. Le sandwich au poisson apporte des glucides (pain) et des protides (poisson), le jus de citron apporte des vitamines, mais il manque des lipides.",
+          "hint": "Un repas complet doit contenir les quatre groupes de substances nutritives : glucides, protides, lipides et vitamines.",
+          "explanation": "Un repas complet doit contenir les quatre groupes de substances nutritives. Le sandwich (pain = glucides, poisson = protides) et le jus de citron (vitamines) n'apportent pas de lipides. Il manque donc les lipides pour que ce soit un repas complet.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "L'enfant a un gros ventre, des cheveux roux et des pieds gonflés. De quelle maladie souffre-t-il ?",
-          "question_type": "mcq",
-          "choices": ["Le kwashiorkor", "Le marasme", "Le béribéri", "La rougeole"],
-          "correct_answer": "Le kwashiorkor",
-          "explanation": "Le kwashiorkor se manifeste par un ventre ballonné, des cheveux roux et des œdèmes (pieds gonflés). Il est causé par une carence en protéines.",
-          "points": 2.22,
+          "text": "Sur les lieux, tu as rencontré un enfant qui a un gros ventre, le visage et les pieds gonflés, des cheveux roux et cassants. Dis le nom de la maladie dont souffre cet enfant.",
+          "question_type": "open_ended",
+          "correct_answer": "Le kwashiorkor.",
+          "hint": "C'est une maladie liée à un manque de protéines dans l'alimentation.",
+          "explanation": "Le kwashiorkor se manifeste par un ventre ballonné, un visage et des pieds gonflés (œdèmes) et des cheveux roux et cassants. Il est causé par une carence en protéines.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite deux autres maladies infantiles liées à la malnutrition et leur cause.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le marasme (carence alimentaire globale) et le béribéri (carence en vitamine B1)",
-          "explanation": "Le marasme est dû à une carence alimentaire globale (insuffisance de tous les nutriments). Le béribéri est causé par une carence en vitamine B1.",
-          "points": 2.22,
+          "text": "Cite deux autres maladies infantiles de ton choix et donne leur cause.",
+          "question_type": "open_ended",
+          "correct_answer": "Le marasme (carence alimentaire globale) et le béribéri (carence en vitamine B1).",
+          "hint": "Pense aux maladies qui touchent les enfants, qu'elles soient liées à l'alimentation ou non.",
+          "explanation": "Le marasme est dû à une carence alimentaire globale (insuffisance de tous les nutriments). Le béribéri est causé par une carence en vitamine B1. D'autres exemples : le rachitisme (carence en vitamine D), le scorbut (carence en vitamine C).",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01"
       ]
     },
     {
       "item_number": 2,
-      "domain": "electricity",
-      "context_text": "Un homme est blessé en changeant une lampe sous la bâche électrifiée. Une lampe est grillée mais les autres fonctionnent normalement.",
-      "points": 6.67,
+      "domain": "health_electricity",
+      "context_text": "L'homme qui a été blessé par des débris de bouteille en essayant de remplacer une lampe grillée, a perdu beaucoup de sang. Parmi les lampes qui éclairent la bâche, une est grillée alors que les autres fonctionnent.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Donne la composition du sang.",
-          "question_type": "fill_blank",
-          "correct_answer": "Globules rouges, globules blancs, plaquettes, plasma",
+          "text": "Donne la composition de ce sang.",
+          "question_type": "open_ended",
+          "correct_answer": "Le sang est composé de : globules rouges, globules blancs, plaquettes et plasma.",
+          "hint": "Le sang contient des éléments figurés (cellules) et un liquide.",
           "explanation": "Le sang est composé de quatre éléments principaux : les globules rouges (transport de l'oxygène), les globules blancs (défense immunitaire), les plaquettes (coagulation) et le plasma (liquide).",
-          "points": 2.22,
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Fais le schéma de l'appareil circulatoire et annote-le.",
-          "question_type": "fill_blank",
-          "correct_answer": "Cœur, artères, veines, capillaires",
-          "explanation": "L'appareil circulatoire comprend le cœur (pompe), les artères (transport du sang oxygéné), les veines (retour du sang) et les capillaires (échanges au niveau des organes).",
-          "points": 2.22,
+          "text": "Fais le schéma de l'appareil circulatoire de l'homme.",
+          "question_type": "open_ended",
+          "correct_answer": "Schéma annoté montrant : le cœur, les artères, les veines et les capillaires.",
+          "hint": "L'appareil circulatoire comprend une pompe (le cœur) et des vaisseaux sanguins.",
+          "explanation": "L'appareil circulatoire comprend le cœur (pompe), les artères (transport du sang oxygéné du cœur vers les organes), les veines (retour du sang des organes vers le cœur) et les capillaires (échanges au niveau des organes).",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Une lampe est grillée mais les autres fonctionnent. Quel est le type de montage sous la bâche ? Fais le schéma du montage contraire.",
-          "question_type": "fill_blank",
-          "correct_answer": "Montage en dérivation. Le montage contraire est le montage en série",
-          "explanation": "Dans un montage en dérivation, si une lampe grille, les autres continuent de fonctionner car chaque lampe a son propre circuit. Le montage contraire est le montage en série où les lampes sont reliées les unes après les autres.",
-          "points": 2.22,
+          "text": "Parmi les lampes qui éclairent la bâche, une est grillée alors que les autres fonctionnent. Dis le nom du montage électrique réalisé sous cette bâche et fais le schéma d'un montage contraire comprenant trois lampes.",
+          "question_type": "open_ended",
+          "correct_answer": "C'est un montage en dérivation. Le montage contraire est le montage en série (schéma avec trois lampes reliées les unes après les autres avec une pile).",
+          "hint": "Si une lampe grille et les autres continuent de fonctionner, c'est que chaque lampe a son propre circuit.",
+          "explanation": "Dans un montage en dérivation, si une lampe grille, les autres continuent de fonctionner car chaque lampe a son propre circuit. Le montage contraire est le montage en série où les lampes sont reliées les unes après les autres : si une lampe grille, toutes s'éteignent.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "technology_prehistory",
-      "context_text": "Les tee-shirts noirs absorbent plus de chaleur que les tee-shirts clairs. Des photos d'ancêtres préhistoriques y sont imprimées.",
-      "points": 6.67,
+      "context_text": "Parmi les hommes qui veulent sauver celui qui est électrocuté, un seul a porté un tee-shirt noir frappé de la photo des ancêtres préhistoriques. Il ressentait plus de chaleur que les autres.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Pourquoi le tee-shirt noir absorbe-t-il plus de chaleur que les autres ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Les couleurs sombres absorbent davantage les rayons du soleil (chaleur) que les couleurs claires qui les réfléchissent",
-          "explanation": "Les objets de couleur sombre absorbent la plupart des rayons lumineux et les transforment en chaleur, tandis que les objets de couleur claire réfléchissent ces rayons.",
-          "points": 2.22,
+          "text": "Explique pourquoi celui-ci ressentait plus de chaleur que les autres.",
+          "question_type": "open_ended",
+          "correct_answer": "Les couleurs sombres (comme le noir) absorbent davantage les rayons du soleil et les transforment en chaleur, tandis que les couleurs claires les réfléchissent.",
+          "hint": "Réfléchis au comportement des couleurs sombres et claires face à la lumière du soleil.",
+          "explanation": "Les objets de couleur sombre absorbent la plupart des rayons lumineux et les transforment en chaleur, tandis que les objets de couleur claire réfléchissent ces rayons. C'est pourquoi le tee-shirt noir absorbe plus de chaleur.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Qu'est-ce qui a permis de reconstituer l'histoire de l'homme préhistorique ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Les fouilles archéologiques (découverte de fossiles, d'outils en pierre, de peintures rupestres)",
+          "text": "Dis ce qui a permis aux archéologues de reconstituer l'histoire de l'homme.",
+          "question_type": "open_ended",
+          "correct_answer": "Les fouilles archéologiques ont permis de reconstituer l'histoire de l'homme grâce à la découverte de fossiles, d'outils en pierre et de peintures rupestres.",
+          "hint": "Les archéologues travaillent en creusant le sol pour retrouver des traces du passé.",
           "explanation": "Les fouilles archéologiques ont permis de découvrir des fossiles, des outils en pierre taillée et des peintures rupestres qui témoignent de la vie des hommes préhistoriques.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Quelle est la conséquence des fouilles sur l'environnement ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Les fouilles peuvent détruire les sols et modifier les paysages naturels",
-          "explanation": "Les fouilles archéologiques nécessitent de creuser le sol, ce qui peut entraîner la destruction des sols et la modification des paysages naturels environnants.",
-          "points": 2.22,
+          "text": "Donne une conséquence des fouilles sur l'environnement naturel.",
+          "question_type": "open_ended",
+          "correct_answer": "Les fouilles peuvent détruire les sols et modifier les paysages naturels.",
+          "hint": "Pense à ce qui arrive au sol et au paysage quand on creuse.",
+          "explanation": "Les fouilles archéologiques nécessitent de creuser le sol, ce qui peut entraîner la destruction des sols, la déforestation et la modification des paysages naturels environnants.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01"
       ]
     }
   ]

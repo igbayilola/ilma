@@ -5,123 +5,381 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Grâce aux progrès de la science et de la technologie, l'homme a amélioré son alimentation, sa santé et son habitat. Mais les premiers hommes vivaient bien avant ces progrès.",
+  "context_text": "Pour mieux vivre, l'homme cherche au quotidien à améliorer ses conditions de vie. Grâce aux progrès fulgurants de la science et de la technologie, beaucoup de choses sont aujourd'hui connues et réalisées dans les domaines de l'alimentation, de la santé et de l'habitat. Les recherches ont aussi fait de grands bonds sur la connaissance des premiers hommes et de leur vie. Toutes ces informations t'aident à améliorer tes connaissances et te préparent à être encore plus utile à la société.",
   "items": [
     {
       "item_number": 1,
       "domain": "technology_prehistory",
-      "context_text": "Nos ancêtres vivaient bien avant l'invention de l'écriture.",
-      "points": 6.67,
+      "context_text": "Certains de nos ancêtres ont vécu avant l'invention de l'écriture.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Comment appelle-t-on la période avant l'invention de l'écriture ?",
-          "question_type": "mcq",
-          "choices": ["La Préhistoire", "L'Antiquité", "Le Moyen Âge", "Les Temps modernes"],
-          "correct_answer": "La Préhistoire",
+          "text": "Certains de nos ancêtres ont vécu avant l'invention de l'écriture. Dis le nom de cette période.",
+          "question_type": "open_ended",
+          "correct_answer": "La Préhistoire.",
+          "hint": "C'est la période qui précède l'invention de l'écriture.",
           "explanation": "La Préhistoire est la période qui s'étend de l'apparition de l'homme jusqu'à l'invention de l'écriture (vers 3300 av. J.-C.).",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Comment les premiers hommes se nourrissaient-ils ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Ils se nourrissaient de chasse, de pêche et de cueillette (fruits, racines, baies)",
+          "text": "Dis de quoi se nourrissaient les premiers hommes.",
+          "question_type": "open_ended",
+          "correct_answer": "Ils se nourrissaient de chasse, de pêche et de cueillette (fruits, racines, baies).",
+          "hint": "Les premiers hommes ne pratiquaient pas encore l'agriculture ni l'élevage.",
           "explanation": "Les premiers hommes étaient des chasseurs-cueilleurs. Ils chassaient les animaux, pêchaient et cueillaient des fruits, des racines et des baies pour se nourrir.",
-          "points": 2.22,
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Qu'est-ce qu'un fossile ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Un fossile est un reste ou une empreinte d'un être vivant conservé dans la roche depuis des milliers ou des millions d'années",
+          "text": "Dis ce que c'est qu'un fossile.",
+          "question_type": "open_ended",
+          "correct_answer": "Un fossile est un reste ou une empreinte d'un être vivant conservé dans la roche depuis des milliers ou des millions d'années.",
+          "hint": "C'est une trace d'être vivant retrouvée dans les roches.",
           "explanation": "Les fossiles sont des traces d'êtres vivants (os, dents, coquilles, empreintes) conservées dans les roches sédimentaires au fil du temps.",
-          "points": 2.22,
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "nutrition_health",
       "context_text": "Les aliments contiennent des substances nutritives indispensables à l'organisme.",
-      "points": 6.67,
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Indique la substance nutritive dominante dans chaque aliment : céréales, arachide, orange, eau.",
+          "text": "Ecris les substances nutritives contenues dans les aliments suivants : céréales, arachide, orange, eau.",
           "question_type": "fill_blank",
-          "correct_answer": "Céréales: glucides. Arachide: lipides. Orange: vitamines. Eau: eau et sels minéraux",
+          "correct_answer": "Céréales : glucides. Arachide : lipides. Orange : vitamines. Eau : eau et sels minéraux.",
+          "hint": "Chaque aliment contient une substance nutritive dominante parmi : glucides, lipides, protides, vitamines, eau et sels minéraux.",
           "explanation": "Les céréales sont riches en glucides (amidon). L'arachide est riche en lipides (huile). L'orange est riche en vitamines (vitamine C). L'eau apporte de l'eau et des sels minéraux.",
-          "points": 2.22,
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Dans la liste suivante, relève deux maladies causées par la malnutrition : paludisme, marasme, SIDA, béribéri, kwashiorkor, rougeole.",
-          "question_type": "mcq",
-          "choices": ["Le marasme et le kwashiorkor", "Le paludisme et le SIDA", "La rougeole et le béribéri", "Le SIDA et le marasme"],
-          "correct_answer": "Le marasme et le kwashiorkor",
-          "explanation": "Le marasme et le kwashiorkor sont des maladies causées par la malnutrition. Le paludisme est causé par un parasite, le SIDA par un virus, et la rougeole par un virus.",
-          "points": 2.22,
+          "text": "Relève dans la liste suivante deux maladies causées par la malnutrition : le paludisme, le marasme, le SIDA, le béribéri, la kwashiorkor, la rougeole.",
+          "question_type": "open_ended",
+          "correct_answer": "Le marasme et la kwashiorkor.",
+          "hint": "Le paludisme, le SIDA et la rougeole sont causés par des agents infectieux, pas par la malnutrition.",
+          "explanation": "Le marasme et la kwashiorkor sont des maladies causées par la malnutrition. Le paludisme est causé par un parasite, le SIDA par un virus, la rougeole par un virus. Le béribéri est causé par une carence en vitamine B1 et peut aussi être accepté.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Propose un menu équilibré à partir des aliments suivants : igname, huile de palme, viande, poisson, maïs, haricot, ananas, orange, œuf, tomate, oignon, crevette, eau.",
-          "question_type": "fill_blank",
-          "correct_answer": "Igname pilée + sauce de viande à la tomate + huile de palme + orange",
+          "text": "Voici une liste d'aliments : igname, huile de palme, viande, poisson, maïs, haricot, ananas, orange, œuf, tomate, oignon, crevette, eau. Propose un menu équilibré à partir de ces aliments.",
+          "question_type": "open_ended",
+          "correct_answer": "Igname pilée + sauce de viande à la tomate avec huile de palme + orange + eau.",
+          "hint": "Un menu équilibré doit contenir des glucides, des protides, des lipides et des vitamines.",
           "explanation": "Un menu équilibré doit contenir des glucides (igname), des protides (viande), des lipides (huile de palme) et des vitamines (tomate, orange).",
-          "points": 2.22,
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "technology_prehistory",
       "context_text": "Pour soulever des charges lourdes, l'homme utilise des machines simples.",
-      "points": 6.67,
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Quelle machine simple permet de soulever des charges lourdes en tirant vers le bas ?",
-          "question_type": "mcq",
-          "choices": ["La poulie", "Le levier", "La brouette", "Le plan incliné"],
-          "correct_answer": "La poulie",
-          "explanation": "La poulie est une machine simple composée d'une roue à gorge qui permet de soulever des charges lourdes en tirant une corde vers le bas.",
-          "points": 2.22,
+          "text": "Dis le nom de la machine simple qui permet de soulever verticalement les charges lourdes.",
+          "question_type": "open_ended",
+          "correct_answer": "La poulie.",
+          "hint": "C'est une machine composée d'une roue à gorge et d'une corde.",
+          "explanation": "La poulie est une machine simple composée d'une roue à gorge qui permet de soulever des charges lourdes verticalement en tirant une corde.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Fais le schéma de cette machine simple.",
-          "question_type": "fill_blank",
-          "correct_answer": "Poulie: roue à gorge fixée en hauteur, corde passant dans la gorge, charge attachée à une extrémité",
+          "text": "Fais le schéma de cette machine.",
+          "question_type": "open_ended",
+          "correct_answer": "Schéma d'une poulie montrant : une roue à gorge fixée en hauteur par un crochet, une corde passant dans la gorge, avec la charge d'un côté et l'effort de l'autre.",
+          "hint": "La poulie comprend une roue, un axe, une chape et une corde.",
           "explanation": "Le schéma d'une poulie montre une roue à gorge fixée en hauteur par un crochet, une corde qui passe dans la gorge de la roue, avec la charge d'un côté et l'effort de l'autre.",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 1
+          "points": 2,
+          "depends_on_previous": true,
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite une autre machine simple permettant de soulever des charges lourdes.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le levier (ou le treuil)",
+          "text": "Cite une autre machine simple que tu connais et qui permet de faire la même opération.",
+          "question_type": "open_ended",
+          "correct_answer": "Le levier (ou le treuil).",
+          "hint": "Pense aux autres outils simples utilisés pour soulever des objets lourds.",
           "explanation": "Le levier et le treuil sont d'autres machines simples qui permettent de soulever des charges lourdes en utilisant le principe du bras de levier.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01"
       ]
     }
   ]

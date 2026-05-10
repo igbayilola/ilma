@@ -5,100 +5,303 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "C'est l'anniversaire de Bignon. Un électricien installe l'éclairage, une poulie est utilisée pour les travaux et on prépare un repas de fête.",
+  "context_text": "C'est le jour de l'anniversaire de ton amie Bignon. Depuis la veille, l'électricien a contrôlé les installations électriques de la maison. Le matin, Bignon nettoie la maison, puise de l'eau à l'aide d'une poulie et fait la cuisine. A table, les invités découvrent avec bonheur du riz, des jus de fruits, de la pâte de maïs, de la sauce aux légumes, de la sauce de tomate, de la viande, des œufs, de l'ananas et du poisson. Très heureux, les amis ne cessent de crier à tour de rôle : bon anniversaire ! Bignon.",
   "items": [
     {
       "item_number": 1,
       "domain": "nutrition_health",
-      "context_text": "Pour la fête, on dispose des aliments suivants : riz, jus de fruits, pâte de maïs, sauce aux légumes, sauce de tomate, viande, œufs, ananas, poisson.",
-      "points": 6.67,
+      "context_text": "A table, les invités découvrent avec bonheur du riz, des jus de fruits, de la pâte de maïs, de la sauce aux légumes, de la sauce de tomate, de la viande, des œufs, de l'ananas et du poisson.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Compose deux menus équilibrés à partir de ces aliments.",
-          "question_type": "fill_blank",
-          "correct_answer": "Menu 1: Riz + sauce de viande aux légumes + jus de fruits. Menu 2: Pâte de maïs + sauce de poisson à la tomate + ananas",
+          "text": "A partir des aliments présentés par Bignon, propose deux menus équilibrés.",
+          "question_type": "open_ended",
+          "correct_answer": "Menu 1 : Riz + sauce de viande aux légumes + jus de fruits. Menu 2 : Pâte de maïs + sauce de poisson à la tomate + ananas.",
+          "hint": "Un menu équilibré doit contenir un aliment de chaque groupe : glucides, protides, lipides et vitamines.",
           "explanation": "Chaque menu doit contenir des glucides (riz ou pâte de maïs), des protides (viande ou poisson), des lipides (sauce) et des vitamines (fruits ou légumes).",
-          "points": 2.22,
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
           "text": "Cite deux maladies causées par la malnutrition.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le kwashiorkor et le marasme",
+          "question_type": "open_ended",
+          "correct_answer": "Le kwashiorkor et le marasme.",
+          "hint": "Pense aux maladies qui surviennent quand on ne mange pas assez ou pas assez varié.",
           "explanation": "Le kwashiorkor est causé par une carence en protéines et le marasme par une carence alimentaire globale.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
           "text": "Cite deux aliments riches en protides.",
-          "question_type": "fill_blank",
-          "correct_answer": "La viande et le poisson",
+          "question_type": "open_ended",
+          "correct_answer": "La viande et le poisson.",
+          "hint": "Les protides se trouvent surtout dans les aliments d'origine animale.",
           "explanation": "La viande et le poisson sont des aliments d'origine animale très riches en protides (protéines), essentiels pour la croissance et la réparation des tissus.",
-          "points": 2.22,
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "electricity",
-      "context_text": "L'électricien présente deux schémas de montage : le montage A (en série) et le montage B (en dérivation).",
-      "points": 6.67,
+      "context_text": "La maison de Bignon est éclairée par des lampes électriques. Voici les schémas des différents montages.",
+      "diagram_description": "Deux schémas de circuits électriques sont présentés. Le montage A montre deux lampes reliées en série avec une pile (les lampes sont connectées l'une après l'autre sur un seul fil). Le montage B montre trois lampes reliées en dérivation (en parallèle) avec une pile (chaque lampe est branchée directement aux bornes du générateur).",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Nomme chaque type de montage représenté par les schémas A et B.",
-          "question_type": "fill_blank",
-          "correct_answer": "Montage A: montage en série. Montage B: montage en dérivation (parallèle)",
-          "explanation": "Dans le montage en série (A), les lampes sont reliées les unes après les autres. Dans le montage en dérivation (B), chaque lampe est branchée en parallèle sur le générateur.",
-          "points": 3.33,
+          "text": "Indique le nom de chaque montage.",
+          "question_type": "open_ended",
+          "correct_answer": "Montage A : montage en série. Montage B : montage en dérivation (parallèle).",
+          "hint": "Observe comment les lampes sont connectées : l'une après l'autre ou chacune séparément.",
+          "explanation": "Dans le montage en série (A), les lampes sont reliées les unes après les autres sur un seul circuit. Dans le montage en dérivation (B), chaque lampe est branchée en parallèle sur le générateur.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Lequel des deux montages préfères-tu ? Justifie ta réponse.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le montage B (dérivation) car si une lampe grille, les autres continuent de fonctionner",
+          "text": "Dis, des deux montages celui que tu préfères. Justifie ta réponse.",
+          "question_type": "open_ended",
+          "correct_answer": "Le montage B (dérivation) car si une lampe grille, les autres continuent de fonctionner.",
+          "hint": "Réfléchis à ce qui se passe quand une lampe tombe en panne dans chaque montage.",
           "explanation": "Le montage en dérivation est préférable car chaque lampe fonctionne indépendamment des autres. Si une lampe grille, les autres continuent de fonctionner normalement.",
-          "points": 3.33,
+          "points": 3,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "technology_prehistory",
-      "context_text": "Un tableau présente différentes sources d'énergie : le Soleil, l'Essence et le Vent. Une poulie est utilisée pour les travaux.",
-      "points": 6.67,
+      "context_text": "Un tableau présente différentes sources d'énergie : le Soleil, l'Essence et le Vent. Bignon puise de l'eau à l'aide d'une poulie.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Complète le tableau en indiquant si chaque source d'énergie est renouvelable ou non renouvelable : Soleil, Essence, Vent.",
+          "text": "Reproduis et complète le tableau ci-dessous en indiquant si chaque source d'énergie est renouvelable ou non renouvelable : Soleil, Essence, Le vent.",
           "question_type": "fill_blank",
-          "correct_answer": "Soleil: énergie renouvelable. Essence: énergie non renouvelable. Le vent: énergie renouvelable",
+          "diagram_description": "Un tableau à deux colonnes : la première colonne liste les sources d'énergie (Soleil, Essence, Le vent) et la deuxième colonne est intitulée 'Énergie renouvelable ou énergie non renouvelable' avec des cases vides à compléter.",
+          "correct_answer": "Soleil : énergie renouvelable. Essence : énergie non renouvelable. Le vent : énergie renouvelable.",
+          "hint": "Une énergie renouvelable est une source qui ne s'épuise pas avec le temps.",
           "explanation": "Le Soleil et le Vent sont des sources d'énergie renouvelables car elles sont inépuisables. L'Essence (dérivée du pétrole) est non renouvelable car les réserves sont limitées.",
-          "points": 3.33,
+          "points": 3.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Fais le schéma annoté d'une poulie.",
-          "question_type": "fill_blank",
-          "correct_answer": "Poulie: roue à gorge, chape, crochet, axe, corde",
+          "text": "Bignon puise de l'eau à l'aide d'une poulie. Réalise sur ta feuille le schéma annoté d'une poulie.",
+          "question_type": "open_ended",
+          "correct_answer": "Schéma annoté d'une poulie comprenant : une roue à gorge (réa), une chape, un crochet de fixation, un axe et une corde.",
+          "hint": "La poulie est composée d'une roue qui tourne autour d'un axe, maintenue par une chape.",
           "explanation": "La poulie comprend : une roue à gorge (réa) qui tourne sur un axe, une chape qui maintient la roue, un crochet de fixation et une corde qui passe dans la gorge.",
-          "points": 3.33,
+          "points": 3.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01"
       ]
     }
   ]

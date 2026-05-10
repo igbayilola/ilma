@@ -5,23 +5,75 @@
   "subject": "education_sociale",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Bio est un cotonculteur de Banikoara. Il exploite 15 hectares de coton. Cette année, il a récolté 5 tonnes au lieu des 16 tonnes attendues. Bio dépense une grande partie de ses revenus en alcool et en tabac. Il n'a plus d'argent pour acheter les intrants agricoles.",
+  "context_text": "Pour la campagne agricole 2006-2007, Bio un cotonculteur de Banikoara a emblavé 15 ha de coton. Malheureusement, il n'a récolté que 5 tonnes de coton au lieu d'une valeur acceptable de 16 tonnes. Après la vente, il a utilisé une partie de son gain pour s'acheter une moto. Le reste de l'argent lui a servi à boire de l'alcool et à fumer le tabac avec ses amis. À la prochaine campagne cotonnière, il n'a plus d'argent pour s'acheter des intrants.",
+  "task_text": "Tu es invité(e) à analyser la situation et à donner ton avis là-dessus.",
   "items": [
     {
       "item_number": 1,
       "domain": "geography_economy",
-      "context_text": "Bio doit transporter son coton de Banikoara à Cotonou en passant par Bassila.",
+      "context_text": "Ce cotonculteur a vendu son coton à Cotonou.",
       "points": 5.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Trace la route de Banikoara à Cotonou en passant par Bassila.",
-          "question_type": "fill_blank",
+          "text": "Sur une carte du Bénin, trace la route Banikoara-Cotonou en passant par Bassila.",
+          "question_type": "open_ended",
           "correct_answer": "Banikoara → Kandi → Bassila → Dassa-Zoumè → Bohicon → Cotonou",
-          "explanation": "L'itinéraire Banikoara-Cotonou via Bassila passe par les villes de Kandi, Bassila, Dassa-Zoumè et Bohicon avant d'arriver à Cotonou.",
+          "hint": "Repère d'abord Banikoara au nord et Cotonou au sud. Passe par Bassila comme demandé, puis identifie les grandes villes sur le trajet.",
+          "explanation": "L'itinéraire Banikoara-Cotonou via Bassila passe par les villes de Kandi, Bassila, Dassa-Zoumè et Bohicon avant d'arriver à Cotonou. Cette question évalue la connaissance de la géographie routière du Bénin.",
           "points": 5.0,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
+        }
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "micro_skills": [
+        "ES-CM2-CIT-01",
+        "ES-CM2-DROI-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "hint": "Définis citoyenneté"
+          },
+          {
+            "step": 2,
+            "hint": "Cite 2 droits"
+          }
+        ]
+      },
+      "common_mistakes": [
+        {
+          "mistake": "Confondre droits et devoirs",
+          "prevention": "Distingue bien les deux concepts"
         }
       ]
     },
@@ -33,70 +85,223 @@
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Donne 2 raisons qui peuvent expliquer le mauvais rendement de Bio.",
-          "question_type": "fill_blank",
+          "text": "Donne deux raisons qui justifient ce mauvais rendement.",
+          "question_type": "open_ended",
           "correct_answer": "Manque d'utilisation d'engrais et de produits phytosanitaires. Mauvaises techniques culturales (ou sécheresse, appauvrissement du sol)",
-          "explanation": "Le mauvais rendement peut s'expliquer par le manque d'intrants (engrais, produits phytosanitaires) et de mauvaises pratiques agricoles.",
+          "hint": "Pense aux facteurs qui influencent le rendement agricole : les intrants, les techniques de culture, les conditions climatiques.",
+          "explanation": "Le mauvais rendement peut s'expliquer par le manque d'intrants (engrais, produits phytosanitaires) et de mauvaises pratiques agricoles. Bio n'a plus d'argent pour acheter des intrants car il a gaspillé ses revenus.",
           "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Donne 2 conseils à Bio pour améliorer sa production.",
-          "question_type": "fill_blank",
+          "text": "Prodigue à Bio deux conseils pour qu'il améliore sa production à la prochaine campagne.",
+          "question_type": "open_ended",
           "correct_answer": "Utiliser des semences améliorées et des engrais. Suivre les conseils des agents d'encadrement agricole (CARDER)",
+          "hint": "Réfléchis à ce que Bio devrait faire différemment pour obtenir un meilleur rendement : les intrants, l'encadrement technique.",
           "explanation": "Pour améliorer sa production, Bio devrait utiliser des semences améliorées, des engrais et suivre les recommandations techniques des agents du CARDER.",
           "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         }
+      ],
+      "bloom_level": "créer",
+      "ilma_level": 3,
+      "micro_skills": [
+        "ES-CM2-ENVI-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "history_heritage",
-      "context_text": "Le Bénin dispose de nombreux musées, monuments et sites touristiques, notamment dans le sud du pays.",
+      "context_text": "Arrivé à Cotonou, Bio décide de visiter quelques musées, monuments et sites touristiques au Sud du Bénin.",
       "points": 5.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite 2 musées, 1 monument et 1 site touristique du sud du Bénin.",
-          "question_type": "fill_blank",
-          "correct_answer": "Musées: musée d'Abomey, musée de Porto-Novo. Monument: la Porte de non-retour à Ouidah. Site: la cité lacustre de Ganvié",
-          "explanation": "Le sud du Bénin possède le musée historique d'Abomey et le musée ethnographique de Porto-Novo. La Porte de non-retour à Ouidah est un monument emblématique. Ganvié est une cité lacustre unique.",
+          "text": "Indique lui deux musées, un monument et un site touristique.",
+          "question_type": "open_ended",
+          "correct_answer": "Musées : musée d'Abomey, musée de Porto-Novo. Monument : la Porte de non-retour à Ouidah. Site touristique : la cité lacustre de Ganvié",
+          "hint": "Pense aux villes historiques du sud du Bénin comme Abomey, Porto-Novo, Ouidah et Ganvié.",
+          "explanation": "Le sud du Bénin possède le musée historique d'Abomey et le musée ethnographique de Porto-Novo. La Porte de non-retour à Ouidah est un monument emblématique de la Route des Esclaves. Ganvié est une cité lacustre unique, site touristique majeur.",
           "points": 5.0,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         }
+      ],
+      "bloom_level": "comprendre",
+      "ilma_level": 1,
+      "micro_skills": [
+        "ES-CM2-SANT-01"
       ]
     },
     {
       "item_number": 4,
       "domain": "civics_institutions",
-      "context_text": "Bio dépense une grande partie de ses revenus en alcool et en tabac, ce qui affecte sa production agricole et sa santé.",
+      "context_text": "Bio a gaspillé son argent dans l'alcool et le tabac.",
       "points": 5.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Caractérise le comportement de Bio.",
-          "question_type": "fill_blank",
-          "correct_answer": "C'est un comportement irresponsable et dangereux pour sa santé et celle de sa famille. Il gaspille ses revenus au lieu de les investir dans sa production",
-          "explanation": "Le comportement de Bio est irresponsable car il gaspille ses revenus en alcool et tabac au lieu de les investir dans les intrants nécessaires à sa production agricole.",
+          "text": "Caractérise son comportement.",
+          "question_type": "open_ended",
+          "correct_answer": "C'est un comportement irresponsable et dangereux pour sa santé et celle de sa famille. Il gaspille ses revenus au lieu de les investir dans sa production.",
+          "hint": "Réfléchis aux conséquences de ses dépenses en alcool et tabac sur sa santé, sa famille et son activité agricole.",
+          "explanation": "Le comportement de Bio est irresponsable car il gaspille ses revenus en alcool et tabac au lieu de les investir dans les intrants nécessaires à sa production agricole. Cela nuit à sa santé et à celle de sa famille.",
           "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Cite 2 maladies liées à la consommation d'alcool et de tabac.",
-          "question_type": "fill_blank",
+          "text": "Cite deux maladies graves que Bio peut attraper en s'adonnant ainsi à l'alcool et au tabac.",
+          "question_type": "open_ended",
           "correct_answer": "La cirrhose du foie (alcool) et le cancer du poumon (tabac)",
-          "explanation": "L'alcool peut causer la cirrhose du foie et le tabac peut provoquer le cancer du poumon. Ces deux substances sont nocives pour la santé.",
+          "hint": "Pense aux organes qui sont les plus touchés par l'alcool (le foie) et par le tabac (les poumons).",
+          "explanation": "L'alcool peut causer la cirrhose du foie et le tabac peut provoquer le cancer du poumon. Ces deux substances sont très nocives pour la santé.",
           "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         }
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "micro_skills": [
+        "ES-CM2-CULT-01"
       ]
     }
   ]

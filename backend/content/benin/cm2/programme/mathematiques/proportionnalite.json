@@ -1,870 +1,538 @@
 {
-  "schema_version": "1.4.0",
-  "subject": "Mathématiques",
-  "grade": "CM2",
-  "country": "BENIN",
-  "domain": {
-    "domain_id": "MATH-CM2-PROP",
-    "domain_name": "Proportionnalité"
+  "schema_version": "2.0",
+  "grade": {
+    "name": "CM2",
+    "slug": "cm2",
+    "description": "CM2 — programme BENIN"
   },
-  "standards": {
-    "ilma_levels": [
-      "Découverte",
-      "Entraînement",
-      "Maîtrise",
-      "Expert"
-    ],
-    "exercise_types_vocab": [
-      "Choix multiples",
-      "Réponse courte",
-      "Réponse numérique",
-      "Glisser-déposer",
-      "Construction",
-      "Tracer",
-      "Classement",
-      "Compléter",
-      "Problème contextualisé",
-      "Correction d'erreur",
-      "Étapes guidées",
-      "Flash cards",
-      "Calcul chronométré",
-      "Vrai/Faux",
-      "Justification"
-    ],
-    "bloom_taxonomy_levels": [
-      "Connaître",
-      "Comprendre",
-      "Appliquer",
-      "Analyser",
-      "Évaluer",
-      "Créer"
-    ],
-    "exercise_type_semantics": {
-      "Tracer": "Action centrée sur le tracé (droite graduée, segment, repérage), précision graphique.",
-      "Construction": "Construction géométrique guidée (règle/compas) ou assemblage de figures/objets."
-    }
-  },
-  "inheritance_rules": {
-    "micro_skill_overrides_parent_fields": true,
-    "fields_inheritable_from_skill": [
-      "estimated_time_minutes",
-      "difficulty_index",
-      "bloom_taxonomy_level",
-      "mastery_threshold",
-      "cep_frequency",
-      "adaptive_hints",
-      "local_context_examples",
-      "accessibility_tags",
-      "recommended_exercise_types"
-    ]
-  },
-  "cep_frequency_rules": {
-    "scale": {
-      "null": "Non évalué / difficile à quantifier",
-      "10-30": "Occasionnel",
-      "40-60": "Fréquent",
-      "70-90": "Très fréquent",
-      "100": "Systématique"
-    },
-    "aggregation_policy_for_skill": "max_of_micro_skills_if_defined_else_null",
-    "note": "Si au moins 1 micro-skill a cep_frequency défini, alors le skill peut dériver sa valeur via la policy."
-  },
-  "skills": [
+  "subjects": [
     {
-      "skill_id": "PROP-RECONNAITRE",
-      "skill_name": "Reconnaître une situation de proportionnalité",
-      "micro_skill_ids_ordered": [
-        "PROP-RECONNAITRE::MS01",
-        "PROP-RECONNAITRE::MS02",
-        "PROP-RECONNAITRE::MS03"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-PB-MULTI"
-      ],
-      "exercise_types": [
-        "Choix multiples",
-        "Classement",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "common_mistakes": [
-        "Croire que tout est proportionnel",
-        "Validation insuffisante (un seul test)"
-      ],
-      "mastery_threshold": "90% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 70,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "PROP-TABLEAU",
-      "skill_name": "Tableau de proportionnalité : compléter et résoudre",
-      "micro_skill_ids_ordered": [
-        "PROP-TABLEAU::MS01",
-        "PROP-TABLEAU::MS02",
-        "PROP-TABLEAU::MS03",
-        "PROP-TABLEAU::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "PROP-RECONNAITRE",
-        "OPS-DECIMAUX-MULTIPLIER",
-        "OPS-DECIMAUX-DIVISER"
-      ],
-      "exercise_types": [
-        "Compléter",
-        "Étapes guidées",
-        "Problème contextualisé",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Mauvais coefficient",
-        "Confusion ligne/colonne",
-        "Calcul sans sens"
-      ],
-      "mastery_threshold": "90% sur 12 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 85,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "PROP-ECHELLE",
-      "skill_name": "Échelle",
-      "micro_skill_ids_ordered": [
-        "PROP-ECHELLE::MS01",
-        "PROP-ECHELLE::MS02",
-        "PROP-ECHELLE::MS03",
-        "PROP-ECHELLE::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "PROP-TABLEAU",
-        "MES-LONGUEURS",
-        "OPS-ESTIMER-VERIFIER"
-      ],
-      "exercise_types": [
-        "Réponse numérique",
-        "Problème contextualisé",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Sens de l'échelle inversé",
-        "Conversions incorrectes",
-        "Unités oubliées"
-      ],
-      "mastery_threshold": "80% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 60,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "PROP-GRAPHIQUE",
-      "skill_name": "Proportionnalité : représentation graphique",
-      "micro_skill_ids_ordered": [
-        "PROP-GRAPHIQUE::MS01",
-        "PROP-GRAPHIQUE::MS02",
-        "PROP-GRAPHIQUE::MS03",
-        "PROP-GRAPHIQUE::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "PROP-RECONNAITRE",
-        "GEO-FIG-DECRIRE"
-      ],
-      "exercise_types": [
-        "Tracer",
-        "Compléter",
-        "Choix multiples",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Points mal placés",
-        "Droite ne passant pas par l'origine"
-      ],
-      "mastery_threshold": "85% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 35,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "PROP-DEPLACEMENT",
-      "skill_name": "Situation de proportionnalité : déplacement à allure régulière",
-      "micro_skill_ids_ordered": [
-        "PROP-DEPLACEMENT::MS01",
-        "PROP-DEPLACEMENT::MS02",
-        "PROP-DEPLACEMENT::MS03",
-        "PROP-DEPLACEMENT::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "PROP-TABLEAU",
-        "MES-TEMPS-DUREES"
-      ],
-      "exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Unités incohérentes (min vs h)",
-        "Mauvais isolement de la grandeur",
-        "Confusion minutes/heures"
-      ],
-      "mastery_threshold": "75% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 55,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    }
-  ],
-  "micro_skills": [
-    {
-      "micro_skill_id": "PROP-RECONNAITRE::MS01",
-      "parent_skill_id": "PROP-RECONNAITRE",
-      "micro_skill_name": "Repérer une relation multiplicative constante entre deux grandeurs",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
+      "name": "Mathématiques",
+      "slug": "mathematiques",
+      "icon": "calculator",
+      "color": "#1E5AA8",
+      "order": 1,
+      "domains": [
         {
-          "skill_id": "OPS-PB-MULTI",
-          "micro_skill_id": "OPS-PB-MULTI::MS01",
-          "why": "Comprendre un énoncé et repérer les données"
+          "name": "Proportionnalité",
+          "slug": "proportionnalite",
+          "order": 1,
+          "skills": [
+            {
+              "external_id": "PROP-RECONNAITRE",
+              "name": "Reconnaître une situation de proportionnalité",
+              "order": 1,
+              "cep_frequency": 70,
+              "prerequisites": [
+                "OPS-PB-MULTI"
+              ],
+              "common_mistakes": [
+                "Croire que tout est proportionnel",
+                "Validation insuffisante (un seul test)"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Classement",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "90% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "PROP-RECONNAITRE::MS01",
+                  "name": "Repérer une relation multiplicative constante entre deux grandeurs",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-PB-MULTI",
+                      "micro_skill_id": "OPS-PB-MULTI::MS01",
+                      "why": "Comprendre un énoncé et repérer les données"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "PROP-RECONNAITRE::MS02",
+                  "name": "Tester la proportionnalité avec un tableau (vérifier que le rapport est constant)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [
+                    "PROP-RECONNAITRE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Étapes guidées",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "PROP-RECONNAITRE::MS03",
+                  "name": "Identifier une situation de NON-proportionnalité et justifier",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "PROP-RECONNAITRE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte",
+                    "Classement"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "external_id": "PROP-TABLEAU",
+              "name": "Tableau de proportionnalité : compléter et résoudre",
+              "order": 2,
+              "cep_frequency": 85,
+              "prerequisites": [
+                "PROP-RECONNAITRE",
+                "OPS-DECIMAUX-MULTIPLIER",
+                "OPS-DECIMAUX-DIVISER"
+              ],
+              "common_mistakes": [
+                "Mauvais coefficient",
+                "Confusion ligne/colonne",
+                "Calcul sans sens"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Étapes guidées",
+                "Problème contextualisé",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "90% sur 12 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "PROP-TABLEAU::MS01",
+                  "name": "Compléter un tableau par passage à l'unité (trouver la valeur pour 1 unité)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-DECIMAUX-DIVISER",
+                      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
+                      "why": "Division décimale pour le passage à l'unité"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "PROP-TABLEAU::MS02",
+                  "name": "Utiliser le coefficient multiplicateur pour compléter un tableau",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [
+                    "PROP-TABLEAU::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-DECIMAUX-MULTIPLIER",
+                      "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
+                      "why": "Multiplication décimale"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "PROP-TABLEAU::MS03",
+                  "name": "Calculer une quatrième proportionnelle (produit en croix au niveau CM2)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 85,
+                  "prerequisites": [
+                    "PROP-TABLEAU::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Problème contextualisé"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "PROP-TABLEAU::MS04",
+                  "name": "Vérifier la cohérence du résultat (sens, ordre de grandeur, unités)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [
+                    "PROP-TABLEAU::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
+                      "why": "Détection résultat absurde"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "PROP-ECHELLE",
+              "name": "Échelle",
+              "order": 3,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "PROP-TABLEAU",
+                "MES-LONGUEURS",
+                "OPS-ESTIMER-VERIFIER"
+              ],
+              "common_mistakes": [
+                "Sens de l'échelle inversé",
+                "Conversions incorrectes",
+                "Unités oubliées"
+              ],
+              "exercise_types": [
+                "Réponse numérique",
+                "Problème contextualisé",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "PROP-ECHELLE::MS01",
+                  "name": "Lire et interpréter une échelle (1:x signifie 1 cm sur le plan = x cm en réalité)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "PROP-ECHELLE::MS02",
+                  "name": "Convertir une longueur du plan vers la réalité et inversement",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "PROP-ECHELLE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "MES-LONGUEURS",
+                      "micro_skill_id": "MES-LONGUEURS::MS01",
+                      "why": "Conversion d'unités de longueur"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "PROP-ECHELLE::MS03",
+                  "name": "Choisir l'unité cohérente pour exprimer le résultat (cm → m, m → km)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "PROP-ECHELLE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "PROP-ECHELLE::MS04",
+                  "name": "Contrôler l'ordre de grandeur du résultat (la réalité est plus grande que le plan)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "PROP-ECHELLE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
+                      "why": "Détection résultat absurde"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "PROP-GRAPHIQUE",
+              "name": "Proportionnalité : représentation graphique",
+              "order": 4,
+              "cep_frequency": 35,
+              "prerequisites": [
+                "PROP-RECONNAITRE",
+                "GEO-FIG-DECRIRE"
+              ],
+              "common_mistakes": [
+                "Points mal placés",
+                "Droite ne passant pas par l'origine"
+              ],
+              "exercise_types": [
+                "Tracer",
+                "Compléter",
+                "Choix multiples",
+                "Réponse numérique"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "PROP-GRAPHIQUE::MS01",
+                  "name": "Placer des points sur un graphique à partir d'un tableau de proportionnalité",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Tracer",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-FIG-DECRIRE",
+                      "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
+                      "why": "Utiliser la règle pour un tracé précis"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "PROP-GRAPHIQUE::MS02",
+                  "name": "Vérifier que les points sont alignés (caractéristique de la proportionnalité)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "PROP-GRAPHIQUE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "PROP-GRAPHIQUE::MS03",
+                  "name": "Vérifier que la droite passe par l'origine (0;0)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "PROP-GRAPHIQUE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "PROP-GRAPHIQUE::MS04",
+                  "name": "Lire une valeur inconnue sur le graphique (interpolation visuelle)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "PROP-GRAPHIQUE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "PROP-DEPLACEMENT",
+              "name": "Situation de proportionnalité : déplacement à allure régulière",
+              "order": 5,
+              "cep_frequency": 55,
+              "prerequisites": [
+                "PROP-TABLEAU",
+                "MES-TEMPS-DUREES"
+              ],
+              "common_mistakes": [
+                "Unités incohérentes (min vs h)",
+                "Mauvais isolement de la grandeur",
+                "Confusion minutes/heures"
+              ],
+              "exercise_types": [
+                "Problème contextualisé",
+                "Étapes guidées",
+                "Réponse numérique"
+              ],
+              "mastery_threshold": "75% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "PROP-DEPLACEMENT::MS01",
+                  "name": "Appliquer la relation distance = vitesse x temps (allure régulière)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "PROP-TABLEAU",
+                      "micro_skill_id": "PROP-TABLEAU::MS02",
+                      "why": "Coefficient multiplicateur (vitesse = coefficient)"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "PROP-DEPLACEMENT::MS02",
+                  "name": "Trouver une grandeur manquante (distance, vitesse ou temps) par raisonnement proportionnel",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "PROP-DEPLACEMENT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "PROP-DEPLACEMENT::MS03",
+                  "name": "Convertir les unités de temps dans le problème (minutes en heures, cas simples)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "PROP-DEPLACEMENT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "MES-TEMPS-DUREES",
+                      "micro_skill_id": "MES-TEMPS-DUREES::MS03",
+                      "why": "Conversion minutes/heures"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "PROP-DEPLACEMENT::MS04",
+                  "name": "Vérifier la cohérence du résultat (unités, ordre de grandeur, sens physique)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "75% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "PROP-DEPLACEMENT::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
+                      "why": "Détection résultat absurde"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            }
+          ]
         }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "3 kg de riz = 1500 FCFA, 6 kg = 3000 FCFA → coefficient constant"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-RECONNAITRE::MS02",
-      "parent_skill_id": "PROP-RECONNAITRE",
-      "micro_skill_name": "Tester la proportionnalité avec un tableau (vérifier que le rapport est constant)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-RECONNAITRE::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Étapes guidées",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 65,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Tableau quantité/prix : vérifier que prix/quantité est toujours le même"
-      ],
-      "accessibility_tags": [
-        "table_scaffold"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-RECONNAITRE::MS03",
-      "parent_skill_id": "PROP-RECONNAITRE",
-      "micro_skill_name": "Identifier une situation de NON-proportionnalité et justifier",
-      "prerequisites_micro_skill_ids": [
-        "PROP-RECONNAITRE::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte",
-        "Classement"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "L'âge et la taille ne sont pas proportionnels (contre-exemple)"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-TABLEAU::MS01",
-      "parent_skill_id": "PROP-TABLEAU",
-      "micro_skill_name": "Compléter un tableau par passage à l'unité (trouver la valeur pour 1 unité)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-DECIMAUX-DIVISER",
-          "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
-          "why": "Division décimale pour le passage à l'unité"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 80,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "5 kg = 2500 FCFA → 1 kg = 500 FCFA → 8 kg = ?"
-      ],
-      "accessibility_tags": [
-        "table_scaffold"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-TABLEAU::MS02",
-      "parent_skill_id": "PROP-TABLEAU",
-      "micro_skill_name": "Utiliser le coefficient multiplicateur pour compléter un tableau",
-      "prerequisites_micro_skill_ids": [
-        "PROP-TABLEAU::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-DECIMAUX-MULTIPLIER",
-          "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
-          "why": "Multiplication décimale"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 80,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Coefficient = 500 → multiplier toute la ligne par 500"
-      ],
-      "accessibility_tags": [
-        "table_scaffold"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-TABLEAU::MS03",
-      "parent_skill_id": "PROP-TABLEAU",
-      "micro_skill_name": "Calculer une quatrième proportionnelle (produit en croix au niveau CM2)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-TABLEAU::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 85,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "3 m de tissu = 4500 FCFA, combien pour 7 m ?"
-      ],
-      "accessibility_tags": [
-        "table_scaffold",
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-TABLEAU::MS04",
-      "parent_skill_id": "PROP-TABLEAU",
-      "micro_skill_name": "Vérifier la cohérence du résultat (sens, ordre de grandeur, unités)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-TABLEAU::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-          "why": "Détection résultat absurde"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 65,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "7 m coûte plus cher que 3 m → vérifier que le résultat est bien supérieur à 4500"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-ECHELLE::MS01",
-      "parent_skill_id": "PROP-ECHELLE",
-      "micro_skill_name": "Lire et interpréter une échelle (1:x signifie 1 cm sur le plan = x cm en réalité)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Plan d'école à l'échelle 1:200 (1 cm = 2 m)"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-ECHELLE::MS02",
-      "parent_skill_id": "PROP-ECHELLE",
-      "micro_skill_name": "Convertir une longueur du plan vers la réalité et inversement",
-      "prerequisites_micro_skill_ids": [
-        "PROP-ECHELLE::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "MES-LONGUEURS",
-          "micro_skill_id": "MES-LONGUEURS::MS01",
-          "why": "Conversion d'unités de longueur"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Sur le plan : 4 cm → en réalité : 4 x 200 = 800 cm = 8 m"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-ECHELLE::MS03",
-      "parent_skill_id": "PROP-ECHELLE",
-      "micro_skill_name": "Choisir l'unité cohérente pour exprimer le résultat (cm → m, m → km)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-ECHELLE::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "800 cm = 8 m (pas 800 cm dans la réponse finale)"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-ECHELLE::MS04",
-      "parent_skill_id": "PROP-ECHELLE",
-      "micro_skill_name": "Contrôler l'ordre de grandeur du résultat (la réalité est plus grande que le plan)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-ECHELLE::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-          "why": "Détection résultat absurde"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Une salle de 2 cm sur le plan ne fait pas 2 cm en réalité !"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-GRAPHIQUE::MS01",
-      "parent_skill_id": "PROP-GRAPHIQUE",
-      "micro_skill_name": "Placer des points sur un graphique à partir d'un tableau de proportionnalité",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-FIG-DECRIRE",
-          "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
-          "why": "Utiliser la règle pour un tracé précis"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Tracer",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Placer les points (1;500), (2;1000), (3;1500) sur le graphique"
-      ],
-      "accessibility_tags": [
-        "high_contrast_axes"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-GRAPHIQUE::MS02",
-      "parent_skill_id": "PROP-GRAPHIQUE",
-      "micro_skill_name": "Vérifier que les points sont alignés (caractéristique de la proportionnalité)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-GRAPHIQUE::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Si les points ne sont pas alignés, la situation n'est pas proportionnelle"
-      ],
-      "accessibility_tags": [
-        "high_contrast_axes"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-GRAPHIQUE::MS03",
-      "parent_skill_id": "PROP-GRAPHIQUE",
-      "micro_skill_name": "Vérifier que la droite passe par l'origine (0;0)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-GRAPHIQUE::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "0 kg = 0 FCFA (pas de quantité, pas de prix)"
-      ],
-      "accessibility_tags": [
-        "high_contrast_axes"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-GRAPHIQUE::MS04",
-      "parent_skill_id": "PROP-GRAPHIQUE",
-      "micro_skill_name": "Lire une valeur inconnue sur le graphique (interpolation visuelle)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-GRAPHIQUE::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Pour 2,5 kg, lire le prix sur le graphique"
-      ],
-      "accessibility_tags": [
-        "high_contrast_axes"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-DEPLACEMENT::MS01",
-      "parent_skill_id": "PROP-DEPLACEMENT",
-      "micro_skill_name": "Appliquer la relation distance = vitesse x temps (allure régulière)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "PROP-TABLEAU",
-          "micro_skill_id": "PROP-TABLEAU::MS02",
-          "why": "Coefficient multiplicateur (vitesse = coefficient)"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Un zem roule à 40 km/h pendant 2 h → 80 km"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-DEPLACEMENT::MS02",
-      "parent_skill_id": "PROP-DEPLACEMENT",
-      "micro_skill_name": "Trouver une grandeur manquante (distance, vitesse ou temps) par raisonnement proportionnel",
-      "prerequisites_micro_skill_ids": [
-        "PROP-DEPLACEMENT::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Distance = 120 km, vitesse = 60 km/h → temps = 2 h"
-      ],
-      "accessibility_tags": [
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-DEPLACEMENT::MS03",
-      "parent_skill_id": "PROP-DEPLACEMENT",
-      "micro_skill_name": "Convertir les unités de temps dans le problème (minutes en heures, cas simples)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-DEPLACEMENT::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "MES-TEMPS-DUREES",
-          "micro_skill_id": "MES-TEMPS-DUREES::MS03",
-          "why": "Conversion minutes/heures"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Trajet de 1 h 30 min = 1,5 h pour le calcul"
-      ],
-      "accessibility_tags": [
-        "clock_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "PROP-DEPLACEMENT::MS04",
-      "parent_skill_id": "PROP-DEPLACEMENT",
-      "micro_skill_name": "Vérifier la cohérence du résultat (unités, ordre de grandeur, sens physique)",
-      "prerequisites_micro_skill_ids": [
-        "PROP-DEPLACEMENT::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-          "why": "Détection résultat absurde"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "75% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Un zem à 400 km/h ? Absurde → vérifier le calcul"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
       ]
     }
-  ],
-  "external_micro_skill_stubs": [
-    {
-      "micro_skill_id": "OPS-PB-MULTI::MS01",
-      "micro_skill_name": "Comprendre l'énoncé (données, question)"
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
-      "micro_skill_name": "Diviser un décimal par un entier"
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
-      "micro_skill_name": "Placer la virgule dans le produit"
-    },
-    {
-      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-      "micro_skill_name": "Détecter un résultat absurde"
-    },
-    {
-      "micro_skill_id": "MES-LONGUEURS::MS01",
-      "micro_skill_name": "Convertir unités de longueur"
-    },
-    {
-      "micro_skill_id": "MES-TEMPS-DUREES::MS03",
-      "micro_skill_name": "Convertir minutes/heures"
-    },
-    {
-      "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
-      "micro_skill_name": "Utiliser règle, compas, équerre"
-    },
-    {
-      "micro_skill_id": "PROP-TABLEAU::MS02",
-      "micro_skill_name": "Coefficient multiplicateur pour compléter un tableau"
-    }
-  ],
-  "notes": {
-    "origin": "Créé à partir de progamme_mathematiquesCM2_deep.json, domaine MATH-CM2-PROP",
-    "quality_guardrails": [
-      "Un micro-skill = une action observable et testable en 1-2 minutes.",
-      "Les recommended_exercise_types appartiennent à exercise_types_vocab.",
-      "Les prérequis micro-skill ne créent pas de cycles."
-    ],
-    "pedagogical_notes": [
-      "PROP-RECONNAITRE est le socle : sans lui, les tableaux et graphiques n'ont pas de sens.",
-      "PROP-TABLEAU (CEP 85) est la compétence la plus testée — le passage à l'unité et la 4e proportionnelle sont systématiques.",
-      "PROP-DEPLACEMENT est le domaine d'application le plus concret (zem, vélo) et fait le pont avec MES-TEMPS-DUREES.",
-      "PROP-GRAPHIQUE fait le lien avec GEO (tracer sur un repère) et prépare le collège."
-    ],
-    "changes_from_1_3_1": [
-      "v1.4.1: PROP-TABLEAU::MS04 diff 6→7.",
-      "v1.4.1: PROP-ECHELLE::MS03 diff 5→6.",
-      "v1.4.2: Ajout stub PROP-TABLEAU::MS02 (référencé par PROP-DEPLACEMENT::MS01).",
-      "v1.4.2: quality_checks complété.",
-      "v1.4.2: PROP-GRAPHIQUE cep 50→35 (graphique rarement évalué au CEP, surtout exercice de lecture)."
-    ]
-  },
-  "quality_checks": {
-    "difficulty_progression_issues": [],
-    "difficulty_progression_ok": true,
-    "prerequisite_cycles": false,
-    "cep_frequency_null_skills": [],
-    "all_cep_frequencies_set": true,
-    "external_deps_all_resolved": true,
-    "all_checks_pass": true
-  }
+  ]
 }

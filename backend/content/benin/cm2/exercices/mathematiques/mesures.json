@@ -19,7 +19,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 350,
           "explanation": "3,5 m = 350 cm (×100).",
-          "hint": ""
+          "hint": "1 m = 100 cm. Multiplie par 100."
         },
         {
           "exercise_id": "EX002",
@@ -30,7 +30,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "4 200",
           "explanation": "4,2 × 1 000 = 4 200 m.",
-          "hint": ""
+          "hint": "1 km = 1 000 m. Multiplie par 1 000."
         },
         {
           "exercise_id": "EX003",
@@ -41,7 +41,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 85,
           "explanation": "850 ÷ 10 = 85 cm.",
-          "hint": ""
+          "hint": "1 cm = 10 mm. Divise par 10."
         },
         {
           "exercise_id": "EX004",
@@ -52,7 +52,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 2.75,
           "explanation": "2 750 ÷ 1 000 = 2,75 km.",
-          "hint": "",
+          "hint": "1 km = 1 000 m. Divise par 1 000.",
           "tolerance": 0.01
         }
       ]
@@ -75,7 +75,7 @@
           ],
           "correct_answer": "Le mètre",
           "explanation": "Une salle mesure quelques mètres.",
-          "hint": ""
+          "hint": "Une salle de classe fait environ 8 à 10 de long. Quelle unité ?"
         },
         {
           "exercise_id": "EX002",
@@ -92,7 +92,7 @@
           ],
           "correct_answer": "km",
           "explanation": "Les grandes distances s'expriment en km.",
-          "hint": ""
+          "hint": "Cotonou et Parakou sont très éloignés. Quelle unité pour les grandes distances ?"
         },
         {
           "exercise_id": "EX003",
@@ -103,7 +103,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "cm",
           "explanation": "Un crayon mesure environ 15-20 cm.",
-          "hint": "",
+          "hint": "Un crayon est plus petit qu'un mètre mais plus grand qu'un millimètre.",
           "accepted_answers": [
             "cm",
             "centimètre",
@@ -125,7 +125,7 @@
           ],
           "correct_answer": "mm",
           "explanation": "Environ 1-2 mm.",
-          "hint": ""
+          "hint": "L'épaisseur d'une pièce est très fine. Quelle est la plus petite unité de longueur courante ?"
         }
       ]
     },
@@ -142,7 +142,7 @@
           "erroneous_content": "5 m = 500 mm",
           "correct_answer": "5 m = 5 000 mm",
           "explanation": "1 m = 1 000 mm (×1 000, pas ×100).",
-          "hint": ""
+          "hint": "Combien de mm dans 1 m ? Ce n'est pas 100."
         },
         {
           "exercise_id": "EX002",
@@ -159,19 +159,19 @@
           ],
           "correct_answer": "×1 000",
           "explanation": "1 km = 1 000 m.",
-          "hint": ""
+          "hint": "Pour passer des km aux m, on multiplie. Par combien ?"
         },
         {
           "exercise_id": "EX003",
           "type": "error_correction",
           "difficulty": "hard",
-          "text": "Erreur : 450 cm = 4,5 m.",
+          "text": "Un élève convertit 4,5 km en m et obtient 450 m.",
           "points": 3,
           "time_limit_seconds": 90,
-          "erroneous_content": "450 cm = 4,5 m",
-          "correct_answer": "450 cm = 4,5 m — c'est correct !",
-          "explanation": "450 ÷ 100 = 4,5 m. L'élève a raison cette fois.",
-          "hint": ""
+          "erroneous_content": "4,5 km = 450 m",
+          "correct_answer": "4,5 km = 4 500 m",
+          "explanation": "1 km = 1 000 m. 4,5 × 1 000 = 4 500 m (×1 000, pas ×100).",
+          "hint": "Rappelle-toi : 1 km = 1 000 m."
         },
         {
           "exercise_id": "EX004",
@@ -183,7 +183,7 @@
           "erroneous_content": "2,5 km = 250 m",
           "correct_answer": "2,5 km = 2 500 m",
           "explanation": "×1 000 : 2,5 × 1 000 = 2 500 m.",
-          "hint": ""
+          "hint": "1 km = 1 000 m. Multiplie par 1 000, pas par 100."
         }
       ]
     },
@@ -199,7 +199,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 350,
           "explanation": "3,5 × 100 = 350 cL.",
-          "hint": ""
+          "hint": "1 L = 100 cL. Multiplie par 100."
         },
         {
           "exercise_id": "EX002",
@@ -210,7 +210,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "0,75",
           "explanation": "750 ÷ 1 000 = 0,75 L.",
-          "hint": ""
+          "hint": "1 L = 1 000 mL. Divise par 1 000."
         },
         {
           "exercise_id": "EX003",
@@ -221,7 +221,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 25,
           "explanation": "2 L = 20 dL, plus 5 dL = 25 dL.",
-          "hint": ""
+          "hint": "1 L = 10 dL. Convertis d'abord les litres en dL."
         },
         {
           "exercise_id": "EX004",
@@ -232,7 +232,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 4.5,
           "explanation": "4 500 ÷ 1 000 = 4,5 L.",
-          "hint": "",
+          "hint": "1 L = 1 000 mL. Divise par 1 000.",
           "tolerance": 0.01
         }
       ]
@@ -255,7 +255,7 @@
           ],
           "correct_answer": "Les litres (L)",
           "explanation": "Les grandes contenances s'expriment en litres.",
-          "hint": ""
+          "hint": "Une piscine contient beaucoup d'eau. Quelle unité pour les grandes quantités ?"
         },
         {
           "exercise_id": "EX002",
@@ -272,7 +272,7 @@
           ],
           "correct_answer": "15 mL",
           "explanation": "Une cuillère à soupe = environ 15 mL.",
-          "hint": ""
+          "hint": "Une cuillère contient très peu de liquide. Quelle petite unité ?"
         },
         {
           "exercise_id": "EX003",
@@ -283,7 +283,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "cL",
           "explanation": "Une canette contient 33 cL.",
-          "hint": "",
+          "hint": "Une canette contient environ 33... de quelle unité ?",
           "accepted_answers": [
             "cL",
             "centilitre",
@@ -305,7 +305,7 @@
           ],
           "correct_answer": "150 cL",
           "explanation": "1,5 × 100 = 150 cL.",
-          "hint": ""
+          "hint": "1 L = 100 cL. Multiplie 1,5 par 100."
         }
       ]
     },
@@ -331,7 +331,20 @@
           ],
           "correct_answer": "20 verres",
           "explanation": "5 L = 500 cL, 500 ÷ 25 = 20 verres.",
-          "hint": ""
+          "hint": "Convertis d'abord les litres en cL, puis divise.",
+          "media_references": [
+            {
+              "id": "ill_0040",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0040.svg",
+              "alt_text": "Illustration: contenant",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -348,7 +361,20 @@
           ],
           "correct_answer": "15 L",
           "explanation": "3/4 de 20 = 15 L.",
-          "hint": ""
+          "hint": "Pour calculer 3/4 de 20, multiplie 20 par 3 puis divise par 4.",
+          "media_references": [
+            {
+              "id": "ill_0041",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0041.svg",
+              "alt_text": "Illustration: contenant",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -359,7 +385,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 2,
           "explanation": "750 mL = 0,75 L. 0,75 + 1,25 = 2 L.",
-          "hint": "",
+          "hint": "Convertis tout en litres avant d'additionner.",
           "tolerance": 0.01
         },
         {
@@ -381,7 +407,7 @@
           ],
           "correct_answer": "250 mL",
           "explanation": "1 500 ÷ 6 = 250 mL.",
-          "hint": ""
+          "hint": "Convertis 1,5 L en mL, puis divise par 6."
         }
       ]
     },
@@ -397,7 +423,7 @@
           "time_limit_seconds": 45,
           "correct_answer": "3 000",
           "explanation": "1 kg = 1 000 g, donc 3 kg = 3 000 g.",
-          "hint": ""
+          "hint": "1 kg = 1 000 g. Multiplie par 1 000."
         },
         {
           "exercise_id": "EX002",
@@ -408,7 +434,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 2500,
           "explanation": "2,5 × 1 000 = 2 500 kg.",
-          "hint": ""
+          "hint": "1 t = 1 000 kg. Multiplie par 1 000."
         },
         {
           "exercise_id": "EX003",
@@ -419,7 +445,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "4,5",
           "explanation": "4 500 ÷ 1 000 = 4,5 kg.",
-          "hint": ""
+          "hint": "1 kg = 1 000 g. Divise par 1 000."
         },
         {
           "exercise_id": "EX004",
@@ -430,7 +456,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 0.75,
           "explanation": "750 ÷ 1 000 = 0,75 kg.",
-          "hint": "",
+          "hint": "Divise par 1 000 pour passer des g aux kg.",
           "tolerance": 0.01
         }
       ]
@@ -447,7 +473,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 5.2,
           "explanation": "5 200 ÷ 1 000 = 5,2 kg.",
-          "hint": "",
+          "hint": "Divise par 1 000 pour convertir les grammes en kilogrammes.",
           "tolerance": 0.01
         },
         {
@@ -459,7 +485,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "3 450",
           "explanation": "3,45 × 1 000 = 3 450 g.",
-          "hint": ""
+          "hint": "Multiplie par 1 000 pour passer des kg aux g."
         },
         {
           "exercise_id": "EX003",
@@ -470,7 +496,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 750,
           "explanation": "0,75 × 1 000 = 750 kg.",
-          "hint": ""
+          "hint": "1 t = 1 000 kg. Multiplie par 1 000."
         },
         {
           "exercise_id": "EX004",
@@ -481,7 +507,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 6.25,
           "explanation": "6 250 ÷ 1 000 = 6,25 t.",
-          "hint": "",
+          "hint": "Divise par 1 000 pour passer des kg aux tonnes.",
           "tolerance": 0.01
         }
       ]
@@ -503,8 +529,8 @@
             "milligrammes"
           ],
           "correct_answer": "tonnes",
-          "explanation": "Bonne réponse.",
-          "hint": ""
+          "explanation": "Un éléphant pèse entre 3 et 7 tonnes. La tonne est l'unité adaptée aux très grandes masses.",
+          "hint": "Pense à une unité pour des objets très lourds."
         },
         {
           "exercise_id": "EX002",
@@ -520,8 +546,8 @@
             "1,5 kg"
           ],
           "correct_answer": "150 g",
-          "explanation": "Bonne réponse.",
-          "hint": ""
+          "explanation": "Une pomme pèse environ 150 g. 150 kg serait le poids d'un adulte, pas d'un fruit !",
+          "hint": "Une pomme tient dans la main. Est-ce lourd ?"
         },
         {
           "exercise_id": "EX003",
@@ -532,7 +558,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "kg",
           "explanation": "Un sac de riz pèse 25-50 kg.",
-          "hint": "",
+          "hint": "Un sac de riz est lourd mais pas autant qu'un camion.",
           "accepted_answers": [
             "kg",
             "kilogramme",
@@ -553,8 +579,8 @@
             "2 000 g"
           ],
           "correct_answer": "20 t",
-          "explanation": "Bonne réponse.",
-          "hint": ""
+          "explanation": "Un camion chargé pèse environ 20 tonnes. C'est beaucoup trop lourd pour des kilogrammes seuls.",
+          "hint": "Un camion est très lourd. Quelle grande unité de masse convient ?"
         }
       ]
     },
@@ -584,7 +610,7 @@
           ],
           "correct_answer": "75,5 kg",
           "explanation": "75 + 0,5 = 75,5 kg.",
-          "hint": ""
+          "hint": "Calcule d'abord le poids des 3 sacs, puis convertis les épices en kg."
         },
         {
           "exercise_id": "EX002",
@@ -605,7 +631,7 @@
           ],
           "correct_answer": "8,25 kg",
           "explanation": "3,5 + 4,75 = 8,25 kg.",
-          "hint": ""
+          "hint": "Convertis d'abord 4 750 g en kg, puis additionne."
         },
         {
           "exercise_id": "EX003",
@@ -616,7 +642,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 4050,
           "explanation": "2 300 + 1 750 = 4 050 g.",
-          "hint": ""
+          "hint": "Convertis 2,3 kg en grammes avant d'additionner."
         },
         {
           "exercise_id": "EX004",
@@ -627,7 +653,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 0.75,
           "explanation": "15 × 50 = 750 kg = 0,75 t.",
-          "hint": "",
+          "hint": "Calcule d'abord le total en kg, puis convertis en tonnes.",
           "tolerance": 0.01
         }
       ]
@@ -644,7 +670,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "10 000",
           "explanation": "1 hectare = 10 000 m².",
-          "hint": ""
+          "hint": "1 ha = 100 m × 100 m."
         },
         {
           "exercise_id": "EX002",
@@ -655,7 +681,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "100",
           "explanation": "1 are = 100 m².",
-          "hint": ""
+          "hint": "1 are = 10 m × 10 m."
         },
         {
           "exercise_id": "EX003",
@@ -672,7 +698,7 @@
           ],
           "correct_answer": "100",
           "explanation": "1 ha = 100 a.",
-          "hint": ""
+          "hint": "1 ha = 10 000 m² et 1 a = 100 m². Combien d'ares dans 1 hectare ?"
         },
         {
           "exercise_id": "EX004",
@@ -683,7 +709,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "Les deux égalités sont correctes.",
-          "hint": ""
+          "hint": "Vérifie chaque égalité séparément : 1 ha = ? a et 1 a = ? m²."
         }
       ]
     },
@@ -699,7 +725,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 35000,
           "explanation": "3,5 × 10 000 = 35 000 m².",
-          "hint": ""
+          "hint": "Multiplie par 10 000 pour convertir les ha en m²."
         },
         {
           "exercise_id": "EX002",
@@ -710,7 +736,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "2,5",
           "explanation": "250 ÷ 100 = 2,5 ha.",
-          "hint": ""
+          "hint": "1 ha = 100 a. Divise par 100."
         },
         {
           "exercise_id": "EX003",
@@ -721,7 +747,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 4.5,
           "explanation": "45 000 ÷ 10 000 = 4,5 ha.",
-          "hint": "",
+          "hint": "Divise par 10 000 pour passer des m² aux ha.",
           "tolerance": 0.01
         },
         {
@@ -733,7 +759,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 120,
           "explanation": "1,2 × 100 = 120 a.",
-          "hint": ""
+          "hint": "1 ha = 100 a. Multiplie par 100."
         }
       ]
     },
@@ -760,7 +786,7 @@
             "3 ha"
           ],
           "explanation": "150 a = 1,5 ha, 2 ha, 20 000 m² = 2 ha, 3 ha.",
-          "hint": ""
+          "hint": "Convertis tout dans la même unité (ha) pour comparer."
         },
         {
           "exercise_id": "EX002",
@@ -777,7 +803,7 @@
           ],
           "correct_answer": "2 400 a",
           "explanation": "2 400 a = 24 ha, largement plus grand.",
-          "hint": ""
+          "hint": "Convertis chaque valeur en hectares pour comparer."
         },
         {
           "exercise_id": "EX003",
@@ -794,7 +820,7 @@
           ],
           "correct_answer": "350 a > 3 ha",
           "explanation": "350 a = 3,5 ha > 3 ha.",
-          "hint": ""
+          "hint": "Convertis 350 a en ha : divise par 100."
         },
         {
           "exercise_id": "EX004",
@@ -805,7 +831,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 250,
           "explanation": "200 a + 50 a = 250 a.",
-          "hint": ""
+          "hint": "Convertis 2 ha en ares, puis additionne."
         }
       ]
     },
@@ -831,7 +857,7 @@
           ],
           "correct_answer": "5 000 m²",
           "explanation": "2,5 ha = 25 000 m², ÷5 = 5 000 m² par parcelle.",
-          "hint": ""
+          "hint": "Convertis d'abord en m², puis divise par 5."
         },
         {
           "exercise_id": "EX002",
@@ -852,7 +878,20 @@
           ],
           "correct_answer": "3 ha",
           "explanation": "200 × 150 = 30 000 m² = 3 ha.",
-          "hint": ""
+          "hint": "Calcule l'aire en m² (L × l), puis divise par 10 000.",
+          "media_references": [
+            {
+              "id": "ill_0042",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0042.svg",
+              "alt_text": "Illustration: terrain",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -863,7 +902,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 23000,
           "explanation": "15 000 + 8 000 = 23 000 m².",
-          "hint": ""
+          "hint": "Convertis 1,5 ha en m², puis additionne les deux aires."
         },
         {
           "exercise_id": "EX004",
@@ -884,7 +923,7 @@
           ],
           "correct_answer": "20 familles",
           "explanation": "10 ha = 1 000 a, 1 000 ÷ 50 = 20.",
-          "hint": ""
+          "hint": "Convertis 10 ha en ares, puis divise par 50."
         }
       ]
     },
@@ -906,7 +945,7 @@
           ],
           "correct_answer": "cm, m, km",
           "explanation": "Le périmètre est une longueur, donc unités de longueur.",
-          "hint": ""
+          "hint": "Le périmètre mesure le tour d'une figure. C'est une longueur."
         },
         {
           "exercise_id": "EX002",
@@ -923,7 +962,7 @@
           ],
           "correct_answer": "cm², m²",
           "explanation": "L'aire est une surface, unités carrées.",
-          "hint": ""
+          "hint": "L'aire mesure une surface. Quelles unités ont un exposant 2 ?"
         },
         {
           "exercise_id": "EX003",
@@ -943,7 +982,7 @@
             "Volume (3D)"
           ],
           "explanation": "1D → 2D → 3D.",
-          "hint": ""
+          "hint": "Pense aux dimensions : 1D, 2D, 3D."
         },
         {
           "exercise_id": "EX004",
@@ -954,7 +993,7 @@
           "time_limit_seconds": 60,
           "correct_answer": false,
           "explanation": "Le périmètre = 4 × 5 = 20 cm (pas cm²). 25 cm² serait l'aire.",
-          "hint": ""
+          "hint": "Le périmètre se mesure en cm (pas en cm²). Calcule P = 4 × côté."
         }
       ]
     },
@@ -970,7 +1009,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 43.96,
           "explanation": "P = 2 × π × r = 2 × 3,14 × 7 = 43,96 cm.",
-          "hint": "",
+          "hint": "Formule du périmètre du cercle : P = 2 × π × r.",
           "tolerance": 0.1
         },
         {
@@ -982,7 +1021,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 78.5,
           "explanation": "A = π × r² = 3,14 × 25 = 78,5 cm².",
-          "hint": "",
+          "hint": "Formule de l'aire du disque : A = π × r².",
           "tolerance": 0.5
         },
         {
@@ -1004,7 +1043,7 @@
           ],
           "correct_answer": "78,5 cm²",
           "explanation": "r = 5 cm, A = 3,14 × 25 = 78,5 cm².",
-          "hint": ""
+          "hint": "Trouve d'abord le rayon : r = D/2."
         },
         {
           "exercise_id": "EX004",
@@ -1016,7 +1055,7 @@
           "erroneous_content": "π × D² = 314",
           "correct_answer": "A = π × r² = π × 5² = 78,5 cm²",
           "explanation": "Il faut utiliser le rayon, pas le diamètre. A = π × r².",
-          "hint": ""
+          "hint": "La formule utilise le rayon r, pas le diamètre D."
         }
       ]
     },
@@ -1042,7 +1081,7 @@
           ],
           "correct_answer": "56,52 cm²",
           "explanation": "A = π × r² / 2 = 3,14 × 36 / 2 = 56,52 cm².",
-          "hint": ""
+          "hint": "Calcule l'aire du disque entier, puis divise par 2."
         },
         {
           "exercise_id": "EX002",
@@ -1053,7 +1092,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 157,
           "explanation": "π × 100 / 2 = 157 cm².",
-          "hint": "",
+          "hint": "Aire du demi-disque = π × r² / 2.",
           "tolerance": 1
         },
         {
@@ -1065,7 +1104,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 25.12,
           "explanation": "r = 4 cm. A = π × 16 / 2 = 25,12 cm².",
-          "hint": "",
+          "hint": "Attention, on donne le diamètre ! Trouve d'abord le rayon.",
           "tolerance": 0.5
         },
         {
@@ -1083,7 +1122,7 @@
           ],
           "correct_answer": "π×r²/2",
           "explanation": "On divise l'aire du disque par 2.",
-          "hint": ""
+          "hint": "Un demi-cercle est la moitié d'un disque."
         }
       ]
     },
@@ -1113,7 +1152,7 @@
           ],
           "correct_answer": "74,13 m²",
           "explanation": "60 + 14,13 = 74,13 m².",
-          "hint": ""
+          "hint": "Décompose en rectangle + demi-cercle et additionne les aires."
         },
         {
           "exercise_id": "EX002",
@@ -1130,7 +1169,7 @@
           ],
           "correct_answer": "La découper en 2 rectangles et additionner les aires",
           "explanation": "On décompose en figures simples.",
-          "hint": ""
+          "hint": "Découpe la figure en formes simples dont tu connais les formules."
         },
         {
           "exercise_id": "EX003",
@@ -1155,7 +1194,30 @@
           ],
           "correct_answer": "47,5 cm²",
           "explanation": "40 + 7,5 = 47,5 cm².",
-          "hint": ""
+          "hint": "Calcule séparément l'aire du rectangle et celle du triangle.",
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "triangle rec",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "triangle",
+                    "label": "triangle rec"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -1166,7 +1228,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "On décompose puis on additionne les aires partielles.",
-          "hint": ""
+          "hint": "Pense à la décomposition en figures simples."
         }
       ]
     },
@@ -1182,7 +1244,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 87,
           "explanation": "12×8 = 96, 3×3 = 9, 96-9 = 87.",
-          "hint": ""
+          "hint": "Calcule l'aire du rectangle, puis soustrais l'aire du carré retiré."
         },
         {
           "exercise_id": "EX002",
@@ -1203,19 +1265,19 @@
           ],
           "correct_answer": "36 m²",
           "explanation": "Le jardin intérieur mesure 6×6 = 36 m².",
-          "hint": ""
+          "hint": "L'allée est de chaque côté : soustrais 2 × 2 m du côté total."
         },
         {
           "exercise_id": "EX003",
           "type": "error_correction",
           "difficulty": "hard",
-          "text": "Un élève calcule l'aire d'un L (6×4 + 3×2) et obtient 30 car il a compté la zone 3×2 deux fois.",
+          "text": "Un élève calcule l'aire d'un L formé de deux rectangles (6×4 et 4×2) qui partagent une zone 2×4. Il additionne : 24 + 8 = 32.",
           "points": 3,
           "time_limit_seconds": 90,
-          "erroneous_content": "Aire = 30",
-          "correct_answer": "Aire = 24 + 6 = 30, mais vérifier qu'il n'y a pas de double comptage",
-          "explanation": "Si les deux rectangles se chevauchent, il faut soustraire la zone commune.",
-          "hint": ""
+          "erroneous_content": "Aire = 32",
+          "correct_answer": "Aire = 24 + 8 - 8 = 24",
+          "explanation": "Les deux rectangles se chevauchent sur une zone de 2×4 = 8. Il faut soustraire la zone commune : 24 + 8 - 8 = 24.",
+          "hint": "Quand deux rectangles se chevauchent, soustrais la zone commune."
         },
         {
           "exercise_id": "EX004",
@@ -1226,7 +1288,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 18,
           "explanation": "15 + 12 - 9 = 18.",
-          "hint": ""
+          "hint": "Additionne les aires des deux rectangles, puis soustrais la zone commune."
         }
       ]
     },
@@ -1243,7 +1305,7 @@
           "erroneous_content": "500 cm²",
           "correct_answer": "50 m²",
           "explanation": "5 × 10 = 50. L'unité est m², pas cm².",
-          "hint": ""
+          "hint": "Les dimensions sont en mètres. L'aire sera en quelle unité ?"
         },
         {
           "exercise_id": "EX002",
@@ -1260,7 +1322,7 @@
           ],
           "correct_answer": "1",
           "explanation": "1 m² = 10 000 cm².",
-          "hint": ""
+          "hint": "1 m = 100 cm, donc 1 m² = 100 × 100 cm²."
         },
         {
           "exercise_id": "EX003",
@@ -1272,7 +1334,7 @@
           "erroneous_content": "28,26 cm²",
           "correct_answer": "28,26 m²",
           "explanation": "L'aire est en m² puisque le rayon est en m.",
-          "hint": ""
+          "hint": "Si le rayon est en mètres, l'aire sera en m²."
         },
         {
           "exercise_id": "EX004",
@@ -1283,7 +1345,7 @@
           "time_limit_seconds": 90,
           "correct_answer": false,
           "explanation": "1 m² = 10 000 cm² (100 × 100).",
-          "hint": ""
+          "hint": "1 m = 100 cm. Pour les aires, on met au carré : 100² = ?"
         }
       ]
     },
@@ -1305,7 +1367,7 @@
           ],
           "correct_answer": "Un pavé droit",
           "explanation": "Le pavé droit a 6 faces rectangulaires.",
-          "hint": ""
+          "hint": "Quel solide ressemble à une boîte à chaussures ?"
         },
         {
           "exercise_id": "EX002",
@@ -1327,7 +1389,38 @@
             "Pyramide"
           ],
           "explanation": "Quatre solides usuels.",
-          "hint": ""
+          "hint": "Pense aux formes que tu connais, du plus simple au plus rond.",
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "pavé droit",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "pavé",
+                    "label": "pavé droit"
+                  },
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  },
+                  {
+                    "shape": "cube",
+                    "label": "cube"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -1338,7 +1431,34 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "Le cube est un pavé droit avec toutes les arêtes égales.",
-          "hint": ""
+          "hint": "Le cube a 6 faces carrées. Est-ce un type de pavé droit ?",
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "pavé droit",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "pavé",
+                    "label": "pavé droit"
+                  },
+                  {
+                    "shape": "cube",
+                    "label": "cube"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -1355,7 +1475,30 @@
           ],
           "correct_answer": "12",
           "explanation": "Un pavé droit a 12 arêtes, 8 sommets et 6 faces.",
-          "hint": ""
+          "hint": "Compte les arêtes : 4 en haut, 4 en bas, 4 verticales.",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "pavé droit",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "pavé",
+                    "label": "pavé droit"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         }
       ]
     },
@@ -1371,7 +1514,34 @@
           "time_limit_seconds": 60,
           "correct_answer": 60,
           "explanation": "V = 5×3×4 = 60 cm³.",
-          "hint": ""
+          "hint": "Volume = Longueur × largeur × hauteur.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "pavé droit (5 cm, 3 cm, 4 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "pavé",
+                    "label": "pavé droit"
+                  }
+                ],
+                "dimensions": [
+                  "5",
+                  "3",
+                  "4"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -1382,7 +1552,32 @@
           "time_limit_seconds": 60,
           "correct_answer": 27,
           "explanation": "V = 3³ = 27 cm³.",
-          "hint": ""
+          "hint": "Volume du cube = côté × côté × côté.",
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "cube (3 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cube",
+                    "label": "cube"
+                  }
+                ],
+                "dimensions": [
+                  "3"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -1399,7 +1594,34 @@
           ],
           "correct_answer": "480 cm³",
           "explanation": "12 × 8 × 5 = 480 cm³.",
-          "hint": ""
+          "hint": "V = L × l × h. Multiplie les trois dimensions.",
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "pavé droit (12 cm, 8 cm, 5 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "pavé",
+                    "label": "pavé droit"
+                  }
+                ],
+                "dimensions": [
+                  "12",
+                  "8",
+                  "5"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -1410,7 +1632,32 @@
           "time_limit_seconds": 90,
           "correct_answer": 1000,
           "explanation": "V = 10³ = 1 000 cm³.",
-          "hint": ""
+          "hint": "V = côté³ = 10 × 10 × 10.",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "cube (10 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cube",
+                    "label": "cube"
+                  }
+                ],
+                "dimensions": [
+                  "10"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -1432,7 +1679,30 @@
           ],
           "correct_answer": "Longueur, largeur et hauteur",
           "explanation": "L=longueur, l=largeur, h=hauteur.",
-          "hint": ""
+          "hint": "Ce sont les 3 dimensions d'un pavé droit.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "pavé droit",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "pavé",
+                    "label": "pavé droit"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -1443,7 +1713,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "30",
           "explanation": "La largeur (profondeur) est 30 cm.",
-          "hint": ""
+          "hint": "La profondeur de l'aquarium correspond à la largeur l."
         },
         {
           "exercise_id": "EX003",
@@ -1460,7 +1730,30 @@
           ],
           "correct_answer": "La dimension verticale",
           "explanation": "La hauteur est la dimension verticale.",
-          "hint": ""
+          "hint": "La hauteur va du bas vers le haut.",
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "pavé droit",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "pavé",
+                    "label": "pavé droit"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -1471,7 +1764,30 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "Toutes les arêtes d'un cube sont égales.",
-          "hint": ""
+          "hint": "Un cube a toutes ses arêtes de même longueur.",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "cube",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cube",
+                    "label": "cube"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         }
       ]
     },
@@ -1487,7 +1803,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "dm³",
           "explanation": "m³, dm³, cm³ sont les unités de volume.",
-          "hint": ""
+          "hint": "Quelle unité se trouve entre le m³ et le cm³ ?"
         },
         {
           "exercise_id": "EX002",
@@ -1504,7 +1820,7 @@
           ],
           "correct_answer": "cm³",
           "explanation": "Le cm³ est l'unité de base.",
-          "hint": ""
+          "hint": "C'est l'unité que tu utilises le plus souvent pour les petits volumes."
         },
         {
           "exercise_id": "EX003",
@@ -1515,7 +1831,7 @@
           "time_limit_seconds": 60,
           "correct_answer": false,
           "explanation": "Le volume se mesure en cm³ (centimètres cubes). cm² est pour les aires.",
-          "hint": ""
+          "hint": "Le volume est en 3D. Quel exposant pour les unités ?"
         },
         {
           "exercise_id": "EX004",
@@ -1532,7 +1848,7 @@
           ],
           "correct_answer": "1 000",
           "explanation": "1 m³ = 1 000 dm³.",
-          "hint": ""
+          "hint": "1 m = 10 dm. Pour les volumes : 10³ = ?"
         }
       ]
     },
@@ -1548,7 +1864,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 5000,
           "explanation": "5 × 1 000 = 5 000 dm³.",
-          "hint": ""
+          "hint": "1 m³ = 1 000 dm³. Multiplie par 1 000."
         },
         {
           "exercise_id": "EX002",
@@ -1559,7 +1875,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 3.5,
           "explanation": "3 500 ÷ 1 000 = 3,5 dm³.",
-          "hint": "",
+          "hint": "1 dm³ = 1 000 cm³. Divise par 1 000.",
           "tolerance": 0.01
         },
         {
@@ -1571,7 +1887,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "2 400",
           "explanation": "2,4 × 1 000 = 2 400 cm³.",
-          "hint": ""
+          "hint": "1 dm³ = 1 000 cm³. Multiplie par 1 000."
         },
         {
           "exercise_id": "EX004",
@@ -1582,7 +1898,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 500000,
           "explanation": "0,5 × 1 000 000 = 500 000 cm³.",
-          "hint": ""
+          "hint": "1 m³ = 1 000 000 cm³ (100³). Multiplie par 1 000 000."
         }
       ]
     },
@@ -1599,7 +1915,7 @@
           "erroneous_content": "30 cm³",
           "correct_answer": "30 m³",
           "explanation": "Les dimensions sont en mètres, donc le volume est en m³, pas cm³.",
-          "hint": ""
+          "hint": "Les dimensions sont en mètres. L'unité du volume suit les dimensions."
         },
         {
           "exercise_id": "EX002",
@@ -1616,7 +1932,7 @@
           ],
           "correct_answer": "cm³",
           "explanation": "Les dimensions sont en cm, le volume est en cm³.",
-          "hint": ""
+          "hint": "cm × cm × cm = ?"
         },
         {
           "exercise_id": "EX003",
@@ -1626,9 +1942,9 @@
           "points": 3,
           "time_limit_seconds": 90,
           "erroneous_content": "2 400 m³",
-          "correct_answer": "2,4 m³",
-          "explanation": "300 cm = 3 m. V = 4×3×2 = 24 m³. (ou convertir tout en cm et obtenir 24 000 000 cm³)",
-          "hint": ""
+          "correct_answer": "24 m³",
+          "explanation": "300 cm = 3 m. V = 4 × 3 × 2 = 24 m³ (et non 2 400 m³).",
+          "hint": "Convertis d'abord toutes les dimensions dans la même unité."
         },
         {
           "exercise_id": "EX004",
@@ -1639,7 +1955,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "Les unités sont cohérentes : cm × cm × cm = cm³.",
-          "hint": ""
+          "hint": "Quand on multiplie 3 longueurs en cm, le résultat est en cm³."
         }
       ]
     },
@@ -1655,7 +1971,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "C'est l'équivalence fondamentale volume/capacité.",
-          "hint": ""
+          "hint": "C'est une équivalence fondamentale à retenir."
         },
         {
           "exercise_id": "EX002",
@@ -1666,7 +1982,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "dm³",
           "explanation": "1 litre correspond exactement à 1 décimètre cube.",
-          "hint": ""
+          "hint": "Quelle unité de volume correspond à 1 litre ?"
         },
         {
           "exercise_id": "EX003",
@@ -1683,7 +1999,7 @@
           ],
           "correct_answer": "1 L",
           "explanation": "1 dm³ = 1 L.",
-          "hint": ""
+          "hint": "Un cube de 1 dm d'arête a un volume de 1 dm³ = ?"
         },
         {
           "exercise_id": "EX004",
@@ -1694,7 +2010,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 5,
           "explanation": "5 L = 5 dm³.",
-          "hint": ""
+          "hint": "1 L = 1 dm³. Le nombre ne change pas."
         }
       ]
     },
@@ -1710,7 +2026,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "1 millilitre correspond à 1 centimètre cube.",
-          "hint": ""
+          "hint": "Retiens : 1 mL = 1 cm³."
         },
         {
           "exercise_id": "EX002",
@@ -1721,7 +2037,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "mL",
           "explanation": "1 cm³ = 1 millilitre.",
-          "hint": ""
+          "hint": "1 cm³ correspond à quelle unité de capacité ?"
         },
         {
           "exercise_id": "EX003",
@@ -1738,7 +2054,33 @@
           ],
           "correct_answer": "1 mL",
           "explanation": "1 cm³ = 1 mL.",
-          "hint": ""
+          "hint": "1 cm³ = 1 mL. C'est la même chose.",
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "cube (1 cm, 1 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cube",
+                    "label": "cube"
+                  }
+                ],
+                "dimensions": [
+                  "1",
+                  "1"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -1749,7 +2091,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 250,
           "explanation": "250 cm³ = 250 mL.",
-          "hint": ""
+          "hint": "1 cm³ = 1 mL. Le nombre ne change pas."
         }
       ]
     },
@@ -1765,7 +2107,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 3.5,
           "explanation": "3,5 L = 3,5 dm³.",
-          "hint": "",
+          "hint": "1 L = 1 dm³.",
           "tolerance": 0.01
         },
         {
@@ -1777,7 +2119,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 500,
           "explanation": "500 mL = 500 cm³.",
-          "hint": ""
+          "hint": "1 mL = 1 cm³."
         },
         {
           "exercise_id": "EX003",
@@ -1788,7 +2130,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "2,5",
           "explanation": "2 500 cm³ = 2 500 mL = 2,5 L.",
-          "hint": ""
+          "hint": "1 cm³ = 1 mL et 1 000 mL = 1 L."
         },
         {
           "exercise_id": "EX004",
@@ -1799,7 +2141,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 750,
           "explanation": "0,75 L = 750 mL = 750 cm³.",
-          "hint": ""
+          "hint": "Convertis d'abord en mL (×1 000), puis 1 mL = 1 cm³."
         }
       ]
     },
@@ -1829,7 +2171,7 @@
           ],
           "correct_answer": "30 L",
           "explanation": "30 000 cm³ = 30 000 mL = 30 L.",
-          "hint": ""
+          "hint": "Calcule le volume en cm³, puis convertis en mL puis en L."
         },
         {
           "exercise_id": "EX002",
@@ -1850,7 +2192,7 @@
           ],
           "correct_answer": "8 L",
           "explanation": "2³ = 8 dm³ = 8 L.",
-          "hint": ""
+          "hint": "Calcule le volume en dm³, puis utilise 1 dm³ = 1 L."
         },
         {
           "exercise_id": "EX003",
@@ -1861,7 +2203,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 15,
           "explanation": "15 L = 15 dm³.",
-          "hint": ""
+          "hint": "1 L = 1 dm³."
         },
         {
           "exercise_id": "EX004",
@@ -1882,7 +2224,7 @@
           ],
           "correct_answer": "10 bouteilles",
           "explanation": "5 000 cm³ = 5 L. 5 ÷ 0,5 = 10.",
-          "hint": ""
+          "hint": "Convertis d'abord le volume en litres."
         }
       ]
     },
@@ -1904,7 +2246,30 @@
           ],
           "correct_answer": "2 bases circulaires et une surface latérale",
           "explanation": "Le cylindre a 2 disques (bases) et un rectangle enroulé.",
-          "hint": ""
+          "hint": "Pense à une boîte de conserve : 2 couvercles ronds et un tube.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -1926,7 +2291,34 @@
             "Sphère"
           ],
           "explanation": "Solides de base.",
-          "hint": ""
+          "hint": "Ce sont des solides courants à connaître.",
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  },
+                  {
+                    "shape": "cube",
+                    "label": "cube"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -1937,7 +2329,30 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "Les bases d'un cylindre droit sont des cercles identiques.",
-          "hint": ""
+          "hint": "Regarde le haut et le bas d'une boîte de conserve.",
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -1954,7 +2369,30 @@
           ],
           "correct_answer": "3 (2 disques + 1 surface latérale)",
           "explanation": "2 bases + 1 surface courbe = 3 faces.",
-          "hint": ""
+          "hint": "Compte : les 2 bases rondes + la surface qui les entoure.",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         }
       ]
     },
@@ -1976,7 +2414,30 @@
           ],
           "correct_answer": "2 disques et 1 rectangle",
           "explanation": "Le patron = 2 disques (bases) + 1 rectangle (surface latérale).",
-          "hint": ""
+          "hint": "Imagine qu'on découpe et déplie un cylindre.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -1987,7 +2448,30 @@
           "time_limit_seconds": 60,
           "correct_answer": "2, 1",
           "explanation": "2 disques pour les bases + 1 rectangle pour la surface latérale.",
-          "hint": ""
+          "hint": "Combien de bases a un cylindre ? Et la surface latérale déroulée ?",
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -1998,7 +2482,30 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "La largeur (ou hauteur) du rectangle = hauteur h du cylindre.",
-          "hint": ""
+          "hint": "Une dimension du rectangle correspond à la hauteur du cylindre.",
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -2015,7 +2522,7 @@
           ],
           "correct_answer": "Identiques (même rayon)",
           "explanation": "Les 2 bases ont le même rayon.",
-          "hint": ""
+          "hint": "Les deux bases d'un cylindre sont-elles identiques ?"
         }
       ]
     },
@@ -2045,7 +2552,33 @@
           ],
           "correct_answer": "Patron : 2 disques r=3 + rectangle 18,84×8",
           "explanation": "Le patron se compose de 2 cercles et d'un rectangle.",
-          "hint": ""
+          "hint": "La longueur du rectangle = périmètre du cercle = 2×π×r.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre (3 cm, 8 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "3",
+                  "8"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -2056,8 +2589,33 @@
           "time_limit_seconds": 90,
           "correct_answer": 31.4,
           "explanation": "L = 2×π×r = 2×3,14×5 = 31,4 cm.",
-          "hint": "",
-          "tolerance": 0.1
+          "hint": "L = 2 × π × rayon.",
+          "tolerance": 0.1,
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "cylindre (5 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "5"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -2068,7 +2626,32 @@
           "time_limit_seconds": 90,
           "correct_answer": 12,
           "explanation": "La largeur du rectangle = la hauteur du cylindre = 12 cm.",
-          "hint": ""
+          "hint": "La largeur du rectangle du patron = la hauteur du cylindre.",
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "cylindre (12 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "12"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -2093,7 +2676,33 @@
           ],
           "correct_answer": "Rectangle 12,56 cm × 10 cm",
           "explanation": "L = 2πr = 12,56 cm, largeur = 10 cm.",
-          "hint": ""
+          "hint": "Trouve d'abord r = D/2, puis L = 2πr.",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "Cylindre (4 cm, 10 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "Cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "4",
+                  "10"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -2109,8 +2718,33 @@
           "time_limit_seconds": 90,
           "correct_answer": 25.12,
           "explanation": "2 × 3,14 × 4 = 25,12 cm.",
-          "hint": "",
-          "tolerance": 0.1
+          "hint": "Applique la formule L = 2 × π × r.",
+          "tolerance": 0.1,
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre (4 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "4"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -2131,7 +2765,7 @@
           ],
           "correct_answer": "L = 2πr = circonférence de la base",
           "explanation": "Le rectangle déroulé a pour longueur la circonférence.",
-          "hint": ""
+          "hint": "Imagine qu'on déroule la surface latérale."
         },
         {
           "exercise_id": "EX003",
@@ -2142,8 +2776,33 @@
           "time_limit_seconds": 90,
           "correct_answer": 43.96,
           "explanation": "2×3,14×7 = 43,96 cm.",
-          "hint": "",
-          "tolerance": 0.1
+          "hint": "L = 2 × 3,14 × 7.",
+          "tolerance": 0.1,
+          "media_references": [
+            {
+              "id": "fig_EX003",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX003.svg",
+              "alt_text": "cylindre (7 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "7"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -2160,7 +2819,32 @@
           ],
           "correct_answer": "5 cm",
           "explanation": "r = L/(2π) = 31,4/6,28 = 5 cm.",
-          "hint": ""
+          "hint": "r = L ÷ (2 × π).",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "cylindre (31,4 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "31,4"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -2177,7 +2861,7 @@
           "erroneous_content": "Rectangle 20 cm et disques r=5",
           "correct_answer": "Rectangle 31,4 cm et disques r=5",
           "explanation": "La longueur du rectangle doit être 2πr = 31,4 cm, pas 20 cm.",
-          "hint": ""
+          "hint": "Vérifie que la longueur du rectangle = 2πr."
         },
         {
           "exercise_id": "EX002",
@@ -2194,7 +2878,30 @@
           ],
           "correct_answer": "2 × π × rayon du disque",
           "explanation": "L = 2πr doit correspondre aux disques.",
-          "hint": ""
+          "hint": "La longueur du rectangle correspond au périmètre de la base.",
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "rectangle doit",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "rectangle",
+                    "label": "rectangle doit"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -2206,7 +2913,7 @@
           "erroneous_content": "Rectangle 19 cm",
           "correct_answer": "Rectangle 18,84 cm (≈18,85)",
           "explanation": "2×3,14×3 = 18,84. Le rectangle est légèrement trop long.",
-          "hint": ""
+          "hint": "Calcule 2 × π × 3 et compare avec 19 cm."
         },
         {
           "exercise_id": "EX004",
@@ -2217,7 +2924,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "C'est la condition de cohérence du patron du cylindre.",
-          "hint": ""
+          "hint": "C'est la condition pour que le patron se referme correctement."
         }
       ]
     },
@@ -2243,7 +2950,33 @@
           ],
           "correct_answer": "282,6 cm³",
           "explanation": "V = π×r²×h = 3,14×9×10 = 282,6 cm³.",
-          "hint": ""
+          "hint": "V = π × r² × h. Calcule d'abord l'aire de la base.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre (3 cm, 10 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "3",
+                  "10"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -2254,8 +2987,34 @@
           "time_limit_seconds": 90,
           "correct_answer": 628,
           "explanation": "3,14×25×8 = 628 cm³.",
-          "hint": "",
-          "tolerance": 1
+          "hint": "V = π × r² × h = 3,14 × 25 × 8.",
+          "tolerance": 1,
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "cylindre (5 cm, 8 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "5",
+                  "8"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -2266,7 +3025,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 1538.6,
           "explanation": "3,14×49×10 = 1 538,6 cm³.",
-          "hint": "",
+          "hint": "V = π × r² × h. N'oublie pas de mettre r au carré.",
           "tolerance": 1
         },
         {
@@ -2288,7 +3047,33 @@
           ],
           "correct_answer": "423,9 cm³",
           "explanation": "V = π×r²×h = 423,9 cm³.",
-          "hint": ""
+          "hint": "Attention : on donne le diamètre. Trouve d'abord r = D/2.",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "Cylindre (6 cm, 15 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "Cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "6",
+                  "15"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -2310,7 +3095,33 @@
           ],
           "correct_answer": "251,2 cm²",
           "explanation": "A_lat = 2πrh = 251,2 cm².",
-          "hint": ""
+          "hint": "A_lat = 2 × π × r × h.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre (4 cm, 10 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "4",
+                  "10"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -2321,7 +3132,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 376.8,
           "explanation": "2×3,14×5×12 = 376,8 cm².",
-          "hint": "",
+          "hint": "A_lat = 2 × 3,14 × r × h.",
           "tolerance": 1
         },
         {
@@ -2333,7 +3144,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 376.8,
           "explanation": "2×3,14×3×20 = 376,8 cm².",
-          "hint": "",
+          "hint": "Applique A_lat = 2πrh.",
           "tolerance": 1
         },
         {
@@ -2355,7 +3166,33 @@
           ],
           "correct_answer": "251,2 cm²",
           "explanation": "2πrh = 251,2 cm².",
-          "hint": ""
+          "hint": "Trouve d'abord r = D/2, puis applique A_lat = 2πrh.",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "Cylindre (10 cm, 8 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "Cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "10",
+                  "8"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -2377,7 +3214,30 @@
           ],
           "correct_answer": "La surface du rectangle déroulé (sans les bases)",
           "explanation": "L'aire latérale ne comprend pas les bases.",
-          "hint": ""
+          "hint": "Latérale = sur les côtés, pas le dessus ni le dessous.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -2388,11 +3248,34 @@
           "time_limit_seconds": 90,
           "correct_answer": "L'aire totale inclut les 2 bases circulaires en plus de l'aire latérale",
           "explanation": "A_totale = A_latérale + 2×πr².",
-          "hint": "",
+          "hint": "L'aire totale = aire latérale + aire des bases.",
           "accepted_answers": [
             "inclut les bases",
             "ajoute les 2 disques",
             "2 bases en plus"
+          ],
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
           ]
         },
         {
@@ -2404,7 +3287,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "A_totale = A_lat + 2πr² > A_lat (les bases ajoutent de la surface).",
-          "hint": ""
+          "hint": "On ajoute les 2 bases à l'aire latérale."
         },
         {
           "exercise_id": "EX004",
@@ -2421,7 +3304,7 @@
           ],
           "correct_answer": "2πrh + 2πr²",
           "explanation": "On ajoute l'aire des 2 bases : 2×πr².",
-          "hint": ""
+          "hint": "A_totale = A_latérale + 2 × aire d'un disque."
         }
       ]
     },
@@ -2451,7 +3334,33 @@
           ],
           "correct_answer": "244,92 cm²",
           "explanation": "A_totale = 2πrh + 2πr² = 244,92 cm².",
-          "hint": ""
+          "hint": "Calcule A_lat et l'aire des 2 bases séparément, puis additionne.",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre (3 cm, 10 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "3",
+                  "10"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -2462,7 +3371,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 408.2,
           "explanation": "A_lat = 2×3,14×5×8 = 251,2. Bases = 2×3,14×25 = 157. Total = 408,2.",
-          "hint": "",
+          "hint": "A_totale = 2πrh + 2πr².",
           "tolerance": 1
         },
         {
@@ -2474,7 +3383,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 113.04,
           "explanation": "A_lat = 2×3,14×2×7 = 87,92. Bases = 2×3,14×4 = 25,12. Total = 113,04.",
-          "hint": "",
+          "hint": "Calcule A_lat puis les bases, et additionne.",
           "tolerance": 1
         },
         {
@@ -2504,7 +3413,33 @@
           ],
           "correct_answer": "282,6 cm²",
           "explanation": "A_totale = 226,08 + 56,52 = 282,6 cm².",
-          "hint": ""
+          "hint": "r = D/2. Puis A_totale = 2πrh + 2πr².",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "Cylindre (6 cm, 12 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "Cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "6",
+                  "12"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -2521,7 +3456,32 @@
           "erroneous_content": "Volume = 300 cm²",
           "correct_answer": "Volume = 300 cm³",
           "explanation": "Le volume s'exprime en cm³ (cubes), pas cm² (carrés).",
-          "hint": ""
+          "hint": "Le volume est en 3 dimensions : quel exposant ?",
+          "media_references": [
+            {
+              "id": "fig_EX001",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX001.svg",
+              "alt_text": "cylindre (300 cm)",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": [
+                  "300"
+                ]
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -2538,7 +3498,30 @@
           ],
           "correct_answer": "cm² et cm³",
           "explanation": "Aire = surface (²), volume = espace (³).",
-          "hint": ""
+          "hint": "Surface = 2D (²), volume = 3D (³).",
+          "media_references": [
+            {
+              "id": "fig_EX002",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX002.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -2550,7 +3533,7 @@
           "erroneous_content": "A_lat = 200 cm³",
           "correct_answer": "A_lat = 200 cm²",
           "explanation": "L'aire est une surface, donc cm² (pas cm³).",
-          "hint": ""
+          "hint": "L'aire mesure une surface. Quel exposant ?"
         },
         {
           "exercise_id": "EX004",
@@ -2561,7 +3544,30 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "Aires = unités carrées, volumes = unités cubes.",
-          "hint": ""
+          "hint": "² pour les aires, ³ pour les volumes.",
+          "media_references": [
+            {
+              "id": "fig_EX004",
+              "type": "svg",
+              "url": "/static/media/svg/geometry/fig_EX004.svg",
+              "alt_text": "cylindre",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": false,
+              "params": {
+                "shapes": [
+                  {
+                    "shape": "cylindre",
+                    "label": "cylindre"
+                  }
+                ],
+                "dimensions": []
+              }
+            }
+          ]
         }
       ]
     },
@@ -2577,7 +3583,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 154,
           "explanation": "3,14159×49 = 153,94 ≈ 154.",
-          "hint": "",
+          "hint": "Calcule π × 49 puis arrondis à l'unité.",
           "tolerance": 1
         },
         {
@@ -2590,7 +3596,7 @@
           "erroneous_content": "480 cm³",
           "correct_answer": "502,4 cm³",
           "explanation": "3,14×16×10 = 502,4 cm³.",
-          "hint": ""
+          "hint": "Refais le calcul avec π ≈ 3,14 au lieu de 3."
         },
         {
           "exercise_id": "EX003",
@@ -2601,7 +3607,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 78.54,
           "explanation": "78,53975 ≈ 78,54.",
-          "hint": "",
+          "hint": "Multiplie 3,14159 × 25, puis arrondis au centième.",
           "tolerance": 0.01
         },
         {
@@ -2619,7 +3625,7 @@
           ],
           "correct_answer": "π ≈ 3,14",
           "explanation": "Au CM2, on utilise π ≈ 3,14 pour les calculs.",
-          "hint": ""
+          "hint": "Quelle approximation de π est la plus utilisée au CM2 ?"
         }
       ]
     },
@@ -2635,7 +3641,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "655,957",
           "explanation": "Le taux fixe EUR/FCFA est 655,957.",
-          "hint": ""
+          "hint": "C'est un taux fixe à retenir."
         },
         {
           "exercise_id": "EX002",
@@ -2652,7 +3658,7 @@
           ],
           "correct_answer": "1 euro vaut 655,957 francs CFA",
           "explanation": "Le taux de change indique la valeur d'1 unité dans l'autre monnaie.",
-          "hint": ""
+          "hint": "Lis le taux de change : 1 EUR = combien de FCFA ?"
         },
         {
           "exercise_id": "EX003",
@@ -2663,7 +3669,7 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "1 USD ≈ 600 FCFA, donc 1 USD > 1 FCFA.",
-          "hint": ""
+          "hint": "1 dollar vaut environ 600 FCFA."
         },
         {
           "exercise_id": "EX004",
@@ -2680,7 +3686,7 @@
           ],
           "correct_answer": "Multiplie par le taux",
           "explanation": "EUR → FCFA : on multiplie par 655,957.",
-          "hint": ""
+          "hint": "Pour passer d'une grande unité à une petite, on multiplie."
         }
       ]
     },
@@ -2702,7 +3708,7 @@
           ],
           "correct_answer": "50 × 655,957",
           "explanation": "EUR → FCFA : multiplication.",
-          "hint": ""
+          "hint": "EUR vers FCFA = multiplication par le taux."
         },
         {
           "exercise_id": "EX002",
@@ -2719,7 +3725,7 @@
           ],
           "correct_answer": "≈ 152,45 EUR",
           "explanation": "FCFA → EUR : on divise par 655,957.",
-          "hint": ""
+          "hint": "FCFA vers EUR = division par le taux."
         },
         {
           "exercise_id": "EX003",
@@ -2736,7 +3742,7 @@
           ],
           "correct_answer": "Divise par 655,957",
           "explanation": "FCFA → EUR : division.",
-          "hint": ""
+          "hint": "L'opération inverse de la multiplication est la division."
         },
         {
           "exercise_id": "EX004",
@@ -2753,7 +3759,7 @@
           ],
           "correct_answer": "13 119,14 FCFA",
           "explanation": "20 × 655,957 = 13 119,14 FCFA.",
-          "hint": ""
+          "hint": "Multiplie 20 par le taux de change."
         }
       ]
     },
@@ -2769,7 +3775,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 6560,
           "explanation": "10×655,957 ≈ 6 560 FCFA.",
-          "hint": "",
+          "hint": "Multiplie 10 par 655,957 puis arrondis.",
           "tolerance": 1
         },
         {
@@ -2781,7 +3787,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 229,
           "explanation": "150 000÷655,957 ≈ 228,66 ≈ 229 EUR.",
-          "hint": "",
+          "hint": "Divise par le taux et arrondis à l'euro.",
           "tolerance": 1
         },
         {
@@ -2794,7 +3800,7 @@
           "erroneous_content": "3 279,785 FCFA",
           "correct_answer": "3 280 FCFA",
           "explanation": "En monnaie, on arrondit à l'unité : 3 280 FCFA.",
-          "hint": ""
+          "hint": "En monnaie, on arrondit à l'unité."
         },
         {
           "exercise_id": "EX004",
@@ -2805,7 +3811,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 76,
           "explanation": "76,22 ≈ 76 EUR.",
-          "hint": "",
+          "hint": "Divise 50 000 par 655,957 et arrondis.",
           "tolerance": 1
         }
       ]
@@ -2823,7 +3829,7 @@
           "erroneous_content": "65,60 FCFA",
           "correct_answer": "6 560 FCFA",
           "explanation": "L'élève a divisé au lieu de multiplier. 10 × 656 ≈ 6 560 FCFA.",
-          "hint": ""
+          "hint": "EUR → FCFA : on multiplie, on ne divise pas."
         },
         {
           "exercise_id": "EX002",
@@ -2840,7 +3846,7 @@
           ],
           "correct_answer": "656 000 FCFA",
           "explanation": "1 000 × 656 = 656 000 FCFA.",
-          "hint": ""
+          "hint": "Multiplie 1 000 par le taux approché."
         },
         {
           "exercise_id": "EX003",
@@ -2852,7 +3858,7 @@
           "erroneous_content": "6 EUR pour 500 000 FCFA",
           "correct_answer": "≈ 762 EUR",
           "explanation": "500 000 ÷ 656 ≈ 762 EUR. 6 EUR est absurde.",
-          "hint": ""
+          "hint": "Divise 500 000 par 656 pour vérifier."
         },
         {
           "exercise_id": "EX004",
@@ -2869,7 +3875,7 @@
           ],
           "correct_answer": "Oui, car 76×656 ≈ 49 856",
           "explanation": "76 × 656 ≈ 49 856 ≈ 50 000 FCFA ✓.",
-          "hint": ""
+          "hint": "Vérifie en multipliant 76 par le taux."
         }
       ]
     },
@@ -2891,7 +3897,20 @@
           ],
           "correct_answer": "Les heures",
           "explanation": "Petite aiguille = heures, grande aiguille = minutes.",
-          "hint": ""
+          "hint": "La petite aiguille tourne lentement.",
+          "media_references": [
+            {
+              "id": "ill_0043",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0043.svg",
+              "alt_text": "Illustration: horloge",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX002",
@@ -2902,8 +3921,21 @@
           "time_limit_seconds": 45,
           "correct_answer": 3,
           "explanation": "Il est 3h30. La petite aiguille pointe vers 3.",
-          "hint": "",
-          "tolerance": 0.5
+          "hint": "La petite aiguille est entre 3 et 4, donc il est 3h et demie.",
+          "tolerance": 0.5,
+          "media_references": [
+            {
+              "id": "ill_0044",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0044.svg",
+              "alt_text": "Illustration: horloge",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -2920,7 +3952,20 @@
           ],
           "correct_answer": "15 minutes (et quart)",
           "explanation": "Chaque chiffre = 5 minutes. 3 × 5 = 15 minutes.",
-          "hint": ""
+          "hint": "Chaque chiffre sur l'horloge vaut 5 minutes.",
+          "media_references": [
+            {
+              "id": "ill_0045",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0045.svg",
+              "alt_text": "Illustration: horloge",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX004",
@@ -2931,7 +3976,20 @@
           "time_limit_seconds": 60,
           "correct_answer": 45,
           "explanation": "9 × 5 = 45 minutes.",
-          "hint": ""
+          "hint": "Chiffre × 5 = nombre de minutes.",
+          "media_references": [
+            {
+              "id": "ill_0046",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0046.svg",
+              "alt_text": "Illustration: horloge",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -2953,7 +4011,7 @@
           ],
           "correct_answer": "2h30 PM",
           "explanation": "14-12=2, après-midi.",
-          "hint": ""
+          "hint": "Pour convertir de 24h en 12h, soustrais 12 si l'heure est > 12."
         },
         {
           "exercise_id": "EX002",
@@ -2964,7 +4022,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "20h45",
           "explanation": "8+12=20 → 20h45.",
-          "hint": ""
+          "hint": "PM = après-midi. Ajoute 12 à l'heure."
         },
         {
           "exercise_id": "EX003",
@@ -2981,7 +4039,7 @@
           ],
           "correct_answer": "7h15 AM",
           "explanation": "Avant midi = AM.",
-          "hint": ""
+          "hint": "7h15 est le matin. AM = matin, PM = après-midi."
         },
         {
           "exercise_id": "EX004",
@@ -2992,7 +4050,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 11,
           "explanation": "23-12=11 → 11h15 PM.",
-          "hint": ""
+          "hint": "Soustrais 12 pour passer de 24h à 12h."
         }
       ]
     },
@@ -3008,7 +4066,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 120,
           "explanation": "2 × 60 = 120 minutes.",
-          "hint": ""
+          "hint": "1 heure = 60 minutes."
         },
         {
           "exercise_id": "EX002",
@@ -3019,7 +4077,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 2,
           "explanation": "150 ÷ 60 = 2h30 → 2 heures entières.",
-          "hint": ""
+          "hint": "Divise par 60 pour trouver les heures."
         },
         {
           "exercise_id": "EX003",
@@ -3030,7 +4088,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "105",
           "explanation": "60 + 45 = 105 minutes.",
-          "hint": ""
+          "hint": "1h = 60 min. Ajoute les 45 minutes."
         },
         {
           "exercise_id": "EX004",
@@ -3041,7 +4099,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 20,
           "explanation": "200÷60=3h20 → 20 min restantes.",
-          "hint": ""
+          "hint": "200 ÷ 60 = 3 reste ? Les minutes restantes sont le reste."
         }
       ]
     },
@@ -3071,7 +4129,7 @@
           ],
           "correct_answer": "3h30",
           "explanation": "8h15 → 11h45 = 3h30.",
-          "hint": ""
+          "hint": "Procède par étapes : d'abord les heures, puis les minutes."
         },
         {
           "exercise_id": "EX002",
@@ -3082,7 +4140,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 165,
           "explanation": "2h45 = 165 min.",
-          "hint": ""
+          "hint": "Calcule d'abord la durée en heures et minutes, puis convertis."
         },
         {
           "exercise_id": "EX003",
@@ -3107,7 +4165,7 @@
           ],
           "correct_answer": "7h45",
           "explanation": "1h30 + 6h15 = 7h45.",
-          "hint": ""
+          "hint": "Passe par minuit : calcule le temps jusqu'à minuit, puis de minuit à l'arrivée."
         },
         {
           "exercise_id": "EX004",
@@ -3118,7 +4176,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 210,
           "explanation": "3h30 = 210 min.",
-          "hint": ""
+          "hint": "3h30 = 3 × 60 + 30 minutes."
         }
       ]
     },
@@ -3144,7 +4202,7 @@
           ],
           "correct_answer": "11h05",
           "explanation": "7h45 + 3h20 = 11h05.",
-          "hint": ""
+          "hint": "Ajoute d'abord les heures, puis les minutes."
         },
         {
           "exercise_id": "EX002",
@@ -3169,7 +4227,7 @@
           ],
           "correct_answer": "35 min",
           "explanation": "10 + 25 = 35 minutes.",
-          "hint": ""
+          "hint": "Passe par l'heure ronde (7h00) pour compter."
         },
         {
           "exercise_id": "EX003",
@@ -3180,7 +4238,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 15,
           "explanation": "15h30 + 1h45 = 17h15 → 15 minutes après 17h.",
-          "hint": ""
+          "hint": "Ajoute la durée à l'heure de début."
         },
         {
           "exercise_id": "EX004",
@@ -3201,7 +4259,7 @@
           ],
           "correct_answer": "7h30",
           "explanation": "6h00 → 6h45 → 7h30.",
-          "hint": ""
+          "hint": "Ajoute 45 min à chaque passage de bus."
         }
       ]
     },
@@ -3218,7 +4276,7 @@
           "erroneous_content": "Durée = 1h15",
           "correct_answer": "Impossible : l'arrivée (7h15) est avant le départ (8h30) !",
           "explanation": "L'heure d'arrivée doit être après l'heure de départ.",
-          "hint": ""
+          "hint": "Vérifie si l'arrivée est bien après le départ."
         },
         {
           "exercise_id": "EX002",
@@ -3235,7 +4293,7 @@
           ],
           "correct_answer": "1h30",
           "explanation": "De 8h00 à 9h30 = 1h30.",
-          "hint": ""
+          "hint": "De 8h00 à 9h00 = 1h, puis ajoute les 30 min."
         },
         {
           "exercise_id": "EX003",
@@ -3247,7 +4305,7 @@
           "erroneous_content": "3h45",
           "correct_answer": "2h15",
           "explanation": "De 13h45 à 16h00 = 2h15, pas 3h45.",
-          "hint": ""
+          "hint": "De 13h45 à 14h00 = 15 min, puis de 14h00 à 16h00 = 2h."
         },
         {
           "exercise_id": "EX004",
@@ -3258,7 +4316,7 @@
           "time_limit_seconds": 90,
           "correct_answer": true,
           "explanation": "Si on obtient une durée négative, il y a une erreur dans le calcul ou les données.",
-          "hint": ""
+          "hint": "Une durée est toujours un nombre positif."
         }
       ]
     },
@@ -3280,7 +4338,7 @@
           ],
           "correct_answer": "7",
           "explanation": "1 semaine = 7 jours.",
-          "hint": ""
+          "hint": "Compte de lundi à dimanche."
         },
         {
           "exercise_id": "EX002",
@@ -3291,7 +4349,7 @@
           "time_limit_seconds": 45,
           "correct_answer": "12",
           "explanation": "1 an = 12 mois.",
-          "hint": ""
+          "hint": "De janvier à décembre, combien de mois ?"
         },
         {
           "exercise_id": "EX003",
@@ -3308,7 +4366,7 @@
           ],
           "correct_answer": "Février",
           "explanation": "Février a 28 jours (29 les années bissextiles).",
-          "hint": ""
+          "hint": "C'est le mois le plus court de l'année."
         },
         {
           "exercise_id": "EX004",
@@ -3330,7 +4388,7 @@
             "Dimanche"
           ],
           "explanation": "L'ordre des jours de la semaine.",
-          "hint": ""
+          "hint": "Récite les jours de la semaine dans l'ordre."
         }
       ]
     },
@@ -3346,7 +4404,7 @@
           "time_limit_seconds": 45,
           "correct_answer": "15/03/2026",
           "explanation": "Format jour/mois/année.",
-          "hint": ""
+          "hint": "Format court : JJ/MM/AAAA."
         },
         {
           "exercise_id": "EX002",
@@ -3363,7 +4421,7 @@
           ],
           "correct_answer": "15 mars 2026",
           "explanation": "Format international : année-mois-jour.",
-          "hint": ""
+          "hint": "Format AAAA-MM-JJ : le mois 03 est mars."
         },
         {
           "exercise_id": "EX003",
@@ -3374,7 +4432,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "01",
           "explanation": "Janvier = mois 01.",
-          "hint": ""
+          "hint": "Janvier est le premier mois de l'année."
         },
         {
           "exercise_id": "EX004",
@@ -3391,7 +4449,7 @@
           ],
           "correct_answer": "Le 25 décembre 2025",
           "explanation": "25 = jour, 12 = décembre, 2025 = année.",
-          "hint": ""
+          "hint": "JJ/MM/AAAA : le mois 12 est décembre."
         }
       ]
     },
@@ -3407,7 +4465,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 15,
           "explanation": "25 - 10 = 15 jours.",
-          "hint": ""
+          "hint": "Soustrais la date de début de la date de fin."
         },
         {
           "exercise_id": "EX002",
@@ -3432,7 +4490,7 @@
           ],
           "correct_answer": "13 jours",
           "explanation": "8 + 5 = 13 jours.",
-          "hint": ""
+          "hint": "Calcule les jours restants en février, puis ajoute les jours de mars."
         },
         {
           "exercise_id": "EX003",
@@ -3443,7 +4501,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 29,
           "explanation": "30 - 1 = 29 jours.",
-          "hint": ""
+          "hint": "Du 1er au 30, on ne compte pas le jour de départ."
         },
         {
           "exercise_id": "EX004",
@@ -3454,7 +4512,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 26,
           "explanation": "16 jours en décembre (31-15) + 10 jours en janvier = 26.",
-          "hint": ""
+          "hint": "Décembre a 31 jours. Calcule les jours restants en décembre, puis ajoute les jours de janvier."
         }
       ]
     },
@@ -3480,7 +4538,7 @@
           ],
           "correct_answer": "≈ 75 jours",
           "explanation": "Du 4 sept au 20 déc ≈ 15 semaines = 75 jours d'école.",
-          "hint": ""
+          "hint": "Compte les semaines, puis multiplie par 5 jours d'école."
         },
         {
           "exercise_id": "EX002",
@@ -3505,7 +4563,7 @@
           ],
           "correct_answer": "26 mars",
           "explanation": "1er mars + 25 jours = 26 mars.",
-          "hint": ""
+          "hint": "Convertis les semaines en jours, puis additionne."
         },
         {
           "exercise_id": "EX003",
@@ -3516,7 +4574,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "7",
           "explanation": "17 - 10 = 7 jours.",
-          "hint": ""
+          "hint": "Soustrais les dates."
         },
         {
           "exercise_id": "EX004",
@@ -3537,7 +4595,7 @@
           ],
           "correct_answer": "19 janvier et 2 février",
           "explanation": "5+14=19 janv, 19+14=33→ 2 février (janvier a 31 jours).",
-          "hint": ""
+          "hint": "Ajoute 14 jours à chaque fois. Attention au changement de mois."
         }
       ]
     }

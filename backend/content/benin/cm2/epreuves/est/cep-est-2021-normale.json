@@ -5,122 +5,382 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Maman est jardinière. Elle cultive son jardin, puise de l'eau au puits, ramasse du bois et va au marché vendre ses récoltes.",
+  "context_text": "Maman est une jardinière. À l'aide de l'eau d'un puits, elle arrose le piment, la tomate, le gombo, le haricot, parsemés de manioc. Pour un complément alimentaire, elle se rend au marché où elle s'approvisionne en huile d'arachide, riz, poisson et sel. À son retour, elle allume le feu de bois pour préparer le repas. Elle s'interroge sur la nature des machines à utiliser pour puiser facilement l'eau et sur les éléments constitutifs du repas.",
   "items": [
     {
       "item_number": 1,
       "domain": "nutrition_health",
-      "context_text": "Au marché, maman achète les aliments suivants : piment, tomate, gombo, haricot, manioc, huile d'arachide, riz, poisson, sel.",
-      "points": 6.67,
+      "context_text": "Maman cultive dans son jardin le piment, la tomate, le gombo, le haricot et le manioc. Au marché, elle achète de l'huile d'arachide, du riz, du poisson et du sel.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite les produits alimentaires achetés par maman.",
-          "question_type": "fill_blank",
-          "correct_answer": "Piment, tomate, gombo, haricot, manioc, huile d'arachide, riz, poisson, sel",
-          "explanation": "Tous les produits achetés par maman sont des produits alimentaires : piment, tomate, gombo, haricot, manioc, huile d'arachide, riz, poisson et sel.",
-          "points": 2.22,
+          "text": "Cite les produits alimentaires utilisés par maman.",
+          "question_type": "short_answer",
+          "correct_answer": "Piment, tomate, gombo, haricot, manioc, huile d'arachide, riz, poisson, sel.",
+          "hint": "Pense à tous les aliments mentionnés dans le texte : ceux du jardin et ceux du marché.",
+          "explanation": "Tous les produits alimentaires utilisés par maman sont : du jardin (piment, tomate, gombo, haricot, manioc) et du marché (huile d'arachide, riz, poisson, sel).",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Classe ces aliments selon leur origine : végétale, animale, minérale.",
-          "question_type": "fill_blank",
-          "correct_answer": "Origine végétale: piment, tomate, gombo, haricot, manioc, riz, huile d'arachide. Origine animale: poisson. Origine minérale: sel",
-          "explanation": "Les aliments d'origine végétale proviennent des plantes. Les aliments d'origine animale proviennent des animaux. Le sel est d'origine minérale car il provient de la terre ou de la mer.",
-          "points": 2.22,
+          "text": "Classe ces aliments selon leur origine.",
+          "question_type": "classification",
+          "correct_answer": "Origine végétale : piment, tomate, gombo, haricot, manioc, riz, huile d'arachide. Origine animale : poisson. Origine minérale : sel.",
+          "hint": "Les aliments peuvent avoir trois origines : végétale (des plantes), animale (des animaux) ou minérale (de la terre ou de la mer).",
+          "explanation": "Les aliments d'origine végétale proviennent des plantes : piment, tomate, gombo, haricot, manioc, riz, huile d'arachide. Les aliments d'origine animale proviennent des animaux : poisson. Le sel est d'origine minérale car il provient de la terre ou de la mer.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Propose 2 menus équilibrés à partir de ces aliments.",
-          "question_type": "fill_blank",
-          "correct_answer": "Menu 1: Riz + sauce de poisson + gombo + tomate + huile. Menu 2: Pâte de manioc + sauce de haricot + piment + huile d'arachide",
-          "explanation": "Un menu équilibré doit contenir des glucides (riz, manioc), des protides (poisson, haricot), des lipides (huile) et des vitamines (tomate, gombo, piment).",
-          "points": 2.22,
+          "text": "Propose deux menus équilibrés à partir de ces aliments.",
+          "question_type": "short_answer",
+          "correct_answer": "Menu 1 : Riz + sauce de poisson au gombo et tomate + huile d'arachide. Menu 2 : Pâte de manioc + sauce de haricot au piment + huile d'arachide.",
+          "hint": "Un menu équilibré doit contenir des glucides, des protides, des lipides et des vitamines.",
+          "explanation": "Un menu équilibré doit contenir des glucides (riz, manioc), des protides (poisson, haricot), des lipides (huile d'arachide) et des vitamines (tomate, gombo, piment).",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "technology_prehistory",
-      "context_text": "De retour à la maison, maman allume un feu de bois pour préparer le repas.",
-      "points": 6.67,
+      "context_text": "À son retour du marché, maman allume le feu de bois pour préparer le repas.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Quelle forme d'énergie utilise maman pour cuire les aliments ?",
-          "question_type": "mcq",
-          "choices": ["Énergie calorifique (thermique)", "Énergie électrique", "Énergie éolienne", "Énergie mécanique"],
-          "correct_answer": "Énergie calorifique (thermique)",
+          "text": "Précise la forme d'énergie utilisée par maman à la cuisine.",
+          "question_type": "short_answer",
+          "correct_answer": "L'énergie calorifique (thermique).",
+          "hint": "Quel type d'énergie le feu de bois produit-il ?",
           "explanation": "En brûlant du bois, maman produit de la chaleur (énergie calorifique ou thermique) qui sert à cuire les aliments.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Quelle est la source de cette énergie ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Le bois (combustible)",
+          "text": "Donne sa source.",
+          "question_type": "short_answer",
+          "correct_answer": "Le bois (combustible).",
+          "hint": "Qu'est-ce que maman brûle pour obtenir cette énergie ?",
           "explanation": "La source de l'énergie calorifique est le bois, qui est un combustible. En brûlant, il libère de la chaleur.",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 1
+          "points": 2,
+          "depends_on_previous": true,
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite 2 autres formes d'énergie que tu connais.",
-          "question_type": "fill_blank",
-          "correct_answer": "Énergie électrique et énergie solaire",
-          "explanation": "Il existe plusieurs formes d'énergie : électrique (pour les appareils), solaire (du soleil), éolienne (du vent), mécanique (du mouvement), etc.",
-          "points": 2.22,
+          "text": "Cite deux autres formes d'énergie que tu connais.",
+          "question_type": "short_answer",
+          "correct_answer": "Énergie électrique et énergie solaire.",
+          "hint": "Pense à d'autres sources d'énergie utilisées dans la vie quotidienne.",
+          "explanation": "Il existe plusieurs formes d'énergie : électrique (pour les appareils), solaire (du soleil), éolienne (du vent), mécanique (du mouvement), musculaire (du corps humain), etc.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "technology_prehistory",
-      "context_text": "Pour puiser de l'eau au puits, maman utilise des machines simples. On observe un croquis d'une poulie avec les annotations a, b, c, d.",
-      "points": 6.67,
+      "context_text": "Maman s'interroge sur la nature des machines à utiliser pour puiser facilement l'eau de son puits.",
+      "diagram_description": "Croquis d'une poulie avec quatre parties annotées par les lettres a, b, c et d. On voit en haut un crochet de fixation (a), puis une chape (b), ensuite la roue à gorge (c), et enfin l'axe (d) au centre de la roue.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite 2 machines simples que maman peut utiliser au puits.",
-          "question_type": "fill_blank",
-          "correct_answer": "La poulie et le treuil",
+          "text": "Cite deux machines simples que maman peut utiliser au niveau de son puits.",
+          "question_type": "short_answer",
+          "correct_answer": "La poulie et le treuil.",
+          "hint": "Pense aux machines qui aident à remonter un seau d'eau du fond d'un puits.",
           "explanation": "Au puits, on utilise couramment la poulie (pour changer la direction de la force) et le treuil (manivelle qui enroule la corde) pour remonter le seau d'eau.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Quel est le nom de la machine simple représentée sur le croquis ?",
-          "question_type": "mcq",
-          "choices": ["La poulie", "Le levier", "La brouette", "Le treuil"],
-          "correct_answer": "La poulie",
-          "explanation": "Le croquis représente une poulie, reconnaissable à sa roue à gorge dans laquelle passe une corde.",
-          "points": 2.22,
+          "text": "Voici le croquis d'une machine simple. Écris le nom de cette machine.",
+          "question_type": "short_answer",
+          "correct_answer": "La poulie.",
+          "hint": "Observe la roue à gorge et le crochet de fixation sur le croquis.",
+          "explanation": "Le croquis représente une poulie, reconnaissable à sa roue à gorge dans laquelle passe une corde, fixée en hauteur par un crochet.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Annote le croquis de la poulie : a, b, c, d.",
-          "question_type": "fill_blank",
-          "correct_answer": "a: crochet de fixation, b: chape, c: gorge (roue), d: axe",
-          "explanation": "Les parties de la poulie sont : le crochet de fixation (pour accrocher la poulie), la chape (support de la roue), la gorge ou roue (où passe la corde) et l'axe (autour duquel tourne la roue).",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 2
+          "text": "Annote le croquis en utilisant les lettres a, b, c, d.",
+          "question_type": "labeling",
+          "correct_answer": "a : crochet de fixation, b : chape, c : gorge (roue), d : axe.",
+          "hint": "Les parties de la poulie comprennent le crochet, la chape, la gorge et l'axe.",
+          "explanation": "Les parties de la poulie sont : a = le crochet de fixation (pour accrocher la poulie en hauteur), b = la chape (support métallique de la roue), c = la gorge ou roue (partie circulaire où passe la corde), d = l'axe (tige autour de laquelle tourne la roue).",
+          "points": 2.5,
+          "depends_on_previous": true,
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01"
       ]
     }
   ]

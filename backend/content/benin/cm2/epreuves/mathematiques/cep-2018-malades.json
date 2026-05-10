@@ -5,124 +5,257 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Après leur formation au lycée agricole Mèdji de Sékou, Suzanne et Paul décident d'installer ensemble une ferme à Pahou pour y élever de la volaille. Le terrain qu'ils ont acheté a une forme rectangulaire qui mesure 125 m de longueur sur 75 m de largeur.",
+  "context_text": "Après leur formation au lycée agricole Médji de Sékou, Suzanne et Paul décident d'installer ensemble une ferme à Pahou pour y élever de la volaille. Le terrain qu'ils ont acheté a une forme rectangulaire qui mesure 125 m de longueur sur 75 m de largeur. Ils commandent des poussins et de la provende. Au bout de trois ans, leur entreprise a tellement prospéré que des élèves des lycées agricoles leur rendent des visites.",
+  "task_instruction": "Tu es invité(e) à lire silencieusement le texte ci-dessus et à résoudre les items ci-après.",
   "items": [
     {
       "item_number": 1,
-      "domain": "data_proportionality",
-      "context_text": "Les poussins commandés coûtent 600 000 francs CFA. Suzanne paie les 3/5 de ce montant et Paul le reste. Les élèves de 3ème année du lycée d'Adja-Ouèrè visitent la ferme. Transport : 162 700 F. Le lycée paie 92 500 F. Chaque élève cotise 2 600 F.",
-      "points": 6.67,
+      "domain": "measures_operations",
+      "context_text": "Les poussins commandés coûtent 600 000 francs CFA. Suzanne paie les 2/3 de ce montant et Paul le reste. Les élèves de la classe de 3ème année du lycée d'Adja-Ouèrè décident de leur rendre visite. Ils ont loué un bus pour leur transport. Les frais du transport s'élèvent à 162 700 F. Les responsables du lycée paient 92 500 F. Pour couvrir le reste des frais du transport, chaque élève souscrit 2 600 F.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Les poussins commandés coûtent 600 000 francs CFA. Suzanne paie les 3/5 de ce montant et Paul le reste. Détermine le montant payé par chacun.",
+          "text": "Les poussins commandés coûtent 600 000 francs CFA. Suzanne paie les 2/3 de ce montant et Paul le reste. Détermine le montant payé par chacun.",
           "question_type": "numeric_input",
-          "correct_answer": "360000",
-          "explanation": "Suzanne : 3/5 × 600 000 = 360 000 F. Paul : 600 000 - 360 000 = 240 000 F.",
-          "points": 2.22,
+          "correct_answer": "400000",
+          "explanation": "Suzanne : 2/3 × 600 000 = 400 000 F. Paul : 600 000 - 400 000 = 200 000 F.",
+          "hint": "Calcule d'abord la part de Suzanne en multipliant 600 000 par 2/3, puis déduis la part de Paul.",
+          "points": 3.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "45 × 30 × 25",
+              "frequency": "low",
+              "explanation": "Addition demandée",
+              "prevention_hint": "'Total' = addition"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Les élèves de 3ème année du lycée d'Adja-Ouèrè visitent. Transport : 162 700 F. Le lycée paie 92 500 F. Chaque élève cotise 2 600 F. Calcule le nombre d'élèves.",
+          "text": "Les élèves de la classe de 3ème année du lycée d'Adja-Ouèrè décident de leur rendre visite. Ils ont loué un bus pour leur transport. Les frais du transport s'élèvent à 162 700 F. Les responsables du lycée paient 92 500 F. Pour couvrir le reste des frais du transport, chaque élève souscrit 2 600 F. Calcule le nombre d'élèves transportés par le bus.",
           "question_type": "numeric_input",
           "correct_answer": "27",
-          "explanation": "Reste : 162 700 - 92 500 = 70 200 F. Élèves : 70 200 ÷ 2 600 = 27.",
-          "points": 2.22,
+          "explanation": "Reste : 162 700 - 92 500 = 70 200 F. Nombre d'élèves : 70 200 ÷ 2 600 = 27.",
+          "hint": "Trouve d'abord le montant restant à la charge des élèves, puis divise par la cotisation de chacun.",
+          "points": 3.5,
           "depends_on_previous": false,
-          "order": 1
-        },
-        {
-          "sub_label": "c",
-          "text": "Les sacs de provende : 2 sacs = 25 000 F, 3 sacs = 37 500 F, 5 sacs = 62 500 F. Calcule le nombre de sacs qu'on peut acheter avec 87 500 F.",
-          "question_type": "numeric_input",
-          "correct_answer": "7",
-          "explanation": "Prix unitaire : 12 500 F. 87 500 ÷ 12 500 = 7 sacs.",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 2
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "100 × 5 = 500",
+              "frequency": "medium",
+              "explanation": "Division pour répartir",
+              "prevention_hint": "'Par rangée' = division"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 1,
+      "skills_targeted": [
+        "MATH-CM2-NUM-12",
+        "MATH-CM2-ADD-06"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Total",
+            "content": "45 + 30 + 25 = ?",
+            "answer": "100 plants"
+          },
+          {
+            "step": 2,
+            "title": "Par rangée",
+            "content": "100 ÷ 5 = ?",
+            "answer": "20 plants"
+          }
+        ]
+      }
     },
     {
       "item_number": 2,
-      "domain": "measures_operations",
-      "context_text": "Les sacs de provende coûtent : 2 sacs = 25 000 F, 3 sacs = 37 500 F, 5 sacs = 62 500 F.",
-      "points": 6.67,
+      "domain": "data_proportionality",
+      "context_text": "Les sacs de provende commandés pour les poussins de premiers âges sont payés de la façon suivante : 2 sacs de provende à 25 000 F, 3 sacs de provende à 37 500 F, 5 sacs de provende à 62 500 F.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Présente ces données dans un tableau de correspondance.",
           "question_type": "fill_blank",
-          "correct_answer": "2 sacs: 25000F, 3 sacs: 37500F, 5 sacs: 62500F",
-          "explanation": "On organise les données : nombre de sacs et prix correspondant.",
-          "points": 2.22,
+          "correct_answer": "2 sacs: 25 000 F, 3 sacs: 37 500 F, 5 sacs: 62 500 F",
+          "explanation": "On organise les données dans un tableau avec deux lignes : nombre de sacs et prix correspondant.",
+          "hint": "Crée un tableau à deux lignes : une pour le nombre de sacs et une pour le prix.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "45 + 4 = 49",
+              "frequency": "medium",
+              "explanation": "Multiplication demandée",
+              "prevention_hint": "'Donne' avec nombre = multiplication"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Dis s'il s'agit d'une situation de proportionnalité. Justifie.",
+          "text": "Dis s'il s'agit oui ou non d'une situation de proportionnalité. Justifie ta réponse.",
           "question_type": "true_false",
           "correct_answer": "Vrai",
-          "explanation": "Prix unitaire constant : 25 000 ÷ 2 = 12 500 F. 37 500 ÷ 3 = 12 500 F. 62 500 ÷ 5 = 12 500 F.",
-          "points": 2.22,
+          "explanation": "Oui, c'est une situation de proportionnalité. Prix unitaire constant : 25 000 ÷ 2 = 12 500 F ; 37 500 ÷ 3 = 12 500 F ; 62 500 ÷ 5 = 12 500 F.",
+          "hint": "Vérifie si le prix d'un sac est toujours le même en divisant chaque prix total par le nombre de sacs.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "45 × 6 (utiliser plants de tomates)",
+              "frequency": "high",
+              "explanation": "Question sur les carottes (30 plants)",
+              "prevention_hint": "Carottes = 30 plants"
+            }
+          ]
         },
         {
           "sub_label": "c",
-          "text": "Calcule le nombre de sacs de provende qu'on peut acheter avec 87 500 F.",
+          "text": "Calcule le nombre de sacs de provende qu'on peut acheter avec une somme de 87 500 F.",
           "question_type": "numeric_input",
           "correct_answer": "7",
-          "explanation": "87 500 ÷ 12 500 = 7 sacs.",
-          "hint": "Utilise le prix unitaire trouvé à la question précédente.",
-          "points": 2.22,
+          "explanation": "Prix unitaire : 12 500 F. 87 500 ÷ 12 500 = 7 sacs.",
+          "hint": "Utilise le prix unitaire trouvé à la question précédente pour diviser 87 500 F.",
+          "points": 2.5,
           "depends_on_previous": true,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "180 × 12",
+              "frequency": "low",
+              "explanation": "Division pour répartir",
+              "prevention_hint": "'Dans des paniers' = division"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-MULT-05",
+        "MATH-CM2-DIVISION-13"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Tomates",
+            "content": "45 × 4 = ?",
+            "answer": "180"
+          },
+          {
+            "step": 2,
+            "title": "Carottes",
+            "content": "30 × 6 = ?",
+            "answer": "180"
+          },
+          {
+            "step": 3,
+            "title": "Paniers",
+            "content": "180 ÷ 12 = ?",
+            "answer": "15"
+          }
+        ]
+      }
     },
     {
       "item_number": 3,
       "domain": "geometry",
       "context_text": "Le terrain rectangulaire mesure 125 m de longueur sur 75 m de largeur.",
-      "points": 6.67,
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Détermine les dimensions réduites du terrain à l'échelle 1/2500.",
+          "text": "Détermine les dimensions réduites du terrain qu'ils ont acheté à l'échelle de 1/2500.",
           "question_type": "fill_blank",
           "correct_answer": "5 cm × 3 cm",
           "explanation": "125 m = 12 500 cm ÷ 2 500 = 5 cm. 75 m = 7 500 cm ÷ 2 500 = 3 cm.",
-          "points": 2.22,
+          "hint": "Convertis d'abord les mètres en centimètres, puis divise par 2 500.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Additionner 50",
+              "frequency": "medium",
+              "explanation": "Tableau proportionnel = multiplication",
+              "prevention_hint": "×50"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Représente cette figure sur ta feuille.",
-          "question_type": "mcq",
-          "choices": ["Rectangle 5cm × 3cm", "Rectangle 12.5cm × 7.5cm", "Carré 5cm × 5cm"],
-          "correct_answer": "Rectangle 5cm × 3cm",
-          "explanation": "D'après le calcul de la question a), le rectangle réduit mesure 5 cm × 3 cm.",
-          "points": 2.22,
+          "text": "Représente cette figure sur ta feuille de composition.",
+          "question_type": "construction",
+          "correct_answer": "Rectangle de 5 cm de longueur et 3 cm de largeur tracé sur la feuille.",
+          "explanation": "D'après le calcul de la question a), on trace un rectangle de 5 cm × 3 cm.",
+          "hint": "Utilise ta règle pour tracer un rectangle aux dimensions réduites trouvées en a).",
+          "points": 2,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "180 × 25 (prix des carottes)",
+              "frequency": "high",
+              "explanation": "Question sur les tomates (50 FCFA)",
+              "prevention_hint": "Tomates = 50 FCFA"
+            }
+          ]
         },
         {
           "sub_label": "c",
           "text": "Trace son symétrique par rapport à une droite OD placée à l'intérieur de la figure.",
-          "question_type": "mcq",
-          "choices": ["Rectangle symétrique par rapport à OD", "Même rectangle décalé", "Rectangle réduit"],
-          "correct_answer": "Rectangle symétrique par rapport à OD",
-          "explanation": "Le symétrique par rapport à une droite est une figure de mêmes dimensions, reflétée de l'autre côté de la droite.",
-          "points": 2.22,
-          "depends_on_previous": false,
+          "question_type": "construction",
+          "correct_answer": "Symétrique du rectangle par rapport à la droite OD tracée à l'intérieur de la figure.",
+          "explanation": "Le symétrique par rapport à une droite est une figure de mêmes dimensions, reflétée de l'autre côté de la droite OD.",
+          "hint": "Place la droite OD à l'intérieur du rectangle, puis construis le symétrique de chaque sommet par rapport à cette droite.",
+          "points": 2,
+          "depends_on_previous": true,
           "order": 2
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-PROP-13",
+        "MATH-CM2-TABLEAU-04"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Tableau",
+            "content": "5 × 50 = ?, 10 × 50 = ?",
+            "answer": "250 et 500"
+          },
+          {
+            "step": 2,
+            "title": "Tomates",
+            "content": "180 × 50 = ?",
+            "answer": "9000"
+          },
+          {
+            "step": 3,
+            "title": "Carottes",
+            "content": "180 × 25 = ?",
+            "answer": "4500"
+          }
+        ]
+      }
     }
   ]
 }

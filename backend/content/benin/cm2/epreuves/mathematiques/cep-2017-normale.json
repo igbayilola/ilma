@@ -5,103 +5,243 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "À l'occasion de la fête de l'indépendance du Bénin célébrée à Abomey, la SONEB signale que le château d'eau de la ville est en panne. Paulin, habitant de Lokossa, décide de se rendre à Abomey, située à 150 km de Lokossa.",
+  "context_text": "À la veille de la fête de l'indépendance du Bénin organisée à Abomey, le Directeur de la Société Nationale des Eaux du Bénin (SONEB) a constaté que le château d'eau de la localité est en panne. Il appela d'urgence Paulin, le technicien reconnu, qui se trouvait en mission à Lokossa. Celui-ci s'est mis en route avec sa moto. Le Directeur de la SONEB veut s'assurer de l'heure d'arrivée de Paulin à Abomey. Aide-le.",
   "items": [
     {
       "item_number": 1,
       "domain": "data_proportionality",
-      "context_text": "Paulin parcourt 40 km en 2h, 30 km en 1h30 et 80 km en 4h pour se rendre à Abomey. La distance totale est de 150 km.",
-      "points": 6.67,
+      "context_text": "Abomey est à 150 km environ de Lokossa. Paulin a parcouru les 40 premiers kilomètres en 2 h, les 30 kilomètres suivants en 1 h 30 min et les 80 kilomètres restants en 4 h compte tenu du mauvais état de la voie. À chaque étape, il a roulé à la même vitesse.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Représente les données dans un tableau de correspondance.",
+          "text": "Représente cette situation dans un tableau de correspondance.",
           "question_type": "fill_blank",
-          "correct_answer": "Distance (km): 40, 30, 80, 150 | Durée: 2h, 1h30, 4h, 7h30",
-          "explanation": "On organise les données dans un tableau avec deux lignes : Distance (km) : 40, 30, 80, 150 et Durée : 2h, 1h30, 4h, 7h30.",
-          "points": 2.22,
+          "correct_answer": "Distance (km): 40, 30, 80, 150 | Durée (h): 2, 1.5, 4, 7.5",
+          "explanation": "On organise les données dans un tableau avec deux lignes : Distance (km) : 40, 30, 80, 150 et Durée : 2 h, 1 h 30 min, 4 h, 7 h 30 min.",
+          "hint": "Relis le texte et relève les distances parcourues et les durées correspondantes. Organise-les dans un tableau à deux lignes.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "360 × 12 = 4320",
+              "frequency": "medium",
+              "explanation": "Division demandée, pas multiplication",
+              "prevention_hint": "'Combien de' avec 'par' = division"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Justifie que c'est une situation de proportionnalité.",
+          "text": "Justifie que ce tableau illustre une situation de proportionnalité.",
           "question_type": "fill_blank",
-          "correct_answer": "Oui, le coefficient de proportionnalité est 20 (vitesse constante de 20 km/h)",
-          "explanation": "40/2 = 20, 30/1,5 = 20, 80/4 = 20. Le rapport distance/durée est constant et égal à 20. C'est donc une situation de proportionnalité avec un coefficient de 20 km/h.",
-          "points": 2.22,
+          "correct_answer": "Oui, le coefficient de proportionnalité est 20 (vitesse constante de 20 km/h). En effet, 40/2 = 20, 30/1,5 = 20, 80/4 = 20.",
+          "explanation": "Le texte précise qu'à chaque étape, Paulin a roulé à la même vitesse. On vérifie : 40/2 = 20, 30/1,5 = 20, 80/4 = 20. Le rapport distance/durée est constant et égal à 20 km/h. C'est donc une situation de proportionnalité avec un coefficient de 20.",
+          "hint": "Calcule le rapport distance/durée pour chaque étape. Si ce rapport est constant, c'est une situation de proportionnalité. N'oublie pas que le texte dit qu'il a roulé à la même vitesse à chaque étape.",
+          "points": 2.5,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "360 + 5 = 365",
+              "frequency": "medium",
+              "explanation": "Il faut calculer les roseaux pour 5 paniers, pas additionner",
+              "prevention_hint": "12 roseaux × 5 paniers = ?"
+            }
+          ]
         },
         {
           "sub_label": "c",
-          "text": "Calcule la durée totale du parcours des 150 km.",
+          "text": "Calcule la durée de parcours des 150 kilomètres à partir du tableau de correspondance.",
           "question_type": "fill_blank",
-          "correct_answer": "7h30",
-          "explanation": "Durée = Distance / Vitesse = 150 / 20 = 7,5 h = 7h30.",
-          "points": 2.22,
+          "correct_answer": "7 h 30 min",
+          "explanation": "On peut additionner les durées : 2 h + 1 h 30 min + 4 h = 7 h 30 min. Ou bien utiliser le coefficient de proportionnalité : 150 / 20 = 7,5 h = 7 h 30 min.",
+          "hint": "Tu peux soit additionner les durées de chaque étape, soit utiliser le coefficient de proportionnalité trouvé à la question précédente pour calculer la durée totale.",
+          "points": 2.5,
           "depends_on_previous": true,
           "order": 2
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-NUM-05",
+        "MATH-CM2-DIVISION-04"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Paniers",
+            "content": "360 ÷ 12 = ?",
+            "answer": "30 paniers"
+          },
+          {
+            "step": 2,
+            "title": "Supplément",
+            "content": "12 × 5 = ?",
+            "answer": "60 roseaux"
+          }
+        ]
+      }
     },
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "Le château d'eau d'Abomey a la forme d'un cylindre droit de diamètre 8 m et de hauteur 11,6 m. On prend π = 22/7.",
-      "points": 6.67,
+      "context_text": "Le château d'eau de la localité dont il est question est de forme cylindrique et a 8 m de diamètre et 11,6 m de hauteur. On prend π = 22/7.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule l'aire de la surface de base du château d'eau en m².",
+          "text": "Calcule l'aire de la surface de base de ce château.",
           "question_type": "numeric_input",
-          "correct_answer": "50.29",
-          "explanation": "Rayon = 8 / 2 = 4 m. Aire = π × r² = 22/7 × 4² = 22/7 × 16 = 352/7 ≈ 50,29 m².",
-          "points": 3.33,
+          "correct_answer": "352/7 m² ≈ 50,29 m²",
+          "explanation": "Le rayon est r = 8 / 2 = 4 m. L'aire de la base = π × r² = (22/7) × 4² = (22/7) × 16 = 352/7 ≈ 50,29 m². La valeur exacte est 352/7 m².",
+          "hint": "Le diamètre est 8 m, donc le rayon est 4 m. Applique la formule de l'aire du disque : π × r². Utilise π = 22/7.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "2500 + 18 = 2518",
+              "frequency": "low",
+              "explanation": "Multiplication demandée",
+              "prevention_hint": "Gain total = prix × nombre"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Calcule la quantité d'eau que peut contenir ce château d'eau en litres puis en hectolitres.",
+          "text": "Calcule la quantité d'eau qu'il peut contenir en litres puis en hectolitres.",
           "question_type": "fill_blank",
-          "correct_answer": "583360 L soit 5833,6 hL",
-          "explanation": "Volume = Aire de base × hauteur = 50,29 × 11,6 = 583,36 m³. 1 m³ = 1 000 L, donc 583,36 × 1 000 = 583 360 L. 1 hL = 100 L, donc 583 360 / 100 = 5 833,6 hL.",
-          "points": 3.33,
+          "correct_answer": "583 314 L soit 5 833,14 hL",
+          "explanation": "Volume = Aire de base × hauteur = (352/7) × 11,6 = 4083,2/7 ≈ 583,31 m³. En utilisant le calcul exact : (22/7) × 16 × 11,6 = 4083,2/7 ≈ 583,3143 m³. Conversion : 583,3143 × 1 000 ≈ 583 314 L. En hectolitres : 583 314 / 100 ≈ 5 833,14 hL.",
+          "hint": "Utilise la formule du volume du cylindre : V = Aire de base × hauteur. Puis convertis en litres (1 m³ = 1 000 L) et en hectolitres (1 hL = 100 L). Garde la fraction 352/7 pour éviter les erreurs d'arrondi.",
+          "points": 4,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "45 000 × 20 = 900 000",
+              "frequency": "high",
+              "explanation": "20% ≠ 20, c'est 0,20",
+              "prevention_hint": "20% = 20/100 = 0,20 = ÷5"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-PROP-06",
+        "MATH-CM2-PERCENT-04"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Gain total",
+            "content": "2500 × 18 = ?",
+            "answer": "45 000"
+          },
+          {
+            "step": 2,
+            "title": "20%",
+            "content": "20% de 45 000 = ?",
+            "answer": "9000"
+          },
+          {
+            "step": 3,
+            "title": "Gain net",
+            "content": "45 000 - 9000 = ?",
+            "answer": "36 000 FCFA"
+          }
+        ]
+      }
     },
     {
       "item_number": 3,
       "domain": "geometry",
       "context_text": "Le domaine du château d'eau est un carré de 40 m de côté.",
-      "points": 6.67,
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Construis ce carré à l'échelle 1/1 000.",
-          "question_type": "mcq",
-          "choices": ["Carré de 4 cm de côté", "Carré de 40 cm de côté", "Carré de 0,4 cm de côté", "Rectangle 4 cm × 2 cm"],
+          "question_type": "construction",
           "correct_answer": "Carré de 4 cm de côté",
-          "explanation": "40 m = 4 000 cm. À l'échelle 1/1 000 : 4 000 / 1 000 = 4 cm. Le carré à l'échelle mesure 4 cm de côté.",
-          "points": 3.33,
+          "explanation": "40 m = 4 000 cm. À l'échelle 1/1 000 : 4 000 / 1 000 = 4 cm. On trace un carré de 4 cm de côté.",
+          "hint": "Convertis d'abord 40 m en centimètres, puis divise par 1 000 pour trouver la longueur du côté à l'échelle. Trace ensuite le carré avec ta règle et ton équerre.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Utiliser diamètre 30 au lieu de rayon 15",
+              "frequency": "high",
+              "explanation": "Rayon = diamètre ÷ 2",
+              "prevention_hint": "r = 30÷2 = 15 cm"
+            },
+            {
+              "mistake": "π × 15 × 25 (oublier le carré)",
+              "frequency": "medium",
+              "explanation": "Formule: π × r² × h (r au carré)",
+              "prevention_hint": "r² = r × r = 15 × 15 = 225"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Place un point O en dehors du carré. Construis la figure symétrique du carré par rapport au point O.",
-          "question_type": "mcq",
-          "choices": ["Un carré de mêmes dimensions centré sur O", "Un carré plus grand", "Un losange"],
-          "correct_answer": "Un carré de mêmes dimensions centré sur O",
-          "explanation": "Le symétrique d'un carré par rapport à un point O est un carré de mêmes dimensions. Chaque sommet du carré a son symétrique par rapport à O, tel que O est le milieu du segment joignant chaque sommet à son symétrique.",
-          "points": 3.33,
+          "text": "Place un point O en dehors du carré. Construis la figure symétrique du carré par rapport à ce point O.",
+          "question_type": "construction",
+          "correct_answer": "Un carré de mêmes dimensions dont chaque sommet est le symétrique du sommet correspondant par rapport à O",
+          "explanation": "Pour construire le symétrique du carré par rapport au point O, on construit le symétrique de chaque sommet par rapport à O : pour chaque sommet A, on trace la droite passant par A et O, puis on reporte la distance AO de l'autre côté de O pour obtenir A'. Le point O est le milieu du segment [AA']. On obtient un carré de mêmes dimensions, situé de l'autre côté de O par rapport au carré d'origine.",
+          "hint": "Pour chaque sommet du carré, trace une droite passant par ce sommet et le point O. Reporte la même distance de l'autre côté de O. Le point O est le milieu entre chaque sommet et son symétrique. Relie ensuite les quatre sommets symétriques.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "×1000 au lieu de ÷1000",
+              "frequency": "medium",
+              "explanation": "Litre > cm³, donc nombre doit diminuer",
+              "prevention_hint": "1 L = 1000 cm³, donc cm³ ÷ 1000 = L"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-VOLUME-05",
+        "MATH-CM2-CONVERSION-02"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Rayon",
+            "content": "Diamètre = 30, donc r = ?",
+            "answer": "15 cm"
+          },
+          {
+            "step": 2,
+            "title": "Volume",
+            "content": "3,14 × 15² × 25 = ?",
+            "answer": "17662,5 cm³"
+          },
+          {
+            "step": 3,
+            "title": "Conversion",
+            "content": "17662,5 ÷ 1000 = ?",
+            "answer": "17,66 L"
+          }
+        ]
+      }
     }
   ]
 }

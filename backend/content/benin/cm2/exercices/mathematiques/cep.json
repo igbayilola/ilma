@@ -152,7 +152,21 @@
           ],
           "correct_answer": "centimètres",
           "explanation": "Le mot-clé le plus important est « centimètres » car c'est l'unité demandée pour la réponse. Beaucoup d'élèves perdent des points parce qu'ils donnent la réponse en mètres au lieu de centimètres. Il faut d'abord convertir AB = 1,5 m = 150 cm.",
-          "hint": "Cherche le mot qui indique dans quelle unité tu dois donner ta réponse."
+          "hint": "Cherche le mot qui indique dans quelle unité tu dois donner ta réponse.",
+          "media_references": [
+            {
+              "id": "fig_EX005",
+              "type": "svg",
+              "url": "/media/svg/generated/rectangle.svg",
+              "alt_text": "Rectangle 80 cm",
+              "interactive": false,
+              "dimensions": {
+                "width": 300,
+                "height": 200
+              },
+              "auto_generate": true
+            }
+          ]
         },
         {
           "exercise_id": "EX006",
@@ -198,11 +212,24 @@
           "erroneous_content": "L'aire du terrain est 10 200 m².",
           "correct_answer": "L'aire du terrain est 10 200 m² = 1,02 ha.",
           "explanation": "L'élève a bien calculé l'aire en m², mais la consigne demandait le résultat EN HECTARES. Il fallait convertir : 1 ha = 10 000 m², donc 10 200 m² = 10 200 ÷ 10 000 = 1,02 ha. Toujours vérifier l'unité demandée dans la consigne !",
-          "hint": "Relis la consigne : dans quelle unité le résultat est-il demandé ? L'élève a-t-il donné la bonne unité ?"
+          "hint": "Relis la consigne : dans quelle unité le résultat est-il demandé ? L'élève a-t-il donné la bonne unité ?",
+          "media_references": [
+            {
+              "id": "ill_0001",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0001.svg",
+              "alt_text": "Illustration: terrain",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX008",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "hard",
           "bloom_level": "analyse",
           "ilma_level": "3",
@@ -234,7 +261,68 @@
             "« Quel est le montant global ? »": "Addition"
           },
           "explanation": "Les mots-clés dans les consignes du CEP indiquent l'opération à utiliser : « reste » → soustraction, « prix total de N objets » → multiplication (prix unitaire × quantité), « partage équitablement » → division, « montant global » → addition de plusieurs montants.",
-          "hint": "Pense à ce que chaque expression veut dire concrètement : enlever, répéter, répartir, ou regrouper."
+          "hint": "Pense à ce que chaque expression veut dire concrètement : enlever, répéter, répartir, ou regrouper.",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "« Combien reste-t-il ? »",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "« Quel est le prix total de 12 cahiers ? »",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "« Partage équitablement entre 4 élèves »",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "« Quel est le montant global ? »",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "Addition",
+                    "accepts": "item_3"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "Division",
+                    "accepts": "item_2"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "Soustraction",
+                    "accepts": "item_0"
+                  },
+                  {
+                    "id": "zone_3",
+                    "label": "Multiplication",
+                    "accepts": "item_1"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         }
       ]
     },
@@ -540,11 +628,24 @@
           ],
           "correct_answer": "Voir sous-questions",
           "explanation": "Basile a confondu périmètre et aire. L'indice « le m² » montre qu'on parle de surface. Comparer sa démarche au corrigé permet d'identifier exactement où l'erreur commence (ici, dès le premier calcul). C'est plus utile que de simplement voir que le résultat est faux.",
-          "hint": "Regarde la première étape de chaque démarche. Basile a calculé le périmètre, le corrigé a calculé l'aire. Pourquoi ?"
+          "hint": "Regarde la première étape de chaque démarche. Basile a calculé le périmètre, le corrigé a calculé l'aire. Pourquoi ?",
+          "media_references": [
+            {
+              "id": "ill_0002",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0002.svg",
+              "alt_text": "Illustration: terrain",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX019",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "medium",
           "bloom_level": "analyse",
           "ilma_level": "2",
@@ -576,7 +677,68 @@
             "Tu n'as pas répondu à la question (c) du problème": "Oubli / question non traitée"
           },
           "explanation": "Quand tu compares ta copie au corrigé, identifie le TYPE d'écart : erreur de calcul (tu sais quoi faire mais tu te trompes en calculant), erreur de méthode (tu choisis la mauvaise opération), erreur d'unité (tu oublies de convertir), ou oubli (tu sautes une question). Chaque type d'écart se corrige différemment.",
-          "hint": "Lis chaque situation et demande-toi : est-ce que l'élève s'est trompé en calculant, en choisissant l'opération, en convertissant, ou a-t-il simplement oublié ?"
+          "hint": "Lis chaque situation et demande-toi : est-ce que l'élève s'est trompé en calculant, en choisissant l'opération, en convertissant, ou a-t-il simplement oublié ?",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "Tu as trouvé 450 au lieu de 540 (inversion de chiffres)",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "Tu as utilisé une soustraction au lieu d'une addition",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "Tu as oublié de convertir les cm en m",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "Tu n'as pas répondu à la question (c) du problème",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "Erreur de conversion d'unité",
+                    "accepts": "item_2"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "Erreur de méthode (mauvaise opération)",
+                    "accepts": "item_1"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "Erreur de calcul",
+                    "accepts": "item_0"
+                  },
+                  {
+                    "id": "zone_3",
+                    "label": "Oubli / question non traitée",
+                    "accepts": "item_3"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         },
         {
           "exercise_id": "EX020",
@@ -596,7 +758,20 @@
           "correct_answer": "1) Elle a multiplié au lieu de diviser. 2) Elle n'a pas compris que « répartir une quantité totale en parts égales » demande une division. 3) 187 500 jours, c'est plus de 500 ans — une citerne ne met pas 500 ans à se vider !",
           "scoring_rubric": "1 point si l'élève identifie l'erreur (multiplication au lieu de division). 1 point si l'élève explique pourquoi c'est une division (répartir/distribuer = diviser). 1 point si l'élève mentionne la vérification de vraisemblance (187 500 jours est absurde).",
           "explanation": "Akouavi a fait une erreur de méthode : elle a choisi la mauvaise opération. Quand on distribue ou répartit une quantité, c'est une division. De plus, sa réponse (187 500 jours ≈ 513 ans) est absurde — une simple vérification de vraisemblance aurait révélé l'erreur.",
-          "hint": "Demande-toi : si on utilise 75 litres par jour, est-ce qu'il faut plus ou moins de jours que de litres pour vider la citerne ?"
+          "hint": "Demande-toi : si on utilise 75 litres par jour, est-ce qu'il faut plus ou moins de jours que de litres pour vider la citerne ?",
+          "media_references": [
+            {
+              "id": "ill_0003",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0003.svg",
+              "alt_text": "Illustration: contenant",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -630,7 +805,7 @@
         },
         {
           "exercise_id": "EX022",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "medium",
           "bloom_level": "analyse",
           "ilma_level": "2",
@@ -665,7 +840,78 @@
             "Calculer le périmètre au lieu de l'aire parce qu'on n'a pas lu « surface »": "Erreur de lecture de consigne"
           },
           "explanation": "Les 5 types d'erreurs au CEP sont : 1) Calcul : le chiffre est faux, 2) Méthode : mauvaise opération choisie, 3) Unité : mauvaise unité ou unité absente, 4) Oubli : question sautée, 5) Lecture de consigne : on n'a pas lu un mot-clé important. Savoir classifier ses erreurs aide à les corriger.",
-          "hint": "Pour chaque erreur, demande-toi : l'élève s'est-il trompé en calculant, en choisissant l'opération, en écrivant l'unité, en lisant la consigne, ou a-t-il simplement oublié ?"
+          "hint": "Pour chaque erreur, demande-toi : l'élève s'est-il trompé en calculant, en choisissant l'opération, en écrivant l'unité, en lisant la consigne, ou a-t-il simplement oublié ?",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "Écrire 42 × 3 = 136 (au lieu de 126)",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "Faire une addition alors que la consigne dit « Quel est le reste ? »",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "Écrire « l'aire est 48 m » au lieu de « 48 m² »",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "Oublier de répondre à la question (b) d'un exercice",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_4",
+                    "label": "Calculer le périmètre au lieu de l'aire parce qu'on n'a pas lu « surface »",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "Erreur de calcul",
+                    "accepts": "item_0"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "Erreur de lecture de consigne",
+                    "accepts": "item_4"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "Erreur d'unité",
+                    "accepts": "item_2"
+                  },
+                  {
+                    "id": "zone_3",
+                    "label": "Erreur de méthode",
+                    "accepts": "item_1"
+                  },
+                  {
+                    "id": "zone_4",
+                    "label": "Oubli",
+                    "accepts": "item_3"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         },
         {
           "exercise_id": "EX023",

@@ -5,80 +5,254 @@
   "subject": "education_sociale",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Le Bénin est un pays démocratique qui dispose de ressources minières, de sites touristiques, de terres fertiles et de produits vivriers variés (maïs, manioc, sorgho, igname).",
+  "context_text": "Le Bénin est un pays démocratique qui regorge de nombreuses ressources minières et de sites touristiques dispersés sur l'ensemble de son territoire. Il dispose également de vastes étendues de terre fertile qui favorisent la culture de produits vivriers tels que le maïs, le manioc, le sorgo, l'igname. Un de tes amis étrangers, de passage au pays te demande de larges informations.",
+  "task_text": "Tu es invité(e) à lire le texte ci-dessus et à prouver ta connaissance du pays en répondant aux consignes qui suivent.",
   "items": [
     {
       "item_number": 1,
       "domain": "geography_economy",
-      "context_text": "Le Bénin produit plusieurs produits vivriers dans différentes régions du pays. Une carte montre les zones de culture.",
-      "points": 6.67,
+      "context_text": "Le Bénin produit plusieurs produits vivriers dans différentes régions du pays.",
+      "points": 7.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Indique les régions de culture des produits vivriers suivants : maïs, manioc, sorgho, igname.",
-          "question_type": "fill_blank",
-          "correct_answer": "Maïs: partout au Bénin. Manioc: sud et centre. Sorgho: nord. Igname: centre et nord",
-          "explanation": "Le maïs est cultivé sur l'ensemble du territoire. Le manioc est surtout cultivé dans le sud et le centre. Le sorgho est cultivé dans le nord. L'igname est cultivée dans le centre et le nord.",
-          "points": 6.67,
+          "text": "Sur une carte du Bénin, indique à ton ami étranger les régions où se cultive chacun des produits vivriers énumérés dans le support.",
+          "question_type": "open_ended",
+          "correct_answer": "Maïs : partout au Bénin (sud, centre, nord). Manioc : sud et centre. Sorgo : nord. Igname : centre et nord",
+          "hint": "Repère les quatre produits vivriers cités dans le texte (maïs, manioc, sorgo, igname) et associe chacun à sa zone de culture principale.",
+          "explanation": "Le maïs est cultivé sur l'ensemble du territoire. Le manioc est surtout cultivé dans le sud et le centre. Le sorgo est cultivé dans le nord. L'igname est cultivée dans le centre et le nord.",
+          "points": 7.0,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
+        }
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "micro_skills": [
+        "ES-CM2-CIT-01",
+        "ES-CM2-DROI-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "hint": "Définis citoyenneté"
+          },
+          {
+            "step": 2,
+            "hint": "Cite 2 droits"
+          }
+        ]
+      },
+      "common_mistakes": [
+        {
+          "mistake": "Confondre droits et devoirs",
+          "prevention": "Distingue bien les deux concepts"
         }
       ]
     },
     {
       "item_number": 2,
       "domain": "history_heritage",
-      "context_text": "Le Bénin dispose de nombreux sites touristiques et historiques répartis sur le territoire.",
-      "points": 6.67,
+      "context_text": "Ton ami désire visiter un musée, une place historique et un parc.",
+      "points": 6.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite 3 localités du Bénin possédant un musée, une place historique ou un parc.",
-          "question_type": "fill_blank",
-          "correct_answer": "Abomey (palais royal/musée), Ouidah (Porte de non-retour), Pendjari (parc national)",
-          "explanation": "Abomey possède le palais royal classé au patrimoine mondial, Ouidah abrite la Porte de non-retour sur la Route des Esclaves, et la Pendjari abrite un parc national.",
-          "points": 3.33,
+          "text": "Dis trois localités où tu peux le conduire.",
+          "question_type": "open_ended",
+          "correct_answer": "Abomey, Ouidah, Pendjari (ou Natitingou, Porto-Novo)",
+          "hint": "Pense aux villes du Bénin qui abritent un musée, une place historique célèbre ou un parc national.",
+          "explanation": "Abomey possède le palais royal classé au patrimoine mondial, Ouidah abrite la Place historique de la Route des Esclaves, et la Pendjari abrite un parc national réputé.",
+          "points": 3.0,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Donne le nom du site visité dans chaque localité citée.",
-          "question_type": "fill_blank",
-          "correct_answer": "Abomey: musée historique d'Abomey. Ouidah: Porte de non-retour (Route des Esclaves). Pendjari: Parc national de la Pendjari",
-          "explanation": "Le musée historique d'Abomey est installé dans les palais royaux. La Porte de non-retour à Ouidah rappelle la traite négrière. Le Parc national de la Pendjari est une réserve de biosphère.",
-          "points": 3.33,
+          "text": "Précise pour chacune des trois localités, le nom du site visité.",
+          "question_type": "open_ended",
+          "correct_answer": "Abomey : musée historique d'Abomey (palais royaux). Ouidah : Place Chacha ou Porte de non-retour (Route des Esclaves). Pendjari : Parc national de la Pendjari",
+          "hint": "Pour chaque localité citée, donne le nom précis du musée, de la place historique ou du parc qu'on peut y visiter.",
+          "explanation": "Le musée historique d'Abomey est installé dans les palais royaux. Ouidah abrite des sites de la Route des Esclaves. Le Parc national de la Pendjari est une réserve de biosphère abritant une faune riche.",
+          "points": 3.0,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         }
+      ],
+      "bloom_level": "créer",
+      "ilma_level": 3,
+      "micro_skills": [
+        "ES-CM2-ENVI-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "civics_institutions",
-      "context_text": "Le Bénin est une démocratie où les dirigeants sont désignés selon des modes précis et les résultats proclamés par des institutions spécifiques.",
-      "points": 6.67,
+      "context_text": "Il veut également des informations sur la démocratie dans ton pays.",
+      "points": 7.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Indique le mode de désignation du Président de la République, des députés et des maires.",
-          "question_type": "fill_blank",
-          "correct_answer": "Président: suffrage universel direct. Députés: suffrage universel direct. Maires: élus par les conseillers communaux",
+          "text": "Indique-lui le mode de désignation du président de la république, des députés et des maires.",
+          "question_type": "open_ended",
+          "correct_answer": "Président de la République : suffrage universel direct. Députés : suffrage universel direct. Maires : élus par les conseillers communaux (suffrage indirect)",
+          "hint": "Le président et les députés sont choisis directement par le peuple. Les maires sont choisis d'une autre manière.",
           "explanation": "Le Président et les députés sont élus directement par le peuple (suffrage universel direct). Les maires sont élus par les conseillers communaux (suffrage indirect).",
-          "points": 3.33,
+          "points": 3.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Quelle institution proclame les résultats des élections ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Élections législatives: Cour Constitutionnelle. Élections présidentielles: Cour Constitutionnelle. Élections locales: CENA puis tribunaux",
+          "text": "Indique-lui aussi la structure ou l'institution qui proclame les résultats des élections législatives, des élections présidentielles et des élections locales.",
+          "question_type": "open_ended",
+          "correct_answer": "Élections législatives : la Cour Constitutionnelle. Élections présidentielles : la Cour Constitutionnelle. Élections locales : la CENA puis les tribunaux",
+          "hint": "Une même institution proclame les résultats des élections présidentielles et législatives. Pour les élections locales, c'est un autre processus.",
           "explanation": "La Cour Constitutionnelle proclame les résultats définitifs des élections présidentielles et législatives. Pour les élections locales, la CENA proclame les résultats provisoires et les tribunaux les résultats définitifs.",
-          "points": 3.33,
+          "points": 3.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         }
+      ],
+      "bloom_level": "comprendre",
+      "ilma_level": 1,
+      "micro_skills": [
+        "ES-CM2-SANT-01"
       ]
     }
   ]

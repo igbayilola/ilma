@@ -5,121 +5,382 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Un championnat de football UASCEP est organisé. Le bâtiment est éclairé et les participants sont nourris pendant trois jours. Un ami, Coffi, est blessé pendant le match.",
+  "context_text": "Dans le cadre du championnat national de l'UASCEP, ton équipe doit représenter le département en football. À cet effet, vous êtes internés dans un bâtiment éclairé par des lampes électriques et nourris pendant trois jours par un service de cuisine, à raison de deux repas par jour. Ton ami Coffi aimerait avoir des informations sur les montages électriques et sur votre alimentation.",
+  "task_text": "Tu es invité(e) à donner des explications aux préoccupations de Coffi en répondant aux items ci-après.",
   "items": [
     {
       "item_number": 1,
       "domain": "electricity",
-      "context_text": "Le bâtiment est éclairé avec un interrupteur et trois lampes montées en série. Quand une lampe grille, les autres ne fonctionnent plus.",
-      "points": 6.67,
+      "context_text": "Dans le bâtiment où vous habitez, un seul interrupteur permet d'allumer une rangée de trois lampes, et lorsqu'une est grillée, les autres ne s'allument plus.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Quel est le nom de ce type de montage ?",
-          "question_type": "mcq",
-          "choices": ["Montage en série", "Montage en dérivation", "Montage mixte"],
+          "text": "Dis le nom du montage réalisé dans le bâtiment.",
+          "question_type": "short_answer",
           "correct_answer": "Montage en série",
+          "hint": "Quand une lampe grille et que toutes les autres s'éteignent, c'est un indice sur le type de montage.",
           "explanation": "Dans un montage en série, les lampes sont reliées les unes après les autres sur un seul circuit. Si une lampe grille, le circuit est interrompu et toutes les lampes s'éteignent.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
           "text": "Ce montage est-il avantageux ? Justifie ta réponse.",
-          "question_type": "fill_blank",
+          "question_type": "short_answer",
           "correct_answer": "Non, car si une lampe grille, toutes les autres s'éteignent",
+          "hint": "Réfléchis à ce qui se passe quand une seule lampe tombe en panne dans ce montage.",
           "explanation": "Le montage en série n'est pas avantageux pour l'éclairage car si une seule lampe grille, le circuit est coupé et toutes les lampes s'éteignent.",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 1
+          "points": 3,
+          "depends_on_previous": true,
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite trois sources d'énergie.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le soleil, le pétrole, le vent",
-          "explanation": "Le soleil (énergie solaire) et le vent (énergie éolienne) sont des sources renouvelables. Le pétrole (énergie fossile) est une source non renouvelable.",
-          "points": 2.22,
+          "text": "Donne trois sources d'énergie pouvant alimenter ces lampes.",
+          "question_type": "short_answer",
+          "correct_answer": "Le soleil (énergie solaire), le pétrole (groupe électrogène), le vent (énergie éolienne)",
+          "hint": "Pense aux différentes manières de produire de l'électricité.",
+          "explanation": "Le soleil (énergie solaire) et le vent (énergie éolienne) sont des sources renouvelables. Le pétrole (énergie fossile) est une source non renouvelable utilisée dans les groupes électrogènes.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "nutrition_health",
-      "context_text": "Les aliments disponibles pour nourrir les participants sont : lait, maïs, poulet, mangue, orange, haricot, poisson, légume, riz, huile d'arachide, cossette d'igname, ananas, gari, igname, viande de cabri, pain, huile de palme, œuf.",
-      "points": 6.67,
+      "context_text": "Le responsable de la cuisine vous propose la liste des aliments suivants : lait, maïs, viande de poulet, mangue, orange, haricot, cossette d'igname, ananas, poisson, légume, riz, huile d'arachide, gari, igname, viande de cabri, pain, huile de palme, œuf.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Compose trois menus équilibrés pour les trois jours.",
-          "question_type": "fill_blank",
-          "correct_answer": "Menu 1: Riz + sauce de poulet aux légumes + huile + mangue. Menu 2: Pâte de maïs + sauce de poisson + haricot + orange. Menu 3: Igname pilée + sauce de viande de cabri + huile de palme + ananas",
-          "explanation": "Chaque menu doit contenir des glucides, des protides, des lipides et des vitamines pour être équilibré.",
-          "points": 2.22,
+          "text": "À partir des produits alimentaires proposés par le cuisinier, conçois trois menus équilibrés.",
+          "question_type": "constructed_response",
+          "correct_answer": "Menu 1: Riz + sauce de viande de poulet aux légumes + huile d'arachide + mangue. Menu 2: Pâte de maïs + sauce de poisson + haricot + orange. Menu 3: Igname pilée + sauce de viande de cabri + huile de palme + ananas",
+          "hint": "Chaque menu doit contenir un aliment de chaque groupe: glucides, protides, lipides et vitamines.",
+          "explanation": "Chaque menu doit contenir des glucides (riz, maïs, igname), des protides (viande de poulet, poisson, viande de cabri), des lipides (huile d'arachide, huile de palme) et des vitamines (mangue, orange, ananas, légume) pour être équilibré.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Pourquoi dit-on qu'un menu est équilibré ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Un menu est équilibré quand il contient les 4 groupes de substances nutritives: glucides, protides, lipides et vitamines",
+          "text": "Explique à partir de la composition d'un menu proposé, en quoi il est équilibré en tenant compte des éléments nutritifs.",
+          "question_type": "short_answer",
+          "correct_answer": "Un menu est équilibré quand il contient les 4 groupes de substances nutritives: glucides (pour l'énergie), protides (pour la croissance), lipides (pour les réserves) et vitamines (pour le bon fonctionnement du corps).",
+          "hint": "Prends un de tes menus et montre que chaque aliment apporte un type de nutriment différent.",
           "explanation": "Un menu équilibré apporte à l'organisme toutes les substances nutritives nécessaires : les glucides pour l'énergie, les protides pour la croissance, les lipides pour les réserves et les vitamines pour le bon fonctionnement.",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 1
+          "points": 2,
+          "depends_on_previous": true,
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite deux rôles essentiels des aliments dans l'organisme.",
-          "question_type": "fill_blank",
-          "correct_answer": "1) Fournir de l'énergie au corps (glucides, lipides). 2) Permettre la croissance et la réparation du corps (protides)",
+          "text": "Indique deux rôles essentiels des aliments dans l'organisme humain.",
+          "question_type": "short_answer",
+          "correct_answer": "1) Fournir de l'énergie au corps (rôle énergétique des glucides et lipides). 2) Permettre la croissance et la réparation du corps (rôle constructeur des protides).",
+          "hint": "Les aliments ont un rôle énergétique et un rôle constructeur.",
           "explanation": "Les aliments jouent deux rôles essentiels : fournir l'énergie nécessaire aux activités quotidiennes (rôle énergétique des glucides et lipides) et permettre la croissance et la réparation des tissus (rôle constructeur des protides).",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "nutrition_health",
-      "context_text": "Pendant le match, un garçon est blessé et perd du sang.",
-      "points": 6.67,
+      "context_text": "Au cours des jeux un garçon se blesse et perd du sang.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Que faut-il faire pour arrêter l'écoulement du sang ?",
-          "question_type": "fill_blank",
+          "text": "Dis ce qu'on peut faire pour arrêter l'écoulement du sang.",
+          "question_type": "short_answer",
           "correct_answer": "Comprimer la plaie avec un linge propre et surélever le membre blessé",
+          "hint": "Il faut agir pour stopper le saignement en attendant les secours.",
           "explanation": "Pour arrêter un saignement, il faut comprimer la plaie avec un linge propre et surélever le membre blessé pour ralentir le flux sanguin.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
           "text": "Donne la composition du sang.",
-          "question_type": "fill_blank",
+          "question_type": "short_answer",
           "correct_answer": "Globules rouges, globules blancs, plaquettes, plasma",
+          "hint": "Le sang contient des éléments figurés (cellules) et une partie liquide.",
           "explanation": "Le sang est composé de globules rouges (transport d'oxygène), de globules blancs (défense immunitaire), de plaquettes (coagulation) et de plasma (partie liquide).",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite les parties de l'appareil circulatoire.",
-          "question_type": "fill_blank",
+          "text": "Cite les différentes parties de l'appareil responsable de la circulation du sang dans l'organisme humain.",
+          "question_type": "short_answer",
           "correct_answer": "Le cœur, les artères, les veines et les capillaires",
+          "hint": "L'appareil circulatoire comprend une pompe et des vaisseaux sanguins.",
           "explanation": "L'appareil circulatoire comprend le cœur (pompe), les artères (transport du sang oxygéné), les veines (retour du sang) et les capillaires (échanges entre le sang et les organes).",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01"
       ]
     }
   ]

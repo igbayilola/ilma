@@ -5,104 +5,321 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Maman confie des tâches à Fali et Madou. Ils utilisent une poulie pour puiser l'eau, font la lessive et préparent le repas.",
+  "context_text": "Une mère en sortant de la maison, confie du travail à chacune de ses deux grandes filles Fali et Madou. Fali doit remplir d'eau les grandes jarres de la cuisine. En puisant l'eau elle a été impressionnée par la fonction de la poulie. Madou est chargée de faire la lessive et de préparer le repas de midi. Elle constate que tous les habits ne sont pas séchés par les rayons solaires au même moment.",
+  "task_text": "Tu es invité(e) à lire attentivement ce texte pour fournir des explications à tes camarades sur ces situations en répondant aux items suivants.",
   "items": [
     {
       "item_number": 1,
       "domain": "technology_prehistory",
-      "context_text": "Fali et Madou utilisent une poulie pour puiser l'eau du puits.",
-      "points": 6.67,
+      "context_text": "Fali doit remplir d'eau les grandes jarres de la cuisine. En puisant l'eau elle a été impressionnée par la fonction de la poulie.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Fais le croquis d'une poulie et nomme ses différentes parties.",
-          "question_type": "fill_blank",
+          "text": "Fais le croquis d'une poulie et indique ses différentes parties.",
+          "question_type": "constructed_response",
           "correct_answer": "Parties: crochet de fixation, chape, roue à gorge (réa), axe, corde",
+          "hint": "Dessine une poulie avec toutes ses parties et nomme chacune d'elles.",
           "explanation": "La poulie se compose d'un crochet de fixation (pour l'accrocher), d'une chape (support), d'une roue à gorge appelée réa, d'un axe (autour duquel tourne la roue) et d'une corde.",
-          "points": 2.22,
+          "diagram_description": "Le croquis attendu montre une poulie avec: un crochet de fixation en haut, une chape (support métallique), une roue à gorge (réa) au centre, un axe traversant la roue, et une corde passant dans la gorge de la roue.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Explique le fonctionnement de la poulie.",
-          "question_type": "fill_blank",
+          "text": "Explique son fonctionnement à Fali.",
+          "question_type": "short_answer",
           "correct_answer": "La poulie change la direction de la force. En tirant la corde vers le bas, on fait monter le seau d'eau",
+          "hint": "Pense à ce qui se passe quand on tire la corde d'un côté de la poulie.",
           "explanation": "La poulie change la direction de la force exercée. En tirant la corde vers le bas, on fait monter le seau d'eau attaché à l'autre extrémité de la corde.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite une autre machine simple qui fonctionne de la même manière.",
-          "question_type": "fill_blank",
+          "text": "Dis le nom d'une autre machine simple qui fonctionne comme la poulie.",
+          "question_type": "short_answer",
           "correct_answer": "Le treuil",
+          "hint": "Pense à une autre machine qui permet de soulever des charges lourdes.",
           "explanation": "Le treuil fonctionne sur le même principe que la poulie : il permet de soulever des charges en enroulant une corde autour d'un cylindre.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "technology_prehistory",
-      "context_text": "Les habits noirs sèchent plus vite que les habits blancs au soleil.",
-      "points": 6.67,
+      "context_text": "Madou a disposé des habits mouillés sur le séchoir mais elle ne comprend pas pourquoi les habits noirs sèchent plus vite que les habits blancs.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Pourquoi les habits noirs sèchent-ils plus vite que les habits blancs ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Les habits noirs absorbent davantage la chaleur du soleil que les habits blancs qui la réfléchissent. L'eau s'évapore donc plus vite des habits noirs",
+          "text": "Madou a disposé des habits mouillés sur le séchoir mais elle ne comprend pas pourquoi les habits noirs sèchent plus vite que les habits blancs. Explique à Madou ce phénomène.",
+          "question_type": "short_answer",
+          "correct_answer": "Les habits noirs absorbent davantage la chaleur du soleil que les habits blancs qui la réfléchissent. L'eau s'évapore donc plus vite des habits noirs.",
+          "hint": "Pense à la manière dont les couleurs sombres et claires réagissent face aux rayons du soleil.",
           "explanation": "Les couleurs sombres absorbent plus de rayons solaires et se réchauffent davantage, ce qui accélère l'évaporation de l'eau. Les couleurs claires réfléchissent les rayons.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
           "text": "Donne un exemple d'énergie renouvelable et un exemple d'énergie non renouvelable.",
-          "question_type": "fill_blank",
+          "question_type": "short_answer",
           "correct_answer": "Renouvelable: le soleil. Non renouvelable: le pétrole",
+          "hint": "Une énergie renouvelable est inépuisable, tandis qu'une énergie non renouvelable s'épuise avec le temps.",
           "explanation": "Le soleil est une source d'énergie renouvelable car il est inépuisable. Le pétrole est une source non renouvelable car ses réserves sont limitées et ne se renouvellent pas à l'échelle humaine.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Relie chaque forme d'énergie à sa source : Énergie mécanique, Énergie calorifique, Énergie solaire, Énergie électrique.",
+          "text": "Sur ta feuille de composition, recopie les formes d'énergie et les sources d'énergie. Par une flèche, joins la forme d'énergie à la source d'énergie qui lui convient.",
           "question_type": "matching",
           "choices": {
-            "left": ["Énergie mécanique", "Énergie calorifique", "Énergie solaire", "Énergie électrique"],
-            "right": ["Le soleil", "Un homme qui court", "Une batterie", "Le feu de bois"]
+            "left": [
+              "Énergie mécanique",
+              "Énergie calorifique ou thermique",
+              "Énergie solaire",
+              "Énergie électrique"
+            ],
+            "right": [
+              "le soleil",
+              "un homme qui court",
+              "une batterie",
+              "le feu de bois"
+            ]
           },
-          "correct_answer": "Mécanique: Un homme qui court, Calorifique: Le feu de bois, Solaire: Le soleil, Électrique: Une batterie",
-          "explanation": "L'énergie mécanique est liée au mouvement (un homme qui court). L'énergie calorifique est la chaleur (le feu de bois). L'énergie solaire provient du soleil. L'énergie électrique est stockée dans une batterie.",
-          "points": 2.22,
+          "correct_answer": "Énergie mécanique → un homme qui court, Énergie calorifique ou thermique → le feu de bois, Énergie solaire → le soleil, Énergie électrique → une batterie",
+          "hint": "Associe chaque forme d'énergie à l'exemple concret qui la produit.",
+          "explanation": "L'énergie mécanique est liée au mouvement (un homme qui court). L'énergie calorifique ou thermique est la chaleur (le feu de bois). L'énergie solaire provient du soleil. L'énergie électrique est stockée dans une batterie.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "nutrition_health",
-      "context_text": "Les aliments disponibles pour préparer le repas sont : tomate, huile, poisson, banane, haricot, riz, igname, orange, gari, viande.",
-      "points": 6.67,
+      "context_text": "Voici une liste de quelques produits. Aide Madou à composer deux repas équilibrés : Tomate, huile, poisson, banane, haricot, riz, igname, orange, gari, viande.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Compose deux repas équilibrés à partir de ces aliments.",
-          "question_type": "fill_blank",
+          "text": "À partir des produits proposés, compose deux repas équilibrés.",
+          "question_type": "constructed_response",
           "correct_answer": "Repas 1: Riz + sauce de poisson à la tomate + huile + banane. Repas 2: Igname + sauce de viande au haricot + huile + orange",
+          "hint": "Chaque repas doit contenir des aliments de chaque groupe: glucides, protides, lipides et vitamines.",
           "explanation": "Chaque repas doit contenir des glucides (riz, igname), des protides (poisson, viande), des lipides (huile) et des vitamines (tomate, banane, orange) pour être équilibré.",
-          "points": 6.67,
+          "points": 6,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01"
       ]
     }
   ]

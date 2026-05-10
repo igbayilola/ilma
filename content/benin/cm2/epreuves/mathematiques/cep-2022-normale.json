@@ -5,41 +5,45 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Un module de 3 classes est construit grâce à la coopération étrangère à Cotonou. Codjo est un élève de CM2 dans l'une de ces classes.",
+  "context_text": "Dans le souci de créer un bon cadre éducatif aux usagers de l'école au Bénin, un module de trois classes construit grâce à l'appui d'une coopération étrangère, est mis à la disposition des enseignants et des élèves dans la commune de Cotonou. Codjo, un élève du cours moyen deuxième année s'intéresse à l'âge des élèves qui fréquentent l'une des salles de classes, du coût du bâtiment ainsi qu'à l'aire de la surface d'une salle de classe.",
+  "task_instruction": "Tu es invité(e) à lire attentivement le support et à répondre aux items ci-après.",
   "items": [
     {
       "item_number": 1,
       "domain": "data_proportionality",
-      "context_text": "Voici les âges des élèves de la classe de Codjo : 9, 11, 10, 10, 11, 10, 11, 10, 11, 10, 11, 12, 10, 12, 10, 13, 10, 11, 13, 10, 10, 11, 10, 12, 11, 11, 10, 9, 13, 10.",
-      "points": 6.67,
+      "context_text": "L'une des classes du module est fréquentée par des élèves ayant les âges suivants :\n9 ans, 11 ans, 10 ans, 10 ans, 11 ans, 10 ans,\n11 ans, 10 ans, 11 ans, 10 ans, 11 ans, 12 ans,\n10 ans, 12 ans, 10 ans, 13 ans, 10 ans, 11 ans,\n13 ans, 9 ans, 10 ans, 10 ans, 11 ans, 10 ans,\n12 ans, 11 ans, 11 ans, 10 ans, 9 ans, 13 ans.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Combien d'élèves y a-t-il dans cette salle de classe ?",
           "question_type": "numeric_input",
           "correct_answer": "30",
-          "explanation": "En comptant tous les âges listés, on trouve 30 élèves.",
-          "points": 2.22,
+          "explanation": "En comptant tous les âges listés dans le tableau (5 lignes × 6 colonnes), on trouve 30 élèves.",
+          "hint": "Compte soigneusement tous les âges indiqués. Ils sont rangés en 5 lignes de 6.",
+          "points": 2,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Dresse le tableau des effectifs et des fréquences des âges.",
+          "text": "Dresse le tableau des effectifs et des fréquences des âges des élèves de cette classe.",
           "question_type": "fill_blank",
-          "correct_answer": "9 ans: 3, 10 ans: 12, 11 ans: 8, 12 ans: 3, 13 ans: 4",
-          "explanation": "9 ans : 3 élèves, 10 ans : 12 élèves, 11 ans : 8 élèves, 12 ans : 3 élèves, 13 ans : 4 élèves. Total : 30 élèves.",
-          "points": 2.22,
+          "correct_answer": "9 ans: 3, 10 ans: 12, 11 ans: 9, 12 ans: 3, 13 ans: 3",
+          "explanation": "En comptant chaque âge dans la liste de 30 élèves : 9 ans apparaît 3 fois, 10 ans apparaît 12 fois, 11 ans apparaît 9 fois, 12 ans apparaît 3 fois, 13 ans apparaît 3 fois. Total : 3 + 12 + 9 + 3 + 3 = 30 élèves.",
+          "hint": "Barre chaque âge au fur et à mesure que tu le comptes pour ne pas te tromper. Vérifie que le total fait bien 30.",
+          "points": 2.5,
           "depends_on_previous": true,
           "order": 1
         },
         {
           "sub_label": "c",
-          "text": "Complète ce tableau par les fréquences en pourcentage.",
+          "text": "Complète ce tableau par les fréquences exprimées sous forme de pourcentage.",
           "question_type": "fill_blank",
-          "correct_answer": "9 ans: 10%, 10 ans: 40%, 11 ans: 26,67%, 12 ans: 10%, 13 ans: 13,33%",
-          "explanation": "9 ans : 3/30 = 10%. 10 ans : 12/30 = 40%. 11 ans : 8/30 ≈ 26,67%. 12 ans : 3/30 = 10%. 13 ans : 4/30 ≈ 13,33%.",
-          "points": 2.22,
+          "correct_answer": "9 ans: 10%, 10 ans: 40%, 11 ans: 30%, 12 ans: 10%, 13 ans: 10%",
+          "explanation": "Fréquence = (effectif / total) × 100. 9 ans : 3/30 × 100 = 10%. 10 ans : 12/30 × 100 = 40%. 11 ans : 9/30 × 100 = 30%. 12 ans : 3/30 × 100 = 10%. 13 ans : 3/30 × 100 = 10%. Total : 100%.",
+          "hint": "Pour calculer la fréquence en pourcentage, divise l'effectif de chaque âge par 30, puis multiplie par 100.",
+          "points": 2.5,
           "depends_on_previous": true,
           "order": 2
         }
@@ -48,36 +52,39 @@
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "Le module de 3 classes a coûté 45 millions de FCFA. L'État béninois a payé 3/15 du coût total.",
-      "points": 6.67,
+      "context_text": "Le module de trois classes a coûté quarante-cinq millions de francs CFA. Le montant payé par l'État béninois représente les 3/15 du coût total.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule la somme versée par l'État béninois.",
+          "text": "Trouve la somme versée par l'État béninois.",
           "question_type": "numeric_input",
           "correct_answer": "9000000",
           "explanation": "45 000 000 × 3/15 = 45 000 000 × 1/5 = 9 000 000 FCFA.",
-          "points": 2.22,
+          "hint": "Simplifie d'abord la fraction 3/15 avant de faire la multiplication.",
+          "points": 2,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Calcule le montant de l'aide de la coopération étrangère.",
+          "text": "Calcule le montant de l'aide financière de la coopération étrangère.",
           "question_type": "numeric_input",
           "correct_answer": "36000000",
-          "explanation": "45 000 000 − 9 000 000 = 36 000 000 FCFA.",
-          "points": 2.22,
+          "explanation": "Le montant de la coopération = coût total − somme de l'État = 45 000 000 − 9 000 000 = 36 000 000 FCFA.",
+          "hint": "La coopération étrangère a payé le reste. Soustrais la part de l'État du coût total.",
+          "points": 2.5,
           "depends_on_previous": true,
           "order": 1
         },
         {
           "sub_label": "c",
-          "text": "Calcule la différence entre le montant de la coopération étrangère et celui de l'État béninois.",
+          "text": "Calcule la différence entre le montant versé par la coopération et celui versé par le Bénin.",
           "question_type": "numeric_input",
           "correct_answer": "27000000",
           "explanation": "36 000 000 − 9 000 000 = 27 000 000 FCFA.",
-          "points": 2.22,
+          "hint": "Fais la soustraction entre le montant de la coopération étrangère et celui de l'État béninois.",
+          "points": 2.5,
           "depends_on_previous": true,
           "order": 2
         }
@@ -86,37 +93,48 @@
     {
       "item_number": 3,
       "domain": "geometry",
-      "context_text": "Les salles de classe sont rectangulaires. Sur la représentation, on a : AD = 4,5 cm et AB = 3,5 cm. La largeur réelle de la salle est 7 m.",
-      "points": 6.67,
+      "context_text": "Les salles du module sont rectangulaires. Voici représentée ci-dessous une salle du module.",
+      "diagram": {
+        "type": "rectangle",
+        "label": "ABCD",
+        "dimensions": {
+          "AD": "4,5 cm",
+          "AB": "3,5 cm"
+        },
+        "description": "Rectangle ABCD avec A en haut à gauche, D en haut à droite, B en bas à gauche, C en bas à droite. AD = 4,5 cm (côté horizontal supérieur), AB = 3,5 cm (côté vertical gauche)."
+      },
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule l'échelle de la représentation.",
+          "text": "Calcule l'échelle de la représentation de la salle sachant que sa largeur réelle mesure 7 m.",
           "question_type": "fill_blank",
           "correct_answer": "1/200",
-          "explanation": "Largeur réelle = 7 m = 700 cm. Échelle = 3,5 cm ÷ 700 cm = 1/200.",
-          "points": 2.22,
+          "explanation": "La largeur sur le plan est AB = 3,5 cm. La largeur réelle = 7 m = 700 cm. Échelle = 3,5 / 700 = 1/200.",
+          "hint": "Convertis d'abord la largeur réelle en centimètres, puis divise la mesure sur le plan par la mesure réelle.",
+          "points": 2,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Calcule l'aire de la salle de classe.",
+          "text": "Calcule l'aire de la surface de cette salle de classe.",
           "question_type": "numeric_input",
           "correct_answer": "63",
-          "explanation": "Longueur réelle : 4,5 × 200 = 900 cm = 9 m. Aire = 9 × 7 = 63 m².",
-          "points": 2.22,
+          "explanation": "Longueur réelle : AD = 4,5 cm × 200 = 900 cm = 9 m. Largeur réelle : 7 m. Aire = 9 × 7 = 63 m².",
+          "hint": "Utilise l'échelle trouvée pour calculer la longueur réelle, puis applique la formule de l'aire du rectangle.",
+          "points": 2,
           "depends_on_previous": true,
           "order": 1
         },
         {
           "sub_label": "c",
           "text": "Reproduis ce rectangle ABCD et construis son symétrique A'B'C'D' par rapport à un point O placé à l'extérieur.",
-          "question_type": "mcq",
-          "choices": ["Un rectangle de mêmes dimensions centré sur O", "Un rectangle plus grand", "Un carré de même périmètre"],
-          "correct_answer": "Un rectangle de mêmes dimensions centré sur O",
-          "explanation": "Le symétrique d'un rectangle par rapport à un point O est un rectangle de mêmes dimensions, où chaque sommet est le symétrique du sommet correspondant par rapport à O.",
-          "points": 2.22,
+          "question_type": "construction",
+          "correct_answer": "Le symétrique A'B'C'D' est un rectangle de mêmes dimensions (AD = 4,5 cm, AB = 3,5 cm), où chaque sommet A', B', C', D' est le symétrique respectif de A, B, C, D par rapport au point O. Pour chaque sommet, O est le milieu du segment reliant le sommet à son symétrique.",
+          "explanation": "Pour construire le symétrique par rapport à O : pour chaque sommet (par exemple A), tracer la droite passant par A et O, puis reporter la distance AO de l'autre côté de O pour obtenir A'. Répéter pour B, C et D. Relier A'B'C'D' pour obtenir le rectangle symétrique, qui a les mêmes dimensions que ABCD.",
+          "hint": "Pour chaque sommet du rectangle, trace une droite passant par ce sommet et le point O, puis reporte la même distance de l'autre côté de O.",
+          "points": 2,
           "depends_on_previous": false,
           "order": 2
         }

@@ -1,1401 +1,913 @@
 {
-  "schema_version": "1.4.0",
-  "subject": "Mathématiques",
-  "grade": "CM2",
-  "country": "BENIN",
-  "domain": {
-    "domain_id": "MATH-CM2-GEO",
-    "domain_name": "Géométrie"
+  "schema_version": "2.0",
+  "grade": {
+    "name": "CM2",
+    "slug": "cm2",
+    "description": "CM2 — programme BENIN"
   },
-  "standards": {
-    "ilma_levels": [
-      "Découverte",
-      "Entraînement",
-      "Maîtrise",
-      "Expert"
-    ],
-    "exercise_types_vocab": [
-      "Choix multiples",
-      "Réponse courte",
-      "Réponse numérique",
-      "Glisser-déposer",
-      "Construction",
-      "Tracer",
-      "Classement",
-      "Compléter",
-      "Problème contextualisé",
-      "Correction d'erreur",
-      "Étapes guidées",
-      "Flash cards",
-      "Calcul chronométré",
-      "Vrai/Faux",
-      "Justification"
-    ],
-    "bloom_taxonomy_levels": [
-      "Connaître",
-      "Comprendre",
-      "Appliquer",
-      "Analyser",
-      "Évaluer",
-      "Créer"
-    ],
-    "exercise_type_semantics": {
-      "Tracer": "Action centrée sur le tracé (droite graduée, segment, repérage), précision graphique.",
-      "Construction": "Construction géométrique guidée (règle/compas) ou assemblage de figures/objets."
-    }
-  },
-  "inheritance_rules": {
-    "micro_skill_overrides_parent_fields": true,
-    "fields_inheritable_from_skill": [
-      "estimated_time_minutes",
-      "difficulty_index",
-      "bloom_taxonomy_level",
-      "mastery_threshold",
-      "cep_frequency",
-      "adaptive_hints",
-      "local_context_examples",
-      "accessibility_tags",
-      "recommended_exercise_types"
-    ]
-  },
-  "cep_frequency_rules": {
-    "scale": {
-      "null": "Non évalué / difficile à quantifier",
-      "10-30": "Occasionnel",
-      "40-60": "Fréquent",
-      "70-90": "Très fréquent",
-      "100": "Systématique"
-    },
-    "aggregation_policy_for_skill": "max_of_micro_skills_if_defined_else_null",
-    "note": "Si au moins 1 micro-skill a cep_frequency défini, alors le skill peut dériver sa valeur via la policy."
-  },
-  "skills": [
+  "subjects": [
     {
-      "skill_id": "GEO-FIG-DECRIRE",
-      "skill_name": "Décrire et reproduire des figures géométriques",
-      "micro_skill_ids_ordered": [
-        "GEO-FIG-DECRIRE::MS01",
-        "GEO-FIG-DECRIRE::MS02",
-        "GEO-FIG-DECRIRE::MS03",
-        "GEO-FIG-DECRIRE::MS04"
-      ],
-      "prerequisites_skill_ids": [],
-      "exercise_types": [
-        "Construction",
-        "Tracer",
-        "Compléter",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Instruments mal utilisés",
-        "Mesures imprécises",
-        "Vocabulaire imprécis"
-      ],
-      "mastery_threshold": "85% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 60,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "GEO-CERCLE",
-      "skill_name": "Cercle : définitions, propriétés et construction",
-      "micro_skill_ids_ordered": [
-        "GEO-CERCLE::MS01",
-        "GEO-CERCLE::MS02",
-        "GEO-CERCLE::MS03"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-FIG-DECRIRE"
-      ],
-      "exercise_types": [
-        "Choix multiples",
-        "Construction",
-        "Réponse numérique",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Confusion rayon/diamètre",
-        "Centre mal placé",
-        "Compas mal réglé"
-      ],
-      "mastery_threshold": "90% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 70,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "GEO-ANGLES",
-      "skill_name": "Mesure d'angles",
-      "micro_skill_ids_ordered": [
-        "GEO-ANGLES::MS01",
-        "GEO-ANGLES::MS02",
-        "GEO-ANGLES::MS03",
-        "GEO-ANGLES::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-FIG-DECRIRE"
-      ],
-      "exercise_types": [
-        "Réponse numérique",
-        "Construction",
-        "Choix multiples",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Mauvaise lecture du rapporteur",
-        "Graduation inversée",
-        "Confusion aigu/obtus"
-      ],
-      "mastery_threshold": "85% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 60,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "GEO-SYMM-POINT",
-      "skill_name": "Symétrie centrale (par rapport à un point)",
-      "micro_skill_ids_ordered": [
-        "GEO-SYMM-POINT::MS01",
-        "GEO-SYMM-POINT::MS02",
-        "GEO-SYMM-POINT::MS03",
-        "GEO-SYMM-POINT::MS04",
-        "GEO-SYMM-POINT::MS05"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-FIG-DECRIRE",
-        "GEO-CERCLE"
-      ],
-      "exercise_types": [
-        "Construction",
-        "Tracer",
-        "Glisser-déposer",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Centre de symétrie mal identifié",
-        "Distances non conservées",
-        "Confusion avec symétrie axiale"
-      ],
-      "mastery_threshold": "80% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 70,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "GEO-CENTRE-SYMM",
-      "skill_name": "Centre de symétrie de figures usuelles",
-      "micro_skill_ids_ordered": [
-        "GEO-CENTRE-SYMM::MS01",
-        "GEO-CENTRE-SYMM::MS02",
-        "GEO-CENTRE-SYMM::MS03"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-SYMM-POINT"
-      ],
-      "exercise_types": [
-        "Choix multiples",
-        "Tracer",
-        "Construction",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Confusion avec axe de symétrie",
-        "Centre placé arbitrairement"
-      ],
-      "mastery_threshold": "85% sur 6 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 60,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "GEO-SYMM-DROITE",
-      "skill_name": "Symétrie axiale (par rapport à une droite)",
-      "micro_skill_ids_ordered": [
-        "GEO-SYMM-DROITE::MS01",
-        "GEO-SYMM-DROITE::MS02",
-        "GEO-SYMM-DROITE::MS03",
-        "GEO-SYMM-DROITE::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-ANGLES"
-      ],
-      "exercise_types": [
-        "Construction",
-        "Tracer",
-        "Glisser-déposer",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Perpendicularité non respectée",
-        "Distances non conservées",
-        "Confusion avec symétrie centrale"
-      ],
-      "mastery_threshold": "80% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 70,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "GEO-AXES-SYMM",
-      "skill_name": "Axes de symétrie des figures usuelles",
-      "micro_skill_ids_ordered": [
-        "GEO-AXES-SYMM::MS01",
-        "GEO-AXES-SYMM::MS02",
-        "GEO-AXES-SYMM::MS03",
-        "GEO-AXES-SYMM::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-SYMM-DROITE"
-      ],
-      "exercise_types": [
-        "Tracer",
-        "Choix multiples",
-        "Classement"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Oublier des axes",
-        "En ajouter à tort",
-        "Confondre centre et axe"
-      ],
-      "mastery_threshold": "90% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 60,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "GEO-GLISSEMENT",
-      "skill_name": "Glissement de figures (translation)",
-      "micro_skill_ids_ordered": [
-        "GEO-GLISSEMENT::MS01",
-        "GEO-GLISSEMENT::MS02",
-        "GEO-GLISSEMENT::MS03",
-        "GEO-GLISSEMENT::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-SYMM-POINT"
-      ],
-      "exercise_types": [
-        "Glisser-déposer",
-        "Tracer",
-        "Construction",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Direction/sens incorrect",
-        "Distance incorrecte",
-        "Confusion avec symétrie"
-      ],
-      "mastery_threshold": "80% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 40,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "GEO-RESEAUX-CONNEXE",
-      "skill_name": "Réseau connexe / réseau non connexe",
-      "micro_skill_ids_ordered": [
-        "GEO-RESEAUX-CONNEXE::MS01",
-        "GEO-RESEAUX-CONNEXE::MS02",
-        "GEO-RESEAUX-CONNEXE::MS03",
-        "GEO-RESEAUX-CONNEXE::MS04"
-      ],
-      "prerequisites_skill_ids": [],
-      "exercise_types": [
-        "Choix multiples",
-        "Classement",
-        "Compléter",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Confondre beaucoup de liens et connexe",
-        "Oublier un sommet isolé"
-      ],
-      "mastery_threshold": "85% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 20,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    }
-  ],
-  "micro_skills": [
-    {
-      "micro_skill_id": "GEO-FIG-DECRIRE::MS01",
-      "parent_skill_id": "GEO-FIG-DECRIRE",
-      "micro_skill_name": "Connaitre et utiliser le vocabulaire géométrique (sommet, côté, angle, diagonale, centre, rayon, diamètre)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Nommer les éléments d'un plan de salle de classe"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
-      "parent_skill_id": "GEO-FIG-DECRIRE",
-      "micro_skill_name": "Utiliser correctement règle, compas et équerre pour des tracés simples",
-      "prerequisites_micro_skill_ids": [
-        "GEO-FIG-DECRIRE::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Tracer un segment de 7,5 cm avec la règle graduée"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-FIG-DECRIRE::MS03",
-      "parent_skill_id": "GEO-FIG-DECRIRE",
-      "micro_skill_name": "Reproduire une figure sur quadrillage et hors quadrillage",
-      "prerequisites_micro_skill_ids": [
-        "GEO-FIG-DECRIRE::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Tracer",
-        "Construction"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Reproduire un plan simplifié de jardin scolaire"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-FIG-DECRIRE::MS04",
-      "parent_skill_id": "GEO-FIG-DECRIRE",
-      "micro_skill_name": "Contrôler la précision d'un tracé (alignement, longueurs, angles droits)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-FIG-DECRIRE::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Vérifier qu'un rectangle est bien droit à l'équerre"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-CERCLE::MS01",
-      "parent_skill_id": "GEO-CERCLE",
-      "micro_skill_name": "Identifier et nommer centre, rayon, diamètre et corde sur un cercle",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
+      "name": "Mathématiques",
+      "slug": "mathematiques",
+      "icon": "calculator",
+      "color": "#1E5AA8",
+      "order": 1,
+      "domains": [
         {
-          "skill_id": "GEO-FIG-DECRIRE",
-          "micro_skill_id": "GEO-FIG-DECRIRE::MS01",
-          "why": "Vocabulaire géométrique de base"
+          "name": "Géométrie",
+          "slug": "geometrie",
+          "order": 1,
+          "skills": [
+            {
+              "external_id": "GEO-FIG-DECRIRE",
+              "name": "Décrire et reproduire des figures géométriques",
+              "order": 1,
+              "cep_frequency": 60,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Instruments mal utilisés",
+                "Mesures imprécises",
+                "Vocabulaire imprécis"
+              ],
+              "exercise_types": [
+                "Construction",
+                "Tracer",
+                "Compléter",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-FIG-DECRIRE::MS01",
+                  "name": "Connaitre et utiliser le vocabulaire géométrique (sommet, côté, angle, diagonale, centre, rayon, diamètre)",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-FIG-DECRIRE::MS02",
+                  "name": "Utiliser correctement règle, compas et équerre pour des tracés simples",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "GEO-FIG-DECRIRE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-FIG-DECRIRE::MS03",
+                  "name": "Reproduire une figure sur quadrillage et hors quadrillage",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "GEO-FIG-DECRIRE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Tracer",
+                    "Construction"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "GEO-FIG-DECRIRE::MS04",
+                  "name": "Contrôler la précision d'un tracé (alignement, longueurs, angles droits)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "GEO-FIG-DECRIRE::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "GEO-CERCLE",
+              "name": "Cercle : définitions, propriétés et construction",
+              "order": 2,
+              "cep_frequency": 70,
+              "prerequisites": [
+                "GEO-FIG-DECRIRE"
+              ],
+              "common_mistakes": [
+                "Confusion rayon/diamètre",
+                "Centre mal placé",
+                "Compas mal réglé"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Construction",
+                "Réponse numérique",
+                "Tracer"
+              ],
+              "mastery_threshold": "90% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-CERCLE::MS01",
+                  "name": "Identifier et nommer centre, rayon, diamètre et corde sur un cercle",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-FIG-DECRIRE",
+                      "micro_skill_id": "GEO-FIG-DECRIRE::MS01",
+                      "why": "Vocabulaire géométrique de base"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-CERCLE::MS02",
+                  "name": "Construire un cercle au compas (centre et rayon donnés)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [
+                    "GEO-CERCLE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-FIG-DECRIRE",
+                      "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
+                      "why": "Maîtrise du compas"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-CERCLE::MS03",
+                  "name": "Appliquer la relation D = 2 x r (et inversement r = D / 2)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [
+                    "GEO-CERCLE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "external_id": "GEO-ANGLES",
+              "name": "Mesure d'angles",
+              "order": 3,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "GEO-FIG-DECRIRE"
+              ],
+              "common_mistakes": [
+                "Mauvaise lecture du rapporteur",
+                "Graduation inversée",
+                "Confusion aigu/obtus"
+              ],
+              "exercise_types": [
+                "Réponse numérique",
+                "Construction",
+                "Choix multiples",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-ANGLES::MS01",
+                  "name": "Identifier un angle aigu, droit ou obtus (classification visuelle et par mesure)",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Classement"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-FIG-DECRIRE",
+                      "micro_skill_id": "GEO-FIG-DECRIRE::MS01",
+                      "why": "Vocabulaire angle/côté"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-ANGLES::MS02",
+                  "name": "Mesurer un angle au rapporteur (choisir la bonne graduation 0 à 180)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "GEO-ANGLES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Construction"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-ANGLES::MS03",
+                  "name": "Construire un angle d'une mesure donnée au rapporteur",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "GEO-ANGLES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "GEO-ANGLES::MS04",
+                  "name": "Appliquer la propriété : somme des angles d'un triangle = 180°",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "GEO-ANGLES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Correction d'erreur",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "GEO-SYMM-POINT",
+              "name": "Symétrie centrale (par rapport à un point)",
+              "order": 4,
+              "cep_frequency": 70,
+              "prerequisites": [
+                "GEO-FIG-DECRIRE",
+                "GEO-CERCLE"
+              ],
+              "common_mistakes": [
+                "Centre de symétrie mal identifié",
+                "Distances non conservées",
+                "Confusion avec symétrie axiale"
+              ],
+              "exercise_types": [
+                "Construction",
+                "Tracer",
+                "Glisser-déposer",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-SYMM-POINT::MS01",
+                  "name": "Construire le symétrique d'un point par rapport à un centre (quadrillage et hors quadrillage)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-CERCLE",
+                      "micro_skill_id": "GEO-CERCLE::MS02",
+                      "why": "Report de distance au compas"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-SYMM-POINT::MS02",
+                  "name": "Construire le symétrique d'un segment par rapport à un centre",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "GEO-SYMM-POINT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-SYMM-POINT::MS03",
+                  "name": "Construire le symétrique d'une figure complète par rapport à un centre",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 18,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "75% sur 6 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [
+                    "GEO-SYMM-POINT::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer",
+                    "Glisser-déposer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "GEO-SYMM-POINT::MS04",
+                  "name": "Vérifier la conservation des longueurs et des aires après symétrie centrale",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "GEO-SYMM-POINT::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "GEO-SYMM-POINT::MS05",
+                  "name": "Différencier symétrie centrale et symétrie axiale sur des exemples",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "GEO-SYMM-POINT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Classement",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-SYMM-DROITE",
+                      "micro_skill_id": "GEO-SYMM-DROITE::MS01",
+                      "why": "Notion d'axe nécessaire pour comparaison"
+                    }
+                  ],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "GEO-CENTRE-SYMM",
+              "name": "Centre de symétrie de figures usuelles",
+              "order": 5,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "GEO-SYMM-POINT"
+              ],
+              "common_mistakes": [
+                "Confusion avec axe de symétrie",
+                "Centre placé arbitrairement"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Tracer",
+                "Construction",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "85% sur 6 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-CENTRE-SYMM::MS01",
+                  "name": "Déterminer si une figure usuelle admet un centre de symétrie",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Classement"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-SYMM-POINT",
+                      "micro_skill_id": "GEO-SYMM-POINT::MS03",
+                      "why": "Savoir construire un symétrique pour tester"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-CENTRE-SYMM::MS02",
+                  "name": "Construire le centre de symétrie (intersection des diagonales ou méthode adaptée)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "GEO-CENTRE-SYMM::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-CENTRE-SYMM::MS03",
+                  "name": "Justifier l'absence de centre de symétrie pour certaines figures",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "GEO-CENTRE-SYMM::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse courte",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "external_id": "GEO-SYMM-DROITE",
+              "name": "Symétrie axiale (par rapport à une droite)",
+              "order": 6,
+              "cep_frequency": 70,
+              "prerequisites": [
+                "GEO-ANGLES"
+              ],
+              "common_mistakes": [
+                "Perpendicularité non respectée",
+                "Distances non conservées",
+                "Confusion avec symétrie centrale"
+              ],
+              "exercise_types": [
+                "Construction",
+                "Tracer",
+                "Glisser-déposer",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-SYMM-DROITE::MS01",
+                  "name": "Comprendre que l'axe de symétrie est la médiatrice du segment [P, P']",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-ANGLES",
+                      "micro_skill_id": "GEO-ANGLES::MS01",
+                      "why": "Notion d'angle droit (perpendiculaire)"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-SYMM-DROITE::MS02",
+                  "name": "Tracer la perpendiculaire à l'axe passant par un point donné",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "GEO-SYMM-DROITE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-FIG-DECRIRE",
+                      "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
+                      "why": "Utilisation de l'équerre"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-SYMM-DROITE::MS03",
+                  "name": "Reporter la distance de l'autre côté de l'axe (conserver les distances à l'axe)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "GEO-SYMM-DROITE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "GEO-SYMM-DROITE::MS04",
+                  "name": "Construire l'image complète d'une figure par symétrie axiale",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 18,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "75% sur 6 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [
+                    "GEO-SYMM-DROITE::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer",
+                    "Glisser-déposer",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "GEO-AXES-SYMM",
+              "name": "Axes de symétrie des figures usuelles",
+              "order": 7,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "GEO-SYMM-DROITE"
+              ],
+              "common_mistakes": [
+                "Oublier des axes",
+                "En ajouter à tort",
+                "Confondre centre et axe"
+              ],
+              "exercise_types": [
+                "Tracer",
+                "Choix multiples",
+                "Classement"
+              ],
+              "mastery_threshold": "90% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-AXES-SYMM::MS01",
+                  "name": "Identifier les 4 axes de symétrie du carré",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Tracer",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-SYMM-DROITE",
+                      "micro_skill_id": "GEO-SYMM-DROITE::MS01",
+                      "why": "Notion d'axe de symétrie"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-AXES-SYMM::MS02",
+                  "name": "Identifier les 2 axes de symétrie du rectangle (non carré)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "GEO-AXES-SYMM::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Tracer",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-AXES-SYMM::MS03",
+                  "name": "Comprendre que le cercle admet une infinité d'axes (tout diamètre)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "GEO-AXES-SYMM::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-CERCLE",
+                      "micro_skill_id": "GEO-CERCLE::MS01",
+                      "why": "Notion de diamètre"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "GEO-AXES-SYMM::MS04",
+                  "name": "Déterminer le nombre d'axes de symétrie des triangles usuels (équilatéral, isocèle, scalène)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "GEO-AXES-SYMM::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Classement",
+                    "Choix multiples",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "GEO-GLISSEMENT",
+              "name": "Glissement de figures (translation)",
+              "order": 8,
+              "cep_frequency": 40,
+              "prerequisites": [
+                "GEO-SYMM-POINT"
+              ],
+              "common_mistakes": [
+                "Direction/sens incorrect",
+                "Distance incorrecte",
+                "Confusion avec symétrie"
+              ],
+              "exercise_types": [
+                "Glisser-déposer",
+                "Tracer",
+                "Construction",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-GLISSEMENT::MS01",
+                  "name": "Comprendre le glissement : déplacer sans tourner ni retourner",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Glisser-déposer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-GLISSEMENT::MS02",
+                  "name": "Identifier le vecteur de glissement : direction, sens et longueur",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "GEO-GLISSEMENT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-GLISSEMENT::MS03",
+                  "name": "Construire l'image d'une figure par glissement (sur quadrillage)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "GEO-GLISSEMENT::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Tracer",
+                    "Construction",
+                    "Glisser-déposer"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "GEO-GLISSEMENT::MS04",
+                  "name": "Vérifier la conservation des longueurs, aires et angles après glissement",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "GEO-GLISSEMENT::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-SYMM-POINT",
+                      "micro_skill_id": "GEO-SYMM-POINT::MS04",
+                      "why": "Même raisonnement de conservation (isométrie) appliqué au glissement"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "GEO-RESEAUX-CONNEXE",
+              "name": "Réseau connexe / réseau non connexe",
+              "order": 9,
+              "cep_frequency": 20,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Confondre beaucoup de liens et connexe",
+                "Oublier un sommet isolé"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Classement",
+                "Compléter",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "GEO-RESEAUX-CONNEXE::MS01",
+                  "name": "Identifier les sommets et les liens (arêtes) dans un réseau simple",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 20,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "GEO-RESEAUX-CONNEXE::MS02",
+                  "name": "Tester si tous les sommets sont reliés (réseau connexe)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 20,
+                  "prerequisites": [
+                    "GEO-RESEAUX-CONNEXE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Classement"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "GEO-RESEAUX-CONNEXE::MS03",
+                  "name": "Repérer un sous-ensemble isolé (réseau non connexe)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 15,
+                  "prerequisites": [
+                    "GEO-RESEAUX-CONNEXE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Classement"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "GEO-RESEAUX-CONNEXE::MS04",
+                  "name": "Justifier la connexité en exhibant un chemin entre deux sommets quelconques",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 15,
+                  "prerequisites": [
+                    "GEO-RESEAUX-CONNEXE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse courte",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                }
+              ]
+            }
+          ]
         }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Éléments d'un cercle : roue de vélo, couvercle de marmite"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-CERCLE::MS02",
-      "parent_skill_id": "GEO-CERCLE",
-      "micro_skill_name": "Construire un cercle au compas (centre et rayon donnés)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-CERCLE::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-FIG-DECRIRE",
-          "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
-          "why": "Maîtrise du compas"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 65,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Tracer un cercle de rayon 3 cm pour un motif décoratif"
-      ],
-      "accessibility_tags": [
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-CERCLE::MS03",
-      "parent_skill_id": "GEO-CERCLE",
-      "micro_skill_name": "Appliquer la relation D = 2 x r (et inversement r = D / 2)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-CERCLE::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Diamètre d'un puits = 1,2 m → rayon = 0,6 m"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-ANGLES::MS01",
-      "parent_skill_id": "GEO-ANGLES",
-      "micro_skill_name": "Identifier un angle aigu, droit ou obtus (classification visuelle et par mesure)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-FIG-DECRIRE",
-          "micro_skill_id": "GEO-FIG-DECRIRE::MS01",
-          "why": "Vocabulaire angle/côté"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Classement"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Angle du coin d'un cahier = angle droit (90°)"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-ANGLES::MS02",
-      "parent_skill_id": "GEO-ANGLES",
-      "micro_skill_name": "Mesurer un angle au rapporteur (choisir la bonne graduation 0 à 180)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-ANGLES::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Construction"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Mesurer l'angle d'un carrefour sur un plan simplifié"
-      ],
-      "accessibility_tags": [
-        "zoomable_protractor"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-ANGLES::MS03",
-      "parent_skill_id": "GEO-ANGLES",
-      "micro_skill_name": "Construire un angle d'une mesure donnée au rapporteur",
-      "prerequisites_micro_skill_ids": [
-        "GEO-ANGLES::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Construire un angle de 60° pour un triangle"
-      ],
-      "accessibility_tags": [
-        "zoomable_protractor"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-ANGLES::MS04",
-      "parent_skill_id": "GEO-ANGLES",
-      "micro_skill_name": "Appliquer la propriété : somme des angles d'un triangle = 180°",
-      "prerequisites_micro_skill_ids": [
-        "GEO-ANGLES::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Correction d'erreur",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Trouver le 3e angle : 50° + 70° + ? = 180°"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-POINT::MS01",
-      "parent_skill_id": "GEO-SYMM-POINT",
-      "micro_skill_name": "Construire le symétrique d'un point par rapport à un centre (quadrillage et hors quadrillage)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-CERCLE",
-          "micro_skill_id": "GEO-CERCLE::MS02",
-          "why": "Report de distance au compas"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Trouver le symétrique d'un point sur un plan de quartier"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-POINT::MS02",
-      "parent_skill_id": "GEO-SYMM-POINT",
-      "micro_skill_name": "Construire le symétrique d'un segment par rapport à un centre",
-      "prerequisites_micro_skill_ids": [
-        "GEO-SYMM-POINT::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Symétriser un côté de figure sur quadrillage"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-POINT::MS03",
-      "parent_skill_id": "GEO-SYMM-POINT",
-      "micro_skill_name": "Construire le symétrique d'une figure complète par rapport à un centre",
-      "prerequisites_micro_skill_ids": [
-        "GEO-SYMM-POINT::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer",
-        "Glisser-déposer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 18,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "75% sur 6 exercices",
-      "cep_frequency": 65,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Créer un motif symétrique pour un pagne ou un tissu"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-POINT::MS04",
-      "parent_skill_id": "GEO-SYMM-POINT",
-      "micro_skill_name": "Vérifier la conservation des longueurs et des aires après symétrie centrale",
-      "prerequisites_micro_skill_ids": [
-        "GEO-SYMM-POINT::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Mesurer image et original pour vérifier les longueurs"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-POINT::MS05",
-      "parent_skill_id": "GEO-SYMM-POINT",
-      "micro_skill_name": "Différencier symétrie centrale et symétrie axiale sur des exemples",
-      "prerequisites_micro_skill_ids": [
-        "GEO-SYMM-POINT::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-SYMM-DROITE",
-          "micro_skill_id": "GEO-SYMM-DROITE::MS01",
-          "why": "Notion d'axe nécessaire pour comparaison"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Classement",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Cette figure est-elle obtenue par symétrie centrale ou axiale ?"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-CENTRE-SYMM::MS01",
-      "parent_skill_id": "GEO-CENTRE-SYMM",
-      "micro_skill_name": "Déterminer si une figure usuelle admet un centre de symétrie",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-SYMM-POINT",
-          "micro_skill_id": "GEO-SYMM-POINT::MS03",
-          "why": "Savoir construire un symétrique pour tester"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Classement"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Le rectangle a-t-il un centre de symétrie ? (oui)"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-CENTRE-SYMM::MS02",
-      "parent_skill_id": "GEO-CENTRE-SYMM",
-      "micro_skill_name": "Construire le centre de symétrie (intersection des diagonales ou méthode adaptée)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-CENTRE-SYMM::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Trouver le centre d'un rectangle (table, cahier)"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-CENTRE-SYMM::MS03",
-      "parent_skill_id": "GEO-CENTRE-SYMM",
-      "micro_skill_name": "Justifier l'absence de centre de symétrie pour certaines figures",
-      "prerequisites_micro_skill_ids": [
-        "GEO-CENTRE-SYMM::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse courte",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Le triangle scalène n'a pas de centre de symétrie"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-DROITE::MS01",
-      "parent_skill_id": "GEO-SYMM-DROITE",
-      "micro_skill_name": "Comprendre que l'axe de symétrie est la médiatrice du segment [P, P']",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-ANGLES",
-          "micro_skill_id": "GEO-ANGLES::MS01",
-          "why": "Notion d'angle droit (perpendiculaire)"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "L'axe coupe [PP'] en son milieu et à angle droit"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-DROITE::MS02",
-      "parent_skill_id": "GEO-SYMM-DROITE",
-      "micro_skill_name": "Tracer la perpendiculaire à l'axe passant par un point donné",
-      "prerequisites_micro_skill_ids": [
-        "GEO-SYMM-DROITE::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-FIG-DECRIRE",
-          "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
-          "why": "Utilisation de l'équerre"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Tracer la perpendiculaire depuis un point vers l'axe"
-      ],
-      "accessibility_tags": [
-        "grid_overlay",
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-DROITE::MS03",
-      "parent_skill_id": "GEO-SYMM-DROITE",
-      "micro_skill_name": "Reporter la distance de l'autre côté de l'axe (conserver les distances à l'axe)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-SYMM-DROITE::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Reporter au compas la même distance de l'autre côté"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-DROITE::MS04",
-      "parent_skill_id": "GEO-SYMM-DROITE",
-      "micro_skill_name": "Construire l'image complète d'une figure par symétrie axiale",
-      "prerequisites_micro_skill_ids": [
-        "GEO-SYMM-DROITE::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer",
-        "Glisser-déposer",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 18,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "75% sur 6 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Symétrie d'un motif simple (logo, emblème d'école)"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-AXES-SYMM::MS01",
-      "parent_skill_id": "GEO-AXES-SYMM",
-      "micro_skill_name": "Identifier les 4 axes de symétrie du carré",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-SYMM-DROITE",
-          "micro_skill_id": "GEO-SYMM-DROITE::MS01",
-          "why": "Notion d'axe de symétrie"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Tracer",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Plier un carré en papier pour trouver les axes"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-AXES-SYMM::MS02",
-      "parent_skill_id": "GEO-AXES-SYMM",
-      "micro_skill_name": "Identifier les 2 axes de symétrie du rectangle (non carré)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-AXES-SYMM::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Tracer",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Plier une feuille de cahier en 2 dans chaque sens"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-AXES-SYMM::MS03",
-      "parent_skill_id": "GEO-AXES-SYMM",
-      "micro_skill_name": "Comprendre que le cercle admet une infinité d'axes (tout diamètre)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-AXES-SYMM::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-CERCLE",
-          "micro_skill_id": "GEO-CERCLE::MS01",
-          "why": "Notion de diamètre"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Tout diamètre d'un couvercle rond est un axe"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-AXES-SYMM::MS04",
-      "parent_skill_id": "GEO-AXES-SYMM",
-      "micro_skill_name": "Déterminer le nombre d'axes de symétrie des triangles usuels (équilatéral, isocèle, scalène)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-AXES-SYMM::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Classement",
-        "Choix multiples",
-        "Tracer"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Équilatéral : 3 axes ; isocèle : 1 axe ; scalène : 0"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-GLISSEMENT::MS01",
-      "parent_skill_id": "GEO-GLISSEMENT",
-      "micro_skill_name": "Comprendre le glissement : déplacer sans tourner ni retourner",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Glisser-déposer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Glisser un motif de carrelage sans le tourner"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-GLISSEMENT::MS02",
-      "parent_skill_id": "GEO-GLISSEMENT",
-      "micro_skill_name": "Identifier le vecteur de glissement : direction, sens et longueur",
-      "prerequisites_micro_skill_ids": [
-        "GEO-GLISSEMENT::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Flèche : 3 carreaux à droite et 2 vers le haut"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-GLISSEMENT::MS03",
-      "parent_skill_id": "GEO-GLISSEMENT",
-      "micro_skill_name": "Construire l'image d'une figure par glissement (sur quadrillage)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-GLISSEMENT::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Tracer",
-        "Construction",
-        "Glisser-déposer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Déplacer un triangle selon la flèche donnée"
-      ],
-      "accessibility_tags": [
-        "grid_overlay"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-GLISSEMENT::MS04",
-      "parent_skill_id": "GEO-GLISSEMENT",
-      "micro_skill_name": "Vérifier la conservation des longueurs, aires et angles après glissement",
-      "prerequisites_micro_skill_ids": [
-        "GEO-GLISSEMENT::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-SYMM-POINT",
-          "micro_skill_id": "GEO-SYMM-POINT::MS04",
-          "why": "Même raisonnement de conservation (isométrie) appliqué au glissement"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Vérifier que l'image a les mêmes dimensions que l'original"
-      ],
-      "accessibility_tags": [
-        "high_contrast_lines"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-RESEAUX-CONNEXE::MS01",
-      "parent_skill_id": "GEO-RESEAUX-CONNEXE",
-      "micro_skill_name": "Identifier les sommets et les liens (arêtes) dans un réseau simple",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 20,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Réseau de routes entre quartiers d'une ville"
-      ],
-      "accessibility_tags": [
-        "low_text_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-RESEAUX-CONNEXE::MS02",
-      "parent_skill_id": "GEO-RESEAUX-CONNEXE",
-      "micro_skill_name": "Tester si tous les sommets sont reliés (réseau connexe)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-RESEAUX-CONNEXE::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Classement"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 20,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Peut-on aller de n'importe quel quartier à n'importe quel autre ?"
-      ],
-      "accessibility_tags": [
-        "low_text_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-RESEAUX-CONNEXE::MS03",
-      "parent_skill_id": "GEO-RESEAUX-CONNEXE",
-      "micro_skill_name": "Repérer un sous-ensemble isolé (réseau non connexe)",
-      "prerequisites_micro_skill_ids": [
-        "GEO-RESEAUX-CONNEXE::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Classement"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 15,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Ce groupe de maisons n'a aucune route vers le marché"
-      ],
-      "accessibility_tags": [
-        "low_text_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "GEO-RESEAUX-CONNEXE::MS04",
-      "parent_skill_id": "GEO-RESEAUX-CONNEXE",
-      "micro_skill_name": "Justifier la connexité en exhibant un chemin entre deux sommets quelconques",
-      "prerequisites_micro_skill_ids": [
-        "GEO-RESEAUX-CONNEXE::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse courte",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 15,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Tracer le chemin : Quartier A vers B vers C vers D"
-      ],
-      "accessibility_tags": [
-        "low_text_mode"
       ]
     }
-  ],
-  "external_micro_skill_stubs": [
-    {
-      "micro_skill_id": "GEO-FIG-DECRIRE::MS01",
-      "micro_skill_name": "Vocabulaire géométrique"
-    },
-    {
-      "micro_skill_id": "GEO-FIG-DECRIRE::MS02",
-      "micro_skill_name": "Utiliser règle, compas, équerre"
-    },
-    {
-      "micro_skill_id": "GEO-CERCLE::MS01",
-      "micro_skill_name": "Centre, rayon, diamètre, corde"
-    },
-    {
-      "micro_skill_id": "GEO-CERCLE::MS02",
-      "micro_skill_name": "Construction au compas"
-    },
-    {
-      "micro_skill_id": "GEO-ANGLES::MS01",
-      "micro_skill_name": "Identifier aigu/droit/obtus"
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-POINT::MS03",
-      "micro_skill_name": "Symétrique d'une figure (centre)"
-    },
-    {
-      "micro_skill_id": "GEO-SYMM-DROITE::MS01",
-      "micro_skill_name": "Axe = médiatrice de [P,P']"
-    }
-  ],
-  "notes": {
-    "origin": "Créé à partir de progamme_mathematiquesCM2_deep.json, domaine MATH-CM2-GEO",
-    "quality_guardrails": [
-      "Un micro-skill = une action observable et testable en 1-2 minutes.",
-      "Les recommended_exercise_types appartiennent à exercise_types_vocab.",
-      "Les prérequis micro-skill ne créent pas de cycles."
-    ],
-    "pedagogical_notes": [
-      "GEO-SYMM-POINT::MS05 (différencier centrale/axiale) a un external_prerequisite vers GEO-SYMM-DROITE::MS01 — lien croisé volontaire.",
-      "GEO-RESEAUX-CONNEXE est indépendant des autres skills géométriques.",
-      "GEO-GLISSEMENT partage avec les symétries la propriété d'isométrie (conservation longueurs/aires/angles). Le lien est explicité via external_prerequisite de MS04(glissement) vers GEO-SYMM-POINT::MS04(conservation)."
-    ],
-    "changes_from_1_3_1": [
-      "v1.4.1: GEO-CERCLE::MS03 diff 3→4 (D=2r est au même niveau que construction).",
-      "v1.4.1: GEO-SYMM-POINT::MS04 diff 6→7 (vérification conservation = méta-cognitif)."
-    ]
-  },
-  "quality_checks": {
-    "difficulty_progression_issues": [],
-    "difficulty_progression_ok": true,
-    "all_checks_pass": true
-  }
+  ]
 }

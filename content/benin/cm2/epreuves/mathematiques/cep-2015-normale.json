@@ -5,31 +5,35 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "À la fête de fin d'année scolaire, chaque élève indique son fruit préféré parmi : orange (O), avocat (A), mandarine (M), papaye (P). Voici la série statistique obtenue : P, A, P, A, A, O, M, O, A / A, O, P, O, M, A, A, O / A, M, M, O, O, M, A, A.",
+  "narrative_context": "En fin d'année scolaire, beaucoup d'écoles organisent des manifestations festives à l'intention de leurs élèves. À l'occasion, les élèves dansent, mangent, font du théâtre, participent à des jeux concours. Ton école n'est pas restée en marge de cet évènement cette année, et ta classe qui est la meilleure de l'école a reçu en récompense les fruits suivants : orange (O), avocat (A), mandarine (M), papaye (P). Chaque élève de la classe a choisi selon sa préférence et ces choix ont donné la série statistique suivante : P, A, P, A, A, O, M, O, A / A, O, P, O, M, A, A, O / A, M, M, O, O, M, A, A. Tu as gagné le premier prix au jeu concours de mathématique. Ton ami Ali te sollicite pour l'aider à relever le même défi aux prochains jeux.",
+  "task_instruction": "Tu es invité(e) à résoudre les items ci-après.",
+  "context_text": "En fin d'année scolaire, beaucoup d'écoles organisent des manifestations festives à l'intention de leurs élèves. À l'occasion, les élèves dansent, mangent, font du théâtre, participent à des jeux concours. Ton école n'est pas restée en marge de cet évènement cette année, et ta classe qui est la meilleure de l'école a reçu en récompense les fruits suivants : orange (O), avocat (A), mandarine (M), papaye (P). Chaque élève de la classe a choisi selon sa préférence et ces choix ont donné la série statistique suivante : P, A, P, A, A, O, M, O, A / A, O, P, O, M, A, A, O / A, M, M, O, O, M, A, A.",
   "items": [
     {
       "item_number": 1,
       "domain": "data_proportionality",
       "context_text": "Série statistique des fruits préférés : P, A, P, A, A, O, M, O, A, A, O, P, O, M, A, A, O, A, M, M, O, O, M, A, A. Total : 25 élèves.",
-      "points": 6.67,
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Établis le tableau des effectifs et des fréquences.",
+          "text": "Établis le tableau des effectifs et des fréquences relatif à cette situation.",
           "question_type": "fill_blank",
-          "correct_answer": "O: 7 (7/25), A: 10 (10/25), M: 5 (5/25), P: 3 (3/25)",
-          "explanation": "Comptage : O = 7, A = 10, M = 5, P = 3. Total = 25. Fréquences : O = 7/25, A = 10/25, M = 5/25, P = 3/25.",
-          "points": 3.33,
+          "correct_answer": "P : 3 (3/25) ; A : 10 (10/25) ; O : 7 (7/25) ; M : 5 (5/25). Total : 25.",
+          "explanation": "On parcourt la série et on compte chaque lettre. P apparaît 3 fois, A apparaît 10 fois, O apparaît 7 fois, M apparaît 5 fois. Total = 3 + 10 + 7 + 5 = 25. Les fréquences sont : P = 3/25, A = 10/25, O = 7/25, M = 5/25.",
+          "hint": "Parcours la série lettre par lettre et fais un bâton pour chaque fruit. Vérifie que le total donne 25.",
+          "points": 3.5,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Complète le tableau par des fréquences exprimées en pourcentages.",
+          "text": "Complète ce tableau par des fréquences exprimées en pourcentages.",
           "question_type": "fill_blank",
-          "correct_answer": "O: 28%, A: 40%, M: 20%, P: 12%",
-          "explanation": "O : 7/25 × 100 = 28%. A : 10/25 × 100 = 40%. M : 5/25 × 100 = 20%. P : 3/25 × 100 = 12%.",
-          "points": 3.33,
+          "correct_answer": "P : 12 % ; A : 40 % ; O : 28 % ; M : 20 %.",
+          "explanation": "Pour convertir une fréquence en pourcentage, on multiplie par 100. P : 3/25 × 100 = 12 %. A : 10/25 × 100 = 40 %. O : 7/25 × 100 = 28 %. M : 5/25 × 100 = 20 %. Vérification : 12 + 40 + 28 + 20 = 100 %.",
+          "hint": "Pour obtenir le pourcentage, divise l'effectif par 25, puis multiplie par 100. Vérifie que la somme des pourcentages fait 100 %.",
+          "points": 3.5,
           "depends_on_previous": true,
           "order": 1
         }
@@ -38,26 +42,29 @@
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "On considère une figure composée d'un rectangle ABCD de longueur AB = 60 cm et de largeur BC = 30 cm, accolé à un demi-cercle de diamètre DC = 60 cm. On prend π = 22/7.",
-      "points": 6.67,
+      "context_text": "À la distribution des prix, le premier prix du jeu concours de mathématique est un objet électronique ayant la forme d'un rectangle accolé à un demi-cercle, comme l'indique la figure. AB = 60 cm, BC = 30 cm, le demi-cercle a pour diamètre DC = 60 cm. On prend π = 22/7.",
+      "diagram_description": "Rectangle ABCD avec A en haut à gauche, B en haut à droite, C en bas à droite, D en bas à gauche. AB = 60 cm (côté supérieur), BC = 30 cm (côté droit). Un demi-cercle est accolé au côté inférieur DC, s'étendant vers le bas, de diamètre DC = 60 cm.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule le périmètre de cette figure en centimètres.",
+          "text": "Trouve le périmètre de cette figure.",
           "question_type": "numeric_input",
           "correct_answer": "214.29",
-          "explanation": "Périmètre = AB + BC + arc du demi-cercle + DA = 60 + 30 + (π × 60/2) + 30 = 120 + (22/7 × 30) = 120 + 660/7 = 1500/7 ≈ 214,29 cm.",
-          "points": 3.33,
+          "explanation": "Le périmètre est composé de : AB + BC + l'arc du demi-cercle + DA. AB = 60 cm, BC = 30 cm, DA = 30 cm. L'arc du demi-cercle = π × d / 2 = 22/7 × 60 / 2 = 22/7 × 30 = 660/7 cm. Périmètre = 60 + 30 + 30 + 660/7 = 120 + 660/7 = 840/7 + 660/7 = 1500/7 ≈ 214,29 cm.",
+          "hint": "Le périmètre comprend trois côtés du rectangle (AB, BC, DA) plus l'arc du demi-cercle (la moitié de la circonférence du cercle de diamètre DC).",
+          "points": 3,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Calcule l'aire de cette figure en centimètres carrés.",
+          "text": "Calcule l'aire de sa surface. Tu prendras pour valeur de π le nombre 22/7.",
           "question_type": "numeric_input",
           "correct_answer": "3214.29",
-          "explanation": "Aire du rectangle = 60 × 30 = 1 800 cm². Aire du demi-cercle = π × r² / 2 = 22/7 × 30² / 2 = 22/7 × 450 = 9 900/7 ≈ 1 414,29 cm². Aire totale = 1 800 + 1 414,29 = 3 214,29 cm².",
-          "points": 3.33,
+          "explanation": "Aire du rectangle = AB × BC = 60 × 30 = 1 800 cm². Aire du demi-cercle = π × r² / 2. Le rayon r = 60 / 2 = 30 cm. Donc : 22/7 × 900 / 2 = 22/7 × 450 = 9900/7 ≈ 1 414,29 cm². Aire totale = 1 800 + 1 414,29 = 3 214,29 cm².",
+          "hint": "Calcule séparément l'aire du rectangle (longueur × largeur) et l'aire du demi-cercle (π × r² / 2, avec r = 30 cm), puis additionne les deux.",
+          "points": 3,
           "depends_on_previous": false,
           "order": 1
         }
@@ -66,28 +73,29 @@
     {
       "item_number": 3,
       "domain": "geometry",
-      "context_text": "On considère la partie rectangulaire ABCD de la figure précédente (60 cm × 30 cm).",
-      "points": 6.67,
+      "context_text": "On considère la partie rectangulaire de cet objet électronique (rectangle ABCD : 60 cm × 30 cm).",
+      "diagram_description": "Rectangle ABCD avec A en haut à gauche, B en haut à droite, C en bas à droite, D en bas à gauche. AB = 60 cm (longueur), BC = 30 cm (largeur). Un demi-cercle est accolé au côté inférieur DC, s'étendant vers le bas.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Reproduis la partie rectangulaire à l'échelle 1/10.",
-          "question_type": "mcq",
-          "choices": ["Rectangle 6 cm × 3 cm", "Rectangle 60 cm × 30 cm", "Carré 6 cm × 6 cm", "Rectangle 3 cm × 1,5 cm"],
-          "correct_answer": "Rectangle 6 cm × 3 cm",
-          "explanation": "Échelle 1/10 : 60 ÷ 10 = 6 cm et 30 ÷ 10 = 3 cm.",
-          "points": 3.33,
+          "text": "Reproduis la partie rectangulaire de cet objet électronique à l'échelle de 1/10.",
+          "question_type": "construction",
+          "correct_answer": "Rectangle de 6 cm × 3 cm",
+          "explanation": "À l'échelle 1/10, chaque dimension est divisée par 10. Longueur : 60 ÷ 10 = 6 cm. Largeur : 30 ÷ 10 = 3 cm. On trace donc un rectangle de 6 cm sur 3 cm.",
+          "hint": "L'échelle 1/10 signifie que chaque centimètre sur le dessin représente 10 cm en réalité. Divise chaque dimension par 10.",
+          "points": 3.5,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Trace le symétrique de ce rectangle par rapport à une droite (IH) parallèle à sa largeur.",
-          "question_type": "mcq",
-          "choices": ["Un rectangle de mêmes dimensions de l'autre côté de (IH)", "Un rectangle retourné", "Un parallélogramme"],
-          "correct_answer": "Un rectangle de mêmes dimensions de l'autre côté de (IH)",
-          "explanation": "Le symétrique d'un rectangle par rapport à une droite est un rectangle de mêmes dimensions situé de l'autre côté de cette droite.",
-          "points": 3.33,
+          "text": "Trace son symétrique par rapport à une droite (IH) parallèle à sa largeur.",
+          "question_type": "construction",
+          "correct_answer": "Un rectangle de mêmes dimensions (6 cm × 3 cm) situé de l'autre côté de la droite (IH), à égale distance.",
+          "explanation": "Le symétrique d'un rectangle par rapport à une droite parallèle à sa largeur est un rectangle de mêmes dimensions, placé de l'autre côté de la droite (IH), chaque sommet étant à la même distance de (IH) que le sommet correspondant du rectangle original.",
+          "hint": "Chaque point du rectangle doit avoir son symétrique de l'autre côté de la droite (IH), à la même distance. Le rectangle symétrique a les mêmes dimensions.",
+          "points": 3.5,
           "depends_on_previous": true,
           "order": 1
         }

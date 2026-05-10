@@ -5,41 +5,44 @@
   "subject": "education_sociale",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "La République du Bénin a connu de grandes périodes historiques, l'avènement de la démocratie et possède de nombreux cours d'eau qui arrosent son territoire.",
+  "context_text": "La République du Bénin a connu de grandes périodes dans son histoire. Aujourd'hui, ce pays fait la fierté de ses enfants grâce à la vitalité de sa démocratie.\n\nIl est arrosé par plusieurs cours d'eau. Des actions sont menées à divers niveaux pour lutter contre les fléaux sociaux afin d'assurer un mieux-être à tous. Tu vis quotidiennement ces réalités.",
   "items": [
     {
       "item_number": 1,
       "domain": "history_heritage",
-      "context_text": "L'histoire du Bénin est marquée par des dates importantes et des événements fondateurs de la nation.",
-      "points": 6.67,
+      "context_text": "La République du Bénin a connu de grandes périodes dans son histoire. Des actions sont menées pour lutter contre les fléaux sociaux.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Que rappellent les dates suivantes : 1er août 1960 et 26 octobre 1972 ?",
-          "question_type": "fill_blank",
-          "correct_answer": "1er août 1960: proclamation de l'indépendance du Dahomey (Bénin). 26 octobre 1972: coup d'État militaire de Mathieu Kérékou, début du régime révolutionnaire",
+          "text": "Dis ce que te rappellent les dates suivantes, dans l'histoire du Bénin :\n• 1er août 1960\n• 26 octobre 1972",
+          "question_type": "short_answer",
+          "correct_answer": "1er août 1960 : proclamation de l'indépendance du Dahomey (Bénin). 26 octobre 1972 : coup d'État militaire de Mathieu Kérékou, début du régime révolutionnaire",
+          "hint": "La première date est celle de la fête nationale du Bénin. La seconde marque un changement de régime politique.",
           "explanation": "Le 1er août 1960 marque la proclamation de l'indépendance du Dahomey. Le 26 octobre 1972 correspond au coup d'État de Mathieu Kérékou qui instaure le régime militaire révolutionnaire marxiste-léniniste.",
-          "points": 2.22,
+          "points": 3,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Indique le lieu et la date de la Conférence des Forces Vives de la Nation.",
-          "question_type": "fill_blank",
+          "text": "Dis où et quand s'est tenue la Conférence des Forces Vives de la Nation.",
+          "question_type": "short_answer",
           "correct_answer": "À Cotonou, à l'hôtel PLM Alédjo, du 19 au 28 février 1990",
+          "hint": "Cette conférence historique s'est tenue dans un grand hôtel d'une ville du sud du Bénin, en février d'une année célèbre.",
           "explanation": "La Conférence Nationale des Forces Vives de la Nation s'est tenue à Cotonou, à l'hôtel PLM Alédjo, du 19 au 28 février 1990.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
           "order": 1
         },
         {
           "sub_label": "c",
-          "text": "Dans la liste suivante : parasitisme, corruption, alcoolisme, insécurité, cite 2 fléaux sociaux contre lesquels le Bénin doit lutter.",
-          "question_type": "fill_blank",
+          "text": "Voici une liste de quelques fléaux sociaux : le parasitisme, la corruption, l'alcoolisme, l'insécurité. Relève dans cette liste, deux fléaux contre lesquels le Bénin doit lutter pour attirer des investisseurs étrangers.",
+          "question_type": "short_answer",
           "correct_answer": "La corruption et l'insécurité",
-          "explanation": "La corruption et l'insécurité sont deux fléaux sociaux majeurs contre lesquels le Bénin doit lutter pour assurer son développement.",
-          "points": 2.22,
+          "hint": "Parmi ces fléaux, lesquels découragent le plus les investisseurs étrangers qui veulent créer des entreprises dans un pays ?",
+          "explanation": "La corruption et l'insécurité sont deux fléaux sociaux majeurs contre lesquels le Bénin doit lutter pour attirer des investisseurs étrangers, car ils nuisent au climat des affaires.",
+          "points": 2,
           "depends_on_previous": false,
           "order": 2
         }
@@ -48,38 +51,40 @@
     {
       "item_number": 2,
       "domain": "history_heritage",
-      "context_text": "Un roi du Bénin, célèbre pour sa résistance à la colonisation française, est mort à l'étranger loin de sa terre natale.",
-      "points": 6.67,
+      "context_text": "Parmi les rois qui ont lutté contre la colonisation française en Afrique, il y en a un de ton pays qui est mort à l'étranger.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Quel est le nom de ce roi ?",
-          "question_type": "mcq",
-          "choices": ["Le roi Béhanzin", "Le roi Toffa", "Le roi Glèlè", "Bio Guéra"],
+          "text": "Donne le nom de ce roi.",
+          "question_type": "short_answer",
           "correct_answer": "Le roi Béhanzin",
+          "hint": "Ce roi est le dernier grand roi du royaume du Danhomè, célèbre pour sa résistance à la colonisation.",
           "explanation": "Le roi Béhanzin est le célèbre roi du Danhomè qui a résisté à la colonisation française et qui est mort en exil.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Indique la date et le lieu de son décès.",
-          "question_type": "fill_blank",
+          "text": "Donne la date et le lieu de son décès.",
+          "question_type": "short_answer",
           "correct_answer": "Le 10 décembre 1906 à Alger (Algérie)",
+          "hint": "Ce roi est mort dans un pays d'Afrique du Nord, au début du 20e siècle.",
           "explanation": "Le roi Béhanzin est décédé le 10 décembre 1906 à Alger, en Algérie, où il avait été exilé par les autorités coloniales françaises.",
-          "points": 2.22,
-          "depends_on_previous": false,
+          "points": 2,
+          "depends_on_previous": true,
           "order": 1
         },
         {
           "sub_label": "c",
-          "text": "Quel est le nom du royaume qu'il a dirigé ?",
-          "question_type": "fill_blank",
+          "text": "Précise le nom du royaume du Bénin qu'il a dirigé.",
+          "question_type": "short_answer",
           "correct_answer": "Le royaume du Danhomè (Dahomey)",
+          "hint": "C'est l'un des plus puissants royaumes de l'Afrique de l'Ouest, dont la capitale était Abomey.",
           "explanation": "Le roi Béhanzin a dirigé le royaume du Danhomè (Dahomey), l'un des plus puissants royaumes de l'Afrique de l'Ouest.",
-          "points": 2.22,
-          "depends_on_previous": false,
+          "points": 3,
+          "depends_on_previous": true,
           "order": 2
         }
       ]
@@ -87,37 +92,40 @@
     {
       "item_number": 3,
       "domain": "geography_economy",
-      "context_text": "Le Bénin possède plusieurs bassins fluviaux qui arrosent son territoire.",
-      "points": 6.67,
+      "context_text": "Le Bénin est arrosé par plusieurs cours d'eau qui appartiennent à deux grands bassins fluviaux.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite 2 grands bassins fluviaux du Bénin.",
-          "question_type": "fill_blank",
+          "text": "Les cours d'eau du Bénin appartiennent à deux grands bassins fluviaux. Cite-les.",
+          "question_type": "short_answer",
           "correct_answer": "Le bassin du Niger (au nord) et le bassin côtier (au sud)",
+          "hint": "Le Bénin a un grand fleuve au nord qui forme sa frontière, et ses propres cours d'eau au sud qui se jettent dans l'océan.",
           "explanation": "Les deux grands bassins fluviaux du Bénin sont le bassin du Niger au nord et le bassin côtier au sud.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
           "text": "Donne le nom et la longueur du plus long fleuve du Bénin.",
-          "question_type": "fill_blank",
+          "question_type": "short_answer",
           "correct_answer": "L'Ouémé, environ 510 km",
+          "hint": "Ce fleuve traverse le centre et le sud du Bénin, et un département porte son nom.",
           "explanation": "L'Ouémé est le plus long fleuve du Bénin avec une longueur d'environ 510 km.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
           "order": 1
         },
         {
           "sub_label": "c",
-          "text": "Sur la carte du Bénin, localise le bassin fluvial du plus long fleuve.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le bassin de l'Ouémé couvre le centre et le sud du Bénin",
-          "explanation": "Le bassin de l'Ouémé s'étend du centre au sud du Bénin, couvrant une grande partie du territoire national.",
-          "points": 2.22,
-          "depends_on_previous": false,
+          "text": "Réalise la carte du Bénin avec le bassin fluvial auquel appartient le plus long fleuve du Bénin.",
+          "question_type": "map",
+          "correct_answer": "Le bassin de l'Ouémé (bassin côtier) couvre le centre et le sud du Bénin",
+          "hint": "Le plus long fleuve du Bénin appartient au bassin côtier. Il traverse le centre et le sud du pays.",
+          "explanation": "Le bassin de l'Ouémé fait partie du bassin côtier et s'étend du centre au sud du Bénin, couvrant une grande partie du territoire national.",
+          "points": 2,
+          "depends_on_previous": true,
           "order": 2
         }
       ]

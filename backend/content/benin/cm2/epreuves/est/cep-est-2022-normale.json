@@ -5,120 +5,385 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Bio aide un maçon sur un chantier de construction. Sur le chantier, on utilise des machines simples comme la brouette et la poulie. À midi, Bio mange à la cantine du chantier.",
+  "context_text": "Pendant les vacances, Bio décide d'aider un maçon sur un chantier de construction. Sur ce chantier, il y a des ouvriers et une cantine pour les nourrir. Des machines simples comme la brouette et la poulie sont utilisées par les ouvriers. Curieux, Bio veut comprendre comment l'installation électrique des chambres est faite et le rôle des machines simples utilisées.",
   "items": [
     {
       "item_number": 1,
       "domain": "electricity",
-      "context_text": "Sur le chantier, l'électricien montre à Bio 2 circuits électriques : le Circuit 1 où les lampes sont montées en série, et le Circuit 2 où les lampes sont montées en dérivation.",
-      "points": 6.67,
+      "context_text": "L'électricien réalise les deux (02) circuits électriques que voici.",
+      "diagram_description": "Deux circuits électriques sont représentés. Le Circuit 1 montre trois lampes L1, L2 et L3 montées en série (branchées les unes à la suite des autres sur un seul chemin) avec un générateur (pile) et un interrupteur. Le Circuit 2 montre trois lampes L1, L2 et L3 montées en dérivation (chacune sur sa propre branche parallèle) avec un générateur (pile) et un interrupteur.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Comment sont montées les lampes dans le Circuit 1 et dans le Circuit 2 ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Circuit 1: les lampes sont montées en série (l'une après l'autre). Circuit 2: les lampes sont montées en dérivation (parallèle)",
-          "explanation": "En série, les lampes sont branchées les unes à la suite des autres sur un seul chemin. En dérivation, chaque lampe est branchée sur ses propres fils reliés au générateur.",
-          "points": 2.22,
+          "text": "Dis par écrit comment sont montées les lampes dans les circuits 1 et 2.",
+          "question_type": "short_answer",
+          "correct_answer": "Circuit 1 : les lampes sont montées en série (l'une après l'autre). Circuit 2 : les lampes sont montées en dérivation (parallèle).",
+          "hint": "Observe le trajet du courant : passe-t-il par un seul chemin ou par plusieurs chemins ?",
+          "explanation": "En série (Circuit 1), les lampes sont branchées les unes à la suite des autres sur un seul chemin. En dérivation (Circuit 2), chaque lampe est branchée sur ses propres fils reliés au générateur, formant plusieurs chemins parallèles.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "L'électricien choisit le Circuit 2 pour le chantier. Pourquoi ?",
-          "question_type": "fill_blank",
-          "correct_answer": "En dérivation, si une lampe grille, les autres continuent de fonctionner. Chaque lampe brille normalement",
-          "explanation": "Le montage en dérivation est préféré car chaque lampe fonctionne indépendamment. Si l'une tombe en panne, les autres restent allumées, et chaque lampe reçoit la même tension donc brille à son éclat normal.",
-          "points": 2.22,
+          "text": "L'électricien choisit le circuit 2 pour faire l'installation électrique dans les chambres. Explique à Bio les raisons de son choix.",
+          "question_type": "short_answer",
+          "correct_answer": "En dérivation (Circuit 2), si une lampe grille, les autres continuent de fonctionner. Chaque lampe brille normalement car elle reçoit la tension complète du générateur.",
+          "hint": "Que se passe-t-il quand une lampe tombe en panne dans chaque type de montage ?",
+          "explanation": "Le montage en dérivation est préféré car chaque lampe fonctionne indépendamment. Si l'une tombe en panne, les autres restent allumées, et chaque lampe reçoit la même tension donc brille à son éclat normal. C'est pourquoi on l'utilise dans les maisons.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite les éléments nécessaires pour constituer un circuit électrique simple.",
-          "question_type": "fill_blank",
-          "correct_answer": "Générateur (pile), fils conducteurs, interrupteur, récepteur (lampe)",
-          "explanation": "Un circuit électrique simple est composé d'un générateur (source de courant), de fils conducteurs (pour relier les éléments), d'un interrupteur (pour ouvrir ou fermer le circuit) et d'un récepteur (appareil qui utilise le courant).",
-          "points": 2.22,
+          "text": "Cite les différents éléments d'un circuit électrique.",
+          "question_type": "short_answer",
+          "correct_answer": "Un générateur (pile), des fils conducteurs, un interrupteur, un ou plusieurs récepteurs (lampes).",
+          "hint": "Pense à ce qu'il faut pour que le courant circule et allume une lampe.",
+          "explanation": "Un circuit électrique est composé d'un générateur (source de courant comme la pile), de fils conducteurs (pour relier les éléments), d'un interrupteur (pour ouvrir ou fermer le circuit) et d'un ou plusieurs récepteurs (appareils qui utilisent le courant, comme les lampes).",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01",
+        "EST-CM2-MELA-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "nutrition_health",
-      "context_text": "À midi, la cantine sert à Bio un repas composé de riz et de sauce à la viande.",
-      "points": 6.67,
+      "context_text": "À midi, Bio prend son repas à la cantine. On lui sert le menu suivant : riz + sauce à la viande.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Ce menu est-il équilibré ? Justifie ta réponse.",
-          "question_type": "fill_blank",
-          "correct_answer": "Non, ce menu n'est pas équilibré. Il manque des vitamines (fruits ou légumes) et des lipides",
-          "explanation": "Un menu équilibré doit contenir les quatre groupes d'aliments : glucides (riz), protides (viande), lipides (huile ou beurre) et vitamines (fruits ou légumes). Ce menu ne contient que des glucides et des protides.",
-          "points": 2.22,
+          "text": "Dis par écrit si ce menu est équilibré ou non, et justifie ta réponse.",
+          "question_type": "short_answer",
+          "correct_answer": "Non, ce menu n'est pas équilibré. Il contient des glucides (riz) et des protides (viande), mais il manque des lipides (huile, beurre) et des vitamines (fruits ou légumes).",
+          "hint": "Un menu équilibré doit contenir les quatre groupes d'aliments : glucides, protides, lipides et vitamines.",
+          "explanation": "Un menu équilibré doit contenir les quatre groupes d'aliments : glucides (riz), protides (viande), lipides (huile ou beurre) et vitamines (fruits ou légumes). Ce menu ne contient que des glucides et des protides, il lui manque des lipides et des vitamines.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Propose un menu équilibré pour Bio.",
-          "question_type": "fill_blank",
-          "correct_answer": "Riz + sauce de légumes à la viande + huile + orange",
-          "explanation": "Ce menu contient : riz (glucides), viande (protides), huile (lipides), légumes et orange (vitamines). Les quatre groupes alimentaires sont représentés.",
-          "points": 2.22,
+          "text": "Propose à Bio un menu équilibré.",
+          "question_type": "short_answer",
+          "correct_answer": "Riz + sauce de légumes à la viande + huile + orange (ou un autre fruit).",
+          "hint": "Ajoute au menu actuel les groupes d'aliments qui manquent.",
+          "explanation": "Ce menu contient : riz (glucides), viande (protides), huile (lipides), légumes et orange (vitamines). Les quatre groupes alimentaires sont représentés, ce qui en fait un menu équilibré.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Fais le croquis de l'appareil digestif en citant ses organes dans l'ordre.",
-          "question_type": "fill_blank",
-          "correct_answer": "Bouche, œsophage, estomac, intestin grêle, gros intestin, anus",
-          "explanation": "L'appareil digestif est un tube qui va de la bouche à l'anus. Les aliments passent successivement par : la bouche (mastication), l'œsophage (transport), l'estomac (brassage), l'intestin grêle (absorption), le gros intestin (absorption d'eau) et l'anus (évacuation).",
-          "points": 2.22,
+          "text": "Fais le croquis de l'appareil digestif avec ses différentes parties.",
+          "question_type": "diagram",
+          "correct_answer": "L'appareil digestif comprend dans l'ordre : la bouche, l'œsophage, l'estomac, l'intestin grêle, le gros intestin et l'anus.",
+          "hint": "L'appareil digestif est un long tube qui va de la bouche à l'anus. Pense aux organes que les aliments traversent dans l'ordre.",
+          "explanation": "L'appareil digestif est un tube qui va de la bouche à l'anus. Les aliments passent successivement par : la bouche (mastication), l'œsophage (transport vers l'estomac), l'estomac (brassage et digestion), l'intestin grêle (absorption des nutriments), le gros intestin (absorption de l'eau) et l'anus (évacuation des déchets).",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01",
+        "EST-CM2-TRAN-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "technology_prehistory",
-      "context_text": "Sur le chantier, les ouvriers utilisent des machines simples pour faciliter leur travail.",
-      "points": 6.67,
+      "context_text": "Des machines simples comme la brouette et la poulie sont utilisées par les ouvriers sur le chantier.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite 2 machines simples utilisées sur le chantier.",
-          "question_type": "fill_blank",
-          "correct_answer": "La brouette et la poulie",
-          "explanation": "La brouette (levier) et la poulie sont des machines simples couramment utilisées sur les chantiers de construction pour déplacer et soulever des charges lourdes.",
-          "points": 2.22,
+          "text": "Deux machines simples sont utilisées sur le chantier. Cite-les.",
+          "question_type": "short_answer",
+          "correct_answer": "La brouette et la poulie.",
+          "hint": "Relis le texte du support pour trouver les deux machines simples mentionnées.",
+          "explanation": "La brouette (levier inter-résistant) et la poulie sont les deux machines simples utilisées sur le chantier de construction pour déplacer et soulever des charges lourdes.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Explique le fonctionnement de la poulie pour monter du sable en hauteur.",
-          "question_type": "fill_blank",
-          "correct_answer": "La poulie est fixée en haut. On attache la charge (sable) à une corde passant sur la roue de la poulie. En tirant la corde vers le bas, la charge monte",
-          "explanation": "La poulie est une roue à gorge fixée en hauteur. Une corde passe dans la gorge. On accroche la charge d'un côté et on tire l'autre côté vers le bas. La poulie change la direction de la force : on tire vers le bas pour faire monter la charge.",
-          "points": 2.22,
+          "text": "Un apprenti se sert de la poulie pour faire monter du sable à l'étage. Explique à Bio le fonctionnement de la poulie.",
+          "question_type": "short_answer",
+          "correct_answer": "La poulie est fixée en haut. On attache la charge (seau de sable) à un bout de la corde qui passe sur la roue à gorge de la poulie. En tirant l'autre bout de la corde vers le bas, la charge monte.",
+          "hint": "La poulie change la direction de la force : on tire vers le bas pour faire monter la charge.",
+          "explanation": "La poulie est une roue à gorge fixée en hauteur. Une corde passe dans la gorge de la roue. On accroche la charge (seau de sable) d'un côté et on tire l'autre côté vers le bas. La poulie change la direction de la force : on tire vers le bas pour faire monter la charge à l'étage.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite 2 types d'énergie utilisés sur le chantier.",
-          "question_type": "fill_blank",
-          "correct_answer": "Énergie musculaire (des ouvriers) et énergie électrique (pour les machines)",
-          "explanation": "Sur un chantier, les ouvriers utilisent leur énergie musculaire pour les travaux manuels, et l'énergie électrique alimente les machines et outils électriques.",
-          "points": 2.22,
+          "text": "Les ouvriers utilisent différents types d'énergie sur le chantier. Cite deux types d'énergie.",
+          "question_type": "short_answer",
+          "correct_answer": "Énergie musculaire (des ouvriers) et énergie électrique (pour les machines).",
+          "hint": "Pense à la force des ouvriers et aux machines qu'ils branchent.",
+          "explanation": "Sur un chantier, les ouvriers utilisent leur énergie musculaire pour les travaux manuels (porter, pousser la brouette), et l'énergie électrique alimente les machines et outils électriques (perceuse, bétonnière).",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01",
+        "EST-CM2-DIGE-01"
       ]
     }
   ]

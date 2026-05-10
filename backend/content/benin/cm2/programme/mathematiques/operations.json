@@ -1,2288 +1,1456 @@
 {
-  "schema_version": "1.4.0",
-  "subject": "Mathématiques",
-  "grade": "CM2",
-  "country": "BENIN",
-  "domain": {
-    "domain_id": "MATH-CM2-OPS",
-    "domain_name": "Opérations"
+  "schema_version": "2.0",
+  "grade": {
+    "name": "CM2",
+    "slug": "cm2",
+    "description": "CM2 — programme BENIN"
   },
-  "standards": {
-    "ilma_levels": [
-      "Découverte",
-      "Entraînement",
-      "Maîtrise",
-      "Expert"
-    ],
-    "exercise_types_vocab": [
-      "Choix multiples",
-      "Réponse courte",
-      "Réponse numérique",
-      "Glisser-déposer",
-      "Construction",
-      "Tracer",
-      "Classement",
-      "Compléter",
-      "Problème contextualisé",
-      "Correction d'erreur",
-      "Étapes guidées",
-      "Flash cards",
-      "Calcul chronométré",
-      "Vrai/Faux",
-      "Justification"
-    ],
-    "bloom_taxonomy_levels": [
-      "Connaître",
-      "Comprendre",
-      "Appliquer",
-      "Analyser",
-      "Évaluer",
-      "Créer"
-    ],
-    "exercise_type_semantics": {
-      "Tracer": "Action centrée sur le tracé (droite graduée, segment, repérage), précision graphique.",
-      "Construction": "Construction géométrique guidée (règle/compas) ou assemblage de figures/objets."
-    }
-  },
-  "inheritance_rules": {
-    "micro_skill_overrides_parent_fields": true,
-    "fields_inheritable_from_skill": [
-      "estimated_time_minutes",
-      "difficulty_index",
-      "bloom_taxonomy_level",
-      "mastery_threshold",
-      "cep_frequency",
-      "adaptive_hints",
-      "local_context_examples",
-      "accessibility_tags",
-      "recommended_exercise_types"
-    ]
-  },
-  "cep_frequency_rules": {
-    "scale": {
-      "null": "Non évalué / difficile à quantifier",
-      "10-30": "Occasionnel",
-      "40-60": "Fréquent",
-      "70-90": "Très fréquent",
-      "100": "Systématique"
-    },
-    "aggregation_policy_for_skill": "max_of_micro_skills_if_defined_else_null",
-    "note": "Si au moins 1 micro-skill a cep_frequency défini, alors le skill peut dériver sa valeur via la policy."
-  },
-  "skills": [
+  "subjects": [
     {
-      "skill_id": "OPS-CALCUL-MENTAL-TABLES",
-      "skill_name": "Calcul mental (tables, compléments, ×/÷10-100-1000)",
-      "micro_skill_ids_ordered": [
-        "OPS-CALCUL-MENTAL-TABLES::MS01",
-        "OPS-CALCUL-MENTAL-TABLES::MS02",
-        "OPS-CALCUL-MENTAL-TABLES::MS04",
-        "OPS-CALCUL-MENTAL-TABLES::MS03",
-        "OPS-CALCUL-MENTAL-TABLES::MS05"
-      ],
-      "prerequisites_skill_ids": [],
-      "exercise_types": [
-        "Réponse numérique",
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [
-        "flash",
-        "timed"
-      ],
-      "common_mistakes": [
-        "Tables mal mémorisées",
-        "Erreurs de compléments",
-        "Confusion ×/÷10-100-1000",
-        "Vitesse au détriment de la précision"
-      ],
-      "mastery_threshold": "95% temps moyen <4s",
-      "estimated_time_minutes": 56,
-      "difficulty_index": 4,
-      "bloom_taxonomy_level": "Appliquer",
-      "cep_frequency": 70,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Achat au marché (lots, paquets)",
-        "Monnaie F CFA (compléments à 100/1000)"
-      ],
-      "accessibility_tags": [
-        "Audio-support",
-        "Police-grande"
-      ],
-      "timed_constraint": {
-        "applies_when_modifier_includes": "timed",
-        "default_time_limit_seconds": 4,
-        "measurement": "average_per_item"
-      }
-    },
-    {
-      "skill_id": "OPS-ESTIMER-VERIFIER",
-      "skill_name": "Estimer et vérifier la vraisemblance d’un résultat",
-      "micro_skill_ids_ordered": [
-        "OPS-ESTIMER-VERIFIER::MS01",
-        "OPS-ESTIMER-VERIFIER::MS02",
-        "OPS-ESTIMER-VERIFIER::MS03",
-        "OPS-ESTIMER-VERIFIER::MS04",
-        "OPS-ESTIMER-VERIFIER::MS05"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-CALCUL-MENTAL-TABLES"
-      ],
-      "exercise_types": [
-        "Correction d'erreur",
-        "Étapes guidées",
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "common_mistakes": [
-        "Confondre estimation et exact",
-        "Arrondis mal choisis",
-        "Aucune vérification",
-        "Résultat absurde non détecté"
-      ],
-      "mastery_threshold": "90% sur 8 exercices",
-      "estimated_time_minutes": 67,
-      "difficulty_index": 5,
-      "bloom_taxonomy_level": "Évaluer",
-      "cep_frequency": 80,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Rendre la monnaie",
-        "Estimation de dépenses/quantités"
-      ],
-      "accessibility_tags": [
-        "Audio-support",
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-      "skill_name": "Techniques opératoires (entiers) : +, −, ×, ÷ (reste)",
-      "micro_skill_ids_ordered": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS02",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS05",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS06"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-CALCUL-MENTAL-TABLES"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Compléter",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Retenues/emprunts oubliés",
-        "Mauvais alignement des chiffres",
-        "Division : quotient mal placé",
-        "Gestion du zéro et du reste"
-      ],
-      "mastery_threshold": "90% sur 12 exercices",
-      "estimated_time_minutes": 96,
-      "difficulty_index": 7,
-      "bloom_taxonomy_level": "Analyser",
-      "cep_frequency": 85,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Ventes/recettes",
-        "Partages en parts égales"
-      ],
-      "accessibility_tags": [
-        "Police-grande",
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "skill_id": "OPS-DECIMAUX-MULTIPLIER",
-      "skill_name": "Multiplier des nombres décimaux",
-      "micro_skill_ids_ordered": [
-        "OPS-DECIMAUX-MULTIPLIER::MS01",
-        "OPS-DECIMAUX-MULTIPLIER::MS02",
-        "OPS-DECIMAUX-MULTIPLIER::MS03",
-        "OPS-DECIMAUX-MULTIPLIER::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-        "NUM-DEC-ECRIRE-REP",
-        "NUM-DEC-COMP-ORD"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Virgule mal placée",
-        "Décimales mal comptées",
-        "Aucune estimation préalable"
-      ],
-      "mastery_threshold": "85% sur 10 exercices",
-      "estimated_time_minutes": 60,
-      "difficulty_index": 6,
-      "bloom_taxonomy_level": "Appliquer",
-      "cep_frequency": 85,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Prix au kg/L (marché)"
-      ],
-      "accessibility_tags": [
-        "Police-grande"
-      ]
-    },
-    {
-      "skill_id": "OPS-DECIMAUX-DIVISER",
-      "skill_name": "Diviser des nombres décimaux",
-      "micro_skill_ids_ordered": [
-        "OPS-DECIMAUX-DIVISER::MS01",
-        "OPS-DECIMAUX-DIVISER::MS02",
-        "OPS-DECIMAUX-DIVISER::MS03",
-        "OPS-DECIMAUX-DIVISER::MS04",
-        "OPS-DECIMAUX-DIVISER::MS05"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-        "NUM-DEC-ECRIRE-REP",
-        "OPS-ESTIMER-VERIFIER"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Virgule mal gérée",
-        "Arrêt prématuré",
-        "Exact vs approché confondu"
-      ],
-      "mastery_threshold": "80% sur 8 exercices",
-      "estimated_time_minutes": 74,
-      "difficulty_index": 7,
-      "bloom_taxonomy_level": "Appliquer",
-      "cep_frequency": 60,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Partage d’une quantité (L, kg)"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "skill_id": "OPS-FRAC-ADD-SUB-EQDEN",
-      "skill_name": "Somme/différence de fractions de même dénominateur",
-      "micro_skill_ids_ordered": [
-        "OPS-FRAC-ADD-SUB-EQDEN::MS01",
-        "OPS-FRAC-ADD-SUB-EQDEN::MS02",
-        "OPS-FRAC-ADD-SUB-EQDEN::MS03",
-        "OPS-FRAC-ADD-SUB-EQDEN::MS04",
-        "OPS-FRAC-ADD-SUB-EQDEN::MS05"
-      ],
-      "prerequisites_skill_ids": [
-        "NUM-FRAC-REP"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Additionner les dénominateurs",
-        "Simplification oubliée",
-        "Résultat > 1 mal interprété"
-      ],
-      "mastery_threshold": "90% sur 10 exercices",
-      "estimated_time_minutes": 68,
-      "difficulty_index": 6,
-      "bloom_taxonomy_level": "Appliquer",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Partages (boissons, parts)"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "skill_id": "OPS-FRAC-ADD-SUB-DIFDEN",
-      "skill_name": "Somme/différence de fractions de dénominateurs différents",
-      "micro_skill_ids_ordered": [
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS01",
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS02",
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS03",
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS04",
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS05"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-FRAC-ADD-SUB-EQDEN"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "common_mistakes": [
-        "PPCM faux",
-        "Numérateurs non ajustés",
-        "Simplification oubliée"
-      ],
-      "mastery_threshold": "80% sur 8 exercices",
-      "estimated_time_minutes": 78,
-      "difficulty_index": 7,
-      "bloom_taxonomy_level": "Appliquer",
-      "cep_frequency": 40,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Recettes/mesures fractionnées"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "skill_id": "OPS-FRAC-X-ENT",
-      "skill_name": "Produit d’une fraction par un entier",
-      "micro_skill_ids_ordered": [
-        "OPS-FRAC-X-ENT::MS01",
-        "OPS-FRAC-X-ENT::MS02",
-        "OPS-FRAC-X-ENT::MS03",
-        "OPS-FRAC-X-ENT::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-FRAC-ADD-SUB-EQDEN"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Multiplier aussi le dénominateur",
-        "Perte du sens (répétition de parts)"
-      ],
-      "mastery_threshold": "85% sur 8 exercices",
-      "estimated_time_minutes": 54,
-      "difficulty_index": 6,
-      "bloom_taxonomy_level": "Appliquer",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "2 × 3/4 L de boisson"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "skill_id": "OPS-FRAC-PART-QUANT",
-      "skill_name": "Prendre une fraction d’un nombre (fraction d’une quantité)",
-      "micro_skill_ids_ordered": [
-        "OPS-FRAC-PART-QUANT::MS01",
-        "OPS-FRAC-PART-QUANT::MS02",
-        "OPS-FRAC-PART-QUANT::MS03",
-        "OPS-FRAC-PART-QUANT::MS04",
-        "OPS-FRAC-PART-QUANT::MS05"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-FRAC-X-ENT",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS"
-      ],
-      "exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Inverser multiplier/diviser",
-        "Unité oubliée",
-        "Mauvaise identification du tout"
-      ],
-      "mastery_threshold": "85% sur 8 exercices",
-      "estimated_time_minutes": 71,
-      "difficulty_index": 7,
-      "bloom_taxonomy_level": "Appliquer",
-      "cep_frequency": 60,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "1/5 d’une somme en F CFA",
-        "3/8 d’un lot de mangues"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "skill_id": "OPS-FRAC-RETROUVER-TOUT",
-      "skill_name": "Déterminer un nombre dont on connaît une fraction (retrouver le tout)",
-      "micro_skill_ids_ordered": [
-        "OPS-FRAC-RETROUVER-TOUT::MS01",
-        "OPS-FRAC-RETROUVER-TOUT::MS02",
-        "OPS-FRAC-RETROUVER-TOUT::MS03",
-        "OPS-FRAC-RETROUVER-TOUT::MS04",
-        "OPS-FRAC-RETROUVER-TOUT::MS05"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-FRAC-PART-QUANT",
-        "OPS-DECIMAUX-DIVISER"
-      ],
-      "exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées",
-        "Réponse numérique",
-        "Réponse courte",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "common_mistakes": [
-        "Multiplier au lieu de diviser",
-        "Part/tout confondus",
-        "Contrôle final absent"
-      ],
-      "mastery_threshold": "75% sur 8 exercices",
-      "estimated_time_minutes": 82,
-      "difficulty_index": 8,
-      "bloom_taxonomy_level": "Analyser",
-      "cep_frequency": 55,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Si 3/5 = 3000 F CFA, combien vaut le tout ?"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "skill_id": "OPS-PB-MULTI",
-      "skill_name": "Résoudre des problèmes à une ou plusieurs étapes",
-      "micro_skill_ids_ordered": [
-        "OPS-PB-MULTI::MS01",
-        "OPS-PB-MULTI::MS02",
-        "OPS-PB-MULTI::MS03",
-        "OPS-PB-MULTI::MS04",
-        "OPS-PB-MULTI::MS05",
-        "OPS-PB-MULTI::MS06"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-        "OPS-ESTIMER-VERIFIER"
-      ],
-      "exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées",
-        "Réponse courte",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "common_mistakes": [
-        "Étapes sautées",
-        "Opération mal choisie",
-        "Réponse sans unité",
-        "Vérification oubliée"
-      ],
-      "mastery_threshold": "70% sur 4 problèmes complexes",
-      "estimated_time_minutes": 82,
-      "difficulty_index": 7,
-      "bloom_taxonomy_level": "Créer",
-      "cep_frequency": 90,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Transport (taxi-moto), achats au marché, distances"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    }
-  ],
-  "micro_skills": [
-    {
-      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS01",
-      "parent_skill_id": "OPS-CALCUL-MENTAL-TABLES",
-      "micro_skill_name": "Rappeler les tables de multiplication (1 à 12) rapidement et correctement",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "flash",
-        "timed"
-      ],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "95% temps moyen <4s",
-      "cep_frequency": 70,
-      "adaptive_hints": 1,
-      "local_context_examples": [
-        "Lots de 12, comptages par paquets"
-      ],
-      "accessibility_tags": [
-        "Audio-support",
-        "Police-grande"
-      ],
-      "timed_constraint": {
-        "time_limit_seconds": 4,
-        "measurement": "average_per_item"
-      }
-    },
-    {
-      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS02",
-      "parent_skill_id": "OPS-CALCUL-MENTAL-TABLES",
-      "micro_skill_name": "Utiliser doubles et moitiés (×2, ÷2) pour accélérer un calcul mental",
-      "prerequisites_micro_skill_ids": [
-        "OPS-CALCUL-MENTAL-TABLES::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "timed"
-      ],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 24 questions",
-      "cep_frequency": 60,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Partager une somme en 2 parts"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ],
-      "timed_constraint": {
-        "time_limit_seconds": 6,
-        "measurement": "average_per_item"
-      }
-    },
-    {
-      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS03",
-      "parent_skill_id": "OPS-CALCUL-MENTAL-TABLES",
-      "micro_skill_name": "Utiliser quadruples et quarts (×4, ÷4) en s’appuyant sur doubles/moitiés",
-      "prerequisites_micro_skill_ids": [
-        "OPS-CALCUL-MENTAL-TABLES::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "timed"
-      ],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 20 questions",
-      "cep_frequency": 40,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Quart de 200 F CFA"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ],
-      "timed_constraint": {
-        "time_limit_seconds": 7,
-        "measurement": "average_per_item"
-      }
-    },
-    {
-      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS04",
-      "parent_skill_id": "OPS-CALCUL-MENTAL-TABLES",
-      "micro_skill_name": "Trouver les compléments à 10, 100, 1000 (compensation)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [
-        "flash",
-        "timed"
-      ],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 24 questions",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Atteindre 1000 F CFA pour payer"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ],
-      "timed_constraint": {
-        "time_limit_seconds": 5,
-        "measurement": "average_per_item"
-      }
-    },
-    {
-      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
-      "parent_skill_id": "OPS-CALCUL-MENTAL-TABLES",
-      "micro_skill_name": "Multiplier/diviser par 10, 100, 1000 (décalage de rang/virgule)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-CALCUL-MENTAL-TABLES::MS04"
-      ],
-      "external_prerequisites": [
+      "name": "Mathématiques",
+      "slug": "mathematiques",
+      "icon": "calculator",
+      "color": "#1E5AA8",
+      "order": 1,
+      "domains": [
         {
-          "skill_id": "NUM-DEC-ECRIRE-REP",
-          "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
-          "why": "Valeur de position nécessaire"
+          "name": "Opérations",
+          "slug": "operations",
+          "order": 1,
+          "skills": [
+            {
+              "external_id": "OPS-CALCUL-MENTAL-TABLES",
+              "name": "Calcul mental (tables, compléments, ×/÷10-100-1000)",
+              "order": 1,
+              "cep_frequency": 70,
+              "prerequisites": [],
+              "common_mistakes": [
+                "Tables mal mémorisées",
+                "Erreurs de compléments",
+                "Confusion ×/÷10-100-1000",
+                "Vitesse au détriment de la précision"
+              ],
+              "exercise_types": [
+                "Réponse numérique",
+                "Choix multiples",
+                "Compléter"
+              ],
+              "mastery_threshold": "95% temps moyen <4s",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-CALCUL-MENTAL-TABLES::MS01",
+                  "name": "Rappeler les tables de multiplication (1 à 12) rapidement et correctement",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "95% temps moyen <4s",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-CALCUL-MENTAL-TABLES::MS02",
+                  "name": "Utiliser doubles et moitiés (×2, ÷2) pour accélérer un calcul mental",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 24 questions",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "OPS-CALCUL-MENTAL-TABLES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-CALCUL-MENTAL-TABLES::MS04",
+                  "name": "Trouver les compléments à 10, 100, 1000 (compensation)",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 24 questions",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-CALCUL-MENTAL-TABLES::MS03",
+                  "name": "Utiliser quadruples et quarts (×4, ÷4) en s’appuyant sur doubles/moitiés",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 20 questions",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "OPS-CALCUL-MENTAL-TABLES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
+                  "name": "Multiplier/diviser par 10, 100, 1000 (décalage de rang/virgule)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 16 questions",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "OPS-CALCUL-MENTAL-TABLES::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-DEC-ECRIRE-REP",
+                      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
+                      "why": "Valeur de position nécessaire"
+                    }
+                  ],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-ESTIMER-VERIFIER",
+              "name": "Estimer et vérifier la vraisemblance d’un résultat",
+              "order": 2,
+              "cep_frequency": 80,
+              "prerequisites": [
+                "OPS-CALCUL-MENTAL-TABLES"
+              ],
+              "common_mistakes": [
+                "Confondre estimation et exact",
+                "Arrondis mal choisis",
+                "Aucune vérification",
+                "Résultat absurde non détecté"
+              ],
+              "exercise_types": [
+                "Correction d'erreur",
+                "Étapes guidées",
+                "Choix multiples",
+                "Réponse courte"
+              ],
+              "mastery_threshold": "90% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-ESTIMER-VERIFIER::MS01",
+                  "name": "Arrondir un entier (dizaine/centaine/millier) pour estimer",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-ENTIERS-0-1B",
+                      "micro_skill_id": "NUM-ENTIERS-0-1B::MS01",
+                      "why": "Rangs/classes"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-ESTIMER-VERIFIER::MS02",
+                  "name": "Arrondir un décimal pour prévoir un résultat (unité/dixième/centième)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [
+                    "OPS-ESTIMER-VERIFIER::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Choix multiples",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-DEC-ECRIRE-REP",
+                      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS06",
+                      "why": "Arrondi des décimaux"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-ESTIMER-VERIFIER::MS03",
+                  "name": "Donner un ordre de grandeur avant le calcul exact",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "OPS-ESTIMER-VERIFIER::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse courte",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-ESTIMER-VERIFIER::MS04",
+                  "name": "Vérifier avec l’opération inverse (↔) après un calcul",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 15,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [
+                    "OPS-ESTIMER-VERIFIER::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Correction d'erreur",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-ESTIMER-VERIFIER::MS05",
+                  "name": "Détecter un résultat absurde et corriger la démarche",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [
+                    "OPS-ESTIMER-VERIFIER::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Réponse courte",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+              "name": "Techniques opératoires (entiers) : +, −, ×, ÷ (reste)",
+              "order": 3,
+              "cep_frequency": 85,
+              "prerequisites": [
+                "OPS-CALCUL-MENTAL-TABLES"
+              ],
+              "common_mistakes": [
+                "Retenues/emprunts oubliés",
+                "Mauvais alignement des chiffres",
+                "Division : quotient mal placé",
+                "Gestion du zéro et du reste"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Compléter",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "90% sur 12 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
+                  "name": "Poser et effectuer une addition d’entiers avec retenues",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 10 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-ENTIERS-0-1B",
+                      "micro_skill_id": "NUM-ENTIERS-0-1B::MS01",
+                      "why": "Comprendre les rangs/alignements"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS02",
+                  "name": "Poser et effectuer une soustraction d’entiers avec emprunts",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 10 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
+                  "name": "Poser et effectuer une multiplication d’entiers (avec retenues)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 18,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 exercices",
+                  "cep_frequency": 85,
+                  "prerequisites": [
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
+                  "name": "Effectuer une division d’entiers par un chiffre (avec reste)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 18,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS05",
+                  "name": "Effectuer une division d’entiers par un nombre à 2 chiffres (avec reste)",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                },
+                {
+                  "external_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS06",
+                  "name": "Identifier et corriger les erreurs courantes de pose (+, −, ×, ÷)",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 10 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS02",
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
+                    "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS05"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 6
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-DECIMAUX-MULTIPLIER",
+              "name": "Multiplier des nombres décimaux",
+              "order": 4,
+              "cep_frequency": 85,
+              "prerequisites": [
+                "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                "NUM-DEC-ECRIRE-REP",
+                "NUM-DEC-COMP-ORD"
+              ],
+              "common_mistakes": [
+                "Virgule mal placée",
+                "Décimales mal comptées",
+                "Aucune estimation préalable"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Correction d'erreur",
+                "Problème contextualisé"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-DECIMAUX-MULTIPLIER::MS01",
+                  "name": "Multiplier en ignorant temporairement la virgule (produit d’entiers)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
+                      "why": "Technique de multiplication posée"
+                    },
+                    {
+                      "skill_id": "NUM-DEC-ECRIRE-REP",
+                      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
+                      "why": "Comprendre la valeur de position"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-DECIMAUX-MULTIPLIER::MS02",
+                  "name": "Compter le nombre total de décimales dans les facteurs",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 10 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "OPS-DECIMAUX-MULTIPLIER::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-DEC-ECRIRE-REP",
+                      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
+                      "why": "Rang des décimales"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
+                  "name": "Placer correctement la virgule dans le produit final",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 10 exercices",
+                  "cep_frequency": 85,
+                  "prerequisites": [
+                    "OPS-DECIMAUX-MULTIPLIER::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-DEC-COMP-ORD",
+                      "micro_skill_id": "NUM-DEC-COMP-ORD::MS01",
+                      "why": "Vérifier la cohérence de grandeur"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-DECIMAUX-MULTIPLIER::MS04",
+                  "name": "Vérifier le résultat par estimation (ordre de grandeur)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 18,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [
+                    "OPS-DECIMAUX-MULTIPLIER::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse courte",
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS03",
+                      "why": "Ordre de grandeur"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-DECIMAUX-DIVISER",
+              "name": "Diviser des nombres décimaux",
+              "order": 5,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                "NUM-DEC-ECRIRE-REP",
+                "OPS-ESTIMER-VERIFIER"
+              ],
+              "common_mistakes": [
+                "Virgule mal gérée",
+                "Arrêt prématuré",
+                "Exact vs approché confondu"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Correction d'erreur",
+                "Problème contextualisé"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-DECIMAUX-DIVISER::MS01",
+                  "name": "Diviser un décimal par un entier (division posée) et placer la virgule",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
+                      "why": "Division posée"
+                    },
+                    {
+                      "skill_id": "NUM-DEC-ECRIRE-REP",
+                      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
+                      "why": "Rang de la virgule"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-DECIMAUX-DIVISER::MS02",
+                  "name": "Prolonger une division en ajoutant des zéros (quotient décimal)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "OPS-DECIMAUX-DIVISER::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-DEC-ECRIRE-REP",
+                      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
+                      "why": "Valeur des zéros en décimaux"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-DECIMAUX-DIVISER::MS03",
+                  "name": "Comprendre l’égalité des quotients (×10/÷10 sur dividende et diviseur)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "OPS-DECIMAUX-DIVISER::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-DECIMAUX-DIVISER::MS04",
+                  "name": "Distinguer quotient exact et quotient approché (arrondi du quotient)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "OPS-DECIMAUX-DIVISER::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Choix multiples",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-DEC-ECRIRE-REP",
+                      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS06",
+                      "why": "Arrondi du résultat"
+                    }
+                  ],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-DECIMAUX-DIVISER::MS05",
+                  "name": "Contrôler une division décimale par multiplication inverse et estimation",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "OPS-DECIMAUX-DIVISER::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse courte",
+                    "Étapes guidées",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS04",
+                      "why": "Contrôle par opération inverse"
+                    }
+                  ],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-FRAC-ADD-SUB-EQDEN",
+              "name": "Somme/différence de fractions de même dénominateur",
+              "order": 6,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "NUM-FRAC-REP"
+              ],
+              "common_mistakes": [
+                "Additionner les dénominateurs",
+                "Simplification oubliée",
+                "Résultat > 1 mal interprété"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Correction d'erreur",
+                "Problème contextualisé"
+              ],
+              "mastery_threshold": "90% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS01",
+                  "name": "Additionner des fractions de même dénominateur (sens + règle)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 10 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-FRAC-REP",
+                      "micro_skill_id": "NUM-FRAC-REP::MS01",
+                      "why": "Sens de fraction"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS02",
+                  "name": "Soustraire des fractions de même dénominateur",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 10 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "OPS-FRAC-ADD-SUB-EQDEN::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS03",
+                  "name": "Passer une fraction impropre en nombre mixte (si demandé)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "OPS-FRAC-ADD-SUB-EQDEN::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS04",
+                  "name": "Simplifier une fraction résultat (si possible)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "OPS-FRAC-ADD-SUB-EQDEN::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Compléter",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-EQDEN::MS05",
+                  "name": "Repérer et corriger l’erreur « additionner les dénominateurs »",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "OPS-FRAC-ADD-SUB-EQDEN::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-FRAC-ADD-SUB-DIFDEN",
+              "name": "Somme/différence de fractions de dénominateurs différents",
+              "order": 7,
+              "cep_frequency": 40,
+              "prerequisites": [
+                "OPS-FRAC-ADD-SUB-EQDEN"
+              ],
+              "common_mistakes": [
+                "PPCM faux",
+                "Numérateurs non ajustés",
+                "Simplification oubliée"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Correction d'erreur",
+                "Problème contextualisé"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS01",
+                  "name": "Trouver un dénominateur commun simple (multiples évidents)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-FRAC-REP",
+                      "micro_skill_id": "NUM-FRAC-REP::MS01",
+                      "why": "Sens de fraction"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS02",
+                  "name": "Réduire des fractions au même dénominateur",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "OPS-FRAC-ADD-SUB-DIFDEN::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS03",
+                  "name": "Additionner des fractions après réduction au même dénominateur",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "OPS-FRAC-ADD-SUB-DIFDEN::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS04",
+                  "name": "Soustraire des fractions après réduction au même dénominateur",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "OPS-FRAC-ADD-SUB-DIFDEN::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS05",
+                  "name": "Vérifier/justifier la réduction au même dénominateur (erreurs typiques)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 18,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "OPS-FRAC-ADD-SUB-DIFDEN::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Réponse courte",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-FRAC-X-ENT",
+              "name": "Produit d’une fraction par un entier",
+              "order": 8,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "OPS-FRAC-ADD-SUB-EQDEN"
+              ],
+              "common_mistakes": [
+                "Multiplier aussi le dénominateur",
+                "Perte du sens (répétition de parts)"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Correction d'erreur",
+                "Problème contextualisé"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-FRAC-X-ENT::MS01",
+                  "name": "Interpréter fraction × entier comme addition répétée de la fraction",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-FRAC-REP",
+                      "micro_skill_id": "NUM-FRAC-REP::MS01",
+                      "why": "Sens de fraction"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-FRAC-X-ENT::MS02",
+                  "name": "Calculer fraction × entier (numérateur × entier, dénominateur inchangé)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "OPS-FRAC-X-ENT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-FRAC-X-ENT::MS03",
+                  "name": "Transformer le résultat impropre en mixte (si demandé) et simplifier",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "OPS-FRAC-X-ENT::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-FRAC-X-ENT::MS04",
+                  "name": "Corriger l’erreur « multiplier aussi le dénominateur »",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "OPS-FRAC-X-ENT::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-FRAC-PART-QUANT",
+              "name": "Prendre une fraction d’un nombre (fraction d’une quantité)",
+              "order": 9,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "OPS-FRAC-X-ENT",
+                "OPS-TECHNIQUES-OPERATOIRES-ENTIERS"
+              ],
+              "common_mistakes": [
+                "Inverser multiplier/diviser",
+                "Unité oubliée",
+                "Mauvaise identification du tout"
+              ],
+              "exercise_types": [
+                "Problème contextualisé",
+                "Étapes guidées",
+                "Réponse numérique",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-FRAC-PART-QUANT::MS01",
+                  "name": "Identifier le « tout » (quantité de référence) et la fraction demandée",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-FRAC-REP",
+                      "micro_skill_id": "NUM-FRAC-REP::MS01",
+                      "why": "Comprendre part/tout"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-FRAC-PART-QUANT::MS02",
+                  "name": "Calculer 1/n d’une quantité (diviser par le dénominateur)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "OPS-FRAC-PART-QUANT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Problème contextualisé"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
+                      "why": "Division avec reste"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-FRAC-PART-QUANT::MS03",
+                  "name": "Calculer k/n d’une quantité (multiplier (1/n) par k)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "OPS-FRAC-PART-QUANT::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Problème contextualisé"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-FRAC-X-ENT",
+                      "micro_skill_id": "OPS-FRAC-X-ENT::MS02",
+                      "why": "Fraction × entier"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-FRAC-PART-QUANT::MS04",
+                  "name": "Choisir entre calcul fractionnaire et calcul décimal (selon données du problème)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 13,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "OPS-FRAC-PART-QUANT::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-DEC-COMP-ORD",
+                      "micro_skill_id": "NUM-DEC-COMP-ORD::MS01",
+                      "why": "Comparer/valider des valeurs"
+                    }
+                  ],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-FRAC-PART-QUANT::MS05",
+                  "name": "Corriger les erreurs (inversion multiplier/diviser, unité oubliée)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "OPS-FRAC-PART-QUANT::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Réponse courte",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-FRAC-RETROUVER-TOUT",
+              "name": "Déterminer un nombre dont on connaît une fraction (retrouver le tout)",
+              "order": 10,
+              "cep_frequency": 55,
+              "prerequisites": [
+                "OPS-FRAC-PART-QUANT",
+                "OPS-DECIMAUX-DIVISER"
+              ],
+              "common_mistakes": [
+                "Multiplier au lieu de diviser",
+                "Part/tout confondus",
+                "Contrôle final absent"
+              ],
+              "exercise_types": [
+                "Problème contextualisé",
+                "Étapes guidées",
+                "Réponse numérique",
+                "Réponse courte",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "75% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-FRAC-RETROUVER-TOUT::MS01",
+                  "name": "Identifier la fraction connue (k/n) et la valeur correspondante",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "NUM-FRAC-REP",
+                      "micro_skill_id": "NUM-FRAC-REP::MS01",
+                      "why": "Part/tout"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-FRAC-RETROUVER-TOUT::MS02",
+                  "name": "Retrouver 1/n (la part unitaire) en divisant la valeur connue par k",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "OPS-FRAC-RETROUVER-TOUT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-DECIMAUX-DIVISER",
+                      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
+                      "why": "Division (souvent non entière)"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-FRAC-RETROUVER-TOUT::MS03",
+                  "name": "Retrouver le tout en multipliant la part unitaire (1/n) par n",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 18,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "OPS-FRAC-RETROUVER-TOUT::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique",
+                    "Problème contextualisé"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
+                      "why": "Multiplication"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-FRAC-RETROUVER-TOUT::MS04",
+                  "name": "Vérifier en reprenant la fraction du résultat obtenu (contrôle)",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "OPS-FRAC-RETROUVER-TOUT::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse courte",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-FRAC-PART-QUANT",
+                      "micro_skill_id": "OPS-FRAC-PART-QUANT::MS03",
+                      "why": "Reprendre k/n du tout"
+                    }
+                  ],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-FRAC-RETROUVER-TOUT::MS05",
+                  "name": "Corriger les erreurs typiques (diviser par n au lieu de k, confusion part/tout)",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "OPS-FRAC-RETROUVER-TOUT::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "OPS-PB-MULTI",
+              "name": "Résoudre des problèmes à une ou plusieurs étapes",
+              "order": 11,
+              "cep_frequency": 90,
+              "prerequisites": [
+                "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                "OPS-ESTIMER-VERIFIER"
+              ],
+              "common_mistakes": [
+                "Étapes sautées",
+                "Opération mal choisie",
+                "Réponse sans unité",
+                "Vérification oubliée"
+              ],
+              "exercise_types": [
+                "Problème contextualisé",
+                "Étapes guidées",
+                "Réponse courte",
+                "Réponse numérique"
+              ],
+              "mastery_threshold": "70% sur 4 problèmes complexes",
+              "micro_skills": [
+                {
+                  "external_id": "OPS-PB-MULTI::MS01",
+                  "name": "Comprendre l’énoncé : repérer données, question et unités",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 90,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Réponse courte",
+                    "Choix multiples",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "OPS-PB-MULTI::MS02",
+                  "name": "Organiser les informations (schéma, tableau, étapes)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [
+                    "OPS-PB-MULTI::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Construction",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "OPS-PB-MULTI::MS03",
+                  "name": "Choisir les opérations pertinentes (1 à 3 opérations)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 90,
+                  "prerequisites": [
+                    "OPS-PB-MULTI::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS03",
+                      "why": "Ordre de grandeur aide au choix"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "OPS-PB-MULTI::MS04",
+                  "name": "Effectuer les calculs nécessaires avec une stratégie fiable",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "75% sur 6 problèmes",
+                  "cep_frequency": 90,
+                  "prerequisites": [
+                    "OPS-PB-MULTI::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
+                      "why": "Calcul posé"
+                    }
+                  ],
+                  "order": 4
+                },
+                {
+                  "external_id": "OPS-PB-MULTI::MS05",
+                  "name": "Rédiger une réponse complète (phrase + unité + sens)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [
+                    "OPS-PB-MULTI::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse courte",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                },
+                {
+                  "external_id": "OPS-PB-MULTI::MS06",
+                  "name": "Vérifier la solution (vraisemblance + opération inverse si possible)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 75,
+                  "prerequisites": [
+                    "OPS-PB-MULTI::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Réponse courte",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS04",
+                      "why": "Contrôle inverse"
+                    }
+                  ],
+                  "order": 6
+                }
+              ]
+            }
+          ]
         }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "timed"
-      ],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 16 questions",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Conversions kg↔g, L↔mL"
-      ],
-      "accessibility_tags": [
-        "Police-grande"
-      ],
-      "timed_constraint": {
-        "time_limit_seconds": 7,
-        "measurement": "average_per_item"
-      }
-    },
-    {
-      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS01",
-      "parent_skill_id": "OPS-ESTIMER-VERIFIER",
-      "micro_skill_name": "Arrondir un entier (dizaine/centaine/millier) pour estimer",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-ENTIERS-0-1B",
-          "micro_skill_id": "NUM-ENTIERS-0-1B::MS01",
-          "why": "Rangs/classes"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 10 exercices",
-      "cep_frequency": 80,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "4980 ≈ 5000 F CFA"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS02",
-      "parent_skill_id": "OPS-ESTIMER-VERIFIER",
-      "micro_skill_name": "Arrondir un décimal pour prévoir un résultat (unité/dixième/centième)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-ESTIMER-VERIFIER::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-DEC-ECRIRE-REP",
-          "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS06",
-          "why": "Arrondi des décimaux"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Choix multiples",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "3,98×12 ≈ 4×12"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS03",
-      "parent_skill_id": "OPS-ESTIMER-VERIFIER",
-      "micro_skill_name": "Donner un ordre de grandeur avant le calcul exact",
-      "prerequisites_micro_skill_ids": [
-        "OPS-ESTIMER-VERIFIER::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse courte",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "198×6 ≈ 200×6"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS04",
-      "parent_skill_id": "OPS-ESTIMER-VERIFIER",
-      "micro_skill_name": "Vérifier avec l’opération inverse (↔) après un calcul",
-      "prerequisites_micro_skill_ids": [
-        "OPS-ESTIMER-VERIFIER::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Correction d'erreur",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 15,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "625-257 pour vérifier 368+257"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-      "parent_skill_id": "OPS-ESTIMER-VERIFIER",
-      "micro_skill_name": "Détecter un résultat absurde et corriger la démarche",
-      "prerequisites_micro_skill_ids": [
-        "OPS-ESTIMER-VERIFIER::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Réponse courte",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "3×250 ne peut pas faire 7500"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
-      "parent_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-      "micro_skill_name": "Poser et effectuer une addition d’entiers avec retenues",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-ENTIERS-0-1B",
-          "micro_skill_id": "NUM-ENTIERS-0-1B::MS01",
-          "why": "Comprendre les rangs/alignements"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 10 exercices",
-      "cep_frequency": 80,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Addition de recettes/ventes journalières"
-      ],
-      "accessibility_tags": [
-        "Police-grande"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS02",
-      "parent_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-      "micro_skill_name": "Poser et effectuer une soustraction d’entiers avec emprunts",
-      "prerequisites_micro_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 10 exercices",
-      "cep_frequency": 80,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Calcul du reste après achat"
-      ],
-      "accessibility_tags": [
-        "Police-grande"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
-      "parent_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-      "micro_skill_name": "Poser et effectuer une multiplication d’entiers (avec retenues)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 18,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 10 exercices",
-      "cep_frequency": 85,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Prix unitaire × quantité"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
-      "parent_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-      "micro_skill_name": "Effectuer une division d’entiers par un chiffre (avec reste)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 18,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Partager des objets en groupes"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS05",
-      "parent_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-      "micro_skill_name": "Effectuer une division d’entiers par un nombre à 2 chiffres (avec reste)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Répartition par caisses de 12/24"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS06",
-      "parent_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-      "micro_skill_name": "Identifier et corriger les erreurs courantes de pose (+, −, ×, ÷)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS02",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS05"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 10 exercices",
-      "cep_frequency": 65,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Comparer deux solutions d’élèves"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS01",
-      "parent_skill_id": "OPS-DECIMAUX-MULTIPLIER",
-      "micro_skill_name": "Multiplier en ignorant temporairement la virgule (produit d’entiers)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-          "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
-          "why": "Technique de multiplication posée"
-        },
-        {
-          "skill_id": "NUM-DEC-ECRIRE-REP",
-          "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
-          "why": "Comprendre la valeur de position"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "2,5 × 3,2 (poser sans virgules)"
-      ],
-      "accessibility_tags": [
-        "Police-grande"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS02",
-      "parent_skill_id": "OPS-DECIMAUX-MULTIPLIER",
-      "micro_skill_name": "Compter le nombre total de décimales dans les facteurs",
-      "prerequisites_micro_skill_ids": [
-        "OPS-DECIMAUX-MULTIPLIER::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-DEC-ECRIRE-REP",
-          "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
-          "why": "Rang des décimales"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "90% sur 10 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Repérer 2 décimales + 1 décimale = 3"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
-      "parent_skill_id": "OPS-DECIMAUX-MULTIPLIER",
-      "micro_skill_name": "Placer correctement la virgule dans le produit final",
-      "prerequisites_micro_skill_ids": [
-        "OPS-DECIMAUX-MULTIPLIER::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-DEC-COMP-ORD",
-          "micro_skill_id": "NUM-DEC-COMP-ORD::MS01",
-          "why": "Vérifier la cohérence de grandeur"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 10 exercices",
-      "cep_frequency": 85,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "3,4×2,5 doit être proche de 8,5"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS04",
-      "parent_skill_id": "OPS-DECIMAUX-MULTIPLIER",
-      "micro_skill_name": "Vérifier le résultat par estimation (ordre de grandeur)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-DECIMAUX-MULTIPLIER::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS03",
-          "why": "Ordre de grandeur"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse courte",
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 18,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 65,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "4×12 ≈ 48 pour contrôler 3,98×12"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
-      "parent_skill_id": "OPS-DECIMAUX-DIVISER",
-      "micro_skill_name": "Diviser un décimal par un entier (division posée) et placer la virgule",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-          "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
-          "why": "Division posée"
-        },
-        {
-          "skill_id": "NUM-DEC-ECRIRE-REP",
-          "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
-          "why": "Rang de la virgule"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "12,6 ÷ 3 = 4,2"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS02",
-      "parent_skill_id": "OPS-DECIMAUX-DIVISER",
-      "micro_skill_name": "Prolonger une division en ajoutant des zéros (quotient décimal)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-DECIMAUX-DIVISER::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-DEC-ECRIRE-REP",
-          "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
-          "why": "Valeur des zéros en décimaux"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "5 ÷ 8 = 0,625"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS03",
-      "parent_skill_id": "OPS-DECIMAUX-DIVISER",
-      "micro_skill_name": "Comprendre l’égalité des quotients (×10/÷10 sur dividende et diviseur)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-DECIMAUX-DIVISER::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "12,6÷3 = 126÷30"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS04",
-      "parent_skill_id": "OPS-DECIMAUX-DIVISER",
-      "micro_skill_name": "Distinguer quotient exact et quotient approché (arrondi du quotient)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-DECIMAUX-DIVISER::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-DEC-ECRIRE-REP",
-          "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS06",
-          "why": "Arrondi du résultat"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Choix multiples",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "1 ÷ 3 ≈ 0,33"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS05",
-      "parent_skill_id": "OPS-DECIMAUX-DIVISER",
-      "micro_skill_name": "Contrôler une division décimale par multiplication inverse et estimation",
-      "prerequisites_micro_skill_ids": [
-        "OPS-DECIMAUX-DIVISER::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS04",
-          "why": "Contrôle par opération inverse"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse courte",
-        "Étapes guidées",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Vérifier 12,6÷3 en refaisant 4,2×3"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-EQDEN::MS01",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-EQDEN",
-      "micro_skill_name": "Additionner des fractions de même dénominateur (sens + règle)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-FRAC-REP",
-          "micro_skill_id": "NUM-FRAC-REP::MS01",
-          "why": "Sens de fraction"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 10 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "1/8 + 3/8 (parts identiques)"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-EQDEN::MS02",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-EQDEN",
-      "micro_skill_name": "Soustraire des fractions de même dénominateur",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-ADD-SUB-EQDEN::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 10 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "7/10 − 2/10"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-EQDEN::MS03",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-EQDEN",
-      "micro_skill_name": "Passer une fraction impropre en nombre mixte (si demandé)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-ADD-SUB-EQDEN::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "11/8 = 1 3/8"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-EQDEN::MS04",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-EQDEN",
-      "micro_skill_name": "Simplifier une fraction résultat (si possible)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-ADD-SUB-EQDEN::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Compléter",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "4/8 = 1/2"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-EQDEN::MS05",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-EQDEN",
-      "micro_skill_name": "Repérer et corriger l’erreur « additionner les dénominateurs »",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-ADD-SUB-EQDEN::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Comparer deux solutions d’élèves"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS01",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN",
-      "micro_skill_name": "Trouver un dénominateur commun simple (multiples évidents)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-FRAC-REP",
-          "micro_skill_id": "NUM-FRAC-REP::MS01",
-          "why": "Sens de fraction"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "1/4 et 1/2 → 4"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS02",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN",
-      "micro_skill_name": "Réduire des fractions au même dénominateur",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "3/6 = 1/2 (mise à l’échelle)"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS03",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN",
-      "micro_skill_name": "Additionner des fractions après réduction au même dénominateur",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "1/3 + 1/6 = 1/2"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS04",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN",
-      "micro_skill_name": "Soustraire des fractions après réduction au même dénominateur",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "5/6 − 1/3 = 1/2"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN::MS05",
-      "parent_skill_id": "OPS-FRAC-ADD-SUB-DIFDEN",
-      "micro_skill_name": "Vérifier/justifier la réduction au même dénominateur (erreurs typiques)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-ADD-SUB-DIFDEN::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Réponse courte",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 18,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Comparer deux démarches"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-X-ENT::MS01",
-      "parent_skill_id": "OPS-FRAC-X-ENT",
-      "micro_skill_name": "Interpréter fraction × entier comme addition répétée de la fraction",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-FRAC-REP",
-          "micro_skill_id": "NUM-FRAC-REP::MS01",
-          "why": "Sens de fraction"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "3×(1/4) = 3 quarts"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-X-ENT::MS02",
-      "parent_skill_id": "OPS-FRAC-X-ENT",
-      "micro_skill_name": "Calculer fraction × entier (numérateur × entier, dénominateur inchangé)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-X-ENT::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "5×(2/7) = 10/7"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-X-ENT::MS03",
-      "parent_skill_id": "OPS-FRAC-X-ENT",
-      "micro_skill_name": "Transformer le résultat impropre en mixte (si demandé) et simplifier",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-X-ENT::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "10/7 = 1 3/7"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-X-ENT::MS04",
-      "parent_skill_id": "OPS-FRAC-X-ENT",
-      "micro_skill_name": "Corriger l’erreur « multiplier aussi le dénominateur »",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-X-ENT::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Comparer deux solutions d’élèves"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-PART-QUANT::MS01",
-      "parent_skill_id": "OPS-FRAC-PART-QUANT",
-      "micro_skill_name": "Identifier le « tout » (quantité de référence) et la fraction demandée",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-FRAC-REP",
-          "micro_skill_id": "NUM-FRAC-REP::MS01",
-          "why": "Comprendre part/tout"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "1/5 d’une somme (tout = somme)"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-PART-QUANT::MS02",
-      "parent_skill_id": "OPS-FRAC-PART-QUANT",
-      "micro_skill_name": "Calculer 1/n d’une quantité (diviser par le dénominateur)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-PART-QUANT::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-          "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS04",
-          "why": "Division avec reste"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "1/8 de 24000 F CFA"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-PART-QUANT::MS03",
-      "parent_skill_id": "OPS-FRAC-PART-QUANT",
-      "micro_skill_name": "Calculer k/n d’une quantité (multiplier (1/n) par k)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-PART-QUANT::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-FRAC-X-ENT",
-          "micro_skill_id": "OPS-FRAC-X-ENT::MS02",
-          "why": "Fraction × entier"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "3/8 de 40 mangues"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-PART-QUANT::MS04",
-      "parent_skill_id": "OPS-FRAC-PART-QUANT",
-      "micro_skill_name": "Choisir entre calcul fractionnaire et calcul décimal (selon données du problème)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-PART-QUANT::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-DEC-COMP-ORD",
-          "micro_skill_id": "NUM-DEC-COMP-ORD::MS01",
-          "why": "Comparer/valider des valeurs"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 13,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "0,25 = 1/4 selon situation"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-PART-QUANT::MS05",
-      "parent_skill_id": "OPS-FRAC-PART-QUANT",
-      "micro_skill_name": "Corriger les erreurs (inversion multiplier/diviser, unité oubliée)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-PART-QUANT::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Réponse courte",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Repérer la bonne unité (F CFA, kg, L)"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-RETROUVER-TOUT::MS01",
-      "parent_skill_id": "OPS-FRAC-RETROUVER-TOUT",
-      "micro_skill_name": "Identifier la fraction connue (k/n) et la valeur correspondante",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "NUM-FRAC-REP",
-          "micro_skill_id": "NUM-FRAC-REP::MS01",
-          "why": "Part/tout"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "3/5 vaut 3000 (données à repérer)"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-RETROUVER-TOUT::MS02",
-      "parent_skill_id": "OPS-FRAC-RETROUVER-TOUT",
-      "micro_skill_name": "Retrouver 1/n (la part unitaire) en divisant la valeur connue par k",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-RETROUVER-TOUT::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-DECIMAUX-DIVISER",
-          "micro_skill_id": "OPS-DECIMAUX-DIVISER::MS01",
-          "why": "Division (souvent non entière)"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "3000 ÷ 3 = 1000 (si 3 parts)"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-RETROUVER-TOUT::MS03",
-      "parent_skill_id": "OPS-FRAC-RETROUVER-TOUT",
-      "micro_skill_name": "Retrouver le tout en multipliant la part unitaire (1/n) par n",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-RETROUVER-TOUT::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-          "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
-          "why": "Multiplication"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 18,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "1/5 = 1000 → tout = 5000"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-RETROUVER-TOUT::MS04",
-      "parent_skill_id": "OPS-FRAC-RETROUVER-TOUT",
-      "micro_skill_name": "Vérifier en reprenant la fraction du résultat obtenu (contrôle)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-RETROUVER-TOUT::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-FRAC-PART-QUANT",
-          "micro_skill_id": "OPS-FRAC-PART-QUANT::MS03",
-          "why": "Reprendre k/n du tout"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse courte",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Recalculer 3/5 de 5000 = 3000"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-FRAC-RETROUVER-TOUT::MS05",
-      "parent_skill_id": "OPS-FRAC-RETROUVER-TOUT",
-      "micro_skill_name": "Corriger les erreurs typiques (diviser par n au lieu de k, confusion part/tout)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-FRAC-RETROUVER-TOUT::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Comparer deux démarches d’élèves"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-PB-MULTI::MS01",
-      "parent_skill_id": "OPS-PB-MULTI",
-      "micro_skill_name": "Comprendre l’énoncé : repérer données, question et unités",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse courte",
-        "Choix multiples",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 90,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Données prix/quantité en F CFA"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-PB-MULTI::MS02",
-      "parent_skill_id": "OPS-PB-MULTI",
-      "micro_skill_name": "Organiser les informations (schéma, tableau, étapes)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-PB-MULTI::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Construction",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 80,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Tableau dépenses/recettes"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-PB-MULTI::MS03",
-      "parent_skill_id": "OPS-PB-MULTI",
-      "micro_skill_name": "Choisir les opérations pertinentes (1 à 3 opérations)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-PB-MULTI::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS03",
-          "why": "Ordre de grandeur aide au choix"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 90,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Addition puis multiplication (quantité×prix)"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-PB-MULTI::MS04",
-      "parent_skill_id": "OPS-PB-MULTI",
-      "micro_skill_name": "Effectuer les calculs nécessaires avec une stratégie fiable",
-      "prerequisites_micro_skill_ids": [
-        "OPS-PB-MULTI::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-          "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS01",
-          "why": "Calcul posé"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "75% sur 6 problèmes",
-      "cep_frequency": 90,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Budget transport + marché"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-PB-MULTI::MS05",
-      "parent_skill_id": "OPS-PB-MULTI",
-      "micro_skill_name": "Rédiger une réponse complète (phrase + unité + sens)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-PB-MULTI::MS04"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse courte",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Créer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "La dépense totale est ... F CFA."
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "OPS-PB-MULTI::MS06",
-      "parent_skill_id": "OPS-PB-MULTI",
-      "micro_skill_name": "Vérifier la solution (vraisemblance + opération inverse si possible)",
-      "prerequisites_micro_skill_ids": [
-        "OPS-PB-MULTI::MS04"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS04",
-          "why": "Contrôle inverse"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Réponse courte",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 75,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Contrôle rapide avant de valider"
-      ],
-      "accessibility_tags": [
-        "Audio-support"
       ]
     }
-  ],
-  "external_micro_skill_stubs": [
-    {
-      "micro_skill_id": "NUM-ENTIERS-0-1B::MS01",
-      "micro_skill_name": "Décomposer un entier (classes/milliers) jusqu’à 1 milliard"
-    },
-    {
-      "micro_skill_id": "NUM-DROITE-NUM-ENTIERS::MS01",
-      "micro_skill_name": "Placer un entier sur une droite graduée"
-    },
-    {
-      "micro_skill_id": "NUM-DROITE-NUM-ENTIERS::MS02",
-      "micro_skill_name": "Encadrer un entier entre deux repères"
-    },
-    {
-      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS01",
-      "micro_skill_name": "Lire/écrire un décimal (dixièmes/centièmes/millièmes)"
-    },
-    {
-      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS02",
-      "micro_skill_name": "Valeur de position des nombres décimaux (dixièmes, centièmes, millièmes)"
-    },
-    {
-      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS03",
-      "micro_skill_name": "Décomposer un nombre décimal (partie entière + partie décimale)"
-    },
-    {
-      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS04",
-      "micro_skill_name": "Placer un décimal sur une droite graduée"
-    },
-    {
-      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS05",
-      "micro_skill_name": "Convertir fraction 10/100/1000 ↔ nombre décimal"
-    },
-    {
-      "micro_skill_id": "NUM-DEC-ECRIRE-REP::MS06",
-      "micro_skill_name": "Arrondir un nombre décimal à l’unité, au dixième ou au centième"
-    },
-    {
-      "micro_skill_id": "NUM-DEC-COMP-ORD::MS01",
-      "micro_skill_name": "Comparer et ordonner des nombres décimaux"
-    },
-    {
-      "micro_skill_id": "NUM-FRAC-REP::MS01",
-      "micro_skill_name": "Comprendre une fraction comme parts d’un tout (représentation)"
-    },
-    {
-      "micro_skill_id": "NUM-FRAC-REP::MS02",
-      "micro_skill_name": "Comparer des fractions de même dénominateur sur support visuel"
-    }
-  ],
-  "notes": {
-    "origin": "Basé sur progamme_mathematiquesCM2_domain.json (déjà au niveau deeeep)",
-    "quality_guardrails": [
-      "Un micro-skill = une action observable et testable en 1-2 minutes.",
-      "Les recommended_exercise_types doivent appartenir à exercise_types_vocab.",
-      "Les prérequis micro-skill ne doivent pas créer de cycles."
-    ],
-    "changes_from_1_3_1": [
-      "v1.4.1: Réordonnancement OPS-CALCUL-MENTAL-TABLES (compléments avant quadruples).",
-      "v1.4.1: OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS06 diff 6→8 (correction erreurs = méta-cognitif haut niveau).",
-      "v1.4.1: OPS-DECIMAUX-DIVISER::MS03 diff 6→7 (égalité quotients = conceptuel).",
-      "v1.4.1: OPS-PB-MULTI::MS05 diff 6→7 (rédaction réponse complète = exigeant CM2).",
-      "v1.4.2: quality_checks.all_cep_frequencies_set corrigé à true."
-    ]
-  },
-  "quality_checks": {
-    "difficulty_progression_issues": [],
-    "difficulty_progression_ok": true,
-    "prerequisite_cycles": false,
-    "cep_frequency_null_skills": [],
-    "all_checks_pass": true,
-    "all_cep_frequencies_set": true
-  }
+  ]
 }

@@ -5,21 +5,52 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Agossou est un retraité qui a installé une ferme à Manigri. Il a commandé 8 000 poussins au prix total de 5 000 000 F CFA. Il a versé 5/8 de la somme à la commande. Le reste est majoré de 8%. Chaque poussin consomme 50 g de provende et 85 ml d'eau par jour. L'aire de séchage est un rectangle ABCD de 40 m sur 14 m complété par deux demi-cercles de diamètre 14 m aux extrémités. π = 22/7.",
+  "context_text": "Agossou est un jeune retraité. Il décide d'installer une ferme à Manigri pour y élever de la volaille et cultiver des produits vivriers. Il commande 8 000 poussins et de la provende. Il a prévu sur cette ferme une aire de séchage des récoltes qu'il pense clôturer. Pour bien gérer sa ferme, il te fait appel.",
   "items": [
     {
       "item_number": 1,
       "domain": "measures_operations",
-      "context_text": "Agossou a commandé 8 000 poussins au prix total de 5 000 000 F CFA. Il a versé 5/8 de la somme à la commande. Le reste est majoré de 8%.",
-      "points": 6.67,
+      "context_text": "Les 8 000 poussins coûtent 5 000 000 F CFA, mais Agossou n'a versé que le 5/8 à la commande. Il paie le reste majoré de 8% à la livraison.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule le prix de revient des 8 000 poussins.",
-          "question_type": "numeric_input",
+          "text": "Calcule le prix de revient des poussins.",
+          "question_type": "guided_steps",
+          "steps": [
+            {
+              "step_label": "Étape 1",
+              "text": "Calcule le montant versé à la commande (5/8 de 5 000 000).",
+              "correct_answer": "3125000",
+              "hint": "Multiplie 5 000 000 par 5 puis divise par 8."
+            },
+            {
+              "step_label": "Étape 2",
+              "text": "Calcule le reste à payer avant majoration.",
+              "correct_answer": "1875000",
+              "hint": "Soustrais le versement du prix total : 5 000 000 − 3 125 000."
+            },
+            {
+              "step_label": "Étape 3",
+              "text": "Calcule le reste majoré de 8% payé à la livraison.",
+              "correct_answer": "2025000",
+              "hint": "Ajoute 8% au reste : 1 875 000 × 108 / 100 ou 1 875 000 + (1 875 000 × 8 / 100)."
+            },
+            {
+              "step_label": "Étape 4",
+              "text": "Calcule le prix de revient total des poussins.",
+              "correct_answer": "5150000",
+              "hint": "Additionne le versement à la commande et le reste majoré : 3 125 000 + 2 025 000."
+            }
+          ],
           "correct_answer": "5150000",
           "explanation": "Versement à la commande : 5 000 000 × 5/8 = 3 125 000 F CFA. Reste : 5 000 000 − 3 125 000 = 1 875 000 F CFA. Majoration de 8% : 1 875 000 × 108/100 = 2 025 000 F CFA. Prix de revient : 3 125 000 + 2 025 000 = 5 150 000 F CFA.",
-          "points": 6.67,
+          "hints": [
+            "Commence par calculer le versement initial : 5/8 de 5 000 000.",
+            "Déduis le reste, puis applique la majoration de 8%.",
+            "Le prix de revient est la somme du versement et du reste majoré."
+          ],
+          "points": 7,
           "depends_on_previous": false,
           "order": 0
         }
@@ -28,26 +59,36 @@
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "Chaque poussin consomme 50 g de provende et 85 ml d'eau par jour. On considère le mois de janvier (31 jours).",
-      "points": 6.67,
+      "context_text": "Chaque poussin livré consomme 50 g de provende et 85 ml d'eau par jour.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule la quantité de provende nécessaire pour le mois de janvier (en tonnes).",
+          "text": "Calcule la quantité de provende consommée par les poussins en tonne pour le mois de janvier.",
           "question_type": "numeric_input",
           "correct_answer": "12.4",
-          "explanation": "8 000 × 50 g × 31 jours = 12 400 000 g = 12,4 tonnes.",
-          "points": 3.33,
+          "explanation": "8 000 × 50 g × 31 jours = 12 400 000 g = 12 400 kg = 12,4 tonnes.",
+          "hints": [
+            "Le mois de janvier compte 31 jours.",
+            "Multiplie le nombre de poussins par la consommation journalière par le nombre de jours.",
+            "Convertis les grammes en tonnes : 1 tonne = 1 000 000 g."
+          ],
+          "points": 3,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Calcule la quantité d'eau nécessaire pour le mois de janvier (en litres).",
+          "text": "Calcule la quantité d'eau consommée par les poussins en litre pour le mois de janvier.",
           "question_type": "numeric_input",
           "correct_answer": "21080",
           "explanation": "8 000 × 85 ml × 31 jours = 21 080 000 ml = 21 080 litres.",
-          "points": 3.34,
+          "hints": [
+            "Le mois de janvier compte 31 jours.",
+            "Multiplie le nombre de poussins par la consommation journalière par le nombre de jours.",
+            "Convertis les millilitres en litres : 1 litre = 1 000 ml."
+          ],
+          "points": 3,
           "depends_on_previous": false,
           "order": 1
         }
@@ -56,27 +97,37 @@
     {
       "item_number": 3,
       "domain": "geometry",
-      "context_text": "L'aire de séchage est constituée d'un rectangle ABCD de 40 m de long et 14 m de large, complété par deux demi-cercles de diamètre 14 m aux extrémités. π = 22/7.",
-      "points": 6.67,
+      "context_text": "L'aire de séchage des récoltes a la forme de la figure ci-dessous.",
+      "diagram_description": "Rectangle ABCD de 40 m de longueur (côtés AB et DC) et 14 m de largeur (côtés AD et BC), complété par deux demi-cercles de diamètre 14 m tracés à l'extérieur sur les côtés AD et BC. Les sommets A et B sont en haut, D et C en bas. Les cotes 40 m sont indiquées sur les côtés horizontaux AB et DC, et 14 m sur les côtés verticaux AD et BC.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule le périmètre de l'aire de séchage.",
+          "text": "Calcule le périmètre de l'aire de séchage des récoltes. (Prends pour valeur approchée de π le nombre 22/7)",
           "question_type": "numeric_input",
           "correct_answer": "124",
-          "explanation": "Le périmètre comprend les 2 longueurs du rectangle et les 2 demi-cercles (= 1 cercle complet). P = 2 × 40 + π × 14 = 80 + 22/7 × 14 = 80 + 44 = 124 m.",
-          "points": 3.33,
+          "explanation": "Le périmètre comprend les 2 longueurs du rectangle (AB et DC) et les 2 demi-cercles (sur AD et BC) qui forment un cercle complet de diamètre 14 m. P = 2 × 40 + π × 14 = 80 + (22/7) × 14 = 80 + 44 = 124 m.",
+          "hints": [
+            "Le périmètre ne comprend pas les largeurs du rectangle, car elles sont remplacées par les demi-cercles.",
+            "Deux demi-cercles de même diamètre forment un cercle complet. La circonférence d'un cercle = π × diamètre.",
+            "Additionne les deux longueurs (2 × 40 m) et la circonférence du cercle (22/7 × 14)."
+          ],
+          "points": 3.5,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Construis le symétrique A'B'C'D' de la partie rectangulaire ABCD par rapport à un point I.",
-          "question_type": "mcq",
-          "choices": ["Un rectangle de mêmes dimensions centré sur I", "Un rectangle plus grand", "Un parallélogramme"],
-          "correct_answer": "Un rectangle de mêmes dimensions centré sur I",
-          "explanation": "Le symétrique d'un rectangle par rapport à un point est un rectangle de mêmes dimensions. Chaque sommet A', B', C', D' est tel que I est le milieu de [AA'], [BB'], [CC'], [DD'].",
-          "points": 3.34,
+          "text": "Construis sur ta feuille le symétrique A'B'C'D' de la partie rectangulaire ABCD par rapport à un point I marqué en dehors du rectangle.",
+          "question_type": "construction",
+          "correct_answer": "Le symétrique A'B'C'D' est un rectangle de mêmes dimensions que ABCD, où chaque sommet A', B', C', D' est obtenu en prolongeant le segment du sommet correspondant à travers I d'une distance égale. I est le milieu de chaque segment [AA'], [BB'], [CC'], [DD'].",
+          "explanation": "Pour construire le symétrique par rapport au point I : pour chaque sommet (A, B, C, D), tracer le segment reliant le sommet à I, puis prolonger au-delà de I de la même longueur pour obtenir le sommet image (A', B', C', D'). Le rectangle A'B'C'D' a les mêmes dimensions que ABCD.",
+          "hints": [
+            "Place le point I en dehors du rectangle ABCD.",
+            "Pour chaque sommet, trace le segment vers I et prolonge-le de la même longueur de l'autre côté de I.",
+            "I doit être le milieu de chaque segment reliant un sommet à son symétrique (par exemple, I est le milieu de [AA'])."
+          ],
+          "points": 3.5,
           "depends_on_previous": false,
           "order": 1
         }

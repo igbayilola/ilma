@@ -63,7 +63,20 @@
             "tableau",
             "effectifs"
           ],
-          "common_mistake_targeted": "Inverser les effectifs entre catégories"
+          "common_mistake_targeted": "Inverser les effectifs entre catégories",
+          "media_references": [
+            {
+              "id": "ill_0004",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0004.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX003",
@@ -244,7 +257,20 @@
             "double entrée",
             "école"
           ],
-          "common_mistake_targeted": "Confondre lignes et colonnes dans un tableau à double entrée"
+          "common_mistake_targeted": "Confondre lignes et colonnes dans un tableau à double entrée",
+          "media_references": [
+            {
+              "id": "ill_0005",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0005.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -294,7 +320,20 @@
             "compléter",
             "transport"
           ],
-          "common_mistake_targeted": "Oublier de soustraire tous les effectifs connus"
+          "common_mistake_targeted": "Oublier de soustraire tous les effectifs connus",
+          "media_references": [
+            {
+              "id": "ill_0006",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0006.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX011",
@@ -471,7 +510,20 @@
             "cohérence",
             "justification"
           ],
-          "common_mistake_targeted": "Ne pas comparer le total avec le nombre annoncé"
+          "common_mistake_targeted": "Ne pas comparer le total avec le nombre annoncé",
+          "media_references": [
+            {
+              "id": "ill_0007",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0007.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -843,7 +895,7 @@
         },
         {
           "exercise_id": "EX031",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "medium",
           "text": "Associe chaque pourcentage exact à son arrondi à l'unité.",
           "left_items": [
@@ -875,7 +927,68 @@
             "arrondi",
             "association"
           ],
-          "common_mistake_targeted": "Hésiter avec le 5 (on arrondit au-dessus)"
+          "common_mistake_targeted": "Hésiter avec le 5 (on arrondit au-dessus)",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "12,3 %",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "45,8 %",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "67,5 %",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "8,2 %",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "68 %",
+                    "accepts": "item_2"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "12 %",
+                    "accepts": "item_0"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "46 %",
+                    "accepts": "item_1"
+                  },
+                  {
+                    "id": "zone_3",
+                    "label": "8 %",
+                    "accepts": "item_3"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         },
         {
           "exercise_id": "EX032",
@@ -1433,7 +1546,20 @@
             "bâtons",
             "axes"
           ],
-          "common_mistake_targeted": "Inverser les axes"
+          "common_mistake_targeted": "Inverser les axes",
+          "media_references": [
+            {
+              "id": "ill_0008",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0008.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX054",
@@ -1462,7 +1588,7 @@
         },
         {
           "exercise_id": "EX055",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "medium",
           "text": "Associe chaque série d'effectifs à l'échelle la plus adaptée.",
           "left_items": [
@@ -1492,7 +1618,58 @@
             "échelle",
             "association"
           ],
-          "common_mistake_targeted": "Ne pas adapter l'échelle aux valeurs"
+          "common_mistake_targeted": "Ne pas adapter l'échelle aux valeurs",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "Effectifs : 2, 4, 6, 8",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "Effectifs : 50, 100, 150, 200",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "Effectifs : 5, 15, 25, 35",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "1 carreau = 5 unités",
+                    "accepts": "item_2"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "1 carreau = 25 unités",
+                    "accepts": "item_1"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "1 carreau = 1 unité",
+                    "accepts": "item_0"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         },
         {
           "exercise_id": "EX056",
@@ -1534,7 +1711,20 @@
             "construction",
             "échelle"
           ],
-          "common_mistake_targeted": "Ne pas commencer par identifier le maximum"
+          "common_mistake_targeted": "Ne pas commencer par identifier le maximum",
+          "media_references": [
+            {
+              "id": "ill_0009",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0009.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -1607,11 +1797,24 @@
             "bâtons",
             "proportionnalité"
           ],
-          "common_mistake_targeted": "Ne pas comprendre la proportionnalité"
+          "common_mistake_targeted": "Ne pas comprendre la proportionnalité",
+          "media_references": [
+            {
+              "id": "ill_0010",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0010.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX060",
-          "type": "tracing",
+          "type": "CHART_INPUT",
           "difficulty": "hard",
           "text": "Trace le diagramme en bâtons pour les données suivantes : CM1 = 35 élèves, CM2 = 40 élèves, CE2 = 30 élèves, CE1 = 25 élèves. Échelle : 1 carreau = 5 élèves.",
           "number_line": {
@@ -1635,7 +1838,54 @@
             "traçage",
             "école"
           ],
-          "common_mistake_targeted": "Bâtons de hauteur incorrecte"
+          "common_mistake_targeted": "Bâtons de hauteur incorrecte",
+          "interactive_config": {
+            "type": "chart_input",
+            "config": {
+              "chart_type": "bar",
+              "orientation": "vertical",
+              "data": {
+                "labels": [
+                  "Échelle",
+                  "carreau"
+                ],
+                "values": [
+                  null,
+                  null
+                ],
+                "target_values": [
+                  1,
+                  5
+                ],
+                "y_axis": {
+                  "min": 0,
+                  "max": 15,
+                  "step": 5
+                }
+              },
+              "interaction": {
+                "mode": "drag_bar_top",
+                "snap_to_grid": true,
+                "show_value_tooltip": true
+              },
+              "validation": {
+                "tolerance": 1
+              }
+            }
+          },
+          "media_references": [
+            {
+              "id": "ill_0011",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0011.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -1660,7 +1910,20 @@
             "bâtons",
             "lecture"
           ],
-          "common_mistake_targeted": "Donner le nombre de carreaux au lieu de l'effectif"
+          "common_mistake_targeted": "Donner le nombre de carreaux au lieu de l'effectif",
+          "media_references": [
+            {
+              "id": "ill_0012",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0012.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX062",
@@ -1686,7 +1949,20 @@
             "bâtons",
             "lecture"
           ],
-          "common_mistake_targeted": "Erreur de lecture des demi-carreaux"
+          "common_mistake_targeted": "Erreur de lecture des demi-carreaux",
+          "media_references": [
+            {
+              "id": "ill_0013",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0013.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX063",
@@ -1723,7 +1999,20 @@
             "lecture",
             "ventes"
           ],
-          "common_mistake_targeted": "Oublier de multiplier par l'échelle"
+          "common_mistake_targeted": "Oublier de multiplier par l'échelle",
+          "media_references": [
+            {
+              "id": "ill_0014",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0014.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX064",
@@ -1749,7 +2038,20 @@
             "lecture",
             "précision"
           ],
-          "common_mistake_targeted": "Ne pas savoir lire entre deux graduations"
+          "common_mistake_targeted": "Ne pas savoir lire entre deux graduations",
+          "media_references": [
+            {
+              "id": "ill_0015",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0015.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -1779,7 +2081,20 @@
             "bâtons",
             "comparaison"
           ],
-          "common_mistake_targeted": "Ne pas comprendre le lien hauteur-effectif"
+          "common_mistake_targeted": "Ne pas comprendre le lien hauteur-effectif",
+          "media_references": [
+            {
+              "id": "ill_0016",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0016.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX066",
@@ -1800,7 +2115,20 @@
             "comparaison",
             "différence"
           ],
-          "common_mistake_targeted": "Comparer les carreaux au lieu des effectifs (ici le résultat est le même, mais la méthode compte)"
+          "common_mistake_targeted": "Comparer les carreaux au lieu des effectifs (ici le résultat est le même, mais la méthode compte)",
+          "media_references": [
+            {
+              "id": "ill_0017",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0017.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX067",
@@ -1820,7 +2148,20 @@
             "comparaison",
             "rapport"
           ],
-          "common_mistake_targeted": "Confondre double et triple"
+          "common_mistake_targeted": "Confondre double et triple",
+          "media_references": [
+            {
+              "id": "ill_0018",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0018.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX068",
@@ -1858,7 +2199,20 @@
             "Cotonou",
             "Bénin"
           ],
-          "common_mistake_targeted": "Comparer les carreaux sans convertir en effectifs"
+          "common_mistake_targeted": "Comparer les carreaux sans convertir en effectifs",
+          "media_references": [
+            {
+              "id": "ill_0019",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0019.svg",
+              "alt_text": "Illustration: diagramme batons",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -1888,7 +2242,20 @@
             "semi-circulaire",
             "angle"
           ],
-          "common_mistake_targeted": "Confondre cercle (360°) et demi-cercle (180°)"
+          "common_mistake_targeted": "Confondre cercle (360°) et demi-cercle (180°)",
+          "media_references": [
+            {
+              "id": "ill_0020",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0020.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX070",
@@ -1907,7 +2274,20 @@
             "semi-circulaire",
             "total"
           ],
-          "common_mistake_targeted": "Confondre diagramme circulaire et semi-circulaire"
+          "common_mistake_targeted": "Confondre diagramme circulaire et semi-circulaire",
+          "media_references": [
+            {
+              "id": "ill_0021",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0021.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX071",
@@ -1933,7 +2313,20 @@
             "semi-circulaire",
             "total"
           ],
-          "common_mistake_targeted": "Ne pas comprendre que le demi-cercle = total"
+          "common_mistake_targeted": "Ne pas comprendre que le demi-cercle = total",
+          "media_references": [
+            {
+              "id": "ill_0022",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0022.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX072",
@@ -1959,7 +2352,20 @@
             "angle",
             "pourcentage"
           ],
-          "common_mistake_targeted": "Calculer la moitié de 360° au lieu de 180°"
+          "common_mistake_targeted": "Calculer la moitié de 360° au lieu de 180°",
+          "media_references": [
+            {
+              "id": "ill_0023",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0023.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -1985,7 +2391,20 @@
             "angle",
             "pourcentage"
           ],
-          "common_mistake_targeted": "Utiliser 360 au lieu de 180"
+          "common_mistake_targeted": "Utiliser 360 au lieu de 180",
+          "media_references": [
+            {
+              "id": "ill_0024",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0024.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX074",
@@ -2010,7 +2429,20 @@
             "semi-circulaire",
             "conversion"
           ],
-          "common_mistake_targeted": "Confondre avec le diagramme circulaire (360°)"
+          "common_mistake_targeted": "Confondre avec le diagramme circulaire (360°)",
+          "media_references": [
+            {
+              "id": "ill_0025",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0025.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX075",
@@ -2039,7 +2471,20 @@
             "conversion",
             "angle"
           ],
-          "common_mistake_targeted": "Erreur de multiplication"
+          "common_mistake_targeted": "Erreur de multiplication",
+          "media_references": [
+            {
+              "id": "ill_0026",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0026.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX076",
@@ -2087,7 +2532,20 @@
             "langues",
             "Bénin"
           ],
-          "common_mistake_targeted": "Utiliser 3,6 (pour cercle) au lieu de 1,8 (pour demi-cercle)"
+          "common_mistake_targeted": "Utiliser 3,6 (pour cercle) au lieu de 1,8 (pour demi-cercle)",
+          "media_references": [
+            {
+              "id": "ill_0027",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0027.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -2113,7 +2571,20 @@
             "angle",
             "calcul"
           ],
-          "common_mistake_targeted": "Soustraire de 360° au lieu de 180°"
+          "common_mistake_targeted": "Soustraire de 360° au lieu de 180°",
+          "media_references": [
+            {
+              "id": "ill_0028",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0028.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX078",
@@ -2132,7 +2603,20 @@
             "semi-circulaire",
             "vérification"
           ],
-          "common_mistake_targeted": "Ne pas vérifier la somme des angles"
+          "common_mistake_targeted": "Ne pas vérifier la somme des angles",
+          "media_references": [
+            {
+              "id": "ill_0029",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0029.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX079",
@@ -2201,7 +2685,20 @@
             "erreur",
             "correction"
           ],
-          "common_mistake_targeted": "Multiplier par 2 au lieu de 1,8"
+          "common_mistake_targeted": "Multiplier par 2 au lieu de 1,8",
+          "media_references": [
+            {
+              "id": "ill_0030",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0030.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -2239,7 +2736,20 @@
             "traçage",
             "rapporteur"
           ],
-          "common_mistake_targeted": "Ne pas tracer le diamètre en premier"
+          "common_mistake_targeted": "Ne pas tracer le diamètre en premier",
+          "media_references": [
+            {
+              "id": "ill_0031",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0031.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX082",
@@ -2265,7 +2775,20 @@
             "traçage",
             "rapporteur"
           ],
-          "common_mistake_targeted": "Repartir de 0° pour chaque secteur"
+          "common_mistake_targeted": "Repartir de 0° pour chaque secteur",
+          "media_references": [
+            {
+              "id": "ill_0032",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0032.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX083",
@@ -2292,7 +2815,20 @@
             "traçage",
             "angles cumulés"
           ],
-          "common_mistake_targeted": "Ne pas cumuler les angles"
+          "common_mistake_targeted": "Ne pas cumuler les angles",
+          "media_references": [
+            {
+              "id": "ill_0033",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0033.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX084",
@@ -2320,7 +2856,20 @@
             "traçage",
             "rapporteur"
           ],
-          "common_mistake_targeted": "Erreur de placement des angles au rapporteur"
+          "common_mistake_targeted": "Erreur de placement des angles au rapporteur",
+          "media_references": [
+            {
+              "id": "ill_0034",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0034.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -2350,7 +2899,20 @@
             "semi-circulaire",
             "lecture"
           ],
-          "common_mistake_targeted": "Confondre la moitié du demi-cercle avec 25 %"
+          "common_mistake_targeted": "Confondre la moitié du demi-cercle avec 25 %",
+          "media_references": [
+            {
+              "id": "ill_0035",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0035.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX086",
@@ -2371,7 +2933,20 @@
             "lecture",
             "effectif"
           ],
-          "common_mistake_targeted": "Diviser par 360 au lieu de 180"
+          "common_mistake_targeted": "Diviser par 360 au lieu de 180",
+          "media_references": [
+            {
+              "id": "ill_0036",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0036.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX087",
@@ -2415,11 +2990,24 @@
             "Abomey",
             "Bénin"
           ],
-          "common_mistake_targeted": "Utiliser 360° au lieu de 180° dans la formule"
+          "common_mistake_targeted": "Utiliser 360° au lieu de 180° dans la formule",
+          "media_references": [
+            {
+              "id": "ill_0037",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0037.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX088",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "hard",
           "text": "Sur un diagramme semi-circulaire représentant 60 élèves, associe chaque angle au nombre d'élèves correspondant.",
           "left_items": [
@@ -2452,7 +3040,81 @@
             "lecture",
             "association"
           ],
-          "common_mistake_targeted": "Erreur dans le calcul des proportions"
+          "common_mistake_targeted": "Erreur dans le calcul des proportions",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "30°",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "60°",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "90°",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "45°",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "10 élèves",
+                    "accepts": "item_0"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "15 élèves",
+                    "accepts": "item_3"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "20 élèves",
+                    "accepts": "item_1"
+                  },
+                  {
+                    "id": "zone_3",
+                    "label": "30 élèves",
+                    "accepts": "item_2"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          },
+          "media_references": [
+            {
+              "id": "ill_0038",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0038.svg",
+              "alt_text": "Illustration: diagramme circulaire",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     }

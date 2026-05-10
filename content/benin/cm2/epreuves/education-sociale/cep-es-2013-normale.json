@@ -5,31 +5,33 @@
   "subject": "education_sociale",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Le Bénin est un pays sous-développé mais qui dispose de nombreux atouts : des cours d'eau, des ressources minières, des terres cultivables. Ses principaux produits d'exportation sont le coton, le palmier à huile, le karité, le manioc et le maïs. Le pays dispose aussi d'un port. Après la colonisation, le Bénin est devenu un pays démocratique.",
+  "context_text": "Ton pays, le Bénin, fait partie des pays sous-développés. Mais il a de nombreux atouts pour son développement : il dispose des cours d'eau, d'assez de ressources minières et de vastes terres cultivables favorables à la culture du coton, du palmier à huile, du karité, du manioc, du maïs, etc. Il a aussi un port. Après la lutte farouche opposée à la colonisation française, le Bénin est aujourd'hui un pays démocratique où se fait la promotion des valeurs morales et citoyennes. Montre que tu en es fier.",
   "items": [
     {
       "item_number": 1,
       "domain": "civics_institutions",
-      "context_text": "Le Bénin est un pays démocratique qui promeut des valeurs morales et citoyennes.",
-      "points": 6.67,
+      "context_text": "Le Bénin est aujourd'hui un pays démocratique où se fait la promotion des valeurs morales et citoyennes.",
+      "points": 5,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Qu'est-ce qu'un pays démocratique ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Un pays démocratique est un pays où le peuple choisit librement ses dirigeants par des élections, où les libertés fondamentales sont respectées et où le pouvoir est partagé entre plusieurs institutions",
-          "explanation": "La démocratie repose sur le choix libre des dirigeants, le respect des libertés et la séparation des pouvoirs.",
-          "points": 3.33,
+          "text": "Dis ce que tu entends par pays démocratique.",
+          "question_type": "open_ended",
+          "correct_answer": "Un pays démocratique est un pays où le peuple choisit librement ses dirigeants par des élections, où les libertés fondamentales sont respectées et où le pouvoir est partagé entre plusieurs institutions.",
+          "hint": "Pense au mode de choix des dirigeants et aux libertés des citoyens.",
+          "explanation": "La démocratie repose sur le choix libre des dirigeants par le peuple, le respect des libertés fondamentales et la séparation des pouvoirs.",
+          "points": 2.5,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Relève dans la liste suivante 2 valeurs morales et citoyennes : respect du bien public, médisance, corruption, calomnie, tolérance, port du casque.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le respect du bien public et la tolérance",
-          "explanation": "Parmi les éléments proposés, seuls le respect du bien public et la tolérance sont des valeurs morales et citoyennes. La médisance, la corruption et la calomnie sont des anti-valeurs.",
-          "points": 3.33,
+          "text": "Voici une liste de comportements :\n- Le respect du bien public,\n- La médisance,\n- La corruption,\n- La calomnie,\n- La tolérance,\n- Le port du casque.\nRelève deux (02) valeurs morales et citoyennes nécessaires au développement du pays.",
+          "question_type": "open_ended",
+          "correct_answer": "Le respect du bien public et la tolérance.",
+          "hint": "Une valeur morale et citoyenne est un comportement positif qui favorise le vivre-ensemble et le développement du pays.",
+          "explanation": "Parmi les éléments proposés, seuls le respect du bien public et la tolérance sont des valeurs morales et citoyennes. La médisance, la corruption et la calomnie sont des anti-valeurs. Le port du casque est une mesure de sécurité routière, pas une valeur morale.",
+          "points": 2.5,
           "depends_on_previous": false,
           "order": 1
         }
@@ -38,26 +40,28 @@
     {
       "item_number": 2,
       "domain": "history_heritage",
-      "context_text": "Le Bénin a connu la colonisation française. Plusieurs rois et chefs ont résisté à cette colonisation. Le pays a changé plusieurs fois d'appellation depuis son indépendance.",
-      "points": 6.67,
+      "context_text": "Le support parle de lutte farouche opposée à la colonisation française. Le Bénin a connu la colonisation et a changé plusieurs fois d'appellation depuis son indépendance.",
+      "points": 5,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite 4 résistants à la colonisation française au Bénin.",
-          "question_type": "fill_blank",
-          "correct_answer": "Béhanzin, Bio Guéra, Kaba, Toffa (ou Gbêhanzin, Agoli-Agbo)",
-          "explanation": "Béhanzin (roi d'Abomey), Bio Guéra (chef du Borgou), Kaba (chef de Nikki) et Toffa (roi de Porto-Novo) ont résisté à la colonisation française.",
-          "points": 3.33,
+          "text": "Le support parle de lutte farouche opposée à la colonisation française. Nomme quatre (04) résistants à la colonisation française.",
+          "question_type": "open_ended",
+          "correct_answer": "Béhanzin, Bio Guéra, Kaba, Alladayè.",
+          "hint": "Pense aux rois et chefs de différentes régions du Bénin qui se sont opposés aux Français.",
+          "explanation": "Béhanzin (roi d'Abomey), Bio Guéra (chef bariba du Borgou), Kaba (chef de Nikki) et Alladayè sont des résistants célèbres à la colonisation française au Bénin.",
+          "points": 2.5,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Donne les différentes appellations du pays de 1960 à nos jours.",
-          "question_type": "fill_blank",
-          "correct_answer": "République du Dahomey (1960-1975), République Populaire du Bénin (1975-1990), République du Bénin (depuis 1990)",
-          "explanation": "Le pays a porté trois noms : République du Dahomey à l'indépendance, République Populaire du Bénin sous le régime marxiste, puis République du Bénin avec le Renouveau démocratique.",
-          "points": 3.33,
+          "text": "Dis les différentes appellations qu'a connues notre pays de 1960 à ce jour.",
+          "question_type": "open_ended",
+          "correct_answer": "République du Dahomey (1960-1975), République Populaire du Bénin (1975-1990), République du Bénin (depuis 1990).",
+          "hint": "Le pays a changé de nom à chaque grand changement politique.",
+          "explanation": "Le pays a porté trois noms : République du Dahomey à l'indépendance en 1960, République Populaire du Bénin sous le régime révolutionnaire en 1975, puis République du Bénin avec le Renouveau démocratique en 1990.",
+          "points": 2.5,
           "depends_on_previous": false,
           "order": 1
         }
@@ -66,38 +70,49 @@
     {
       "item_number": 3,
       "domain": "geography_economy",
-      "context_text": "Le Bénin exporte plusieurs produits agricoles et dispose de ressources minières. Le pays possède également un réseau hydrographique important, notamment dans le sud.",
-      "points": 6.67,
+      "context_text": "Le Bénin dispose des cours d'eau, d'assez de ressources minières et de vastes terres cultivables favorables à la culture du coton, du palmier à huile, du karité, du manioc, du maïs, etc.",
+      "points": 5,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite les produits d'exportation mentionnés dans le support.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le coton, le palmier à huile, le karité, le manioc, le maïs",
-          "explanation": "Le support mentionne cinq produits d'exportation du Bénin.",
-          "points": 2.22,
+          "text": "Relève les produits d'exportation cités dans le support.",
+          "question_type": "open_ended",
+          "correct_answer": "Le coton, le palmier à huile, le karité, le manioc et le maïs.",
+          "hint": "Relis attentivement le texte du support pour retrouver les produits mentionnés.",
+          "explanation": "Le support mentionne cinq produits d'exportation du Bénin : le coton, le palmier à huile, le karité, le manioc et le maïs.",
+          "points": 2.5,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Cite 2 ressources minières du Bénin et leur localisation.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le calcaire à Onigbolo (département du Plateau). Le pétrole en offshore (côte atlantique)",
-          "explanation": "Le calcaire est exploité à Onigbolo dans le Plateau pour la cimenterie. Le pétrole est exploité en offshore au large de la côte atlantique.",
-          "points": 2.22,
+          "text": "Cite deux (02) ressources minières au Bénin et localise-les.",
+          "question_type": "open_ended",
+          "correct_answer": "Le calcaire à Onigbolo (département du Plateau) et le pétrole en offshore (au large de la côte atlantique).",
+          "hint": "Pense aux matières premières extraites du sol béninois et à l'endroit où elles se trouvent.",
+          "explanation": "Le calcaire est exploité à Onigbolo dans le département du Plateau pour la cimenterie. Le pétrole est exploité en offshore au large de la côte atlantique du Bénin.",
+          "points": 2.5,
           "depends_on_previous": false,
           "order": 1
-        },
+        }
+      ]
+    },
+    {
+      "item_number": 4,
+      "domain": "geography_economy",
+      "context_text": "Le Bénin dispose de cours d'eau importants organisés en bassins fluviaux.",
+      "points": 5,
+      "sub_questions": [
         {
-          "sub_label": "c",
-          "text": "À partir de la carte du Bénin, identifie le bassin fluvial du sud du pays.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le bassin côtier: fleuve Ouémé, fleuve Mono, fleuve Couffo, lac Nokoué, lac Ahémé",
-          "explanation": "Le bassin côtier du sud du Bénin comprend les fleuves Ouémé, Mono et Couffo, ainsi que les lacs Nokoué et Ahémé.",
-          "points": 2.22,
+          "sub_label": "a",
+          "text": "Sur la carte du Bénin, réalise le bassin fluvial du sud.",
+          "question_type": "open_ended",
+          "correct_answer": "Le bassin côtier du sud comprend les fleuves Ouémé, Mono et Couffo, ainsi que les lacs Nokoué et Ahémé.",
+          "hint": "Le bassin fluvial du sud regroupe les cours d'eau qui se jettent dans l'océan Atlantique ou dans les lagunes côtières.",
+          "explanation": "Le bassin côtier (ou bassin du sud) du Bénin comprend les fleuves Ouémé, Mono et Couffo, ainsi que les lacs Nokoué et Ahémé. Ces cours d'eau se jettent dans l'océan Atlantique ou alimentent les lagunes côtières.",
+          "points": 5,
           "depends_on_previous": false,
-          "order": 2
+          "order": 0
         }
       ]
     }

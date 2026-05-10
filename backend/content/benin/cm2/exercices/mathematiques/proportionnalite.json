@@ -147,7 +147,20 @@
             "tableau",
             "méthode"
           ],
-          "common_mistake_targeted": "Confondre rapport constant et différence constante"
+          "common_mistake_targeted": "Confondre rapport constant et différence constante",
+          "media_references": [
+            {
+              "id": "ill_0055",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0055.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX006",
@@ -166,7 +179,20 @@
             "tableau",
             "vérification"
           ],
-          "common_mistake_targeted": "Vérifier seulement deux colonnes sur trois"
+          "common_mistake_targeted": "Vérifier seulement deux colonnes sur trois",
+          "media_references": [
+            {
+              "id": "ill_0056",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0056.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX007",
@@ -187,7 +213,20 @@
             "rapport constant",
             "mangues"
           ],
-          "common_mistake_targeted": "Calculer la différence au lieu du rapport"
+          "common_mistake_targeted": "Calculer la différence au lieu du rapport",
+          "media_references": [
+            {
+              "id": "ill_0057",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0057.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX008",
@@ -229,7 +268,20 @@
             "vérification systématique",
             "riz"
           ],
-          "common_mistake_targeted": "Ne pas vérifier toutes les colonnes"
+          "common_mistake_targeted": "Ne pas vérifier toutes les colonnes",
+          "media_references": [
+            {
+              "id": "ill_0058",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0058.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -259,7 +311,20 @@
             "non-proportionnalité",
             "croissance"
           ],
-          "common_mistake_targeted": "Croire que toute augmentation régulière est proportionnelle"
+          "common_mistake_targeted": "Croire que toute augmentation régulière est proportionnelle",
+          "media_references": [
+            {
+              "id": "ill_0059",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0059.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX010",
@@ -298,11 +363,24 @@
             "non-proportionnalité",
             "justification"
           ],
-          "common_mistake_targeted": "Confondre proportionnalité directe et inverse"
+          "common_mistake_targeted": "Confondre proportionnalité directe et inverse",
+          "media_references": [
+            {
+              "id": "ill_0060",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0060.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX012",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "hard",
           "text": "Associe chaque situation à « Proportionnel » ou « Non proportionnel ».",
           "left_items": [
@@ -332,7 +410,64 @@
             "non-proportionnalité",
             "classification"
           ],
-          "common_mistake_targeted": "Croire que toute relation croissante est proportionnelle"
+          "common_mistake_targeted": "Croire que toute relation croissante est proportionnelle",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "Prix des oranges au marché (même prix par kg)",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "Âge et taille d'un enfant",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "Distance parcourue à vitesse constante",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "Température au cours de la journée",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "Non proportionnel",
+                    "accepts": [
+                      "item_1",
+                      "item_3"
+                    ]
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "Proportionnel",
+                    "accepts": [
+                      "item_0",
+                      "item_2"
+                    ]
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         }
       ]
     },
@@ -485,7 +620,20 @@
             "proportionnalité",
             "coefficient multiplicateur"
           ],
-          "common_mistake_targeted": "Additionner au lieu de multiplier"
+          "common_mistake_targeted": "Additionner au lieu de multiplier",
+          "media_references": [
+            {
+              "id": "ill_0061",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0061.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX018",
@@ -505,7 +653,20 @@
             "coefficient multiplicateur",
             "riz"
           ],
-          "common_mistake_targeted": "Diviser dans le mauvais sens"
+          "common_mistake_targeted": "Diviser dans le mauvais sens",
+          "media_references": [
+            {
+              "id": "ill_0062",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0062.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX019",
@@ -569,7 +730,20 @@
             "bananes",
             "Dantokpa"
           ],
-          "common_mistake_targeted": "Oublier d'utiliser la division pour trouver le nombre quand on connaît le prix"
+          "common_mistake_targeted": "Oublier d'utiliser la division pour trouver le nombre quand on connaît le prix",
+          "media_references": [
+            {
+              "id": "ill_0063",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0063.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -624,7 +798,20 @@
             "produit en croix",
             "farine"
           ],
-          "common_mistake_targeted": "Se tromper dans le choix des nombres à multiplier"
+          "common_mistake_targeted": "Se tromper dans le choix des nombres à multiplier",
+          "media_references": [
+            {
+              "id": "ill_0064",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0064.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX023",
@@ -837,7 +1024,7 @@
         },
         {
           "exercise_id": "EX031",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "medium",
           "text": "Associe chaque échelle à ce que représente 1 cm sur le plan.",
           "left_items": [
@@ -869,7 +1056,68 @@
             "échelle",
             "conversion"
           ],
-          "common_mistake_targeted": "Erreur dans la conversion cm → m → km"
+          "common_mistake_targeted": "Erreur dans la conversion cm → m → km",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "1 : 100",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "1 : 1 000",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "1 : 10 000",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "1 : 1 000 000",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "1 m",
+                    "accepts": "item_0"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "10 km",
+                    "accepts": "item_3"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "100 m",
+                    "accepts": "item_2"
+                  },
+                  {
+                    "id": "zone_3",
+                    "label": "10 m",
+                    "accepts": "item_1"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         },
         {
           "exercise_id": "EX032",
@@ -921,7 +1169,20 @@
             "échelle",
             "plan vers réalité"
           ],
-          "common_mistake_targeted": "Oublier la conversion cm → m"
+          "common_mistake_targeted": "Oublier la conversion cm → m",
+          "media_references": [
+            {
+              "id": "ill_0065",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0065.svg",
+              "alt_text": "Illustration: plan carte",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX034",
@@ -953,7 +1214,20 @@
             "Cotonou",
             "Porto-Novo"
           ],
-          "common_mistake_targeted": "Erreur dans les conversions successives"
+          "common_mistake_targeted": "Erreur dans les conversions successives",
+          "media_references": [
+            {
+              "id": "ill_0066",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0066.svg",
+              "alt_text": "Illustration: plan carte",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX035",
@@ -974,7 +1248,20 @@
             "réalité vers plan",
             "Parakou"
           ],
-          "common_mistake_targeted": "Multiplier au lieu de diviser pour passer de la réalité au plan"
+          "common_mistake_targeted": "Multiplier au lieu de diviser pour passer de la réalité au plan",
+          "media_references": [
+            {
+              "id": "ill_0067",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0067.svg",
+              "alt_text": "Illustration: plan carte",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX036",
@@ -1041,7 +1328,7 @@
         },
         {
           "exercise_id": "EX038",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "medium",
           "text": "Associe chaque mesure à l'unité la plus adaptée pour l'exprimer.",
           "left_items": [
@@ -1073,7 +1360,68 @@
             "échelle",
             "unité cohérente"
           ],
-          "common_mistake_targeted": "Erreur dans les conversions d'unités"
+          "common_mistake_targeted": "Erreur dans les conversions d'unités",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "Distance Cotonou-Parakou : 40 000 000 cm",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "Longueur d'une salle de classe : 800 cm",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "Largeur d'un bureau : 60 cm",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "Distance maison-école : 150 000 cm",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "60 cm",
+                    "accepts": "item_2"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "1,5 km",
+                    "accepts": "item_3"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "400 km",
+                    "accepts": "item_0"
+                  },
+                  {
+                    "id": "zone_3",
+                    "label": "8 m",
+                    "accepts": "item_1"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         },
         {
           "exercise_id": "EX039",
@@ -1153,7 +1501,20 @@
             "ordre de grandeur",
             "vérification"
           ],
-          "common_mistake_targeted": "Ne pas vérifier si le résultat est réaliste"
+          "common_mistake_targeted": "Ne pas vérifier si le résultat est réaliste",
+          "media_references": [
+            {
+              "id": "ill_0068",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0068.svg",
+              "alt_text": "Illustration: plan carte",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX042",
@@ -1178,7 +1539,20 @@
             "échelle",
             "ordre de grandeur"
           ],
-          "common_mistake_targeted": "Accepter un résultat sans vérifier l'ordre de grandeur"
+          "common_mistake_targeted": "Accepter un résultat sans vérifier l'ordre de grandeur",
+          "media_references": [
+            {
+              "id": "ill_0069",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0069.svg",
+              "alt_text": "Illustration: plan carte",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX043",
@@ -1220,7 +1594,20 @@
             "ordre de grandeur",
             "Cotonou"
           ],
-          "common_mistake_targeted": "Erreur dans la chaîne de conversions cm → m → km"
+          "common_mistake_targeted": "Erreur dans la chaîne de conversions cm → m → km",
+          "media_references": [
+            {
+              "id": "ill_0070",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0070.svg",
+              "alt_text": "Illustration: plan carte",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         }
       ]
     },
@@ -1311,7 +1698,20 @@
             "coordonnées",
             "mangues"
           ],
-          "common_mistake_targeted": "Confondre les lignes du tableau avec les coordonnées"
+          "common_mistake_targeted": "Confondre les lignes du tableau avec les coordonnées",
+          "media_references": [
+            {
+              "id": "ill_0071",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0071.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX048",
@@ -1521,7 +1921,7 @@
         },
         {
           "exercise_id": "EX056",
-          "type": "matching",
+          "type": "DRAG_DROP",
           "difficulty": "hard",
           "text": "Associe chaque description de graphique à la bonne conclusion.",
           "left_items": [
@@ -1553,7 +1953,68 @@
             "graphique",
             "classification"
           ],
-          "common_mistake_targeted": "Croire qu'une seule condition suffit"
+          "common_mistake_targeted": "Croire qu'une seule condition suffit",
+          "interactive_config": {
+            "type": "drag_drop",
+            "config": {
+              "layout": "two_columns",
+              "left_column": {
+                "label": "Éléments",
+                "items": [
+                  {
+                    "id": "item_0",
+                    "label": "Droite passant par (0;0) avec des points alignés",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_1",
+                    "label": "Droite passant par (0;50) avec des points alignés",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_2",
+                    "label": "Points non alignés passant par (0;0)",
+                    "draggable": true
+                  },
+                  {
+                    "id": "item_3",
+                    "label": "Courbe passant par (0;0)",
+                    "draggable": true
+                  }
+                ]
+              },
+              "right_column": {
+                "label": "Correspondances",
+                "drop_zones": [
+                  {
+                    "id": "zone_0",
+                    "label": "Proportionnalité",
+                    "accepts": "item_0"
+                  },
+                  {
+                    "id": "zone_1",
+                    "label": "Pas de proportionnalité (tarif fixe)",
+                    "accepts": "item_1"
+                  },
+                  {
+                    "id": "zone_2",
+                    "label": "Pas de proportionnalité (pas une droite)",
+                    "accepts": "item_3"
+                  },
+                  {
+                    "id": "zone_3",
+                    "label": "Pas de proportionnalité (rapport non constant)",
+                    "accepts": "item_2"
+                  }
+                ]
+              },
+              "behavior": {
+                "snap_to_center": true,
+                "revert_on_error": true,
+                "show_feedback": "immediate"
+              }
+            }
+          }
         }
       ]
     },
@@ -1741,7 +2202,20 @@
             "distance",
             "bus"
           ],
-          "common_mistake_targeted": "Confondre les unités"
+          "common_mistake_targeted": "Confondre les unités",
+          "media_references": [
+            {
+              "id": "ill_0072",
+              "type": "svg",
+              "url": "/static/media/svg/illustrations/ill_0072.svg",
+              "alt_text": "Illustration: tableau",
+              "interactive": false,
+              "dimensions": {
+                "width": 320,
+                "height": 220
+              }
+            }
+          ]
         },
         {
           "exercise_id": "EX063",

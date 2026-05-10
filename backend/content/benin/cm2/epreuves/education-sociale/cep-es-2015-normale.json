@@ -5,81 +5,275 @@
   "subject": "education_sociale",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Le Bénin dispose d'une loi fondamentale qui organise les institutions de la République. L'indépendance a permis au pays de se gouverner lui-même et de gérer ses propres ressources.",
+  "context_text": "La loi fondamentale actuellement en vigueur au Bénin résulte de la volonté du peuple béninois de tirer leçon de son histoire. Dans sa mission d'aider à réguler la vie politique, sociale, administrative et économique, elle est soutenue par des institutions politiques, judiciaires et socio-économiques.\nEn dépit de tout cela, on observe beaucoup de comportements et de maux qui freinent le développement socio-économique du pays.\nToi et tes camarades avez décidé de faire un inventaire de ces maux en vue de lutter contre, pour une meilleure gestion des ressources naturelles du pays et une meilleure animation de la vie politique.",
   "items": [
     {
       "item_number": 1,
       "domain": "civics_institutions",
-      "context_text": "La Constitution est la loi fondamentale du Bénin. Elle organise les institutions de pouvoir et de contre-pouvoir.",
-      "points": 8,
+      "context_text": "La loi fondamentale actuellement en vigueur au Bénin résulte de la volonté du peuple béninois de tirer leçon de son histoire. Elle est soutenue par des institutions politiques, judiciaires et socio-économiques.",
+      "points": 12,
       "sub_questions": [
         {
-          "sub_label": "a",
-          "text": "Quelle est la date d'adoption de la loi fondamentale du Bénin ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Le 11 décembre 1990",
-          "explanation": "La Constitution du Bénin a été adoptée par référendum le 11 décembre 1990, après la Conférence Nationale des Forces Vives de la Nation.",
-          "points": 2.67,
+          "sub_label": "1",
+          "text": "Écris la date d'adoption de cette loi fondamentale.",
+          "question_type": "open_ended",
+          "correct_answer": "Le 11 décembre 1990.",
+          "hint": "Cette loi a été adoptée par référendum après la Conférence Nationale des Forces Vives de la Nation.",
+          "explanation": "La Constitution du Bénin a été adoptée par référendum le 11 décembre 1990, après la Conférence Nationale des Forces Vives de la Nation tenue en février 1990.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
-          "sub_label": "b",
-          "text": "Quelle institution est chargée de faire respecter la Constitution ?",
-          "question_type": "mcq",
-          "choices": ["La Cour Constitutionnelle", "L'Assemblée Nationale", "Le Gouvernement", "La Cour Suprême"],
-          "correct_answer": "La Cour Constitutionnelle",
-          "explanation": "La Cour Constitutionnelle est l'institution chargée de veiller au respect de la Constitution et de contrôler la constitutionnalité des lois.",
-          "points": 2.67,
+          "sub_label": "2",
+          "text": "Dis l'institution chargée de faire respecter cette loi fondamentale.",
+          "question_type": "open_ended",
+          "correct_answer": "La Cour Constitutionnelle.",
+          "hint": "C'est l'institution qui contrôle la constitutionnalité des lois et veille au respect de la Constitution.",
+          "explanation": "La Cour Constitutionnelle est l'institution chargée de veiller au respect de la Constitution et de contrôler la constitutionnalité des lois au Bénin.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         },
         {
-          "sub_label": "c",
-          "text": "Cite 2 institutions de pouvoir politique et 2 institutions de contre-pouvoir, puis donne le rôle du contre-pouvoir.",
-          "question_type": "fill_blank",
-          "correct_answer": "Pouvoir: Présidence de la République, Assemblée Nationale. Contre-pouvoir: Cour Constitutionnelle, Haute Autorité de l'Audiovisuel et de la Communication (HAAC). Rôle: contrôler et limiter l'exercice du pouvoir pour éviter les abus",
-          "explanation": "Les institutions de pouvoir sont la Présidence de la République et l'Assemblée Nationale. Les institutions de contre-pouvoir (Cour Constitutionnelle, HAAC) ont pour rôle de contrôler et limiter l'exercice du pouvoir afin d'éviter les abus.",
-          "points": 2.67,
+          "sub_label": "3a",
+          "text": "Donne deux (02) noms d'institutions de pouvoir politique.",
+          "question_type": "open_ended",
+          "correct_answer": "La Présidence de la République et l'Assemblée Nationale.",
+          "hint": "Pense aux institutions qui exercent le pouvoir exécutif et le pouvoir législatif.",
+          "explanation": "Les institutions de pouvoir politique au Bénin sont la Présidence de la République (pouvoir exécutif) et l'Assemblée Nationale (pouvoir législatif).",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Solution irréaliste",
+              "prevention": "Propose quelque chose de faisable"
+            },
+            {
+              "mistake": "Ne pas justifier",
+              "prevention": "Explique pourquoi tu choisis cette solution"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelles sont les différentes options possibles ?"
+              },
+              {
+                "step": 2,
+                "hint": "Quelle option respecte le mieux tous les droits ?"
+              },
+              {
+                "step": 3,
+                "hint": "Pourquoi ta solution est-elle la meilleure ?"
+              }
+            ]
+          },
+          "bloom_level": "créer",
+          "ilma_level": 3
+        },
+        {
+          "sub_label": "3b",
+          "text": "Donne deux (02) noms d'institutions de contre-pouvoir.",
+          "question_type": "open_ended",
+          "correct_answer": "La Cour Constitutionnelle et la Haute Autorité de l'Audiovisuel et de la Communication (HAAC).",
+          "hint": "Pense aux institutions qui contrôlent et limitent l'exercice du pouvoir.",
+          "explanation": "Les institutions de contre-pouvoir au Bénin comprennent la Cour Constitutionnelle et la HAAC, qui contrôlent l'exercice du pouvoir pour éviter les abus.",
+          "points": 2,
+          "depends_on_previous": false,
+          "order": 3
+        },
+        {
+          "sub_label": "3c",
+          "text": "Précise le rôle que jouent les institutions de contre-pouvoir.",
+          "question_type": "open_ended",
+          "correct_answer": "Les institutions de contre-pouvoir ont pour rôle de contrôler et limiter l'exercice du pouvoir afin d'éviter les abus.",
+          "hint": "Le contre-pouvoir sert à surveiller ceux qui exercent le pouvoir.",
+          "explanation": "Les institutions de contre-pouvoir contrôlent et limitent l'exercice du pouvoir pour prévenir les dérives et les abus, garantissant ainsi le bon fonctionnement de la démocratie.",
+          "points": 4,
+          "depends_on_previous": true,
+          "order": 4
+        }
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "micro_skills": [
+        "ES-CM2-CIT-01",
+        "ES-CM2-DROI-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "hint": "Définis citoyenneté"
+          },
+          {
+            "step": 2,
+            "hint": "Cite 2 droits"
+          }
+        ]
+      },
+      "common_mistakes": [
+        {
+          "mistake": "Confondre droits et devoirs",
+          "prevention": "Distingue bien les deux concepts"
         }
       ]
     },
     {
       "item_number": 2,
       "domain": "history_heritage",
-      "context_text": "L'indépendance est un événement majeur dans l'histoire du Bénin.",
-      "points": 6,
+      "context_text": "L'indépendance est un événement majeur dans l'histoire du Bénin, permettant au pays de se gouverner lui-même.",
+      "points": 4,
       "sub_questions": [
         {
-          "sub_label": "a",
-          "text": "Que donne l'indépendance à un pays ?",
-          "question_type": "fill_blank",
-          "correct_answer": "L'indépendance donne la souveraineté nationale: le droit de se gouverner soi-même, de faire ses propres lois et de gérer ses ressources",
-          "explanation": "L'indépendance confère à un pays la souveraineté nationale, c'est-à-dire le droit de se gouverner, de légiférer et de gérer librement ses ressources.",
-          "points": 6,
+          "sub_label": "4",
+          "text": "Dis ce que donne l'indépendance à notre pays.",
+          "question_type": "open_ended",
+          "correct_answer": "L'indépendance donne la souveraineté nationale : le droit de se gouverner soi-même, de faire ses propres lois et de gérer librement ses ressources.",
+          "hint": "Pense à ce qu'un pays peut faire quand il n'est plus sous domination coloniale.",
+          "explanation": "L'indépendance confère à un pays la souveraineté nationale, c'est-à-dire le droit de se gouverner, de légiférer et de gérer librement ses ressources sans tutelle étrangère.",
+          "points": 4,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         }
+      ],
+      "bloom_level": "créer",
+      "ilma_level": 3,
+      "micro_skills": [
+        "ES-CM2-ENVI-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "geography_economy",
-      "context_text": "Le Bénin possède des ressources minières réparties sur son territoire.",
-      "points": 6,
+      "context_text": "Le Bénin possède des ressources minières réparties sur son territoire, importantes pour le développement économique du pays.",
+      "points": 4,
       "sub_questions": [
         {
-          "sub_label": "a",
-          "text": "Localise les ressources minières du Bénin sur la carte.",
-          "question_type": "fill_blank",
-          "correct_answer": "Or (Perma, nord-ouest), calcaire (Onigbolo, centre-sud), pétrole (offshore, sud), fer (nord), marbre (nord)",
-          "explanation": "Les ressources minières du Bénin sont réparties sur le territoire : l'or à Perma au nord-ouest, le calcaire à Onigbolo au centre-sud, le pétrole en offshore au sud, le fer et le marbre au nord.",
-          "points": 6,
+          "sub_label": "5",
+          "text": "Sur une carte du Bénin, localise les différentes ressources minières du pays.",
+          "question_type": "open_ended",
+          "correct_answer": "Or à Perma (nord-ouest), calcaire à Onigbolo (centre-sud), pétrole en offshore (sud), fer au nord, marbre au nord.",
+          "hint": "Les ressources minières du Bénin sont dispersées du nord au sud du pays.",
+          "explanation": "Les ressources minières du Bénin sont réparties sur le territoire : l'or à Perma au nord-ouest, le calcaire à Onigbolo au centre-sud, le pétrole en offshore au sud, le fer et le marbre au nord du pays.",
+          "points": 4,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         }
+      ],
+      "bloom_level": "comprendre",
+      "ilma_level": 1,
+      "micro_skills": [
+        "ES-CM2-SANT-01"
       ]
     }
   ]

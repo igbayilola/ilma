@@ -5,121 +5,413 @@
   "subject": "education_sociale",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Un touriste émerveillé visite la statue du roi Béhanzin à Abomey. Il s'intéresse à l'histoire du Bénin, à sa démocratie et à sa géographie.",
+  "context_text": "Un touriste en visite au Bénin fut émerveillé par la statue du roi Béhanzin à la place Goho à Abomey. Il aimerait en savoir plus sur l'histoire et le potentiel économique de ton pays le Bénin. Aide ce touriste.",
   "items": [
     {
       "item_number": 1,
       "domain": "history_heritage",
-      "context_text": "Le roi Béhanzin est un personnage historique majeur du Bénin. Le pays a connu plusieurs étapes importantes dans son histoire vers l'indépendance.",
-      "points": 6.67,
+      "context_text": "Un touriste en visite au Bénin fut émerveillé par la statue du roi Béhanzin à la place Goho à Abomey.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Pendant quelle période le roi Béhanzin a-t-il régné ?",
-          "question_type": "fill_blank",
+          "text": "Indique le règne du roi Béhanzin.",
+          "question_type": "short_answer",
           "correct_answer": "De 1889 à 1894",
+          "hint": "Le roi Béhanzin a régné à la fin du 19e siècle, avant d'être vaincu par les troupes coloniales françaises.",
           "explanation": "Le roi Béhanzin a régné sur le royaume du Danhomè de 1889 à 1894, avant d'être vaincu et exilé par les troupes coloniales françaises.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "À quelle date le Bénin a-t-il accédé à l'indépendance ?",
-          "question_type": "fill_blank",
+          "text": "Précise la date de l'indépendance du Bénin.",
+          "question_type": "short_answer",
           "correct_answer": "Le 1er août 1960",
+          "hint": "C'est la date de la fête nationale du Bénin, célébrée chaque année.",
           "explanation": "Le Bénin (alors République du Dahomey) a proclamé son indépendance le 1er août 1960.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite 3 monuments du Bénin.",
-          "question_type": "fill_blank",
+          "text": "Énumère trois monuments que tu connais au Bénin.",
+          "question_type": "short_answer",
           "correct_answer": "Le palais royal d'Abomey, la Porte de non-retour à Ouidah, la Place des Martyrs à Cotonou",
+          "hint": "Pense aux lieux historiques célèbres du Bénin liés à la royauté, à la traite négrière et à l'histoire nationale.",
           "explanation": "Le Bénin possède de nombreux monuments historiques dont le palais royal d'Abomey (classé au patrimoine mondial de l'UNESCO), la Porte de non-retour à Ouidah et la Place des Martyrs à Cotonou.",
-          "points": 2.22,
+          "points": 3,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Solution irréaliste",
+              "prevention": "Propose quelque chose de faisable"
+            },
+            {
+              "mistake": "Ne pas justifier",
+              "prevention": "Explique pourquoi tu choisis cette solution"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelles sont les différentes options possibles ?"
+              },
+              {
+                "step": 2,
+                "hint": "Quelle option respecte le mieux tous les droits ?"
+              },
+              {
+                "step": 3,
+                "hint": "Pourquoi ta solution est-elle la meilleure ?"
+              }
+            ]
+          },
+          "bloom_level": "créer",
+          "ilma_level": 3
+        }
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "micro_skills": [
+        "ES-CM2-CIT-01",
+        "ES-CM2-DROI-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "hint": "Définis citoyenneté"
+          },
+          {
+            "step": 2,
+            "hint": "Cite 2 droits"
+          }
+        ]
+      },
+      "common_mistakes": [
+        {
+          "mistake": "Confondre droits et devoirs",
+          "prevention": "Distingue bien les deux concepts"
         }
       ]
     },
     {
       "item_number": 2,
       "domain": "civics_institutions",
-      "context_text": "La démocratie au Bénin est née d'un grand événement historique qui a marqué un tournant dans la vie politique du pays.",
-      "points": 6.67,
+      "context_text": "La démocratie est née au Bénin à partir d'un grand événement.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Quel est l'événement fondateur de la démocratie au Bénin ?",
-          "question_type": "fill_blank",
+          "text": "Précise cet événement.",
+          "question_type": "short_answer",
           "correct_answer": "La Conférence Nationale des Forces Vives de la Nation (février 1990)",
+          "hint": "Cet événement s'est tenu en février 1990 et a permis la transition vers la démocratie.",
           "explanation": "La Conférence Nationale des Forces Vives de la Nation, tenue en février 1990, est l'événement fondateur de la démocratie béninoise. Elle a permis la transition pacifique vers un régime démocratique.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Quel était le système politique en place avant la démocratie ?",
-          "question_type": "mcq",
-          "choices": ["Le marxisme-léninisme", "La monarchie", "Le capitalisme", "La dictature militaire simple"],
+          "text": "Indique le nom du système politique qui a gouverné le Bénin, juste avant la démocratie.",
+          "question_type": "short_answer",
           "correct_answer": "Le marxisme-léninisme (régime militaire révolutionnaire)",
+          "hint": "Avant la démocratie, le Bénin vivait sous un régime instauré par le coup d'État de 1972.",
           "explanation": "Avant la démocratie, le Bénin vivait sous un régime marxiste-léniniste instauré par le coup d'État militaire du 26 octobre 1972 dirigé par Mathieu Kérékou.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite une personnalité ayant œuvré pour l'avènement de la démocratie au Bénin.",
-          "question_type": "fill_blank",
+          "text": "Écris le nom d'une personnalité importante du Bénin qui a œuvré pour l'avènement de la démocratie.",
+          "question_type": "short_answer",
           "correct_answer": "Monseigneur Isidore de Souza (ou Nicéphore Soglo)",
+          "hint": "Cette personnalité a présidé la Conférence Nationale ou a été le premier président démocratiquement élu.",
           "explanation": "Monseigneur Isidore de Souza a présidé la Conférence Nationale et a joué un rôle déterminant dans la transition démocratique. Nicéphore Soglo a été le premier président démocratiquement élu.",
-          "points": 2.22,
+          "points": 3,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Solution irréaliste",
+              "prevention": "Propose quelque chose de faisable"
+            },
+            {
+              "mistake": "Ne pas justifier",
+              "prevention": "Explique pourquoi tu choisis cette solution"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelles sont les différentes options possibles ?"
+              },
+              {
+                "step": 2,
+                "hint": "Quelle option respecte le mieux tous les droits ?"
+              },
+              {
+                "step": 3,
+                "hint": "Pourquoi ta solution est-elle la meilleure ?"
+              }
+            ]
+          },
+          "bloom_level": "créer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "créer",
+      "ilma_level": 3,
+      "micro_skills": [
+        "ES-CM2-ENVI-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "geography_economy",
-      "context_text": "Le Bénin est un pays agricole avec des produits vivriers variés, des limites naturelles et de nombreux cours d'eau.",
-      "points": 6.67,
+      "context_text": "Le touriste aimerait en savoir plus sur le potentiel économique du Bénin.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite 2 produits vivriers cultivés au Bénin.",
-          "question_type": "fill_blank",
+          "text": "Nomme deux produits vivriers qui se cultivent un peu partout au Bénin.",
+          "question_type": "short_answer",
           "correct_answer": "Le maïs et le manioc",
+          "hint": "Pense aux aliments de base que mangent les Béninois au quotidien.",
           "explanation": "Le maïs et le manioc sont les deux principaux produits vivriers cultivés au Bénin, constituant la base de l'alimentation de la population.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Sur la carte du Bénin, indique les limites naturelles.",
-          "question_type": "fill_blank",
-          "correct_answer": "Nord: fleuve Niger. Sud: océan Atlantique. Est: fleuve Ouémé/frontière Nigeria. Ouest: chaîne de l'Atacora/frontière Togo",
+          "text": "Réalise la carte du Bénin et indique les limites naturelles.",
+          "question_type": "map",
+          "correct_answer": "Nord : fleuve Niger. Sud : océan Atlantique. Est : fleuve Ouémé/frontière Nigeria. Ouest : chaîne de l'Atacora/frontière Togo",
+          "hint": "Le Bénin est entouré par des éléments naturels : un océan, un fleuve au nord, et des frontières avec les pays voisins.",
           "explanation": "Le Bénin est délimité au nord par le fleuve Niger, au sud par l'océan Atlantique, à l'est par la frontière avec le Nigeria et à l'ouest par la chaîne de l'Atacora et la frontière avec le Togo.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Localise le fleuve Ouémé et cite ses affluents.",
-          "question_type": "fill_blank",
-          "correct_answer": "L'Ouémé (plus long fleuve du Bénin, 510 km) et ses affluents: le Zou et l'Okpara",
+          "text": "Localise sur cette carte le fleuve Ouémé et ses affluents.",
+          "question_type": "map",
+          "correct_answer": "L'Ouémé (plus long fleuve du Bénin, 510 km) et ses affluents : le Zou et l'Okpara",
+          "hint": "L'Ouémé traverse le centre et le sud du Bénin. Il reçoit deux principaux affluents.",
           "explanation": "L'Ouémé est le plus long fleuve du Bénin avec environ 510 km. Ses principaux affluents sont le Zou et l'Okpara.",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 2
+          "points": 2,
+          "depends_on_previous": true,
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Solution irréaliste",
+              "prevention": "Propose quelque chose de faisable"
+            },
+            {
+              "mistake": "Ne pas justifier",
+              "prevention": "Explique pourquoi tu choisis cette solution"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelles sont les différentes options possibles ?"
+              },
+              {
+                "step": 2,
+                "hint": "Quelle option respecte le mieux tous les droits ?"
+              },
+              {
+                "step": 3,
+                "hint": "Pourquoi ta solution est-elle la meilleure ?"
+              }
+            ]
+          },
+          "bloom_level": "créer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "comprendre",
+      "ilma_level": 1,
+      "micro_skills": [
+        "ES-CM2-SANT-01"
       ]
     }
   ]

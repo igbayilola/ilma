@@ -5,122 +5,389 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Dans le cadre d'une correspondance inter-scolaire, les élèves échangent sur les premiers hommes, l'énergie, les machines simples et l'alimentation.",
+  "context_text": "Dans le cadre de la correspondance inter-scolaire, un de tes amis te demande de lui dire ce que tu sais des premiers hommes. Dans ta réponse, tu lui parles de l'évolution de ces hommes, des différentes formes d'énergie, des machines simples qu'ils utilisaient et de leur mode d'alimentation.",
+  "task_text": "Tu es invité(e) à fournir des explications à ton en répondant aux items suivants.",
   "items": [
     {
       "item_number": 1,
       "domain": "technology_prehistory",
-      "context_text": "Les élèves étudient la vie des premiers hommes.",
-      "points": 6.67,
+      "context_text": "Un de tes amis te demande de lui dire ce que tu sais des premiers hommes.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "À quelle période vivaient les premiers hommes ?",
-          "question_type": "mcq",
-          "choices": ["La Préhistoire", "L'Antiquité", "L'époque moderne"],
+          "text": "Dis le nom de la période de vie des premiers hommes.",
+          "question_type": "short_answer",
           "correct_answer": "La Préhistoire",
+          "hint": "C'est la période la plus ancienne de l'histoire de l'humanité, avant l'invention de l'écriture.",
           "explanation": "Les premiers hommes vivaient pendant la Préhistoire, période qui s'étend de l'apparition de l'homme jusqu'à l'invention de l'écriture.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Quelles traces ont permis de reconnaître la vie de ces hommes ?",
-          "question_type": "fill_blank",
+          "text": "Cite les traces qui ont permis de reconnaître la vie de ces hommes.",
+          "question_type": "short_answer",
           "correct_answer": "Les fossiles, les outils en pierre taillée, les peintures rupestres",
+          "hint": "Pense aux objets et restes que les archéologues ont retrouvés.",
           "explanation": "Les fossiles (restes d'êtres vivants), les outils en pierre taillée et les peintures rupestres (dessins sur les parois des grottes) sont les principales traces laissées par les premiers hommes.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Pourquoi dit-on que l'Afrique est le berceau de l'humanité ?",
-          "question_type": "fill_blank",
+          "text": "Les savants ont affirmé que l'Afrique est le berceau de l'humanité. Donne la raison de cette affirmation.",
+          "question_type": "short_answer",
           "correct_answer": "C'est en Afrique que les plus anciens fossiles d'hominidés ont été découverts",
+          "hint": "Pense aux découvertes archéologiques faites sur le continent africain.",
           "explanation": "L'Afrique est considérée comme le berceau de l'humanité car c'est sur ce continent que les plus anciens fossiles d'hominidés (ancêtres de l'homme) ont été découverts, notamment en Éthiopie, au Kenya et en Tanzanie.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "technology_prehistory",
-      "context_text": "Un levier est représenté avec un point d'appui O et trois points A, B et C situés à différentes distances du point d'appui.",
-      "points": 6.67,
+      "context_text": "Pour soulever une lourde charge, ces hommes se servaient de levier.",
+      "points": 8,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "En quel point faut-il appuyer pour soulever la charge plus facilement ?",
+          "text": "Parmi les trois (03) points A, B, C indique le point qui permet de soulever plus facilement la charge.",
           "question_type": "mcq",
-          "choices": ["Point A", "Point B", "Point C"],
+          "choices": [
+            "Point A",
+            "Point B",
+            "Point C"
+          ],
           "correct_answer": "Point C",
+          "hint": "Plus le point est éloigné du point d'appui O, moins il faut de force.",
           "explanation": "Le point C est le plus éloigné du point d'appui. Plus le bras de levier est long, moins il faut de force pour soulever la charge.",
-          "points": 2.22,
+          "diagram_description": "Schéma d'un levier avec un point d'appui O au centre. Sur le bras du levier, trois points sont marqués: A (le plus proche de O), B (au milieu), et C (le plus éloigné de O, à l'extrémité du bras). Une charge lourde est placée de l'autre côté du point d'appui.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
           "text": "Justifie ta réponse.",
-          "question_type": "fill_blank",
+          "question_type": "short_answer",
           "correct_answer": "Plus le bras de levier est long (distance du point d'appui), moins on a besoin de force pour soulever la charge",
+          "hint": "Rappelle-toi le principe du levier: la longueur du bras influence la force nécessaire.",
           "explanation": "C'est le principe du levier : plus la distance entre le point d'application de la force et le point d'appui est grande, moins la force nécessaire est importante.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite deux autres machines simples utilisées de nos jours.",
-          "question_type": "fill_blank",
+          "text": "Cite deux (02) autres machines simples utilisées de nos jours.",
+          "question_type": "short_answer",
           "correct_answer": "La poulie et la brouette",
+          "hint": "Pense aux outils simples qui facilitent le travail quotidien.",
           "explanation": "La poulie permet de soulever des charges en changeant la direction de la force. La brouette utilise le principe du levier pour transporter des charges lourdes.",
-          "points": 2.22,
+          "points": 3,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "nutrition_health",
-      "context_text": "Les élèves étudient la nourriture des premiers hommes et la transformation des aliments dans le tube digestif.",
-      "points": 6.67,
+      "context_text": "Tu parles à ton ami du mode d'alimentation des premiers hommes et de la transformation des aliments dans le tube digestif.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "De quoi vivaient les premiers hommes ?",
-          "question_type": "fill_blank",
+          "text": "Dis de quoi vivaient les premiers hommes.",
+          "question_type": "short_answer",
           "correct_answer": "De chasse, de pêche et de cueillette",
+          "hint": "Les premiers hommes n'avaient pas de cultures ni d'élevage.",
           "explanation": "Les premiers hommes étaient des chasseurs-cueilleurs. Ils chassaient les animaux, pêchaient dans les rivières et cueillaient des fruits, des racines et des baies.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Décris la transformation des aliments dans la bouche, l'estomac et l'intestin grêle.",
-          "question_type": "fill_blank",
+          "text": "Les aliments consommés subissent des transformations. Dis ce qu'ils deviennent dans la bouche, dans l'estomac et dans l'intestin grêle.",
+          "question_type": "short_answer",
           "correct_answer": "Bouche: mastication et insalivation (le bol alimentaire). Estomac: brassage par les sucs gastriques (le chyme). Intestin grêle: absorption des nutriments dans le sang",
+          "hint": "À chaque étape, les aliments changent de forme grâce à l'action mécanique et chimique.",
           "explanation": "Dans la bouche, les aliments sont broyés et mélangés à la salive pour former le bol alimentaire. Dans l'estomac, ils sont brassés avec les sucs gastriques pour devenir le chyme. Dans l'intestin grêle, les nutriments sont absorbés et passent dans le sang.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Fais le schéma annoté de l'appareil digestif.",
-          "question_type": "fill_blank",
+          "text": "Réalise le schéma annoté de l'appareil digestif de l'homme.",
+          "question_type": "constructed_response",
           "correct_answer": "Bouche, œsophage, estomac, intestin grêle, gros intestin, anus, foie, pancréas",
+          "hint": "Le tube digestif va de la bouche à l'anus. N'oublie pas les glandes annexes.",
           "explanation": "L'appareil digestif comprend le tube digestif (bouche, œsophage, estomac, intestin grêle, gros intestin, anus) et les glandes annexes (foie, pancréas) qui produisent les sucs digestifs.",
-          "points": 2.22,
+          "diagram_description": "Schéma attendu de l'appareil digestif montrant le tube digestif (bouche, œsophage, estomac, intestin grêle, gros intestin, anus) et les glandes annexes (foie, pancréas), avec des annotations pour chaque organe.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01"
       ]
     }
   ]

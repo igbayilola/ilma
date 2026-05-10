@@ -1,118 +1,295 @@
 {
-  "title": "CEP 2021 Session Normale — Mathématiques",
+  "title": "CEP 2021 Session Normale -- Mathematiques",
   "year": 2021,
   "session": "normale",
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "La coopérative Binazon exploite un terrain de 5 hectares. Les produits récoltés sont : maïs 3 t, arachides 2 t, patate douce 1 t, manioc 4 t. La coopérative dispose d'une citerne cylindrique de diamètre 6 m et de profondeur 8 m.",
+  "context_text": "La cooperative Binazon dispose d'un terrain de 5 hectares. Elle produit des cereales et des tubercules. A la recolte, les quantites suivantes sont ramassees : mais : 3 tonnes ; arachides : 2 tonnes ; patate douce : 1 tonne ; manioc : 4 tonnes. Sur le terrain, une citerne cylindrique de 6 m de diametre et de 8 m de profondeur alimente la cooperative.",
+  "task_text": "Tu es invite(e) a lire attentivement le support ci-dessus afin de bien resoudre les items suivants.",
   "items": [
     {
       "item_number": 1,
       "domain": "data_proportionality",
-      "context_text": "Les produits récoltés par la coopérative Binazon sont : maïs 3 t, arachides 2 t, patate douce 1 t, manioc 4 t. Le transport se fait par tricycle de capacité 10 quintaux par voyage.",
-      "points": 6.67,
+      "context_text": "Avec les informations du support, les produits recoltes par la cooperative Binazon sont : mais 3 t, arachides 2 t, patate douce 1 t, manioc 4 t. Le transport se fait par tricycle qui peut transporter 10 quintaux a la fois par voyage.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Dresse le tableau de fréquence en fraction puis en pourcentage.",
+          "text": "Dresse le tableau de frequence en fraction puis en pourcentage de ces produits recoltes.",
           "question_type": "fill_blank",
-          "correct_answer": "Maïs: 3/10 (30%), Arachides: 2/10 (20%), Patate douce: 1/10 (10%), Manioc: 4/10 (40%)",
-          "explanation": "Total = 3 + 2 + 1 + 4 = 10 t. Maïs : 3/10 = 30%. Arachides : 2/10 = 20%. Patate douce : 1/10 = 10%. Manioc : 4/10 = 40%.",
-          "points": 3.33,
+          "correct_answer": "Mais: 3/10 (30%), Arachides: 2/10 (20%), Patate douce: 1/10 (10%), Manioc: 4/10 (40%)",
+          "explanation": "Total = 3 + 2 + 1 + 4 = 10 t. Mais : 3/10 = 30%. Arachides : 2/10 = 20%. Patate douce : 1/10 = 10%. Manioc : 4/10 = 40%. Total : 10/10 = 100%.",
+          "hint": "Calcule d'abord la production totale (3 + 2 + 1 + 4). La frequence en fraction de chaque produit est sa quantite divisee par le total. Pour le pourcentage, multiplie la fraction par 100.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "8000 × 25 = 200000",
+              "frequency": "high",
+              "explanation": "25% ≠ 25. 25% = 0,25 ou 1/4",
+              "prevention_hint": "25% = ÷4 (un quart)"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Calcule le nombre de voyages nécessaires avec un tricycle de capacité 10 quintaux par voyage.",
+          "text": "Determine le nombre de voyages que fera un tricycle qui peut transporter 10 quintaux a la fois par voyage pour ramasser cette production.",
           "question_type": "numeric_input",
           "correct_answer": "10",
-          "explanation": "Total = 10 t = 100 quintaux. Nombre de voyages : 100 ÷ 10 = 10 voyages.",
-          "points": 3.33,
+          "explanation": "Total = 10 t = 100 quintaux. Nombre de voyages : 100 / 10 = 10 voyages.",
+          "hint": "Convertis d'abord la production totale de tonnes en quintaux (1 tonne = 10 quintaux). Puis divise le total en quintaux par la capacite du tricycle (10 quintaux par voyage).",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Donner le bénéfice (2000) au lieu du prix de vente",
+              "frequency": "medium",
+              "explanation": "La question demande le prix de VENTE",
+              "prevention_hint": "Relis bien la question: prix de vente ≠ bénéfice"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-PROP-02",
+        "MATH-CM2-PERCENT-02"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Bénéfice",
+            "content": "25% de 8000 = 8000 ÷ 4 = ?",
+            "answer": "2000 FCFA"
+          },
+          {
+            "step": 2,
+            "title": "Prix de vente",
+            "content": "8000 + 2000 = ?",
+            "answer": "10000 FCFA"
+          },
+          {
+            "step": 3,
+            "title": "Fraction",
+            "content": "25/100 simplifié = ?",
+            "answer": "1/4"
+          }
+        ]
+      }
     },
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "La coopérative dispose d'une citerne cylindrique de diamètre 6 m et de profondeur 8 m.",
-      "points": 6.67,
+      "context_text": "La cooperative dispose d'une citerne cylindrique de 6 m de diametre et de 8 m de profondeur. On prend pour pi la valeur 3,14.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule l'aire de la surface de base de la citerne.",
+          "text": "Calcule l'aire de la surface de base de la citerne de cette cooperative en prenant pour pi la valeur 3,14.",
           "question_type": "numeric_input",
           "correct_answer": "28.26",
-          "explanation": "Rayon = 6 ÷ 2 = 3 m. Aire = π × r² = 3,14 × 3² = 3,14 × 9 = 28,26 m².",
-          "points": 2.22,
+          "explanation": "Rayon = 6 / 2 = 3 m. Aire = pi x r2 = 3,14 x 3 x 3 = 3,14 x 9 = 28,26 m2.",
+          "hint": "Le diametre est 6 m, donc le rayon est la moitie : 3 m. L'aire d'un disque = pi x r2 = 3,14 x 3 x 3.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "2 + 1,2 = 3,2",
+              "frequency": "medium",
+              "explanation": "Aire = multiplication, pas addition",
+              "prevention_hint": "Aire = L × l (toujours multiplier)"
+            },
+            {
+              "mistake": "Oublier l'unité ou mettre m (au lieu de m²)",
+              "frequency": "high",
+              "explanation": "Aire = unité au carré (m², cm²)",
+              "prevention_hint": "Aire toujours en carré: m², cm²..."
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Calcule le volume de la citerne.",
+          "text": "Calcule le volume de cette citerne.",
           "question_type": "numeric_input",
           "correct_answer": "226.08",
-          "explanation": "V = Aire de base × hauteur = 28,26 × 8 = 226,08 m³.",
-          "points": 2.22,
+          "explanation": "V = Aire de base x hauteur = 28,26 x 8 = 226,08 m3.",
+          "hint": "Le volume d'un cylindre = Aire de base x hauteur. Utilise l'aire calculee en a) et multiplie par la profondeur (8 m).",
+          "points": 2,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "(2 × 1,2) × 2 = 4,8",
+              "frequency": "medium",
+              "explanation": "Formule: (L + l) × 2, pas (L × l) × 2",
+              "prevention_hint": "P = (longueur + largeur) × 2"
+            },
+            {
+              "mistake": "Mettre m² au lieu de m",
+              "frequency": "medium",
+              "explanation": "Périmètre = unité linéaire (m, cm)",
+              "prevention_hint": "Périmètre = longueur (pas de carré)"
+            }
+          ]
         },
         {
           "sub_label": "c",
-          "text": "Calcule la quantité d'eau en litres si la citerne est remplie aux 2/3.",
+          "text": "Determine la quantite d'eau en litres que contient cette citerne remplie aux 2/3 de sa capacite.",
           "question_type": "numeric_input",
           "correct_answer": "150720",
-          "explanation": "Volume aux 2/3 : 226,08 × 2/3 = 150,72 m³. En litres : 150,72 × 1 000 = 150 720 L.",
-          "points": 2.22,
+          "explanation": "Volume total = 226,08 m3 = 226 080 dm3 = 226 080 L. Volume aux 2/3 : (226 080 x 2) / 3 = 150 720 L.",
+          "hint": "Convertis d'abord le volume en litres (1 m3 = 1 000 L, donc 226,08 m3 = 226 080 L). Puis calcule les 2/3 de cette quantite.",
+          "points": 2,
           "depends_on_previous": true,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "6,4 × 10 = 64",
+              "frequency": "medium",
+              "explanation": "Conversion m→cm: ×100 (pas ×10)",
+              "prevention_hint": "1 m = 100 cm (2 zéros)"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-AREA-01",
+        "MATH-CM2-PERIMETER-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Aire",
+            "content": "2 × 1,2 = ?",
+            "answer": "2,4 m²"
+          },
+          {
+            "step": 2,
+            "title": "Périmètre",
+            "content": "(2 + 1,2) × 2 = ?",
+            "answer": "6,4 m"
+          },
+          {
+            "step": 3,
+            "title": "Conversion",
+            "content": "6,4 m = ? cm",
+            "answer": "640 cm"
+          }
+        ]
+      }
     },
     {
       "item_number": 3,
       "domain": "geometry",
-      "context_text": "On considère la base circulaire de la citerne cylindrique de diamètre 6 m.",
-      "points": 6.67,
+      "context_text": "On considere la base circulaire de la citerne cylindrique de diametre 6 m.",
+      "diagram_description": "La figure montre un cercle (B) de rayon 3 cm (representation a l'echelle 1/100 de la base de la citerne de diametre 6 m), une droite (H) tracee en dehors du cercle (ne coupant pas le cercle), et le symetrique (B') du cercle (B) par rapport a la droite (H). (B') est un cercle de meme rayon situe de l'autre cote de (H), a egale distance de (H). Le diametre passant par les centres de (B) et (B') est perpendiculaire a (H).",
+      "points": 8,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Représente la base (B) de la citerne à l'échelle 1/100.",
-          "question_type": "mcq",
-          "choices": ["Cercle de rayon 3 cm", "Cercle de rayon 6 cm", "Cercle de rayon 0,3 cm", "Cercle de rayon 30 cm"],
-          "correct_answer": "Cercle de rayon 3 cm",
-          "explanation": "Rayon réel = 3 m = 300 cm. Échelle 1/100 : 300 ÷ 100 = 3 cm.",
-          "points": 2.22,
+          "text": "Represente la base (B) de cette citerne a l'echelle de 1/100.",
+          "question_type": "construction",
+          "correct_answer": "Cercle de rayon 3 cm (diametre reel 6 m = 600 cm ; 600 / 100 = 6 cm de diametre reduit ; rayon reduit = 3 cm).",
+          "explanation": "Diametre reel = 6 m = 600 cm. A l'echelle 1/100 : 600 / 100 = 6 cm de diametre, soit un rayon de 3 cm. On trace un cercle de rayon 3 cm.",
+          "hint": "Convertis le diametre reel en centimetres (6 m = 600 cm), puis applique l'echelle 1/100 en divisant par 100. Tu obtiens le diametre reduit, puis divise par 2 pour le rayon.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Tracer BC=8cm au lieu de AC=8cm",
+              "frequency": "high",
+              "explanation": "L'énoncé dit AC=8cm (à partir de A)",
+              "prevention_hint": "Relis: AC (de A à C) = 8cm"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Trace une droite (H) en dehors de la représentation de cette base.",
-          "question_type": "mcq",
-          "choices": ["Une droite ne coupant pas le cercle", "Une droite tangente au cercle", "Un diamètre"],
-          "correct_answer": "Une droite ne coupant pas le cercle",
-          "explanation": "Une droite tracée en dehors du cercle est une droite qui ne coupe pas le cercle.",
-          "points": 2.22,
+          "text": "Trace une droite (H) en dehors de la representation de cette base.",
+          "question_type": "construction",
+          "correct_answer": "Une droite tracee en dehors du cercle (B), c'est-a-dire une droite qui ne coupe pas le cercle et ne le touche pas.",
+          "explanation": "La droite (H) doit etre tracee a l'exterieur du cercle (B), sans le couper ni le toucher. Elle sert d'axe de symetrie pour la construction suivante.",
+          "hint": "Trace une droite a cote du cercle, suffisamment eloignee pour qu'elle ne touche pas le cercle. Cette droite servira d'axe de symetrie.",
+          "points": 2,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Calculer au lieu de mesurer",
+              "frequency": "medium",
+              "explanation": "La question demande de MESURER sur la construction",
+              "prevention_hint": "La question dit 'mesure', pas 'calcule'"
+            }
+          ]
         },
         {
           "sub_label": "c",
-          "text": "Construis le symétrique (B') de (B) par rapport à la droite (H).",
-          "question_type": "mcq",
-          "choices": ["Un cercle de même rayon de l'autre côté de (H)", "Un cercle concentrique", "Un demi-cercle"],
-          "correct_answer": "Un cercle de même rayon de l'autre côté de (H)",
-          "explanation": "Le symétrique d'un cercle par rapport à une droite est un cercle de même rayon situé de l'autre côté de cette droite.",
-          "points": 2.22,
+          "text": "Construis le symetrique (B') de (B) par rapport a la droite (H).",
+          "question_type": "construction",
+          "correct_answer": "Un cercle (B') de meme rayon (3 cm) situe de l'autre cote de la droite (H), a egale distance de (H) que le cercle (B). Le segment reliant les centres de (B) et (B') est perpendiculaire a (H).",
+          "explanation": "Le symetrique d'un cercle par rapport a une droite est un cercle de meme rayon situe de l'autre cote de cette droite, a la meme distance. Le centre de (B') est le symetrique du centre de (B) par rapport a (H) : on trace la perpendiculaire depuis le centre de (B) vers (H), puis on reporte la meme distance de l'autre cote.",
+          "hint": "Pour construire le symetrique, trace la perpendiculaire du centre de (B) a la droite (H). Mesure la distance du centre de (B) a (H), puis reporte cette meme distance de l'autre cote de (H). Trace un cercle de meme rayon (3 cm) autour de ce nouveau centre.",
+          "points": 4,
           "depends_on_previous": true,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Tracer la médiane au lieu de la hauteur",
+              "frequency": "high",
+              "explanation": "Hauteur = perpendiculaire, médiane = jusqu'au milieu",
+              "prevention_hint": "Hauteur toujours perpendiculaire"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "créer",
+      "ilma_level": 3,
+      "skills_targeted": [
+        "MATH-CM2-GEOM-03",
+        "MATH-CM2-TRIANGLE-01",
+        "MATH-CM2-ANGLES-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Tracer AB",
+            "content": "Trace [AB] = ?",
+            "answer": "6 cm"
+          },
+          {
+            "step": 2,
+            "title": "Angle",
+            "content": "Construis un angle de ?° en A",
+            "answer": "60°"
+          },
+          {
+            "step": 3,
+            "title": "Point C",
+            "content": "Sur cette demi-droite, reporte ? cm",
+            "answer": "AC = 8 cm"
+          },
+          {
+            "step": 4,
+            "title": "Fermer",
+            "content": "Relie C à ?",
+            "answer": "B"
+          }
+        ]
+      }
     }
   ]
 }

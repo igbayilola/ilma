@@ -1,126 +1,388 @@
 {
-  "title": "CEP 2025 Session Blanc — EST",
+  "title": "CEP 2025 Examen Blanc — EST",
   "year": 2025,
   "session": "blanc",
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "À l'occasion du championnat UASCEP de football, les élèves de l'école primaire publique de Kpota séjournent dans un bâtiment électrifié où ils sont nourris trois fois par jour. Le jeune Codjo, très curieux, observe les installations électriques et les repas servis.",
+  "context_text": "L'année dernière, tu as participé au championnat national de football de l'UASCEP avec l'équipe de ton département. Pendant le tournoi, vous avez été hébergés dans un bâtiment électrifié et nourris trois fois par jour durant trois jours. Ton coéquipier Codjo, curieux, te demande plus d'informations sur le montage électrique et la nourriture proposée.",
   "items": [
     {
       "item_number": 1,
       "domain": "electricity",
-      "context_text": "Dans le bâtiment, Codjo remarque que 3 lampes sont reliées à 1 seul interrupteur. Quand une lampe grille, les autres ne marchent plus.",
-      "points": 6.67,
+      "context_text": "Dans ce bâtiment, un seul interrupteur commande trois lampes : quand l'une d'elles grille, les autres ne fonctionnent plus.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Quel est le type de montage utilisé pour ces 3 lampes ?",
-          "question_type": "mcq",
-          "choices": ["Montage en série", "Montage en dérivation (parallèle)", "Montage mixte"],
+          "text": "Dis le type de montage réalisé.",
+          "question_type": "short_answer",
           "correct_answer": "Montage en série",
-          "explanation": "Quand une lampe grille et que toutes les autres s'éteignent, cela signifie que les lampes sont montées en série : le courant passe par chaque lampe l'une après l'autre.",
-          "points": 2.22,
+          "hint": "Quand une lampe grille et que toutes les autres s'éteignent, cela indique un type de montage particulier où le courant passe par chaque lampe l'une après l'autre.",
+          "explanation": "Quand une lampe grille et que toutes les autres s'éteignent, cela signifie que les lampes sont montées en série : le courant passe par chaque lampe l'une après l'autre, formant un circuit unique.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Cite un avantage et un inconvénient de ce type de montage.",
-          "question_type": "fill_blank",
-          "correct_answer": "Avantage: économie de fil. Inconvénient: si une lampe grille, toutes s'éteignent",
-          "explanation": "Le montage en série utilise moins de fil électrique (avantage), mais si un récepteur est défaillant, tout le circuit est coupé (inconvénient).",
-          "points": 2.22,
+          "text": "Dis les avantages et les inconvénients de ce type de montage.",
+          "question_type": "short_answer",
+          "correct_answer": "Avantages : économie de fil électrique, montage simple. Inconvénients : si une lampe grille, toutes les autres s'éteignent ; les lampes brillent moins.",
+          "hint": "Pense à ce qui se passe quand une lampe grille. Pense aussi à la quantité de fil utilisé.",
+          "explanation": "Le montage en série utilise moins de fil électrique et est simple à réaliser (avantages), mais si un récepteur est défaillant, tout le circuit est coupé, et les lampes brillent moins car elles partagent la tension (inconvénients).",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Cite 2 sources d'énergie renouvelable et 1 source d'énergie non renouvelable.",
-          "question_type": "fill_blank",
-          "correct_answer": "Renouvelables: soleil, vent. Non renouvelable: pétrole",
+          "text": "Cite deux sources d'énergie renouvelable ainsi qu'une source d'énergie non renouvelable capables d'alimenter ces lampes.",
+          "question_type": "short_answer",
+          "correct_answer": "Renouvelables : le soleil (énergie solaire), le vent (énergie éolienne). Non renouvelable : le pétrole.",
+          "hint": "Les sources renouvelables se renouvellent naturellement. Les sources non renouvelables s'épuisent avec le temps.",
           "explanation": "Les sources renouvelables se renouvellent naturellement (soleil, vent, eau). Les sources non renouvelables s'épuisent avec le temps (pétrole, charbon, gaz naturel).",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01",
+        "EST-CM2-MELA-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "nutrition_health",
-      "context_text": "Pour nourrir les joueurs, la cantine dispose des aliments suivants : lait, maïs, viande de poulet, mangue, orange, haricot, poisson, légume, riz, huile d'arachide, igname, pain, huile de palme, œufs.",
-      "points": 6.67,
+      "context_text": "Voici la liste des aliments proposés durant les trois jours : lait, maïs, viande de poulet, mangue, orange, haricot, poisson, légume, riz, huile d'arachide, igname, pain, huile de palme, œufs.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "À partir de ces aliments, compose 2 menus équilibrés pour les joueurs.",
-          "question_type": "fill_blank",
-          "correct_answer": "Menu 1: Riz + sauce de poisson + légumes + orange. Menu 2: Pâte de maïs + sauce de viande + haricot + mangue",
+          "text": "Compose deux menus équilibrés en utilisant ces aliments.",
+          "question_type": "short_answer",
+          "correct_answer": "Menu 1 : Riz + sauce de poisson aux légumes + huile d'arachide + orange. Menu 2 : Pâte de maïs + sauce de viande de poulet + haricot + mangue.",
+          "hint": "Un menu équilibré doit contenir des aliments des quatre groupes : glucides (énergie), protides (croissance), lipides (réserve) et vitamines (protection).",
           "explanation": "Un menu équilibré doit contenir des aliments des quatre groupes : glucides (énergie), protides (croissance), lipides (réserve) et vitamines (protection).",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Classe ces aliments en 4 catégories nutritionnelles : glucides, protides, lipides, vitamines.",
-          "question_type": "fill_blank",
-          "correct_answer": "Glucides: maïs, riz, igname, pain. Protides: viande, poisson, haricot, œufs, lait. Lipides: huile d'arachide, huile de palme. Vitamines: mangue, orange, légume",
+          "text": "Classe ces aliments en quatre catégories nutritionnelles.",
+          "question_type": "short_answer",
+          "correct_answer": "Glucides : maïs, riz, igname, pain. Protides : viande de poulet, poisson, haricot, œufs, lait. Lipides : huile d'arachide, huile de palme. Vitamines : mangue, orange, légume.",
+          "hint": "Les quatre catégories nutritionnelles sont : glucides (aliments énergétiques), protides (aliments de construction), lipides (corps gras), vitamines (aliments de protection).",
           "explanation": "Les glucides fournissent l'énergie (céréales, tubercules). Les protides construisent le corps (viande, poisson, légumineuses). Les lipides sont les corps gras. Les vitamines protègent l'organisme (fruits, légumes).",
-          "points": 2.22,
+          "points": 3,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Quel est le rôle essentiel des glucides et des protides dans l'organisme ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Les glucides fournissent l'énergie au corps. Les protides permettent la croissance et la réparation des cellules",
+          "text": "Dis le rôle essentiel des glucides et des protides dans l'organisme.",
+          "question_type": "short_answer",
+          "correct_answer": "Les glucides fournissent l'énergie au corps. Les protides permettent la croissance et la réparation des cellules.",
+          "hint": "Les glucides sont des aliments énergétiques. Les protides sont des aliments de construction.",
           "explanation": "Les glucides sont des aliments énergétiques : ils donnent la force pour les activités quotidiennes. Les protides sont des aliments de construction : ils permettent la croissance et la réparation des tissus du corps.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01",
+        "EST-CM2-TRAN-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "nutrition_health",
-      "context_text": "Au cours d'un match, un joueur est blessé et perd beaucoup de sang.",
-      "points": 6.67,
+      "context_text": "Au cours de la compétition, un joueur s'est blessé et a perdu assez de sang.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Que faut-il faire pour arrêter l'hémorragie ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Comprimer la plaie avec un tissu propre, surélever le membre blessé, appeler les secours",
+          "text": "Dis ce qu'il fallait faire pour arrêter l'hémorragie.",
+          "question_type": "short_answer",
+          "correct_answer": "Comprimer la plaie avec un tissu propre, surélever le membre blessé, appeler les secours ou conduire le blessé au centre de santé.",
+          "hint": "Il faut d'abord stopper le saignement, puis alerter les secours médicaux.",
           "explanation": "En cas d'hémorragie, il faut comprimer la plaie avec un linge propre pour limiter la perte de sang, surélever le membre si possible, et alerter les secours médicaux.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Quels sont les éléments constitutifs du sang ?",
-          "question_type": "mcq",
-          "choices": ["Globules rouges, globules blancs, plaquettes, plasma", "Globules rouges et eau seulement", "Plasma et vitamines", "Globules blancs et protides"],
-          "correct_answer": "Globules rouges, globules blancs, plaquettes, plasma",
-          "explanation": "Le sang est composé de quatre éléments : les globules rouges, les globules blancs, les plaquettes sanguines et le plasma.",
-          "points": 2.22,
+          "text": "Cite les éléments constitutifs du sang.",
+          "question_type": "short_answer",
+          "correct_answer": "Les globules rouges, les globules blancs, les plaquettes sanguines et le plasma.",
+          "hint": "Le sang est composé de quatre éléments principaux : deux types de cellules, de petits fragments cellulaires et un liquide.",
+          "explanation": "Le sang est composé de quatre éléments : les globules rouges (transport d'oxygène), les globules blancs (défense), les plaquettes sanguines (coagulation) et le plasma (liquide de transport).",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Donne le rôle de chaque élément constitutif du sang.",
-          "question_type": "fill_blank",
-          "correct_answer": "Globules rouges: transport de l'oxygène. Globules blancs: défense contre les microbes. Plaquettes: coagulation du sang. Plasma: transport des nutriments",
-          "explanation": "Chaque élément du sang a un rôle précis : les globules rouges transportent l'oxygène, les globules blancs défendent contre les infections, les plaquettes assurent la coagulation, et le plasma transporte les nutriments.",
-          "points": 2.22,
+          "text": "Dis le rôle de chaque élément constitutif du sang.",
+          "question_type": "short_answer",
+          "correct_answer": "Globules rouges : transport de l'oxygène. Globules blancs : défense de l'organisme contre les microbes. Plaquettes : coagulation du sang. Plasma : transport des nutriments et des déchets.",
+          "hint": "Chaque élément du sang a une fonction spécifique liée au transport, à la défense ou à la réparation.",
+          "explanation": "Chaque élément du sang a un rôle précis : les globules rouges transportent l'oxygène, les globules blancs défendent contre les infections, les plaquettes assurent la coagulation, et le plasma transporte les nutriments et les déchets.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01",
+        "EST-CM2-DIGE-01"
       ]
     }
   ]

@@ -19,7 +19,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 56,
           "explanation": "7×8 = 56. C'est une table de multiplication à connaître par cœur.",
-          "hint": ""
+          "hint": "Pense à la table de 7 ou à la table de 8."
         },
         {
           "exercise_id": "EX002",
@@ -30,7 +30,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 54,
           "explanation": "9×6 = 54.",
-          "hint": ""
+          "hint": "Pense à la table de 9 : 9, 18, 27, 36, 45, 54..."
         },
         {
           "exercise_id": "EX003",
@@ -47,7 +47,7 @@
           ],
           "correct_answer": "84",
           "explanation": "12×7 = 84.",
-          "hint": ""
+          "hint": "Décompose : 12×7 = 10×7 + 2×7."
         },
         {
           "exercise_id": "EX004",
@@ -58,7 +58,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 99,
           "explanation": "11×9 = 99.",
-          "hint": ""
+          "hint": "Décompose : 11×9 = 10×9 + 1×9."
         }
       ]
     },
@@ -74,7 +74,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 70,
           "explanation": "35 × 2 = 70.",
-          "hint": ""
+          "hint": "Doubler, c'est multiplier par 2."
         },
         {
           "exercise_id": "EX002",
@@ -85,7 +85,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 32,
           "explanation": "64 ÷ 2 = 32.",
-          "hint": ""
+          "hint": "La moitié, c'est diviser par 2."
         },
         {
           "exercise_id": "EX003",
@@ -102,7 +102,7 @@
           ],
           "correct_answer": "900",
           "explanation": "450 × 2 = 900.",
-          "hint": ""
+          "hint": "Doubler = multiplier par 2."
         },
         {
           "exercise_id": "EX004",
@@ -113,7 +113,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 1750,
           "explanation": "3 500 ÷ 2 = 1 750.",
-          "hint": ""
+          "hint": "La moitié = diviser par 2."
         }
       ]
     },
@@ -140,7 +140,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 50,
           "explanation": "200 ÷ 4 = 50. (200÷2=100, 100÷2=50)",
-          "hint": ""
+          "hint": "Le quart = la moitié de la moitié."
         },
         {
           "exercise_id": "EX003",
@@ -157,7 +157,7 @@
           ],
           "correct_answer": "500",
           "explanation": "125×4 = 500. (125×2=250, 250×2=500)",
-          "hint": ""
+          "hint": "Le quadruple = le double du double."
         },
         {
           "exercise_id": "EX004",
@@ -168,7 +168,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 400,
           "explanation": "1600÷4 = 400.",
-          "hint": ""
+          "hint": "Divise d'abord par 2, puis encore par 2."
         }
       ]
     },
@@ -184,7 +184,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 63,
           "explanation": "100 - 37 = 63.",
-          "hint": "100 - ? = 63"
+          "hint": "Cherche le nombre qu'il faut ajouter à 37 pour obtenir 100."
         },
         {
           "exercise_id": "EX002",
@@ -195,7 +195,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 355,
           "explanation": "1 000 - 645 = 355.",
-          "hint": ""
+          "hint": "Soustrais 645 de 1 000."
         },
         {
           "exercise_id": "EX003",
@@ -206,7 +206,7 @@
           "time_limit_seconds": 45,
           "correct_answer": "22",
           "explanation": "100 - 78 = 22.",
-          "hint": ""
+          "hint": "Quel nombre ajouter à 78 pour atteindre 100 ?"
         },
         {
           "exercise_id": "EX004",
@@ -217,7 +217,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 6.3,
           "explanation": "10 - 3,7 = 6,3.",
-          "hint": "",
+          "hint": "Soustrais 3,7 de 10.",
           "tolerance": 0.1
         }
       ]
@@ -234,7 +234,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 450,
           "explanation": "On ajoute un zéro : 45 × 10 = 450.",
-          "hint": ""
+          "hint": "Multiplier par 10 = ajouter un zéro à droite."
         },
         {
           "exercise_id": "EX002",
@@ -245,7 +245,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 350,
           "explanation": "On décale la virgule de 2 rangs : 3,5 × 100 = 350.",
-          "hint": ""
+          "hint": "Multiplier par 100 = décaler la virgule de 2 rangs vers la droite."
         },
         {
           "exercise_id": "EX003",
@@ -257,7 +257,7 @@
           "erroneous_content": "7,2 × 1000 = 72",
           "correct_answer": "7,2 × 1000 = 7 200",
           "explanation": "On décale la virgule de 3 rangs vers la droite : 7,200 → 7 200.",
-          "hint": ""
+          "hint": "Multiplier par 1 000 = décaler la virgule de 3 rangs vers la droite."
         },
         {
           "exercise_id": "EX004",
@@ -268,7 +268,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 4.5,
           "explanation": "On décale la virgule de 2 rangs vers la gauche : 4,50.",
-          "hint": "",
+          "hint": "Diviser par 100 = décaler la virgule de 2 rangs vers la gauche.",
           "tolerance": 0.01
         }
       ]
@@ -285,7 +285,7 @@
           "time_limit_seconds": 45,
           "correct_answer": 3500,
           "explanation": "3 478 → 3 500 (le chiffre des dizaines est 7 ≥ 5).",
-          "hint": ""
+          "hint": "Regarde le chiffre des dizaines : s'il est ≥ 5, arrondis au-dessus."
         },
         {
           "exercise_id": "EX002",
@@ -302,7 +302,7 @@
           ],
           "correct_answer": "57 000",
           "explanation": "56 743 → 57 000 (743 ≥ 500).",
-          "hint": ""
+          "hint": "Compare la partie après les milliers à 500."
         },
         {
           "exercise_id": "EX003",
@@ -313,7 +313,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 8000,
           "explanation": "8 250 → 8 000 (250 < 500).",
-          "hint": ""
+          "hint": "250 est-il supérieur ou inférieur à 500 ?"
         },
         {
           "exercise_id": "EX004",
@@ -324,7 +324,7 @@
           "time_limit_seconds": 45,
           "correct_answer": "300, 800",
           "explanation": "489 ≈ 500, 312 ≈ 300, total ≈ 800.",
-          "hint": ""
+          "hint": "Arrondis chaque nombre à la centaine la plus proche."
         }
       ]
     },
@@ -340,7 +340,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 8,
           "explanation": "7,83 ≈ 8 (0,83 ≥ 0,5).",
-          "hint": ""
+          "hint": "Regarde la partie décimale : est-elle ≥ 0,5 ?"
         },
         {
           "exercise_id": "EX002",
@@ -357,7 +357,7 @@
           ],
           "correct_answer": "5 × 2 = 10",
           "explanation": "4,67 ≈ 5, 2,1 ≈ 2. Estimation : 10.",
-          "hint": ""
+          "hint": "Arrondis chaque facteur à l'unité."
         },
         {
           "exercise_id": "EX003",
@@ -369,7 +369,7 @@
           "erroneous_content": "3,45 ≈ 3",
           "correct_answer": "3,45 ≈ 3 (car 0,45 < 0,5, l'élève a raison !)",
           "explanation": "En fait l'élève a raison : 0,45 < 0,5, donc on arrondit vers le bas à 3.",
-          "hint": ""
+          "hint": "Compare 0,45 à 0,5 pour décider."
         },
         {
           "exercise_id": "EX004",
@@ -380,7 +380,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 12.3,
           "explanation": "12,345 → 12,3 (le centième est 4 < 5).",
-          "hint": "",
+          "hint": "Regarde le chiffre des centièmes pour décider.",
           "tolerance": 0.01
         }
       ]
@@ -403,7 +403,7 @@
           ],
           "correct_answer": "10 000",
           "explanation": "500 × 20 = 10 000.",
-          "hint": ""
+          "hint": "Arrondis 498 et 21 à des nombres ronds."
         },
         {
           "exercise_id": "EX002",
@@ -414,7 +414,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "200",
           "explanation": "4 000 ÷ 20 = 200.",
-          "hint": "",
+          "hint": "Arrondis 3 890 et 19 à des nombres ronds.",
           "accepted_answers": [
             "200",
             "environ 200",
@@ -436,7 +436,7 @@
           ],
           "correct_answer": "2 500",
           "explanation": "50 × 50 = 2 500.",
-          "hint": ""
+          "hint": "Arrondis les deux nombres à la dizaine."
         },
         {
           "exercise_id": "EX004",
@@ -453,7 +453,7 @@
           ],
           "correct_answer": "50",
           "explanation": "10 × 5 = 50.",
-          "hint": ""
+          "hint": "Arrondis chaque facteur à l'unité."
         }
       ]
     },
@@ -483,7 +483,7 @@
           ],
           "correct_answer": "745 - 289 = 456 ✓",
           "explanation": "On vérifie une addition par la soustraction.",
-          "hint": ""
+          "hint": "L'opération inverse de l'addition est la soustraction."
         },
         {
           "exercise_id": "EX002",
@@ -495,7 +495,7 @@
           "erroneous_content": "234 × 5 = 1 270",
           "correct_answer": "234 × 5 = 1 170",
           "explanation": "1 270 ÷ 5 = 254 ≠ 234. Le bon résultat est 1 170 (1 170 ÷ 5 = 234).",
-          "hint": ""
+          "hint": "Divise le résultat par 5 pour vérifier."
         },
         {
           "exercise_id": "EX003",
@@ -506,7 +506,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "63 × 12 = 756",
           "explanation": "On multiplie le quotient par le diviseur : 63 × 12 = 756 ✓.",
-          "hint": "",
+          "hint": "L'opération inverse de la division est la multiplication.",
           "accepted_answers": [
             "63 × 12",
             "63 × 12 = 756",
@@ -528,7 +528,7 @@
           ],
           "correct_answer": "c + b et on vérifie qu'on obtient a",
           "explanation": "La vérification d'une soustraction se fait par addition.",
-          "hint": ""
+          "hint": "L'opération inverse de la soustraction est l'addition."
         }
       ]
     },
@@ -545,7 +545,7 @@
           "erroneous_content": "45 + 78 = 1 023",
           "correct_answer": "45 + 78 = 123",
           "explanation": "1 023 est absurde : 50 + 80 = 130. Le bon résultat est 123.",
-          "hint": ""
+          "hint": "Estime d'abord : 50 + 80 = ?"
         },
         {
           "exercise_id": "EX002",
@@ -562,7 +562,7 @@
           ],
           "correct_answer": "Absurde (trop grand)",
           "explanation": "10 × 8 = 80, 12 × 8 devrait être un peu plus, autour de 96.",
-          "hint": ""
+          "hint": "Estime avec 10 × 8. Le résultat devrait être proche de quel nombre ?"
         },
         {
           "exercise_id": "EX003",
@@ -574,7 +574,7 @@
           "erroneous_content": "250 - 3×75 = 25",
           "correct_answer": "250 - 225 = 25 ✓",
           "explanation": "3 × 75 = 225. 250 - 225 = 25. C'est correct.",
-          "hint": ""
+          "hint": "Calcule d'abord le prix total des 3 cahiers."
         },
         {
           "exercise_id": "EX004",
@@ -591,7 +591,7 @@
           ],
           "correct_answer": "800 - 450 = 350, c'est proche de 333",
           "explanation": "L'estimation confirme que 333 est plausible.",
-          "hint": ""
+          "hint": "Arrondis les deux nombres et fais la soustraction."
         }
       ]
     },
@@ -607,7 +607,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 8462,
           "explanation": "4 567 + 3 895 = 8 462 (avec retenues).",
-          "hint": ""
+          "hint": "Pose l'addition en colonnes et n'oublie pas les retenues."
         },
         {
           "exercise_id": "EX002",
@@ -636,7 +636,7 @@
           ],
           "correct_answer": "8 223",
           "explanation": "2 786 + 5 437 = 8 223.",
-          "hint": ""
+          "hint": "Commence par les unités et progresse vers la gauche."
         },
         {
           "exercise_id": "EX003",
@@ -648,7 +648,7 @@
           "erroneous_content": "3 456 + 2 789 = 5 145",
           "correct_answer": "3 456 + 2 789 = 6 245",
           "explanation": "L'élève a oublié une retenue. Le bon résultat est 6 245.",
-          "hint": ""
+          "hint": "Vérifie chaque colonne et les retenues."
         },
         {
           "exercise_id": "EX004",
@@ -659,7 +659,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 10134,
           "explanation": "678 + 9 456 = 10 134.",
-          "hint": ""
+          "hint": "Aligne bien les unités avant de poser l'addition."
         }
       ]
     },
@@ -675,7 +675,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 3436,
           "explanation": "8 003 - 4 567 = 3 436 (avec emprunts).",
-          "hint": ""
+          "hint": "Attention aux emprunts quand le chiffre du haut est plus petit."
         },
         {
           "exercise_id": "EX002",
@@ -704,7 +704,7 @@
           ],
           "correct_answer": "2 653",
           "explanation": "5 000 - 2 347 = 2 653.",
-          "hint": ""
+          "hint": "Avec des zéros, il faut aller chercher l'emprunt plus loin."
         },
         {
           "exercise_id": "EX003",
@@ -716,7 +716,7 @@
           "erroneous_content": "7 200 - 3 856 = 4 456",
           "correct_answer": "7 200 - 3 856 = 3 344",
           "explanation": "L'élève a fait une erreur d'emprunt. Le bon résultat est 3 344.",
-          "hint": ""
+          "hint": "Refais la soustraction colonne par colonne avec les emprunts."
         },
         {
           "exercise_id": "EX004",
@@ -727,7 +727,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 3211,
           "explanation": "10 000 - 6 789 = 3 211.",
-          "hint": ""
+          "hint": "Pose la soustraction en colonnes avec les emprunts successifs."
         }
       ]
     },
@@ -743,7 +743,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 2492,
           "explanation": "356 × 7 = 2 492.",
-          "hint": ""
+          "hint": "Multiplie chaque chiffre de 356 par 7, de droite à gauche."
         },
         {
           "exercise_id": "EX002",
@@ -768,7 +768,7 @@
           ],
           "correct_answer": "8 820",
           "explanation": "245 × 36 = 8 820.",
-          "hint": ""
+          "hint": "Calcule d'abord 245×6, puis 245×30, et additionne."
         },
         {
           "exercise_id": "EX003",
@@ -780,7 +780,7 @@
           "erroneous_content": "123 × 45 = 5 435",
           "correct_answer": "123 × 45 = 5 535",
           "explanation": "123×5=615, 123×40=4920, 615+4920=5535.",
-          "hint": ""
+          "hint": "Refais le calcul : 123×5 et 123×40."
         },
         {
           "exercise_id": "EX004",
@@ -791,7 +791,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 11684,
           "explanation": "508 × 23 = 11 684.",
-          "hint": ""
+          "hint": "Calcule 508×3 et 508×20, puis additionne."
         }
       ]
     },
@@ -807,7 +807,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 121,
           "explanation": "847 ÷ 7 = 121.",
-          "hint": ""
+          "hint": "Combien de fois 7 dans 8, puis dans 14, puis dans 7 ?"
         },
         {
           "exercise_id": "EX002",
@@ -832,7 +832,7 @@
           ],
           "correct_answer": "193",
           "explanation": "965 ÷ 5 = 193.",
-          "hint": ""
+          "hint": "Pose la division : combien de fois 5 dans 9 ?"
         },
         {
           "exercise_id": "EX003",
@@ -843,7 +843,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 3,
           "explanation": "500 = 7 × 71 + 3. Le reste est 3.",
-          "hint": ""
+          "hint": "Divise 500 par 7 et cherche ce qui reste."
         },
         {
           "exercise_id": "EX004",
@@ -855,7 +855,7 @@
           "erroneous_content": "156÷6=27",
           "correct_answer": "156÷6=26",
           "explanation": "6 × 27 = 162 ≠ 156. 6 × 26 = 156.",
-          "hint": ""
+          "hint": "Vérifie en multipliant : 6 × 27 donne-t-il bien 156 ?"
         }
       ]
     },
@@ -871,7 +871,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 189,
           "explanation": "4 536 ÷ 24 = 189.",
-          "hint": ""
+          "hint": "Pose la division : combien de fois 24 dans 45 ?"
         },
         {
           "exercise_id": "EX002",
@@ -896,7 +896,7 @@
           ],
           "correct_answer": "210",
           "explanation": "7 350 ÷ 35 = 210.",
-          "hint": ""
+          "hint": "Combien de fois 35 dans 73 ?"
         },
         {
           "exercise_id": "EX003",
@@ -907,7 +907,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 78,
           "explanation": "1 248 ÷ 16 = 78.",
-          "hint": ""
+          "hint": "Combien de fois 16 dans 124 ?"
         },
         {
           "exercise_id": "EX004",
@@ -919,7 +919,7 @@
           "erroneous_content": "2520÷42=70",
           "correct_answer": "2520÷42=60",
           "explanation": "42 × 70 = 2 940 ≠ 2 520. 42 × 60 = 2 520.",
-          "hint": ""
+          "hint": "Vérifie par la multiplication : 42 × 70 = ?"
         }
       ]
     },
@@ -936,7 +936,7 @@
           "erroneous_content": "Mauvais alignement : 345 + 67 en décalant",
           "correct_answer": "Il faut aligner les unités : 5 sous 7, 4 sous 6.",
           "explanation": "En posant une opération, les unités doivent être alignées.",
-          "hint": ""
+          "hint": "Les chiffres des unités doivent être dans la même colonne."
         },
         {
           "exercise_id": "EX002",
@@ -953,7 +953,7 @@
           ],
           "correct_answer": "Oublier les emprunts",
           "explanation": "L'oubli d'emprunt est l'erreur la plus courante en soustraction.",
-          "hint": ""
+          "hint": "Que se passe-t-il quand le chiffre du haut est plus petit que celui du bas ?"
         },
         {
           "exercise_id": "EX003",
@@ -963,9 +963,9 @@
           "points": 3,
           "time_limit_seconds": 90,
           "erroneous_content": "23×4=82 et position",
-          "correct_answer": "23×40=920, pas 23×4. 105+920=1035.",
-          "explanation": "Le 4 de 45 vaut 40, pas 4. On doit décaler d'un rang.",
-          "hint": ""
+          "correct_answer": "23×5=115, 23×40=920, 115+920=1035.",
+          "explanation": "Le 4 de 45 vaut 40, pas 4. On doit décaler d'un rang. De plus, 23×5=115 (pas 105) et 23×4=92 (pas 82).",
+          "hint": "Attention à la valeur de position : le 4 de 45 représente 40."
         },
         {
           "exercise_id": "EX004",
@@ -976,7 +976,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Oublier de descendre un chiffre ou mal estimer le quotient partiel",
           "explanation": "Les erreurs courantes : oublier de descendre un chiffre, mal estimer le quotient.",
-          "hint": "",
+          "hint": "Pense aux étapes de la division posée.",
           "accepted_answers": [
             "oublier de descendre",
             "mal estimer",
@@ -1003,7 +1003,7 @@
           ],
           "correct_answer": "1 470",
           "explanation": "On multiplie d'abord comme des entiers : 35 × 42 = 1 470.",
-          "hint": ""
+          "hint": "Enlève les virgules et multiplie comme des entiers."
         },
         {
           "exercise_id": "EX002",
@@ -1014,7 +1014,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 837,
           "explanation": "27 × 31 = 837.",
-          "hint": ""
+          "hint": "Ignore la virgule : multiplie 27 par 31."
         },
         {
           "exercise_id": "EX003",
@@ -1025,7 +1025,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 540,
           "explanation": "45 × 12 = 540.",
-          "hint": ""
+          "hint": "Multiplie 45 par 12 comme des entiers."
         },
         {
           "exercise_id": "EX004",
@@ -1042,7 +1042,7 @@
           ],
           "correct_answer": "5 000",
           "explanation": "625 × 8 = 5 000.",
-          "hint": ""
+          "hint": "Multiplie 625 par 8 sans les virgules."
         }
       ]
     },
@@ -1064,7 +1064,7 @@
           ],
           "correct_answer": "2",
           "explanation": "3,5 a 1 décimale + 4,2 a 1 décimale = 2 décimales.",
-          "hint": ""
+          "hint": "Compte les chiffres après la virgule dans chaque facteur."
         },
         {
           "exercise_id": "EX002",
@@ -1075,7 +1075,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "3",
           "explanation": "0,45 a 2 décimales + 1,2 a 1 décimale = 3 décimales.",
-          "hint": ""
+          "hint": "0,45 a combien de chiffres après la virgule ? Et 1,2 ?"
         },
         {
           "exercise_id": "EX003",
@@ -1092,7 +1092,7 @@
           ],
           "correct_answer": "3",
           "explanation": "6,1 (1 décimale) × 2,05 (2 décimales) = 3 décimales.",
-          "hint": ""
+          "hint": "Additionne le nombre de décimales de chaque facteur."
         },
         {
           "exercise_id": "EX004",
@@ -1103,7 +1103,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 5,
           "explanation": "3 + 2 = 5 décimales.",
-          "hint": ""
+          "hint": "0,003 a 3 décimales et 0,02 en a 2. Additionne."
         }
       ]
     },
@@ -1119,7 +1119,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 14.7,
           "explanation": "1 470 avec 2 décimales → 14,70.",
-          "hint": "",
+          "hint": "Place la virgule 2 rangs à partir de la droite dans 1470.",
           "tolerance": 0.01
         },
         {
@@ -1131,7 +1131,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 0.54,
           "explanation": "540 avec 3 décimales → 0,540.",
-          "hint": "",
+          "hint": "Place la virgule 3 rangs à partir de la droite dans 540.",
           "tolerance": 0.001
         },
         {
@@ -1144,7 +1144,7 @@
           "erroneous_content": "2,5×1,3=325",
           "correct_answer": "2,5×1,3=3,25",
           "explanation": "25×13=325, 2 décimales → 3,25.",
-          "hint": ""
+          "hint": "L'élève a oublié de placer la virgule."
         },
         {
           "exercise_id": "EX004",
@@ -1155,7 +1155,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 5.0,
           "explanation": "625×8=5000, 3 décimales → 5,000.",
-          "hint": "",
+          "hint": "Place la virgule 3 rangs à partir de la droite dans 5000.",
           "tolerance": 0.01
         }
       ]
@@ -1178,7 +1178,7 @@
           ],
           "correct_answer": "Oui, c'est proche de 16",
           "explanation": "14,7 est proche de 16, le résultat est plausible.",
-          "hint": ""
+          "hint": "Compare 14,7 avec l'estimation 4 × 4 = 16."
         },
         {
           "exercise_id": "EX002",
@@ -1190,7 +1190,7 @@
           "erroneous_content": "5,2×3,8=1,976",
           "correct_answer": "5,2×3,8=19,76",
           "explanation": "Estimation : 5 × 4 = 20. 1,976 est trop petit. Le bon résultat est 19,76.",
-          "hint": ""
+          "hint": "Estime avec 5 × 4 : le résultat devrait être proche de quel nombre ?"
         },
         {
           "exercise_id": "EX003",
@@ -1201,7 +1201,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "50",
           "explanation": "10 × 5 = 50. 49,98 ≈ 50 ✓.",
-          "hint": "",
+          "hint": "Arrondis 9,8 et 5,1 à l'unité.",
           "accepted_answers": [
             "50",
             "≈50",
@@ -1223,7 +1223,7 @@
           ],
           "correct_answer": "Proche de 2",
           "explanation": "2 × 1 = 2. Le résultat (1,89) est proche de 2.",
-          "hint": ""
+          "hint": "Arrondis : 2 × 1 = ?"
         }
       ]
     },
@@ -1257,7 +1257,7 @@
           ],
           "correct_answer": "1,89",
           "explanation": "7,56 ÷ 4 = 1,89.",
-          "hint": ""
+          "hint": "Divise comme un entier, puis place la virgule au bon endroit."
         },
         {
           "exercise_id": "EX002",
@@ -1268,7 +1268,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 2.4,
           "explanation": "14,4 ÷ 6 = 2,4.",
-          "hint": "",
+          "hint": "Combien de fois 6 dans 14, puis dans 4 ?",
           "tolerance": 0.01
         },
         {
@@ -1281,7 +1281,7 @@
           "erroneous_content": "9,6÷3=32",
           "correct_answer": "9,6÷3=3,2",
           "explanation": "L'élève a oublié la virgule. 9,6÷3 = 3,2.",
-          "hint": ""
+          "hint": "Le résultat doit avoir une virgule. Où la placer ?"
         },
         {
           "exercise_id": "EX004",
@@ -1292,7 +1292,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 5.1,
           "explanation": "25,5 ÷ 5 = 5,1.",
-          "hint": "",
+          "hint": "Combien de fois 5 dans 25, puis dans 5 ?",
           "tolerance": 0.01
         }
       ]
@@ -1323,7 +1323,7 @@
           ],
           "correct_answer": "1,75",
           "explanation": "7 ÷ 4 = 1,75.",
-          "hint": ""
+          "hint": "Quand il reste un reste, ajoute un 0 et continue."
         },
         {
           "exercise_id": "EX002",
@@ -1334,7 +1334,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 0.625,
           "explanation": "5 ÷ 8 = 0,625.",
-          "hint": "",
+          "hint": "5 est plus petit que 8 : commence par 0, puis ajoute des zéros.",
           "tolerance": 0.001
         },
         {
@@ -1346,7 +1346,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 2.75,
           "explanation": "22 ÷ 8 = 2,75.",
-          "hint": "",
+          "hint": "Combien de fois 8 dans 22 ? Puis prolonge avec le reste.",
           "tolerance": 0.01
         },
         {
@@ -1372,7 +1372,7 @@
           ],
           "correct_answer": "0,75",
           "explanation": "3 ÷ 4 = 0,75.",
-          "hint": ""
+          "hint": "3 < 4, donc le quotient commence par 0,..."
         }
       ]
     },
@@ -1394,7 +1394,7 @@
           ],
           "correct_answer": "Ne change pas",
           "explanation": "a/b = (a×10)/(b×10). Le quotient reste identique.",
-          "hint": ""
+          "hint": "Si on multiplie le haut et le bas par le même nombre, que se passe-t-il ?"
         },
         {
           "exercise_id": "EX002",
@@ -1415,7 +1415,7 @@
           ],
           "correct_answer": "9",
           "explanation": "4,5 ÷ 0,5 = 45 ÷ 5 = 9.",
-          "hint": ""
+          "hint": "Multiplie les deux nombres par 10 pour supprimer les virgules."
         },
         {
           "exercise_id": "EX003",
@@ -1426,7 +1426,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "7",
           "explanation": "63 ÷ 9 = 7.",
-          "hint": "",
+          "hint": "Multiplie 6,3 et 0,9 par 10.",
           "accepted_answers": [
             "7"
           ]
@@ -1446,7 +1446,7 @@
           ],
           "correct_answer": "2",
           "explanation": "8 ÷ 4 = 2.",
-          "hint": ""
+          "hint": "Multiplie les deux par 10 : 8 ÷ 4 = ?"
         }
       ]
     },
@@ -1462,7 +1462,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 3.3,
           "explanation": "10 ÷ 3 = 3,333… ≈ 3,3.",
-          "hint": "",
+          "hint": "Prolonge la division et arrondis au dixième.",
           "tolerance": 0.05
         },
         {
@@ -1480,7 +1480,7 @@
           ],
           "correct_answer": "Un quotient approché (2,333…)",
           "explanation": "7/3 = 2,333… est un nombre décimal périodique.",
-          "hint": ""
+          "hint": "Essaie de diviser 7 par 3 : la division tombe-t-elle juste ?"
         },
         {
           "exercise_id": "EX003",
@@ -1491,7 +1491,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 3.14,
           "explanation": "22 ÷ 7 = 3,142… ≈ 3,14.",
-          "hint": "",
+          "hint": "Prolonge la division jusqu'aux millièmes, puis arrondis.",
           "tolerance": 0.01
         },
         {
@@ -1504,7 +1504,7 @@
           "erroneous_content": "10÷3 = 3,3 exactement",
           "correct_answer": "10÷3 ≈ 3,3 (quotient approché)",
           "explanation": "10 ÷ 3 = 3,333… c'est un quotient approché, pas exact.",
-          "hint": ""
+          "hint": "Vérifie : 3,3 × 3 donne-t-il exactement 10 ?"
         }
       ]
     },
@@ -1530,7 +1530,7 @@
           ],
           "correct_answer": "1,89 × 4 = 7,56 ✓",
           "explanation": "La vérification par multiplication confirme le résultat.",
-          "hint": ""
+          "hint": "Multiplie le quotient par le diviseur."
         },
         {
           "exercise_id": "EX002",
@@ -1542,7 +1542,7 @@
           "erroneous_content": "12,5÷5=2,6",
           "correct_answer": "12,5÷5=2,5",
           "explanation": "2,6 × 5 = 13 ≠ 12,5. Le bon résultat est 2,5 (2,5 × 5 = 12,5).",
-          "hint": ""
+          "hint": "Vérifie : 2,6 × 5 donne-t-il bien 12,5 ?"
         },
         {
           "exercise_id": "EX003",
@@ -1553,7 +1553,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "3,1 × 8 = 24,8",
           "explanation": "On multiplie quotient × diviseur.",
-          "hint": "",
+          "hint": "L'opération inverse de la division est la multiplication.",
           "accepted_answers": [
             "3,1 × 8",
             "3,1 × 8 = 24,8",
@@ -1575,7 +1575,7 @@
           ],
           "correct_answer": "6,3",
           "explanation": "Vérification : 7 × 0,9 = 6,3 ✓.",
-          "hint": ""
+          "hint": "Quotient × diviseur = dividende."
         }
       ]
     },
@@ -1591,7 +1591,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 5,
           "explanation": "3/7 + 2/7 = 5/7.",
-          "hint": ""
+          "hint": "Même dénominateur : additionne les numérateurs."
         },
         {
           "exercise_id": "EX002",
@@ -1616,7 +1616,7 @@
           ],
           "correct_answer": "7/9",
           "explanation": "Même dénominateur : on additionne les numérateurs.",
-          "hint": ""
+          "hint": "Le dénominateur reste le même, additionne seulement les numérateurs."
         },
         {
           "exercise_id": "EX003",
@@ -1633,7 +1633,7 @@
           ],
           "correct_answer": "4/5",
           "explanation": "1+3=4, dénominateur 5. Résultat : 4/5.",
-          "hint": ""
+          "hint": "Le dénominateur ne change pas."
         },
         {
           "exercise_id": "EX004",
@@ -1644,7 +1644,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 9,
           "explanation": "5+4=9 → 9/12.",
-          "hint": ""
+          "hint": "Additionne les numérateurs, le dénominateur reste 12."
         }
       ]
     },
@@ -1660,7 +1660,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 4,
           "explanation": "7-3=4 → 4/8 = 1/2.",
-          "hint": ""
+          "hint": "Soustrais les numérateurs, le dénominateur reste le même."
         },
         {
           "exercise_id": "EX002",
@@ -1685,7 +1685,7 @@
           ],
           "correct_answer": "3/6",
           "explanation": "5/6 - 2/6 = 3/6 = 1/2.",
-          "hint": ""
+          "hint": "Même dénominateur : soustrais les numérateurs."
         },
         {
           "exercise_id": "EX003",
@@ -1696,7 +1696,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 5,
           "explanation": "9-4=5 → 5/10.",
-          "hint": ""
+          "hint": "9 - 4 = ?"
         },
         {
           "exercise_id": "EX004",
@@ -1713,7 +1713,7 @@
           ],
           "correct_answer": "5/15",
           "explanation": "11-6=5, dénominateur 15.",
-          "hint": ""
+          "hint": "Le dénominateur ne change pas lors d'une soustraction."
         }
       ]
     },
@@ -1729,7 +1729,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 1,
           "explanation": "7÷4=1 reste 3 → 1 3/4.",
-          "hint": ""
+          "hint": "Divise le numérateur par le dénominateur."
         },
         {
           "exercise_id": "EX002",
@@ -1740,7 +1740,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "1 4/5",
           "explanation": "9÷5=1 reste 4 → 1 4/5.",
-          "hint": ""
+          "hint": "Combien de fois 5 dans 9 ? Quel est le reste ?"
         },
         {
           "exercise_id": "EX003",
@@ -1757,7 +1757,7 @@
           ],
           "correct_answer": "3 2/3",
           "explanation": "11÷3=3 reste 2.",
-          "hint": ""
+          "hint": "Divise 11 par 3 : quotient et reste."
         },
         {
           "exercise_id": "EX004",
@@ -1768,7 +1768,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 2,
           "explanation": "13÷6=2 reste 1 → 2 1/6.",
-          "hint": ""
+          "hint": "Combien de fois 6 dans 13 ?"
         }
       ]
     },
@@ -1784,7 +1784,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 3,
           "explanation": "6/8 = 3/4 (÷2).",
-          "hint": ""
+          "hint": "Cherche un nombre qui divise à la fois 6 et 8."
         },
         {
           "exercise_id": "EX002",
@@ -1796,7 +1796,7 @@
           "erroneous_content": "4/12=2/4",
           "correct_answer": "4/12=1/3",
           "explanation": "4÷4=1, 12÷4=3 → 1/3.",
-          "hint": ""
+          "hint": "L'élève n'a pas simplifié complètement. Quel est le PGCD de 4 et 12 ?"
         },
         {
           "exercise_id": "EX003",
@@ -1807,7 +1807,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "2/3",
           "explanation": "PGCD(8,12)=4. 8÷4=2, 12÷4=3.",
-          "hint": ""
+          "hint": "Divise 8 et 12 par leur plus grand diviseur commun."
         },
         {
           "exercise_id": "EX004",
@@ -1824,7 +1824,7 @@
           ],
           "correct_answer": "2/3",
           "explanation": "÷5: 10/15=2/3.",
-          "hint": ""
+          "hint": "Quel nombre divise à la fois 10 et 15 ?"
         }
       ]
     },
@@ -1841,7 +1841,7 @@
           "erroneous_content": "2/5+3/5=5/10",
           "correct_answer": "2/5+3/5=5/5=1",
           "explanation": "On n'additionne PAS les dénominateurs. On garde le dénominateur commun : 5.",
-          "hint": ""
+          "hint": "Le dénominateur doit-il changer quand on additionne des fractions de même dénominateur ?"
         },
         {
           "exercise_id": "EX002",
@@ -1858,7 +1858,7 @@
           ],
           "correct_answer": "Le dénominateur a été additionné (7+7=14)",
           "explanation": "On garde le dénominateur commun, on ne l'additionne pas.",
-          "hint": ""
+          "hint": "Le dénominateur a-t-il changé ? Devrait-il changer ?"
         },
         {
           "exercise_id": "EX003",
@@ -1870,7 +1870,7 @@
           "erroneous_content": "4/9+5/9=9/18",
           "correct_answer": "4/9+5/9=9/9=1",
           "explanation": "Le dénominateur reste 9, pas 18. 4+5=9, résultat 9/9=1.",
-          "hint": ""
+          "hint": "On garde le dénominateur commun quand on additionne."
         },
         {
           "exercise_id": "EX004",
@@ -1881,7 +1881,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Additionner aussi les dénominateurs",
           "explanation": "L'erreur fréquente est d'additionner les dénominateurs au lieu de les garder.",
-          "hint": "",
+          "hint": "Que fait-on avec le dénominateur quand les fractions ont le même ?",
           "accepted_answers": [
             "additionner les dénominateurs",
             "dénominateurs additionnés"
@@ -1915,7 +1915,7 @@
           ],
           "correct_answer": "12",
           "explanation": "Le PPCM de 3 et 4 est 12.",
-          "hint": ""
+          "hint": "Cherche le plus petit nombre qui est dans les deux tables."
         },
         {
           "exercise_id": "EX002",
@@ -1926,7 +1926,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "10",
           "explanation": "Multiples de 2 : 2,4,6,8,10. Multiples de 5 : 5,10. PPCM = 10.",
-          "hint": ""
+          "hint": "Liste les multiples de 2 et de 5, trouve le premier commun."
         },
         {
           "exercise_id": "EX003",
@@ -1943,7 +1943,7 @@
           ],
           "correct_answer": "6",
           "explanation": "6 est un multiple de 3 et de 6.",
-          "hint": ""
+          "hint": "6 est-il un multiple de 3 ?"
         },
         {
           "exercise_id": "EX004",
@@ -1954,7 +1954,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 8,
           "explanation": "8 est un multiple de 4 et de 8.",
-          "hint": ""
+          "hint": "8 est-il un multiple de 4 ?"
         }
       ]
     },
@@ -1980,7 +1980,7 @@
           ],
           "correct_answer": "4/12 et 3/12",
           "explanation": "1/3 = 4/12, 1/4 = 3/12.",
-          "hint": ""
+          "hint": "Multiplie numérateur et dénominateur par le même nombre."
         },
         {
           "exercise_id": "EX002",
@@ -1991,7 +1991,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "4/10",
           "explanation": "2×2=4, 5×2=10 → 4/10.",
-          "hint": ""
+          "hint": "Par combien multiplier 5 pour obtenir 10 ?"
         },
         {
           "exercise_id": "EX003",
@@ -2002,7 +2002,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 9,
           "explanation": "3×3=9, 4×3=12 → 9/12.",
-          "hint": ""
+          "hint": "Par combien multiplier 4 pour obtenir 12 ?"
         },
         {
           "exercise_id": "EX004",
@@ -2027,7 +2027,7 @@
           ],
           "correct_answer": "4/6 et 5/6",
           "explanation": "2/3 = 4/6 (×2), 5/6 reste 5/6.",
-          "hint": ""
+          "hint": "Seul 2/3 a besoin d'être transformé."
         }
       ]
     },
@@ -2057,7 +2057,7 @@
           ],
           "correct_answer": "7/12",
           "explanation": "1/3 + 1/4 = 4/12 + 3/12 = 7/12.",
-          "hint": ""
+          "hint": "Réduis au même dénominateur (12), puis additionne."
         },
         {
           "exercise_id": "EX002",
@@ -2068,7 +2068,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 5,
           "explanation": "3/6 + 2/6 = 5/6.",
-          "hint": ""
+          "hint": "Réduis au dénominateur 6 : 1/2 = ?/6 et 1/3 = ?/6."
         },
         {
           "exercise_id": "EX003",
@@ -2079,7 +2079,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 5,
           "explanation": "4/10 + 1/10 = 5/10.",
-          "hint": ""
+          "hint": "Transforme 2/5 en dixièmes : 2/5 = ?/10."
         },
         {
           "exercise_id": "EX004",
@@ -2096,7 +2096,7 @@
           ],
           "correct_answer": "11/12",
           "explanation": "9/12 + 2/12 = 11/12.",
-          "hint": ""
+          "hint": "Dénominateur commun = 12. Transforme chaque fraction."
         }
       ]
     },
@@ -2126,7 +2126,7 @@
           ],
           "correct_answer": "5/12",
           "explanation": "3/4 - 1/3 = 9/12 - 4/12 = 5/12.",
-          "hint": ""
+          "hint": "Réduis au dénominateur commun 12, puis soustrais."
         },
         {
           "exercise_id": "EX002",
@@ -2137,7 +2137,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 2,
           "explanation": "5/6 - 3/6 = 2/6 = 1/3.",
-          "hint": ""
+          "hint": "Transforme 1/2 en sixièmes."
         },
         {
           "exercise_id": "EX003",
@@ -2148,7 +2148,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 5,
           "explanation": "7/8 - 2/8 = 5/8.",
-          "hint": ""
+          "hint": "Transforme 1/4 en huitièmes."
         },
         {
           "exercise_id": "EX004",
@@ -2165,7 +2165,7 @@
           ],
           "correct_answer": "5/12",
           "explanation": "8/12 - 3/12 = 5/12.",
-          "hint": ""
+          "hint": "Dénominateur commun = 12."
         }
       ]
     },
@@ -2182,7 +2182,7 @@
           "erroneous_content": "1/3 = 1/6",
           "correct_answer": "1/3 = 2/6",
           "explanation": "Il faut multiplier numérateur et dénominateur par 2 : 1×2=2, 3×2=6.",
-          "hint": ""
+          "hint": "Il faut multiplier le numérateur ET le dénominateur par le même nombre."
         },
         {
           "exercise_id": "EX002",
@@ -2199,7 +2199,7 @@
           ],
           "correct_answer": "Le numérateur a été multiplié par 2 mais le dénominateur par 3",
           "explanation": "Il faut multiplier les deux par le MÊME nombre. 2/5 = 6/15 (×3).",
-          "hint": ""
+          "hint": "Le numérateur et le dénominateur doivent être multipliés par le même facteur."
         },
         {
           "exercise_id": "EX003",
@@ -2211,7 +2211,7 @@
           "erroneous_content": "3/4+2/3=5/7",
           "correct_answer": "3/4+2/3 = 9/12+8/12 = 17/12",
           "explanation": "On ne peut pas additionner directement des fractions de dénominateurs différents. Il faut réduire au même dénominateur.",
-          "hint": ""
+          "hint": "Peut-on additionner directement si les dénominateurs sont différents ?"
         },
         {
           "exercise_id": "EX004",
@@ -2222,7 +2222,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Additionner directement les numérateurs et les dénominateurs sans réduire",
           "explanation": "L'erreur classique : a/b + c/d = (a+c)/(b+d), ce qui est faux.",
-          "hint": "",
+          "hint": "On ne peut pas additionner numérateurs et dénominateurs directement.",
           "accepted_answers": [
             "additionner numérateurs et dénominateurs",
             "sans réduire",
@@ -2249,7 +2249,7 @@
           ],
           "correct_answer": "2/5 + 2/5 + 2/5",
           "explanation": "Multiplier une fraction par un entier = additionner la fraction autant de fois.",
-          "hint": ""
+          "hint": "Multiplier par 3, c'est ajouter 3 fois."
         },
         {
           "exercise_id": "EX002",
@@ -2260,7 +2260,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "3/4 + 3/4",
           "explanation": "3/4 × 2 = 3/4 + 3/4 = 6/4.",
-          "hint": "",
+          "hint": "× 2 signifie ajouter la fraction 2 fois.",
           "accepted_answers": [
             "3/4 + 3/4",
             "3/4+3/4"
@@ -2275,7 +2275,7 @@
           "time_limit_seconds": 60,
           "correct_answer": true,
           "explanation": "C'est la définition de la multiplication par un entier.",
-          "hint": ""
+          "hint": "Multiplier par 4 = additionner 4 fois."
         },
         {
           "exercise_id": "EX004",
@@ -2292,7 +2292,7 @@
           ],
           "correct_answer": "1",
           "explanation": "1/3 + 1/3 + 1/3 = 3/3 = 1.",
-          "hint": ""
+          "hint": "Combien font 3 tiers ?"
         }
       ]
     },
@@ -2322,7 +2322,7 @@
           ],
           "correct_answer": "12/5",
           "explanation": "3/5 × 4 = 12/5.",
-          "hint": ""
+          "hint": "Multiplie seulement le numérateur par l'entier."
         },
         {
           "exercise_id": "EX002",
@@ -2333,7 +2333,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 10,
           "explanation": "2×5=10, dénominateur 7 → 10/7.",
-          "hint": ""
+          "hint": "Multiplie le numérateur 2 par 5."
         },
         {
           "exercise_id": "EX003",
@@ -2344,7 +2344,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 12,
           "explanation": "4×3=12 → 12/9 = 4/3.",
-          "hint": ""
+          "hint": "Multiplie 4 par 3. Le dénominateur reste 9."
         },
         {
           "exercise_id": "EX004",
@@ -2361,7 +2361,7 @@
           ],
           "correct_answer": "30/8",
           "explanation": "5×6=30, dénominateur 8 → 30/8 = 15/4.",
-          "hint": ""
+          "hint": "Multiplie le numérateur 5 par 6. Le dénominateur ne change pas."
         }
       ]
     },
@@ -2377,7 +2377,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "2 2/5",
           "explanation": "12÷5=2 reste 2 → 2 2/5.",
-          "hint": ""
+          "hint": "Divise 12 par 5 : quotient et reste."
         },
         {
           "exercise_id": "EX002",
@@ -2388,7 +2388,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 15,
           "explanation": "30/8 = 15/4 (÷2). En mixte : 3 3/4.",
-          "hint": ""
+          "hint": "Divise 30 et 8 par leur diviseur commun."
         },
         {
           "exercise_id": "EX003",
@@ -2405,7 +2405,7 @@
           ],
           "correct_answer": "4 2/3",
           "explanation": "14÷3=4 reste 2 → 4 2/3.",
-          "hint": ""
+          "hint": "Divise 14 par 3."
         },
         {
           "exercise_id": "EX004",
@@ -2416,7 +2416,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "10/3",
           "explanation": "÷2 : 20/6=10/3 = 3 1/3.",
-          "hint": ""
+          "hint": "Divise 20 et 6 par 2."
         }
       ]
     },
@@ -2433,7 +2433,7 @@
           "erroneous_content": "2/3×5=10/15",
           "correct_answer": "2/3×5=10/3",
           "explanation": "On multiplie SEULEMENT le numérateur : 2×5=10. Le dénominateur reste 3.",
-          "hint": ""
+          "hint": "Quand on multiplie une fraction par un entier, que fait-on du dénominateur ?"
         },
         {
           "exercise_id": "EX002",
@@ -2450,7 +2450,7 @@
           ],
           "correct_answer": "Le dénominateur a aussi été multiplié par 3",
           "explanation": "Seul le numérateur est multiplié. 4×3=12, dénominateur reste 7 → 12/7.",
-          "hint": ""
+          "hint": "Le dénominateur ne doit pas être multiplié."
         },
         {
           "exercise_id": "EX003",
@@ -2462,7 +2462,7 @@
           "erroneous_content": "3/8×4=12/32",
           "correct_answer": "3/8×4=12/8=3/2",
           "explanation": "Le dénominateur ne change pas quand on multiplie par un entier.",
-          "hint": ""
+          "hint": "Seul le numérateur est multiplié par l'entier."
         },
         {
           "exercise_id": "EX004",
@@ -2473,7 +2473,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Multiplier aussi le dénominateur",
           "explanation": "L'erreur classique : multiplier numérateur ET dénominateur, au lieu du numérateur seul.",
-          "hint": "",
+          "hint": "On ne multiplie que le numérateur quand on multiplie par un entier.",
           "accepted_answers": [
             "multiplier le dénominateur",
             "dénominateur multiplié",
@@ -2500,7 +2500,7 @@
           ],
           "correct_answer": "80",
           "explanation": "Le « tout » est la quantité de référence : 80.",
-          "hint": ""
+          "hint": "Le tout est le nombre de départ, avant de prendre une fraction."
         },
         {
           "exercise_id": "EX002",
@@ -2511,7 +2511,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "150",
           "explanation": "150 élèves est la quantité de référence.",
-          "hint": "",
+          "hint": "Quel est le nombre total dont on prend une fraction ?",
           "accepted_answers": [
             "150",
             "150 élèves"
@@ -2532,7 +2532,7 @@
           ],
           "correct_answer": "2 parts sur un total de 5",
           "explanation": "Le numérateur = parts prises, le dénominateur = parts totales.",
-          "hint": ""
+          "hint": "Le numérateur dit combien de parts on prend, le dénominateur combien de parts en tout."
         },
         {
           "exercise_id": "EX004",
@@ -2543,7 +2543,7 @@
           "time_limit_seconds": 45,
           "correct_answer": true,
           "explanation": "1/4 de 100 = 100÷4 = 25.",
-          "hint": ""
+          "hint": "1/4 signifie diviser par 4."
         }
       ]
     },
@@ -2559,7 +2559,7 @@
           "time_limit_seconds": 60,
           "correct_answer": 70,
           "explanation": "350 ÷ 5 = 70.",
-          "hint": ""
+          "hint": "1/5 = diviser par 5."
         },
         {
           "exercise_id": "EX002",
@@ -2576,7 +2576,7 @@
           ],
           "correct_answer": "30",
           "explanation": "1/8 de 240 = 240÷8 = 30.",
-          "hint": ""
+          "hint": "Divise par le dénominateur."
         },
         {
           "exercise_id": "EX003",
@@ -2597,7 +2597,7 @@
           ],
           "correct_answer": "200 F",
           "explanation": "1/3 de 600 = 200 F.",
-          "hint": ""
+          "hint": "Divise 600 par 3."
         },
         {
           "exercise_id": "EX004",
@@ -2608,7 +2608,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 70,
           "explanation": "420 ÷ 6 = 70.",
-          "hint": ""
+          "hint": "Divise 420 par 6."
         }
       ]
     },
@@ -2634,7 +2634,7 @@
           ],
           "correct_answer": "60",
           "explanation": "3/4 de 80 = 60.",
-          "hint": ""
+          "hint": "D'abord 1/4 de 80, puis multiplie par 3."
         },
         {
           "exercise_id": "EX002",
@@ -2645,7 +2645,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 60,
           "explanation": "150÷5=30, 30×2=60.",
-          "hint": ""
+          "hint": "D'abord 1/5 de 150, puis multiplie par 2."
         },
         {
           "exercise_id": "EX003",
@@ -2666,7 +2666,7 @@
           ],
           "correct_answer": "15 filles",
           "explanation": "40÷8=5, 5×3=15.",
-          "hint": ""
+          "hint": "1/8 de 40 = ?, puis multiplie par 3."
         },
         {
           "exercise_id": "EX004",
@@ -2677,7 +2677,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 150,
           "explanation": "180÷6=30, 30×5=150.",
-          "hint": ""
+          "hint": "D'abord 1/6 de 180, puis multiplie par 5."
         }
       ]
     },
@@ -2699,7 +2699,7 @@
           ],
           "correct_answer": "Convertir en mètres (2 800 m) puis calculer 3/4",
           "explanation": "2 800 m ÷ 4 = 700 m, 700 × 3 = 2 100 m = 2,1 km.",
-          "hint": ""
+          "hint": "Convertis d'abord en mètres pour simplifier le calcul."
         },
         {
           "exercise_id": "EX002",
@@ -2720,7 +2720,7 @@
           ],
           "correct_answer": "500 g",
           "explanation": "750÷3=250, 250×2=500 g = 0,5 kg.",
-          "hint": ""
+          "hint": "Convertis 0,75 kg en grammes d'abord."
         },
         {
           "exercise_id": "EX003",
@@ -2737,7 +2737,7 @@
           ],
           "correct_answer": "On calcule 1,5÷5×3 = 0,9 L",
           "explanation": "1,5÷5=0,3, 0,3×3=0,9 L.",
-          "hint": ""
+          "hint": "Divise par le dénominateur, puis multiplie par le numérateur."
         },
         {
           "exercise_id": "EX004",
@@ -2748,7 +2748,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "En décimal : 2,4 ÷ 4 = 0,6, puis 0,6 × 3 = 1,8",
           "explanation": "En décimal, le calcul est direct.",
-          "hint": "",
+          "hint": "Essaie de diviser 2,4 par 4 directement.",
           "accepted_answers": [
             "décimal",
             "en décimal"
@@ -2769,7 +2769,7 @@
           "erroneous_content": "200×4=800",
           "correct_answer": "200÷4=50",
           "explanation": "Pour 1/n d'une quantité, on DIVISE par n, on ne multiplie pas.",
-          "hint": ""
+          "hint": "1/4 signifie diviser par 4, pas multiplier."
         },
         {
           "exercise_id": "EX002",
@@ -2781,7 +2781,7 @@
           "erroneous_content": "90÷2×3=135",
           "correct_answer": "90÷3×2=60",
           "explanation": "On divise par le dénominateur (3), pas le numérateur (2). 90÷3=30, 30×2=60.",
-          "hint": ""
+          "hint": "On divise par le dénominateur et on multiplie par le numérateur."
         },
         {
           "exercise_id": "EX003",
@@ -2798,7 +2798,7 @@
           ],
           "correct_answer": "L'élève a divisé par le numérateur au lieu du dénominateur",
           "explanation": "Correct : 100÷5=20, 20×3=60.",
-          "hint": ""
+          "hint": "A-t-il divisé par le bon nombre ?"
         },
         {
           "exercise_id": "EX004",
@@ -2809,7 +2809,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Confondre multiplier et diviser, ou inverser numérateur et dénominateur",
           "explanation": "Les erreurs fréquentes : diviser par le numérateur, oublier l'unité.",
-          "hint": "",
+          "hint": "Pense à l'ordre : diviser par le dénominateur, puis multiplier par le numérateur.",
           "accepted_answers": [
             "inverser",
             "confondre multiplier et diviser",
@@ -2836,7 +2836,7 @@
           ],
           "correct_answer": "3/5",
           "explanation": "3/5 est la fraction donnée, 60 est la valeur correspondante.",
-          "hint": ""
+          "hint": "Quelle fraction du nombre est donnée ?"
         },
         {
           "exercise_id": "EX002",
@@ -2847,7 +2847,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Fraction : 2/7, valeur : 140 kg",
           "explanation": "2/7 est la fraction, 140 kg est la valeur.",
-          "hint": "",
+          "hint": "Repère la fraction et la quantité correspondante.",
           "accepted_answers": [
             "2/7 et 140",
             "fraction 2/7, valeur 140"
@@ -2868,7 +2868,7 @@
           ],
           "correct_answer": "Le prix total (le tout)",
           "explanation": "On cherche le tout dont 4/9 vaut 200 F.",
-          "hint": ""
+          "hint": "On connaît une partie, on cherche le total."
         },
         {
           "exercise_id": "EX004",
@@ -2879,7 +2879,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "5/8, 250 m",
           "explanation": "La fraction est 5/8, la valeur est 250 m.",
-          "hint": ""
+          "hint": "Identifie la fraction et la mesure donnée."
         }
       ]
     },
@@ -2901,7 +2901,7 @@
           ],
           "correct_answer": "20",
           "explanation": "1/5 = 60 ÷ 3 = 20.",
-          "hint": ""
+          "hint": "Si 3 parts = 60, combien vaut 1 part ?"
         },
         {
           "exercise_id": "EX002",
@@ -2912,7 +2912,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 70,
           "explanation": "140 ÷ 2 = 70 g.",
-          "hint": ""
+          "hint": "2 parts = 140, donc 1 part = ?"
         },
         {
           "exercise_id": "EX003",
@@ -2923,7 +2923,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 90,
           "explanation": "360 ÷ 4 = 90 F.",
-          "hint": ""
+          "hint": "4 parts = 360 F, donc 1 part = ?"
         },
         {
           "exercise_id": "EX004",
@@ -2940,7 +2940,7 @@
           ],
           "correct_answer": "50 km",
           "explanation": "250 ÷ 5 = 50 km.",
-          "hint": ""
+          "hint": "5 parts = 250, donc 1 part = ?"
         }
       ]
     },
@@ -2966,7 +2966,7 @@
           ],
           "correct_answer": "100",
           "explanation": "1/5=20, le tout=20×5=100.",
-          "hint": ""
+          "hint": "D'abord trouve 1/5, puis multiplie par 5 pour le tout."
         },
         {
           "exercise_id": "EX002",
@@ -2977,7 +2977,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 490,
           "explanation": "1/7=70, tout=70×7=490.",
-          "hint": ""
+          "hint": "D'abord 1/7 = 140÷2, puis le tout = 1/7 × 7."
         },
         {
           "exercise_id": "EX003",
@@ -2998,7 +2998,7 @@
           ],
           "correct_answer": "600 F",
           "explanation": "1/4=150, tout=600 F.",
-          "hint": ""
+          "hint": "D'abord trouve 1/4, puis multiplie par 4."
         },
         {
           "exercise_id": "EX004",
@@ -3009,7 +3009,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 320,
           "explanation": "1/8=40, tout=40×8=320 kg.",
-          "hint": ""
+          "hint": "D'abord 1/8 = 200÷5, puis le tout = 1/8 × 8."
         }
       ]
     },
@@ -3035,7 +3035,7 @@
           ],
           "correct_answer": "Vérifié : 3/5 de 100 = 60 ✓",
           "explanation": "On vérifie en recalculant la fraction du tout trouvé.",
-          "hint": ""
+          "hint": "Recalcule la fraction du tout trouvé pour vérifier."
         },
         {
           "exercise_id": "EX002",
@@ -3047,7 +3047,7 @@
           "erroneous_content": "Le tout = 80",
           "correct_answer": "2/5 de 80 = 32 ≠ 40. Le tout est faux.",
           "explanation": "2/5 de 80 = 32, pas 40. Le vrai tout = 100 (40÷2×5).",
-          "hint": ""
+          "hint": "Vérifie : 2/5 de 80 donne-t-il bien 40 ?"
         },
         {
           "exercise_id": "EX003",
@@ -3058,7 +3058,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Calculer k/n du tout trouvé et vérifier qu'on obtient la valeur",
           "explanation": "On recalcule la fraction du résultat pour vérifier.",
-          "hint": "",
+          "hint": "Calcule k/n du tout trouvé et compare avec la valeur.",
           "accepted_answers": [
             "recalculer",
             "vérifier",
@@ -3075,7 +3075,7 @@
           "erroneous_content": "Tout = 400",
           "correct_answer": "3/4 de 400 = 300 ≠ 150. Le tout = 200 F.",
           "explanation": "3/4 de 200 = 150 ✓. Le tout est 200 F.",
-          "hint": ""
+          "hint": "Calcule 3/4 de 400 pour vérifier."
         }
       ]
     },
@@ -3092,7 +3092,7 @@
           "erroneous_content": "60÷5×3=36",
           "correct_answer": "60÷3×5=100",
           "explanation": "L'élève a divisé par le dénominateur (5) au lieu du numérateur (3). Correct : 60÷3=20, 20×5=100.",
-          "hint": ""
+          "hint": "Il faut diviser par le numérateur (k), pas par le dénominateur (n)."
         },
         {
           "exercise_id": "EX002",
@@ -3109,7 +3109,7 @@
           ],
           "correct_answer": "140÷7=20, tout=20×2=40",
           "explanation": "L'erreur est d'inverser les rôles de k et n. Correct : 140÷2=70, 70×7=490.",
-          "hint": ""
+          "hint": "L'erreur est de diviser par n au lieu de k."
         },
         {
           "exercise_id": "EX003",
@@ -3121,7 +3121,7 @@
           "erroneous_content": "Tout=80",
           "correct_answer": "Tout=100",
           "explanation": "80 est la PARTIE (4/5), pas le tout. 1/5=20, tout=100.",
-          "hint": ""
+          "hint": "80 est-il le tout ou juste une partie ?"
         },
         {
           "exercise_id": "EX004",
@@ -3132,7 +3132,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "1) Diviser par n au lieu de k. 2) Confondre la partie et le tout.",
           "explanation": "Erreurs : inverser k et n dans la division, confondre la partie avec le tout.",
-          "hint": "",
+          "hint": "Attention à ne pas confondre la partie et le tout, ni k et n.",
           "accepted_answers": [
             "diviser par n",
             "confondre partie et tout",
@@ -3159,7 +3159,7 @@
           ],
           "correct_answer": "3 cahiers, 250 F/cahier, 2 stylos, 150 F/stylo",
           "explanation": "Les données numériques utiles sont les quantités et les prix.",
-          "hint": ""
+          "hint": "Repère les nombres et ce qu'ils représentent."
         },
         {
           "exercise_id": "EX002",
@@ -3170,7 +3170,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "Quelle est l'aire du jardin",
           "explanation": "On cherche l'aire du rectangle.",
-          "hint": "",
+          "hint": "Lis la dernière phrase : que demande-t-on ?",
           "accepted_answers": [
             "aire",
             "aire du jardin",
@@ -3200,7 +3200,7 @@
           ],
           "correct_answer": "Données : 2,5 km, 30 min. Question : vitesse en km/h.",
           "explanation": "Il faut repérer les nombres, les unités et ce qu'on cherche.",
-          "hint": ""
+          "hint": "Souligne les nombres, les unités et la question."
         },
         {
           "exercise_id": "EX004",
@@ -3217,7 +3217,7 @@
           ],
           "correct_answer": "Une soustraction",
           "explanation": "« Reste » indique une soustraction.",
-          "hint": ""
+          "hint": "Le mot 'reste' te dit quelle opération utiliser."
         }
       ]
     },
@@ -3247,7 +3247,7 @@
           ],
           "correct_answer": "250 F",
           "explanation": "On organise : achat, vente, puis bénéfice.",
-          "hint": ""
+          "hint": "Calcule d'abord le coût total, puis la recette, puis la différence."
         },
         {
           "exercise_id": "EX002",
@@ -3264,7 +3264,7 @@
           ],
           "correct_answer": "Faire un schéma ou un tableau",
           "explanation": "Un tableau ou schéma aide à structurer les informations.",
-          "hint": ""
+          "hint": "Un outil visuel aide à organiser les données."
         },
         {
           "exercise_id": "EX003",
@@ -3275,7 +3275,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "2",
           "explanation": "Étape 1 : part de chacun = 2400÷4=600. Étape 2 : reste = 600 - 600÷3 = 400.",
-          "hint": ""
+          "hint": "Combien de calculs faut-il faire pour arriver à la réponse ?"
         },
         {
           "exercise_id": "EX004",
@@ -3286,7 +3286,7 @@
           "time_limit_seconds": 60,
           "correct_answer": "Un tableau ou un schéma",
           "explanation": "Un tableau ou un schéma permet de structurer les données.",
-          "hint": "",
+          "hint": "Pense à un outil pour classer les informations.",
           "accepted_answers": [
             "tableau",
             "schéma",
@@ -3313,7 +3313,7 @@
           ],
           "correct_answer": "Multiplication puis soustraction",
           "explanation": "3 × 1 200 = 3 600, puis 5 000 - 3 600 = 1 400 F.",
-          "hint": ""
+          "hint": "D'abord le prix total des livres, puis ce qui reste."
         },
         {
           "exercise_id": "EX002",
@@ -3324,7 +3324,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Soustraction puis division",
           "explanation": "P = 2(L+l), donc l = (50-2×15)/2 = 10 cm.",
-          "hint": "",
+          "hint": "Utilise la formule du périmètre et isole la largeur.",
           "accepted_answers": [
             "soustraction",
             "soustraction et division"
@@ -3349,7 +3349,7 @@
           ],
           "correct_answer": "Division puis soustraction",
           "explanation": "240÷6=40, 40-5=35 billes.",
-          "hint": ""
+          "hint": "D'abord partage, puis retire."
         },
         {
           "exercise_id": "EX004",
@@ -3366,7 +3366,7 @@
           ],
           "correct_answer": "Multiplication puis addition",
           "explanation": "Taxe = prix × 10/100, puis TTC = prix + taxe.",
-          "hint": ""
+          "hint": "Calcule d'abord la taxe, puis ajoute-la au prix."
         }
       ]
     },
@@ -3400,7 +3400,7 @@
           ],
           "correct_answer": "Clôture : 37 500 F, gazon : 202 500 F, total : 240 000 F",
           "explanation": "Périmètre pour la clôture, aire pour le gazon.",
-          "hint": ""
+          "hint": "La clôture est autour (périmètre), le gazon couvre la surface (aire)."
         },
         {
           "exercise_id": "EX002",
@@ -3411,7 +3411,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 2400,
           "explanation": "4×350=1400, 2×500=1000, total=2400 F.",
-          "hint": ""
+          "hint": "Calcule le prix de chaque produit, puis additionne."
         },
         {
           "exercise_id": "EX003",
@@ -3432,7 +3432,7 @@
           ],
           "correct_answer": "26 élèves",
           "explanation": "45-12+8=41, 41-15=26.",
-          "hint": ""
+          "hint": "Applique les montées et descentes à chaque arrêt."
         },
         {
           "exercise_id": "EX004",
@@ -3443,7 +3443,7 @@
           "time_limit_seconds": 90,
           "correct_answer": 3725,
           "explanation": "3×75=225, 5×200=1000, 1×2500=2500. Total=3725 F.",
-          "hint": ""
+          "hint": "Calcule le prix de chaque article, puis additionne tout."
         }
       ]
     },
@@ -3459,7 +3459,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Il reste 35 billes dans chaque sac.",
           "explanation": "La réponse doit être une phrase avec l'unité.",
-          "hint": "",
+          "hint": "Fais une phrase complète avec le nombre et l'unité.",
           "accepted_answers": [
             "35 billes",
             "Il reste 35 billes"
@@ -3480,7 +3480,7 @@
           ],
           "correct_answer": "Une phrase, le nombre et l'unité",
           "explanation": "La réponse est une phrase complète avec l'unité.",
-          "hint": ""
+          "hint": "Que doit contenir une réponse bien rédigée ?"
         },
         {
           "exercise_id": "EX003",
@@ -3492,7 +3492,7 @@
           "erroneous_content": "150",
           "correct_answer": "Il reste 150 F à Kofi.",
           "explanation": "La réponse doit être une phrase avec l'unité et le contexte.",
-          "hint": ""
+          "hint": "Un nombre seul ne suffit pas : ajoute l'unité et le contexte."
         },
         {
           "exercise_id": "EX004",
@@ -3517,7 +3517,7 @@
           ],
           "correct_answer": "L'aire du terrain est de 1 350 m².",
           "explanation": "Phrase + nombre + unité.",
-          "hint": ""
+          "hint": "Phrase de réponse + nombre + unité."
         }
       ]
     },
@@ -3534,7 +3534,7 @@
           "erroneous_content": "3×200=900",
           "correct_answer": "3×200=600",
           "explanation": "3 × 200 = 600, pas 900. L'élève a multiplié par un mauvais nombre.",
-          "hint": ""
+          "hint": "Refais le calcul : 3 × 200 = ?"
         },
         {
           "exercise_id": "EX002",
@@ -3555,7 +3555,7 @@
           ],
           "correct_answer": "Le périmètre est 40 cm, pas 32.",
           "explanation": "2×(12+8) = 40.",
-          "hint": ""
+          "hint": "Utilise la formule du périmètre : P = 2×(L+l)."
         },
         {
           "exercise_id": "EX003",
@@ -3566,7 +3566,7 @@
           "time_limit_seconds": 90,
           "correct_answer": "Refaire le calcul ou utiliser l'opération inverse",
           "explanation": "On peut refaire le calcul ou vérifier par l'opération inverse.",
-          "hint": "",
+          "hint": "Il y a deux moyens de vérifier un calcul.",
           "accepted_answers": [
             "refaire",
             "opération inverse",
@@ -3588,7 +3588,7 @@
           ],
           "correct_answer": "Il est cohérent avec les données et l'ordre de grandeur",
           "explanation": "La vraisemblance = cohérence avec les données.",
-          "hint": ""
+          "hint": "Le résultat doit être logique par rapport aux données du problème."
         }
       ]
     }

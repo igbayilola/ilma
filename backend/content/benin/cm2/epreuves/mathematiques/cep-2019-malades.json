@@ -5,128 +5,231 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Codjo est un maraîcher. Il dispose d'un domaine de 150 m de long sur 80 m de large qu'il veut exploiter. Pour cela, il demande et obtient auprès d'une banque un prêt de 2 500 000 FCFA au taux annuel de 12%.",
+  "context_text": "Codjo est un maraîcher. Il dispose d'un domaine de 150 m de long sur 80 m de large qu'il veut exploiter. Pour cela, il demande et obtient auprès d'une banque un prêt de 2 500 000 FCFA au taux annuel de 12 %.\n\nCodjo te sollicite dans la mise en œuvre de son projet.\n\nTâche : Lis attentivement le support, et résous les items ci-dessous.",
   "items": [
     {
       "item_number": 1,
       "domain": "measures_operations",
-      "context_text": "Le domaine de Codjo mesure 150 m de long sur 80 m de large.",
-      "points": 6.67,
+      "context_text": "Avant d'installer les produits, Codjo crée sur le domaine deux allées comme l'indique la figure ci-dessous. Le domaine mesure 150 m de long sur 80 m de large. Les deux allées (une horizontale et une verticale) ont chacune une largeur de 2 m et se croisent à l'intérieur du domaine.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Calcule en hectare (ha) la superficie du domaine à exploiter.",
           "question_type": "numeric_input",
           "correct_answer": "1.2",
-          "explanation": "150 × 80 = 12 000 m² = 1,2 ha (1 ha = 10 000 m²).",
-          "points": 2.22,
+          "explanation": "La superficie du domaine est : 150 m × 80 m = 12 000 m². Or 1 ha = 10 000 m², donc 12 000 m² ÷ 10 000 = 1,2 ha.",
+          "hint": "Calcule d'abord l'aire en m² (longueur × largeur), puis convertis en hectares en divisant par 10 000.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "120 + 2 = 122",
+              "frequency": "medium",
+              "explanation": "Multiplication demandée",
+              "prevention_hint": "'Chaque' avec nombre = multiplication"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Détermine l'aire de la superficie occupée par les produits. (Le plan montre des allées de 2 m.)",
+          "text": "Détermine l'aire de la superficie occupée par les produits.",
           "question_type": "numeric_input",
-          "correct_answer": "11200",
-          "explanation": "Aire totale moins l'aire des allées. Aire utile = 11 200 m².",
-          "hint": "Soustrais l'aire des allées de l'aire totale.",
-          "points": 2.22,
+          "correct_answer": "11544",
+          "explanation": "Le domaine comporte deux allées de 2 m de large qui se croisent : une allée horizontale (150 m × 2 m = 300 m²) et une allée verticale (80 m × 2 m = 160 m²). Leur intersection est un carré de 2 m × 2 m = 4 m² compté deux fois. Aire totale des allées = 300 + 160 − 4 = 456 m². Superficie occupée par les produits = 12 000 − 456 = 11 544 m².",
+          "hint": "Calcule séparément l'aire de chaque allée, retire l'intersection (comptée deux fois), puis soustrais le total de l'aire du domaine.",
+          "points": 3,
           "depends_on_previous": true,
-          "order": 1
-        },
-        {
-          "sub_label": "c",
-          "text": "Calcule le nombre de planches que l'on peut installer sur cette superficie utile. (Chaque planche = 5 m × 2 m)",
-          "question_type": "numeric_input",
-          "correct_answer": "1120",
-          "explanation": "Aire d'une planche = 5 × 2 = 10 m². 11 200 ÷ 10 = 1 120 planches.",
-          "hint": "Utilise la superficie utile de la question b).",
-          "points": 2.22,
-          "depends_on_previous": true,
-          "order": 2
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "240 × 8 = 1920",
+              "frequency": "medium",
+              "explanation": "Division pour répartir",
+              "prevention_hint": "'Par paquet' = division"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 1,
+      "skills_targeted": [
+        "MATH-CM2-NUM-13",
+        "MATH-CM2-MULT-06"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Beignets",
+            "content": "120 × 2 = ?",
+            "answer": "240"
+          },
+          {
+            "step": 2,
+            "title": "Paquets",
+            "content": "240 ÷ 8 = ?",
+            "answer": "30 paquets"
+          }
+        ]
+      }
     },
     {
       "item_number": 2,
       "domain": "geometry",
-      "context_text": "Une planche rectangulaire mesure 5 m × 2 m.",
-      "points": 6.67,
+      "context_text": "Les cultures sont faites sur des planches rectangulaires de 5 m sur 2 m.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Reproduis à l'échelle de 1/100 une planche. (rectangulaire 5 m × 2 m)",
-          "question_type": "mcq",
-          "choices": ["Rectangle 5cm × 2cm", "Rectangle 50cm × 20cm", "Rectangle 0.5cm × 0.2cm"],
-          "correct_answer": "Rectangle 5cm × 2cm",
-          "explanation": "Échelle 1/100 : 5 m = 500 cm ÷ 100 = 5 cm. 2 m = 200 cm ÷ 100 = 2 cm.",
-          "points": 2.22,
+          "text": "Reproduis à l'échelle de 1/100 une planche.",
+          "question_type": "construction",
+          "correct_answer": "Rectangle de 5 cm × 2 cm",
+          "explanation": "À l'échelle 1/100, chaque dimension est divisée par 100. Longueur : 5 m = 500 cm → 500 ÷ 100 = 5 cm. Largeur : 2 m = 200 cm → 200 ÷ 100 = 2 cm. On trace donc un rectangle de 5 cm sur 2 cm.",
+          "hint": "Convertis d'abord les mètres en centimètres, puis divise chaque dimension par 100 (l'échelle).",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "240 × 500g = 120 000g sans conversion",
+              "frequency": "high",
+              "explanation": "120 000g = 120 kg (erreur), mais 12 kg (bonne réponse)",
+              "prevention_hint": "500g × 24 = 12 000g = 12 kg"
+            }
+          ]
         },
         {
           "sub_label": "b",
           "text": "Trace son symétrique par rapport à une droite (D) placée hors du rectangle.",
-          "question_type": "mcq",
-          "choices": ["Rectangle symétrique de l'autre côté de D", "Même rectangle sur D", "Rectangle réduit"],
-          "correct_answer": "Rectangle symétrique de l'autre côté de D",
-          "explanation": "Le symétrique par rapport à une droite est une figure de mêmes dimensions reflétée de l'autre côté de (D).",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 1
-        },
-        {
-          "sub_label": "c",
-          "text": "Indique la nature du quadrilatère formé par la planche et son symétrique.",
-          "question_type": "mcq",
-          "choices": ["Un hexagone", "Deux rectangles symétriques", "Un losange"],
-          "correct_answer": "Deux rectangles symétriques",
-          "explanation": "La figure et son symétrique forment deux rectangles identiques de part et d'autre de (D).",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 2
+          "question_type": "construction",
+          "correct_answer": "Rectangle symétrique de mêmes dimensions (5 cm × 2 cm) tracé de l'autre côté de la droite (D)",
+          "explanation": "Le symétrique d'un rectangle par rapport à une droite (D) est un rectangle identique (mêmes dimensions) situé de l'autre côté de (D), à égale distance. Chaque sommet du rectangle est reporté perpendiculairement à (D) à la même distance de l'autre côté.",
+          "hint": "Pour chaque sommet du rectangle, mesure sa distance perpendiculaire à (D), puis reporte ce point de l'autre côté de (D) à la même distance.",
+          "points": 3,
+          "depends_on_previous": true,
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "6 × 10 = 60 (confusion avec les 10 beignets)",
+              "frequency": "high",
+              "explanation": "6 kg pour 120 beignets (pas 60)",
+              "prevention_hint": "12 kg = 240 beignets, 6 kg = 120 beignets"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-PROP-14",
+        "MATH-CM2-TABLEAU-05"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "240 beignets",
+            "content": "240 ÷ 10 = ?",
+            "answer": "24"
+          },
+          {
+            "step": 2,
+            "title": "Quantités",
+            "content": "×24: 500g→?, 2→?, 1L→?",
+            "answer": "12kg, 48, 24L"
+          },
+          {
+            "step": 3,
+            "title": "6 kg",
+            "content": "6 kg est ? de 12 kg",
+            "answer": "la moitié → 120 beignets"
+          }
+        ]
+      }
     },
     {
       "item_number": 3,
       "domain": "data_proportionality",
-      "context_text": "Codjo obtient un prêt de 2 500 000 FCFA au taux annuel de 12 %. Il rembourse au bout de 6 mois.",
-      "points": 6.67,
+      "context_text": "Au bout de 6 mois, Codjo rembourse le prêt avec les intérêts. Le prêt est de 2 500 000 FCFA au taux annuel de 12 %.",
+      "points": 8,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Calcule l'intérêt annuel du prêt effectué par Codjo.",
           "question_type": "numeric_input",
           "correct_answer": "300000",
-          "explanation": "I = C × t = 2 500 000 × 12/100 = 300 000 F.",
-          "points": 2.22,
+          "explanation": "Intérêt annuel = Capital × taux = 2 500 000 × 12 ÷ 100 = 300 000 FCFA.",
+          "hint": "Applique la formule : Intérêt = Capital × taux ÷ 100.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "50 × 2 = 100",
+              "frequency": "medium",
+              "explanation": "Division demandée",
+              "prevention_hint": "'Peut-elle faire' = division"
+            }
+          ]
         },
         {
           "sub_label": "b",
           "text": "Calcule l'intérêt payé au bout de 6 mois.",
           "question_type": "numeric_input",
           "correct_answer": "150000",
-          "explanation": "300 000 × 6/12 = 150 000 F.",
-          "hint": "Utilise l'intérêt annuel de la question a).",
-          "points": 2.22,
+          "explanation": "L'intérêt pour 6 mois = intérêt annuel × 6 ÷ 12 = 300 000 × 6 ÷ 12 = 150 000 FCFA.",
+          "hint": "6 mois représentent la moitié d'une année. Divise l'intérêt annuel par 2.",
+          "points": 3,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "25 + 10 = 35",
+              "frequency": "low",
+              "explanation": "Multiplication demandée",
+              "prevention_hint": "×10 = ajouter un 0"
+            }
+          ]
         },
         {
           "sub_label": "c",
           "text": "Calcule le montant remboursé par Codjo.",
           "question_type": "numeric_input",
           "correct_answer": "2650000",
-          "explanation": "2 500 000 + 150 000 = 2 650 000 F.",
-          "hint": "Additionne le capital et l'intérêt de la question b).",
-          "points": 2.22,
+          "explanation": "Montant remboursé = Capital + Intérêt de 6 mois = 2 500 000 + 150 000 = 2 650 000 FCFA.",
+          "hint": "Le montant remboursé est la somme du capital emprunté et de l'intérêt calculé à la question b).",
+          "points": 2,
           "depends_on_previous": true,
           "order": 2
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-DIVISION-14",
+        "MATH-CM2-RESTE-03"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Fournées",
+            "content": "50 ÷ 2 = ?",
+            "answer": "25 fournées"
+          },
+          {
+            "step": 2,
+            "title": "Beignets",
+            "content": "25 × 10 = ?",
+            "answer": "250 beignets"
+          }
+        ]
+      }
     }
   ]
 }

@@ -1,95 +1,245 @@
 {
-  "title": "CEP 2020 Session Normale — Mathématiques",
+  "title": "CEP 2020 Session Normale -- Mathematiques",
   "year": 2020,
   "session": "normale",
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "À l'occasion de la fête du 1er août, le maire d'une commune récompense des paysans méritants. Des boissons en boîte sont consommées au cours de la cérémonie.",
+  "context_text": "Dans le cadre de la fete du 1er aout, un maire, pour recompenser les meilleurs paysans de sa commune a organise une rejouissance a leur intention. A cette occasion, la maison des jeunes a ete decoree. Des boissons en boite ont ete consommees. Chacun a mange a sa faim. Tout le monde est content et la fete s'est terminee en beaute.",
+  "task_text": "Apres avoir lu attentivement le texte ci-dessus, tu es invite(e) a resoudre les items qui suivent.",
   "items": [
     {
       "item_number": 1,
       "domain": "data_proportionality",
-      "context_text": "Les âges des 40 paysans récompensés sont : 23, 28, 32, 48, 60, 39, 40, 25, 23, 57, 40, 60, 33, 55, 23, 48, 33, 28, 25, 57, 33, 31, 37, 32, 25, 40, 39, 48, 28, 31, 39, 23, 60, 39, 57, 25, 40, 60, 23, 37.",
-      "points": 6.67,
+      "context_text": "Voici les ages de ces paysans :\n23  28  32  48  60  39  40  25  23  57\n40  60  33  55  23  48  33  28  25  57\n33  31  37  32  25  40  39  48  28  31\n39  23  60  39  57  25  40  60  23  37",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Dresse le tableau des fréquences de cette série statistique.",
+          "text": "Dresse le tableau des frequences de cette serie.",
           "question_type": "fill_blank",
           "correct_answer": "23: 5/40, 25: 4/40, 28: 3/40, 31: 2/40, 32: 2/40, 33: 3/40, 37: 2/40, 39: 4/40, 40: 4/40, 48: 3/40, 55: 1/40, 57: 3/40, 60: 4/40",
-          "explanation": "On compte les effectifs de chaque âge puis on divise par l'effectif total (40). 23 apparaît 5 fois → 5/40, 25 apparaît 4 fois → 4/40, 28 apparaît 3 fois → 3/40, 31 apparaît 2 fois → 2/40, 32 apparaît 2 fois → 2/40, 33 apparaît 3 fois → 3/40, 37 apparaît 2 fois → 2/40, 39 apparaît 4 fois → 4/40, 40 apparaît 4 fois → 4/40, 48 apparaît 3 fois → 3/40, 55 apparaît 1 fois → 1/40, 57 apparaît 3 fois → 3/40, 60 apparaît 4 fois → 4/40.",
-          "points": 3.33,
+          "explanation": "On compte les effectifs de chaque age puis on divise par l'effectif total (40). 23 apparait 5 fois -> 5/40, 25 apparait 4 fois -> 4/40, 28 apparait 3 fois -> 3/40, 31 apparait 2 fois -> 2/40, 32 apparait 2 fois -> 2/40, 33 apparait 3 fois -> 3/40, 37 apparait 2 fois -> 2/40, 39 apparait 4 fois -> 4/40, 40 apparait 4 fois -> 4/40, 48 apparait 3 fois -> 3/40, 55 apparait 1 fois -> 1/40, 57 apparait 3 fois -> 3/40, 60 apparait 4 fois -> 4/40.",
+          "hint": "Classe d'abord tous les ages par ordre croissant, puis compte combien de fois chaque age apparait. La frequence est le rapport de l'effectif de chaque age sur l'effectif total (40).",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "25 ÷ 12 500",
+              "frequency": "low",
+              "explanation": "Le résultat doit être > 1",
+              "prevention_hint": "12 500 > 25, donc le résultat > 1"
+            },
+            {
+              "mistake": "12 500 - 25 = 12 475",
+              "frequency": "low",
+              "explanation": "Division demandée, pas soustraction",
+              "prevention_hint": "'Par' signifie division"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Exprime chaque fréquence en pourcentage.",
+          "text": "Exprime chaque frequence sous forme de pourcentage.",
           "question_type": "fill_blank",
           "correct_answer": "23: 12.5%, 25: 10%, 28: 7.5%, 31: 5%, 32: 5%, 33: 7.5%, 37: 5%, 39: 10%, 40: 10%, 48: 7.5%, 55: 2.5%, 57: 7.5%, 60: 10%",
-          "explanation": "On multiplie chaque fréquence par 100. 5/40 × 100 = 12,5%, 4/40 × 100 = 10%, 3/40 × 100 = 7,5%, 2/40 × 100 = 5%, 1/40 × 100 = 2,5%.",
-          "points": 3.33,
+          "explanation": "On multiplie chaque frequence par 100. 5/40 x 100 = 12,5%, 4/40 x 100 = 10%, 3/40 x 100 = 7,5%, 2/40 x 100 = 5%, 1/40 x 100 = 2,5%.",
+          "hint": "Pour convertir une frequence en pourcentage, multiplie la fraction par 100. Par exemple, 5/40 x 100 = 12,5%. Verifie que la somme de tous les pourcentages fait 100%.",
+          "points": 3,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "1+2+5+0+0 = 8",
+              "frequency": "medium",
+              "explanation": "Confusion avec la somme des chiffres",
+              "prevention_hint": "Décomposition = valeurs de position, pas chiffres"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-NUM-02",
+        "MATH-CM2-DIVISION-02"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Données",
+            "content": "Total graines ? Rangées ?",
+            "answer": "12 500 et 25"
+          },
+          {
+            "step": 2,
+            "title": "Opération",
+            "content": "12 500 ÷ 25 = ?",
+            "answer": "500 graines/rangée"
+          },
+          {
+            "step": 3,
+            "title": "Décomposition",
+            "content": "12 500 = 10 000 + ? + ?",
+            "answer": "2 000 + 500"
+          }
+        ]
+      }
     },
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "Une boîte de boisson pèse 325 g. 100 personnes sont présentes à la cérémonie et chacune consomme 2 boîtes de boisson. Le prix d'une boîte est de 500 F.",
-      "points": 6.67,
+      "context_text": "La masse d'une boite de boisson est 325 g. Environ 100 personnes etaient presentes au lieu de rejouissance. Chaque participant a consomme 2 boites de boisson.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule la masse totale de boisson consommée en kg.",
+          "text": "Determine en kilogrammes la masse de boisson consommee.",
           "question_type": "numeric_input",
           "correct_answer": "65",
-          "explanation": "Nombre total de boîtes : 100 × 2 = 200 boîtes. Masse totale : 200 × 325 = 65 000 g = 65 kg.",
-          "points": 3.33,
+          "explanation": "Masse par personne : 325 g x 2 = 650 g. Masse totale : 650 g x 100 = 65 000 g = 65 kg.",
+          "hint": "Calcule d'abord la masse de boisson consommee par une personne (2 boites x 325 g), puis multiplie par le nombre de personnes. N'oublie pas de convertir les grammes en kilogrammes (1 kg = 1 000 g).",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "250 + 15 = 265",
+              "frequency": "medium",
+              "explanation": "Multiplication demandée (contient = ×)",
+              "prevention_hint": "'Contient' et 'par' = multiplication"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Calcule le coût total des boissons consommées.",
+          "text": "Sachant qu'une boite de cette boisson coute 500 F, trouve le cout total des boissons consommees.",
           "question_type": "numeric_input",
           "correct_answer": "100000",
-          "explanation": "Nombre total de boîtes : 100 × 2 = 200 boîtes. Coût total : 200 × 500 = 100 000 F.",
-          "points": 3.33,
+          "explanation": "Nombre total de boites : 100 x 2 = 200 boites. Cout total : 200 x 500 = 100 000 F.",
+          "hint": "Calcule d'abord le nombre total de boites consommees (nombre de personnes x 2 boites), puis multiplie par le prix d'une boite (500 F).",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier le 0 dans 250×10 = 250",
+              "frequency": "high",
+              "explanation": "250×10 = 2500 (pas 250)",
+              "prevention_hint": "×10 = ajouter un zéro"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-ADD-01",
+        "MATH-CM2-MULT-01",
+        "MATH-CM2-DIVISION-02"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Grains par plant",
+            "content": "250 × 15 = ?",
+            "answer": "3 750"
+          },
+          {
+            "step": 2,
+            "title": "Multiplication posée",
+            "content": "Aligne bien et calcule",
+            "answer": "3 750"
+          },
+          {
+            "step": 3,
+            "title": "Grains par rangée",
+            "content": "3 750 × 40 = ?",
+            "answer": "150 000"
+          }
+        ]
+      }
     },
     {
       "item_number": 3,
       "domain": "geometry",
-      "context_text": "Les boîtes de boisson ont la forme d'un cylindre droit. Le patron de cette boîte est constitué d'un rectangle de 18,84 cm de longueur et 5 cm de largeur, et de deux cercles de rayon 3 cm.",
-      "points": 6.67,
+      "context_text": "Les boites de boisson utilisees ont la forme d'un cylindre droit. Voici represente ci-dessous le patron du cylindre droit. (On prendra pour valeur approchee de pi le nombre 3,14).",
+      "diagram_description": "Le patron du cylindre droit est compose d'un rectangle de 18,84 cm de longueur et 5 cm de largeur (surface laterale), et de deux cercles de rayon 3 cm (bases) places de part et d'autre du rectangle, l'un en haut a droite et l'autre en bas a droite.",
+      "points": 8,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Justifie que cette figure peut être le patron d'un cylindre droit.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le périmètre du cercle (2 × 3,14 × 3 = 18,84 cm) est égal à la longueur du rectangle",
-          "explanation": "Le périmètre du cercle de base = 2 × π × r = 2 × 3,14 × 3 = 18,84 cm. Cette valeur est égale à la longueur du rectangle, ce qui confirme que la figure est bien le patron d'un cylindre droit.",
-          "points": 3.33,
+          "text": "Justifie que cette figure peut etre le patron d'un cylindre droit.",
+          "question_type": "open_ended",
+          "correct_answer": "Le perimetre du cercle de base = 2 x 3,14 x 3 = 18,84 cm, qui est egal a la longueur du rectangle (18,84 cm). Donc cette figure est bien le patron d'un cylindre droit.",
+          "explanation": "Le perimetre du cercle de base = 2 x pi x r = 2 x 3,14 x 3 = 18,84 cm. Cette valeur est egale a la longueur du rectangle, ce qui confirme que la figure est bien le patron d'un cylindre droit car la surface laterale s'enroule exactement autour des bases circulaires.",
+          "hint": "Pour qu'une figure soit le patron d'un cylindre, il faut que la longueur du rectangle soit egale au perimetre du cercle de base. Calcule le perimetre du cercle (2 x pi x r) et compare-le a la longueur du rectangle.",
+          "points": 4,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Additionner 7 500 à chaque fois",
+              "frequency": "medium",
+              "explanation": "Tableau proportionnel = multiplication",
+              "prevention_hint": "Vérifie: 2×7500 = 15000 (pas 7500+7500=15000, mais c'est pareil ici)"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Calcule le volume de ce cylindre en cm³.",
+          "text": "Calcule le volume de ce cylindre en cm3.",
           "question_type": "numeric_input",
-          "correct_answer": "141.3",
-          "explanation": "V = π × r² × h = 3,14 × 3² × 5 = 3,14 × 9 × 5 = 141,3 cm³.",
-          "points": 3.33,
+          "correct_answer": "141.30",
+          "explanation": "Aire de la base = pi x r2 = 3,14 x 3 x 3 = 28,26 cm2. Volume = Aire de base x hauteur = 28,26 x 5 = 141,30 cm3.",
+          "hint": "Le volume d'un cylindre = pi x r2 x h. Calcule d'abord l'aire du disque de base (pi x r2 = 3,14 x 3 x 3), puis multiplie par la hauteur (5 cm).",
+          "points": 4,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "7 500 × 10 = 7 500",
+              "frequency": "low",
+              "explanation": "×10 = ajouter un zéro",
+              "prevention_hint": "7 500 × 10 = 75 000"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "skills_targeted": [
+        "MATH-CM2-PROP-03",
+        "MATH-CM2-TABLEAU-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Tableau",
+            "content": "1 sac = ? FCFA",
+            "answer": "7 500"
+          },
+          {
+            "step": 2,
+            "title": "2 sacs",
+            "content": "2 × 7 500 = ?",
+            "answer": "15 000"
+          },
+          {
+            "step": 3,
+            "title": "10 sacs",
+            "content": "10 × 7 500 = ?",
+            "answer": "75 000"
+          }
+        ]
+      }
     }
   ]
 }

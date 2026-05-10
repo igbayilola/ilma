@@ -1,2114 +1,1402 @@
 {
-  "schema_version": "1.4.0",
-  "subject": "Mathématiques",
-  "grade": "CM2",
-  "country": "BENIN",
-  "domain": {
-    "domain_id": "MATH-CM2-MES",
-    "domain_name": "Grandeurs et Mesures"
+  "schema_version": "2.0",
+  "grade": {
+    "name": "CM2",
+    "slug": "cm2",
+    "description": "CM2 — programme BENIN"
   },
-  "standards": {
-    "ilma_levels": [
-      "Découverte",
-      "Entraînement",
-      "Maîtrise",
-      "Expert"
-    ],
-    "exercise_types_vocab": [
-      "Choix multiples",
-      "Réponse courte",
-      "Réponse numérique",
-      "Glisser-déposer",
-      "Construction",
-      "Tracer",
-      "Classement",
-      "Compléter",
-      "Problème contextualisé",
-      "Correction d'erreur",
-      "Étapes guidées",
-      "Flash cards",
-      "Calcul chronométré",
-      "Vrai/Faux",
-      "Justification"
-    ],
-    "bloom_taxonomy_levels": [
-      "Connaître",
-      "Comprendre",
-      "Appliquer",
-      "Analyser",
-      "Évaluer",
-      "Créer"
-    ],
-    "exercise_type_semantics": {
-      "Tracer": "Action centrée sur le tracé (droite graduée, segment, repérage), précision graphique.",
-      "Construction": "Construction géométrique guidée (règle/compas) ou assemblage de figures/objets."
-    }
-  },
-  "inheritance_rules": {
-    "micro_skill_overrides_parent_fields": true,
-    "fields_inheritable_from_skill": [
-      "estimated_time_minutes",
-      "difficulty_index",
-      "bloom_taxonomy_level",
-      "mastery_threshold",
-      "cep_frequency",
-      "adaptive_hints",
-      "local_context_examples",
-      "accessibility_tags",
-      "recommended_exercise_types"
-    ]
-  },
-  "cep_frequency_rules": {
-    "scale": {
-      "null": "Non évalué / difficile à quantifier",
-      "10-30": "Occasionnel",
-      "40-60": "Fréquent",
-      "70-90": "Très fréquent",
-      "100": "Systématique"
-    },
-    "aggregation_policy_for_skill": "max_of_micro_skills_if_defined_else_null",
-    "note": "Si au moins 1 micro-skill a cep_frequency défini, alors le skill peut dériver sa valeur via la policy."
-  },
-  "skills": [
+  "subjects": [
     {
-      "skill_id": "MES-LONGUEURS",
-      "skill_name": "Convertir les unités de longueur",
-      "micro_skill_ids_ordered": [
-        "MES-LONGUEURS::MS01",
-        "MES-LONGUEURS::MS02",
-        "MES-LONGUEURS::MS03"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-CALCUL-MENTAL-TABLES"
-      ],
-      "exercise_types": [
-        "Compléter",
-        "Réponse numérique",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Facteurs confondus",
-        "Unité finale incohérente"
-      ],
-      "mastery_threshold": "90% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 60,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-CAPACITES",
-      "skill_name": "Capacités : litre et sous-multiples (conversions)",
-      "micro_skill_ids_ordered": [
-        "MES-CAPACITES::MS01",
-        "MES-CAPACITES::MS02",
-        "MES-CAPACITES::MS03"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-CALCUL-MENTAL-TABLES"
-      ],
-      "exercise_types": [
-        "Compléter",
-        "Réponse numérique",
-        "Problème contextualisé",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Confusion dL/cL",
-        "Décalage de tableau",
-        "Unité oubliée"
-      ],
-      "mastery_threshold": "90% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 55,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-MASSES",
-      "skill_name": "Masses : tonne, kilogramme, gramme (et conversions)",
-      "micro_skill_ids_ordered": [
-        "MES-MASSES::MS01",
-        "MES-MASSES::MS02",
-        "MES-MASSES::MS03",
-        "MES-MASSES::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-CALCUL-MENTAL-TABLES"
-      ],
-      "exercise_types": [
-        "Compléter",
-        "Réponse numérique",
-        "Problème contextualisé",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Décalage de colonnes",
-        "Unité non adaptée",
-        "Oubli de l'unité"
-      ],
-      "mastery_threshold": "90% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 60,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-AGRAIRES",
-      "skill_name": "Mesures agraires",
-      "micro_skill_ids_ordered": [
-        "MES-AGRAIRES::MS01",
-        "MES-AGRAIRES::MS02",
-        "MES-AGRAIRES::MS03",
-        "MES-AGRAIRES::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS"
-      ],
-      "exercise_types": [
-        "Réponse numérique",
-        "Compléter",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Confusion a/ha",
-        "Conversion incorrecte",
-        "Unités oubliées"
-      ],
-      "mastery_threshold": "85% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 50,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-AIRES-DISQUE-FIG",
-      "skill_name": "Périmètre et aire du disque ; aire de figures décomposables",
-      "micro_skill_ids_ordered": [
-        "MES-AIRES-DISQUE-FIG::MS01",
-        "MES-AIRES-DISQUE-FIG::MS02",
-        "MES-AIRES-DISQUE-FIG::MS03",
-        "MES-AIRES-DISQUE-FIG::MS04",
-        "MES-AIRES-DISQUE-FIG::MS05",
-        "MES-AIRES-DISQUE-FIG::MS06"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-CERCLE",
-        "OPS-DECIMAUX-MULTIPLIER",
-        "OPS-ESTIMER-VERIFIER"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Problème contextualisé",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Confusion 2*pi*r / pi*r^2",
-        "Rayon/diamètre confondus",
-        "Unités incohérentes",
-        "Décomposition incorrecte"
-      ],
-      "mastery_threshold": "80% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 70,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-VOL-PAVE-CUBE",
-      "skill_name": "Volume du pavé droit et du cube (avec conversions)",
-      "micro_skill_ids_ordered": [
-        "MES-VOL-PAVE-CUBE::MS01",
-        "MES-VOL-PAVE-CUBE::MS03",
-        "MES-VOL-PAVE-CUBE::MS02",
-        "MES-VOL-PAVE-CUBE::MS04",
-        "MES-VOL-PAVE-CUBE::MS05",
-        "MES-VOL-PAVE-CUBE::MS06"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-DECIMAUX-MULTIPLIER",
-        "OPS-ESTIMER-VERIFIER"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Problème contextualisé",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Unités carrées vs cubiques",
-        "Conversion de volume incorrecte",
-        "Oubli de l'unité"
-      ],
-      "mastery_threshold": "90% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 65,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-VOL-CAP",
-      "skill_name": "Relation entre unité de volume et de capacité",
-      "micro_skill_ids_ordered": [
-        "MES-VOL-CAP::MS01",
-        "MES-VOL-CAP::MS02",
-        "MES-VOL-CAP::MS03",
-        "MES-VOL-CAP::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "MES-CAPACITES",
-        "MES-VOL-PAVE-CUBE",
-        "OPS-DECIMAUX-DIVISER"
-      ],
-      "exercise_types": [
-        "Réponse numérique",
-        "Problème contextualisé",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Conversions mal maîtrisées",
-        "Unité finale incohérente"
-      ],
-      "mastery_threshold": "85% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 50,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-CYL-PATRON",
-      "skill_name": "Cylindre droit : patron (reconnaître et dessiner)",
-      "micro_skill_ids_ordered": [
-        "MES-CYL-PATRON::MS01",
-        "MES-CYL-PATRON::MS02",
-        "MES-CYL-PATRON::MS03",
-        "MES-CYL-PATRON::MS04",
-        "MES-CYL-PATRON::MS05"
-      ],
-      "prerequisites_skill_ids": [
-        "GEO-CERCLE",
-        "MES-VOL-PAVE-CUBE"
-      ],
-      "exercise_types": [
-        "Construction",
-        "Tracer",
-        "Choix multiples",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Rectangle trop long/court",
-        "Confusion hauteur/diamètre",
-        "Oubli d'un disque"
-      ],
-      "mastery_threshold": "75% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 40,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-CYL-VOL-AIRES",
-      "skill_name": "Cylindre droit : volume, aire latérale et aire totale",
-      "micro_skill_ids_ordered": [
-        "MES-CYL-VOL-AIRES::MS01",
-        "MES-CYL-VOL-AIRES::MS02",
-        "MES-CYL-VOL-AIRES::MS03",
-        "MES-CYL-VOL-AIRES::MS04",
-        "MES-CYL-VOL-AIRES::MS05",
-        "MES-CYL-VOL-AIRES::MS06"
-      ],
-      "prerequisites_skill_ids": [
-        "MES-AIRES-DISQUE-FIG",
-        "MES-CYL-PATRON",
-        "OPS-DECIMAUX-MULTIPLIER",
-        "OPS-ESTIMER-VERIFIER"
-      ],
-      "exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique",
-        "Problème contextualisé",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Confusion aire/volume",
-        "Oublier les 2 bases",
-        "Unités incohérentes"
-      ],
-      "mastery_threshold": "75% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 45,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-CHANGES",
-      "skill_name": "Changes : Euro, Dollar, FCFA (problèmes de conversion)",
-      "micro_skill_ids_ordered": [
-        "MES-CHANGES::MS01",
-        "MES-CHANGES::MS02",
-        "MES-CHANGES::MS03",
-        "MES-CHANGES::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-DECIMAUX-MULTIPLIER",
-        "OPS-DECIMAUX-DIVISER",
-        "OPS-ESTIMER-VERIFIER"
-      ],
-      "exercise_types": [
-        "Problème contextualisé",
-        "Réponse numérique",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Sens du taux inversé",
-        "Arrondi incohérent",
-        "Unité monétaire oubliée"
-      ],
-      "mastery_threshold": "85% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 20,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-TEMPS-DUREES",
-      "skill_name": "Lire l'heure et calculer des durées",
-      "micro_skill_ids_ordered": [
-        "MES-TEMPS-DUREES::MS01",
-        "MES-TEMPS-DUREES::MS02",
-        "MES-TEMPS-DUREES::MS03",
-        "MES-TEMPS-DUREES::MS04",
-        "MES-TEMPS-DUREES::MS05",
-        "MES-TEMPS-DUREES::MS06"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-        "OPS-PB-MULTI"
-      ],
-      "exercise_types": [
-        "Choix multiples",
-        "Réponse numérique",
-        "Étapes guidées",
-        "Problème contextualisé"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Confusion 12h/24h",
-        "Soustraction minutes/heures incorrecte",
-        "Oublier de convertir"
-      ],
-      "mastery_threshold": "85% sur 10 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 80,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    },
-    {
-      "skill_id": "MES-CALENDRIER",
-      "skill_name": "Utiliser le calendrier",
-      "micro_skill_ids_ordered": [
-        "MES-CALENDRIER::MS01",
-        "MES-CALENDRIER::MS02",
-        "MES-CALENDRIER::MS03",
-        "MES-CALENDRIER::MS04"
-      ],
-      "prerequisites_skill_ids": [
-        "OPS-PB-MULTI"
-      ],
-      "exercise_types": [
-        "Choix multiples",
-        "Réponse numérique",
-        "Problème contextualisé",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "common_mistakes": [
-        "Mauvais comptage de jours",
-        "Oublier la longueur des mois",
-        "Confondre date et durée"
-      ],
-      "mastery_threshold": "80% sur 8 exercices",
-      "estimated_time_minutes": null,
-      "difficulty_index": null,
-      "bloom_taxonomy_level": null,
-      "cep_frequency": 60,
-      "adaptive_hints": null,
-      "local_context_examples": [],
-      "accessibility_tags": []
-    }
-  ],
-  "micro_skills": [
-    {
-      "micro_skill_id": "MES-LONGUEURS::MS01",
-      "parent_skill_id": "MES-LONGUEURS",
-      "micro_skill_name": "Convertir entre mm, cm, dm, m et km en utilisant le tableau de conversion",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
+      "name": "Mathématiques",
+      "slug": "mathematiques",
+      "icon": "calculator",
+      "color": "#1E5AA8",
+      "order": 1,
+      "domains": [
         {
-          "skill_id": "OPS-CALCUL-MENTAL-TABLES",
-          "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
-          "why": "Multiplier/diviser par 10/100/1000"
+          "name": "Grandeurs et Mesures",
+          "slug": "grandeurs-et-mesures",
+          "order": 1,
+          "skills": [
+            {
+              "external_id": "MES-LONGUEURS",
+              "name": "Convertir les unités de longueur",
+              "order": 1,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "OPS-CALCUL-MENTAL-TABLES"
+              ],
+              "common_mistakes": [
+                "Facteurs confondus",
+                "Unité finale incohérente"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Réponse numérique",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "90% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-LONGUEURS::MS01",
+                  "name": "Convertir entre mm, cm, dm, m et km en utilisant le tableau de conversion",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-CALCUL-MENTAL-TABLES",
+                      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
+                      "why": "Multiplier/diviser par 10/100/1000"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-LONGUEURS::MS02",
+                  "name": "Choisir l'unité de longueur adaptée au contexte",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "MES-LONGUEURS::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-LONGUEURS::MS03",
+                  "name": "Détecter et corriger les erreurs de facteur (x10/x100/x1000)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "MES-LONGUEURS::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "external_id": "MES-CAPACITES",
+              "name": "Capacités : litre et sous-multiples (conversions)",
+              "order": 2,
+              "cep_frequency": 55,
+              "prerequisites": [
+                "OPS-CALCUL-MENTAL-TABLES"
+              ],
+              "common_mistakes": [
+                "Confusion dL/cL",
+                "Décalage de tableau",
+                "Unité oubliée"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Réponse numérique",
+                "Problème contextualisé",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "90% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-CAPACITES::MS01",
+                  "name": "Convertir entre L, dL, cL et mL en utilisant le tableau de conversion",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-CALCUL-MENTAL-TABLES",
+                      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
+                      "why": "Multiplier/diviser par 10/100/1000"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-CAPACITES::MS02",
+                  "name": "Choisir l'unité de capacité adaptée au contexte",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "MES-CAPACITES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-CAPACITES::MS03",
+                  "name": "Résoudre un problème de contenance (remplir, vider, doser)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "MES-CAPACITES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-PB-MULTI",
+                      "micro_skill_id": "OPS-PB-MULTI::MS03",
+                      "why": "Choix des opérations"
+                    }
+                  ],
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "external_id": "MES-MASSES",
+              "name": "Masses : tonne, kilogramme, gramme (et conversions)",
+              "order": 3,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "OPS-CALCUL-MENTAL-TABLES"
+              ],
+              "common_mistakes": [
+                "Décalage de colonnes",
+                "Unité non adaptée",
+                "Oubli de l'unité"
+              ],
+              "exercise_types": [
+                "Compléter",
+                "Réponse numérique",
+                "Problème contextualisé",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "90% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-MASSES::MS01",
+                  "name": "Lire et compléter un tableau de conversion de masses (t, kg, g)",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-MASSES::MS02",
+                  "name": "Convertir entre t, kg et g",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "MES-MASSES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-CALCUL-MENTAL-TABLES",
+                      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
+                      "why": "Multiplier/diviser par 1000"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-MASSES::MS03",
+                  "name": "Choisir l'unité de masse adaptée au contexte",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "MES-MASSES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-MASSES::MS04",
+                  "name": "Résoudre un problème impliquant des masses (avec conversion si nécessaire)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "MES-MASSES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-PB-MULTI",
+                      "micro_skill_id": "OPS-PB-MULTI::MS03",
+                      "why": "Choix des opérations"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "MES-AGRAIRES",
+              "name": "Mesures agraires",
+              "order": 4,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "OPS-TECHNIQUES-OPERATOIRES-ENTIERS"
+              ],
+              "common_mistakes": [
+                "Confusion a/ha",
+                "Conversion incorrecte",
+                "Unités oubliées"
+              ],
+              "exercise_types": [
+                "Réponse numérique",
+                "Compléter",
+                "Problème contextualisé"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-AGRAIRES::MS01",
+                  "name": "Connaitre les équivalences : 1 a = 100 m2 ; 1 ha = 100 a = 10 000 m2",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-AGRAIRES::MS02",
+                  "name": "Convertir entre m2, a et ha",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "MES-AGRAIRES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
+                      "why": "Multiplication grands nombres"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-AGRAIRES::MS03",
+                  "name": "Comparer des superficies exprimées dans des unités différentes",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "MES-AGRAIRES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Classement",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-AGRAIRES::MS04",
+                  "name": "Résoudre un problème sur des parcelles agricoles (superficie, partage)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "MES-AGRAIRES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "MES-AIRES-DISQUE-FIG",
+              "name": "Périmètre et aire du disque ; aire de figures décomposables",
+              "order": 5,
+              "cep_frequency": 70,
+              "prerequisites": [
+                "GEO-CERCLE",
+                "OPS-DECIMAUX-MULTIPLIER",
+                "OPS-ESTIMER-VERIFIER"
+              ],
+              "common_mistakes": [
+                "Confusion 2*pi*r / pi*r^2",
+                "Rayon/diamètre confondus",
+                "Unités incohérentes",
+                "Décomposition incorrecte"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Problème contextualisé",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "80% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-AIRES-DISQUE-FIG::MS01",
+                  "name": "Distinguer périmètre et aire (sens, unités)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Classement"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-AIRES-DISQUE-FIG::MS02",
+                  "name": "Utiliser correctement r et D dans les formules du cercle (P = 2*pi*r, A = pi*r2)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 65,
+                  "prerequisites": [
+                    "MES-AIRES-DISQUE-FIG::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-CERCLE",
+                      "micro_skill_id": "GEO-CERCLE::MS03",
+                      "why": "Relation D = 2r"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-AIRES-DISQUE-FIG::MS03",
+                  "name": "Calculer l'aire d'un demi-cercle",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "MES-AIRES-DISQUE-FIG::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-AIRES-DISQUE-FIG::MS04",
+                  "name": "Décomposer une figure complexe en figures simples (rectangle, triangle, demi-cercle)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "MES-AIRES-DISQUE-FIG::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Construction"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "MES-AIRES-DISQUE-FIG::MS05",
+                  "name": "Additionner les aires partielles sans double comptage",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "75% sur 6 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "MES-AIRES-DISQUE-FIG::MS04",
+                    "MES-AIRES-DISQUE-FIG::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Étapes guidées",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                },
+                {
+                  "external_id": "MES-AIRES-DISQUE-FIG::MS06",
+                  "name": "Gérer les unités d'aire (cm2, m2) et vérifier la cohérence",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "MES-AIRES-DISQUE-FIG::MS05"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
+                      "why": "Détection résultat absurde"
+                    }
+                  ],
+                  "order": 6
+                }
+              ]
+            },
+            {
+              "external_id": "MES-VOL-PAVE-CUBE",
+              "name": "Volume du pavé droit et du cube (avec conversions)",
+              "order": 6,
+              "cep_frequency": 65,
+              "prerequisites": [
+                "OPS-DECIMAUX-MULTIPLIER",
+                "OPS-ESTIMER-VERIFIER"
+              ],
+              "common_mistakes": [
+                "Unités carrées vs cubiques",
+                "Conversion de volume incorrecte",
+                "Oubli de l'unité"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Problème contextualisé",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "90% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-VOL-PAVE-CUBE::MS01",
+                  "name": "Reconnaitre un pavé droit et un cube parmi des solides",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Classement"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-VOL-PAVE-CUBE::MS03",
+                  "name": "Identifier L, l et h sur un schéma ou un objet réel",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "MES-VOL-PAVE-CUBE::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-VOL-PAVE-CUBE::MS02",
+                  "name": "Appliquer V = L x l x h (pavé droit) et V = a3 (cube)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "MES-VOL-PAVE-CUBE::MS01",
+                    "MES-VOL-PAVE-CUBE::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-DECIMAUX-MULTIPLIER",
+                      "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
+                      "why": "Multiplication décimale posée"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-VOL-PAVE-CUBE::MS04",
+                  "name": "Connaitre et utiliser les unités de volume : m3, dm3, cm3",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "MES-VOL-PAVE-CUBE::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "MES-VOL-PAVE-CUBE::MS05",
+                  "name": "Convertir entre m3, dm3 et cm3 (facteur x1000)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "MES-VOL-PAVE-CUBE::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                },
+                {
+                  "external_id": "MES-VOL-PAVE-CUBE::MS06",
+                  "name": "Vérifier la cohérence des unités dans un calcul de volume",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "MES-VOL-PAVE-CUBE::MS05"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
+                      "why": "Détection résultat absurde"
+                    }
+                  ],
+                  "order": 6
+                }
+              ]
+            },
+            {
+              "external_id": "MES-VOL-CAP",
+              "name": "Relation entre unité de volume et de capacité",
+              "order": 7,
+              "cep_frequency": 50,
+              "prerequisites": [
+                "MES-CAPACITES",
+                "MES-VOL-PAVE-CUBE",
+                "OPS-DECIMAUX-DIVISER"
+              ],
+              "common_mistakes": [
+                "Conversions mal maîtrisées",
+                "Unité finale incohérente"
+              ],
+              "exercise_types": [
+                "Réponse numérique",
+                "Problème contextualisé",
+                "Compléter"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-VOL-CAP::MS01",
+                  "name": "Connaitre l'équivalence 1 L = 1 dm3",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-VOL-CAP::MS02",
+                  "name": "Connaitre l'équivalence 1 mL = 1 cm3",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "MES-VOL-CAP::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-VOL-CAP::MS03",
+                  "name": "Convertir entre L et dm3, entre mL et cm3",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [
+                    "MES-VOL-CAP::MS01",
+                    "MES-VOL-CAP::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-VOL-CAP::MS04",
+                  "name": "Résoudre un problème liant volume et contenance",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "MES-VOL-CAP::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-PB-MULTI",
+                      "micro_skill_id": "OPS-PB-MULTI::MS03",
+                      "why": "Choix des opérations"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "MES-CYL-PATRON",
+              "name": "Cylindre droit : patron (reconnaître et dessiner)",
+              "order": 8,
+              "cep_frequency": 40,
+              "prerequisites": [
+                "GEO-CERCLE",
+                "MES-VOL-PAVE-CUBE"
+              ],
+              "common_mistakes": [
+                "Rectangle trop long/court",
+                "Confusion hauteur/diamètre",
+                "Oubli d'un disque"
+              ],
+              "exercise_types": [
+                "Construction",
+                "Tracer",
+                "Choix multiples",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "75% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-CYL-PATRON::MS01",
+                  "name": "Reconnaitre un cylindre droit parmi des solides",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Classement"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-CYL-PATRON::MS02",
+                  "name": "Identifier les éléments du patron : 2 disques + 1 rectangle",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "85% sur 6 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "MES-CYL-PATRON::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-CYL-PATRON::MS03",
+                  "name": "Dessiner le patron du cylindre (tracé propre au compas et à la règle)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Créer",
+                  "mastery_threshold": "75% sur 6 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "MES-CYL-PATRON::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Construction",
+                    "Tracer"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "GEO-CERCLE",
+                      "micro_skill_id": "GEO-CERCLE::MS02",
+                      "why": "Construction au compas"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-CYL-PATRON::MS04",
+                  "name": "Relier la longueur du rectangle à la circonférence de la base (L = 2*pi*r)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "MES-CYL-PATRON::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "MES-AIRES-DISQUE-FIG",
+                      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS02",
+                      "why": "Formule du périmètre du cercle"
+                    }
+                  ],
+                  "order": 4
+                },
+                {
+                  "external_id": "MES-CYL-PATRON::MS05",
+                  "name": "Contrôler les dimensions du patron (cohérence rectangle/disques)",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "75% sur 6 exercices",
+                  "cep_frequency": 30,
+                  "prerequisites": [
+                    "MES-CYL-PATRON::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "external_id": "MES-CYL-VOL-AIRES",
+              "name": "Cylindre droit : volume, aire latérale et aire totale",
+              "order": 9,
+              "cep_frequency": 45,
+              "prerequisites": [
+                "MES-AIRES-DISQUE-FIG",
+                "MES-CYL-PATRON",
+                "OPS-DECIMAUX-MULTIPLIER",
+                "OPS-ESTIMER-VERIFIER"
+              ],
+              "common_mistakes": [
+                "Confusion aire/volume",
+                "Oublier les 2 bases",
+                "Unités incohérentes"
+              ],
+              "exercise_types": [
+                "Étapes guidées",
+                "Réponse numérique",
+                "Problème contextualisé",
+                "Correction d'erreur"
+              ],
+              "mastery_threshold": "75% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-CYL-VOL-AIRES::MS01",
+                  "name": "Calculer le volume du cylindre : V = aire de base x hauteur = pi*r2*h",
+                  "difficulty_index": 7,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "MES-AIRES-DISQUE-FIG",
+                      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS02",
+                      "why": "Aire du disque"
+                    }
+                  ],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-CYL-VOL-AIRES::MS02",
+                  "name": "Calculer l'aire latérale du cylindre (rectangle déroulé : 2*pi*r*h)",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "MES-CYL-VOL-AIRES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "MES-CYL-PATRON",
+                      "micro_skill_id": "MES-CYL-PATRON::MS04",
+                      "why": "Lien patron-aire latérale"
+                    }
+                  ],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-CYL-VOL-AIRES::MS03",
+                  "name": "Différencier aire latérale et aire totale",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "MES-CYL-VOL-AIRES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse courte"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-CYL-VOL-AIRES::MS04",
+                  "name": "Calculer l'aire totale : A_lat + 2 x pi*r2",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 16,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 40,
+                  "prerequisites": [
+                    "MES-CYL-VOL-AIRES::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "MES-CYL-VOL-AIRES::MS05",
+                  "name": "Distinguer unités d'aire (cm2, m2) et unités de volume (cm3, m3) dans un même problème",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "75% sur 6 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "MES-CYL-VOL-AIRES::MS01",
+                    "MES-CYL-VOL-AIRES::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 5
+                },
+                {
+                  "external_id": "MES-CYL-VOL-AIRES::MS06",
+                  "name": "Arrondir un résultat impliquant pi et vérifier sa cohérence",
+                  "difficulty_index": 8,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "75% sur 8 exercices",
+                  "cep_frequency": 35,
+                  "prerequisites": [
+                    "MES-CYL-VOL-AIRES::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS02",
+                      "why": "Arrondi décimal"
+                    }
+                  ],
+                  "order": 6
+                }
+              ]
+            },
+            {
+              "external_id": "MES-CHANGES",
+              "name": "Changes : Euro, Dollar, FCFA (problèmes de conversion)",
+              "order": 10,
+              "cep_frequency": 20,
+              "prerequisites": [
+                "OPS-DECIMAUX-MULTIPLIER",
+                "OPS-DECIMAUX-DIVISER",
+                "OPS-ESTIMER-VERIFIER"
+              ],
+              "common_mistakes": [
+                "Sens du taux inversé",
+                "Arrondi incohérent",
+                "Unité monétaire oubliée"
+              ],
+              "exercise_types": [
+                "Problème contextualisé",
+                "Réponse numérique",
+                "Choix multiples"
+              ],
+              "mastery_threshold": "85% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-CHANGES::MS01",
+                  "name": "Lire un taux de change (ex : 1 EUR = 655,957 FCFA)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Comprendre",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 25,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-CHANGES::MS02",
+                  "name": "Choisir multiplication ou division selon le sens de la conversion",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Analyser",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 25,
+                  "prerequisites": [
+                    "MES-CHANGES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-CHANGES::MS03",
+                  "name": "Arrondir un montant converti de manière cohérente",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 25,
+                  "prerequisites": [
+                    "MES-CHANGES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Correction d'erreur"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS02",
+                      "why": "Arrondi décimal"
+                    }
+                  ],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-CHANGES::MS04",
+                  "name": "Vérifier l'ordre de grandeur du résultat (sens économique)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 30,
+                  "prerequisites": [
+                    "MES-CHANGES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-ESTIMER-VERIFIER",
+                      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
+                      "why": "Détection résultat absurde"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "external_id": "MES-TEMPS-DUREES",
+              "name": "Lire l'heure et calculer des durées",
+              "order": 11,
+              "cep_frequency": 80,
+              "prerequisites": [
+                "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
+                "OPS-PB-MULTI"
+              ],
+              "common_mistakes": [
+                "Confusion 12h/24h",
+                "Soustraction minutes/heures incorrecte",
+                "Oublier de convertir"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse numérique",
+                "Étapes guidées",
+                "Problème contextualisé"
+              ],
+              "mastery_threshold": "85% sur 10 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-TEMPS-DUREES::MS01",
+                  "name": "Lire l'heure sur une horloge analogique (aiguilles)",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-TEMPS-DUREES::MS02",
+                  "name": "Lire l'heure sur une horloge numérique (format 12h et 24h)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "MES-TEMPS-DUREES::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-TEMPS-DUREES::MS03",
+                  "name": "Convertir minutes en heures et inversement (cas simples : 60 min = 1h)",
+                  "difficulty_index": 4,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 70,
+                  "prerequisites": [
+                    "MES-TEMPS-DUREES::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-TEMPS-DUREES::MS04",
+                  "name": "Calculer une durée par différence d'horaires",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 75,
+                  "prerequisites": [
+                    "MES-TEMPS-DUREES::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Étapes guidées",
+                    "Réponse numérique"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 4
+                },
+                {
+                  "external_id": "MES-TEMPS-DUREES::MS05",
+                  "name": "Résoudre des problèmes de départ/arrivée (trouver heure ou durée manquante)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 80,
+                  "prerequisites": [
+                    "MES-TEMPS-DUREES::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-PB-MULTI",
+                      "micro_skill_id": "OPS-PB-MULTI::MS03",
+                      "why": "Choix des opérations"
+                    }
+                  ],
+                  "order": 5
+                },
+                {
+                  "external_id": "MES-TEMPS-DUREES::MS06",
+                  "name": "Vérifier la cohérence d'un résultat temporel (durée positive, ordre chronologique)",
+                  "difficulty_index": 6,
+                  "estimated_time_minutes": 10,
+                  "bloom_taxonomy_level": "Évaluer",
+                  "mastery_threshold": "85% sur 8 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "MES-TEMPS-DUREES::MS04"
+                  ],
+                  "recommended_exercise_types": [
+                    "Correction d'erreur",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 6
+                }
+              ]
+            },
+            {
+              "external_id": "MES-CALENDRIER",
+              "name": "Utiliser le calendrier",
+              "order": 12,
+              "cep_frequency": 60,
+              "prerequisites": [
+                "OPS-PB-MULTI"
+              ],
+              "common_mistakes": [
+                "Mauvais comptage de jours",
+                "Oublier la longueur des mois",
+                "Confondre date et durée"
+              ],
+              "exercise_types": [
+                "Choix multiples",
+                "Réponse numérique",
+                "Problème contextualisé",
+                "Compléter"
+              ],
+              "mastery_threshold": "80% sur 8 exercices",
+              "micro_skills": [
+                {
+                  "external_id": "MES-CALENDRIER::MS01",
+                  "name": "Identifier jour, semaine, mois et année sur un calendrier",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Connaître",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 45,
+                  "prerequisites": [],
+                  "recommended_exercise_types": [
+                    "Choix multiples",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 1
+                },
+                {
+                  "external_id": "MES-CALENDRIER::MS02",
+                  "name": "Lire et écrire une date dans différents formats",
+                  "difficulty_index": 3,
+                  "estimated_time_minutes": 8,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "90% sur 6 exercices",
+                  "cep_frequency": 50,
+                  "prerequisites": [
+                    "MES-CALENDRIER::MS01"
+                  ],
+                  "recommended_exercise_types": [
+                    "Compléter",
+                    "Choix multiples"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 2
+                },
+                {
+                  "external_id": "MES-CALENDRIER::MS03",
+                  "name": "Calculer un nombre de jours entre deux dates (cas CM2 : même mois ou mois consécutifs)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 12,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 8 exercices",
+                  "cep_frequency": 55,
+                  "prerequisites": [
+                    "MES-CALENDRIER::MS02"
+                  ],
+                  "recommended_exercise_types": [
+                    "Réponse numérique",
+                    "Étapes guidées"
+                  ],
+                  "external_prerequisites": [],
+                  "order": 3
+                },
+                {
+                  "external_id": "MES-CALENDRIER::MS04",
+                  "name": "Résoudre un problème de planning simple (dates d'événements, durées)",
+                  "difficulty_index": 5,
+                  "estimated_time_minutes": 14,
+                  "bloom_taxonomy_level": "Appliquer",
+                  "mastery_threshold": "80% sur 6 exercices",
+                  "cep_frequency": 60,
+                  "prerequisites": [
+                    "MES-CALENDRIER::MS03"
+                  ],
+                  "recommended_exercise_types": [
+                    "Problème contextualisé",
+                    "Étapes guidées",
+                    "Compléter"
+                  ],
+                  "external_prerequisites": [
+                    {
+                      "skill_id": "OPS-PB-MULTI",
+                      "micro_skill_id": "OPS-PB-MULTI::MS03",
+                      "why": "Choix des opérations"
+                    }
+                  ],
+                  "order": 4
+                }
+              ]
+            }
+          ]
         }
-      ],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Convertir 2,5 km en m pour mesurer une route"
-      ],
-      "accessibility_tags": [
-        "unit_ladder_visual"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-LONGUEURS::MS02",
-      "parent_skill_id": "MES-LONGUEURS",
-      "micro_skill_name": "Choisir l'unité de longueur adaptée au contexte",
-      "prerequisites_micro_skill_ids": [
-        "MES-LONGUEURS::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "La longueur d'une salle : en m (pas en km ni en mm)"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-LONGUEURS::MS03",
-      "parent_skill_id": "MES-LONGUEURS",
-      "micro_skill_name": "Détecter et corriger les erreurs de facteur (x10/x100/x1000)",
-      "prerequisites_micro_skill_ids": [
-        "MES-LONGUEURS::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "350 cm = 3,5 m (et non 35 m)"
-      ],
-      "accessibility_tags": [
-        "unit_ladder_visual"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CAPACITES::MS01",
-      "parent_skill_id": "MES-CAPACITES",
-      "micro_skill_name": "Convertir entre L, dL, cL et mL en utilisant le tableau de conversion",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-CALCUL-MENTAL-TABLES",
-          "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
-          "why": "Multiplier/diviser par 10/100/1000"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Convertir 1,5 L en cL pour un dosage"
-      ],
-      "accessibility_tags": [
-        "unit_table_scaffold"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CAPACITES::MS02",
-      "parent_skill_id": "MES-CAPACITES",
-      "micro_skill_name": "Choisir l'unité de capacité adaptée au contexte",
-      "prerequisites_micro_skill_ids": [
-        "MES-CAPACITES::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Un bidon : en L ; une cuillère : en mL"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CAPACITES::MS03",
-      "parent_skill_id": "MES-CAPACITES",
-      "micro_skill_name": "Résoudre un problème de contenance (remplir, vider, doser)",
-      "prerequisites_micro_skill_ids": [
-        "MES-CAPACITES::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-PB-MULTI",
-          "micro_skill_id": "OPS-PB-MULTI::MS03",
-          "why": "Choix des opérations"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Combien de bidons de 5 L pour remplir un fût de 50 L ?"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-MASSES::MS01",
-      "parent_skill_id": "MES-MASSES",
-      "micro_skill_name": "Lire et compléter un tableau de conversion de masses (t, kg, g)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Placer 2 500 g dans le tableau de conversion"
-      ],
-      "accessibility_tags": [
-        "unit_table_scaffold"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-MASSES::MS02",
-      "parent_skill_id": "MES-MASSES",
-      "micro_skill_name": "Convertir entre t, kg et g",
-      "prerequisites_micro_skill_ids": [
-        "MES-MASSES::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-CALCUL-MENTAL-TABLES",
-          "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
-          "why": "Multiplier/diviser par 1000"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "1,5 t = 1 500 kg ; 250 g = 0,25 kg"
-      ],
-      "accessibility_tags": [
-        "unit_table_scaffold"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-MASSES::MS03",
-      "parent_skill_id": "MES-MASSES",
-      "micro_skill_name": "Choisir l'unité de masse adaptée au contexte",
-      "prerequisites_micro_skill_ids": [
-        "MES-MASSES::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Un sac de riz : en kg ; un camion chargé : en t"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-MASSES::MS04",
-      "parent_skill_id": "MES-MASSES",
-      "micro_skill_name": "Résoudre un problème impliquant des masses (avec conversion si nécessaire)",
-      "prerequisites_micro_skill_ids": [
-        "MES-MASSES::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-PB-MULTI",
-          "micro_skill_id": "OPS-PB-MULTI::MS03",
-          "why": "Choix des opérations"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Poids total de 12 sacs de 50 kg de maïs"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AGRAIRES::MS01",
-      "parent_skill_id": "MES-AGRAIRES",
-      "micro_skill_name": "Connaitre les équivalences : 1 a = 100 m2 ; 1 ha = 100 a = 10 000 m2",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Un terrain de football = environ 1 ha"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AGRAIRES::MS02",
-      "parent_skill_id": "MES-AGRAIRES",
-      "micro_skill_name": "Convertir entre m2, a et ha",
-      "prerequisites_micro_skill_ids": [
-        "MES-AGRAIRES::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS",
-          "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
-          "why": "Multiplication grands nombres"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "3,5 ha = 350 a = 35 000 m2"
-      ],
-      "accessibility_tags": [
-        "unit_table_scaffold"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AGRAIRES::MS03",
-      "parent_skill_id": "MES-AGRAIRES",
-      "micro_skill_name": "Comparer des superficies exprimées dans des unités différentes",
-      "prerequisites_micro_skill_ids": [
-        "MES-AGRAIRES::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Classement",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Quel champ est le plus grand : 2 ha ou 15 000 m2 ?"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AGRAIRES::MS04",
-      "parent_skill_id": "MES-AGRAIRES",
-      "micro_skill_name": "Résoudre un problème sur des parcelles agricoles (superficie, partage)",
-      "prerequisites_micro_skill_ids": [
-        "MES-AGRAIRES::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Partager 5 ha de champ de manioc entre 4 familles"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS01",
-      "parent_skill_id": "MES-AIRES-DISQUE-FIG",
-      "micro_skill_name": "Distinguer périmètre et aire (sens, unités)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Classement"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Périmètre = clôture ; Aire = surface à peindre"
-      ],
-      "accessibility_tags": [
-        "formula_card"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS02",
-      "parent_skill_id": "MES-AIRES-DISQUE-FIG",
-      "micro_skill_name": "Utiliser correctement r et D dans les formules du cercle (P = 2*pi*r, A = pi*r2)",
-      "prerequisites_micro_skill_ids": [
-        "MES-AIRES-DISQUE-FIG::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-CERCLE",
-          "micro_skill_id": "GEO-CERCLE::MS03",
-          "why": "Relation D = 2r"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 65,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Aire d'un disque de rayon 5 m (enclos circulaire)"
-      ],
-      "accessibility_tags": [
-        "formula_card"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS03",
-      "parent_skill_id": "MES-AIRES-DISQUE-FIG",
-      "micro_skill_name": "Calculer l'aire d'un demi-cercle",
-      "prerequisites_micro_skill_ids": [
-        "MES-AIRES-DISQUE-FIG::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Aire d'une demi-lune décorative"
-      ],
-      "accessibility_tags": [
-        "formula_card",
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS04",
-      "parent_skill_id": "MES-AIRES-DISQUE-FIG",
-      "micro_skill_name": "Décomposer une figure complexe en figures simples (rectangle, triangle, demi-cercle)",
-      "prerequisites_micro_skill_ids": [
-        "MES-AIRES-DISQUE-FIG::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Construction"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Décomposer la forme d'un terrain irrégulier"
-      ],
-      "accessibility_tags": [
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS05",
-      "parent_skill_id": "MES-AIRES-DISQUE-FIG",
-      "micro_skill_name": "Additionner les aires partielles sans double comptage",
-      "prerequisites_micro_skill_ids": [
-        "MES-AIRES-DISQUE-FIG::MS04",
-        "MES-AIRES-DISQUE-FIG::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Étapes guidées",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "75% sur 6 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Aire totale = rectangle + 2 demi-cercles aux extrémités"
-      ],
-      "accessibility_tags": [
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS06",
-      "parent_skill_id": "MES-AIRES-DISQUE-FIG",
-      "micro_skill_name": "Gérer les unités d'aire (cm2, m2) et vérifier la cohérence",
-      "prerequisites_micro_skill_ids": [
-        "MES-AIRES-DISQUE-FIG::MS05"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-          "why": "Détection résultat absurde"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Résultat en m2 ou cm2 selon le contexte"
-      ],
-      "accessibility_tags": [
-        "formula_card"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-PAVE-CUBE::MS01",
-      "parent_skill_id": "MES-VOL-PAVE-CUBE",
-      "micro_skill_name": "Reconnaitre un pavé droit et un cube parmi des solides",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Classement"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Boîte de craies = pavé droit ; dé = cube"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-PAVE-CUBE::MS02",
-      "parent_skill_id": "MES-VOL-PAVE-CUBE",
-      "micro_skill_name": "Appliquer V = L x l x h (pavé droit) et V = a3 (cube)",
-      "prerequisites_micro_skill_ids": [
-        "MES-VOL-PAVE-CUBE::MS01",
-        "MES-VOL-PAVE-CUBE::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-DECIMAUX-MULTIPLIER",
-          "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
-          "why": "Multiplication décimale posée"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Volume d'un carton de 30 cm x 20 cm x 15 cm"
-      ],
-      "accessibility_tags": [
-        "formula_card"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-PAVE-CUBE::MS03",
-      "parent_skill_id": "MES-VOL-PAVE-CUBE",
-      "micro_skill_name": "Identifier L, l et h sur un schéma ou un objet réel",
-      "prerequisites_micro_skill_ids": [
-        "MES-VOL-PAVE-CUBE::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Repérer longueur, largeur et hauteur d'une citerne"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-PAVE-CUBE::MS04",
-      "parent_skill_id": "MES-VOL-PAVE-CUBE",
-      "micro_skill_name": "Connaitre et utiliser les unités de volume : m3, dm3, cm3",
-      "prerequisites_micro_skill_ids": [
-        "MES-VOL-PAVE-CUBE::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Un résultat en cm3 pour un petit objet, en m3 pour une pièce"
-      ],
-      "accessibility_tags": [
-        "unit_ladder_visual"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-PAVE-CUBE::MS05",
-      "parent_skill_id": "MES-VOL-PAVE-CUBE",
-      "micro_skill_name": "Convertir entre m3, dm3 et cm3 (facteur x1000)",
-      "prerequisites_micro_skill_ids": [
-        "MES-VOL-PAVE-CUBE::MS04"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "1 m3 = 1 000 dm3 = 1 000 000 cm3"
-      ],
-      "accessibility_tags": [
-        "unit_ladder_visual"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-PAVE-CUBE::MS06",
-      "parent_skill_id": "MES-VOL-PAVE-CUBE",
-      "micro_skill_name": "Vérifier la cohérence des unités dans un calcul de volume",
-      "prerequisites_micro_skill_ids": [
-        "MES-VOL-PAVE-CUBE::MS05"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-          "why": "Détection résultat absurde"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Volume d'une boîte : 9 000 cm3 = 9 dm3 (cohérent ?)"
-      ],
-      "accessibility_tags": [
-        "unit_ladder_visual"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-CAP::MS01",
-      "parent_skill_id": "MES-VOL-CAP",
-      "micro_skill_name": "Connaitre l'équivalence 1 L = 1 dm3",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Un cube de 10 cm de côté contient 1 litre"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-CAP::MS02",
-      "parent_skill_id": "MES-VOL-CAP",
-      "micro_skill_name": "Connaitre l'équivalence 1 mL = 1 cm3",
-      "prerequisites_micro_skill_ids": [
-        "MES-VOL-CAP::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Un petit cube de 1 cm de côté contient 1 mL"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-CAP::MS03",
-      "parent_skill_id": "MES-VOL-CAP",
-      "micro_skill_name": "Convertir entre L et dm3, entre mL et cm3",
-      "prerequisites_micro_skill_ids": [
-        "MES-VOL-CAP::MS01",
-        "MES-VOL-CAP::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "3,5 dm3 = 3,5 L ; 250 cm3 = 250 mL"
-      ],
-      "accessibility_tags": [
-        "unit_ladder_visual"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-VOL-CAP::MS04",
-      "parent_skill_id": "MES-VOL-CAP",
-      "micro_skill_name": "Résoudre un problème liant volume et contenance",
-      "prerequisites_micro_skill_ids": [
-        "MES-VOL-CAP::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-PB-MULTI",
-          "micro_skill_id": "OPS-PB-MULTI::MS03",
-          "why": "Choix des opérations"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Un bac de 40 cm x 30 cm x 25 cm : combien de litres ?"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-PATRON::MS01",
-      "parent_skill_id": "MES-CYL-PATRON",
-      "micro_skill_name": "Reconnaitre un cylindre droit parmi des solides",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Classement"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Boîte de lait en poudre, pile, tuyau"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-PATRON::MS02",
-      "parent_skill_id": "MES-CYL-PATRON",
-      "micro_skill_name": "Identifier les éléments du patron : 2 disques + 1 rectangle",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-PATRON::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "85% sur 6 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Découper une boîte cylindrique pour voir le patron"
-      ],
-      "accessibility_tags": [
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-PATRON::MS03",
-      "parent_skill_id": "MES-CYL-PATRON",
-      "micro_skill_name": "Dessiner le patron du cylindre (tracé propre au compas et à la règle)",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-PATRON::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "GEO-CERCLE",
-          "micro_skill_id": "GEO-CERCLE::MS02",
-          "why": "Construction au compas"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Construction",
-        "Tracer"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Créer",
-      "mastery_threshold": "75% sur 6 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Dessiner le patron d'un pot à crayons cylindrique"
-      ],
-      "accessibility_tags": [
-        "grid_overlay",
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-PATRON::MS04",
-      "parent_skill_id": "MES-CYL-PATRON",
-      "micro_skill_name": "Relier la longueur du rectangle à la circonférence de la base (L = 2*pi*r)",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-PATRON::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "MES-AIRES-DISQUE-FIG",
-          "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS02",
-          "why": "Formule du périmètre du cercle"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "r = 3 cm donc L du rectangle = 2 x 3,14 x 3 = 18,84 cm"
-      ],
-      "accessibility_tags": [
-        "formula_card"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-PATRON::MS05",
-      "parent_skill_id": "MES-CYL-PATRON",
-      "micro_skill_name": "Contrôler les dimensions du patron (cohérence rectangle/disques)",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-PATRON::MS04"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "75% sur 6 exercices",
-      "cep_frequency": 30,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Vérifier que le rectangle s'enroule bien autour du cercle"
-      ],
-      "accessibility_tags": [
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-VOL-AIRES::MS01",
-      "parent_skill_id": "MES-CYL-VOL-AIRES",
-      "micro_skill_name": "Calculer le volume du cylindre : V = aire de base x hauteur = pi*r2*h",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [
-        {
-          "skill_id": "MES-AIRES-DISQUE-FIG",
-          "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS02",
-          "why": "Aire du disque"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 7,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Volume d'un seau cylindrique (r = 10 cm, h = 25 cm)"
-      ],
-      "accessibility_tags": [
-        "formula_card",
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-VOL-AIRES::MS02",
-      "parent_skill_id": "MES-CYL-VOL-AIRES",
-      "micro_skill_name": "Calculer l'aire latérale du cylindre (rectangle déroulé : 2*pi*r*h)",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-VOL-AIRES::MS01"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "MES-CYL-PATRON",
-          "micro_skill_id": "MES-CYL-PATRON::MS04",
-          "why": "Lien patron-aire latérale"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Surface d'une étiquette qui fait le tour d'une boîte"
-      ],
-      "accessibility_tags": [
-        "formula_card"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-VOL-AIRES::MS03",
-      "parent_skill_id": "MES-CYL-VOL-AIRES",
-      "micro_skill_name": "Différencier aire latérale et aire totale",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-VOL-AIRES::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse courte"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Latérale = sans couvercles ; totale = avec les 2 disques"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-VOL-AIRES::MS04",
-      "parent_skill_id": "MES-CYL-VOL-AIRES",
-      "micro_skill_name": "Calculer l'aire totale : A_lat + 2 x pi*r2",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-VOL-AIRES::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 16,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 40,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "Surface totale de métal pour fabriquer une boîte"
-      ],
-      "accessibility_tags": [
-        "formula_card",
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-VOL-AIRES::MS05",
-      "parent_skill_id": "MES-CYL-VOL-AIRES",
-      "micro_skill_name": "Distinguer unités d'aire (cm2, m2) et unités de volume (cm3, m3) dans un même problème",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-VOL-AIRES::MS01",
-        "MES-CYL-VOL-AIRES::MS04"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "75% sur 6 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Volume en cm3, aire en cm2 — ne pas mélanger"
-      ],
-      "accessibility_tags": [
-        "formula_card"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CYL-VOL-AIRES::MS06",
-      "parent_skill_id": "MES-CYL-VOL-AIRES",
-      "micro_skill_name": "Arrondir un résultat impliquant pi et vérifier sa cohérence",
-      "prerequisites_micro_skill_ids": [
-        "MES-CYL-VOL-AIRES::MS04"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS02",
-          "why": "Arrondi décimal"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 8,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "75% sur 8 exercices",
-      "cep_frequency": 35,
-      "adaptive_hints": 4,
-      "local_context_examples": [
-        "pi x 25 x 30 = 2356,19... arrondir à 2356 cm3"
-      ],
-      "accessibility_tags": [
-        "formula_card"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CHANGES::MS01",
-      "parent_skill_id": "MES-CHANGES",
-      "micro_skill_name": "Lire un taux de change (ex : 1 EUR = 655,957 FCFA)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Comprendre",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 25,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Affiche de taux dans un bureau de change"
-      ],
-      "accessibility_tags": [
-        "Dyslexie-friendly"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CHANGES::MS02",
-      "parent_skill_id": "MES-CHANGES",
-      "micro_skill_name": "Choisir multiplication ou division selon le sens de la conversion",
-      "prerequisites_micro_skill_ids": [
-        "MES-CHANGES::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Analyser",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 25,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "FCFA vers EUR : diviser ; EUR vers FCFA : multiplier"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CHANGES::MS03",
-      "parent_skill_id": "MES-CHANGES",
-      "micro_skill_name": "Arrondir un montant converti de manière cohérente",
-      "prerequisites_micro_skill_ids": [
-        "MES-CHANGES::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS02",
-          "why": "Arrondi décimal"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Correction d'erreur"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 25,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "50 000 FCFA / 655,957 = 76,22... EUR"
-      ],
-      "accessibility_tags": [
-        "Dyscalculie-support"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CHANGES::MS04",
-      "parent_skill_id": "MES-CHANGES",
-      "micro_skill_name": "Vérifier l'ordre de grandeur du résultat (sens économique)",
-      "prerequisites_micro_skill_ids": [
-        "MES-CHANGES::MS02"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-ESTIMER-VERIFIER",
-          "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-          "why": "Détection résultat absurde"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 30,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "100 EUR = environ 65 000 FCFA (pas 6 500 ni 650 000)"
-      ],
-      "accessibility_tags": [
-        "worked_examples"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-TEMPS-DUREES::MS01",
-      "parent_skill_id": "MES-TEMPS-DUREES",
-      "micro_skill_name": "Lire l'heure sur une horloge analogique (aiguilles)",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Lire l'horloge de la classe"
-      ],
-      "accessibility_tags": [
-        "clock_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-TEMPS-DUREES::MS02",
-      "parent_skill_id": "MES-TEMPS-DUREES",
-      "micro_skill_name": "Lire l'heure sur une horloge numérique (format 12h et 24h)",
-      "prerequisites_micro_skill_ids": [
-        "MES-TEMPS-DUREES::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "14:30 = 2h30 de l'après-midi"
-      ],
-      "accessibility_tags": [
-        "clock_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-TEMPS-DUREES::MS03",
-      "parent_skill_id": "MES-TEMPS-DUREES",
-      "micro_skill_name": "Convertir minutes en heures et inversement (cas simples : 60 min = 1h)",
-      "prerequisites_micro_skill_ids": [
-        "MES-TEMPS-DUREES::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 4,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 70,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "90 min = 1 h 30 min"
-      ],
-      "accessibility_tags": [
-        "clock_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-TEMPS-DUREES::MS04",
-      "parent_skill_id": "MES-TEMPS-DUREES",
-      "micro_skill_name": "Calculer une durée par différence d'horaires",
-      "prerequisites_micro_skill_ids": [
-        "MES-TEMPS-DUREES::MS03"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Étapes guidées",
-        "Réponse numérique"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 75,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Cours de 8h15 à 10h00 : durée = 1h45"
-      ],
-      "accessibility_tags": [
-        "clock_visual_aids",
-        "step_by_step_mode"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-TEMPS-DUREES::MS05",
-      "parent_skill_id": "MES-TEMPS-DUREES",
-      "micro_skill_name": "Résoudre des problèmes de départ/arrivée (trouver heure ou durée manquante)",
-      "prerequisites_micro_skill_ids": [
-        "MES-TEMPS-DUREES::MS04"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-PB-MULTI",
-          "micro_skill_id": "OPS-PB-MULTI::MS03",
-          "why": "Choix des opérations"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 80,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Départ à 7h45, trajet 35 min : arrivée à quelle heure ?"
-      ],
-      "accessibility_tags": [
-        "clock_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-TEMPS-DUREES::MS06",
-      "parent_skill_id": "MES-TEMPS-DUREES",
-      "micro_skill_name": "Vérifier la cohérence d'un résultat temporel (durée positive, ordre chronologique)",
-      "prerequisites_micro_skill_ids": [
-        "MES-TEMPS-DUREES::MS04"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Correction d'erreur",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [
-        "justification_required"
-      ],
-      "difficulty_index": 6,
-      "estimated_time_minutes": 10,
-      "bloom_taxonomy_level": "Évaluer",
-      "mastery_threshold": "85% sur 8 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "On ne peut pas arriver avant d'être parti !"
-      ],
-      "accessibility_tags": [
-        "clock_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CALENDRIER::MS01",
-      "parent_skill_id": "MES-CALENDRIER",
-      "micro_skill_name": "Identifier jour, semaine, mois et année sur un calendrier",
-      "prerequisites_micro_skill_ids": [],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Choix multiples",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Connaître",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 45,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "Lire un calendrier scolaire béninois"
-      ],
-      "accessibility_tags": [
-        "calendar_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CALENDRIER::MS02",
-      "parent_skill_id": "MES-CALENDRIER",
-      "micro_skill_name": "Lire et écrire une date dans différents formats",
-      "prerequisites_micro_skill_ids": [
-        "MES-CALENDRIER::MS01"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Compléter",
-        "Choix multiples"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 3,
-      "estimated_time_minutes": 8,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "90% sur 6 exercices",
-      "cep_frequency": 50,
-      "adaptive_hints": 2,
-      "local_context_examples": [
-        "26/02/2026 ou 26 février 2026"
-      ],
-      "accessibility_tags": [
-        "calendar_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CALENDRIER::MS03",
-      "parent_skill_id": "MES-CALENDRIER",
-      "micro_skill_name": "Calculer un nombre de jours entre deux dates (cas CM2 : même mois ou mois consécutifs)",
-      "prerequisites_micro_skill_ids": [
-        "MES-CALENDRIER::MS02"
-      ],
-      "external_prerequisites": [],
-      "recommended_exercise_types": [
-        "Réponse numérique",
-        "Étapes guidées"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 12,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 8 exercices",
-      "cep_frequency": 55,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Du 15 mai au 10 juin : combien de jours ?"
-      ],
-      "accessibility_tags": [
-        "calendar_visual_aids"
-      ]
-    },
-    {
-      "micro_skill_id": "MES-CALENDRIER::MS04",
-      "parent_skill_id": "MES-CALENDRIER",
-      "micro_skill_name": "Résoudre un problème de planning simple (dates d'événements, durées)",
-      "prerequisites_micro_skill_ids": [
-        "MES-CALENDRIER::MS03"
-      ],
-      "external_prerequisites": [
-        {
-          "skill_id": "OPS-PB-MULTI",
-          "micro_skill_id": "OPS-PB-MULTI::MS03",
-          "why": "Choix des opérations"
-        }
-      ],
-      "recommended_exercise_types": [
-        "Problème contextualisé",
-        "Étapes guidées",
-        "Compléter"
-      ],
-      "recommended_modifiers": [],
-      "difficulty_index": 5,
-      "estimated_time_minutes": 14,
-      "bloom_taxonomy_level": "Appliquer",
-      "mastery_threshold": "80% sur 6 exercices",
-      "cep_frequency": 60,
-      "adaptive_hints": 3,
-      "local_context_examples": [
-        "Planifier 14 jours de révision avant le CEP"
-      ],
-      "accessibility_tags": [
-        "calendar_visual_aids"
       ]
     }
-  ],
-  "external_micro_skill_stubs": [
-    {
-      "micro_skill_id": "OPS-CALCUL-MENTAL-TABLES::MS05",
-      "micro_skill_name": "Multiplier/diviser par 10/100/1000"
-    },
-    {
-      "micro_skill_id": "OPS-TECHNIQUES-OPERATOIRES-ENTIERS::MS03",
-      "micro_skill_name": "Multiplication posée"
-    },
-    {
-      "micro_skill_id": "OPS-DECIMAUX-MULTIPLIER::MS03",
-      "micro_skill_name": "Placer la virgule dans le produit"
-    },
-    {
-      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS02",
-      "micro_skill_name": "Arrondir un décimal pour estimer"
-    },
-    {
-      "micro_skill_id": "OPS-ESTIMER-VERIFIER::MS05",
-      "micro_skill_name": "Détecter un résultat absurde"
-    },
-    {
-      "micro_skill_id": "OPS-PB-MULTI::MS03",
-      "micro_skill_name": "Choisir les opérations pertinentes"
-    },
-    {
-      "micro_skill_id": "GEO-CERCLE::MS02",
-      "micro_skill_name": "Construction au compas"
-    },
-    {
-      "micro_skill_id": "GEO-CERCLE::MS03",
-      "micro_skill_name": "Relation D = 2r"
-    },
-    {
-      "micro_skill_id": "MES-AIRES-DISQUE-FIG::MS02",
-      "micro_skill_name": "Formules du cercle (P, A)"
-    },
-    {
-      "micro_skill_id": "MES-CYL-PATRON::MS04",
-      "micro_skill_name": "Longueur rectangle = circonférence"
-    }
-  ],
-  "notes": {
-    "origin": "Créé à partir de progamme_mathematiquesCM2_deep.json, domaine MATH-CM2-MES",
-    "quality_guardrails": [
-      "Un micro-skill = une action observable et testable en 1-2 minutes.",
-      "Les recommended_exercise_types appartiennent à exercise_types_vocab.",
-      "Les prérequis micro-skill ne créent pas de cycles."
-    ],
-    "pedagogical_notes": [
-      "3 blocs de conversion (longueurs, capacités, masses) partagent la même structure pédagogique : tableau, conversion, choix unité, problème.",
-      "Le cylindre (patron + vol/aires) est le sommet de difficulté du domaine (diff 7-9).",
-      "MES-CHANGES a un CEP faible (30) mais est très pertinent au contexte béninois (FCFA).",
-      "MES-TEMPS-DUREES a le CEP le plus élevé (80) — très fréquent à l'examen."
-    ],
-    "changes_from_1_3_1": [
-      "v1.4.1: MES-CAPACITES::MS02 diff 3→4.",
-      "v1.4.1: MES-MASSES::MS03 diff 3→4.",
-      "v1.4.1: MES-AIRES-DISQUE-FIG::MS06 diff 7→8.",
-      "v1.4.1: MES-VOL-PAVE-CUBE réordonné: MS01→MS03→MS02→MS04→MS05→MS06 (identifier dimensions avant calculer).",
-      "v1.4.1: MES-CYL-VOL-AIRES::MS03 diff 7→8.",
-      "v1.4.1: MES-TEMPS-DUREES::MS06 diff 5→6.",
-      "v1.4.2: MES-CHANGES cep 30→20 (conversions devises très sporadiques au CEP, surtout un exercice de proportionnalité)."
-    ]
-  },
-  "quality_checks": {
-    "difficulty_progression_issues": [],
-    "difficulty_progression_ok": true,
-    "all_checks_pass": true
-  }
+  ]
 }

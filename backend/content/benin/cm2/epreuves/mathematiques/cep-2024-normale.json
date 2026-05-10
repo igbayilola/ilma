@@ -5,71 +5,151 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Dans le cadre de la riposte contre le COVID 19, le gouvernement du Bénin avait lancé le 06 mai 2020 un appel aux artisans locaux pour confectionner des masques en tissu. Cette opération avait pris fin le 16 mai 2020. Au cours de cette période, la couturière Sènanmi a cousu 8600 masques en tissu de différentes couleurs : bleu, vert et jaune.",
+  "context_text": "Dans le cadre de la riposte contre le COVID 19, le gouvernement du Bénin avait lancé le 06 mai 2020 un appel aux artisans locaux pour confectionner des masques en tissu. Cette opération avait pris fin le 16 mai 2020. Au cours de cette période, la couturière Sènanmi a cousu 6000 masques en tissu de différentes couleurs : bleu, vert et jaune. La couturière te connaît et te demande de l'aider à faire certains calculs.",
+  "tache": "Tu es invité(e) à lire attentivement le texte ci-dessus et à répondre aux items suivants.",
   "items": [
     {
       "item_number": 1,
       "domain": "data_proportionality",
-      "context_text": "La couturière Sènanmi a cousu 8600 masques en tissu de différentes couleurs : bleu (40%), vert (35%) et jaune (25%).",
-      "points": 6.67,
+      "context_text": "La couturière Sènanmi a cousu 6000 masques en tissu de différentes couleurs : bleu (40%), vert (35%) et jaune (25%). La couturière Sènanmi a dressé à cet effet le diagramme ci-dessous.",
+      "diagram_description": "Un diagramme semi-circulaire divisé en trois secteurs représentant les couleurs des masques : Vert (35%) à gauche en haut, Jaune (25%) à gauche en bas, et Bleu (40%) à droite. Les pourcentages sont indiqués dans chaque secteur.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Dresse le tableau des effectifs de cette série statistique.",
           "question_type": "fill_blank",
-          "correct_answer": "Bleu: 3440, Vert: 3010, Jaune: 2150",
-          "explanation": "Bleu: 8600 × 40/100 = 3440. Vert: 8600 × 35/100 = 3010. Jaune: 8600 × 25/100 = 2150.",
-          "points": 2.22,
+          "correct_answer": "Bleu: 2400, Vert: 2100, Jaune: 1500",
+          "explanation": "Bleu: 6000 × 40/100 = 2400. Vert: 6000 × 35/100 = 2100. Jaune: 6000 × 25/100 = 1500.",
+          "hint": "Calcule chaque effectif en multipliant le nombre total de masques (6000) par le pourcentage correspondant.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "6000 × 40 = 240000 (oublier /100)",
+              "frequency": "high",
+              "explanation": "40% = 40/100 = 0,40",
+              "prevention_hint": "Toujours diviser le % par 100 avant de multiplier"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Complète-le par des fréquences par fraction.",
+          "text": "Complète-le par des fréquences en fraction.",
           "question_type": "fill_blank",
-          "correct_answer": "Bleu: 4/10, Vert: 35/100, Jaune: 1/4",
-          "explanation": "Bleu: 3440/8600 = 4/10. Vert: 3010/8600 = 35/100. Jaune: 2150/8600 = 1/4.",
-          "points": 2.22,
+          "correct_answer": "Bleu: 2/5, Vert: 7/20, Jaune: 1/4",
+          "explanation": "Bleu: 2400/6000 = 2/5. Vert: 2100/6000 = 7/20. Jaune: 1500/6000 = 1/4.",
+          "hint": "Divise l'effectif de chaque couleur par le nombre total de masques (6000), puis simplifie la fraction.",
+          "points": 2.5,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Laisser 2400/6000 sans simplifier",
+              "frequency": "medium",
+              "explanation": "Une fraction doit être simplifiée au maximum",
+              "prevention_hint": "Trouve le PGCD du numérateur et dénominateur"
+            }
+          ]
         },
         {
           "sub_label": "c",
           "text": "Complète-le par des fréquences exprimées sous forme de pourcentage.",
           "question_type": "fill_blank",
           "correct_answer": "Bleu: 40%, Vert: 35%, Jaune: 25%",
-          "explanation": "Les pourcentages correspondent directement aux données du diagramme circulaire.",
-          "points": 2.22,
+          "explanation": "Les pourcentages correspondent directement aux données du diagramme semi-circulaire : Bleu = 40%, Vert = 35%, Jaune = 25%.",
+          "hint": "Les pourcentages sont directement lisibles sur le diagramme semi-circulaire.",
+          "points": 2,
           "depends_on_previous": true,
           "order": 2
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-PROPORTION-01",
+        "MATH-CM2-DATA-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Comprendre",
+            "content": "Quel est le nombre total de masques ?",
+            "answer": "6000"
+          },
+          {
+            "step": 2,
+            "title": "Calculer bleu",
+            "content": "40% de 6000 = ?",
+            "answer": "2400"
+          },
+          {
+            "step": 3,
+            "title": "Calculer vert",
+            "content": "35% de 6000 = ?",
+            "answer": "2100"
+          },
+          {
+            "step": 4,
+            "title": "Calculer jaune",
+            "content": "25% de 6000 = ?",
+            "answer": "1500"
+          }
+        ]
+      }
     },
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "Les masques sont rangés dans des boîtes puis dans des cartons. Une boîte mesure 20 cm × 10 cm × 8 cm. Un carton mesure 60 cm × 40 cm × 50 cm.",
-      "points": 6.67,
+      "context_text": "Les masques sont rangés dans des boîtes de 20 cm de longueur, 10 cm de largeur et 8 cm de hauteur. Ces boîtes sont ensuite disposées dans des cartons de 60 cm de long, 40 cm de large et 50 cm de haut.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule le volume d'une boîte. (20 cm × 10 cm × 8 cm)",
+          "text": "Calcule le volume d'une boîte.",
           "question_type": "numeric_input",
-          "correct_answer": "1600",
+          "correct_answer": "1600 cm³",
           "explanation": "V = L × l × h = 20 × 10 × 8 = 1 600 cm³",
-          "points": 2.22,
+          "hint": "Le volume d'un pavé droit se calcule en multipliant la longueur par la largeur par la hauteur.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "20+10+8 = 38",
+              "frequency": "medium",
+              "explanation": "Volume se calcule par multiplication",
+              "prevention_hint": "Toujours multiplier les 3 dimensions"
+            },
+            {
+              "mistake": "Oublier l'unité (juste 1600)",
+              "frequency": "high",
+              "explanation": "Volume = unité cubique (cm³)",
+              "prevention_hint": "Ajoute toujours l'unité avec l'exposant 3"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Calcule le volume d'un carton. (60 cm × 40 cm × 50 cm)",
+          "text": "Calcule le volume d'un carton.",
           "question_type": "numeric_input",
-          "correct_answer": "120000",
+          "correct_answer": "120000 cm³",
           "explanation": "V = 60 × 40 × 50 = 120 000 cm³",
-          "points": 2.22,
+          "hint": "Utilise la même formule du volume que pour la boîte : longueur × largeur × hauteur.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Donner le volume de la boîte",
+              "frequency": "medium",
+              "explanation": "Attention à bien lire les dimensions du CARTON",
+              "prevention_hint": "Surligne les dimensions du carton: 60×40×50"
+            }
+          ]
         },
         {
           "sub_label": "c",
@@ -77,53 +157,156 @@
           "question_type": "numeric_input",
           "correct_answer": "75",
           "explanation": "120 000 ÷ 1 600 = 75 boîtes",
-          "hint": "Utilise les résultats des questions a) et b).",
-          "points": 2.22,
+          "hint": "Divise le volume du carton par le volume d'une boîte.",
+          "points": 2,
           "depends_on_previous": true,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "1600 ÷ 120000 (mauvais sens)",
+              "frequency": "low",
+              "explanation": "Le résultat doit être > 1",
+              "prevention_hint": "Le carton > boîte, donc résultat > 1"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-VOLUME-01",
+        "MATH-CM2-MEASURES-02"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Formule",
+            "content": "Volume pavé = ?",
+            "answer": "L × l × h"
+          },
+          {
+            "step": 2,
+            "title": "Boîte",
+            "content": "20 × 10 × 8 = ?",
+            "answer": "1600 cm³"
+          },
+          {
+            "step": 3,
+            "title": "Carton",
+            "content": "60 × 40 × 50 = ?",
+            "answer": "120000 cm³"
+          },
+          {
+            "step": 4,
+            "title": "Nombre",
+            "content": "120000 ÷ 1600 = ?",
+            "answer": "75"
+          }
+        ]
+      }
     },
     {
       "item_number": 3,
       "domain": "geometry",
       "context_text": "On considère la base ABCD d'un carton de dimensions 60 cm × 40 cm.",
-      "points": 6.67,
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Représente à l'échelle de 1/10 la base ABCD d'un carton.",
-          "question_type": "mcq",
-          "choices": ["Rectangle 6cm × 4cm", "Rectangle 60cm × 40cm", "Carré 6cm × 6cm", "Rectangle 3cm × 2cm"],
-          "correct_answer": "Rectangle 6cm × 4cm",
-          "explanation": "Échelle 1/10 : 60cm ÷ 10 = 6cm et 40cm ÷ 10 = 4cm.",
-          "points": 2.22,
+          "question_type": "construction",
+          "correct_answer": "Tracer un rectangle ABCD de 6 cm × 4 cm (échelle 1/10 de 60 cm × 40 cm).",
+          "explanation": "Échelle 1/10 : 60 cm ÷ 10 = 6 cm et 40 cm ÷ 10 = 4 cm. On trace donc un rectangle de 6 cm de longueur et 4 cm de largeur.",
+          "hint": "Pour appliquer l'échelle 1/10, divise chaque dimension réelle par 10.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "60×10 = 600 cm",
+              "frequency": "high",
+              "explanation": "Échelle 1/10 = réduire (diviser)",
+              "prevention_hint": "1/10 = 10 fois plus petit = ÷10"
+            }
+          ]
         },
         {
           "sub_label": "b",
           "text": "Trace les diagonales de cette figure.",
-          "question_type": "mcq",
-          "choices": ["Deux segments reliant les sommets opposés", "Deux segments reliant les milieux des côtés", "Un seul segment diagonal"],
-          "correct_answer": "Deux segments reliant les sommets opposés",
-          "explanation": "Les diagonales d'un rectangle relient les sommets opposés : AC et BD.",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 1
+          "question_type": "construction",
+          "correct_answer": "Tracer les segments [AC] et [BD] reliant les sommets opposés du rectangle ABCD.",
+          "explanation": "Les diagonales d'un rectangle relient les sommets opposés : le segment [AC] et le segment [BD]. Elles se coupent en leur milieu.",
+          "hint": "Les diagonales d'un rectangle relient chaque sommet au sommet opposé.",
+          "points": 2,
+          "depends_on_previous": true,
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Tracer les médianes",
+              "frequency": "medium",
+              "explanation": "Médianes = milieux, diagonales = sommets",
+              "prevention_hint": "Diagonale = sommet à sommet opposé"
+            }
+          ]
         },
         {
           "sub_label": "c",
           "text": "Trace la figure symétrique du triangle ABC par rapport au point C.",
-          "question_type": "mcq",
-          "choices": ["Triangle BCE avec E symétrique de A par rapport à C", "Triangle identique à ABC", "Triangle inversé par rapport à la diagonale"],
-          "correct_answer": "Triangle BCE avec E symétrique de A par rapport à C",
-          "explanation": "Le symétrique de A par rapport à C est le point E tel que C est le milieu de [AE].",
-          "points": 2.22,
-          "depends_on_previous": false,
-          "order": 2
+          "question_type": "construction",
+          "correct_answer": "Tracer le triangle A'B'C où A' est le symétrique de A par rapport à C et B' est le symétrique de B par rapport à C. C est le centre de symétrie.",
+          "explanation": "Pour trouver le symétrique d'un point par rapport à C, on prolonge le segment du point vers C d'une distance égale de l'autre côté de C. Ainsi, A' est tel que C est le milieu de [AA'] et B' est tel que C est le milieu de [BB'].",
+          "hint": "Pour chaque sommet du triangle, trouve son symétrique par rapport au point C : le point C est le milieu du segment reliant chaque sommet à son symétrique.",
+          "points": 2,
+          "depends_on_previous": true,
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Symétrie axiale au lieu de centrale",
+              "frequency": "high",
+              "explanation": "Par rapport à un POINT = centrale",
+              "prevention_hint": "Point = symétrie centrale (retournement)"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "créer",
+      "ilma_level": 3,
+      "skills_targeted": [
+        "MATH-CM2-GEOM-01",
+        "MATH-CM2-SYM-01",
+        "MATH-CM2-SCALE-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Échelle",
+            "content": "60 cm ÷ 10 = ?",
+            "answer": "6 cm"
+          },
+          {
+            "step": 2,
+            "title": "Largeur",
+            "content": "40 cm ÷ 10 = ?",
+            "answer": "4 cm"
+          },
+          {
+            "step": 3,
+            "title": "Diagonales",
+            "content": "Quels sommets relier ?",
+            "answer": "A à C, B à D"
+          },
+          {
+            "step": 4,
+            "title": "Symétrie",
+            "content": "C doit être milieu de ?",
+            "answer": "[AA'] et [BB']"
+          }
+        ]
+      }
     }
   ]
 }

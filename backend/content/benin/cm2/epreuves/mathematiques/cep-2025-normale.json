@@ -5,21 +5,23 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Ali commande 3 camions citernes d'occasion à 38 380 dollars US. Les frais de douane s'élèvent à 28 880 000 FCFA. Chaque camion citerne possède une cuve cylindrique de longueur 4 m et de rayon 1,4 m. On donne : 1 dollar = 652 FCFA.",
+  "context_text": "L'opérateur économique Ali commande trois (03) camions citernes d'occasion de même marque à un coût global de 38 380 dollars US. Au port béninois, la douane lui a coûté 28 880 000 FCFA.\n\nChaque camion-citerne est doté d'une cuve cylindrique long de 4 m et mesure 1,4 m de rayon (dimensions intérieures). En ce moment 1 dollar US vaut 652 FCFA.\n\nAli est ton oncle. Il te sollicite pour ses difficultés en calcul.",
+  "task_instruction": "Tâche : Après avoir lu attentivement le texte ci-dessus, tu es invité(e) à résoudre les items qui suivent.",
   "items": [
     {
       "item_number": 1,
       "domain": "data_proportionality",
-      "context_text": "Ali commande 3 camions citernes d'occasion à 38 380 dollars US. Les frais de douane s'élèvent à 28 880 000 FCFA. On donne : 1 dollar = 652 FCFA.",
-      "points": 6.67,
+      "context_text": "Ali commande 3 camions citernes d'occasion à un coût global de 38 380 dollars US. Au port béninois, la douane lui a coûté 28 880 000 FCFA. On donne : 1 dollar US = 652 FCFA.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule en FCFA le prix de revient des 3 camions.",
+          "text": "Calcule en francs CFA le prix de revient des 3 camions d'occasion.",
           "question_type": "numeric_input",
           "correct_answer": "53903760",
           "explanation": "Prix en FCFA : 38 380 × 652 = 25 023 760 FCFA. Prix de revient : 25 023 760 + 28 880 000 = 53 903 760 FCFA.",
-          "points": 2.22,
+          "hint": "Convertis d'abord le prix en dollars en FCFA (multiplie par 652), puis ajoute les frais de douane.",
+          "points": 2.5,
           "depends_on_previous": false,
           "order": 0
         },
@@ -29,17 +31,19 @@
           "question_type": "true_false",
           "correct_answer": "Vrai",
           "explanation": "53 903 760 ÷ 3 = 17 967 920 FCFA. Ali a raison.",
-          "points": 2.22,
+          "hint": "Divise le prix de revient total par le nombre de camions (3).",
+          "points": 2.5,
           "depends_on_previous": true,
           "order": 1
         },
         {
           "sub_label": "c",
-          "text": "Écris la valeur de position du chiffre 7 dans 17 967 920.",
+          "text": "Écris la valeur de position du chiffre (7) dans 17 967 920.",
           "question_type": "fill_blank",
           "correct_answer": "7 000 000 et 7 000",
           "explanation": "Dans 17 967 920 : le premier 7 occupe la position des millions (7 000 000) et le second 7 occupe la position des milliers (7 000).",
-          "points": 2.22,
+          "hint": "Repère chaque chiffre 7 dans le nombre et identifie sa position (unités, dizaines, centaines, milliers, etc.).",
+          "points": 2,
           "depends_on_previous": true,
           "order": 2
         }
@@ -48,26 +52,28 @@
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "Chaque camion citerne possède une cuve cylindrique de longueur 4 m et de rayon 1,4 m.",
-      "points": 6.67,
+      "context_text": "Les trois (03) camions citernes sont utilisés pour desservir une localité en eau potable. Chaque camion-citerne est doté d'une cuve cylindrique long de 4 m et mesure 1,4 m de rayon (dimensions intérieures).",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule le volume d'eau contenu dans une cuve cylindrique entièrement remplie.",
+          "text": "Calcule le volume d'eau contenue dans une cuve cylindrique entièrement remplie.",
           "question_type": "numeric_input",
           "correct_answer": "24.6176",
           "explanation": "V = π × r² × L = 3,14 × 1,4² × 4 = 3,14 × 1,96 × 4 = 24,6176 m³.",
-          "points": 3.33,
+          "hint": "Utilise la formule du volume du cylindre : V = π × r² × longueur, avec π = 3,14.",
+          "points": 3.5,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Quelle est en litres la capacité des 3 camions citernes ?",
+          "text": "Quelle est en litres la capacité des trois (03) camions citernes ?",
           "question_type": "numeric_input",
           "correct_answer": "73852.8",
           "explanation": "1 m³ = 1 000 L. Capacité d'une cuve : 24,6176 × 1 000 = 24 617,6 L. Capacité des 3 cuves : 24 617,6 × 3 = 73 852,8 L.",
-          "points": 3.33,
+          "hint": "Convertis d'abord le volume en litres (1 m³ = 1 000 L), puis multiplie par 3 pour les trois camions.",
+          "points": 3.5,
           "depends_on_previous": true,
           "order": 1
         }
@@ -77,38 +83,38 @@
       "item_number": 3,
       "domain": "geometry",
       "context_text": "On considère la base circulaire de la cuve cylindrique de rayon 1,4 m.",
-      "points": 6.67,
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Construis un cercle de même rayon que la base de la cuve à l'échelle 1/50.",
-          "question_type": "mcq",
-          "choices": ["Cercle de rayon 2,8 cm", "Cercle de rayon 1,4 cm", "Cercle de rayon 14 cm", "Cercle de rayon 0,28 cm"],
+          "text": "Construis un cercle de même rayon que la base de la cuve cylindrique de l'un des camions à l'échelle de 1/50.",
+          "question_type": "construction",
           "correct_answer": "Cercle de rayon 2,8 cm",
-          "explanation": "Rayon réel = 1,4 m = 140 cm. Échelle 1/50 : 140 ÷ 50 = 2,8 cm.",
-          "points": 2.22,
+          "explanation": "Rayon réel = 1,4 m = 140 cm. À l'échelle 1/50 : 140 ÷ 50 = 2,8 cm. Avec le compas, place la pointe sèche sur un point O et trace un cercle de rayon 2,8 cm.",
+          "hint": "Convertis le rayon en centimètres (1,4 m = 140 cm), puis applique l'échelle en divisant par 50. Utilise le compas pour tracer le cercle.",
+          "points": 2,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
           "text": "Trace à l'extérieur de ce cercle une droite (AB).",
-          "question_type": "mcq",
-          "choices": ["Une droite ne coupant pas le cercle", "Une droite passant par le centre", "Un diamètre du cercle"],
-          "correct_answer": "Une droite ne coupant pas le cercle",
-          "explanation": "Une droite tracée à l'extérieur du cercle ne coupe pas le cercle.",
-          "points": 2.22,
+          "question_type": "construction",
+          "correct_answer": "Une droite ne coupant pas le cercle, tracée à l'extérieur",
+          "explanation": "Une droite extérieure au cercle est une droite qui ne coupe pas et ne touche pas le cercle. Pour la tracer : utilise la règle pour tracer une droite (AB) à une distance du centre O supérieure au rayon (2,8 cm), de sorte que la droite ne touche ni ne traverse le cercle.",
+          "hint": "Place ta règle de façon à tracer une droite qui ne touche pas le cercle. La droite doit être suffisamment éloignée du centre pour ne pas couper le cercle.",
+          "points": 2,
           "depends_on_previous": true,
           "order": 1
         },
         {
           "sub_label": "c",
           "text": "Construis le symétrique de ce cercle par rapport à la droite (AB).",
-          "question_type": "mcq",
-          "choices": ["Un cercle de même rayon de l'autre côté de (AB)", "Un cercle de rayon double", "Le même cercle"],
-          "correct_answer": "Un cercle de même rayon de l'autre côté de (AB)",
-          "explanation": "Le symétrique d'un cercle par rapport à une droite est un cercle de même rayon situé de l'autre côté de la droite.",
-          "points": 2.22,
+          "question_type": "construction",
+          "correct_answer": "Un cercle de même rayon (2,8 cm) situé de l'autre côté de la droite (AB), dont le centre est le symétrique du centre O par rapport à (AB)",
+          "explanation": "Pour construire le symétrique du cercle par rapport à la droite (AB) : 1) Trace la perpendiculaire à (AB) passant par le centre O du cercle ; elle coupe (AB) en un point H. 2) Reporte la distance OH de l'autre côté de (AB) pour obtenir le point O', symétrique de O (O'H = OH). 3) Avec le compas, trace un cercle de centre O' et de même rayon 2,8 cm. Ce cercle est le symétrique du cercle initial.",
+          "hint": "Trouve d'abord le symétrique du centre O : trace la perpendiculaire de O à la droite (AB), puis reporte la même distance de l'autre côté. Ensuite, trace un cercle de même rayon autour de ce nouveau centre.",
+          "points": 2,
           "depends_on_previous": true,
           "order": 2
         }

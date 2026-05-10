@@ -5,103 +5,249 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Elisabeth est une commerçante à Cotonou. Elle dispose d'une épargne de 34 000 000 FCFA. Elle place le 1/4 de cette somme en banque au taux annuel de 4%. Le reste est placé dans une autre institution financière. Au bout d'un an, elle reçoit un intérêt total de 1 360 000 FCFA.",
+  "context_text": "Elisabeth est une commerçante demeurant à Cotonou. Elle mène ses activités dans les marchés de Bohicon, de Dassa, de Parakou et de Malanville. Grâce à ses affaires, elle a constitué un fonds d'épargne de 34 000 000 F CFA. Elle a placé le 1/4 de ce fonds dans une banque au taux annuel de 4% et a déposé le reste dans une autre institution financière de la place.",
   "items": [
     {
       "item_number": 1,
-      "domain": "data_proportionality",
-      "context_text": "Elisabeth place le 1/4 de 34 000 000 FCFA en banque au taux annuel de 4%. Le reste est placé dans une autre institution financière. L'intérêt total au bout d'un an est de 1 360 000 FCFA.",
-      "points": 6.67,
+      "domain": "operations_finance",
+      "context_text": "Les deux placements lui ont rapporté un intérêt de 1 360 000 F CFA au bout d'un an.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule l'intérêt annuel du placement en banque.",
+          "text": "Calcule l'intérêt annuel généré par le placement des fonds en banque.",
           "question_type": "numeric_input",
           "correct_answer": "340000",
-          "explanation": "Somme placée en banque : 34 000 000 × 1/4 = 8 500 000 FCFA. Intérêt annuel : 8 500 000 × 4/100 = 340 000 FCFA.",
-          "points": 2.22,
+          "explanation": "Somme placée en banque : 34 000 000 × 1/4 = 8 500 000 F CFA. Intérêt annuel : 8 500 000 × 4/100 = 340 000 F CFA.",
+          "hint": "Trouve d'abord le 1/4 de 34 000 000, puis applique le taux de 4%.",
+          "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "40 m (oublier conversion)",
+              "frequency": "high",
+              "explanation": "Dimensions en mètres, réponse demandée en cm",
+              "prevention_hint": "10 m = 1000 cm, 8 m = 800 cm"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Calcule le montant de l'intérêt de l'institution financière.",
+          "text": "En déduire le montant de l'intérêt généré par le fonds placé dans l'institution financière de la place.",
           "question_type": "numeric_input",
           "correct_answer": "1020000",
-          "explanation": "Intérêt de l'institution = Intérêt total − Intérêt banque = 1 360 000 − 340 000 = 1 020 000 FCFA.",
-          "points": 2.22,
+          "explanation": "Intérêt de l'institution financière = Intérêt total − Intérêt banque = 1 360 000 − 340 000 = 1 020 000 F CFA.",
+          "hint": "L'intérêt total est la somme des deux intérêts. Tu connais le total et l'un des deux.",
+          "points": 2,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "25 + 20 = 45",
+              "frequency": "medium",
+              "explanation": "Addition au lieu de multiplication",
+              "prevention_hint": "Nombre total = longueur × largeur (en carreaux)"
+            }
+          ]
         },
         {
           "sub_label": "c",
-          "text": "Calcule le taux annuel de l'institution financière.",
+          "text": "Calcule le taux d'intérêt que l'institution financière de la place applique à ses clients.",
           "question_type": "numeric_input",
           "correct_answer": "4",
-          "explanation": "Somme placée dans l'institution : 34 000 000 − 8 500 000 = 25 500 000 FCFA. Taux = (1 020 000 × 100) / 25 500 000 = 4%.",
-          "points": 2.22,
+          "explanation": "Somme placée dans l'institution : 34 000 000 − 8 500 000 = 25 500 000 F CFA. Taux = (1 020 000 × 100) / 25 500 000 = 4%.",
+          "hint": "Utilise la formule : Taux = (Intérêt × 100) / Capital. Le capital placé dans l'institution est le reste après le 1/4.",
+          "points": 2.5,
           "depends_on_previous": true,
           "order": 2
         }
-      ]
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "skills_targeted": [
+        "MATH-CM2-NUM-04",
+        "MATH-CM2-PGCD-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Conversion",
+            "content": "10 m = ? cm, 8 m = ? cm",
+            "answer": "1000 cm et 800 cm"
+          },
+          {
+            "step": 2,
+            "title": "Taille carreau",
+            "content": "1000 ÷ ? = entier, 800 ÷ ? = entier",
+            "answer": "40 cm"
+          },
+          {
+            "step": 3,
+            "title": "Nombre",
+            "content": "25 × 20 = ?",
+            "answer": "500 carreaux"
+          }
+        ]
+      }
     },
     {
       "item_number": 2,
       "domain": "measures_operations",
-      "context_text": "Elisabeth se rend de Cotonou à Parakou. Elle part à 8h30 et arrive à 15h. Elle effectue 2 arrêts de 15 minutes chacun. La distance Cotonou-Parakou est de 417 km. Sa voiture consomme 15 litres aux 100 km.",
-      "points": 6.67,
+      "context_text": "Avec son véhicule, Elisabeth part de Cotonou à 8 h 30 min et arrive à Parakou à 15h avec deux arrêts de 15 min chacun, le premier à Bohicon et le deuxième à Dassa. La distance entre sa résidence de Cotonou et celle de Parakou est de 417 km.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Calcule la vitesse moyenne de la voiture en km/h.",
+          "text": "Calcule la vitesse moyenne à laquelle elle a roulé.",
           "question_type": "numeric_input",
           "correct_answer": "69.5",
           "explanation": "Durée totale du trajet : de 8h30 à 15h = 6h30. Durée des arrêts : 2 × 15 min = 30 min. Durée de route effective : 6h30 − 30 min = 6h. Vitesse = 417 / 6 = 69,5 km/h.",
-          "points": 3.33,
+          "hint": "Calcule d'abord la durée totale, puis retire le temps des arrêts pour obtenir le temps de route effectif.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "120 + 180 = 300 puis diviser",
+              "frequency": "low",
+              "explanation": "Maximum par tas = PGCD, pas somme",
+              "prevention_hint": "PGCD = plus grand diviseur commun"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Calcule la consommation d'essence pour ce trajet en litres.",
+          "text": "Calcule la consommation d'essence pendant le trajet sachant que la voiture consomme 15 L d'essence aux 100 km.",
           "question_type": "numeric_input",
           "correct_answer": "62.55",
           "explanation": "Consommation : 15 × 417 / 100 = 62,55 litres.",
-          "points": 3.33,
+          "hint": "Si la voiture consomme 15 L pour 100 km, combien consomme-t-elle pour 417 km ? Utilise la proportionnalité.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "120 + 180 = 300 puis 300÷60 = 5 (bon résultat mais mauvais raisonnement)",
+              "frequency": "medium",
+              "explanation": "Méthode: calculer séparément puis additionner",
+              "prevention_hint": "2 tas rouges + 3 tas grises = 5 tas"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-PPCM-01",
+        "MATH-CM2-DIVISION-03"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "PGCD",
+            "content": "PGCD(120, 180) = ?",
+            "answer": "60"
+          },
+          {
+            "step": 2,
+            "title": "Tas rouges",
+            "content": "120 ÷ 60 = ?",
+            "answer": "2 tas"
+          },
+          {
+            "step": 3,
+            "title": "Tas grises",
+            "content": "180 ÷ 60 = ?",
+            "answer": "3 tas"
+          },
+          {
+            "step": 4,
+            "title": "Total",
+            "content": "2 + 3 = ?",
+            "answer": "5 tas"
+          }
+        ]
+      }
     },
     {
       "item_number": 3,
       "domain": "geometry",
-      "context_text": "Elisabeth possède une parcelle rectangulaire de 400 m de longueur et 200 m de largeur. AD est une droite oblique passant par un sommet de la parcelle.",
-      "points": 6.67,
+      "context_text": "L'une des parcelles d'Elisabeth a une forme rectangulaire et mesure 400 m de long et 200 m de large.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Reproduis la parcelle à l'échelle 1/10 000.",
-          "question_type": "mcq",
-          "choices": ["Rectangle 4 cm × 2 cm", "Rectangle 40 cm × 20 cm", "Rectangle 0,4 cm × 0,2 cm", "Carré 4 cm"],
-          "correct_answer": "Rectangle 4 cm × 2 cm",
+          "text": "Reproduis cette parcelle à l'échelle de 1/10 000 sur ta copie.",
+          "question_type": "construction",
+          "correct_answer": "Rectangle de 4 cm de longueur et 2 cm de largeur",
           "explanation": "400 m = 40 000 cm. 40 000 / 10 000 = 4 cm. 200 m = 20 000 cm. 20 000 / 10 000 = 2 cm. La parcelle à l'échelle mesure 4 cm × 2 cm.",
-          "points": 3.33,
+          "hint": "Convertis les mesures en centimètres, puis divise par 10 000 pour obtenir les dimensions à l'échelle.",
+          "points": 3.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "15 000 + 4 = 15 004",
+              "frequency": "low",
+              "explanation": "Multiplication demandée",
+              "prevention_hint": "'Fois' ou 'pots' = multiplication"
+            }
+          ]
         },
         {
           "sub_label": "b",
-          "text": "Trace le symétrique de la parcelle par rapport à la droite oblique AD.",
-          "question_type": "mcq",
-          "choices": ["Un rectangle de mêmes dimensions de l'autre côté de AD", "Un rectangle plus grand", "Un parallélogramme"],
-          "correct_answer": "Un rectangle de mêmes dimensions de l'autre côté de AD",
-          "explanation": "Le symétrique d'un rectangle par rapport à une droite est un rectangle de mêmes dimensions situé de l'autre côté de l'axe de symétrie.",
-          "points": 3.33,
-          "depends_on_previous": false,
-          "order": 1
+          "text": "Trace son symétrique par rapport à une droite oblique AD.",
+          "question_type": "construction",
+          "correct_answer": "Un rectangle de mêmes dimensions (4 cm × 2 cm) tracé symétriquement de l'autre côté de la droite oblique AD",
+          "explanation": "Le symétrique d'un rectangle par rapport à une droite est un rectangle de mêmes dimensions situé de l'autre côté de l'axe de symétrie. Chaque sommet du rectangle symétrique est à la même distance de la droite AD que le sommet correspondant du rectangle original.",
+          "hint": "Trace d'abord la droite oblique AD, puis reporte chaque sommet du rectangle de l'autre côté de cette droite à égale distance.",
+          "points": 3.5,
+          "depends_on_previous": true,
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "10% de 15 000 = 1 500",
+              "frequency": "high",
+              "explanation": "Remise sur le TOTAL, pas sur un pot",
+              "prevention_hint": "Remise sur 60 000 FCFA (total)"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-PROP-05",
+        "MATH-CM2-PERCENT-03"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Total",
+            "content": "15 000 × 4 = ?",
+            "answer": "60 000"
+          },
+          {
+            "step": 2,
+            "title": "Remise",
+            "content": "10% de 60 000 = ?",
+            "answer": "6 000"
+          },
+          {
+            "step": 3,
+            "title": "Final",
+            "content": "60 000 - 6 000 = ?",
+            "answer": "54 000 FCFA"
+          }
+        ]
+      }
     }
   ]
 }

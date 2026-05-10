@@ -5,102 +5,343 @@
   "subject": "education_sociale",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Monsieur Ousmane est un opérateur économique étranger qui souhaite investir au Bénin dans les domaines de l'agriculture, de l'industrie et du commerce. Il s'intéresse aux institutions du pays et au code de la route.",
+  "context_text": "Monsieur Ousmane, opérateur économique étranger, désire investir au Bénin dans des activités comme : l'agriculture, l'industrie et le commerce. Il vient y séjourner pour apprécier le fonctionnement des institutions de la république et les manières de vivre des béninois. Il t'en parle et te demande conseils.",
+  "task_text": "Tu es invité(e) à lire attentivement le texte ci-dessus et à répondre aux consignes suivantes.",
   "items": [
     {
       "item_number": 1,
       "domain": "civics_institutions",
-      "context_text": "Le Bénin dispose d'institutions qui veillent au respect des libertés, notamment la liberté de presse.",
+      "context_text": "Parmi les institutions visitées par l'opérateur économique au cours de son séjour au Bénin, il y en a une qui veille au respect des lois qui régissent la presse.",
       "points": 5.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Quel est le nom de l'institution qui veille au respect des lois de la presse au Bénin ?",
-          "question_type": "fill_blank",
+          "text": "Donne le nom de cette institution.",
+          "question_type": "open_ended",
           "correct_answer": "La HAAC (Haute Autorité de l'Audiovisuel et de la Communication)",
+          "hint": "C'est une institution dont le sigle commence par H et qui régule les médias au Bénin.",
           "explanation": "La HAAC est l'institution constitutionnelle chargée de réguler les médias et de veiller au respect de la déontologie de la presse au Bénin.",
           "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "La HAAC est-elle un pouvoir ou un contre-pouvoir ?",
-          "question_type": "mcq",
-          "choices": ["Contre-pouvoir", "Pouvoir politique", "Pouvoir judiciaire"],
-          "correct_answer": "Contre-pouvoir",
-          "explanation": "La HAAC est une institution de contre-pouvoir. Elle ne fait pas partie des trois pouvoirs traditionnels (exécutif, législatif, judiciaire) mais contribue à l'équilibre démocratique.",
+          "text": "Dis si cette institution est un pouvoir ou un contre pouvoir.",
+          "question_type": "open_ended",
+          "correct_answer": "C'est un contre-pouvoir",
+          "hint": "Les trois pouvoirs sont : exécutif, législatif et judiciaire. Cette institution n'en fait pas partie.",
+          "explanation": "La HAAC est une institution de contre-pouvoir. Elle ne fait pas partie des trois pouvoirs traditionnels (exécutif, législatif, judiciaire) mais contribue à l'équilibre démocratique en régulant les médias.",
           "points": 2.5,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
+        }
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "micro_skills": [
+        "ES-CM2-CIT-01",
+        "ES-CM2-DROI-01"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "hint": "Définis citoyenneté"
+          },
+          {
+            "step": 2,
+            "hint": "Cite 2 droits"
+          }
+        ]
+      },
+      "common_mistakes": [
+        {
+          "mistake": "Confondre droits et devoirs",
+          "prevention": "Distingue bien les deux concepts"
         }
       ]
     },
     {
       "item_number": 2,
       "domain": "civics_institutions",
-      "context_text": "La circulation routière est réglementée pour assurer la sécurité de tous les usagers de la route.",
+      "context_text": "Au cours de ses sorties, Monsieur Ousmane constate qu'il y a beaucoup de véhicules (voitures, camion, moto, vélos, pousse-pousse...) et de nombreux accidents.",
       "points": 5.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Comment appelle-t-on l'ensemble des règles permettant d'éviter les accidents de la route ?",
-          "question_type": "fill_blank",
+          "text": "Donne le nom de l'ensemble des règles à respecter pour éviter les accidents.",
+          "question_type": "open_ended",
           "correct_answer": "Le code de la route",
-          "explanation": "Le code de la route est l'ensemble des lois et règlements qui régissent la circulation routière.",
+          "hint": "C'est un ensemble de lois et règlements que tous les usagers de la route doivent connaître et respecter.",
+          "explanation": "Le code de la route est l'ensemble des lois et règlements qui régissent la circulation routière et permettent d'éviter les accidents.",
           "points": 2.5,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Cite 2 catégories de véhicules autorisées à ne pas respecter toutes les règles du code de la route.",
-          "question_type": "fill_blank",
+          "text": "Certaines catégories de véhicules sont autorisées dans des cas précis, à ne pas respecter toutes ces règles. Cite deux de ces catégories.",
+          "question_type": "open_ended",
           "correct_answer": "Les véhicules de secours (ambulances, pompiers) et les véhicules officiels (convois présidentiels, police)",
+          "hint": "Pense aux véhicules qui utilisent des sirènes et gyrophares et qui sont en mission urgente.",
           "explanation": "Les véhicules prioritaires comme les ambulances, les véhicules de pompiers et les véhicules officiels en mission peuvent déroger à certaines règles du code de la route.",
           "points": 2.5,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         }
+      ],
+      "bloom_level": "créer",
+      "ilma_level": 3,
+      "micro_skills": [
+        "ES-CM2-ENVI-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "geography_economy",
-      "context_text": "Le Bénin produit des produits vivriers variés dans le nord et le sud du pays. L'agriculture a une longue histoire au Bénin.",
+      "context_text": "Monsieur Ousmane veut commercialiser des produits vivriers, dans les régions septentrionale et méridionale du Bénin.",
       "points": 5.0,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite 1 produit vivrier du nord et 1 produit vivrier du sud du Bénin.",
-          "question_type": "fill_blank",
-          "correct_answer": "Nord: le sorgho (ou mil, igname). Sud: le maïs (ou manioc)",
-          "explanation": "Le nord du Bénin est caractérisé par la culture du sorgho, du mil et de l'igname. Le sud est caractérisé par la culture du maïs et du manioc.",
-          "points": 1.67,
+          "text": "Indique pour chacune de ces deux régions, un produit vivrier qui s'y cultive.",
+          "question_type": "open_ended",
+          "correct_answer": "Région septentrionale (nord) : le sorgho (ou mil, igname). Région méridionale (sud) : le maïs (ou manioc)",
+          "hint": "La région septentrionale correspond au nord du Bénin et la région méridionale au sud. Chaque région a ses cultures caractéristiques.",
+          "explanation": "Le nord du Bénin (région septentrionale) est caractérisé par la culture du sorgho, du mil et de l'igname. Le sud (région méridionale) est caractérisé par la culture du maïs et du manioc.",
+          "points": 5.0,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
+        }
+      ],
+      "bloom_level": "comprendre",
+      "ilma_level": 1,
+      "micro_skills": [
+        "ES-CM2-SANT-01"
+      ]
+    },
+    {
+      "item_number": 4,
+      "domain": "history_heritage",
+      "context_text": "Ousmane, l'opérateur économique, veut installer au Bénin une usine textile et te demande de lui proposer un nom.",
+      "points": 5.0,
+      "sub_questions": [
+        {
+          "sub_label": "a",
+          "text": "Propose-lui le nom d'un roi du Dahomey en souvenir de tout ce qu'il a fait dans le domaine de l'agriculture.",
+          "question_type": "open_ended",
+          "correct_answer": "Le roi Guézo",
+          "hint": "Ce roi a régné au XIXe siècle et a développé une culture qui a remplacé la traite des esclaves comme source de revenus.",
+          "explanation": "Le roi Guézo (1818-1858) est célèbre pour avoir développé l'agriculture, notamment la culture du palmier à huile, dans le royaume du Dahomey.",
+          "points": 2.5,
+          "depends_on_previous": false,
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Définition trop vague",
+              "prevention": "Sois précis dans ta définition"
+            },
+            {
+              "mistake": "Exemple non personnel",
+              "prevention": "Utilise un exemple que tu as vécu"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Définis le mot en utilisant tes mots"
+              },
+              {
+                "step": 2,
+                "hint": "Pense à un exemple de ta vie quotidienne"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Quel roi du Dahomey est célèbre pour avoir développé la culture du palmier à huile ?",
-          "question_type": "mcq",
-          "choices": ["Le roi Guézo", "Le roi Béhanzin", "Le roi Glèlè", "Le roi Toffa"],
-          "correct_answer": "Le roi Guézo",
-          "explanation": "Le roi Guézo (1818-1858) a développé la culture du palmier à huile qui est devenu un pilier de l'économie du royaume du Dahomey.",
-          "points": 1.67,
-          "depends_on_previous": false,
-          "order": 1
-        },
-        {
-          "sub_label": "c",
           "text": "Justifie ta réponse.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le roi Guézo a développé la culture du palmier à huile qui est devenu un pilier de l'économie du royaume du Dahomey",
-          "explanation": "Sous le règne de Guézo, le palmier à huile a remplacé la traite des esclaves comme principale source de revenus du royaume.",
-          "points": 1.67,
+          "question_type": "open_ended",
+          "correct_answer": "Le roi Guézo a développé la culture du palmier à huile qui est devenu un pilier de l'économie du royaume du Dahomey, remplaçant la traite des esclaves comme principale source de revenus.",
+          "hint": "Explique ce que ce roi a fait de remarquable dans le domaine de l'agriculture et pourquoi cela justifie le choix de son nom.",
+          "explanation": "Sous le règne de Guézo, le palmier à huile a remplacé la traite des esclaves comme principale source de revenus du royaume. C'est une contribution majeure au développement agricole du Dahomey.",
+          "points": 2.5,
           "depends_on_previous": true,
-          "order": 2
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Oublier un acteur",
+              "prevention": "Liste tous les personnages impliqués"
+            },
+            {
+              "mistake": "Confondre droits et devoirs",
+              "prevention": "Distingue bien les deux concepts"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Identifie les acteurs de la situation"
+              },
+              {
+                "step": 2,
+                "hint": "Quels droits chaque acteur possède ?"
+              },
+              {
+                "step": 3,
+                "hint": "Y a-t-il conflit entre les droits ?"
+              }
+            ]
+          },
+          "bloom_level": "analyser",
+          "ilma_level": 2
         }
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "micro_skills": [
+        "ES-CM2-CULT-01"
       ]
     }
   ]

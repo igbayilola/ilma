@@ -5,82 +5,271 @@
   "subject": "mathematiques",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Un jardinier dispose d'un terrain rectangulaire de 50 m sur 15 m pour cultiver des carottes, des tomates, de la laitue et du chou. Les planches occupent une superficie de 598 m². Un diagramme semi-circulaire montre la répartition : Tomate 35%, Laitue 30%, Carotte 3/20, Chou 20%.",
+  "context_text": "Un jardinier après avoir apprêté sa pépinière, réalise des planches sur un terrain rectangulaire non loin d'un cours d'eau pour repiquer la carotte, la tomate, la laitue et le chou. Un agent d'agriculture lui propose d'aménager des allées pour circuler et d'attribuer des planches par zone à chaque culture en tenant compte de la demande. Les planches occupent une superficie de 598 m². Il te demande de l'aider à son projet.",
   "items": [
     {
       "item_number": 1,
       "domain": "data_proportionality",
-      "context_text": "Les planches occupent 598 m². Le diagramme semi-circulaire indique : Tomate 35%, Laitue 30%, Carotte 3/20 (15%), Chou 20%.",
-      "points": 6.67,
+      "context_text": "Voici inscrite dans un diagramme semi circulaire la superficie prévue pour chaque produit. Les planches occupent une superficie de 598 m².",
+      "diagram_description": "Un diagramme semi-circulaire divisé en quatre secteurs représentant la répartition des cultures : Tomate 35%, Laitue 30%, Carotte 3/20 (15%), Chou 20%.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Calcule la superficie prévue pour chaque produit.",
-          "question_type": "fill_blank",
-          "correct_answer": "Tomate: 209,3 m², Laitue: 179,4 m², Carotte: 89,7 m², Chou: 119,6 m²",
-          "explanation": "Tomate : 598 × 35/100 = 209,3 m². Laitue : 598 × 30/100 = 179,4 m². Carotte : 598 × 15/100 = 89,7 m². Chou : 598 × 20/100 = 119,6 m².",
-          "points": 3.33,
+          "question_type": "guided_steps",
+          "correct_answer": {
+            "Tomate": "598 × 35/100 = 209,3 m²",
+            "Laitue": "598 × 30/100 = 179,4 m²",
+            "Carotte": "598 × 15/100 = 89,7 m²",
+            "Chou": "598 × 20/100 = 119,6 m²"
+          },
+          "explanation": "Tomate : 598 × 35/100 = 209,3 m². Laitue : 598 × 30/100 = 179,4 m². Carotte : 598 × 15/100 = 89,7 m² (3/20 = 15%). Chou : 598 × 20/100 = 119,6 m².",
+          "hints": [
+            "Le diagramme donne le pourcentage de chaque culture. Carotte est donnée en fraction : 3/20 = 15%.",
+            "Pour trouver la superficie d'une culture, multiplie la superficie totale (598 m²) par le pourcentage correspondant, puis divise par 100.",
+            "Vérifie que la somme des quatre superficies redonne bien 598 m²."
+          ],
+          "points": 4,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "45 × 30 × 25",
+              "frequency": "low",
+              "explanation": "Addition demandée",
+              "prevention_hint": "'Totale' avec 'et' = addition"
+            }
+          ]
         },
         {
           "sub_label": "b",
           "text": "Inscris les données dans un tableau de fréquences.",
-          "question_type": "fill_blank",
-          "correct_answer": "Tomate: 35%, Laitue: 30%, Carotte: 15%, Chou: 20%",
-          "explanation": "Les fréquences en pourcentage sont directement données par le diagramme : Tomate 35%, Laitue 30%, Carotte 15%, Chou 20%.",
-          "points": 3.34,
+          "question_type": "table_fill",
+          "correct_answer": {
+            "headers": [
+              "Produit",
+              "Tomate",
+              "Laitue",
+              "Carotte",
+              "Chou",
+              "Total"
+            ],
+            "row_superficie": [
+              "Superficie (m²)",
+              "209,3",
+              "179,4",
+              "89,7",
+              "119,6",
+              "598"
+            ],
+            "row_frequence": [
+              "Fréquence (%)",
+              "35",
+              "30",
+              "15",
+              "20",
+              "100"
+            ]
+          },
+          "explanation": "Les fréquences en pourcentage sont directement données par le diagramme : Tomate 35%, Laitue 30%, Carotte 15% (3/20), Chou 20%. Les superficies sont calculées à partir de ces fréquences appliquées à 598 m².",
+          "hints": [
+            "Un tableau de fréquences comporte les noms des produits, leurs superficies et leurs pourcentages.",
+            "La somme des fréquences doit être égale à 100%.",
+            "Utilise les résultats de la question a) pour les superficies."
+          ],
+          "points": 3,
           "depends_on_previous": true,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "100 - 20 + 15 = 95",
+              "frequency": "medium",
+              "explanation": "Soustraire les deux ventes",
+              "prevention_hint": "-20 et -15"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-NUM-11",
+        "MATH-CM2-ADD-05"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Total",
+            "content": "45 + 30 + 25 = ?",
+            "answer": "100 kg"
+          },
+          {
+            "step": 2,
+            "title": "Reste",
+            "content": "100 - 20 - 15 = ?",
+            "answer": "65 kg"
+          }
+        ]
+      }
     },
     {
       "item_number": 2,
       "domain": "geometry",
-      "context_text": "Le terrain rectangulaire mesure 50 m sur 15 m. Des allées de 2 m de large séparent les 6 parcelles.",
-      "points": 6.67,
+      "context_text": "Pour circuler dans son jardin, le jardinier aménage des allées comme l'indique la figure ci-après. Chaque allée a une largeur de 2 m.",
+      "diagram_description": "Un terrain rectangulaire de 50 m de long et 15 m de large, divisé en 6 parcelles égales (2 rangées de 3). Les parcelles sont séparées par des allées de 2 m de large (1 allée horizontale au milieu et 2 allées verticales). Rangée du haut : Tomate, Laitue, Chou. Rangée du bas : Tomate, Laitue, Carotte.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Reproduis le plan du terrain à l'échelle 1/500.",
-          "question_type": "mcq",
-          "choices": ["Rectangle 10 cm × 3 cm", "Rectangle 50 cm × 15 cm", "Rectangle 1 cm × 0,3 cm"],
-          "correct_answer": "Rectangle 10 cm × 3 cm",
-          "explanation": "Échelle 1/500 : 50 m = 5 000 cm → 5 000 ÷ 500 = 10 cm. 15 m = 1 500 cm → 1 500 ÷ 500 = 3 cm.",
-          "points": 3.33,
+          "text": "Reproduis à l'échelle de 1/500 la figure ci-dessus.",
+          "question_type": "construction",
+          "correct_answer": "Rectangle de 10 cm × 3 cm avec les allées et parcelles reproduites à l'échelle.",
+          "explanation": "Échelle 1/500 : 50 m = 5 000 cm → 5 000 ÷ 500 = 10 cm. 15 m = 1 500 cm → 1 500 ÷ 500 = 3 cm. Largeur des allées : 2 m = 200 cm → 200 ÷ 500 = 0,4 cm. Il faut tracer le rectangle 10 cm × 3 cm avec 1 allée horizontale et 2 allées verticales de 0,4 cm de large, puis inscrire les noms des cultures dans chaque parcelle.",
+          "hints": [
+            "Pour convertir une mesure réelle en mesure sur le plan, divise par 500.",
+            "Convertis d'abord les mètres en centimètres avant d'appliquer l'échelle : 50 m = 5 000 cm, donc 5 000 ÷ 500 = 10 cm.",
+            "N'oublie pas de reproduire aussi les allées à l'échelle : 2 m = 200 cm → 200 ÷ 500 = 0,4 cm."
+          ],
+          "points": 3,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "20 + 1200 = 1220",
+              "frequency": "low",
+              "explanation": "Multiplication demandée",
+              "prevention_hint": "Gain = kg × prix/kg"
+            }
+          ]
         },
         {
           "sub_label": "b",
           "text": "Calcule en ares l'aire de la surface cultivable.",
           "question_type": "numeric_input",
-          "correct_answer": "5.98",
-          "explanation": "Aire totale : 50 × 15 = 750 m². Allées : 1 allée horizontale (50 × 2 = 100 m²) + 2 allées verticales (15 × 2 = 30 m² chacune) − 2 intersections (2 × 2 = 4 m² chacune) = 100 + 60 − 8 = 152 m². Surface cultivable : 750 − 152 = 598 m² = 5,98 ares.",
-          "points": 3.34,
+          "correct_answer": "5,98",
+          "explanation": "Aire totale du terrain : 50 × 15 = 750 m². Aire des allées : 1 allée horizontale de 50 × 2 = 100 m², 2 allées verticales de 15 × 2 = 30 m² chacune soit 60 m², moins 2 intersections de 2 × 2 = 4 m² chacune soit 8 m². Total allées : 100 + 60 − 8 = 152 m². Surface cultivable : 750 − 152 = 598 m² = 5,98 ares.",
+          "hints": [
+            "Calcule d'abord l'aire totale du terrain rectangulaire.",
+            "Calcule ensuite l'aire occupée par les allées. Attention aux intersections : ne les compte pas deux fois.",
+            "1 are = 100 m². Divise la surface cultivable en m² par 100 pour obtenir la réponse en ares."
+          ],
+          "points": 4,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Utiliser prix du thiof (1200) au lieu de sole (1500)",
+              "frequency": "high",
+              "explanation": "Sole = 1500 FCFA/kg (pas 1200)",
+              "prevention_hint": "Sole = 1500 FCFA/kg"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-PROP-12",
+        "MATH-CM2-REGLE3-02"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "Thiof",
+            "content": "20 × 1200 = ?",
+            "answer": "24 000"
+          },
+          {
+            "step": 2,
+            "title": "Sole",
+            "content": "15 × 1500 = ?",
+            "answer": "22 500"
+          },
+          {
+            "step": 3,
+            "title": "Total",
+            "content": "24 000 + 22 500 = ?",
+            "answer": "46 500 FCFA"
+          }
+        ]
+      }
     },
     {
       "item_number": 3,
       "domain": "data_proportionality",
-      "context_text": "Un tableau de correspondance indique la consommation d'eau en fonction des jours d'arrosage. Jours : 5, 8, 20, 12, ?. Eau (L) : 650, ?, ?, 1 560, 1 950.",
-      "points": 6.67,
+      "context_text": "Après une semaine d'arrosage, il fait le point de la consommation en eau dans le tableau de correspondance que voici.",
+      "diagram_description": "Un tableau de correspondance à deux lignes. Première ligne : Nombre de jours : 5, 8, 20, 12, *. Deuxième ligne : Consommation d'eau en L : 650, *, *, 1 560, 1 950. Les cases marquées d'un * sont à compléter.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Reproduis ce tableau et complète-le.",
-          "question_type": "fill_blank",
-          "correct_answer": "Jours: 5, 8, 20, 12, 15 | Eau: 650, 1040, 2600, 1560, 1950",
-          "explanation": "C'est une situation de proportionnalité. Coefficient : 650 ÷ 5 = 130 L/jour. 8 jours → 8 × 130 = 1 040 L. 20 jours → 20 × 130 = 2 600 L. 1 950 ÷ 130 = 15 jours.",
-          "points": 6.67,
+          "question_type": "table_fill",
+          "correct_answer": {
+            "headers": [
+              "Nombre de jours",
+              "5",
+              "8",
+              "20",
+              "12",
+              "15"
+            ],
+            "row_eau": [
+              "Consommation d'eau en L",
+              "650",
+              "1 040",
+              "2 600",
+              "1 560",
+              "1 950"
+            ]
+          },
+          "explanation": "C'est une situation de proportionnalité. Coefficient de proportionnalité : 650 ÷ 5 = 130 L/jour. 8 jours → 8 × 130 = 1 040 L. 20 jours → 20 × 130 = 2 600 L. 1 950 ÷ 130 = 15 jours.",
+          "hints": [
+            "Cherche d'abord le coefficient de proportionnalité en utilisant le couple (5 jours, 650 L) : divise 650 par 5.",
+            "Pour trouver la consommation, multiplie le nombre de jours par le coefficient. Pour trouver le nombre de jours, divise la consommation par le coefficient.",
+            "Vérifie ta réponse : 12 × 130 doit donner 1 560 L (valeur déjà fournie dans le tableau)."
+          ],
+          "points": 6,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "25 + 25 = 50 kg",
+              "frequency": "low",
+              "explanation": "PGCD demandé pour sachets identiques",
+              "prevention_hint": "Sachets identiques = PGCD"
+            }
+          ]
         }
-      ]
+      ],
+      "bloom_level": "appliquer",
+      "ilma_level": 2,
+      "skills_targeted": [
+        "MATH-CM2-DIVISION-12",
+        "MATH-CM2-PGCD-03"
+      ],
+      "guided_version": {
+        "enabled": true,
+        "steps": [
+          {
+            "step": 1,
+            "title": "PGCD",
+            "content": "PGCD(25, 25) = ?",
+            "answer": "25"
+          },
+          {
+            "step": 2,
+            "title": "Sachets 5kg",
+            "content": "25÷5 = ?, 25÷5 = ?, total = ?",
+            "answer": "5 + 5 = 10 sachets"
+          }
+        ]
+      }
     }
   ]
 }

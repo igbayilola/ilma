@@ -5,125 +5,397 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "L'ONG Fifa intervient dans le village de Zénaboutou. Les agents de l'ONG découvrent un bébé malnutri présentant un ventre ballonné et des cheveux roux. L'ONG apporte des vivres et installe l'électricité dans le centre de santé.",
+  "context_text": "L'Organisation Non Gouvernementale (ONG) Fifa s'occupe de la santé de la mère et de l'enfant. La semaine dernière, elle a reçu la visite de Zénaboutou qui a cessé depuis six mois d'allaiter son bébé âgé d'un an. Comme aliment, elle ne lui donne que de la bouillie de maïs. L'enfant a le ventre ballonné, les cheveux roux et cassants, les pieds et les mains enflés. Bio se propose de chercher des moyens pour aider l'enfant de Zénaboutou à guérir puis s'intéresse aux différents montages réalisés dans la maison.",
   "items": [
     {
       "item_number": 1,
       "domain": "nutrition_health",
-      "context_text": "Les agents de l'ONG Fifa trouvent un enfant malnutri au ventre ballonné et aux cheveux roux.",
-      "points": 6.67,
+      "context_text": "L'enfant de Zénaboutou a le ventre ballonné, les cheveux roux et cassants, les pieds et les mains enflés. Il ne mange que de la bouillie de maïs depuis que sa mère a cessé de l'allaiter il y a six mois.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "De quelle maladie souffre cet enfant ?",
-          "question_type": "mcq",
-          "choices": ["Le kwashiorkor", "Le marasme", "Le béribéri", "Le rachitisme"],
+          "text": "Indique la maladie dont souffre cet enfant.",
+          "question_type": "short_answer",
           "correct_answer": "Le kwashiorkor",
-          "explanation": "Le kwashiorkor se manifeste par un ventre ballonné, des cheveux roux et des œdèmes. Il est causé par une carence en protéines.",
-          "points": 2.22,
+          "hint": "Observe les symptômes : ventre ballonné, cheveux roux, pieds et mains enflés. C'est une maladie liée à un manque de protéines.",
+          "explanation": "Le kwashiorkor se manifeste par un ventre ballonné, des cheveux roux et cassants, et des œdèmes (pieds et mains enflés). Il est causé par une carence en protéines, souvent chez les enfants sevrés trop tôt et nourris uniquement de bouillies de céréales.",
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Comment peut-on traiter cette maladie ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Donner une alimentation riche et variée (protéines, vitamines). Consulter un médecin ou un centre de santé",
+          "text": "Propose un traitement pour guérir cette maladie.",
+          "question_type": "short_answer",
+          "correct_answer": "Donner une alimentation riche et variée, notamment en protéines (viande, poisson, œufs, lait, soja). Consulter un médecin ou un centre de santé.",
+          "hint": "Si la maladie est causée par un manque de protéines, que doit-on ajouter dans l'alimentation de l'enfant ?",
           "explanation": "Le traitement du kwashiorkor consiste à réintroduire progressivement une alimentation riche en protéines (viande, poisson, œufs, lait) et en vitamines, sous suivi médical.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Relie chaque maladie à sa description : Béribéri, Rachitisme, Marasme.",
+          "text": "Recopie et relie chaque maladie à sa description.",
           "question_type": "matching",
           "choices": {
-            "left": ["Béribéri", "Rachitisme", "Marasme"],
-            "right": ["Troubles nerveux", "Déformation des os", "Maigreur extrême"]
+            "left": [
+              "Béribéri",
+              "Rachitisme",
+              "Marasme"
+            ],
+            "right": [
+              "Troubles nerveux",
+              "Maigreur extrême",
+              "Déformation des os"
+            ]
           },
           "correct_answer": "Béribéri: Troubles nerveux, Rachitisme: Déformation des os, Marasme: Maigreur extrême",
-          "explanation": "Le béribéri (carence en vitamine B1) provoque des troubles nerveux. Le rachitisme (carence en vitamine D) entraîne la déformation des os. Le marasme (carence globale) provoque une maigreur extrême.",
-          "points": 2.22,
+          "hint": "Attention, les descriptions dans le tableau ne correspondent pas aux bonnes maladies. Le rachitisme touche les os, le marasme rend très maigre.",
+          "explanation": "Le béribéri (carence en vitamine B1) provoque des troubles nerveux. Le rachitisme (carence en vitamine D) entraîne la déformation des os. Le marasme (carence globale en calories) provoque une maigreur extrême.",
+          "points": 3,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "connaître",
+      "ilma_level": 2,
+      "micro_skills": [
+        "EST-CM2-MATI-01",
+        "EST-CM2-MELA-01"
       ]
     },
     {
       "item_number": 2,
       "domain": "nutrition_health",
-      "context_text": "L'ONG distribue les aliments suivants : huile de palme, banane, farine de maïs, poulet, riz, soja, graines d'arachides, poisson, igname.",
-      "points": 6.67,
+      "context_text": "La responsable de l'ONG dispose des aliments suivants : huile de palme, banane, farine de maïs, poulet, riz, soja, graines d'arachides, poisson, igname.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
           "text": "Relève les aliments riches en glucides, en protides et en lipides.",
-          "question_type": "fill_blank",
-          "correct_answer": "Glucides: banane, farine de maïs, riz, igname. Protides: poulet, soja, poisson. Lipides: huile de palme, graines d'arachides",
+          "question_type": "short_answer",
+          "correct_answer": "Glucides : banane, farine de maïs, riz, igname. Protides : poulet, soja, poisson. Lipides : huile de palme, graines d'arachides.",
+          "hint": "Les glucides sont dans les féculents et fruits. Les protides sont dans les viandes, poissons et légumineuses. Les lipides sont dans les corps gras.",
           "explanation": "Les glucides se trouvent dans les féculents et fruits (banane, farine, riz, igname). Les protides dans les viandes et légumineuses (poulet, soja, poisson). Les lipides dans les corps gras (huile, arachides).",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Propose un menu équilibré pour le bébé malnutri.",
-          "question_type": "fill_blank",
-          "correct_answer": "Bouillie de farine de maïs + poisson écrasé + banane écrasée + un peu d'huile de palme",
+          "text": "Propose à partir des aliments ci-dessus cités, un menu équilibré à Zénaboutou pour son bébé.",
+          "question_type": "short_answer",
+          "correct_answer": "Bouillie de farine de maïs enrichie avec du poisson écrasé, de la banane écrasée et un peu d'huile de palme.",
+          "hint": "Un menu équilibré doit contenir des aliments de chaque groupe (glucides, protides, lipides). Pense à adapter la texture au bébé.",
           "explanation": "Le menu doit être adapté au bébé (aliments écrasés ou en bouillie) et contenir des glucides, des protides, des lipides et des vitamines pour combattre la malnutrition.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Que deviennent les aliments dans l'estomac ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Les aliments sont transformés en bouillie (chyme) par les sucs gastriques. C'est la digestion chimique",
+          "text": "Que deviennent ces aliments au niveau de l'estomac ?",
+          "question_type": "short_answer",
+          "correct_answer": "Les aliments sont transformés en bouillie (chyme) par les sucs gastriques. C'est la digestion chimique.",
+          "hint": "Dans l'estomac, les aliments subissent deux actions : mécanique (brassage) et chimique (sucs gastriques).",
           "explanation": "Dans l'estomac, les aliments subissent une action mécanique (brassage) et chimique (sucs gastriques) pour être transformés en une bouillie appelée chyme.",
-          "points": 2.22,
+          "points": 3,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-ENER-01",
+        "EST-CM2-TRAN-01"
       ]
     },
     {
       "item_number": 3,
       "domain": "electricity",
-      "context_text": "L'ONG installe l'électricité dans le centre de santé avec 3 lampes montées en série (L1, L2, L3).",
-      "points": 6.67,
+      "context_text": "Voici l'un des montages électriques réalisés dans la maison de Zénaboutou. Le schéma montre 3 lampes (L1, L2, L3) montées en série avec une pile et un interrupteur.",
+      "diagram_description": "Schéma d'un circuit électrique en série comportant trois lampes (L1, L2, L3) reliées l'une après l'autre, une pile (générateur avec bornes + et -) et un interrupteur, le tout formant une boucle unique.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Nomme ce type de montage et dis pourquoi il est avantageux.",
-          "question_type": "fill_blank",
-          "correct_answer": "C'est un montage en série. Il utilise moins de fil électrique",
+          "text": "Nomme ce montage et dis pourquoi il est avantageux.",
+          "question_type": "short_answer",
+          "correct_answer": "C'est un montage en série. Il est avantageux car il utilise moins de fil électrique.",
+          "hint": "Dans ce montage, les lampes sont reliées les unes après les autres sur un seul circuit. Quel avantage cela offre-t-il en termes de matériel ?",
           "explanation": "Dans un montage en série, les lampes sont reliées les unes après les autres sur un seul circuit. L'avantage principal est l'économie de fil électrique.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 0
+          "order": 0,
+          "common_mistakes": [
+            {
+              "mistake": "Description imprécise",
+              "prevention": "Sois précis dans tes observations"
+            },
+            {
+              "mistake": "Vocabulaire incorrect",
+              "prevention": "Relis le cours si nécessaire"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Regarde attentivement tous les éléments"
+              },
+              {
+                "step": 2,
+                "hint": "Utilise les bons termes scientifiques"
+              }
+            ]
+          },
+          "bloom_level": "connaître",
+          "ilma_level": 1
         },
         {
           "sub_label": "b",
-          "text": "Propose un autre type de montage pour ces lampes.",
-          "question_type": "fill_blank",
-          "correct_answer": "Le montage en dérivation (ou parallèle)",
+          "text": "Propose un autre type de montage que tu connais.",
+          "question_type": "short_answer",
+          "correct_answer": "Le montage en dérivation (ou parallèle).",
+          "hint": "Il existe un autre type de montage où chaque lampe est branchée directement sur les bornes du générateur.",
           "explanation": "Le montage en dérivation (parallèle) est l'alternative au montage en série. Chaque lampe est branchée directement sur les bornes du générateur.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 1
+          "order": 1,
+          "common_mistakes": [
+            {
+              "mistake": "Confondre cause et conséquence",
+              "prevention": "Vérifie la logique de ton explication"
+            },
+            {
+              "mistake": "Explication incomplète",
+              "prevention": "Explique chaque étape du phénomène"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Quelle loi ou principe s'applique ici ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce principe explique-t-il l'observation ?"
+              }
+            ]
+          },
+          "bloom_level": "comprendre",
+          "ilma_level": 2
         },
         {
           "sub_label": "c",
-          "text": "Fais le schéma annoté d'une lampe électrique à filament en citant ses parties.",
-          "question_type": "fill_blank",
-          "correct_answer": "Parties: ampoule (globe en verre), filament, culot, plot central, isolant",
+          "text": "Fais le schéma annoté d'une lampe électrique à filament.",
+          "question_type": "short_answer",
+          "correct_answer": "Parties de la lampe à filament : ampoule (globe en verre), filament, culot, plot central, isolant.",
+          "hint": "Une lampe à filament est composée de plusieurs parties : une enveloppe en verre, un fil qui chauffe pour produire la lumière, une base métallique, un point de contact et un élément isolant.",
           "explanation": "Une lampe à filament comprend : l'ampoule (globe en verre) qui protège le filament, le filament qui produit la lumière en chauffant, le culot métallique, le plot central pour le contact électrique, et l'isolant qui sépare le culot du plot.",
-          "points": 2.22,
+          "points": 2,
           "depends_on_previous": false,
-          "order": 2
+          "order": 2,
+          "common_mistakes": [
+            {
+              "mistake": "Prévision sans justification",
+              "prevention": "Toujours expliquer pourquoi"
+            },
+            {
+              "mistake": "Ignorer le contexte",
+              "prevention": "Prends en compte tous les paramètres"
+            }
+          ],
+          "guided_version": {
+            "enabled": true,
+            "steps": [
+              {
+                "step": 1,
+                "hint": "Que change exactement dans la situation ?"
+              },
+              {
+                "step": 2,
+                "hint": "Comment ce changement affecte-t-il le phénomène ?"
+              },
+              {
+                "step": 3,
+                "hint": "Vérifie ta réponse avec le principe scientifique"
+              }
+            ]
+          },
+          "bloom_level": "appliquer",
+          "ilma_level": 3
         }
+      ],
+      "bloom_level": "analyser",
+      "ilma_level": 3,
+      "micro_skills": [
+        "EST-CM2-VIVA-01",
+        "EST-CM2-DIGE-01"
       ]
     }
   ]

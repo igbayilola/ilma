@@ -5,31 +5,34 @@
   "subject": "est",
   "duration_minutes": 60,
   "total_points": 20,
-  "context_text": "Abou passe ses vacances chez son oncle. Un chantier de construction est en cours dans le quartier.",
+  "context_text": "Abou, un écolier en vacances chez son oncle, se rend sur le chantier de ce dernier. Là-bas, il observe : des électriciens en train de réaliser l'installation électrique du bâtiment, des vendeuses qui préparent à manger aux ouvriers, des ouvriers qui utilisent la poulie et la brouette dans leurs tâches quotidiennes. Abou, curieux, voudrait comprendre comment est faite l'installation électrique des chambres et le rôle des machines simples utilisées. Il s'intéresse aussi à la qualité des mets préparés.",
   "items": [
     {
       "item_number": 1,
       "domain": "electricity",
-      "context_text": "L'électricien du chantier présente deux circuits : C1 (montage en série) et C2 (montage en dérivation).",
-      "points": 6.67,
+      "context_text": "Un des électriciens schématise les deux circuits électriques suivants : Circuit C1 (montage en série avec trois lampes L1, L2, L3) et Circuit C2 (montage en dérivation avec trois lampes L1, L2, L3).",
+      "diagram_description": "Deux schémas de circuits électriques. Circuit C1 : trois lampes L1, L2, L3 montées en série (l'une après l'autre sur un seul fil) reliées à une pile. Circuit C2 : trois lampes L1, L2, L3 montées en dérivation (chacune sur une branche parallèle) reliées à une pile.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Comment sont montées les lampes dans les circuits C1 et C2 ?",
-          "question_type": "fill_blank",
-          "correct_answer": "C1: montage en série (les lampes sont l'une après l'autre). C2: montage en dérivation (les lampes sont branchées en parallèle)",
-          "explanation": "Dans le circuit C1, les lampes sont reliées en série (l'une après l'autre sur un seul chemin). Dans le circuit C2, les lampes sont en dérivation (chacune sur une branche parallèle).",
-          "points": 3.33,
+          "text": "Dis comment sont montées les lampes dans le circuit C1. Dis comment sont montées les lampes dans le circuit C2.",
+          "question_type": "short_answer",
+          "correct_answer": "Dans le circuit C1, les lampes sont montées en série (l'une après l'autre sur un seul chemin de courant). Dans le circuit C2, les lampes sont montées en dérivation (chacune sur une branche parallèle).",
+          "hint": "Observe le trajet du courant : passe-t-il par un seul chemin ou par plusieurs chemins ?",
+          "explanation": "Dans le circuit C1, les lampes sont reliées en série (l'une après l'autre sur un seul chemin). Dans le circuit C2, les lampes sont en dérivation (chacune sur une branche parallèle, le courant se partage).",
+          "points": 3,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "L'électricien choisit le circuit C2. Pourquoi ?",
-          "question_type": "fill_blank",
-          "correct_answer": "En dérivation, si une lampe grille les autres continuent de fonctionner. Chaque lampe brille avec son éclat normal",
-          "explanation": "Le montage en dérivation (C2) est préférable car chaque lampe fonctionne indépendamment. Si une lampe grille, les autres continuent de briller normalement.",
-          "points": 3.33,
+          "text": "L'électricien a choisi le circuit C2 pour faire l'installation électrique des chambres. Explique à Abou la raison de son choix.",
+          "question_type": "short_answer",
+          "correct_answer": "En dérivation (C2), si une lampe grille, les autres continuent de fonctionner. Chaque lampe brille avec son éclat normal car chacune reçoit la tension totale du générateur.",
+          "hint": "Que se passe-t-il quand une lampe grille dans chaque type de montage ?",
+          "explanation": "Le montage en dérivation (C2) est préférable car chaque lampe fonctionne indépendamment. Si une lampe grille, les autres continuent de briller normalement, contrairement au montage en série où toutes s'éteignent.",
+          "points": 4,
           "depends_on_previous": false,
           "order": 1
         }
@@ -38,26 +41,28 @@
     {
       "item_number": 2,
       "domain": "nutrition_health",
-      "context_text": "Le menu du repas est composé de riz, sauce de légumes à la viande et orange.",
-      "points": 6.67,
+      "context_text": "À midi, Abou prend son repas chez l'une des vendeuses. Elle lui sert le menu suivant : riz - sauce de légumes à la viande - orange.",
+      "points": 7,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Ce menu est-il équilibré ? Justifie ta réponse.",
-          "question_type": "fill_blank",
-          "correct_answer": "Oui, ce menu est équilibré: glucides (riz), protides (viande), lipides (sauce), vitamines (légumes, orange)",
-          "explanation": "Ce menu est équilibré car il contient des glucides (riz), des protides (viande), des lipides (huile de la sauce) et des vitamines (légumes et orange).",
-          "points": 3.33,
+          "text": "Dis si ce menu est équilibré. Justifie ta réponse.",
+          "question_type": "short_answer",
+          "correct_answer": "Oui, ce menu est équilibré car il contient des glucides (riz), des protides (viande), des lipides (huile de la sauce), des vitamines et sels minéraux (légumes et orange).",
+          "hint": "Un menu équilibré doit contenir les quatre groupes de substances nutritives.",
+          "explanation": "Ce menu est équilibré car il contient des glucides (riz), des protides (viande), des lipides (huile de la sauce) et des vitamines (légumes et orange), soit les quatre groupes de substances nutritives nécessaires.",
+          "points": 3,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Où les substances nutritives passent-elles dans le sang ?",
-          "question_type": "fill_blank",
-          "correct_answer": "Au niveau de l'intestin grêle, grâce aux villosités intestinales",
+          "text": "Précise à quel niveau du tube digestif ces substances nutritives passent dans le sang.",
+          "question_type": "short_answer",
+          "correct_answer": "Les substances nutritives passent dans le sang au niveau de l'intestin grêle, grâce aux villosités intestinales.",
+          "hint": "C'est dans la partie la plus longue du tube digestif que l'absorption se fait.",
           "explanation": "Les nutriments issus de la digestion passent dans le sang au niveau de l'intestin grêle, à travers les villosités intestinales qui augmentent la surface d'absorption.",
-          "points": 3.33,
+          "points": 4,
           "depends_on_previous": false,
           "order": 1
         }
@@ -66,26 +71,28 @@
     {
       "item_number": 3,
       "domain": "technology_prehistory",
-      "context_text": "Sur le chantier de construction, les ouvriers utilisent des machines simples.",
-      "points": 6.67,
+      "context_text": "Sur le chantier, les ouvriers utilisent des machines simples dans leurs tâches quotidiennes.",
+      "points": 6,
       "sub_questions": [
         {
           "sub_label": "a",
-          "text": "Cite deux machines simples utilisées sur un chantier.",
-          "question_type": "fill_blank",
-          "correct_answer": "La poulie et la brouette",
-          "explanation": "La poulie sert à soulever des charges lourdes et la brouette à les transporter. Ce sont deux machines simples couramment utilisées sur les chantiers.",
-          "points": 3.33,
+          "text": "Deux (2) machines simples sont utilisées sur le chantier. Cite-les.",
+          "question_type": "short_answer",
+          "correct_answer": "La poulie et la brouette.",
+          "hint": "Relis le texte d'introduction : quels outils les ouvriers utilisent-ils ?",
+          "explanation": "La poulie et la brouette sont les deux machines simples mentionnées dans le texte. La poulie sert à soulever des charges et la brouette à les transporter.",
+          "points": 2,
           "depends_on_previous": false,
           "order": 0
         },
         {
           "sub_label": "b",
-          "text": "Explique le fonctionnement de la poulie.",
-          "question_type": "fill_blank",
-          "correct_answer": "La poulie est fixée en hauteur. Une corde passe dans la gorge de la roue. On tire la corde vers le bas pour faire monter la charge",
-          "explanation": "La poulie est une roue à gorge fixée en hauteur. Une corde passe dans la gorge de la roue. En tirant la corde vers le bas, on change la direction de la force et on fait monter la charge attachée à l'autre extrémité.",
-          "points": 3.33,
+          "text": "Un apprenti se sert de la poulie pour monter du sable à l'étage. Explique à Abou le fonctionnement de la poulie.",
+          "question_type": "short_answer",
+          "correct_answer": "La poulie est une roue à gorge fixée en hauteur. Une corde passe dans la gorge de la roue. On tire la corde vers le bas pour faire monter la charge (le sable) attachée à l'autre extrémité.",
+          "hint": "La poulie permet de changer la direction de la force exercée.",
+          "explanation": "La poulie est une roue à gorge fixée en hauteur. Une corde passe dans la gorge de la roue. En tirant la corde vers le bas, on change la direction de la force et on fait monter la charge (le sable) attachée à l'autre extrémité.",
+          "points": 4,
           "depends_on_previous": false,
           "order": 1
         }

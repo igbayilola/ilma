@@ -69,8 +69,8 @@
                   "external_prerequisites": [
                     {
                       "why": "Connaître les dates clés de l'histoire",
-                      "skill_id": "ES-HIST-INDEPENDANCE",
-                      "micro_skill_id": "ES-HIST-INDEPENDANCE::MS02"
+                      "skill_id": "ES-HIST-REPUBLIQUE-INDEPENDANCE",
+                      "micro_skill_id": "ES-HIST-REPUBLIQUE-INDEPENDANCE::MS02"
                     },
                     {
                       "why": "Connaître les institutions",
