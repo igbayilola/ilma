@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Question } from '../../types';
 import { Input } from '../ui/Input';
+import { OptimizedImage } from '../ui/OptimizedImage';
+import { MediaGallery } from './MediaGallery';
+import { DragDropRenderer } from './DragDropRenderer';
+import { ChartInputRenderer } from './ChartInputRenderer';
+import { DrawCanvasRenderer } from './DrawCanvasRenderer';
+import { AudioRenderer } from './AudioRenderer';
 import { Check, X, GripVertical, ArrowUp, ArrowDown, Volume2 } from 'lucide-react';
 
 interface QuestionRendererProps {
@@ -8,19 +14,24 @@ interface QuestionRendererProps {
   selectedAnswer: any;
   onAnswerChange: (answer: any) => void;
   isFeedbackMode: boolean;
+  onHintRequested?: () => void;
 }
 
 export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
   question,
   selectedAnswer,
   onAnswerChange,
-  isFeedbackMode
+  isFeedbackMode,
+  onHintRequested,
 }) => {
 
-  const [showHint, setShowHint] = useState(false);
+  // Progressive hints: track how many levels have been revealed (0 = none shown)
+  const allHints = question.hints?.length ? question.hints : (question.hint ? [question.hint] : []);
+  const totalHintLevels = allHints.length;
+  const [revealedHints, setRevealedHints] = useState(0);
 
   useEffect(() => {
-    setShowHint(false);
+    setRevealedHints(0);
     // Initialize ORDERING with shuffled items
     if (question.type === 'ORDERING' && !selectedAnswer && question.choices) {
       const shuffled = [...(Array.isArray(question.choices) ? question.choices : [])].sort(() => Math.random() - 0.5);
@@ -125,9 +136,6 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
 
       return (
         <div className="max-w-md mx-auto">
-            {question.hint && !isFeedbackMode && (
-              <p className="text-sm text-amber-700 bg-amber-50 p-3 rounded-xl mb-4">{question.hint}</p>
-            )}
             <Input
                 placeholder="Tape ta réponse ici..."
                 value={selectedAnswer || ''}
@@ -179,12 +187,12 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
               <GripVertical size={18} className="text-gray-300 mr-3 flex-shrink-0" />
               <span className="flex-1 font-medium text-gray-800">{item}</span>
               {!isFeedbackMode && (
-                <div className="flex flex-col ml-2">
-                  <button onClick={() => moveItem(idx, 'up')} disabled={idx === 0} className="p-1 text-gray-400 hover:text-sitou-primary disabled:opacity-30" aria-label="Monter">
-                    <ArrowUp size={16} />
+                <div className="flex flex-col ml-1">
+                  <button onClick={() => moveItem(idx, 'up')} disabled={idx === 0} className="p-2.5 text-gray-400 hover:text-sitou-primary disabled:opacity-30 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={`Monter ${item}`}>
+                    <ArrowUp size={18} />
                   </button>
-                  <button onClick={() => moveItem(idx, 'down')} disabled={idx === items.length - 1} className="p-1 text-gray-400 hover:text-sitou-primary disabled:opacity-30" aria-label="Descendre">
-                    <ArrowDown size={16} />
+                  <button onClick={() => moveItem(idx, 'down')} disabled={idx === items.length - 1} className="p-2.5 text-gray-400 hover:text-sitou-primary disabled:opacity-30 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={`Descendre ${item}`}>
+                    <ArrowDown size={18} />
                   </button>
                 </div>
               )}
@@ -217,23 +225,29 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
               {left}
             </div>
             <span className="text-gray-300">→</span>
-            <select
-              value={pairs[left] || ''}
-              onChange={(e) => handleMatch(left, e.target.value)}
-              disabled={isFeedbackMode}
-              className={`flex-1 p-3 rounded-xl border-2 text-sm font-medium focus:ring-2 focus:ring-sitou-primary ${
-                isFeedbackMode
-                  ? pairs[left] === (question.correctAnswer as any)?.[left]
-                    ? 'border-green-300 bg-green-50'
-                    : 'border-red-300 bg-red-50'
-                  : 'border-gray-200 bg-white'
-              }`}
-            >
-              <option value="">Choisir...</option>
-              {rightItems.map((r) => (
-                <option key={r} value={r}>{r}</option>
-              ))}
-            </select>
+            <div className="flex-1 relative">
+              <select
+                value={pairs[left] || ''}
+                onChange={(e) => handleMatch(left, e.target.value)}
+                disabled={isFeedbackMode}
+                aria-label={`Associer : ${left}`}
+                className={`w-full p-3 rounded-xl border-2 text-sm font-medium focus:ring-2 focus:ring-sitou-primary ${
+                  isFeedbackMode
+                    ? pairs[left] === (question.correctAnswer as any)?.[left]
+                      ? 'border-green-300 bg-green-50'
+                      : 'border-red-300 bg-red-50'
+                    : 'border-gray-200 bg-white'
+                }`}
+              >
+                <option value="">Choisir...</option>
+                {rightItems.map((r) => (
+                  <option key={r} value={r}>{r}</option>
+                ))}
+              </select>
+              {isFeedbackMode && pairs[left] !== (question.correctAnswer as any)?.[left] && (
+                <span className="text-xs text-red-600 mt-0.5 block">Attendu : {(question.correctAnswer as any)?.[left]}</span>
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -291,9 +305,6 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
     const isCorrect = String(selectedAnswer).trim().toLowerCase() === String(question.correctAnswer).trim().toLowerCase();
     return (
       <div className="max-w-md mx-auto">
-        {question.hint && !isFeedbackMode && (
-          <p className="text-sm text-amber-700 bg-amber-50 p-3 rounded-xl mb-4">{question.hint}</p>
-        )}
         <Input
           placeholder={placeholder}
           value={selectedAnswer || ''}
@@ -319,9 +330,8 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
     switch (question.type) {
       case 'MCQ':
         return renderMCQ();
-      case 'BOOLEAN':
+      case 'TRUE_FALSE':
         return renderBoolean();
-      case 'INPUT':
       case 'FILL_BLANK':
         return renderInput();
       case 'NUMERIC_INPUT':
@@ -342,17 +352,76 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
         return renderTextInput("Explique ta réponse...");
       case 'TRACING':
         return renderTextInput("Résultat du tracé...");
+      case 'DRAG_DROP':
+        return (
+          <DragDropRenderer
+            config={question.interactiveConfig?.config}
+            selectedAnswer={selectedAnswer}
+            onAnswerChange={handleSelect}
+            isFeedbackMode={isFeedbackMode}
+            correctAnswer={question.correctAnswer}
+          />
+        );
+      case 'INTERACTIVE_DRAW':
+        return (
+          <DrawCanvasRenderer
+            config={question.interactiveConfig?.config}
+            selectedAnswer={selectedAnswer}
+            onAnswerChange={handleSelect}
+            isFeedbackMode={isFeedbackMode}
+          />
+        );
+      case 'CHART_INPUT':
+        return (
+          <ChartInputRenderer
+            config={question.interactiveConfig?.config}
+            selectedAnswer={selectedAnswer}
+            onAnswerChange={handleSelect}
+            isFeedbackMode={isFeedbackMode}
+          />
+        );
+      case 'AUDIO_COMPREHENSION':
+        return (
+          <AudioRenderer
+            config={question.interactiveConfig?.config}
+            mediaReferences={question.mediaReferences}
+            selectedAnswer={selectedAnswer}
+            onAnswerChange={handleSelect}
+            isFeedbackMode={isFeedbackMode}
+          />
+        );
       default:
         return renderInput();
     }
   };
 
+  // Compute feedback text for screen readers
+  const feedbackAnnouncement = isFeedbackMode
+    ? ((): string => {
+        if (question.type === 'MCQ' || question.type === 'TRUE_FALSE') {
+          const isCorrect = selectedAnswer === question.correctAnswer;
+          return isCorrect ? 'Bonne réponse !' : `Mauvaise réponse. La bonne réponse est : ${question.correctAnswer}`;
+        }
+        const isCorrect = String(selectedAnswer).trim().toLowerCase() === String(question.correctAnswer).trim().toLowerCase();
+        return isCorrect ? 'Bonne réponse !' : `Mauvaise réponse. Réponse attendue : ${question.correctAnswer}`;
+      })()
+    : '';
+
   return (
     <div className="w-full">
+      {/* Live region: announces feedback to screen readers */}
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        {feedbackAnnouncement}
+      </div>
+
       {question.imageUrl && (
         <div className="mb-6 flex justify-center">
-          <img src={question.imageUrl} alt="Illustration de la question" className="rounded-2xl max-h-60 object-cover shadow-sm" />
+          <OptimizedImage src={question.imageUrl} alt="Illustration de la question" className="rounded-2xl max-h-60 object-cover shadow-sm" loading="eager" />
         </div>
+      )}
+
+      {question.mediaReferences && question.mediaReferences.length > 0 && (
+        <MediaGallery media={question.mediaReferences} />
       )}
 
       <div className="mb-8">
@@ -375,19 +444,36 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
             <span className="text-xs font-medium">Écouter</span>
           </button>
         </div>
-        {question.hint && !isFeedbackMode && (
+        {totalHintLevels > 0 && !isFeedbackMode && (
           <div className="flex justify-center mt-2">
             <button
-              onClick={() => setShowHint(!showHint)}
+              onClick={() => {
+                if (revealedHints < totalHintLevels) {
+                  if (onHintRequested) onHintRequested();
+                  setRevealedHints(prev => prev + 1);
+                } else {
+                  setRevealedHints(0);
+                }
+              }}
               className="inline-flex items-center gap-1 text-sm text-amber-600 hover:text-amber-700 transition-colors"
+              aria-label={revealedHints > 0 && revealedHints >= totalHintLevels ? "Masquer les indices" : "Voir un indice"}
             >
-              💡 {showHint ? 'Masquer l\'indice' : 'Indice'}
+              {revealedHints > 0 && revealedHints >= totalHintLevels
+                ? 'Masquer les indices'
+                : revealedHints > 0
+                  ? `Indice suivant (${revealedHints}/${totalHintLevels})`
+                  : `Indice (${totalHintLevels} disponible${totalHintLevels > 1 ? 's' : ''})`}
             </button>
           </div>
         )}
-        {showHint && question.hint && (
-          <div className="mt-2 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800 animate-slide-down">
-            {question.hint}
+        {revealedHints > 0 && (
+          <div className="mt-2 space-y-2" aria-live="polite">
+            {allHints.slice(0, revealedHints).map((h, i) => (
+              <div key={i} className="p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800 animate-slide-down flex items-start gap-2">
+                <span className="w-5 h-5 rounded-full bg-amber-200 text-amber-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                <span>{h}</span>
+              </div>
+            ))}
           </div>
         )}
       </div>

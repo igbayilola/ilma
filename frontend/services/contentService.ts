@@ -1,10 +1,10 @@
 import { apiClient } from './apiClient';
-import type { QuestionType } from '../types';
+import type { PaginatedResult, QuestionType } from '../types';
 
 /** Map backend question_type (snake_case lowercase) to frontend QuestionType */
 const QUESTION_TYPE_MAP: Record<string, QuestionType> = {
   mcq: 'MCQ',
-  true_false: 'BOOLEAN',
+  true_false: 'TRUE_FALSE',
   fill_blank: 'FILL_BLANK',
   numeric_input: 'NUMERIC_INPUT',
   short_answer: 'SHORT_ANSWER',
@@ -15,6 +15,10 @@ const QUESTION_TYPE_MAP: Record<string, QuestionType> = {
   guided_steps: 'GUIDED_STEPS',
   justification: 'JUSTIFICATION',
   tracing: 'TRACING',
+  drag_drop: 'DRAG_DROP',
+  interactive_draw: 'INTERACTIVE_DRAW',
+  chart_input: 'CHART_INPUT',
+  audio_comprehension: 'AUDIO_COMPREHENSION',
 };
 
 function mapQuestionType(backendType: string): QuestionType {
@@ -100,13 +104,46 @@ export interface QuestionDTO {
   microSkillId?: string;
 }
 
+export interface LessonSectionBlock {
+  title?: string;
+  body_html: string;
+  rules?: string[];
+}
+
+export interface LessonSections {
+  activite_depart?: LessonSectionBlock;
+  retenons?: LessonSectionBlock;
+  exemples?: LessonSectionBlock;
+  evaluation_note?: LessonSectionBlock;
+}
+
 export interface LessonDTO {
   id: string;
   title: string;
-  contentHtml: string;
+  contentHtml?: string;
+  sections?: LessonSections;
+  formula?: string;
   summary?: string;
   durationMinutes: number;
   skillId: string;
+  externalId?: string;
+}
+
+// ── Formula DTOs ─────────────────────────────────────
+export interface FormulaDTO {
+  id: string;
+  title: string;
+  formula?: string;
+  retenons?: {
+    body_html: string;
+    rules?: string[];
+  };
+  summary?: string;
+  skillId: string;
+  skillName: string;
+  domainId: string;
+  domainName: string;
+  subjectName: string;
 }
 
 // ── Curriculum Tree DTOs ──────────────────────────────
@@ -218,6 +255,30 @@ export interface CurriculumImportResult {
   errors: Array<{ error: string }>;
 }
 
+export interface PrerequisiteItemDTO {
+  externalId: string;
+  name: string;
+  skillId: string;
+  smartScore: number;
+  threshold: number;
+  met: boolean;
+}
+
+export interface PrerequisiteCheckDTO {
+  met: boolean;
+  prerequisites: PrerequisiteItemDTO[];
+}
+
+export interface SearchResultDTO {
+  type: 'skill' | 'question' | 'domain' | 'lesson';
+  id: string;
+  title: string;
+  subtitle: string;
+  score: number;
+  skillId?: string;
+  domainId?: string;
+}
+
 export const contentService = {
   // ── Grade Levels ──────────────────────────────────────
   async listGradeLevels(): Promise<GradeLevelDTO[]> {
@@ -315,12 +376,12 @@ export const contentService = {
     }));
   },
 
-  async listSkills(subjectId: string, domainId?: string): Promise<SkillDTO[]> {
+  async listSkills(subjectId: string, domainId?: string, page = 1, pageSize = 50): Promise<PaginatedResult<SkillDTO>> {
     const url = domainId
-      ? `/subjects/${subjectId}/chapters/${domainId}/skills`
-      : `/subjects/${subjectId}/skills`;
-    const data = await apiClient.get<any[]>(url);
-    return (data || []).map((s: any) => ({
+      ? `/subjects/${subjectId}/chapters/${domainId}/skills?page=${page}&page_size=${pageSize}`
+      : `/subjects/${subjectId}/skills?page=${page}&page_size=${pageSize}`;
+    const data = await apiClient.get<any>(url);
+    const items = (data?.items || []).map((s: any) => ({
       id: String(s.id),
       name: s.name,
       slug: s.slug,
@@ -329,6 +390,7 @@ export const contentService = {
       domainName: s.domain_name,
       order: s.order,
     }));
+    return { items, total: data?.total || items.length, page: data?.page || 1, page_size: data?.page_size || pageSize, pages: data?.pages || 1 };
   },
 
   async getSkillWithLessons(skillId: string): Promise<{ skill: SkillDTO; lessons: LessonDTO[] }> {
@@ -353,10 +415,11 @@ export const contentService = {
     };
   },
 
-  async listQuestions(skillId: string, microSkillId?: string): Promise<QuestionDTO[]> {
-    const params = microSkillId ? `?micro_skill_id=${microSkillId}` : '';
-    const data = await apiClient.get<any[]>(`/subjects/skills/${skillId}/questions${params}`);
-    return (data || []).map((q: any) => ({
+  async listQuestions(skillId: string, microSkillId?: string, page = 1, pageSize = 50): Promise<PaginatedResult<QuestionDTO>> {
+    const params = new URLSearchParams({ page: String(page), page_size: String(pageSize) });
+    if (microSkillId) params.set('micro_skill_id', microSkillId);
+    const data = await apiClient.get<any>(`/subjects/skills/${skillId}/questions?${params}`);
+    const items = (data?.items || []).map((q: any) => ({
       id: String(q.id),
       type: mapQuestionType(q.question_type || 'mcq'),
       prompt: q.text,
@@ -365,11 +428,15 @@ export const contentService = {
       correctAnswer: q.correct_answer,
       explanation: q.explanation,
       hint: q.hint,
+      hints: q.hints || (q.hint ? [q.hint] : undefined),
       imageUrl: q.media_url,
       points: q.points,
       timeLimitSeconds: q.time_limit_seconds,
       microSkillId: q.micro_skill_id ? String(q.micro_skill_id) : undefined,
+      mediaReferences: q.media_references || undefined,
+      interactiveConfig: q.interactive_config || undefined,
     }));
+    return { items, total: data?.total || items.length, page: data?.page || 1, page_size: data?.page_size || pageSize, pages: data?.pages || 1 };
   },
 
   // ── Admin CRUD ──────────────────────────────────────────
@@ -530,5 +597,52 @@ export const contentService = {
 
   async rollbackLesson(lessonId: string, version: number): Promise<any> {
     return apiClient.post(`/admin/content/lessons/${lessonId}/rollback/${version}`, {});
+  },
+
+  // ── Search ──────────────────────────────────────────────
+  async search(query: string, limit = 20): Promise<SearchResultDTO[]> {
+    const data = await apiClient.get<any[]>(`/search?q=${encodeURIComponent(query)}&limit=${limit}`);
+    return (data || []).map((r: any) => ({
+      type: r.type as 'skill' | 'question' | 'domain' | 'lesson',
+      id: r.id,
+      title: r.title,
+      subtitle: r.subtitle || '',
+      score: r.score,
+      skillId: r.skill_id || undefined,
+      domainId: r.domain_id || undefined,
+    }));
+  },
+
+  // ── Prerequisites ───────────────────────────────────────
+  async checkPrerequisites(skillId: string): Promise<PrerequisiteCheckDTO> {
+    const data = await apiClient.get<any>(`/subjects/skills/${skillId}/prerequisites`);
+    return {
+      met: data?.met ?? true,
+      prerequisites: (data?.prerequisites || []).map((p: any) => ({
+        externalId: p.external_id,
+        name: p.name,
+        skillId: p.skill_id,
+        smartScore: p.smart_score ?? 0,
+        threshold: p.threshold ?? 70,
+        met: p.met ?? true,
+      })),
+    };
+  },
+
+  // ── Formulas ─────────────────────────────────────────
+  async listFormulas(): Promise<FormulaDTO[]> {
+    const data = await apiClient.get<any[]>('/subjects/formulas');
+    return (data || []).map((f: any) => ({
+      id: String(f.id),
+      title: f.title,
+      formula: f.formula,
+      retenons: f.retenons,
+      summary: f.summary,
+      skillId: String(f.skill_id),
+      skillName: f.skill_name,
+      domainId: String(f.domain_id),
+      domainName: f.domain_name,
+      subjectName: f.subject_name,
+    }));
   },
 };

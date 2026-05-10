@@ -11,6 +11,7 @@ import {
   School, ClipboardList, FileQuestion
 } from 'lucide-react';
 import { OfflineBanner, SyncCounter } from '../ilma/OfflineIndicators';
+import { SearchBar } from './SearchBar';
 import { XPBar, StreakWidget, LEVEL_NAMES } from '../ilma/Gamification';
 import { NotificationCenter } from '../notifications/NotificationCenter';
 import { dbService } from '../../services/db';
@@ -21,6 +22,7 @@ const NAV_ITEMS: NavItem[] = [
   // Student & Guest
   { label: 'Accueil', path: '/app/student/dashboard', icon: 'Home', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Mati\u00e8res', path: '/app/student/subjects', icon: 'BookOpen', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
+  { label: 'Formulaire', path: '/app/student/formulaire', icon: 'ClipboardList', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Classement', path: '/app/student/leaderboard', icon: 'Trophy', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Progression', path: '/app/student/progress', icon: 'Award', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Profil', path: '/app/student/profile', icon: 'User', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
@@ -206,7 +208,7 @@ const Sidebar: React.FC = () => {
         <div className="mb-6 relative">
             <div className="flex items-center space-x-3 mb-2">
                 <div className="relative">
-                    <img src={displayAvatar} alt="Avatar" className={`w-10 h-10 rounded-full bg-gray-200 object-cover ${isPremium ? 'border-2 border-yellow-400' : ''}`} />
+                    <img src={displayAvatar} alt="Avatar" loading="eager" decoding="async" width={40} height={40} className={`w-10 h-10 rounded-full bg-gray-200 object-cover ${isPremium ? 'border-2 border-yellow-400' : ''}`} />
                     {isPremium && (
                         <div className="absolute -top-2 -right-1 bg-yellow-400 text-white rounded-full p-0.5 border border-white">
                             <Crown size={10} fill="currentColor"/>
@@ -351,7 +353,7 @@ const MobileDrawer: React.FC = () => {
 
                 <div className="p-5 flex-1 overflow-y-auto">
                     <div className="mb-6 flex items-center space-x-3">
-                         <img src={displayAvatar} className="w-12 h-12 rounded-full" alt="profile" />
+                         <img src={displayAvatar} loading="lazy" decoding="async" width={48} height={48} className="w-12 h-12 rounded-full" alt="profile" />
                          <div>
                              <p className="font-bold">{displayName}</p>
                              <div className="flex items-center space-x-2">
@@ -420,6 +422,7 @@ const Header: React.FC = () => {
           <div className="w-8 h-8 gradient-hero rounded-lg flex items-center justify-center text-white font-bold mr-3">I</div>
       </div>
 
+      {(effectiveRole === UserRole.STUDENT || effectiveRole === UserRole.GUEST) && <SearchBar />}
 
       <div className="flex items-center space-x-3 md:space-x-6">
         <SyncCounter />

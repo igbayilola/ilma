@@ -22,6 +22,15 @@ export interface NextQuestionDTO {
   timeLimitSeconds?: number;
   points: number;
   microSkillId?: string;
+  interactiveConfig?: Record<string, any>;
+  hints?: string[];
+}
+
+export interface CriterionFeedback {
+  code: string;
+  label: string;
+  description: string;
+  guide: string;
 }
 
 export interface AttemptResultDTO {
@@ -30,6 +39,7 @@ export interface AttemptResultDTO {
   correctAnswer: any;
   explanation?: string;
   pointsEarned: number;
+  criteriaFeedback?: CriterionFeedback[];
 }
 
 function genEventId(): string {
@@ -64,6 +74,8 @@ export const sessionService = {
       timeLimitSeconds: data.time_limit_seconds,
       points: data.points,
       microSkillId: data.micro_skill_id ? String(data.micro_skill_id) : undefined,
+      interactiveConfig: data.interactive_config,
+      hints: data.hints,
     };
   },
 
@@ -80,6 +92,7 @@ export const sessionService = {
       correctAnswer: data.correct_answer,
       explanation: data.explanation,
       pointsEarned: data.points_earned ?? 0,
+      criteriaFeedback: data.criteria_feedback,
     };
   },
 

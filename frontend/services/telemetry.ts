@@ -6,6 +6,9 @@ export type LogLevel = 'info' | 'warn' | 'error' | 'debug';
 
 const env = (import.meta as any).env;
 const SENTRY_DSN = env?.VITE_SENTRY_DSN || '';
+// Opt-in: must be explicitly enabled. Default off until DSN points to APDP-compliant host.
+const SENTRY_ENABLED = String(env?.VITE_SENTRY_ENABLED || 'false').toLowerCase() === 'true';
+const SENTRY_ACTIVE = SENTRY_ENABLED && Boolean(SENTRY_DSN);
 
 class TelemetryService {
   private isInitialized = false;
@@ -13,7 +16,7 @@ class TelemetryService {
   init() {
     if (this.isInitialized) return;
 
-    if (SENTRY_DSN) {
+    if (SENTRY_ACTIVE) {
       SentrySDK.init({
         dsn: SENTRY_DSN,
         environment: env?.MODE || 'development',
@@ -48,7 +51,7 @@ class TelemetryService {
   }
 
   setUser(user: { id: string; role: string; email?: string } | null) {
-    if (SENTRY_DSN) {
+    if (SENTRY_ACTIVE) {
       SentrySDK.setUser(user ? { id: user.id, data: { role: user.role } } : null);
     }
   }
@@ -57,13 +60,13 @@ class TelemetryService {
     const errObj = typeof error === 'string' ? new Error(error) : error;
     console.error(`[${source || 'App'}] Error:`, errObj);
 
-    if (SENTRY_DSN) {
+    if (SENTRY_ACTIVE) {
       SentrySDK.captureException(errObj, { extra: { ...context, source } });
     }
   }
 
   logEvent(category: string, action: string, label?: string, value?: number) {
-    if (SENTRY_DSN) {
+    if (SENTRY_ACTIVE) {
       SentrySDK.addBreadcrumb({
         category,
         message: action,
@@ -74,7 +77,7 @@ class TelemetryService {
   }
 
   startSpan(op: string, name: string) {
-    if (SENTRY_DSN) {
+    if (SENTRY_ACTIVE) {
       return SentrySDK.startInactiveSpan({ name: `${op}.${name}`, op });
     }
     // Fallback no-op span

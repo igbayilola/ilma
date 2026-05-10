@@ -1,4 +1,12 @@
 
+export interface PaginatedResult<T> {
+  items: T[];
+  total: number;
+  page: number;
+  page_size: number;
+  pages: number;
+}
+
 export enum UserRole {
   STUDENT = 'STUDENT',
   PARENT = 'PARENT',
@@ -210,18 +218,38 @@ export interface SkillWithProgress {
 
 export type QuestionType =
   | 'MCQ'
-  | 'BOOLEAN'
-  | 'INPUT'
-  | 'ORDERING'
-  | 'MATCHING'
+  | 'TRUE_FALSE'
   | 'FILL_BLANK'
   | 'NUMERIC_INPUT'
   | 'SHORT_ANSWER'
+  | 'ORDERING'
+  | 'MATCHING'
   | 'ERROR_CORRECTION'
   | 'CONTEXTUAL_PROBLEM'
   | 'GUIDED_STEPS'
   | 'JUSTIFICATION'
-  | 'TRACING';
+  | 'TRACING'
+  | 'DRAG_DROP'
+  | 'INTERACTIVE_DRAW'
+  | 'CHART_INPUT'
+  | 'AUDIO_COMPREHENSION';
+
+export interface MediaReference {
+  id: string;
+  type: 'image' | 'svg' | 'animation' | 'video' | 'audio' | 'diagram' | 'interactive_canvas' | 'interactive_chart' | 'interactive_diagram';
+  url: string;
+  alt_text: string;
+  interactive?: boolean;
+  dimensions?: { width: number; height: number };
+  duration_seconds?: number;
+  transcript_available?: boolean;
+  trigger?: string;
+}
+
+export interface InteractiveConfig {
+  type: 'drag_drop' | 'draw' | 'chart_input' | 'audio_quiz' | 'click_zone' | 'slider' | 'match';
+  config: any;
+}
 
 export interface Question {
   id: string;
@@ -233,6 +261,9 @@ export interface Question {
   correctAnswer: string | number | boolean | string[];
   explanation: string;
   hint?: string;
+  hints?: string[]; // Progressive hints (up to 3 levels)
+  mediaReferences?: MediaReference[];
+  interactiveConfig?: InteractiveConfig;
 }
 
 export interface Exercise {
