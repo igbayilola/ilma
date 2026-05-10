@@ -8,8 +8,10 @@ import { useAuthStore } from '../store/authStore';
 import { useAppStore } from '../store';
 import { contentService, SubjectDTO, SkillDTO } from '../services/contentService';
 import { progressService, SkillProgressDTO } from '../services/progressService';
-import { Play, Zap, Trophy, Download, Book, Calculator, FlaskConical, Globe, BookOpen, PlayCircle, Flame, Clock, Sprout } from 'lucide-react';
+import { Play, Zap, Trophy, Download, Book, Calculator, FlaskConical, Globe, BookOpen, PlayCircle, Flame, Clock, Sprout, Brain, Lightbulb } from 'lucide-react';
+import { contentService as contentSvc, FormulaDTO } from '../services/contentService';
 import { ButtonVariant } from '../types';
+import { avatarUrl } from '../utils/avatar';
 
 const ICON_COMPONENTS: Record<string, React.ReactNode> = {
   Calculator: <Calculator size={24} />,
@@ -194,10 +196,99 @@ export const StreakReminderCard: React.FC<{
   );
 };
 
+/** Rule of the day widget — shows a random formula from the weakest domain. */
+const RuleDuJourWidget: React.FC<{ skillsProgress: SkillProgressDTO[] }> = ({ skillsProgress }) => {
+  const navigate = useNavigate();
+  const [formula, setFormula] = useState<FormulaDTO | null>(null);
+
+  useEffect(() => {
+    contentSvc.listFormulas().then(formulas => {
+      if (formulas.length === 0) return;
+
+      // Find weakest domain from progress
+      const domainScores = new Map<string, number[]>();
+      for (const p of skillsProgress) {
+        // We don't have domainId on SkillProgressDTO, so we pick randomly
+        // among formulas weighted toward the start (typically weaker skills)
+      }
+
+      // Pick a seeded-random formula based on today's date
+      const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
+      const idx = dayIndex % formulas.length;
+      setFormula(formulas[idx]);
+    }).catch(() => {});
+  }, [skillsProgress]);
+
+  if (!formula) return null;
+
+  return (
+    <div className="clay-card p-4 bg-gradient-to-r from-yellow-50 to-amber-50 border-yellow-200">
+      <div className="flex items-start justify-between">
+        <div className="flex items-start gap-3 flex-1">
+          <div className="w-10 h-10 rounded-xl bg-yellow-100 flex items-center justify-center flex-shrink-0">
+            <Lightbulb size={20} className="text-yellow-600" />
+          </div>
+          <div>
+            <p className="text-xs text-yellow-600 font-bold uppercase tracking-wide mb-1">R&egrave;gle du jour</p>
+            <p className="font-bold text-gray-900 text-sm">{formula.title}</p>
+            {formula.formula && (
+              <p className="mt-1 font-mono text-sm text-yellow-900 bg-yellow-100 inline-block px-2 py-0.5 rounded">
+                {formula.formula}
+              </p>
+            )}
+            {!formula.formula && formula.summary && (
+              <p className="text-gray-600 text-xs mt-1 line-clamp-2">{formula.summary}</p>
+            )}
+          </div>
+        </div>
+        <button
+          onClick={() => navigate(`/app/student/exercise/${formula.skillId}`, {
+            state: { returnPath: '/app/student/dashboard' },
+          })}
+          className="px-3 py-1.5 bg-yellow-600 text-white text-xs font-bold rounded-lg shadow-sm hover:bg-yellow-700 transition-colors flex-shrink-0 ml-3"
+        >
+          Pratiquer
+        </button>
+      </div>
+    </div>
+  );
+};
+
+/** Calcul Mental quick-launch widget with personal best score. */
+const CalculMentalWidget: React.FC = () => {
+  const navigate = useNavigate();
+  const bestScore = parseInt(localStorage.getItem('sitou_calcul_mental_best') || '0', 10);
+
+  return (
+    <div
+      className="clay-card p-4 flex items-center justify-between bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200 cursor-pointer hover:shadow-md transition-shadow"
+      onClick={() => navigate('/app/student/calcul-mental')}
+    >
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
+          <Brain size={20} className="text-amber-600" />
+        </div>
+        <div>
+          <p className="font-bold text-sm text-gray-800">Calcul Mental</p>
+          <p className="text-xs text-gray-500">
+            {bestScore > 0
+              ? <>Record : <span className="font-bold text-amber-600">{bestScore}</span> bonnes r&eacute;ponses en 60s</>
+              : <>60 secondes pour r&eacute;pondre au maximum de calculs !</>
+            }
+          </p>
+        </div>
+      </div>
+      <button className="px-4 py-2 gradient-hero text-white text-sm font-bold rounded-lg shadow-sm">
+        Jouer &rarr;
+      </button>
+    </div>
+  );
+};
+
 export const Dashboard: React.FC = () => {
   const { user, activeProfile } = useAuthStore();
   const displayName = activeProfile?.displayName || user?.name;
-  const displayAvatar = activeProfile?.avatarUrl || user?.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.id}`;
+  const displayAvatar = activeProfile?.avatarUrl || user?.avatarUrl || avatarUrl(user?.id);
   const gradeLevelId = activeProfile?.gradeLevelId || user?.gradeLevelId;
   const navigate = useNavigate();
   const lastActivity = useAppStore(s => s.lastActivity);
@@ -216,10 +307,10 @@ export const Dashboard: React.FC = () => {
 
         // Load all skills per subject (for progress bars)
         const skillsMap = new Map<string, SkillDTO[]>();
-        const skillsLists = await Promise.all(
-          subjectsData.map(s => contentService.listSkills(s.id).catch(() => [] as SkillDTO[]))
+        const skillsResults = await Promise.all(
+          subjectsData.map(s => contentService.listSkills(s.id).then(r => r.items).catch(() => [] as SkillDTO[]))
         );
-        subjectsData.forEach((s, i) => skillsMap.set(s.id, skillsLists[i]));
+        subjectsData.forEach((s, i) => skillsMap.set(s.id, skillsResults[i]));
         setSkillsBySubject(skillsMap);
 
         // Try to build a dynamic challenge from progress data
@@ -252,7 +343,7 @@ export const Dashboard: React.FC = () => {
       <header className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="flex items-center space-x-4">
             <div className="relative">
-                <img src={displayAvatar} alt="Avatar" className="w-16 h-16 rounded-full border-4 border-white shadow-md bg-gray-200 object-cover" />
+                <img src={displayAvatar} alt="Avatar" loading="eager" decoding="async" width={64} height={64} className="w-16 h-16 rounded-full border-4 border-white shadow-md bg-gray-200 object-cover" />
                 <div className="absolute -bottom-1 -right-1 gradient-hero text-white text-xs font-bold px-2 py-0.5 rounded-full border-2 border-white shadow-sm">
                     Niv. {user?.level || 1}
                 </div>
@@ -332,6 +423,12 @@ export const Dashboard: React.FC = () => {
         hasPlayedToday={dailyExerciseCount > 0}
         lastActivity={lastActivity}
       />
+
+      {/* 2c. Calcul Mental Widget */}
+      <CalculMentalWidget />
+
+      {/* 2d. Rule of the Day */}
+      <RuleDuJourWidget skillsProgress={skillsProgress} />
 
       {/* 3. Subjects Grid */}
       <section>

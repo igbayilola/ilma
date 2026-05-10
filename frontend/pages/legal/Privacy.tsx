@@ -91,7 +91,9 @@ export const PrivacyPolicyPage: React.FC = () => {
         </section>
 
         <p className="text-xs text-gray-400 pt-4 border-t">
-          Dernière mise à jour : avril 2026
+          Dernière mise à jour : mai 2026
+          {' · '}
+          <Link to="/legal/terms" className="text-sitou-primary hover:underline">Voir les CGU</Link>
         </p>
       </div>
     </div>

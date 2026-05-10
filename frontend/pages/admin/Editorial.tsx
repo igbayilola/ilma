@@ -189,11 +189,13 @@ export const AdminEditorialPage: React.FC = () => {
   };
 
   const QUESTION_TYPE_MAP_PREVIEW: Record<string, string> = {
-    mcq: 'MCQ', true_false: 'BOOLEAN', fill_blank: 'FILL_BLANK',
+    mcq: 'MCQ', true_false: 'TRUE_FALSE', fill_blank: 'FILL_BLANK',
     numeric_input: 'NUMERIC_INPUT', short_answer: 'SHORT_ANSWER',
     ordering: 'ORDERING', matching: 'MATCHING', error_correction: 'ERROR_CORRECTION',
     contextual_problem: 'CONTEXTUAL_PROBLEM', guided_steps: 'GUIDED_STEPS',
     justification: 'JUSTIFICATION', tracing: 'TRACING',
+    drag_drop: 'DRAG_DROP', interactive_draw: 'INTERACTIVE_DRAW',
+    chart_input: 'CHART_INPUT', audio_comprehension: 'AUDIO_COMPREHENSION',
   };
 
   const openPreview = async (q: KanbanQuestionDTO) => {

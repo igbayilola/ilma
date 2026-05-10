@@ -1,6 +1,7 @@
 import { apiClient } from './apiClient';
 import { AuthResponse, LoginCredentials, RegisterData } from '../types/auth';
 import { User, Profile, SubscriptionTier } from '../types';
+import { avatarUrl } from '../utils/avatar';
 
 const ENDPOINTS = {
     LOGIN: '/auth/login',
@@ -20,7 +21,7 @@ function mapUser(u: any): User {
         name: u.full_name || u.name || '',
         email: u.email,
         phone: u.phone,
-        avatarUrl: u.avatar_url || u.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${u.id}`,
+        avatarUrl: u.avatar_url || u.avatarUrl || avatarUrl(u.id),
         role: (u.role || '').toUpperCase(),
         gradeLevelId: u.grade_level_id || u.gradeLevelId || undefined,
         level: u.level ?? 1,
@@ -39,7 +40,7 @@ function mapProfile(p: any): Profile {
     return {
         id: String(p.id),
         displayName: p.display_name || p.displayName || '',
-        avatarUrl: p.avatar_url || p.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${p.id}`,
+        avatarUrl: p.avatar_url || p.avatarUrl || avatarUrl(p.id),
         gradeLevelId: p.grade_level_id || p.gradeLevelId || undefined,
         isActive: p.is_active ?? p.isActive ?? true,
         hasPin: p.has_pin ?? p.hasPin ?? false,

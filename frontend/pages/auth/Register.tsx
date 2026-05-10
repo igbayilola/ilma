@@ -224,6 +224,9 @@ export const RegisterPage: React.FC = () => {
             Je certifie être le parent ou tuteur légal et je consens au traitement des données conformément à la{' '}
             <a href="#/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-sitou-primary underline">
               politique de confidentialité
+            </a>{' '}et aux{' '}
+            <a href="#/legal/terms" target="_blank" rel="noopener noreferrer" className="text-sitou-primary underline">
+              CGU
             </a>{' '}de Sitou.
           </span>
         </label>

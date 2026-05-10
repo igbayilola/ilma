@@ -93,6 +93,10 @@ export const ProfileSelectorPage: React.FC = () => {
                                 <img
                                     src={profile.avatarUrl}
                                     alt={profile.displayName}
+                                    loading="lazy"
+                                    decoding="async"
+                                    width={96}
+                                    height={96}
                                     className="w-24 h-24 rounded-full object-cover border-4 border-transparent group-hover:border-sitou-primary transition-colors shadow-lg"
                                 />
                                 {profile.hasPin && (
@@ -162,6 +166,10 @@ export const ProfileSelectorPage: React.FC = () => {
                         <img
                             src={pinModal?.avatarUrl}
                             alt={pinModal?.displayName}
+                            loading="lazy"
+                            decoding="async"
+                            width={80}
+                            height={80}
                             className="w-20 h-20 rounded-full mx-auto mb-3 shadow-lg"
                         />
                         <p className="text-sm text-gray-500">

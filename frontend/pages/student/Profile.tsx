@@ -30,7 +30,7 @@ export const ProfilePage: React.FC = () => {
        {/* 1. Header Profile Card */}
        <Card className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left p-8 border-none bg-gradient-to-br from-white to-amber-50">
            <div className="relative mb-4 md:mb-0 md:mr-8">
-               <img src={displayAvatar} alt="Avatar" className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover bg-gray-200" />
+               <img src={displayAvatar} alt="Avatar" loading="eager" decoding="async" width={96} height={96} className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover bg-gray-200" />
                <div className="absolute bottom-0 right-0 bg-sitou-primary text-white text-sm font-bold px-3 py-1 rounded-full border-2 border-white">
                    Niv. {user.level}
                </div>

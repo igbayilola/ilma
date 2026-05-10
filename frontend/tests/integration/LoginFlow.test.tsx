@@ -14,7 +14,7 @@ const { loginMock, mockStoreHook } = vi.hoisted(() => {
     isLoading: false,
     error: null,
   });
-  mockStoreHook.getState = () => ({ user: { role: 'STUDENT' } });
+  mockStoreHook.getState = () => ({ user: { role: 'STUDENT' }, activeProfile: { id: 'p1' } });
   return { loginMock, mockStoreHook };
 });
 

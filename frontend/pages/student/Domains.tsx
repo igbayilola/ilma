@@ -30,7 +30,7 @@ export const DomainsPage: React.FC = () => {
 
     Promise.all([
       contentService.listDomains(subjectId),
-      contentService.listSkills(subjectId),
+      contentService.listSkills(subjectId).then(r => r.items),
       progressService.getSkillsProgress().catch(() => [] as SkillProgressDTO[]),
       contentService.getSubject(subjectId).catch(() => null),
     ]).then(([domainList, skillList, progressList, subjectData]) => {

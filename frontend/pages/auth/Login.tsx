@@ -132,6 +132,11 @@ export const LoginPage: React.FC = () => {
             S'inscrire
           </Link>
         </p>
+        <p className="mt-3 text-xs text-gray-400">
+          <Link to="/legal/privacy" className="hover:underline">Confidentialité</Link>
+          {' · '}
+          <Link to="/legal/terms" className="hover:underline">CGU</Link>
+        </p>
       </div>
 
 

@@ -1,4 +1,5 @@
 import { apiClient } from './apiClient';
+import { avatarUrl } from '../utils/avatar';
 
 export interface ChildDTO {
   id: string;
@@ -32,7 +33,7 @@ export const parentService = {
     return (data || []).map((c: any) => ({
       id: String(c.id),
       name: c.display_name || c.displayName || c.name || '',
-      avatar: c.avatar_url || c.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${c.id}`,
+      avatar: c.avatar_url || c.avatarUrl || avatarUrl(c.id),
       level: c.level ?? 1,
       role: 'STUDENT',
       weeklyGoalMinutes: c.weekly_goal_minutes ?? c.weeklyGoalMinutes ?? 120,
@@ -59,7 +60,7 @@ export const parentService = {
     return (data || []).map((c: any) => ({
       profileId: c.profile_id,
       displayName: c.display_name,
-      avatarUrl: c.avatar_url || `https://api.dicebear.com/7.x/avataaars/svg?seed=${c.profile_id}`,
+      avatarUrl: c.avatar_url || avatarUrl(c.profile_id),
       weeklyGoalMinutes: c.weekly_goal_minutes ?? 120,
       averageScore: c.average_score ?? 0,
       streak: c.streak ?? 0,

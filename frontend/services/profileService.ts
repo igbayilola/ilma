@@ -1,11 +1,12 @@
 import { apiClient } from './apiClient';
 import { Profile, SubscriptionTier } from '../types';
+import { avatarUrl } from '../utils/avatar';
 
 function mapProfile(p: any): Profile {
     return {
         id: String(p.id),
         displayName: p.display_name || p.displayName || '',
-        avatarUrl: p.avatar_url || p.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${p.id}`,
+        avatarUrl: p.avatar_url || p.avatarUrl || avatarUrl(p.id),
         gradeLevelId: p.grade_level_id || p.gradeLevelId || undefined,
         isActive: p.is_active ?? p.isActive ?? true,
         hasPin: p.has_pin ?? p.hasPin ?? false,

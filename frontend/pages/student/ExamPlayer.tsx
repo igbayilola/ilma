@@ -588,6 +588,10 @@ export const ExamPlayerPage: React.FC = () => {
                 src={currentQuestion.media_url}
                 alt="Illustration"
                 className="w-full max-w-md mx-auto rounded-xl mb-6"
+                loading="lazy"
+                decoding="async"
+                width={448}
+                height={300}
               />
             )}
 

@@ -56,6 +56,9 @@ const ProfileCreatePage = lazyNamed(() => import('./pages/auth/ProfileCreate'), 
 const SubjectsPage = lazyNamed(() => import('./pages/student/Subjects'), 'SubjectsPage');
 const DomainsPage = lazyNamed(() => import('./pages/student/Domains'), 'DomainsPage');
 const SkillsPage = lazyNamed(() => import('./pages/student/Skills'), 'SkillsPage');
+const SkillDetailPage = lazyNamed(() => import('./pages/student/SkillDetail'), 'SkillDetailPage');
+const CalculMentalPage = lazyNamed(() => import('./pages/student/CalculMental'), 'CalculMentalPage');
+const FormulairePage = lazyNamed(() => import('./pages/student/Formulaire'), 'FormulairePage');
 const ExercisePlayerPage = lazyNamed(() => import('./pages/student/ExercisePlayer'), 'ExercisePlayerPage');
 const MicroLessonPage = lazyNamed(() => import('./pages/student/MicroLesson'), 'MicroLessonPage');
 const ProgressPage = lazyNamed(() => import('./pages/student/Progress'), 'ProgressPage');
@@ -98,6 +101,7 @@ const EditorQuestions = lazyNamed(() => import('./pages/editor/Questions'), 'Edi
 
 // Legal Pages
 const PrivacyPolicyPage = lazyNamed(() => import('./pages/legal/Privacy'), 'PrivacyPolicyPage');
+const TermsPage = lazyNamed(() => import('./pages/legal/Terms'), 'TermsPage');
 
 // Other Pages
 const DebugSyncPage = lazyNamed(() => import('./pages/DebugSync'), 'DebugSyncPage');
@@ -180,6 +184,7 @@ const App: React.FC = () => {
                         </Route>
 
                         <Route path="/legal/privacy" element={<PrivacyPolicyPage />} />
+                        <Route path="/legal/terms" element={<TermsPage />} />
                         <Route path="/styleguide" element={<AppShell><StyleGuide /></AppShell>} />
                         <Route path="/unauthorized" element={<UnauthorizedPage />} />
 
@@ -209,9 +214,12 @@ const App: React.FC = () => {
                                         <Route path="subjects" element={<SubjectsPage />} />
                                         <Route path="subjects/:subjectId" element={<DomainsPage />} />
                                         <Route path="subjects/:subjectId/domains/:domainId" element={<SkillsPage />} />
+                                        <Route path="subjects/:subjectId/domains/:domainId/skills/:skillId" element={<SkillDetailPage />} />
 
                                         <Route path="exercise/:id" element={<ExercisePlayerPage />} />
                                         <Route path="lesson/:id" element={<MicroLessonPage />} />
+                                        <Route path="calcul-mental" element={<CalculMentalPage />} />
+                                        <Route path="formulaire" element={<FormulairePage />} />
 
                                         <Route path="progress" element={<ProgressPage />} />
                                         <Route path="badges" element={<BadgesPage />} />

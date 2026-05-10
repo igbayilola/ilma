@@ -50,7 +50,7 @@ export const ChildDetailPage: React.FC = () => {
             </Link>
             <div className="flex items-center space-x-4 mb-4">
                 <div className="flex items-center space-x-3">
-                    <img src={child?.avatar || ''} className="w-12 h-12 rounded-full border border-gray-200" alt="Avatar"/>
+                    <img src={child?.avatar || ''} className="w-12 h-12 rounded-full border border-gray-200" alt="Avatar" loading="lazy" decoding="async" width={48} height={48}/>
                     <div>
                         <h1 className="text-2xl font-bold text-gray-900">{child?.name || 'Enfant'}</h1>
                         <p className="text-xs text-gray-500">Niveau {child?.level || 1}</p>

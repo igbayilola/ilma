@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation, useSearchParams } from 'react-rout
 import { Button } from '../../components/ui/Button';
 import { QuestionRenderer } from '../../components/exercise/QuestionRenderer';
 import { ButtonVariant, Question, SubscriptionTier } from '../../types';
-import { X, CheckCircle2, AlertCircle, ArrowRight, RotateCcw, Award, HelpCircle, BookOpen, PenLine, Share2, Timer, Pause } from 'lucide-react';
+import { X, CheckCircle2, AlertCircle, ArrowRight, RotateCcw, Award, HelpCircle, BookOpen, PenLine, Share2, Timer, Pause, Lightbulb } from 'lucide-react';
 import { Breadcrumb } from '../../components/ui/Breadcrumb';
 import { useAppStore } from '../../store';
 import { SmartScoreMeter } from '../../components/ilma/Gamification';
@@ -209,8 +209,11 @@ export const ExercisePlayerPage: React.FC = () => {
     const [feedbackMessage, setFeedbackMessage] = useState({ text: '', emoji: '' });
     const [correctAnswer, setCorrectAnswer] = useState<any>(null);
     const [explanation, setExplanation] = useState('');
+    const [criteriaFeedback, setCriteriaFeedback] = useState<import('../../services/sessionService').CriterionFeedback[] | null>(null);
     const [isValidating, setIsValidating] = useState(false);
     const [showScratchpad, setShowScratchpad] = useState(false);
+    const [showRetenonsSheet, setShowRetenonsSheet] = useState(false);
+    const [retenonsData, setRetenonsData] = useState<{ bodyHtml: string; rules: string[]; formula?: string } | null>(null);
 
     // Question history for non-linear navigation
     interface AnsweredQuestion {
@@ -257,7 +260,20 @@ export const ExercisePlayerPage: React.FC = () => {
             contentService.checkPrerequisites(id).catch(() => null),
         ]).then(([qsResult, skillData, prereqs]) => {
             setQuestionCount(qsResult.total);
-            if (skillData) setSkillName(skillData.skill.name);
+            if (skillData) {
+                setSkillName(skillData.skill.name);
+                // Extract retenons from the first structured lesson
+                const lesson = skillData.lessons?.[0];
+                if (lesson?.sections?.retenons) {
+                    setRetenonsData({
+                        bodyHtml: lesson.sections.retenons.body_html,
+                        rules: lesson.sections.retenons.rules || [],
+                        formula: lesson.formula,
+                    });
+                } else if (lesson?.formula) {
+                    setRetenonsData({ bodyHtml: '', rules: [], formula: lesson.formula });
+                }
+            }
             if (prereqs) setPrereqCheck(prereqs);
             const draft = loadDraft(id);
             if (draft) setPendingDraft(draft);
@@ -409,6 +425,7 @@ export const ExercisePlayerPage: React.FC = () => {
 
             setCorrectAnswer(result.correctAnswer);
             setExplanation(result.explanation || '');
+            setCriteriaFeedback(result.criteriaFeedback || null);
 
             if (result.isCorrect) {
                 setAnswerStatus('CORRECT');
@@ -473,6 +490,7 @@ export const ExercisePlayerPage: React.FC = () => {
             setAnswerStatus('IDLE');
             setCorrectAnswer(null);
             setExplanation('');
+            setCriteriaFeedback(null);
             questionStartTime.current = Date.now();
         } catch {
             // If next question fails, finish session
@@ -550,9 +568,16 @@ export const ExercisePlayerPage: React.FC = () => {
     }, [session, phase, currentQIndex]);
 
     const goToLesson = () => {
-        navigate(`/app/student/lesson/${id}`, {
-            state: { returnPath: location.pathname }
-        });
+        if (retenonsData && !showRetenonsSheet) {
+            // First click: show inline retenons bottom sheet
+            setShowRetenonsSheet(true);
+        } else {
+            // Second click or no retenons: navigate to full lesson
+            setShowRetenonsSheet(false);
+            navigate(`/app/student/lesson/${id}`, {
+                state: { returnPath: location.pathname }
+            });
+        }
     };
 
     // Build render question — either current or from history review
@@ -843,6 +868,49 @@ export const ExercisePlayerPage: React.FC = () => {
                 )}
             </main>
 
+            {/* Retenons inline bottom sheet */}
+            {showRetenonsSheet && retenonsData && (
+                <div className="border-t-2 border-yellow-300 bg-yellow-50 p-4 md:p-6 animate-slide-up max-h-[40vh] overflow-y-auto">
+                    <div className="flex items-center justify-between mb-3">
+                        <h3 className="font-bold text-yellow-800 flex items-center text-base">
+                            <Lightbulb size={18} className="mr-2 text-yellow-600" /> Retenons
+                        </h3>
+                        <div className="flex items-center gap-2">
+                            <button
+                                onClick={() => { setShowRetenonsSheet(false); navigate(`/app/student/lesson/${id}`, { state: { returnPath: location.pathname } }); }}
+                                className="text-xs text-sitou-primary font-semibold hover:underline"
+                            >
+                                Le&ccedil;on compl&egrave;te &rarr;
+                            </button>
+                            <button
+                                onClick={() => setShowRetenonsSheet(false)}
+                                className="text-gray-400 hover:text-gray-600 text-lg font-bold"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                    </div>
+                    {retenonsData.formula && (
+                        <div className="inline-block bg-yellow-100 border border-yellow-200 rounded-lg px-3 py-1.5 mb-3">
+                            <span className="font-mono text-sm text-yellow-900 font-semibold">{retenonsData.formula}</span>
+                        </div>
+                    )}
+                    {retenonsData.bodyHtml && (
+                        <div className="prose prose-sm max-w-none text-gray-700 mb-3" dangerouslySetInnerHTML={{ __html: retenonsData.bodyHtml }} />
+                    )}
+                    {retenonsData.rules.length > 0 && (
+                        <div className="space-y-1.5">
+                            {retenonsData.rules.map((rule, idx) => (
+                                <div key={idx} className="flex items-start space-x-2 bg-yellow-100 rounded-lg px-3 py-2">
+                                    <Lightbulb size={14} className="text-yellow-600 mt-0.5 flex-shrink-0" />
+                                    <span className="text-yellow-900 text-sm font-medium">{rule}</span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            )}
+
             <footer className={`p-4 md:p-6 border-t border-gray-100 sticky bottom-0 z-20 transition-colors duration-300 ${
                 isReviewing ? 'bg-indigo-50 border-indigo-200' :
                 answerStatus === 'CORRECT' ? 'bg-green-50 border-green-200' :
@@ -879,6 +947,25 @@ export const ExercisePlayerPage: React.FC = () => {
                                     <p className="text-gray-600 mt-1 text-sm md:text-base leading-relaxed">
                                         {explanation}
                                     </p>
+                                )}
+
+                                {/* C1/C2/C3 criteria feedback for contextual problems */}
+                                {criteriaFeedback && criteriaFeedback.length > 0 && answerStatus === 'INCORRECT' && (
+                                    <div className="mt-3 space-y-2">
+                                        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide">Crit&egrave;res d'&eacute;valuation CEP</p>
+                                        {criteriaFeedback.map((c) => (
+                                            <div key={c.code} className="bg-red-50 border border-red-100 rounded-xl p-3">
+                                                <div className="flex items-center gap-2 mb-1">
+                                                    <span className="text-xs font-bold bg-red-200 text-red-800 px-2 py-0.5 rounded-full">{c.code}</span>
+                                                    <span className="text-sm font-bold text-gray-800">{c.label}</span>
+                                                </div>
+                                                <p className="text-sm text-gray-600">{c.description}</p>
+                                                {c.guide && (
+                                                    <p className="text-sm text-sitou-primary font-medium mt-1">{c.guide}</p>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
                                 )}
                             </div>
                         </div>

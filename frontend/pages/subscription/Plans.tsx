@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { apiClient } from '../../services/apiClient';
 import { useAuthStore } from '../../store/authStore';
 import { useConfigStore } from '../../store/configStore';
+import { avatarUrl } from '../../utils/avatar';
 
 const FALLBACK_PLANS: Plan[] = [
     {
@@ -143,9 +144,13 @@ export const PlansPage: React.FC = () => {
                                 }`}
                             >
                                 <img
-                                    src={p.avatarUrl || `https://api.dicebear.com/7.x/avataaars/svg?seed=${p.id}`}
+                                    src={p.avatarUrl || avatarUrl(p.id)}
                                     alt={p.displayName}
                                     className="w-10 h-10 rounded-full mb-1"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width={40}
+                                    height={40}
                                 />
                                 <span className={`text-xs font-bold ${selectedBeneficiaryId === p.id ? 'text-sitou-primary' : 'text-gray-600'}`}>
                                     {p.displayName}

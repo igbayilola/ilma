@@ -39,7 +39,7 @@ export const SkillsPage: React.FC = () => {
   useEffect(() => {
     if (!subjectId || !domainId) return;
     Promise.all([
-      contentService.listSkills(subjectId, domainId),
+      contentService.listSkills(subjectId, domainId).then(r => r.items),
       progressService.getSkillsProgress().catch(() => [] as SkillProgressDTO[]),
       contentService.getSubject(subjectId).catch(() => null),
       contentService.getDomain(subjectId, domainId).catch(() => null),
@@ -150,14 +150,7 @@ export const SkillsPage: React.FC = () => {
               <SkillItem
                 key={skill.id}
                 skill={skill}
-                onClick={(id) => navigate(`/app/student/exercise/${id}`, {
-                  state: {
-                    returnPath: `/app/student/subjects/${subjectId}/domains/${domainId}`,
-                    subjectId,
-                    subjectName: subject?.name,
-                    domainName: domain?.name,
-                  },
-                })}
+                onClick={(id) => navigate(`/app/student/subjects/${subjectId}/domains/${domainId}/skills/${id}`)}
               />
             ))}
           </div>

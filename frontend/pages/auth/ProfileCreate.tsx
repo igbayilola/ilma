@@ -7,6 +7,7 @@ import { Input } from '../../components/ui/Input';
 import { Button } from '../../components/ui/Button';
 import { ButtonVariant } from '../../types';
 import { ArrowLeft, GraduationCap, Lock } from 'lucide-react';
+import { avatarUrl as buildAvatarUrl } from '../../utils/avatar';
 
 const AVATAR_SEEDS = [
     'Aisha', 'Kofi', 'Amina', 'Yao', 'Fatou',
@@ -30,7 +31,7 @@ export const ProfileCreatePage: React.FC = () => {
         contentService.listGradeLevels().then(setGradeLevels).catch(() => {});
     }, []);
 
-    const avatarUrl = `https://api.dicebear.com/7.x/avataaars/svg?seed=${selectedAvatar}`;
+    const avatarUrl = buildAvatarUrl(selectedAvatar);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -94,6 +95,10 @@ export const ProfileCreatePage: React.FC = () => {
                                 <img
                                     src={avatarUrl}
                                     alt="Avatar sélectionné"
+                                    loading="eager"
+                                    decoding="async"
+                                    width={80}
+                                    height={80}
                                     className="w-20 h-20 rounded-full border-4 border-sitou-primary shadow-lg"
                                 />
                                 <div className="flex-1">
@@ -110,8 +115,12 @@ export const ProfileCreatePage: React.FC = () => {
                                                 }`}
                                             >
                                                 <img
-                                                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}`}
+                                                    src={buildAvatarUrl(seed)}
                                                     alt={seed}
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                    width={40}
+                                                    height={40}
                                                     className="w-full h-full rounded-full"
                                                 />
                                             </button>
