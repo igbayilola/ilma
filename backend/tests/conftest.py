@@ -56,6 +56,16 @@ async def engine():
     await eng.dispose()
 
 
+@pytest_asyncio.fixture(autouse=True)
+async def _flush_content_cache():
+    """Prevent Redis content cache from leaking state between tests."""
+    from app.services import content_cache
+
+    await content_cache.invalidate_all()
+    yield
+    await content_cache.invalidate_all()
+
+
 @pytest_asyncio.fixture
 async def db_session(engine) -> AsyncGenerator[AsyncSession, None]:
     async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)

@@ -191,7 +191,7 @@ async def test_list_skills(client: AsyncClient, test_student, content_tree):
         headers=auth_header(test_student),
     )
     assert resp.status_code == 200
-    skills = resp.json()["data"]
+    skills = resp.json()["data"]["items"]
     assert len(skills) >= 1
     assert skills[0]["name"] == "Addition"
 
@@ -232,7 +232,7 @@ async def test_list_questions(client: AsyncClient, test_student, content_tree):
         headers=auth_header(test_student),
     )
     assert resp.status_code == 200
-    questions = resp.json()["data"]
+    questions = resp.json()["data"]["items"]
     assert len(questions) == 3
     # Verify question structure
     q = questions[0]
@@ -253,7 +253,7 @@ async def test_list_questions_empty_skill(client: AsyncClient, test_student, con
         headers=auth_header(test_student),
     )
     assert resp.status_code == 200
-    assert resp.json()["data"] == []
+    assert resp.json()["data"]["items"] == []
 
 
 # ── Bulk Exercise Import ─────────────────────────────────
