@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.exceptions import AppException, NotFoundException
-from app.models.content import Domain, Question, Skill, Subject, DifficultyLevel, MicroLesson
+from app.models.content import DifficultyLevel, Domain, MicroLesson, Question, Skill
 from app.models.mock_exam import ExamItem, ExamSession, ExamSubQuestion, MockExam
 from app.models.profile import Profile
 from app.models.subscription import PlanTier

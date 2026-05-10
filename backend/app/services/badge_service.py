@@ -4,7 +4,7 @@ Rules are defined as dicts with a `condition_type` and `params`.
 The engine evaluates each unearned badge's condition at session.complete.
 """
 import logging
-from datetime import datetime, time, timezone
+from datetime import datetime, timezone
 from uuid import UUID
 
 from sqlalchemy import func, select

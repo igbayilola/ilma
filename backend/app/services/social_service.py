@@ -4,7 +4,7 @@ import random
 from datetime import datetime, timedelta, timezone
 from uuid import UUID
 
-from sqlalchemy import and_, func, select, update
+from sqlalchemy import func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.social import Challenge, ChallengeStatus, WeeklyLeaderboard

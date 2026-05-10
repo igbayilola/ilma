@@ -2,7 +2,7 @@
 import logging
 import uuid
 from datetime import datetime, timedelta, timezone
-from typing import Dict, Optional
+from typing import Optional
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, Query

@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.deps import get_active_profile, get_current_user, require_role
+from app.core.deps import get_active_profile, require_role
 from app.db.session import get_db_session
 from app.models.profile import Profile
 from app.models.user import User, UserRole

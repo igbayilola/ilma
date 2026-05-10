@@ -90,8 +90,11 @@ def register_middleware(app: FastAPI) -> None:
     """Register all middleware in correct order (outermost first)."""
     from starlette.middleware.gzip import GZipMiddleware
 
+    from app.core.rate_limiter import RateLimiterMiddleware
+
     app.add_middleware(GZipMiddleware, minimum_size=500)  # Compress responses > 500 bytes
     app.add_middleware(MaintenanceModeMiddleware)
+    app.add_middleware(RateLimiterMiddleware)
     app.add_middleware(SecurityHeadersMiddleware)
     app.add_middleware(AccessLogMiddleware)
     app.add_middleware(RequestIdMiddleware)

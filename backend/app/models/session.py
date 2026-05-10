@@ -14,6 +14,7 @@ class SessionMode(str, enum.Enum):
     DAILY_CHALLENGE = "daily_challenge"
     REVISION = "revision"
     EXAM = "exam"
+    CALCUL_MENTAL = "calcul_mental"
 
 
 class SessionStatus(str, enum.Enum):
@@ -40,7 +41,7 @@ class ExerciseSession(Base, BaseMixin):
     synced_at = Column(DateTime(timezone=True), nullable=True)
 
     profile = relationship("Profile", back_populates="sessions")
-    attempts = relationship("Attempt", back_populates="session", order_by="Attempt.created_at", lazy="selectin")
+    attempts = relationship("Attempt", back_populates="session", order_by="Attempt.created_at", lazy="raise")
 
 
 class Attempt(Base, BaseMixin):

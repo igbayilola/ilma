@@ -1,7 +1,7 @@
 """Session & attempt Pydantic schemas."""
 import uuid
 from datetime import datetime
-from typing import Any, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 from pydantic import BaseModel, ConfigDict
 
@@ -31,6 +31,13 @@ class AttemptOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
+class AttemptWithFeedbackOut(AttemptOut):
+    """Extended attempt output with explanation and CEP criteria feedback."""
+    explanation: Optional[str] = None
+    correct_answer: Optional[Any] = None
+    criteria_feedback: Optional[List[Dict[str, Any]]] = None  # C1/C2/C3 feedback
+
+
 class SessionOut(BaseModel):
     id: uuid.UUID
     student_id: Optional[uuid.UUID] = None
@@ -58,3 +65,5 @@ class NextQuestionOut(BaseModel):
     time_limit_seconds: Optional[int] = None
     points: int
     micro_skill_id: Optional[uuid.UUID] = None
+    interactive_config: Optional[Dict[str, Any]] = None  # includes evaluation_criteria for CONTEXTUAL_PROBLEM
+    hints: Optional[List[str]] = None

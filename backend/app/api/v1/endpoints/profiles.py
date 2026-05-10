@@ -11,7 +11,6 @@ from app.models.user import User
 from app.schemas.profile import (
     PinVerifyRequest,
     ProfileCreate,
-    ProfileOut,
     ProfileUpdate,
     WeeklyGoalRequest,
 )

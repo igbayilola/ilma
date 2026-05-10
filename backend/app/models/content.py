@@ -35,6 +35,11 @@ class QuestionType(str, enum.Enum):
     GUIDED_STEPS = "GUIDED_STEPS"
     JUSTIFICATION = "JUSTIFICATION"
     TRACING = "TRACING"
+    # Interactive types (V2.1)
+    DRAG_DROP = "DRAG_DROP"
+    INTERACTIVE_DRAW = "INTERACTIVE_DRAW"
+    CHART_INPUT = "CHART_INPUT"
+    AUDIO_COMPREHENSION = "AUDIO_COMPREHENSION"
 
 
 class GradeLevel(Base, BaseMixin):
@@ -47,7 +52,7 @@ class GradeLevel(Base, BaseMixin):
     order = Column(Integer, default=0, nullable=False)
     is_active = Column(Boolean, default=True, nullable=False)
 
-    subjects = relationship("Subject", back_populates="grade_level", order_by="Subject.order", lazy="selectin", cascade="all, delete-orphan", passive_deletes=True)
+    subjects = relationship("Subject", back_populates="grade_level", order_by="Subject.order", lazy="raise", cascade="all, delete-orphan", passive_deletes=True)
 
 
 class Subject(Base, BaseMixin):
@@ -66,7 +71,7 @@ class Subject(Base, BaseMixin):
     is_active = Column(Boolean, default=True, nullable=False)
 
     grade_level = relationship("GradeLevel", back_populates="subjects")
-    domains = relationship("Domain", back_populates="subject", order_by="Domain.order", lazy="selectin", cascade="all, delete-orphan", passive_deletes=True)
+    domains = relationship("Domain", back_populates="subject", order_by="Domain.order", lazy="raise", cascade="all, delete-orphan", passive_deletes=True)
 
 
 class Domain(Base, BaseMixin):
@@ -81,7 +86,7 @@ class Domain(Base, BaseMixin):
     is_active = Column(Boolean, default=True, nullable=False)
 
     subject = relationship("Subject", back_populates="domains")
-    skills = relationship("Skill", back_populates="domain", order_by="Skill.order", lazy="selectin", cascade="all, delete-orphan", passive_deletes=True)
+    skills = relationship("Skill", back_populates="domain", order_by="Skill.order", lazy="raise", cascade="all, delete-orphan", passive_deletes=True)
 
 
 class Skill(Base, BaseMixin):
@@ -101,9 +106,9 @@ class Skill(Base, BaseMixin):
     is_active = Column(Boolean, default=True, nullable=False)
 
     domain = relationship("Domain", back_populates="skills")
-    micro_skills = relationship("MicroSkill", back_populates="skill", order_by="MicroSkill.order", lazy="selectin", cascade="all, delete-orphan", passive_deletes=True)
-    questions = relationship("Question", back_populates="skill", lazy="selectin", cascade="all, delete-orphan", passive_deletes=True)
-    lessons = relationship("MicroLesson", back_populates="skill", lazy="selectin", cascade="all, delete-orphan", passive_deletes=True)
+    micro_skills = relationship("MicroSkill", back_populates="skill", order_by="MicroSkill.order", lazy="raise", cascade="all, delete-orphan", passive_deletes=True)
+    questions = relationship("Question", back_populates="skill", lazy="raise", cascade="all, delete-orphan", passive_deletes=True)
+    lessons = relationship("MicroLesson", back_populates="skill", lazy="raise", cascade="all, delete-orphan", passive_deletes=True)
 
 
 class MicroSkill(Base, BaseMixin):
@@ -127,8 +132,8 @@ class MicroSkill(Base, BaseMixin):
     is_active = Column(Boolean, default=True, nullable=False)
 
     skill = relationship("Skill", back_populates="micro_skills")
-    questions = relationship("Question", back_populates="micro_skill", lazy="selectin")
-    lessons = relationship("MicroLesson", back_populates="micro_skill", lazy="selectin")
+    questions = relationship("Question", back_populates="micro_skill", lazy="raise")
+    lessons = relationship("MicroLesson", back_populates="micro_skill", lazy="raise")
 
 
 class Question(Base, BaseMixin):
@@ -143,8 +148,11 @@ class Question(Base, BaseMixin):
     choices = Column(JSONB, nullable=True)
     correct_answer = Column(JSONB, nullable=False)
     explanation = Column(Text, nullable=True)
-    hint = Column(Text, nullable=True)
+    hint = Column(Text, nullable=True)  # Legacy single hint (kept for backward compat)
+    hints = Column(JSONB, nullable=True)  # Progressive hints: ["level1", "level2", "level3"]
     media_url = Column(Text, nullable=True)
+    media_references = Column(JSONB, nullable=True)    # [{id, type, url, alt_text, interactive, dimensions}]
+    interactive_config = Column(JSONB, nullable=True)   # {type, config: {zones, items, canvas, validation...}}
     points = Column(Integer, default=1, nullable=False)
     time_limit_seconds = Column(Integer, default=60, nullable=True)
     bloom_level = Column(String(50), nullable=True)
@@ -179,7 +187,9 @@ class MicroLesson(Base, BaseMixin):
     skill_id = Column(UUID(as_uuid=True), ForeignKey("skills.id", ondelete="CASCADE"), nullable=False, index=True)
     micro_skill_id = Column(UUID(as_uuid=True), ForeignKey("micro_skills.id", ondelete="SET NULL"), nullable=True, index=True)
     title = Column(String(255), nullable=False)
-    content_html = Column(Text, nullable=False)
+    content_html = Column(Text, nullable=True)  # fallback for legacy lessons without sections
+    sections = Column(JSONB, nullable=True)  # structured 4-step lesson: {activite_depart, retenons, exemples, evaluation_note}
+    formula = Column(Text, nullable=True)  # quick-reference formula for the Formulaire page
     summary = Column(Text, nullable=True)
     media_url = Column(Text, nullable=True)
     duration_minutes = Column(Integer, default=5, nullable=False)
@@ -188,6 +198,7 @@ class MicroLesson(Base, BaseMixin):
     status = Column(Enum(ContentStatus, values_callable=lambda e: [x.value for x in e]), nullable=False, default=ContentStatus.PUBLISHED)
     reviewer_notes = Column(Text, nullable=True)
     version = Column(Integer, default=1, nullable=False)
+    external_id = Column(String(100), unique=True, nullable=True, index=True)  # for upsert import
 
     skill = relationship("Skill", back_populates="lessons")
     micro_skill = relationship("MicroSkill", back_populates="lessons")

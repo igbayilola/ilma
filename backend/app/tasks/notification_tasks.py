@@ -15,11 +15,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import settings
 from app.db.session import AsyncSessionLocal
 from app.models.notification import NotificationType
+from app.models.parent_student import ParentStudent
 from app.models.profile import Profile
 from app.models.progress import Progress
 from app.models.session import ExerciseSession, SessionStatus
 from app.models.user import User, UserRole
-from app.models.parent_student import ParentStudent
 from app.services.notification_service import notification_service
 
 logger = logging.getLogger(__name__)

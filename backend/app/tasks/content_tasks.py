@@ -2,7 +2,6 @@
 import logging
 
 from sqlalchemy import func, select
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.db.session import AsyncSessionLocal
 from app.models.content import ContentStatus, Question
@@ -23,7 +22,7 @@ async def _check_question_success_rates() -> None:
     async with AsyncSessionLocal() as db:
         try:
             # Aggregate success rates for published questions with enough attempts
-            from sqlalchemy import case, literal
+            from sqlalchemy import case
 
             correct_expr = func.sum(case((Attempt.is_correct.is_(True), 1), else_=0))
             stats = await db.execute(

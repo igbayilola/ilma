@@ -26,6 +26,7 @@ def exercise_to_question_dict(exercise: ExerciseItem, micro_skill: MicroSkill) -
         "correct_answer": exercise.correct_answer,
         "explanation": exercise.explanation,
         "hint": exercise.hint,
+        "hints": exercise.hints or ([exercise.hint] if exercise.hint else None),
         "points": exercise.points,
         "time_limit_seconds": exercise.time_limit_seconds,
         "bloom_level": exercise.bloom_level,

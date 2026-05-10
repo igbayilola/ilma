@@ -18,6 +18,9 @@ logger = logging.getLogger(__name__)
 
 
 class SessionService:
+    # Calcul mental: 20 questions, filter by tag
+    CALCUL_MENTAL_QUESTION_COUNT = 20
+
     async def start_session(
         self,
         db: AsyncSession,
@@ -28,7 +31,12 @@ class SessionService:
     ) -> ExerciseSession:
         # Build question filter
         filters = [Question.is_active.is_(True)]
-        if micro_skill_id:
+
+        if mode == SessionMode.CALCUL_MENTAL:
+            # Calcul mental: filter by tag across the skill
+            filters.append(Question.skill_id == skill_id)
+            filters.append(Question.tags.contains(["calcul_mental"]))
+        elif micro_skill_id:
             filters.append(Question.micro_skill_id == micro_skill_id)
         else:
             filters.append(Question.skill_id == skill_id)
@@ -44,13 +52,18 @@ class SessionService:
                 message="Aucune question disponible pour cette compétence.",
             )
 
+        if mode == SessionMode.CALCUL_MENTAL:
+            cap = self.CALCUL_MENTAL_QUESTION_COUNT
+        else:
+            cap = 10
+
         session = ExerciseSession(
             profile_id=profile.id,
             skill_id=skill_id,
             micro_skill_id=micro_skill_id,
             mode=mode,
             status=SessionStatus.IN_PROGRESS,
-            total_questions=min(total, 10),  # Cap at 10 per session
+            total_questions=min(total, cap),
             started_at=datetime.now(timezone.utc),
         )
         db.add(session)
@@ -71,7 +84,13 @@ class SessionService:
         answered_ids = {row[0] for row in answered.all()}
 
         # Build question filter based on session scope
-        if session.micro_skill_id:
+        if session.mode == SessionMode.CALCUL_MENTAL:
+            query = select(Question).where(
+                Question.skill_id == session.skill_id,
+                Question.is_active.is_(True),
+                Question.tags.contains(["calcul_mental"]),
+            )
+        elif session.micro_skill_id:
             query = select(Question).where(
                 Question.micro_skill_id == session.micro_skill_id,
                 Question.is_active.is_(True),
@@ -90,13 +109,45 @@ class SessionService:
         if not candidates:
             return None
 
-        # Adaptive selection
-        return await self._select_adaptive(db, candidates, profile.id)
+        # Adaptive selection with question number for pedagogical progression
+        question_number = len(answered_ids) + 1  # 1-based
+        return await self._select_adaptive(db, candidates, profile.id, question_number)
+
+    # Pedagogical level preferences by question position (1-based)
+    # Q1-3: approfondissement, Q4-7: evaluation, Q8-10: consolidation
+    _PEDAGOGICAL_LEVEL_MAP = {
+        range(1, 4): "approfondissement",
+        range(4, 8): "evaluation",
+        range(8, 11): "consolidation",
+    }
+
+    def _preferred_pedagogical_level(self, question_number: int) -> str | None:
+        """Return the preferred pedagogical level for the given question position."""
+        for r, level in self._PEDAGOGICAL_LEVEL_MAP.items():
+            if question_number in r:
+                return level
+        return None
 
     async def _select_adaptive(
-        self, db: AsyncSession, candidates: list[Question], profile_id: UUID
+        self, db: AsyncSession, candidates: list[Question], profile_id: UUID,
+        question_number: int = 1,
     ) -> Question:
-        """Weighted random selection: lower micro-skill scores → higher weight."""
+        """Weighted random selection: lower micro-skill scores → higher weight.
+
+        Also applies pedagogical progression: prefer questions tagged with the
+        appropriate difficulty level based on position in the session.
+        """
+        # Try to filter by pedagogical level first
+        preferred_level = self._preferred_pedagogical_level(question_number)
+        if preferred_level:
+            level_filtered = [
+                q for q in candidates
+                if q.tags and preferred_level in q.tags
+            ]
+            if level_filtered:
+                candidates = level_filtered
+            # Fallback: if no questions match the preferred level, use all candidates
+
         max_score = await config_service.get(db, "smart_score_max")
 
         # Collect micro_skill_ids from candidates

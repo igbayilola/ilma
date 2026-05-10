@@ -10,12 +10,14 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.deps import get_current_user
+from app.core.deps import get_active_profile, get_current_user
 from app.db.session import get_db_session
 from app.models.content import GradeLevel
+from app.models.profile import Profile
 from app.models.user import User
 from app.schemas.content import DomainOut, GradeLevelOut, LessonOut, MicroSkillOut, QuestionOut, SkillOut, SubjectOut
-from app.schemas.response import ok
+from app.schemas.response import ok, paginated
+from app.services.content_cache import get_or_set as cached
 from app.services.content_service import content_service
 
 router = APIRouter(prefix="/subjects", tags=["Content"])
@@ -26,14 +28,32 @@ router = APIRouter(prefix="/subjects", tags=["Content"])
 async def list_grade_levels_public(
     db: AsyncSession = Depends(get_db_session),
 ):
-    result = await db.execute(
-        select(GradeLevel).where(GradeLevel.is_active.is_(True)).order_by(GradeLevel.order)
-    )
-    grades = result.scalars().all()
-    return ok(data=[GradeLevelOut.model_validate(g) for g in grades])
+    async def _fetch():
+        result = await db.execute(
+            select(GradeLevel).where(GradeLevel.is_active.is_(True)).order_by(GradeLevel.order)
+        )
+        grades = result.scalars().all()
+        return ok(data=[GradeLevelOut.model_validate(g).model_dump(mode="json") for g in grades])
+
+    return await cached("grade_levels", _fetch)
 
 
 # ── Static sub-routes first (avoid shadowing by /{subject_id}) ─────────────
+
+@router.get("/formulas")
+async def list_formulas(
+    db: AsyncSession = Depends(get_db_session),
+    user: User = Depends(get_current_user),
+):
+    """List all formulas and rules for the Formulaire page."""
+    gid = getattr(user, "grade_level_id", None)
+
+    async def _fetch():
+        formulas = await content_service.list_formulas(db, grade_level_id=gid)
+        return ok(data=formulas)
+
+    return await cached(f"formulas:{gid or 'all'}", _fetch)
+
 
 @router.get("/skills/{skill_id}/micro-skills")
 async def list_micro_skills(
@@ -41,8 +61,23 @@ async def list_micro_skills(
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(get_current_user),
 ):
-    micro_skills = await content_service.list_micro_skills(db, skill_id)
-    return ok(data=[MicroSkillOut.model_validate(ms) for ms in micro_skills])
+    async def _fetch():
+        micro_skills = await content_service.list_micro_skills(db, skill_id)
+        return ok(data=[MicroSkillOut.model_validate(ms).model_dump(mode="json") for ms in micro_skills])
+
+    return await cached(f"micro_skills:{skill_id}", _fetch)
+
+
+@router.get("/skills/{skill_id}/prerequisites")
+async def check_prerequisites(
+    skill_id: UUID,
+    db: AsyncSession = Depends(get_db_session),
+    profile: Profile = Depends(get_active_profile),
+):
+    """Check if the active profile meets the prerequisites for a skill."""
+    from app.services.prerequisite_service import prerequisite_service
+    result = await prerequisite_service.check_skill_prerequisites(db, profile.id, skill_id)
+    return ok(data=result)
 
 
 @router.get("/micro-skills/{micro_skill_id}")
@@ -59,11 +94,25 @@ async def get_micro_skill(
 async def list_questions(
     skill_id: UUID,
     micro_skill_id: Optional[UUID] = Query(None),
+    page: int = Query(1, ge=1),
+    page_size: int = Query(50, ge=1, le=200),
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(get_current_user),
 ):
-    questions = await content_service.list_questions(db, skill_id, micro_skill_id=micro_skill_id)
-    return ok(data=[QuestionOut.model_validate(q) for q in questions])
+    ms_part = f":{micro_skill_id}" if micro_skill_id else ""
+    cache_key = f"questions:{skill_id}{ms_part}:p{page}:{page_size}"
+
+    async def _fetch():
+        skip = (page - 1) * page_size
+        questions, total = await content_service.list_questions(
+            db, skill_id, micro_skill_id=micro_skill_id, skip=skip, limit=page_size,
+        )
+        return paginated(
+            items=[QuestionOut.model_validate(q).model_dump(mode="json") for q in questions],
+            total=total, page=page, page_size=page_size,
+        )
+
+    return await cached(cache_key, _fetch)
 
 
 @router.get("/skills/{skill_id}")
@@ -72,11 +121,14 @@ async def get_skill(
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(get_current_user),
 ):
-    skill = await content_service.get_skill(db, skill_id)
-    data = SkillOut.model_validate(skill)
-    lessons = [LessonOut.model_validate(lesson) for lesson in skill.lessons] if skill.lessons else []
-    micro_skills = [MicroSkillOut.model_validate(ms) for ms in skill.micro_skills] if skill.micro_skills else []
-    return ok(data={"skill": data, "lessons": lessons, "micro_skills": micro_skills})
+    async def _fetch():
+        skill = await content_service.get_skill(db, skill_id)
+        data = SkillOut.model_validate(skill).model_dump(mode="json")
+        lessons = [LessonOut.model_validate(lesson).model_dump(mode="json") for lesson in skill.lessons] if skill.lessons else []
+        micro_skills = [MicroSkillOut.model_validate(ms).model_dump(mode="json") for ms in skill.micro_skills] if skill.micro_skills else []
+        return ok(data={"skill": data, "lessons": lessons, "micro_skills": micro_skills})
+
+    return await cached(f"skill:{skill_id}", _fetch)
 
 
 # ── Subject-scoped routes ───────────────────────────────────────────────────
@@ -87,20 +139,32 @@ async def list_subjects(
     db: AsyncSession = Depends(get_db_session),
     user: User = Depends(get_current_user),
 ):
-    # Default to user's grade_level_id if not specified
     gid = grade_level_id or getattr(user, "grade_level_id", None)
-    subjects = await content_service.list_subjects(db, grade_level_id=gid)
-    return ok(data=[SubjectOut.model_validate(s) for s in subjects])
+
+    async def _fetch():
+        subjects = await content_service.list_subjects(db, grade_level_id=gid)
+        return ok(data=[SubjectOut.model_validate(s).model_dump(mode="json") for s in subjects])
+
+    return await cached(f"subjects:{gid or 'all'}", _fetch)
 
 
 @router.get("/{subject_id}/chapters/{domain_id}/skills")
 async def list_skills(
     domain_id: UUID,
+    page: int = Query(1, ge=1),
+    page_size: int = Query(50, ge=1, le=200),
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(get_current_user),
 ):
-    skills = await content_service.list_skills(db, domain_id)
-    return ok(data=[SkillOut.model_validate(s) for s in skills])
+    async def _fetch():
+        skip = (page - 1) * page_size
+        skills, total = await content_service.list_skills(db, domain_id, skip=skip, limit=page_size)
+        return paginated(
+            items=[SkillOut.model_validate(s).model_dump(mode="json") for s in skills],
+            total=total, page=page, page_size=page_size,
+        )
+
+    return await cached(f"skills:{domain_id}:p{page}:{page_size}", _fetch)
 
 
 @router.get("/{subject_id}/chapters")
@@ -109,23 +173,34 @@ async def list_domains(
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(get_current_user),
 ):
-    domains = await content_service.list_domains(db, subject_id)
-    return ok(data=[DomainOut.model_validate(d) for d in domains])
+    async def _fetch():
+        domains = await content_service.list_domains(db, subject_id)
+        return ok(data=[DomainOut.model_validate(d).model_dump(mode="json") for d in domains])
+
+    return await cached(f"domains:{subject_id}", _fetch)
 
 
 @router.get("/{subject_id}/skills")
 async def list_skills_by_subject(
     subject_id: UUID,
+    page: int = Query(1, ge=1),
+    page_size: int = Query(50, ge=1, le=200),
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(get_current_user),
 ):
-    skills = await content_service.list_skills_by_subject(db, subject_id)
-    data = []
-    for s in skills:
-        d = SkillOut.model_validate(s).model_dump()
-        d["domain_name"] = s.domain.name if s.domain else None
-        data.append(d)
-    return ok(data=data)
+    async def _fetch():
+        skip = (page - 1) * page_size
+        skills, total = await content_service.list_skills_by_subject(
+            db, subject_id, skip=skip, limit=page_size,
+        )
+        items = []
+        for s in skills:
+            d = SkillOut.model_validate(s).model_dump(mode="json")
+            d["domain_name"] = s.domain.name if s.domain else None
+            items.append(d)
+        return paginated(items=items, total=total, page=page, page_size=page_size)
+
+    return await cached(f"skills_by_subject:{subject_id}:p{page}:{page_size}", _fetch)
 
 
 @router.get("/{subject_id}")
@@ -134,5 +209,8 @@ async def get_subject(
     db: AsyncSession = Depends(get_db_session),
     _user: User = Depends(get_current_user),
 ):
-    subj = await content_service.get_subject(db, subject_id)
-    return ok(data=SubjectOut.model_validate(subj))
+    async def _fetch():
+        subj = await content_service.get_subject(db, subject_id)
+        return ok(data=SubjectOut.model_validate(subj).model_dump(mode="json"))
+
+    return await cached(f"subject:{subject_id}", _fetch)

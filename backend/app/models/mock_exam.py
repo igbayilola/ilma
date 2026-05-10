@@ -42,8 +42,8 @@ class ExamItem(Base, BaseMixin):
     points = Column(Float, default=6.67)  # ~20/3 per item
     order = Column(Integer, default=0)
 
-    mock_exam = relationship("MockExam", back_populates="items", lazy="selectin")
-    sub_questions = relationship("ExamSubQuestion", back_populates="exam_item", lazy="selectin", order_by="ExamSubQuestion.order")
+    mock_exam = relationship("MockExam", back_populates="items", lazy="raise")
+    sub_questions = relationship("ExamSubQuestion", back_populates="exam_item", lazy="raise", order_by="ExamSubQuestion.order")
 
 
 class ExamSubQuestion(Base, BaseMixin):
@@ -63,8 +63,8 @@ class ExamSubQuestion(Base, BaseMixin):
     order = Column(Integer, default=0)
     skill_id = Column(UUID(as_uuid=True), ForeignKey("skills.id", ondelete="SET NULL"), nullable=True)  # Link to curriculum skill
 
-    exam_item = relationship("ExamItem", back_populates="sub_questions", lazy="selectin")
-    skill = relationship("Skill", lazy="selectin")
+    exam_item = relationship("ExamItem", back_populates="sub_questions", lazy="raise")
+    skill = relationship("Skill", lazy="raise")
 
 
 class ExamSession(Base, BaseMixin):
@@ -83,5 +83,5 @@ class ExamSession(Base, BaseMixin):
     answers = Column(JSONB, default=list)  # [{question_id, answer, correct, time_seconds}] or [{item_number, sub_label, answer, correct, points_earned, time_seconds}]
     status = Column(String(20), default="in_progress", nullable=False)  # in_progress, completed, abandoned
 
-    profile = relationship("Profile", lazy="selectin")
-    mock_exam = relationship("MockExam", back_populates="sessions", lazy="selectin")
+    profile = relationship("Profile", lazy="raise")
+    mock_exam = relationship("MockExam", back_populates="sessions", lazy="selectin")  # Always needed in exam_service

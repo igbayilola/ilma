@@ -39,12 +39,12 @@ class User(Base, BaseMixin):
     # Relationships
     grade_level = relationship("GradeLevel", lazy="selectin")
     profiles = relationship("Profile", back_populates="user", lazy="selectin")
-    notifications = relationship("Notification", back_populates="user", lazy="selectin")
+    notifications = relationship("Notification", back_populates="user", lazy="raise")
 
     # Parent-student relationships (legacy — kept for migration period)
     children = relationship(
-        "ParentStudent", foreign_keys="ParentStudent.parent_id", back_populates="parent", lazy="selectin"
+        "ParentStudent", foreign_keys="ParentStudent.parent_id", back_populates="parent", lazy="raise"
     )
     parents = relationship(
-        "ParentStudent", foreign_keys="ParentStudent.student_id", back_populates="student", lazy="selectin"
+        "ParentStudent", foreign_keys="ParentStudent.student_id", back_populates="student", lazy="raise"
     )

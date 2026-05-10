@@ -29,7 +29,7 @@ class Badge(Base, BaseMixin):
     category = Column(Enum(BadgeCategory), nullable=False, default=BadgeCategory.COMPLETION)
     criteria = Column(JSONB, nullable=True)
 
-    student_badges = relationship("StudentBadge", back_populates="badge", lazy="selectin")
+    student_badges = relationship("StudentBadge", back_populates="badge", lazy="raise")
 
 
 class StudentBadge(Base, BaseMixin):

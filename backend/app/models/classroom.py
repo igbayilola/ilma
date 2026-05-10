@@ -18,10 +18,10 @@ class Classroom(Base, BaseMixin):
     max_students = Column(Integer, default=30, nullable=False)
 
     # Relationships
-    teacher = relationship("User", foreign_keys=[teacher_id], lazy="selectin")
+    teacher = relationship("User", foreign_keys=[teacher_id], lazy="raise")
     grade_level = relationship("GradeLevel", lazy="selectin")
-    students = relationship("ClassroomStudent", back_populates="classroom", lazy="selectin")
-    assignments = relationship("Assignment", back_populates="classroom", lazy="selectin")
+    students = relationship("ClassroomStudent", back_populates="classroom", lazy="raise")
+    assignments = relationship("Assignment", back_populates="classroom", lazy="raise")
 
 
 class ClassroomStudent(Base, BaseMixin):
@@ -54,4 +54,4 @@ class Assignment(Base, BaseMixin):
     # Relationships
     classroom = relationship("Classroom", back_populates="assignments")
     skill = relationship("Skill", lazy="selectin")
-    creator = relationship("User", foreign_keys=[created_by], lazy="selectin")
+    creator = relationship("User", foreign_keys=[created_by], lazy="raise")

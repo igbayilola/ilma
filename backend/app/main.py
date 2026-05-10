@@ -1,10 +1,12 @@
 import logging
 import os
+import pathlib
 from contextlib import asynccontextmanager
 
 import sentry_sdk
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.staticfiles import StaticFiles
 
 from app.api.v1.api import api_router
 from app.core.config import settings
@@ -19,8 +21,9 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(name)s %(message)s",
 )
 
-# Sentry error monitoring
-if os.environ.get("SENTRY_DSN"):
+# Sentry error monitoring — opt-in to avoid sending data to EU/US without APDP authorization.
+# Set SENTRY_ENABLED=true only when DSN points to an APDP-compliant host (self-hosted GlitchTip / Sentry in Africa).
+if os.environ.get("SENTRY_DSN") and os.environ.get("SENTRY_ENABLED", "false").lower() == "true":
     sentry_sdk.init(
         dsn=os.environ["SENTRY_DSN"],
         traces_sample_rate=0.2,
@@ -80,3 +83,7 @@ async def read_root():
 
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+_static_dir = pathlib.Path(__file__).resolve().parent.parent / "static"
+if _static_dir.is_dir():
+    app.mount("/static", StaticFiles(directory=str(_static_dir)), name="static")

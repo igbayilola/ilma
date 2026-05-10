@@ -1,4 +1,5 @@
 """Exercise session endpoints: start, next, attempt, complete."""
+from typing import Any, Dict, List
 from uuid import UUID
 
 from fastapi import APIRouter, Depends
@@ -6,6 +7,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.deps import get_active_profile
+from app.core.exceptions import AppException
 from app.db.session import get_db_session
 from app.models.content import Question
 from app.models.profile import Profile
@@ -17,10 +19,37 @@ from app.schemas.session import (
     SessionOut,
     SessionStartRequest,
 )
-from app.core.exceptions import AppException
 from app.services.progress_service import progress_service
 from app.services.session_service import session_service
 from app.services.subscription_service import subscription_service
+
+
+def _build_criteria_feedback(
+    criteria: Dict[str, Any],
+    student_answer: Any,
+) -> List[Dict[str, Any]]:
+    """Build C1/C2/C3 feedback for a contextual problem.
+
+    Each criterion in the evaluation_criteria dict has:
+        {
+            "C1": {"label": "Interprétation", "description": "...", "guide": "..."},
+            "C2": {"label": "Utilisation des outils", "description": "...", "guide": "..."},
+            "C3": {"label": "Cohérence de la réponse", "description": "...", "guide": "..."}
+        }
+
+    Returns a list of feedback items for the frontend to display.
+    """
+    feedback = []
+    for key in sorted(criteria.keys()):
+        criterion = criteria[key]
+        feedback.append({
+            "code": key,
+            "label": criterion.get("label", key),
+            "description": criterion.get("description", ""),
+            "guide": criterion.get("guide", ""),
+        })
+    return feedback
+
 
 router = APIRouter(prefix="/sessions", tags=["Sessions"])
 
@@ -40,11 +69,19 @@ async def start_session(
             message="Tu as atteint ta limite quotidienne d'exercices gratuits. Passe en Premium pour continuer !",
         )
 
+    # Check prerequisites (non-blocking warning)
+    from app.services.prerequisite_service import prerequisite_service
+    prereq_check = await prerequisite_service.check_skill_prerequisites(db, profile.id, body.skill_id)
+
     session = await session_service.start_session(
         db, profile, body.skill_id, body.mode, micro_skill_id=body.micro_skill_id
     )
     await db.commit()
-    return ok(data=SessionOut.model_validate(session))
+
+    data = SessionOut.model_validate(session).model_dump(mode="json")
+    if not prereq_check["met"]:
+        data["prerequisites_warning"] = prereq_check["prerequisites"]
+    return ok(data=data)
 
 
 @router.get("/{session_id}/next")
@@ -67,6 +104,8 @@ async def get_next_question(
             time_limit_seconds=question.time_limit_seconds,
             points=question.points,
             micro_skill_id=question.micro_skill_id,
+            interactive_config=question.interactive_config,
+            hints=question.hints,
         )
     )
 
@@ -98,7 +137,27 @@ async def record_attempt(
         )
 
     await db.commit()
-    return ok(data=AttemptOut.model_validate(attempt))
+
+    # Build enriched response with feedback for incorrect contextual problems
+    from app.models.content import QuestionType
+    base = AttemptOut.model_validate(attempt)
+    feedback_data = base.model_dump(mode="json")
+    feedback_data["explanation"] = question.explanation if question else None
+    feedback_data["correct_answer"] = question.correct_answer if question else None
+
+    if (
+        question
+        and not attempt.is_correct
+        and question.question_type == QuestionType.CONTEXTUAL_PROBLEM
+        and question.interactive_config
+        and "evaluation_criteria" in question.interactive_config
+    ):
+        feedback_data["criteria_feedback"] = _build_criteria_feedback(
+            question.interactive_config["evaluation_criteria"],
+            body.answer,
+        )
+
+    return ok(data=feedback_data)
 
 
 @router.post("/{session_id}/complete")

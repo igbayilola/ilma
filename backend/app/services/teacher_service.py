@@ -8,7 +8,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import AppException, ConflictException, ForbiddenException, NotFoundException
 from app.models.classroom import Assignment, Classroom, ClassroomStudent
-from app.models.profile import Profile
 from app.models.session import ExerciseSession, SessionStatus
 
 

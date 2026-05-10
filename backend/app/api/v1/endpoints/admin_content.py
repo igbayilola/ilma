@@ -5,7 +5,7 @@ import json
 from typing import Any, Dict, List, Optional
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, Query, Request, UploadFile
+from fastapi import APIRouter, Body, Depends, Query, Request, UploadFile
 from sqlalchemy import case, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -13,12 +13,23 @@ from sqlalchemy.orm import selectinload
 from app.core.deps import require_role
 from app.core.exceptions import AppException, NotFoundException
 from app.db.session import get_db_session
-from app.models.content import ContentStatus, ContentVersion, Domain, GradeLevel, MicroLesson, MicroSkill, Question, QuestionComment, QuestionType, Skill, Subject
+from app.models.content import (
+    ContentStatus,
+    ContentVersion,
+    Domain,
+    GradeLevel,
+    MicroLesson,
+    MicroSkill,
+    Question,
+    QuestionComment,
+    QuestionType,
+    Skill,
+    Subject,
+)
 from app.models.content_audit import ContentTransition
 from app.models.user import User, UserRole
 from app.schemas.content import (
     BulkExerciseImportRequest,
-    BulkExerciseImportResult,
     BulkImportReport,
     BulkImportRowError,
     ContentVersionListOut,
@@ -28,7 +39,6 @@ from app.schemas.content import (
     DomainOut,
     DomainUpdate,
     ExerciseFileImportRequest,
-    ExerciseItem,
     GradeLevelCreate,
     GradeLevelOut,
     GradeLevelUpdate,
@@ -54,10 +64,10 @@ from app.schemas.content import (
 from app.schemas.response import ok
 from app.services.curriculum_import_service import import_curriculum
 from app.services.exercise_import_service import (
-    exercise_to_question_dict as _exercise_to_question_dict,
     import_exercises_file,
     import_exercises_for_micro_skill,
 )
+
 
 async def _invalidate_content_cache_on_write(request: Request):
     """Dependency: invalidate content Redis cache after a successful write.
@@ -819,6 +829,40 @@ async def import_exercises_file_upload(
         raise AppException(status_code=400, code="VALIDATION_ERROR", message=f"Format invalide : {e}")
     stats = await import_exercises_file(db, payload)
     return ok(data=stats.model_dump())
+
+
+# ── Structured Lesson Import ────────────────────────────────
+
+
+@router.post("/lessons/import", status_code=201, summary="Bulk import structured lessons (JSON body)")
+async def import_lessons_bulk(
+    body: Dict[str, Any] = Body(...),
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    """Import structured lessons (4-step GADO format) from a JSON body."""
+    from app.services.lesson_import_service import import_lessons_file
+    stats = await import_lessons_file(db, body)
+    return ok(data=stats)
+
+
+@router.post("/lessons/import/file", status_code=201, summary="Bulk import structured lessons from uploaded JSON file")
+async def import_lessons_file_upload(
+    file: UploadFile,
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    """Import structured lessons from an uploaded JSON file."""
+    if not file.filename or not file.filename.endswith(".json"):
+        raise AppException(status_code=400, code="INVALID_FILE", message="Seuls les fichiers JSON sont acceptés.")
+    content = await file.read()
+    try:
+        raw = json.loads(content.decode("utf-8-sig"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        raise AppException(status_code=400, code="INVALID_JSON", message=f"JSON invalide : {e}")
+    from app.services.lesson_import_service import import_lessons_file
+    stats = await import_lessons_file(db, raw)
+    return ok(data=stats)
 
 
 # ── Content Workflow (status transitions) ─────────────────────

@@ -128,6 +128,8 @@ class SkillBase(BaseModel):
     name: str
     slug: str
     description: Optional[str] = None
+    external_id: Optional[str] = None
+    prerequisites: Optional[List[str]] = None
     order: int = 0
     is_active: bool = True
 
@@ -196,7 +198,10 @@ class QuestionBase(BaseModel):
     correct_answer: object
     explanation: Optional[str] = None
     hint: Optional[str] = None
+    hints: Optional[List[str]] = None
     media_url: Optional[str] = None
+    media_references: Optional[List[Dict[str, Any]]] = None
+    interactive_config: Optional[Dict[str, Any]] = None
     points: int = Field(default=1, ge=1)
     time_limit_seconds: Optional[int] = 60
     bloom_level: Optional[str] = None
@@ -245,6 +250,7 @@ class QuestionUpdate(BaseModel):
     correct_answer: Optional[object] = None
     explanation: Optional[str] = None
     hint: Optional[str] = None
+    hints: Optional[List[str]] = None
     points: Optional[int] = None
     time_limit_seconds: Optional[int] = None
     bloom_level: Optional[str] = None
@@ -264,9 +270,24 @@ class QuestionOut(QuestionBase):
 
 
 # ── Micro Lesson ───────────────────────────────────────────
+class LessonSectionBlock(BaseModel):
+    title: Optional[str] = None
+    body_html: str
+    rules: Optional[List[str]] = None  # used in "retenons" section
+
+
+class LessonSections(BaseModel):
+    activite_depart: Optional[LessonSectionBlock] = None
+    retenons: Optional[LessonSectionBlock] = None
+    exemples: Optional[LessonSectionBlock] = None
+    evaluation_note: Optional[LessonSectionBlock] = None
+
+
 class LessonBase(BaseModel):
     title: str
-    content_html: str
+    content_html: Optional[str] = None  # nullable — structured lessons use sections instead
+    sections: Optional[Dict[str, Any]] = None  # structured 4-step lesson
+    formula: Optional[str] = None  # quick-reference formula
     summary: Optional[str] = None
     media_url: Optional[str] = None
     duration_minutes: int = 5
@@ -277,11 +298,14 @@ class LessonBase(BaseModel):
 class LessonCreate(LessonBase):
     skill_id: uuid.UUID
     micro_skill_id: Optional[uuid.UUID] = None
+    external_id: Optional[str] = None
 
 
 class LessonUpdate(BaseModel):
     title: Optional[str] = None
     content_html: Optional[str] = None
+    sections: Optional[Dict[str, Any]] = None
+    formula: Optional[str] = None
     summary: Optional[str] = None
     media_url: Optional[str] = None
     duration_minutes: Optional[int] = None
@@ -293,6 +317,7 @@ class LessonOut(LessonBase):
     id: uuid.UUID
     skill_id: uuid.UUID
     micro_skill_id: Optional[uuid.UUID] = None
+    external_id: Optional[str] = None
     version: int = 1
     model_config = ConfigDict(from_attributes=True)
 
@@ -332,6 +357,7 @@ class ExerciseBase(BaseModel):
     correct_answer: Any
     explanation: Optional[str] = None
     hint: Optional[str] = None
+    hints: Optional[List[str]] = None
     points: int = 1
     time_limit_seconds: Optional[int] = 60
     bloom_level: Optional[str] = None

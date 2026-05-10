@@ -1,10 +1,10 @@
 """Admin service: user management, analytics, exports."""
 import csv
 import io
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 from uuid import UUID
 
-from sqlalchemy import Integer, case, cast, Date, func, select
+from sqlalchemy import Integer, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import NotFoundException

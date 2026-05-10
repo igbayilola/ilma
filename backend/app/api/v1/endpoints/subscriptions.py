@@ -66,6 +66,7 @@ async def init_payment(
     else:
         # Fall back to auto-select single profile
         from sqlalchemy import select as sa_select
+
         from app.models.profile import Profile as ProfileModel
         result = await db.execute(
             sa_select(ProfileModel).where(

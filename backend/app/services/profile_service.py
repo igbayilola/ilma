@@ -8,8 +8,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import AppException, NotFoundException
 from app.models.profile import Profile
-from app.models.subscription import PlanTier, Subscription, SubscriptionStatus
-from app.models.user import User, UserRole
+from app.models.subscription import Subscription, SubscriptionStatus
+from app.models.user import User
 
 pin_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -143,7 +143,7 @@ class ProfileService:
         return {
             "id": str(profile.id),
             "display_name": profile.display_name,
-            "avatar_url": profile.avatar_url or f"https://api.dicebear.com/7.x/avataaars/svg?seed={str(profile.id)[:8]}",
+            "avatar_url": profile.avatar_url or f"/api/v1/avatars/{str(profile.id)[:24]}.svg",
             "grade_level_id": str(profile.grade_level_id) if profile.grade_level_id else None,
             "is_active": profile.is_active,
             "has_pin": profile.pin_hash is not None,

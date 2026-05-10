@@ -3,7 +3,9 @@ from fastapi import APIRouter
 from app.api.v1.endpoints import (
     admin,
     admin_content,
+    analytics,
     auth,
+    avatars,
     badges,
     content,
     exams,
@@ -12,6 +14,7 @@ from app.api.v1.endpoints import (
     offline,
     profiles,
     progress,
+    search,
     sessions,
     social,
     subscriptions,
@@ -29,8 +32,14 @@ api_router.include_router(auth.router, prefix="/auth")
 # Profiles (Netflix-style child profiles)
 api_router.include_router(profiles.router)
 
+# Avatars (local SVG generator — no external calls)
+api_router.include_router(avatars.router)
+
 # Content (public read)
 api_router.include_router(content.router)
+
+# Search
+api_router.include_router(search.router)
 
 # Sessions + exercises
 api_router.include_router(sessions.router)
@@ -55,6 +64,9 @@ api_router.include_router(social.router)
 
 # Notifications
 api_router.include_router(notifications.router)
+
+# Analytics
+api_router.include_router(analytics.router)
 
 # Teacher (Espace Enseignant)
 api_router.include_router(teacher.router)

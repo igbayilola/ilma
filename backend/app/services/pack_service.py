@@ -143,6 +143,7 @@ class PackService:
                     "correct_answer": q.correct_answer,
                     "explanation": q.explanation,
                     "hint": q.hint,
+                    "hints": q.hints,
                     "media_url": q.media_url,
                     "points": q.points,
                     "time_limit_seconds": q.time_limit_seconds,
@@ -152,16 +153,18 @@ class PackService:
             ],
             "lessons": [
                 {
-                    "id": str(l.id),
-                    "micro_skill_id": str(l.micro_skill_id) if l.micro_skill_id else None,
-                    "title": l.title,
-                    "content_html": l.content_html,
-                    "summary": l.summary,
-                    "media_url": l.media_url,
-                    "duration_minutes": l.duration_minutes,
-                    "order": l.order,
+                    "id": str(lesson.id),
+                    "micro_skill_id": str(lesson.micro_skill_id) if lesson.micro_skill_id else None,
+                    "title": lesson.title,
+                    "content_html": lesson.content_html,
+                    "sections": lesson.sections,
+                    "formula": lesson.formula,
+                    "summary": lesson.summary,
+                    "media_url": lesson.media_url,
+                    "duration_minutes": lesson.duration_minutes,
+                    "order": lesson.order,
                 }
-                for l in lessons
+                for lesson in lessons
             ],
             "generated_at": datetime.now(timezone.utc).isoformat(),
         }

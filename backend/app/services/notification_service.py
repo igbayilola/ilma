@@ -8,7 +8,7 @@ from sqlalchemy import delete, func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
-from app.models.notification import Notification, NotificationChannel, NotificationStatus, NotificationType
+from app.models.notification import Notification, NotificationChannel, NotificationType
 from app.models.push_subscription import PushSubscription
 
 logger = logging.getLogger(__name__)
@@ -78,7 +78,7 @@ class WebPushProvider(NotificationProvider):
 
     def __init__(self) -> None:
         try:
-            from pywebpush import webpush, WebPushException  # type: ignore[import-untyped]
+            from pywebpush import WebPushException, webpush  # type: ignore[import-untyped]
             self._webpush = webpush
             self._WebPushException = WebPushException
             self.available = True
@@ -237,11 +237,11 @@ class NotificationService:
         notif = await self.create(db, user_id, type, title, body, data, NotificationChannel.IN_APP)
 
         # Also send push (tracked separately)
-        push_notif = await self.create(db, user_id, type, title, body, data, NotificationChannel.PUSH)
+        await self.create(db, user_id, type, title, body, data, NotificationChannel.PUSH)
 
         # Also send SMS if phone number is available (tracked separately)
         if phone:
-            sms_notif = await self.create(db, user_id, type, title, body, data, NotificationChannel.SMS)
+            await self.create(db, user_id, type, title, body, data, NotificationChannel.SMS)
 
         return notif
 

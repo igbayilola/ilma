@@ -3,7 +3,7 @@ import json
 import logging
 from typing import Any
 
-from sqlalchemy import select, update
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.app_config import AppConfig
@@ -48,6 +48,7 @@ def _get_redis():
     """Get a Redis client, returns None if unavailable."""
     try:
         import redis.asyncio as aioredis
+
         from app.core.config import settings
         return aioredis.from_url(
             f"redis://{settings.REDIS_HOST}:{settings.REDIS_PORT}",

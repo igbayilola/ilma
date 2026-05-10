@@ -9,7 +9,8 @@ from app.core.deps import get_current_user
 from app.core.exceptions import AppException
 from app.core.security import create_access_token, create_refresh_token
 from app.db.session import get_db_session
-from app.models.user import User as UserModel, UserRole
+from app.models.user import User as UserModel
+from app.models.user import UserRole
 from app.repositories.user_repository import user_repository
 from app.schemas.auth import (
     LoginRequest,
@@ -41,7 +42,7 @@ def _build_auth_response(user: UserModel, access_token: str, refresh_token: str)
                 profiles.append({
                     "id": str(p.id),
                     "display_name": p.display_name,
-                    "avatar_url": p.avatar_url or f"https://api.dicebear.com/7.x/avataaars/svg?seed={str(p.id)[:8]}",
+                    "avatar_url": p.avatar_url or f"/api/v1/avatars/{str(p.id)[:24]}.svg",
                     "grade_level_id": str(p.grade_level_id) if p.grade_level_id else None,
                     "is_active": p.is_active,
                     "has_pin": p.pin_hash is not None,

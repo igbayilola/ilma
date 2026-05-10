@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import NotFoundException
 from app.models.profile import Profile
-from app.models.session import ExerciseSession, SessionStatus
+from app.models.session import ExerciseSession
 from app.models.subscription import (
     Payment,
     PaymentProvider,

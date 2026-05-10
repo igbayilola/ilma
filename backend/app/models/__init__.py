@@ -18,3 +18,4 @@ from app.models.social import WeeklyLeaderboard, Challenge, ChallengeStatus  # n
 from app.models.classroom import Classroom, ClassroomStudent, Assignment  # noqa
 from app.models.content_audit import ContentTransition  # noqa
 from app.models.mock_exam import MockExam, ExamItem, ExamSubQuestion, ExamSession  # noqa
+from app.models.analytics import AnalyticsEvent  # noqa
