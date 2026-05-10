@@ -5,6 +5,24 @@
 
 ---
 
+## PHASE PRIORITAIRE 90 JOURS — « Vers world-class » (M5-M7 2026)
+
+> Ajout 2026-05-10. Bundle issu de la synthèse des 7 audits (cf. `audit_*.md`).
+> Détail complet : **[`ROADMAP_90D.md`](./ROADMAP_90D.md)** (sprints, owners, DoD, fichiers à toucher pour Sprint 1).
+
+Objectif : passer de 4.8/10 (moyenne audits) à ≥ 7/10 en levant les 4 marqueurs world-class qui manquent face à IXL :
+
+1. **Apprentissage adaptatif** — diagnostic d'entrée (3 tiers) + worked-solutions + détection à risque (Sprints 1-3)
+2. **Conformité légale** — APDP, DPO, consentement parental, droit à l'oubli, fin Sentry-EU et DiceBear (Sprint 1)
+3. **Premium-trigger pédagogique** — examens blancs CEP + score prédictif "X/20 au CEP" (Sprints 4-5)
+4. **Présence acquisition** — Play Store TWA + Mobile Money natif + Espace Enseignant V1-min (Sprints 5-6)
+
+Hors-périmètre 90j (à staffer Q3) : RN, Ilo, vidéo, Fon/Yoruba, pair-tutoring.
+
+Ce bundle **réutilise** les tickets existants ci-dessous (P1-TWA, P2-2, P2-1 V1-min) et **ajoute** ceux qui manquent (diagnostic, worked-solutions, risk detection, conformité APDP, MTN MoMo natif).
+
+---
+
 ## PHASE 1 : QUICK WINS (Mois 1-2 — Mars-Avril 2026)
 
 ### QW-1 : Hook de Rappel Quotidien sur le Dashboard (2j)
