@@ -45,3 +45,9 @@ frontend/.vite/
 # Docs (keep binaries out of git)
 *.docx
 *.pdf
+
+# Local working artifacts (data dumps, audit intermediates, generated media, backups)
+/cm2_maths/
+/content/v2/
+backend/static/
+docker-compose.yml.bkpilma
