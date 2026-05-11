@@ -55,6 +55,7 @@ export interface Profile {
   hasPin: boolean;
   subscriptionTier: SubscriptionTier;
   weeklyGoalMinutes: number;
+  diagnosticCompletedAt?: string | null;
 }
 
 export enum PaymentProvider {

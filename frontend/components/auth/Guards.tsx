@@ -50,6 +50,7 @@ export const RoleRoute: React.FC<RoleRouteProps> = ({ allowedRoles }) => {
  */
 export const RequireProfile: React.FC = () => {
   const { activeProfile, profiles, isLoading } = useAuthStore();
+  const location = useLocation();
 
   if (isLoading) {
     return <div className="p-10 text-center"><Skeleton variant="text" className="w-1/2 mx-auto"/></div>;
@@ -58,6 +59,17 @@ export const RequireProfile: React.FC = () => {
   // If no active profile and more than 1 profile → go to selector
   if (!activeProfile && profiles.length !== 1) {
     return <Navigate to="/select-profile" replace />;
+  }
+
+  // First-login: redirect student to /diagnostic if not yet completed
+  // (skip if already on /diagnostic to avoid loops)
+  const effectiveProfile = activeProfile || profiles[0];
+  if (
+    effectiveProfile &&
+    !effectiveProfile.diagnosticCompletedAt &&
+    !location.pathname.endsWith('/diagnostic')
+  ) {
+    return <Navigate to="/app/student/diagnostic" replace />;
   }
 
   return <Outlet />;

@@ -48,6 +48,7 @@ def _build_auth_response(user: UserModel, access_token: str, refresh_token: str)
                     "has_pin": p.pin_hash is not None,
                     "subscription_tier": "free",
                     "weekly_goal_minutes": p.weekly_goal_minutes,
+                    "diagnostic_completed_at": p.diagnostic_completed_at.isoformat() if p.diagnostic_completed_at else None,
                 })
     return {
         "access_token": access_token,

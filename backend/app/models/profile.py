@@ -18,6 +18,7 @@ class Profile(Base, BaseMixin):
     is_active = Column(Boolean, default=True, nullable=False)
     scheduled_purge_at = Column(DateTime(timezone=True), nullable=True)
     weekly_goal_minutes = Column(Integer, default=120)
+    diagnostic_completed_at = Column(DateTime(timezone=True), nullable=True)
 
     # Relationships
     user = relationship("User", back_populates="profiles")

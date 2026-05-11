@@ -12,6 +12,7 @@ function mapProfile(p: any): Profile {
         hasPin: p.has_pin ?? p.hasPin ?? false,
         subscriptionTier: ((p.subscription_tier || p.subscriptionTier || '').toUpperCase() || SubscriptionTier.FREE) as SubscriptionTier,
         weeklyGoalMinutes: p.weekly_goal_minutes ?? p.weeklyGoalMinutes ?? 120,
+        diagnosticCompletedAt: p.diagnostic_completed_at ?? p.diagnosticCompletedAt ?? null,
     };
 }
 

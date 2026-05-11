@@ -59,6 +59,7 @@ const SkillsPage = lazyNamed(() => import('./pages/student/Skills'), 'SkillsPage
 const SkillDetailPage = lazyNamed(() => import('./pages/student/SkillDetail'), 'SkillDetailPage');
 const CalculMentalPage = lazyNamed(() => import('./pages/student/CalculMental'), 'CalculMentalPage');
 const FormulairePage = lazyNamed(() => import('./pages/student/Formulaire'), 'FormulairePage');
+const DiagnosticPage = lazyNamed(() => import('./pages/student/Diagnostic'), 'DiagnosticPage');
 const ExercisePlayerPage = lazyNamed(() => import('./pages/student/ExercisePlayer'), 'ExercisePlayerPage');
 const MicroLessonPage = lazyNamed(() => import('./pages/student/MicroLesson'), 'MicroLessonPage');
 const ProgressPage = lazyNamed(() => import('./pages/student/Progress'), 'ProgressPage');
@@ -220,6 +221,7 @@ const App: React.FC = () => {
                                         <Route path="lesson/:id" element={<MicroLessonPage />} />
                                         <Route path="calcul-mental" element={<CalculMentalPage />} />
                                         <Route path="formulaire" element={<FormulairePage />} />
+                                        <Route path="diagnostic" element={<DiagnosticPage />} />
 
                                         <Route path="progress" element={<ProgressPage />} />
                                         <Route path="badges" element={<BadgesPage />} />

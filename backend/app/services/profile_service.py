@@ -149,6 +149,7 @@ class ProfileService:
             "has_pin": profile.pin_hash is not None,
             "subscription_tier": tier,
             "weekly_goal_minutes": profile.weekly_goal_minutes,
+            "diagnostic_completed_at": profile.diagnostic_completed_at.isoformat() if profile.diagnostic_completed_at else None,
         }
 
 

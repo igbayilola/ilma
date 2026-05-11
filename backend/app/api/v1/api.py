@@ -8,6 +8,7 @@ from app.api.v1.endpoints import (
     avatars,
     badges,
     content,
+    diagnostic,
     exams,
     health,
     notifications,
@@ -58,6 +59,9 @@ api_router.include_router(subscriptions.router)
 
 # Mock exams (Examens Blancs CEP)
 api_router.include_router(exams.router)
+
+# Diagnostic onboarding
+api_router.include_router(diagnostic.router)
 
 # Social (leaderboard + challenges)
 api_router.include_router(social.router)
