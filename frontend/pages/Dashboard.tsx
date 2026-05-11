@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Card, Badge } from '../components/ui/Cards';
+import { CEPPredictionCard } from '../components/dashboard/CEPPredictionCard';
 import { Button } from '../components/ui/Button';
 import { Skeleton } from '../components/ui/Skeleton';
 import { StreakWidget } from '../components/ilma/Gamification';
@@ -429,6 +430,9 @@ export const Dashboard: React.FC = () => {
 
       {/* 2d. Rule of the Day */}
       <RuleDuJourWidget skillsProgress={skillsProgress} />
+
+      {/* 2e. CEP Prediction Card */}
+      <CEPPredictionCard />
 
       {/* 3. Subjects Grid */}
       <section>

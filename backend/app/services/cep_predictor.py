@@ -38,7 +38,13 @@ async def predict_cep_score(
     grade_level_id = profile.grade_level_id
 
     skill_q = (
-        select(Skill.id, Skill.name, Skill.cep_frequency, Domain.subject_id)
+        select(
+            Skill.id,
+            Skill.name,
+            Skill.cep_frequency,
+            Skill.domain_id,
+            Domain.subject_id,
+        )
         .join(Domain, Domain.id == Skill.domain_id)
         .join(Subject, Subject.id == Domain.subject_id)
         .where(Skill.is_active.is_(True))
@@ -101,6 +107,8 @@ async def predict_cep_score(
                 "name": row.name,
                 "smart_score": round(score, 1),
                 "cep_frequency": int(row.cep_frequency or 0),
+                "subject_id": str(row.subject_id),
+                "domain_id": str(row.domain_id),
             })
 
     weighted_avg = (weighted_score_sum / total_weight) if total_weight > 0 else 0.0

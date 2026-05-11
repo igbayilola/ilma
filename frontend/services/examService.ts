@@ -141,6 +141,24 @@ export interface ExamHistoryItemDTO {
   exam_type?: string;
 }
 
+export interface PredictiveScoreWeakSkillDTO {
+  skill_id: string;
+  name: string;
+  smart_score: number;
+  cep_frequency: number;
+  subject_id: string;
+  domain_id: string;
+}
+
+export interface PredictiveScoreDTO {
+  predicted: number;
+  confidence: number;
+  coverage: number;
+  weighted_avg_score: number;
+  weak_skills: PredictiveScoreWeakSkillDTO[];
+  subject_id: string | null;
+}
+
 export const examService = {
   listExams: () => apiClient.get<MockExamDTO[]>('/exams'),
   startExam: (mockExamId: string) =>
@@ -161,4 +179,8 @@ export const examService = {
   getSession: (sessionId: string) =>
     apiClient.get<ExamSessionDetailDTO>(`/exams/sessions/${sessionId}`),
   getHistory: () => apiClient.get<ExamHistoryItemDTO[]>('/exams/history'),
+  getPredictiveScore: (subjectId?: string) =>
+    apiClient.get<PredictiveScoreDTO>(
+      subjectId ? `/exams/predictive-score?subject_id=${subjectId}` : '/exams/predictive-score'
+    ),
 };
