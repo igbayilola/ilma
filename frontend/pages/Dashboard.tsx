@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { Card, Badge } from '../components/ui/Cards';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card } from '../components/ui/Cards';
 import { CEPPredictionCard } from '../components/dashboard/CEPPredictionCard';
+import { CurrentLessonHero } from '../components/dashboard/CurrentLessonHero';
 import { Button } from '../components/ui/Button';
 import { Skeleton } from '../components/ui/Skeleton';
 import { StreakWidget } from '../components/ilma/Gamification';
@@ -9,7 +10,7 @@ import { useAuthStore } from '../store/authStore';
 import { useAppStore } from '../store';
 import { contentService, SubjectDTO, SkillDTO } from '../services/contentService';
 import { progressService, SkillProgressDTO } from '../services/progressService';
-import { Play, Zap, Trophy, Download, Book, Calculator, FlaskConical, Globe, BookOpen, PlayCircle, Flame, Clock, Sprout, Brain, Lightbulb } from 'lucide-react';
+import { Zap, Trophy, Download, Book, Calculator, FlaskConical, Globe, BookOpen, Flame, Clock, Sprout, Brain, Lightbulb, Target } from 'lucide-react';
 import { contentService as contentSvc, FormulaDTO } from '../services/contentService';
 import { ButtonVariant } from '../types';
 import { avatarUrl } from '../utils/avatar';
@@ -255,6 +256,38 @@ const RuleDuJourWidget: React.FC<{ skillsProgress: SkillProgressDTO[] }> = ({ sk
   );
 };
 
+/** Compact "Défi du jour" widget — dynamic if progress data present, static fallback otherwise. */
+const DailyChallengeWidget: React.FC<{
+  challenge: { title: string; desc: string; xp: number };
+}> = ({ challenge }) => {
+  const navigate = useNavigate();
+  return (
+    <div className="clay-card p-4 bg-gradient-to-r from-rose-50 to-pink-50 border-rose-200 flex flex-col">
+      <div className="flex items-start gap-3 flex-1">
+        <div className="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center flex-shrink-0">
+          <Zap size={20} className="text-rose-600 fill-rose-600" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <p className="text-xs text-rose-600 font-bold uppercase tracking-wide">D&eacute;fi du jour</p>
+            <span className="text-[10px] font-bold text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded">
+              +{challenge.xp} XP
+            </span>
+          </div>
+          <p className="font-bold text-gray-900 text-sm line-clamp-2 mb-1">{challenge.title}</p>
+          <p className="text-xs text-gray-600 line-clamp-2">{challenge.desc}</p>
+        </div>
+      </div>
+      <button
+        onClick={() => navigate('/app/student/subjects')}
+        className="mt-3 px-3 py-2 bg-rose-600 text-white text-xs font-bold rounded-lg shadow-sm hover:bg-rose-700 transition-colors self-end"
+      >
+        Relever &rarr;
+      </button>
+    </div>
+  );
+};
+
 /** Calcul Mental quick-launch widget with personal best score. */
 const CalculMentalWidget: React.FC = () => {
   const navigate = useNavigate();
@@ -363,78 +396,28 @@ export const Dashboard: React.FC = () => {
         </div>
       </header>
 
-      {/* 2. Hero Section: Bento Grid */}
-      <div className="bento-grid">
-        <Card className="bento-hero gradient-hero animate-gradient text-white border-none relative overflow-hidden flex flex-col justify-center min-h-[200px] shadow-clay">
-            <div className="relative z-10 p-2">
-                <div className="flex items-center space-x-2 mb-3">
-                    <Badge label="&#128293; D&eacute;fi du jour" className="bg-white/20 text-white border border-white/10 backdrop-blur-sm" />
-                    <span className="flex items-center text-xs font-bold text-yellow-300 bg-yellow-400/20 px-2 py-1 rounded-lg backdrop-blur-sm">
-                        <Zap size={14} className="mr-1 fill-current"/> +{todayChallenge.xp} XP
-                    </span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-3 leading-tight font-display">{todayChallenge.title}</h2>
-                <p className="text-amber-100 mb-6 max-w-lg font-medium text-sm md:text-base">{todayChallenge.desc}</p>
-                <Button
-                    onClick={() => navigate('/app/student/subjects')}
-                    className="bg-white text-sitou-primary hover:bg-amber-50 border-none shadow-xl font-bold"
-                    leftIcon={<Play size={20} className="fill-current" />}
-                >
-                    Relever le d&eacute;fi
-                </Button>
-            </div>
-            <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-1/4 translate-y-1/4 pointer-events-none">
-                <Trophy size={280} />
-            </div>
-        </Card>
+      {/* 2. Hero — "Cette semaine en CM2" (curriculum-aware current lesson) */}
+      <CurrentLessonHero
+        subjects={subjects}
+        skillsBySubject={skillsBySubject}
+        progress={skillsProgress}
+      />
 
-        <Card className="bento-tall flex flex-col justify-between h-full">
-            <div>
-                <h3 className="font-bold text-gray-800 mb-6 flex items-center font-display">
-                    <Trophy size={18} className="mr-2 text-sitou-orange" /> &#127942; Troph&eacute;es R&eacute;cents
-                </h3>
-                <div className="flex items-center justify-around mb-4">
-                    <div className="flex flex-col items-center group cursor-pointer">
-                        <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center text-3xl mb-2 shadow-sm border border-yellow-100 group-hover:scale-110 transition-transform">&#129518;</div>
-                        <span className="text-xs font-bold text-gray-600">Maths</span>
-                    </div>
-                    <div className="flex flex-col items-center group cursor-pointer">
-                        <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-3xl mb-2 shadow-sm border border-green-100 group-hover:scale-110 transition-transform">&#127757;</div>
-                        <span className="text-xs font-bold text-gray-600">G&eacute;o</span>
-                    </div>
-                    <div className="flex flex-col items-center opacity-50">
-                        <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-2xl mb-2 border-2 border-dashed border-gray-200">
-                            <Trophy size={24} className="text-gray-300" />
-                        </div>
-                        <span className="text-xs font-bold text-gray-400">Suivant</span>
-                    </div>
-                </div>
-            </div>
-            <div className="pt-4 border-t border-gray-100 text-center">
-                <Button variant={ButtonVariant.GHOST} fullWidth className="text-sm h-10" onClick={() => navigate('/app/student/badges')}>
-                    Voir ma collection
-                </Button>
-            </div>
-        </Card>
-      </div>
-
-      {/* 2b. Streak Reminder — replaces the old "Reprendre" section */}
+      {/* 3. Streak Reminder — cadence quotidienne, cœur du modèle compagnon-annuel */}
       <StreakReminderCard
         streak={user?.streak || 0}
         hasPlayedToday={dailyExerciseCount > 0}
         lastActivity={lastActivity}
       />
 
-      {/* 2c. Calcul Mental Widget */}
-      <CalculMentalWidget />
+      {/* 4. Trio compact : Défi du jour · Calcul Mental · Règle du jour */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <DailyChallengeWidget challenge={todayChallenge} />
+        <CalculMentalWidget />
+        <RuleDuJourWidget skillsProgress={skillsProgress} />
+      </div>
 
-      {/* 2d. Rule of the Day */}
-      <RuleDuJourWidget skillsProgress={skillsProgress} />
-
-      {/* 2e. CEP Prediction Card */}
-      <CEPPredictionCard />
-
-      {/* 3. Subjects Grid */}
+      {/* 5. Subjects Grid */}
       <section>
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xl font-bold text-gray-800 flex items-center font-display">
@@ -484,6 +467,47 @@ export const Dashboard: React.FC = () => {
                   </Card>
                   );
               })}
+          </div>
+      </section>
+
+      {/* 6. Mon objectif fin d'année — CEP relégué ici (compagnon-annuel, pas crammer) */}
+      <section>
+          <div className="flex items-center justify-between mb-2">
+              <h3 className="text-xl font-bold text-gray-800 flex items-center font-display">
+                  <Target size={20} className="mr-2 text-sitou-primary" /> Mon objectif fin d'ann&eacute;e
+              </h3>
+          </div>
+          <p className="text-sm text-gray-500 mb-4">
+              Tu pratiques pour le CEP en juin. Ton score progresse au fil des le&ccedil;ons ma&icirc;tris&eacute;es.
+          </p>
+          <CEPPredictionCard />
+      </section>
+
+      {/* 7. Trophées récents — compact, plus en hero */}
+      <section>
+          <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-gray-800 flex items-center font-display">
+                  <Trophy size={20} className="mr-2 text-sitou-orange" /> Troph&eacute;es r&eacute;cents
+              </h3>
+              <Button variant={ButtonVariant.GHOST} className="text-sm h-9" onClick={() => navigate('/app/student/badges')}>
+                  Voir tout
+              </Button>
+          </div>
+          <div className="clay-card p-4 flex items-center gap-6 overflow-x-auto">
+              <div className="flex flex-col items-center group cursor-pointer flex-shrink-0">
+                  <div className="w-14 h-14 bg-yellow-50 rounded-2xl flex items-center justify-center text-2xl mb-1 shadow-sm border border-yellow-100 group-hover:scale-110 transition-transform">&#129518;</div>
+                  <span className="text-xs font-bold text-gray-600">Maths</span>
+              </div>
+              <div className="flex flex-col items-center group cursor-pointer flex-shrink-0">
+                  <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-2xl mb-1 shadow-sm border border-green-100 group-hover:scale-110 transition-transform">&#127757;</div>
+                  <span className="text-xs font-bold text-gray-600">G&eacute;o</span>
+              </div>
+              <div className="flex flex-col items-center opacity-50 flex-shrink-0">
+                  <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-1 border-2 border-dashed border-gray-200">
+                      <Trophy size={22} className="text-gray-300" />
+                  </div>
+                  <span className="text-xs font-bold text-gray-400">Suivant</span>
+              </div>
           </div>
       </section>
     </div>
