@@ -305,18 +305,18 @@ async def test_audit_trail_created_for_each_transition(
     assert len(transitions) == 3
 
     # First transition
-    assert transitions[0].from_status == "draft"
-    assert transitions[0].to_status == "in_review"
+    assert transitions[0].from_status == "DRAFT"
+    assert transitions[0].to_status == "IN_REVIEW"
     assert transitions[0].content_type == "question"
     assert transitions[0].transitioned_by == test_admin.id
 
     # Second transition
-    assert transitions[1].from_status == "in_review"
-    assert transitions[1].to_status == "published"
+    assert transitions[1].from_status == "IN_REVIEW"
+    assert transitions[1].to_status == "PUBLISHED"
 
     # Third transition
-    assert transitions[2].from_status == "published"
-    assert transitions[2].to_status == "archived"
+    assert transitions[2].from_status == "PUBLISHED"
+    assert transitions[2].to_status == "ARCHIVED"
 
 
 @pytest.mark.asyncio
@@ -356,7 +356,7 @@ async def test_reviewer_notes_stored_on_question_and_transition(
         select(ContentTransition)
         .where(
             ContentTransition.content_id == draft_question.id,
-            ContentTransition.to_status == "draft",
+            ContentTransition.to_status == "DRAFT",
         )
     )
     transition = result.scalar_one()
@@ -510,10 +510,10 @@ async def test_lesson_audit_trail(
 
     assert len(transitions) == 2
     assert all(t.content_type == "lesson" for t in transitions)
-    assert transitions[0].from_status == "draft"
-    assert transitions[0].to_status == "in_review"
-    assert transitions[1].from_status == "in_review"
-    assert transitions[1].to_status == "draft"
+    assert transitions[0].from_status == "DRAFT"
+    assert transitions[0].to_status == "IN_REVIEW"
+    assert transitions[1].from_status == "IN_REVIEW"
+    assert transitions[1].to_status == "DRAFT"
     assert transitions[1].reviewer_notes == "Ajouter un résumé."
 
 

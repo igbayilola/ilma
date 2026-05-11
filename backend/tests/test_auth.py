@@ -26,7 +26,7 @@ async def test_register(client: AsyncClient):
 async def test_register_parent_no_auto_profile(client: AsyncClient):
     resp = await client.post(
         "/api/v1/auth/register",
-        json={"email": "parent_new@test.com", "password": "Pass1234!", "full_name": "Parent User", "role": "parent"},
+        json={"email": "parent_new@test.com", "password": "Pass1234!", "full_name": "Parent User", "role": "PARENT"},
     )
     assert resp.status_code == 201
     body = resp.json()

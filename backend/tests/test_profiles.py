@@ -191,4 +191,4 @@ async def test_register_creates_parent_no_auto_profile(client: AsyncClient):
     data = resp.json()["data"]
     assert "profiles" in data
     assert len(data["profiles"]) == 0
-    assert data["user"]["role"] == "parent"
+    assert data["user"]["role"] == "PARENT"

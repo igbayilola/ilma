@@ -285,15 +285,15 @@ async def test_bulk_import_exercises_mcq(client: AsyncClient, test_admin, micro_
         "exercises": [
             {
                 "exercise_id": "EX001",
-                "type": "mcq",
+                "type": "MCQ",
                 "text": "Quel nombre est le plus grand ?",
                 "choices": ["100", "1000", "10"],
                 "correct_answer": "1000",
-                "difficulty": "easy",
+                "difficulty": "EASY",
             },
             {
                 "exercise_id": "EX002",
-                "type": "mcq",
+                "type": "MCQ",
                 "text": "Combien de chiffres dans 1 000 000 ?",
                 "choices": ["5", "6", "7", "8"],
                 "correct_answer": "7",
@@ -319,7 +319,7 @@ async def test_bulk_import_exercises_idempotent(client: AsyncClient, test_admin,
         "exercises": [
             {
                 "exercise_id": "EX010",
-                "type": "true_false",
+                "type": "TRUE_FALSE",
                 "text": "1000 > 999",
                 "correct_answer": True,
             },
@@ -347,28 +347,28 @@ async def test_bulk_import_exercises_mixed_types(client: AsyncClient, test_admin
         "exercises": [
             {
                 "exercise_id": "EX020",
-                "type": "mcq",
+                "type": "MCQ",
                 "text": "2 + 2 = ?",
                 "choices": ["3", "4", "5"],
                 "correct_answer": "4",
             },
             {
                 "exercise_id": "EX021",
-                "type": "ordering",
+                "type": "ORDERING",
                 "text": "Range du plus petit au plus grand",
                 "items": ["100", "10", "1000"],
                 "correct_answer": ["10", "100", "1000"],
             },
             {
                 "exercise_id": "EX022",
-                "type": "numeric_input",
+                "type": "NUMERIC_INPUT",
                 "text": "Combien font 5 x 6 ?",
                 "correct_answer": 30,
                 "tolerance": 0,
             },
             {
                 "exercise_id": "EX023",
-                "type": "fill_blank",
+                "type": "FILL_BLANK",
                 "text": "Le nombre ___ vient apres 999",
                 "correct_answer": "1000",
             },
@@ -389,7 +389,7 @@ async def test_bulk_import_micro_skill_not_found(client: AsyncClient, test_admin
         "exercises": [
             {
                 "exercise_id": "EX001",
-                "type": "mcq",
+                "type": "MCQ",
                 "text": "Test",
                 "choices": ["a", "b"],
                 "correct_answer": "a",
@@ -408,7 +408,7 @@ async def test_bulk_import_requires_admin(client: AsyncClient, test_student, mic
         "exercises": [
             {
                 "exercise_id": "EX001",
-                "type": "mcq",
+                "type": "MCQ",
                 "text": "Test",
                 "choices": ["a", "b"],
                 "correct_answer": "a",
@@ -427,7 +427,7 @@ async def test_bulk_import_validation_error(client: AsyncClient, test_admin, mic
         "exercises": [
             {
                 "exercise_id": "EX_BAD",
-                "type": "mcq",
+                "type": "MCQ",
                 "text": "Question invalide",
                 "choices": ["seul"],
                 "correct_answer": "seul",

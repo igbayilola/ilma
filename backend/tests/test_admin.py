@@ -60,13 +60,13 @@ async def test_admin_list_users_filter_by_role(
     client: AsyncClient, test_admin, extra_users
 ):
     resp = await client.get(
-        "/api/v1/admin/users?role=student", headers=auth_header(test_admin)
+        "/api/v1/admin/users?role=STUDENT", headers=auth_header(test_admin)
     )
     assert resp.status_code == 200
     data = resp.json()["data"]
     # Should only contain students
     for user in data["items"]:
-        assert user["role"] == "student"
+        assert user["role"] == "STUDENT"
     assert data["total"] >= 2  # alice + bob
 
 
