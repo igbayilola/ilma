@@ -133,8 +133,8 @@ class SkillBase(BaseModel):
     order: int = 0
     # Curriculum sequencing — programme officiel MEMP Bénin, T1/T2/T3 + semaine
     # dans le trimestre. Optional tant que le backfill contenu n'est pas fait.
-    trimester: Optional[int] = None
-    week_order: Optional[int] = None
+    trimester: Optional[int] = Field(default=None, ge=1, le=3)
+    week_order: Optional[int] = Field(default=None, ge=1, le=15)
     is_active: bool = True
 
 
@@ -146,8 +146,8 @@ class SkillUpdate(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
     order: Optional[int] = None
-    trimester: Optional[int] = None
-    week_order: Optional[int] = None
+    trimester: Optional[int] = Field(default=None, ge=1, le=3)
+    week_order: Optional[int] = Field(default=None, ge=1, le=15)
     is_active: Optional[bool] = None
 
 
@@ -547,6 +547,8 @@ class TreeSkillOut(BaseModel):
     exercise_types: Optional[List[str]] = None
     mastery_threshold: Optional[str] = None
     order: int = 0
+    trimester: Optional[int] = None
+    week_order: Optional[int] = None
     micro_skills: List[TreeMicroSkillOut] = Field(default_factory=list)
     model_config = ConfigDict(from_attributes=True)
 

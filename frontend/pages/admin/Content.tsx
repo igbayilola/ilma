@@ -3,7 +3,7 @@ import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
 import { Modal } from '../../components/ui/Modal';
 import { ButtonVariant } from '../../types';
-import { ChevronRight, ChevronDown, FileJson, Plus, AlertCircle, CheckCircle2, BookOpen, Layers, Target, Sparkles, Trash2, Download } from 'lucide-react';
+import { ChevronRight, ChevronDown, FileJson, Plus, AlertCircle, CheckCircle2, BookOpen, Layers, Target, Sparkles, Trash2, Download, Pencil, CalendarDays } from 'lucide-react';
 import {
   contentService,
   GradeLevelDTO,
@@ -103,11 +103,18 @@ function MicroSkillNode({ ms, depth }: { ms: TreeMicroSkillDTO; depth: number })
   );
 }
 
+function trimesterBadgeLabel(skill: TreeSkillDTO): string | null {
+  if (skill.trimester == null) return null;
+  return skill.week_order != null ? `T${skill.trimester}·S${skill.week_order}` : `T${skill.trimester}`;
+}
+
 // ── Skill node ──────────────────────────────────────────
-function SkillNode({ skill, depth }: { skill: TreeSkillDTO; depth: number }) {
+function SkillNode({ skill, depth, onEdit }: { skill: TreeSkillDTO; depth: number; onEdit?: (skill: TreeSkillDTO) => void }) {
+  const triLabel = trimesterBadgeLabel(skill);
   const detail = [
     skill.external_id,
     skill.cep_frequency != null ? `CEP:${skill.cep_frequency}%` : null,
+    triLabel,
     skill.mastery_threshold,
   ].filter(Boolean).join(' · ');
 
@@ -118,6 +125,17 @@ function SkillNode({ skill, depth }: { skill: TreeSkillDTO; depth: number }) {
       badge={skill.micro_skills.length > 0 ? <Badge count={skill.micro_skills.length} label="micro" color="amber" /> : undefined}
       detail={detail || undefined}
       depth={depth}
+      actions={onEdit && (
+        <button
+          type="button"
+          onClick={() => onEdit(skill)}
+          className="p-1 rounded-lg text-gray-400 hover:text-sitou-primary hover:bg-blue-50 transition-colors"
+          aria-label={`Modifier ${skill.name}`}
+          title={triLabel ? `Modifier (${triLabel})` : 'Définir trimestre / semaine'}
+        >
+          <Pencil size={14} />
+        </button>
+      )}
     >
       {skill.micro_skills.length > 0
         ? skill.micro_skills.map(ms => <MicroSkillNode key={ms.id} ms={ms} depth={depth + 1} />)
@@ -127,7 +145,7 @@ function SkillNode({ skill, depth }: { skill: TreeSkillDTO; depth: number }) {
 }
 
 // ── Domain node ─────────────────────────────────────────
-function DomainNode({ domain, depth }: { domain: TreeDomainDTO; depth: number }) {
+function DomainNode({ domain, depth, onEditSkill }: { domain: TreeDomainDTO; depth: number; onEditSkill?: (skill: TreeSkillDTO) => void }) {
   return (
     <TreeNode
       label={domain.name}
@@ -136,14 +154,14 @@ function DomainNode({ domain, depth }: { domain: TreeDomainDTO; depth: number })
       depth={depth}
     >
       {domain.skills.length > 0
-        ? domain.skills.map(sk => <SkillNode key={sk.id} skill={sk} depth={depth + 1} />)
+        ? domain.skills.map(sk => <SkillNode key={sk.id} skill={sk} depth={depth + 1} onEdit={onEditSkill} />)
         : undefined}
     </TreeNode>
   );
 }
 
 // ── Subject node ────────────────────────────────────────
-function SubjectNode({ subject, depth, onDelete }: { subject: TreeSubjectDTO; depth: number; onDelete?: (id: string, name: string) => void }) {
+function SubjectNode({ subject, depth, onDelete, onEditSkill }: { subject: TreeSubjectDTO; depth: number; onDelete?: (id: string, name: string) => void; onEditSkill?: (skill: TreeSkillDTO) => void }) {
   const domainCount = subject.domains.length;
   return (
     <TreeNode
@@ -169,7 +187,7 @@ function SubjectNode({ subject, depth, onDelete }: { subject: TreeSubjectDTO; de
       )}
     >
       {subject.domains.length > 0
-        ? subject.domains.map(d => <DomainNode key={d.id} domain={d} depth={depth + 1} />)
+        ? subject.domains.map(d => <DomainNode key={d.id} domain={d} depth={depth + 1} onEditSkill={onEditSkill} />)
         : undefined}
     </TreeNode>
   );
@@ -195,6 +213,16 @@ export const AdminContentPage: React.FC = () => {
   const [deleteTarget, setDeleteTarget] = useState<{ type: 'grade' | 'subject'; id: string; name: string } | null>(null);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [deleteError, setDeleteError] = useState('');
+
+  // Edit skill state (trimester / week_order / name / order)
+  const [showEditSkill, setShowEditSkill] = useState(false);
+  const [editSkillTarget, setEditSkillTarget] = useState<TreeSkillDTO | null>(null);
+  const [editSkillName, setEditSkillName] = useState('');
+  const [editSkillOrder, setEditSkillOrder] = useState<string>('');
+  const [editSkillTrimester, setEditSkillTrimester] = useState<string>('');
+  const [editSkillWeekOrder, setEditSkillWeekOrder] = useState<string>('');
+  const [editSkillLoading, setEditSkillLoading] = useState(false);
+  const [editSkillError, setEditSkillError] = useState('');
 
   // Curriculum import state
   const [showCurriculumModal, setShowCurriculumModal] = useState(false);
@@ -280,6 +308,62 @@ export const AdminContentPage: React.FC = () => {
     setDeleteTarget({ type: 'subject', id, name });
     setDeleteError('');
     setShowDeleteModal(true);
+  };
+
+  // ── Edit Skill (trimester / week_order / name / order) ──
+  const openEditSkill = (skill: TreeSkillDTO) => {
+    setEditSkillTarget(skill);
+    setEditSkillName(skill.name);
+    setEditSkillOrder(String(skill.order ?? 0));
+    setEditSkillTrimester(skill.trimester != null ? String(skill.trimester) : '');
+    setEditSkillWeekOrder(skill.week_order != null ? String(skill.week_order) : '');
+    setEditSkillError('');
+    setShowEditSkill(true);
+  };
+
+  const handleUpdateSkill = async () => {
+    if (!editSkillTarget) return;
+    const tri = editSkillTrimester.trim() === '' ? null : Number(editSkillTrimester);
+    const wk = editSkillWeekOrder.trim() === '' ? null : Number(editSkillWeekOrder);
+    if (tri != null && (!Number.isInteger(tri) || tri < 1 || tri > 3)) {
+      setEditSkillError('Le trimestre doit être 1, 2 ou 3 (ou vide).');
+      return;
+    }
+    if (wk != null && (!Number.isInteger(wk) || wk < 1 || wk > 15)) {
+      setEditSkillError('La semaine doit être entre 1 et 15 (ou vide).');
+      return;
+    }
+    if (wk != null && tri == null) {
+      setEditSkillError('Précise le trimestre avant la semaine.');
+      return;
+    }
+    if (!editSkillName.trim()) {
+      setEditSkillError('Le nom est obligatoire.');
+      return;
+    }
+    const orderNum = editSkillOrder.trim() === '' ? 0 : Number(editSkillOrder);
+    if (!Number.isInteger(orderNum) || orderNum < 0) {
+      setEditSkillError('L\'ordre doit être un entier positif ou zéro.');
+      return;
+    }
+
+    setEditSkillLoading(true);
+    setEditSkillError('');
+    try {
+      await contentService.updateSkill(editSkillTarget.id, {
+        name: editSkillName.trim(),
+        order: orderNum,
+        trimester: tri,
+        week_order: wk,
+      });
+      setShowEditSkill(false);
+      setEditSkillTarget(null);
+      loadTree();
+    } catch (err: any) {
+      setEditSkillError(err?.message || 'Erreur lors de la mise à jour.');
+    } finally {
+      setEditSkillLoading(false);
+    }
   };
 
   const handleDelete = async () => {
@@ -574,7 +658,7 @@ export const AdminContentPage: React.FC = () => {
                 <div className="px-6 py-4 text-sm text-gray-400 italic">Aucune matiere dans cette classe.</div>
               ) : (
                 grade.subjects.map(subject => (
-                  <SubjectNode key={subject.id} subject={subject} depth={0} onDelete={askDeleteSubject} />
+                  <SubjectNode key={subject.id} subject={subject} depth={0} onDelete={askDeleteSubject} onEditSkill={openEditSkill} />
                 ))
               )}
             </div>
@@ -686,6 +770,89 @@ export const AdminContentPage: React.FC = () => {
             <Button variant={ButtonVariant.GHOST} onClick={() => setShowDeleteModal(false)}>Annuler</Button>
             <Button variant={ButtonVariant.DANGER} onClick={handleDelete} isLoading={deleteLoading}>
               Supprimer
+            </Button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* ── Edit Skill Modal (trimestre / semaine / nom / ordre) ─ */}
+      <Modal
+        isOpen={showEditSkill}
+        onClose={() => { if (!editSkillLoading) { setShowEditSkill(false); setEditSkillTarget(null); } }}
+        title="Modifier la compétence"
+      >
+        <div className="space-y-4">
+          {editSkillTarget && (
+            <p className="text-xs text-gray-400">
+              {editSkillTarget.external_id || editSkillTarget.id}
+            </p>
+          )}
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-1">Nom *</label>
+            <input
+              type="text"
+              value={editSkillName}
+              onChange={e => setEditSkillName(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1 flex items-center gap-1">
+                <CalendarDays size={14} className="text-sitou-primary" />
+                Trimestre
+              </label>
+              <select
+                value={editSkillTrimester}
+                onChange={e => setEditSkillTrimester(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm bg-white"
+              >
+                <option value="">— Non défini —</option>
+                <option value="1">T1 (sept-déc)</option>
+                <option value="2">T2 (jan-avr)</option>
+                <option value="3">T3 (avr-juin)</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">Semaine</label>
+              <input
+                type="number"
+                min={1}
+                max={15}
+                value={editSkillWeekOrder}
+                onChange={e => setEditSkillWeekOrder(e.target.value)}
+                placeholder="1-15"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
+                disabled={editSkillTrimester === ''}
+              />
+            </div>
+          </div>
+          <p className="text-xs text-gray-500">
+            Position dans la séquence du programme MEMP CM2. Laisse vide tant que la donnée n'est pas connue — le dashboard élève bascule alors sur l'ordre du curriculum.
+          </p>
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-1">Ordre dans le domaine</label>
+            <input
+              type="number"
+              min={0}
+              value={editSkillOrder}
+              onChange={e => setEditSkillOrder(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm"
+            />
+          </div>
+
+          {editSkillError && (
+            <div className="flex items-center text-sm text-red-600 bg-red-50 px-4 py-2 rounded-xl">
+              <AlertCircle size={16} className="mr-2 shrink-0" /> {editSkillError}
+            </div>
+          )}
+
+          <div className="flex justify-end space-x-3 pt-2">
+            <Button variant={ButtonVariant.GHOST} onClick={() => { setShowEditSkill(false); setEditSkillTarget(null); }} disabled={editSkillLoading}>
+              Annuler
+            </Button>
+            <Button onClick={handleUpdateSkill} isLoading={editSkillLoading}>
+              Enregistrer
             </Button>
           </div>
         </div>

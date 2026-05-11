@@ -173,6 +173,8 @@ export interface TreeSkillDTO {
   exercise_types?: string[];
   mastery_threshold?: string;
   order: number;
+  trimester?: number | null;
+  week_order?: number | null;
   micro_skills: TreeMicroSkillDTO[];
 }
 
@@ -462,6 +464,30 @@ export const contentService = {
   async createSkill(body: { name: string; slug: string; domain_id: string; description?: string }): Promise<SkillDTO> {
     const data = await apiClient.post<any>('/admin/content/skills', body);
     return { id: String(data.id), name: data.name, slug: data.slug, description: data.description, domainId: String(data.domain_id), order: data.order };
+  },
+
+  async updateSkill(
+    id: string,
+    body: {
+      name?: string;
+      description?: string;
+      order?: number;
+      trimester?: number | null;
+      week_order?: number | null;
+      is_active?: boolean;
+    },
+  ): Promise<SkillDTO> {
+    const data = await apiClient.put<any>(`/admin/content/skills/${id}`, body);
+    return {
+      id: String(data.id),
+      name: data.name,
+      slug: data.slug,
+      description: data.description,
+      domainId: String(data.domain_id),
+      order: data.order,
+      trimester: data.trimester ?? null,
+      weekOrder: data.week_order ?? null,
+    };
   },
 
   async importQuestionsCsv(file: File): Promise<BulkImportReport> {
