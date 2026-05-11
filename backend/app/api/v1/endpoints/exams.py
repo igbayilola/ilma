@@ -10,6 +10,7 @@ from app.core.deps import get_active_profile
 from app.db.session import get_db_session
 from app.models.profile import Profile
 from app.schemas.response import ok
+from app.services.cep_predictor import predict_cep_score
 from app.services.exam_service import exam_service
 
 router = APIRouter(prefix="/exams", tags=["Exams"])
@@ -104,3 +105,19 @@ async def get_exam_history(
     """Get exam history for the current profile."""
     history = await exam_service.get_exam_history(db, profile.id)
     return ok(data=history)
+
+
+@router.get("/predictive-score")
+async def get_predictive_score(
+    subject_id: Optional[UUID] = Query(None),
+    db: AsyncSession = Depends(get_db_session),
+    profile: Profile = Depends(get_active_profile),
+):
+    """Predict the student's CEP score /20 from SmartScore distribution.
+
+    Weighted regression on `Skill.cep_frequency` across the profile's grade
+    level. Returns predicted grade, confidence (function of total attempts),
+    curriculum coverage, and top weak skills to revisit.
+    """
+    result = await predict_cep_score(db, profile, subject_id=subject_id)
+    return ok(data=result)
