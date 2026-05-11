@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation, useSearchParams } from 'react-rout
 import { Button } from '../../components/ui/Button';
 import { QuestionRenderer } from '../../components/exercise/QuestionRenderer';
 import { ButtonVariant, Question, SubscriptionTier } from '../../types';
-import { X, CheckCircle2, AlertCircle, ArrowRight, RotateCcw, Award, HelpCircle, BookOpen, PenLine, Share2, Timer, Pause, Lightbulb } from 'lucide-react';
+import { X, CheckCircle2, AlertCircle, ArrowRight, RotateCcw, Award, HelpCircle, BookOpen, PenLine, Share2, Timer, Pause, Lightbulb, ChevronDown, ChevronUp, Volume2 } from 'lucide-react';
 import { Breadcrumb } from '../../components/ui/Breadcrumb';
 import { useAppStore } from '../../store';
 import { SmartScoreMeter } from '../../components/ilma/Gamification';
@@ -209,6 +209,7 @@ export const ExercisePlayerPage: React.FC = () => {
     const [feedbackMessage, setFeedbackMessage] = useState({ text: '', emoji: '' });
     const [correctAnswer, setCorrectAnswer] = useState<any>(null);
     const [explanation, setExplanation] = useState('');
+    const [showExplanation, setShowExplanation] = useState(false);
     const [criteriaFeedback, setCriteriaFeedback] = useState<import('../../services/sessionService').CriterionFeedback[] | null>(null);
     const [isValidating, setIsValidating] = useState(false);
     const [showScratchpad, setShowScratchpad] = useState(false);
@@ -490,6 +491,7 @@ export const ExercisePlayerPage: React.FC = () => {
             setAnswerStatus('IDLE');
             setCorrectAnswer(null);
             setExplanation('');
+            setShowExplanation(false);
             setCriteriaFeedback(null);
             questionStartTime.current = Date.now();
         } catch {
@@ -943,10 +945,56 @@ export const ExercisePlayerPage: React.FC = () => {
                                 <h3 className={`font-extrabold text-lg ${answerStatus === 'CORRECT' ? 'text-sitou-green' : 'text-sitou-red'}`}>
                                     {feedbackMessage.emoji} {feedbackMessage.text}
                                 </h3>
-                                {explanation && (
+                                {explanation && answerStatus === 'CORRECT' && (
                                     <p className="text-gray-600 mt-1 text-sm md:text-base leading-relaxed">
                                         {explanation}
                                     </p>
+                                )}
+
+                                {explanation && answerStatus === 'INCORRECT' && (
+                                    <div className="mt-2">
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                const next = !showExplanation;
+                                                setShowExplanation(next);
+                                                if (next) {
+                                                    speakFeedback(explanation);
+                                                } else if ('speechSynthesis' in window) {
+                                                    window.speechSynthesis.cancel();
+                                                }
+                                            }}
+                                            aria-expanded={showExplanation}
+                                            aria-controls="worked-solution-panel"
+                                            className="inline-flex items-center gap-2 text-sm font-bold text-sitou-red bg-white border border-red-200 hover:bg-red-50 px-3 py-1.5 rounded-xl transition-all"
+                                        >
+                                            <Lightbulb size={16} />
+                                            {showExplanation ? "Masquer l'explication" : "Voir l'explication"}
+                                            {showExplanation ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                                        </button>
+                                        {showExplanation && (
+                                            <div
+                                                id="worked-solution-panel"
+                                                className="mt-2 p-3 bg-white border border-red-100 rounded-xl"
+                                            >
+                                                <div
+                                                    className="text-gray-700 text-sm md:text-base leading-relaxed prose prose-sm max-w-none"
+                                                    dangerouslySetInnerHTML={{ __html: explanation }}
+                                                />
+                                                {'speechSynthesis' in window && (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => speakFeedback(explanation)}
+                                                        aria-label="Réécouter l'explication"
+                                                        className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-sitou-primary hover:underline"
+                                                    >
+                                                        <Volume2 size={14} />
+                                                        Réécouter
+                                                    </button>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
                                 )}
 
                                 {/* C1/C2/C3 criteria feedback for contextual problems */}
