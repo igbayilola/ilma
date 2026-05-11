@@ -87,6 +87,10 @@ export interface SkillDTO {
   domainId: string;
   domainName?: string;
   order: number;
+  /** Trimestre du programme officiel (1/2/3) — null tant que pas backfillé. */
+  trimester?: number | null;
+  /** Semaine dans le trimestre (1-12) — null tant que pas backfillé. */
+  weekOrder?: number | null;
 }
 
 export interface QuestionDTO {
@@ -389,6 +393,8 @@ export const contentService = {
       domainId: String(s.domain_id),
       domainName: s.domain_name,
       order: s.order,
+      trimester: s.trimester ?? null,
+      weekOrder: s.week_order ?? null,
     }));
     return { items, total: data?.total || items.length, page: data?.page || 1, page_size: data?.page_size || pageSize, pages: data?.pages || 1 };
   },
@@ -403,6 +409,8 @@ export const contentService = {
         description: data.skill.description,
         domainId: String(data.skill.domain_id),
         order: data.skill.order,
+        trimester: data.skill.trimester ?? null,
+        weekOrder: data.skill.week_order ?? null,
       },
       lessons: (data.lessons || []).map((l: any) => ({
         id: String(l.id),

@@ -1,7 +1,7 @@
 """Educational content hierarchy: GradeLevel → Subject → Domain/Chapter → Skill → MicroSkill → Question / Lesson."""
 import enum
 
-from sqlalchemy import Boolean, Column, DateTime, Enum, ForeignKey, Integer, String, Text, UniqueConstraint, func
+from sqlalchemy import Boolean, Column, DateTime, Enum, ForeignKey, Integer, SmallInteger, String, Text, UniqueConstraint, func
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import relationship
 
@@ -103,6 +103,12 @@ class Skill(Base, BaseMixin):
     exercise_types = Column(JSONB, nullable=True)         # list of strings e.g. ["Choix multiples", "Compléter"]
     mastery_threshold = Column(String(100), nullable=True)  # e.g. "80% sur 10 exercices"
     order = Column(Integer, default=0, nullable=False)
+    # Curriculum sequencing — programme officiel MEMP Bénin, T1/T2/T3 + semaine
+    # dans le trimestre (1-12). Nullable tant que le backfill contenu n'est pas
+    # fait : le FE bascule sur l'heuristique "premier skill non-maîtrisé" si la
+    # donnée manque.
+    trimester = Column(SmallInteger, nullable=True)
+    week_order = Column(SmallInteger, nullable=True)
     is_active = Column(Boolean, default=True, nullable=False)
 
     domain = relationship("Domain", back_populates="skills")

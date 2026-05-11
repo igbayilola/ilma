@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Play, BookOpen, Sparkles, ChevronRight } from 'lucide-react';
+import { Play, BookOpen, Sparkles, CalendarDays } from 'lucide-react';
 import { Card } from '../ui/Cards';
 import { Button } from '../ui/Button';
 import { SubjectDTO, SkillDTO } from '../../services/contentService';
 import { SkillProgressDTO } from '../../services/progressService';
 import { ButtonVariant } from '../../types';
+import { getCurrentTrimesterWeek, formatTrimesterWeek, TrimesterWeek } from '../../utils/schoolCalendar';
 
 const MASTERY_THRESHOLD = 80;
 
@@ -20,30 +21,86 @@ export interface CurrentLessonHint {
   subjectMasteredSkills: number;
   /** True if every skill across every subject is mastered. */
   allMastered: boolean;
+  /** True if this skill was picked because it matches the current school week. */
+  matchedCalendar: boolean;
+}
+
+interface SubjectCounters {
+  total: number;
+  touched: number;
+  mastered: number;
+}
+
+function countSubjectSkills(skills: SkillDTO[], progressById: Map<string, SkillProgressDTO>): SubjectCounters {
+  let touched = 0;
+  let mastered = 0;
+  for (const skill of skills) {
+    const p = progressById.get(skill.id);
+    if ((p?.totalAttempts ?? 0) > 0) touched += 1;
+    if ((p?.score ?? 0) >= MASTERY_THRESHOLD) mastered += 1;
+  }
+  return { total: skills.length, touched, mastered };
 }
 
 /**
  * Pick the "current lesson" the student should focus on.
  *
- * Proxy for curriculum sequencing while trimester data is not yet in the model:
- *  1. Walk subjects in `order`,
- *  2. inside each subject walk skills in `order`,
- *  3. return the first skill that is NOT mastered (smart_score < 80 or never attempted).
- *
- * Returns `null` when there is no content at all. When everything is mastered,
- * returns a hint flagged with `allMastered=true` carrying the last subject/skill
- * so the UI can show a celebration state.
+ * Strategy (in order):
+ *  1. If today falls in the school year AND any skill has `trimester` matching
+ *     today's trimester: among non-mastered skills with `trimester === today.trimester`
+ *     AND `weekOrder <= today.week` (don't surface future material), pick the
+ *     latest-week one (closest to today) — fallback on the earliest if tie.
+ *  2. Otherwise, walk subjects in `order` → skills in `order`, return the first
+ *     non-mastered skill.
+ *  3. If everything is mastered: return last skill of last subject with
+ *     `allMastered=true` for the celebration state.
  */
 export function pickCurrentLesson(
   subjects: SubjectDTO[],
   skillsBySubject: Map<string, SkillDTO[]>,
   progress: SkillProgressDTO[],
+  calendar: TrimesterWeek | null = getCurrentTrimesterWeek(),
 ): CurrentLessonHint | null {
   if (subjects.length === 0) return null;
   const progressById = new Map(progress.map(p => [p.skillId, p]));
   const sortedSubjects = [...subjects].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
-  let allMastered = true;
+  // ── Strategy 1: calendar-aware pick ──────────────────────────────────────
+  if (calendar) {
+    type Candidate = { subject: SubjectDTO; skill: SkillDTO; weekOrder: number };
+    const candidates: Candidate[] = [];
+    for (const subject of sortedSubjects) {
+      const skills = skillsBySubject.get(subject.id) || [];
+      for (const skill of skills) {
+        if (skill.trimester !== calendar.trimester) continue;
+        const wk = skill.weekOrder ?? null;
+        if (wk == null || wk > calendar.week) continue;
+        const score = progressById.get(skill.id)?.score ?? 0;
+        if (score >= MASTERY_THRESHOLD) continue;
+        candidates.push({ subject, skill, weekOrder: wk });
+      }
+    }
+    if (candidates.length > 0) {
+      // Closest to the current week (latest weekOrder), tiebreak on subject.order
+      candidates.sort((a, b) => {
+        if (b.weekOrder !== a.weekOrder) return b.weekOrder - a.weekOrder;
+        return (a.subject.order ?? 0) - (b.subject.order ?? 0);
+      });
+      const { subject, skill } = candidates[0];
+      const counters = countSubjectSkills(skillsBySubject.get(subject.id) || [], progressById);
+      return {
+        subject,
+        skill,
+        subjectTotalSkills: counters.total,
+        subjectTouchedSkills: counters.touched,
+        subjectMasteredSkills: counters.mastered,
+        allMastered: false,
+        matchedCalendar: true,
+      };
+    }
+  }
+
+  // ── Strategy 2: fallback — first non-mastered in curriculum order ────────
   let fallback: CurrentLessonHint | null = null;
 
   for (const subject of sortedSubjects) {
@@ -52,45 +109,36 @@ export function pickCurrentLesson(
     );
     if (skills.length === 0) continue;
 
-    let touched = 0;
-    let mastered = 0;
+    const counters = countSubjectSkills(skills, progressById);
     let firstNotMastered: SkillDTO | null = null;
-
     for (const skill of skills) {
-      const p = progressById.get(skill.id);
-      const attempts = p?.totalAttempts ?? 0;
-      const score = p?.score ?? 0;
-      if (attempts > 0) touched += 1;
-      if (score >= MASTERY_THRESHOLD) mastered += 1;
-      if (!firstNotMastered && score < MASTERY_THRESHOLD) {
-        firstNotMastered = skill;
-      }
+      const score = progressById.get(skill.id)?.score ?? 0;
+      if (score < MASTERY_THRESHOLD) { firstNotMastered = skill; break; }
     }
 
     if (firstNotMastered) {
       return {
         subject,
         skill: firstNotMastered,
-        subjectTotalSkills: skills.length,
-        subjectTouchedSkills: touched,
-        subjectMasteredSkills: mastered,
+        subjectTotalSkills: counters.total,
+        subjectTouchedSkills: counters.touched,
+        subjectMasteredSkills: counters.mastered,
         allMastered: false,
+        matchedCalendar: false,
       };
     }
 
-    // Everything in this subject is mastered — remember as a fallback in case
-    // every other subject is also mastered.
     fallback = {
       subject,
       skill: skills[skills.length - 1],
-      subjectTotalSkills: skills.length,
-      subjectTouchedSkills: touched,
-      subjectMasteredSkills: mastered,
+      subjectTotalSkills: counters.total,
+      subjectTouchedSkills: counters.touched,
+      subjectMasteredSkills: counters.mastered,
       allMastered: true,
+      matchedCalendar: false,
     };
   }
 
-  if (fallback && allMastered) return fallback;
   return fallback;
 }
 
@@ -106,14 +154,15 @@ export const CurrentLessonHero: React.FC<CurrentLessonHeroProps> = ({
   progress,
 }) => {
   const navigate = useNavigate();
+  const calendar = useMemo(() => getCurrentTrimesterWeek(), []);
   const hint = useMemo(
-    () => pickCurrentLesson(subjects, skillsBySubject, progress),
-    [subjects, skillsBySubject, progress],
+    () => pickCurrentLesson(subjects, skillsBySubject, progress, calendar),
+    [subjects, skillsBySubject, progress, calendar],
   );
 
   if (!hint) return null;
 
-  const { subject, skill, subjectTotalSkills, subjectTouchedSkills, subjectMasteredSkills, allMastered } = hint;
+  const { subject, skill, subjectTotalSkills, subjectTouchedSkills, subjectMasteredSkills, allMastered, matchedCalendar } = hint;
   const masteredPct = subjectTotalSkills > 0
     ? Math.round((subjectMasteredSkills / subjectTotalSkills) * 100)
     : 0;
@@ -155,10 +204,16 @@ export const CurrentLessonHero: React.FC<CurrentLessonHeroProps> = ({
   return (
     <Card className="relative overflow-hidden gradient-hero animate-gradient text-white border-none shadow-clay">
       <div className="relative z-10 p-2">
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-3 flex-wrap">
           <span className="text-xs font-bold uppercase tracking-wide bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
             &#128218; Cette semaine en CM2
           </span>
+          {matchedCalendar && calendar && (
+            <span className="text-xs font-bold uppercase tracking-wide bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm flex items-center gap-1.5">
+              <CalendarDays size={12} />
+              {formatTrimesterWeek(calendar)}
+            </span>
+          )}
         </div>
 
         <p className="text-sm font-medium text-amber-100 mb-1">

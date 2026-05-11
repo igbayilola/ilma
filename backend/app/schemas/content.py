@@ -131,6 +131,10 @@ class SkillBase(BaseModel):
     external_id: Optional[str] = None
     prerequisites: Optional[List[str]] = None
     order: int = 0
+    # Curriculum sequencing — programme officiel MEMP Bénin, T1/T2/T3 + semaine
+    # dans le trimestre. Optional tant que le backfill contenu n'est pas fait.
+    trimester: Optional[int] = None
+    week_order: Optional[int] = None
     is_active: bool = True
 
 
@@ -142,6 +146,8 @@ class SkillUpdate(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
     order: Optional[int] = None
+    trimester: Optional[int] = None
+    week_order: Optional[int] = None
     is_active: Optional[bool] = None
 
 
@@ -483,6 +489,8 @@ class CurriculumSkillNode(BaseModel):
     common_mistakes: Optional[List[str]] = None
     exercise_types: Optional[List[str]] = None
     mastery_threshold: Optional[str] = None
+    trimester: Optional[int] = None
+    week_order: Optional[int] = None
     micro_skills: List[CurriculumMicroSkillNode] = Field(default_factory=list)
 
 

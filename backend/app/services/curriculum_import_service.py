@@ -127,6 +127,10 @@ async def import_curriculum(db: AsyncSession, payload: CurriculumImportRequest) 
                             skill_obj.exercise_types = sk_node.exercise_types
                         if sk_node.mastery_threshold is not None:
                             skill_obj.mastery_threshold = sk_node.mastery_threshold
+                        if sk_node.trimester is not None:
+                            skill_obj.trimester = sk_node.trimester
+                        if sk_node.week_order is not None:
+                            skill_obj.week_order = sk_node.week_order
                         # Ensure it's linked to this domain
                         skill_obj.domain_id = dom_obj.id
                         result.updated += 1
@@ -143,6 +147,8 @@ async def import_curriculum(db: AsyncSession, payload: CurriculumImportRequest) 
                             exercise_types=sk_node.exercise_types,
                             mastery_threshold=sk_node.mastery_threshold,
                             order=sk_node.order,
+                            trimester=sk_node.trimester,
+                            week_order=sk_node.week_order,
                         )
                         db.add(skill_obj)
                         result.created += 1
