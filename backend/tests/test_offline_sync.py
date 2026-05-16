@@ -3,6 +3,7 @@ import uuid
 from datetime import datetime, timezone
 
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -10,7 +11,7 @@ from app.models.content import DifficultyLevel, Domain, Question, QuestionType, 
 from tests.conftest import auth_header
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def sync_content(db_session: AsyncSession):
     subj = Subject(id=uuid.uuid4(), name="FR", slug="fr-sync", order=1)
     db_session.add(subj)

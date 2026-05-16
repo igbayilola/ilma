@@ -3,6 +3,7 @@ import uuid
 from datetime import datetime, timezone
 
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -11,7 +12,7 @@ from app.services.notification_service import notification_service
 from tests.conftest import auth_header
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def seed_notifications(db_session: AsyncSession, test_student):
     """Create sample notifications for the test student."""
     notifs = []

@@ -6,6 +6,7 @@ import uuid
 from datetime import datetime, timedelta, timezone
 
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -19,7 +20,7 @@ from tests.conftest import auth_header
 # ── Fixtures ──────────────────────────────────────────────
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def seed_badges(db_session: AsyncSession):
     """Create badge definitions in the DB with criteria for rule engine."""
     badges = []
@@ -46,7 +47,7 @@ async def seed_badges(db_session: AsyncSession):
     return badges
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def badge_content(db_session: AsyncSession):
     """Create content for badge testing."""
     subj = Subject(id=uuid.uuid4(), name="Math", slug="math-badge", order=1)

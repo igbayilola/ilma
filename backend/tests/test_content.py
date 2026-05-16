@@ -2,6 +2,7 @@
 import uuid
 
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -18,7 +19,7 @@ from app.models.content import (
 from tests.conftest import auth_header
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def content_tree(db_session: AsyncSession):
     """Create a full content tree: subject -> domain -> skill -> questions + lesson."""
     subj = Subject(
@@ -85,7 +86,7 @@ async def content_tree(db_session: AsyncSession):
     return {"subject": subj, "domain": domain, "skill": skill, "questions": questions, "lesson": lesson}
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def second_subject(db_session: AsyncSession):
     """Create a second subject to test listing multiple."""
     subj = Subject(
@@ -262,7 +263,7 @@ IMPORT_URL = "/api/v1/admin/content/exercises/import"
 MS_EXTERNAL_ID = "NUM-ENTIERS-0-1B::MS01"
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def micro_skill(db_session: AsyncSession, content_tree):
     """Create a MicroSkill linked to the content_tree's skill."""
     ms = MicroSkill(

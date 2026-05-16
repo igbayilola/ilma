@@ -2,6 +2,7 @@
 import uuid
 
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -12,7 +13,7 @@ from app.models.user import User, UserRole
 from tests.conftest import auth_header
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def extra_users(db_session: AsyncSession):
     """Create additional users for admin tests."""
     users = []

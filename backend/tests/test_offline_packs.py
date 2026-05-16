@@ -11,6 +11,7 @@ import uuid
 from datetime import datetime, timedelta, timezone
 
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -31,7 +32,7 @@ from tests.conftest import auth_header
 # ── Fixtures ──────────────────────────────────────────────
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def seed_content(db_session: AsyncSession) -> dict:
     """Crée un arbre de contenu minimal : Subject → Domain → Skill → Questions + Lessons."""
     subject = Subject(

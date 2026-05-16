@@ -2,6 +2,7 @@
 import uuid
 
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -9,7 +10,7 @@ from app.models.content import DifficultyLevel, Domain, Question, QuestionType, 
 from tests.conftest import auth_header
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def seed_content(db_session: AsyncSession):
     """Create a subject -> domain -> skill -> questions for testing."""
     subj = Subject(id=uuid.uuid4(), name="Math", slug="math-test", order=1)
