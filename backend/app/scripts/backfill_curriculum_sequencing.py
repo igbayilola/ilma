@@ -44,20 +44,6 @@ CEP_DOMAIN_SLUGS = {
     "preparation-au-cep",
 }
 
-# En base, tous les domaines maths ont `order=1` (donnée historique). On force
-# un ordre pédagogique conforme au programme MEMP CM2.
-SUBJECT_DOMAIN_ORDER_OVERRIDE = {
-    "mathematiques": {
-        "numeration": 1,
-        "operations": 2,
-        "grandeurs-et-mesures": 3,
-        "geometrie": 4,
-        "organisation-de-donnees": 5,
-        "proportionnalite": 6,
-        "preparation-au-cep": 99,
-    },
-}
-
 
 @dataclass(frozen=True)
 class SkillSequencingInput:
@@ -75,13 +61,6 @@ def _slot_to_trimester_week(slot: int) -> tuple[int, int]:
     return 2, slot - T1_WEEKS + 1
 
 
-def effective_domain_order(subject_slug: str, domain_slug: str, raw_order: int) -> int:
-    override = SUBJECT_DOMAIN_ORDER_OVERRIDE.get(subject_slug, {})
-    if domain_slug in override:
-        return override[domain_slug]
-    return raw_order or 0
-
-
 def compute_assignments(
     skills: list[SkillSequencingInput],
 ) -> dict[str, tuple[int, int]]:
@@ -89,7 +68,7 @@ def compute_assignments(
 
     Logique pure (testable sans DB) : partitionne par matière, route les
     skills CEP-prep vers T3, distribue le reste sur T1+T2 dans l'ordre
-    (domain effectif, skill.order).
+    (domain.order, skill.order).
     """
     by_subject: dict[str, list[SkillSequencingInput]] = defaultdict(list)
     for sk in skills:
@@ -100,18 +79,8 @@ def compute_assignments(
         non_cep = [s for s in items if s.domain_slug not in CEP_DOMAIN_SLUGS]
         cep = [s for s in items if s.domain_slug in CEP_DOMAIN_SLUGS]
 
-        non_cep.sort(
-            key=lambda s: (
-                effective_domain_order(s.subject_slug, s.domain_slug, s.domain_order),
-                s.skill_order,
-            )
-        )
-        cep.sort(
-            key=lambda s: (
-                effective_domain_order(s.subject_slug, s.domain_slug, s.domain_order),
-                s.skill_order,
-            )
-        )
+        non_cep.sort(key=lambda s: (s.domain_order, s.skill_order))
+        cep.sort(key=lambda s: (s.domain_order, s.skill_order))
 
         n = len(non_cep)
         for i, sk in enumerate(non_cep):

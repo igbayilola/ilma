@@ -6,7 +6,6 @@ from app.scripts.backfill_curriculum_sequencing import (
     T3_WEEKS,
     SkillSequencingInput,
     compute_assignments,
-    effective_domain_order,
 )
 
 
@@ -18,18 +17,6 @@ def _mk(subject: str, domain: str, d_order: int, s_order: int, key: str) -> Skil
         skill_order=s_order,
         skill_key=key,
     )
-
-
-def test_effective_domain_order_math_override():
-    # En base, tous les domaines maths ont domain_order=1 — l'override prend la main.
-    assert effective_domain_order("mathematiques", "numeration", 1) == 1
-    assert effective_domain_order("mathematiques", "operations", 1) == 2
-    assert effective_domain_order("mathematiques", "preparation-au-cep", 1) == 99
-
-
-def test_effective_domain_order_no_override_uses_raw():
-    assert effective_domain_order("francais", "grammaire", 3) == 3
-    assert effective_domain_order("francais", "domain-inconnu", 7) == 7
 
 
 def test_cep_skills_routed_to_t3():
@@ -68,17 +55,15 @@ def test_assignments_respect_schema_bounds():
         assert 1 <= week <= 15
 
 
-def test_math_domain_order_override_respected():
-    """preparation-au-cep doit passer après les autres domaines maths."""
+def test_domain_order_drives_sequencing():
+    """domain.order détermine l'ordre de slot ; skill.order est tie-break."""
     inputs = [
-        _mk("mathematiques", "operations", 1, 1, "op-1"),
+        _mk("mathematiques", "operations", 2, 1, "op-1"),
         _mk("mathematiques", "numeration", 1, 1, "num-1"),
     ]
     result = compute_assignments(inputs)
-    # numeration (override=1) avant operations (override=2)
     num_pos = result["num-1"]
     op_pos = result["op-1"]
-    # num-1 obtient un index plus tôt → trimestre <= op-1 et si égal, week <=
     assert (num_pos[0], num_pos[1]) <= (op_pos[0], op_pos[1])
 
 
