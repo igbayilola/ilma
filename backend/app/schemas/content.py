@@ -134,7 +134,7 @@ class SkillBase(BaseModel):
     # Curriculum sequencing — programme officiel MEMP Bénin, T1/T2/T3 + semaine
     # dans le trimestre. Optional tant que le backfill contenu n'est pas fait.
     trimester: Optional[int] = Field(default=None, ge=1, le=3)
-    week_order: Optional[int] = Field(default=None, ge=1, le=15)
+    week_order: Optional[int] = Field(default=None, ge=1, le=14)
     is_active: bool = True
 
 
@@ -147,7 +147,7 @@ class SkillUpdate(BaseModel):
     description: Optional[str] = None
     order: Optional[int] = None
     trimester: Optional[int] = Field(default=None, ge=1, le=3)
-    week_order: Optional[int] = Field(default=None, ge=1, le=15)
+    week_order: Optional[int] = Field(default=None, ge=1, le=14)
     is_active: Optional[bool] = None
 
 
