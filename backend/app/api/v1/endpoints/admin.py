@@ -16,6 +16,7 @@ from app.schemas.response import ok, paginated
 from app.schemas.user import User as UserSchema
 from app.services.admin_service import admin_service
 from app.services.config_service import config_service
+from app.services.risk_service import RiskLevel, list_at_risk
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -173,6 +174,40 @@ async def get_question_stats(
 ):
     stats = await admin_service.get_question_stats(db, limit=limit)
     return ok(data=stats)
+
+
+# ── At-risk students ───────────────────────────────────────
+@router.get("/students/at-risk")
+async def list_students_at_risk(
+    min_level: RiskLevel = Query("medium", description="Seuil : 'medium' (défaut) ou 'high'"),
+    page: int = Query(1, ge=1),
+    page_size: int = Query(50, ge=1, le=200),
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    """Liste les profils actifs dont le risk_level est ≥ `min_level`.
+
+    Même formule que le cron parent-inactivity (`risk_service.classify_risk`).
+    Tri : risk_level décroissant puis days_inactive décroissant.
+    """
+    skip = (page - 1) * page_size
+    rows, total = await list_at_risk(db, min_level=min_level, skip=skip, limit=page_size)
+    items = [
+        {
+            "profile_id": str(r.profile_id),
+            "display_name": r.display_name,
+            "grade_level": r.grade_level,
+            "parent_user_id": str(r.parent_user_id) if r.parent_user_id else None,
+            "parent_phone": r.parent_phone,
+            "last_completed_at": r.last_completed_at.isoformat() if r.last_completed_at else None,
+            "days_inactive": r.signals.days_inactive,
+            "avg_score": round(r.signals.avg_score, 1),
+            "risk_level": r.signals.risk_level,
+            "suggested_action": r.signals.action,
+        }
+        for r in rows
+    ]
+    return paginated(items=items, total=total, page=page, page_size=page_size)
 
 
 # ── Exports ────────────────────────────────────────────────
