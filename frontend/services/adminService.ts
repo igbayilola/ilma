@@ -110,6 +110,21 @@ export interface NotificationStatsDTO {
   dailySeries: NotificationDailyDTO[];
 }
 
+export type AtRiskLevel = 'medium' | 'high';
+
+export interface AtRiskStudentDTO {
+  profileId: string;
+  displayName: string;
+  gradeLevel: string | null;
+  parentUserId: string | null;
+  parentPhone: string | null;
+  lastCompletedAt: string | null;
+  daysInactive: number;
+  avgScore: number;
+  riskLevel: 'low' | 'medium' | 'high';
+  suggestedAction: string;
+}
+
 export interface ViralityDTO {
   totalChallenges: number;
   challengesThisMonth: number;
@@ -291,5 +306,36 @@ export const adminService = {
 
   async exportUsersCsv(): Promise<void> {
     window.open('/api/v1/admin/export/users.csv', '_blank');
+  },
+
+  async listAtRisk(
+    minLevel: AtRiskLevel = 'medium',
+    page = 1,
+    pageSize = 50,
+  ): Promise<{ items: AtRiskStudentDTO[]; total: number; page: number; totalPages: number }> {
+    const params = new URLSearchParams({
+      min_level: minLevel,
+      page: String(page),
+      page_size: String(pageSize),
+    });
+    const data = await apiClient.get<any>(`/admin/students/at-risk?${params}`);
+    const items: AtRiskStudentDTO[] = (data.items || []).map((r: any) => ({
+      profileId: String(r.profile_id),
+      displayName: r.display_name || '',
+      gradeLevel: r.grade_level ?? null,
+      parentUserId: r.parent_user_id ?? null,
+      parentPhone: r.parent_phone ?? null,
+      lastCompletedAt: r.last_completed_at ?? null,
+      daysInactive: r.days_inactive ?? 0,
+      avgScore: r.avg_score ?? 0,
+      riskLevel: r.risk_level || 'low',
+      suggestedAction: r.suggested_action || '',
+    }));
+    return {
+      items,
+      total: data.total ?? items.length,
+      page: data.page ?? page,
+      totalPages: Math.ceil((data.total ?? items.length) / pageSize),
+    };
   },
 };

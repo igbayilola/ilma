@@ -94,6 +94,7 @@ const AdminSubsPage = lazyNamed(() => import('./pages/admin/Subscriptions'), 'Ad
 const AdminAnalyticsPage = lazyNamed(() => import('./pages/admin/Analytics'), 'AdminAnalyticsPage');
 const AdminConfigPage = lazyNamed(() => import('./pages/admin/Config'), 'AdminConfigPage');
 const AdminEditorialPage = lazyNamed(() => import('./pages/admin/Editorial'), 'AdminEditorialPage');
+const AdminAtRiskPage = lazyNamed(() => import('./pages/admin/AtRisk'), 'AdminAtRiskPage');
 
 // Editor Pages
 const EditorDashboard = lazyNamed(() => import('./pages/editor/Dashboard'), 'EditorDashboard');
@@ -263,6 +264,7 @@ const App: React.FC = () => {
                                     <Route path="analytics" element={<AdminAnalyticsPage />} />
                                     <Route path="config" element={<AdminConfigPage />} />
                                     <Route path="editorial" element={<AdminEditorialPage />} />
+                                    <Route path="at-risk" element={<AdminAtRiskPage />} />
                                 </Route>
 
                                 {/* EDITOR ROUTES */}

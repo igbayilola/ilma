@@ -47,6 +47,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Dashboard', path: '/app/admin/dashboard', icon: 'LayoutDashboard', allowedRoles: [UserRole.ADMIN] },
   { label: 'Contenu', path: '/app/admin/content', icon: 'FileText', allowedRoles: [UserRole.ADMIN] },
   { label: 'Utilisateurs', path: '/app/admin/users', icon: 'Users', allowedRoles: [UserRole.ADMIN] },
+  { label: 'Élèves à risque', path: '/app/admin/at-risk', icon: 'AlertTriangle', allowedRoles: [UserRole.ADMIN] },
   { label: 'Analytics', path: '/app/admin/analytics', icon: 'BarChart2', allowedRoles: [UserRole.ADMIN] },
   { label: 'Editorial', path: '/app/admin/editorial', icon: 'FileEdit', allowedRoles: [UserRole.ADMIN] },
   { label: 'Config', path: '/app/admin/config', icon: 'Shield', allowedRoles: [UserRole.ADMIN] },
