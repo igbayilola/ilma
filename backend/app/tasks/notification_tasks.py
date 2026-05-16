@@ -21,6 +21,7 @@ from app.models.progress import Progress
 from app.models.session import ExerciseSession, SessionStatus
 from app.models.user import User, UserRole
 from app.services.notification_service import notification_service
+from app.services.risk_service import classify_risk
 
 logger = logging.getLogger(__name__)
 
@@ -275,22 +276,18 @@ async def _send_parent_inactivity_alerts() -> int:
                 if days_inactive < 3:
                     continue  # New profile, not yet inactive
 
-            # Signal 2: Average score < 40%
-            avg_result = await db.execute(
+            # Signal 2: Average score across attempted skills (neutral 50 if
+            # no attempts yet, so brand-new profiles don't get flagged
+            # `medium` purely on missing data).
+            avg_raw = (await db.execute(
                 select(func.avg(Progress.smart_score)).where(
                     Progress.profile_id == profile.id,
-                    Progress.attempts > 0,
+                    Progress.total_attempts > 0,
                 )
-            )
-            avg_score = avg_result.scalar() or 50  # default if no data
+            )).scalar()
+            avg_score = float(avg_raw) if avg_raw is not None else 50.0
 
-            # Compute risk level
-            risk_level = "low"
-            if days_inactive >= 7 or avg_score < 30:
-                risk_level = "high"
-            elif days_inactive >= 3 or avg_score < 40:
-                risk_level = "medium"
-
+            risk_level = classify_risk(days_inactive, avg_score)
             if risk_level == "low":
                 continue
 
