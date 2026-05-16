@@ -62,6 +62,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Carte CEP prédictif sur Programme** (iter 26) : `CEPPredictionCard` (déjà rendue sur le Dashboard depuis iter 7) ré-insérée en tête de la page `/app/student/programme`. Donne le « pourquoi » de toute la timeline T1/T2/T3 affichée en dessous : score CEP projeté + bande pédagogique + skills faibles cliquables. Le composant fetch ses propres données via `examService.getPredictiveScore()`, aucune nouvelle plomberie. Couche d'intelligence + motivation : la page Programme passe d'une simple checklist à « voici où tu en es et où ça te mène ».
 
+**✅ Durcissement schéma + couverture ProgrammePage** (iter 27) : deux petits filets de sécurité sur le pivot programme livré aux iter 19→26. (1) Backend : la borne Pydantic `week_order` sur `SkillBase` / `SkillUpdate` passe de `le=15` à `le=14` — le calendrier CM2 plafonne T1 à 14 semaines, accepter 15 stockait silencieusement une valeur jamais affichable par le picker. Nouveau test `test_skill_schema_bounds.py` (5 cas : accept(14), reject(15), reject(0), partial update, trimester inchangé). (2) Frontend : premier fichier de test pour `pages/student/Programme.tsx` (4 cas mockés vi.hoisted — titre, carte CEP iter 26, fetch via `gradeLevelId`, timeline iter 22). Plus un nettoyage style sur les générateurs SVG (`generate_svg.py` / `generate_illustrations.py`).
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
