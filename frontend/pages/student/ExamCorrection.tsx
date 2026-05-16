@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
+import { SanitizedHTML } from '../../components/ui/SanitizedHTML';
 import { ButtonVariant } from '../../types';
 import {
   CheckCircle2,
@@ -282,9 +283,10 @@ export const ExamCorrectionPage: React.FC = () => {
                           </div>
 
                           {sq.explanation && (
-                            <div className="mt-3 bg-white/80 rounded-lg p-3 text-sm text-gray-600 leading-relaxed">
-                              {sq.explanation}
-                            </div>
+                            <SanitizedHTML
+                              html={sq.explanation}
+                              className="mt-3 bg-white/80 rounded-lg p-3 text-sm text-gray-600 leading-relaxed prose prose-sm max-w-none"
+                            />
                           )}
                         </div>
                       </div>
@@ -464,9 +466,10 @@ export const ExamCorrectionPage: React.FC = () => {
                 </div>
 
                 {ans.explanation && (
-                  <div className="mt-3 bg-white/80 rounded-lg p-3 text-sm text-gray-600 leading-relaxed">
-                    {ans.explanation}
-                  </div>
+                  <SanitizedHTML
+                    html={ans.explanation}
+                    className="mt-3 bg-white/80 rounded-lg p-3 text-sm text-gray-600 leading-relaxed prose prose-sm max-w-none"
+                  />
                 )}
 
                 {ans.related_lesson_id && (

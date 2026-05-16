@@ -15,6 +15,7 @@ import { useConfigStore } from '../../store/configStore';
 import { telemetry } from '../../services/telemetry';
 import { analytics } from '../../services/analytics';
 import { saveDraft, loadDraft, clearDraft, ExerciseDraft } from '../../services/exerciseDraft';
+import { SanitizedHTML } from '../../components/ui/SanitizedHTML';
 
 type PlayerPhase = 'INTRO' | 'ACTIVE' | 'SUMMARY';
 type AnswerStatus = 'IDLE' | 'CORRECT' | 'INCORRECT';
@@ -36,12 +37,23 @@ function getRandomMessage(messages: typeof CORRECT_MESSAGES) {
   return messages[Math.floor(Math.random() * messages.length)];
 }
 
+/** Strip HTML tags so Tiptap-authored explanations are spoken as plain text. */
+function htmlToPlainText(html: string): string {
+  if (!html) return '';
+  if (!/<[a-z][^>]*>/i.test(html)) return html; // already plain
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  return (tmp.textContent || tmp.innerText || '').trim();
+}
+
 /** Speak short feedback via Web Speech API (non-blocking, best effort) */
 function speakFeedback(text: string) {
   try {
     if (!('speechSynthesis' in window)) return;
+    const plain = htmlToPlainText(text);
+    if (!plain) return;
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
+    const u = new SpeechSynthesisUtterance(plain);
     u.lang = 'fr-FR';
     u.rate = 1.1;
     u.volume = 0.8;
@@ -946,9 +958,10 @@ export const ExercisePlayerPage: React.FC = () => {
                                     {feedbackMessage.emoji} {feedbackMessage.text}
                                 </h3>
                                 {explanation && answerStatus === 'CORRECT' && (
-                                    <p className="text-gray-600 mt-1 text-sm md:text-base leading-relaxed">
-                                        {explanation}
-                                    </p>
+                                    <SanitizedHTML
+                                        html={explanation}
+                                        className="text-gray-600 mt-1 text-sm md:text-base leading-relaxed prose prose-sm max-w-none"
+                                    />
                                 )}
 
                                 {explanation && answerStatus === 'INCORRECT' && (
@@ -977,9 +990,9 @@ export const ExercisePlayerPage: React.FC = () => {
                                                 id="worked-solution-panel"
                                                 className="mt-2 p-3 bg-white border border-red-100 rounded-xl"
                                             >
-                                                <div
+                                                <SanitizedHTML
+                                                    html={explanation}
                                                     className="text-gray-700 text-sm md:text-base leading-relaxed prose prose-sm max-w-none"
-                                                    dangerouslySetInnerHTML={{ __html: explanation }}
                                                 />
                                                 {'speechSynthesis' in window && (
                                                     <button
