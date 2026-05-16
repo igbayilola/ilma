@@ -131,4 +131,38 @@ describe('ApiClient Error Mapping', () => {
     const headers = fetchOptions.headers;
     expect(headers.get('X-Profile-Id')).toBeNull();
   });
+
+  it('does not override X-Profile-Id when caller passes one explicitly', async () => {
+    // Regression for iter 13 / A6.6: parent dashboard joining a classroom for
+    // a specific kid must be able to target that kid's profile even when a
+    // different activeProfile is set globally.
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve({ ok: true }),
+    });
+
+    const { useAuthStore } = await import('../../store/authStore');
+    useAuthStore.setState({
+      accessToken: 'test-token',
+      activeProfile: {
+        id: 'parent-active-profile',
+        displayName: 'Parent',
+        avatarUrl: '',
+        isActive: true,
+        hasPin: false,
+        subscriptionTier: 'FREE' as any,
+        weeklyGoalMinutes: 120,
+      },
+      isAuthenticated: true,
+    });
+
+    const { apiClient } = await import('../../services/apiClient');
+    await apiClient.post('/teacher/classrooms/join', { invite_code: 'X' }, {
+      headers: { 'X-Profile-Id': 'kid-2-profile' },
+    });
+
+    const [, fetchOptions] = (global.fetch as any).mock.calls[0];
+    expect(fetchOptions.headers.get('X-Profile-Id')).toBe('kid-2-profile');
+  });
 });

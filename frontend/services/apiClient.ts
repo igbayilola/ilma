@@ -68,7 +68,10 @@ async function client<T>(endpoint: string, config: RequestConfig = {}): Promise<
   if (!skipAuth && accessToken) {
     headers.set('Authorization', `Bearer ${accessToken}`);
   }
-  if (activeProfile) {
+  // Don't override an explicit X-Profile-Id from the caller — parents managing
+  // a kid (e.g. joining a classroom for a specific child) need to target a
+  // profile that isn't the current activeProfile.
+  if (activeProfile && !headers.has('X-Profile-Id')) {
     headers.set('X-Profile-Id', activeProfile.id);
   }
   headers.set('Content-Type', 'application/json');
