@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Download, X, Smartphone } from 'lucide-react';
+import { Download, X, Smartphone, Share, Plus } from 'lucide-react';
 
 /**
- * Discreet banner that prompts the user to install Sitou as a PWA when the
- * browser supports `beforeinstallprompt` (Chrome / Edge / Android). Hidden:
- * - if the app is already running standalone (matchMedia display-mode)
- * - if the user dismissed within the cooldown window
- * - if no install event has been captured (iOS Safari, unsupported browsers)
+ * Discreet banner that prompts the user to install Sitou as a PWA.
  *
- * Tracks 3 analytics events so we can measure conversion:
+ * Two code paths, since iOS Safari has no `beforeinstallprompt` :
+ * - Android / Chrome / Edge → capture the event, call `prompt()` on click.
+ * - iOS Safari              → show static "Add to Home Screen" instructions
+ *                             (no programmatic install possible).
+ *
+ * Hidden in both cases when:
+ * - the app is already running standalone (matchMedia display-mode + iOS
+ *   `navigator.standalone`)
+ * - the user dismissed within the cooldown window (14 j, localStorage)
+ *
+ * Tracks 3 analytics events to measure the funnel :
  *   install_prompt_shown / install_prompt_accepted / install_prompt_dismissed
  *
- * iOS Safari has no `beforeinstallprompt` API — addressing it requires a
- * separate "Ajouter à l'écran d'accueil" hint, out of scope here.
+ * On iOS we never emit `accepted` (no callback from the OS) — `shown` and
+ * `dismissed` only.
  */
 
 // Cooldown : 14 j avant de re-proposer après un refus explicite.
@@ -45,12 +51,31 @@ function isWithinCooldown(): boolean {
   }
 }
 
+/**
+ * iOS Safari (iPhone, iPad) detection. iPadOS 13+ reports as desktop Safari,
+ * so we also check for a touch-capable Mac (Macintosh + maxTouchPoints).
+ */
+export function isIosSafari(): boolean {
+  if (typeof window === 'undefined') return false;
+  const ua = window.navigator.userAgent || '';
+  const isIDevice = /iPhone|iPad|iPod/.test(ua);
+  const isIPadOS13 = /Macintosh/.test(ua) && (window.navigator.maxTouchPoints || 0) > 1;
+  if (!isIDevice && !isIPadOS13) return false;
+  // Filter out in-app browsers (Facebook, Instagram, Gmail…) where Add to
+  // Home Screen isn't available — the prompt would mislead the user.
+  const isInAppBrowser = /FBAN|FBAV|Instagram|Line|GSA\//.test(ua);
+  return !isInAppBrowser;
+}
+
 interface InstallPwaBannerProps {
   /** Injected so tests can assert without depending on the real analytics module. */
   onTrack?: (event: 'shown' | 'accepted' | 'dismissed') => void;
 }
 
+type Mode = 'android' | 'ios';
+
 export const InstallPwaBanner: React.FC<InstallPwaBannerProps> = ({ onTrack }) => {
+  const [mode, setMode] = useState<Mode | null>(null);
   const [installEvent, setInstallEvent] = useState<BeforeInstallPromptEvent | null>(null);
   const [visible, setVisible] = useState(false);
   const [installing, setInstalling] = useState(false);
@@ -58,16 +83,26 @@ export const InstallPwaBanner: React.FC<InstallPwaBannerProps> = ({ onTrack }) =
   useEffect(() => {
     if (isStandalone() || isWithinCooldown()) return;
 
+    // iOS path : no event, just show the static hint after a short delay so
+    // we don't blast the user the moment the page loads.
+    if (isIosSafari()) {
+      const t = setTimeout(() => {
+        setMode('ios');
+        setVisible(true);
+        onTrack?.('shown');
+      }, 1500);
+      return () => clearTimeout(t);
+    }
+
+    // Android / Chromium path : wait for the browser event.
     const handler = (event: Event) => {
-      // Prevent the mini-infobar Chrome would have shown on its own — we
-      // surface our own contextualised banner instead.
       event.preventDefault();
       const promptEvent = event as BeforeInstallPromptEvent;
       setInstallEvent(promptEvent);
+      setMode('android');
       setVisible(true);
       onTrack?.('shown');
     };
-
     window.addEventListener('beforeinstallprompt', handler);
     return () => window.removeEventListener('beforeinstallprompt', handler);
   }, [onTrack]);
@@ -82,7 +117,6 @@ export const InstallPwaBanner: React.FC<InstallPwaBannerProps> = ({ onTrack }) =
       if (outcome === 'dismissed') {
         try { window.localStorage.setItem(DISMISS_KEY, String(Date.now())); } catch { /* ignore */ }
       }
-      // After prompt(), the event can't be reused.
       setInstallEvent(null);
       setVisible(false);
     } finally {
@@ -96,7 +130,8 @@ export const InstallPwaBanner: React.FC<InstallPwaBannerProps> = ({ onTrack }) =
     setVisible(false);
   };
 
-  if (!visible || !installEvent) return null;
+  if (!visible || !mode) return null;
+  if (mode === 'android' && !installEvent) return null;
 
   return (
     <div
@@ -127,15 +162,38 @@ export const InstallPwaBanner: React.FC<InstallPwaBannerProps> = ({ onTrack }) =
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={handleInstall}
-        disabled={installing}
-        className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-sitou-primary text-white font-bold text-sm rounded-xl hover:bg-amber-600 transition-colors disabled:opacity-50"
-      >
-        <Download size={16} />
-        {installing ? 'Installation…' : 'Installer l\'app'}
-      </button>
+      {mode === 'android' && (
+        <button
+          type="button"
+          onClick={handleInstall}
+          disabled={installing}
+          className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-sitou-primary text-white font-bold text-sm rounded-xl hover:bg-amber-600 transition-colors disabled:opacity-50"
+        >
+          <Download size={16} />
+          {installing ? 'Installation…' : 'Installer l\'app'}
+        </button>
+      )}
+
+      {mode === 'ios' && (
+        <ol className="mt-3 space-y-1.5 text-xs text-gray-700">
+          <li className="flex items-start gap-2">
+            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gray-100 inline-flex items-center justify-center text-gray-700 font-bold text-[10px]">1</span>
+            <span className="flex items-center gap-1">
+              Appuyez sur <Share size={14} className="text-sitou-primary inline" aria-label="icône Partager"/> en bas de Safari
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gray-100 inline-flex items-center justify-center text-gray-700 font-bold text-[10px]">2</span>
+            <span className="flex items-center gap-1">
+              Choisissez <strong>« Sur l'écran d'accueil »</strong> <Plus size={14} className="text-gray-500 inline" aria-hidden/>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gray-100 inline-flex items-center justify-center text-gray-700 font-bold text-[10px]">3</span>
+            <span>Confirmez avec « Ajouter »</span>
+          </li>
+        </ol>
+      )}
     </div>
   );
 };
