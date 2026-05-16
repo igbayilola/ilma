@@ -50,6 +50,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Backfill `trimester`/`week_order`** : 219 skills CM2 actifs séquencés par heuristique (iter 19, `app/scripts/backfill_curriculum_sequencing.py` idempotent). T3 = domaines `preparation-cep-*`, T1+T2 = reste, ordre `(domain effectif, skill.order)`. Override d'ordre maths intégré (toutes les rows à `domain.order=1` en base). Le picker FE bascule désormais en mode calendrier.
 
+**✅ Picker rattrapage** (iter 20) : la stratégie 1 du `pickCurrentLesson` (`CurrentLessonHero.tsx`) sert maintenant le plus ancien skill non-maîtrisé `(T,W) ≤ aujourd'hui` au lieu du plus proche de la semaine courante. Effet : un élève neuf en T2.W5 voit T1.W1 d'abord (compagnon-annuel), pas T2.W5. Drapeau `isCatchUp` exposé à la hero pour basculer le label « Cette semaine en CM2 » → « À rattraper ».
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
