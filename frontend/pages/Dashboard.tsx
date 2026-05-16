@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/ui/Cards';
 import { CEPPredictionCard } from '../components/dashboard/CEPPredictionCard';
 import { CurrentLessonHero } from '../components/dashboard/CurrentLessonHero';
+import { ProgressByTrimester } from '../components/dashboard/ProgressByTrimester';
 import { Button } from '../components/ui/Button';
 import { Skeleton } from '../components/ui/Skeleton';
 import { StreakWidget } from '../components/ilma/Gamification';
@@ -398,6 +399,13 @@ export const Dashboard: React.FC = () => {
 
       {/* 2. Hero — "Cette semaine en CM2" (curriculum-aware current lesson) */}
       <CurrentLessonHero
+        subjects={subjects}
+        skillsBySubject={skillsBySubject}
+        progress={skillsProgress}
+      />
+
+      {/* 2bis. Récap trimestres → vers /app/student/programme */}
+      <ProgressByTrimester
         subjects={subjects}
         skillsBySubject={skillsBySubject}
         progress={skillsProgress}

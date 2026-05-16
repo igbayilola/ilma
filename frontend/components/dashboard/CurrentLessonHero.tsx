@@ -283,13 +283,22 @@ export const CurrentLessonHero: React.FC<CurrentLessonHeroProps> = ({
           )}
         </div>
 
-        <Button
-          onClick={goToLesson}
-          className="bg-white text-sitou-primary hover:bg-amber-50 border-none shadow-xl font-bold"
-          leftIcon={<Play size={20} className="fill-current" />}
-        >
-          Continuer la le&ccedil;on
-        </Button>
+        <div className="flex items-center gap-3 flex-wrap">
+          <Button
+            onClick={goToLesson}
+            className="bg-white text-sitou-primary hover:bg-amber-50 border-none shadow-xl font-bold"
+            leftIcon={<Play size={20} className="fill-current" />}
+          >
+            Continuer la le&ccedil;on
+          </Button>
+          <button
+            type="button"
+            onClick={() => navigate('/app/student/programme')}
+            className="text-sm font-bold text-white/90 underline-offset-2 underline hover:text-white transition-colors"
+          >
+            Voir tout mon programme &rarr;
+          </button>
+        </div>
       </div>
 
       <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-1/4 translate-y-1/4 pointer-events-none">
