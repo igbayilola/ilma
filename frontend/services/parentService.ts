@@ -57,6 +57,22 @@ export const parentService = {
     await apiClient.post('/notifications/trigger-digest', {});
   },
 
+  /**
+   * Enroll a child profile into a teacher's classroom using their 8-char invite
+   * code. Sets X-Profile-Id explicitly so the backend's `get_active_profile`
+   * resolves to the targeted kid (and not the parent's auto-picked profile).
+   */
+  async joinClassroomForChild(profileId: string, inviteCode: string): Promise<{
+    classroom_id: string;
+    classroom_name: string;
+  }> {
+    return apiClient.post(
+      '/teacher/classrooms/join',
+      { invite_code: inviteCode.trim().toUpperCase() },
+      { headers: { 'X-Profile-Id': profileId } },
+    );
+  },
+
   async getHealthSummary(): Promise<ChildHealthDTO[]> {
     const data = await apiClient.get<any[]>('/students/health-summary');
     return (data || []).map((c: any) => ({

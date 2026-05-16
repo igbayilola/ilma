@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
-import { Plus, Flame, Clock, TrendingUp, ChevronRight, Lightbulb, Zap, MessageSquare, Volume2, Share2, AlertCircle, AlertTriangle } from 'lucide-react';
+import { Plus, Flame, Clock, TrendingUp, ChevronRight, Lightbulb, Zap, MessageSquare, Volume2, Share2, AlertCircle, AlertTriangle, School } from 'lucide-react';
+import { Modal } from '../../components/ui/Modal';
 import { parentService, ChildDTO, ChildHealthDTO } from '../../services/parentService';
 
 const STATUS_CONFIG = {
@@ -39,6 +40,11 @@ export const ParentDashboard: React.FC = () => {
   const [onboardingStep, setOnboardingStep] = useState(0);
   const [digestSending, setDigestSending] = useState(false);
   const [digestMessage, setDigestMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [showJoinModal, setShowJoinModal] = useState(false);
+  const [joinChildId, setJoinChildId] = useState<string>('');
+  const [joinCode, setJoinCode] = useState('');
+  const [joining, setJoining] = useState(false);
+  const [joinMessage, setJoinMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   useEffect(() => {
     const load = async () => {
@@ -77,6 +83,48 @@ export const ParentDashboard: React.FC = () => {
 
   const handleAddChild = () => {
     navigate('/select-profile/create');
+  };
+
+  const openJoinModal = () => {
+    setJoinCode('');
+    setJoinMessage(null);
+    // Default to first child if any; user can change.
+    setJoinChildId(healthData[0]?.profileId || '');
+    setShowJoinModal(true);
+  };
+
+  const handleJoinClassroom = async () => {
+    setJoinMessage(null);
+    if (!joinChildId) {
+      setJoinMessage({ type: 'error', text: 'Sélectionnez un enfant.' });
+      return;
+    }
+    const code = joinCode.trim().toUpperCase();
+    if (code.length < 4 || code.length > 8) {
+      setJoinMessage({ type: 'error', text: 'Le code doit faire entre 4 et 8 caractères.' });
+      return;
+    }
+    setJoining(true);
+    try {
+      const result = await parentService.joinClassroomForChild(joinChildId, code);
+      const childName = healthData.find(c => c.profileId === joinChildId)?.displayName || 'L\'enfant';
+      setJoinMessage({
+        type: 'success',
+        text: `${childName} a rejoint la classe « ${result.classroom_name} ».`,
+      });
+      setJoinCode('');
+    } catch (err: any) {
+      const msg = err?.message?.includes('introuvable')
+        ? 'Code invalide. Vérifiez avec l\'enseignant.'
+        : err?.message?.includes('déjà')
+        ? 'Cet enfant est déjà inscrit dans cette classe.'
+        : err?.message?.includes('pleine')
+        ? 'La classe est pleine.'
+        : err?.message || 'Erreur lors de l\'inscription.';
+      setJoinMessage({ type: 'error', text: msg });
+    } finally {
+      setJoining(false);
+    }
   };
 
   const speakHealthSummary = (children: ChildHealthDTO[]) => {
@@ -296,6 +344,19 @@ export const ParentDashboard: React.FC = () => {
           </div>
         )}
 
+        {/* Join classroom CTA — only show when at least one child exists */}
+        {healthData.length > 0 && (
+          <button
+            onClick={openJoinModal}
+            className="w-full border-2 border-dashed border-gray-300 rounded-3xl p-5 flex items-center justify-center gap-3 text-gray-500 hover:border-sitou-primary hover:text-sitou-primary hover:bg-amber-50 transition-all"
+          >
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+              <School size={20} />
+            </div>
+            <span className="font-bold">Rejoindre une classe enseignant</span>
+          </button>
+        )}
+
         {/* Add child card */}
         <button
           onClick={handleAddChild}
@@ -307,6 +368,67 @@ export const ParentDashboard: React.FC = () => {
           <span className="font-bold">Ajouter un profil</span>
         </button>
       </div>
+
+      {/* Join classroom modal */}
+      <Modal
+        isOpen={showJoinModal}
+        onClose={() => setShowJoinModal(false)}
+        title="Rejoindre une classe"
+      >
+        <div className="space-y-4">
+          <p className="text-sm text-gray-600">
+            Entrez le code à 8 caractères fourni par l'enseignant pour inscrire un enfant à sa classe.
+          </p>
+
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-1">Enfant à inscrire</label>
+            <select
+              value={joinChildId}
+              onChange={e => setJoinChildId(e.target.value)}
+              disabled={healthData.length <= 1}
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm bg-white disabled:bg-gray-50"
+            >
+              {healthData.map(c => (
+                <option key={c.profileId} value={c.profileId}>{c.displayName}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-1">Code d'invitation</label>
+            <input
+              type="text"
+              value={joinCode}
+              onChange={e => setJoinCode(e.target.value.toUpperCase())}
+              placeholder="EX. XK4Z8P2T"
+              maxLength={8}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-lg font-mono font-bold tracking-widest text-center uppercase"
+            />
+          </div>
+
+          {joinMessage && (
+            <p className={`text-sm font-medium ${joinMessage.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+              {joinMessage.text}
+            </p>
+          )}
+
+          <div className="flex gap-2 pt-2">
+            <button
+              onClick={() => setShowJoinModal(false)}
+              className="flex-1 px-4 py-2.5 rounded-xl border border-gray-200 text-gray-600 font-bold text-sm hover:bg-gray-50"
+            >
+              Fermer
+            </button>
+            <button
+              onClick={handleJoinClassroom}
+              disabled={joining}
+              className="flex-1 px-4 py-2.5 rounded-xl bg-sitou-primary text-white font-bold text-sm hover:bg-amber-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {joining ? 'Inscription…' : 'Rejoindre'}
+            </button>
+          </div>
+        </div>
+      </Modal>
 
       {/* Onboarding modal for first-time parents */}
       {showOnboarding && (
