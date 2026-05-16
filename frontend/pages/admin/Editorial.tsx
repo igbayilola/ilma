@@ -6,6 +6,8 @@ import { Modal } from '../../components/ui/Modal';
 import { ButtonVariant, Question } from '../../types';
 import { FileEdit, CheckCircle2, Archive, AlertCircle, ChevronRight, Send, RotateCcw, Eye, Plus, MessageCircle, Trash2, Upload, Download, History, Play, ArrowRight } from 'lucide-react';
 import { QuestionRenderer } from '../../components/exercise/QuestionRenderer';
+import { TiptapEditor } from '../../components/admin/TiptapEditor';
+import { SanitizedHTML } from '../../components/ui/SanitizedHTML';
 import { contentService, KanbanQuestionDTO, QuestionCommentDTO, ContentVersionDTO, BulkImportReport, BulkImportRowError } from '../../services/contentService';
 import { apiClient } from '../../services/apiClient';
 
@@ -804,16 +806,19 @@ export const AdminEditorialPage: React.FC = () => {
             />
           </div>
 
-          {/* explanation */}
+          {/* explanation — Tiptap rich-text editor (gras / italique / listes / lien) */}
           <div>
             <label className="block text-sm font-bold text-gray-700 mb-1">Explication (optionnel)</label>
-            <textarea
+            <TiptapEditor
               value={formData.explanation}
-              onChange={e => updateField('explanation', e.target.value)}
-              rows={2}
-              placeholder="Explication affichee apres la reponse..."
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sitou-primary/20 focus:border-sitou-primary text-sm resize-none"
+              onChange={html => updateField('explanation', html)}
+              placeholder="Explication affichée après la réponse…"
+              minHeightClass="min-h-[96px]"
+              ariaLabel="Explication de la question"
             />
+            <p className="text-xs text-gray-400 mt-1">
+              Texte enrichi (gras, italique, listes, liens). Affiché à l'élève après une mauvaise réponse.
+            </p>
           </div>
 
           {/* points */}
@@ -1143,9 +1148,10 @@ export const AdminEditorialPage: React.FC = () => {
                         </p>
                       )}
                       {previewQuestion.explanation && (
-                        <p className="text-sm text-gray-600 mt-2 leading-relaxed">
-                          {previewQuestion.explanation}
-                        </p>
+                        <SanitizedHTML
+                          html={previewQuestion.explanation}
+                          className="text-sm text-gray-600 mt-2 leading-relaxed prose prose-sm max-w-none"
+                        />
                       )}
                     </div>
                   </div>
@@ -1443,7 +1449,10 @@ export const AdminEditorialPage: React.FC = () => {
                         <p className="text-sm text-gray-700 mt-1">Réponse correcte : <b>{String(batchQuestions[batchIndex].correctAnswer)}</b></p>
                       )}
                       {batchQuestions[batchIndex].explanation && (
-                        <p className="text-sm text-gray-600 mt-2">{batchQuestions[batchIndex].explanation}</p>
+                        <SanitizedHTML
+                          html={batchQuestions[batchIndex].explanation}
+                          className="text-sm text-gray-600 mt-2 prose prose-sm max-w-none"
+                        />
                       )}
                     </div>
                   </div>
