@@ -15,6 +15,7 @@ import {
     ConversionDTO,
     ViralityDTO,
     NotificationStatsDTO,
+    AtRiskFunnelDTO,
 } from '../../services/adminService';
 
 /* ── Retention cell color helper ── */
@@ -71,6 +72,7 @@ export const AdminAnalyticsPage: React.FC = () => {
     const [conversion, setConversion] = useState<ConversionDTO | null>(null);
     const [virality, setVirality] = useState<ViralityDTO | null>(null);
     const [notifStats, setNotifStats] = useState<NotificationStatsDTO | null>(null);
+    const [atRiskFunnel, setAtRiskFunnel] = useState<AtRiskFunnelDTO | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -83,7 +85,8 @@ export const AdminAnalyticsPage: React.FC = () => {
             adminService.getConversion().catch(() => null),
             adminService.getVirality().catch(() => null),
             adminService.getNotificationStats().catch(() => null),
-        ]).then(([k, qs, ds, eng, ret, conv, vir, ns]) => {
+            adminService.getAtRiskFunnel(30).catch(() => null),
+        ]).then(([k, qs, ds, eng, ret, conv, vir, ns, arf]) => {
             if (k) setKpis(k);
             setQuestionStats(qs);
             if (ds) setDigestStats(ds);
@@ -92,6 +95,7 @@ export const AdminAnalyticsPage: React.FC = () => {
             if (conv) setConversion(conv);
             if (vir) setVirality(vir);
             if (ns) setNotifStats(ns);
+            if (arf) setAtRiskFunnel(arf);
         }).finally(() => setIsLoading(false));
     }, []);
 
@@ -277,6 +281,38 @@ export const AdminAnalyticsPage: React.FC = () => {
                         <div className="text-center p-4 bg-green-50 rounded-xl">
                             <span className="block text-3xl font-extrabold text-green-600">{virality.newUsersThisMonth}</span>
                             <span className="text-xs text-gray-500 font-bold uppercase">Nouveaux ce mois</span>
+                        </div>
+                    </div>
+                </Card>
+            )}
+
+            {/* ── At-risk Funnel (A3.6) ── */}
+            {atRiskFunnel && (
+                <Card>
+                    <h3 className="font-bold text-gray-800 mb-1 flex items-center">
+                        <AlertTriangle size={20} className="mr-2 text-amber-600" /> Boucle élèves à risque
+                    </h3>
+                    <p className="text-xs text-gray-500 mb-4">
+                        Funnel sur {atRiskFunnel.periodDays} jours. Taux de réactivation = sessions complétées dans les 7 j suivant l'envoi SMS.
+                    </p>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="text-center p-4 bg-amber-50 rounded-xl">
+                            <span className="block text-3xl font-extrabold text-amber-700">{atRiskFunnel.detectedNow}</span>
+                            <span className="text-xs text-gray-500 font-bold uppercase">Détectés à risque</span>
+                        </div>
+                        <div className="text-center p-4 bg-blue-50 rounded-xl">
+                            <span className="block text-3xl font-extrabold text-blue-700">{atRiskFunnel.smsSent}</span>
+                            <span className="text-xs text-gray-500 font-bold uppercase">SMS envoyés</span>
+                        </div>
+                        <div className="text-center p-4 bg-green-50 rounded-xl">
+                            <span className="block text-3xl font-extrabold text-green-700">{atRiskFunnel.smsWithReactivation}</span>
+                            <span className="text-xs text-gray-500 font-bold uppercase">Réactivés (J+7)</span>
+                        </div>
+                        <div className="text-center p-4 bg-indigo-50 rounded-xl">
+                            <span className="block text-3xl font-extrabold text-indigo-700">
+                                {(atRiskFunnel.reactivationRate * 100).toFixed(1)}%
+                            </span>
+                            <span className="text-xs text-gray-500 font-bold uppercase">Taux réactivation</span>
                         </div>
                     </div>
                 </Card>

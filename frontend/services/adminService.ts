@@ -112,6 +112,14 @@ export interface NotificationStatsDTO {
 
 export type AtRiskLevel = 'medium' | 'high';
 
+export interface AtRiskFunnelDTO {
+  periodDays: number;
+  detectedNow: number;
+  smsSent: number;
+  smsWithReactivation: number;
+  reactivationRate: number; // 0..1
+}
+
 export interface AtRiskStudentDTO {
   profileId: string;
   displayName: string;
@@ -306,6 +314,17 @@ export const adminService = {
 
   async exportUsersCsv(): Promise<void> {
     window.open('/api/v1/admin/export/users.csv', '_blank');
+  },
+
+  async getAtRiskFunnel(periodDays = 30): Promise<AtRiskFunnelDTO> {
+    const data = await apiClient.get<any>(`/admin/analytics/at-risk-funnel?period_days=${periodDays}`);
+    return {
+      periodDays: data.period_days ?? periodDays,
+      detectedNow: data.detected_now ?? 0,
+      smsSent: data.sms_sent ?? 0,
+      smsWithReactivation: data.sms_with_reactivation ?? 0,
+      reactivationRate: data.reactivation_rate ?? 0,
+    };
   },
 
   async listAtRisk(
