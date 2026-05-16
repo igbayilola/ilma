@@ -55,6 +55,7 @@ const ProfileSelectorPage = lazyNamed(() => import('./pages/auth/ProfileSelector
 const ProfileCreatePage = lazyNamed(() => import('./pages/auth/ProfileCreate'), 'ProfileCreatePage');
 
 // Student Pages
+const ProgrammePage = lazyNamed(() => import('./pages/student/Programme'), 'ProgrammePage');
 const SubjectsPage = lazyNamed(() => import('./pages/student/Subjects'), 'SubjectsPage');
 const DomainsPage = lazyNamed(() => import('./pages/student/Domains'), 'DomainsPage');
 const SkillsPage = lazyNamed(() => import('./pages/student/Skills'), 'SkillsPage');
@@ -214,6 +215,9 @@ const App: React.FC = () => {
                                 <Route path="student" element={<RoleRoute allowedRoles={[UserRole.STUDENT, UserRole.GUEST]} />}>
                                     <Route element={<RequireProfile />}>
                                         <Route path="dashboard" element={<Dashboard />} />
+
+                                        {/* Vue annuelle compagnon-annuel */}
+                                        <Route path="programme" element={<ProgrammePage />} />
 
                                         {/* Educational Flow */}
                                         <Route path="subjects" element={<SubjectsPage />} />

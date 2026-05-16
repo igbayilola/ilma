@@ -8,7 +8,7 @@ import {
   Home, BookOpen, Award, User, Menu, Bell, Trophy,
   Settings, LogOut, X, ChevronRight, FileEdit,
   LayoutDashboard, Users, FileText, BarChart2, Shield, Target, AlertTriangle, Crown, Cloud, ArrowLeftRight,
-  School, ClipboardList, FileQuestion
+  School, ClipboardList, FileQuestion, CalendarDays
 } from 'lucide-react';
 import { OfflineBanner, SyncCounter } from '../ilma/OfflineIndicators';
 import { SearchBar } from './SearchBar';
@@ -22,6 +22,7 @@ const NAV_ITEMS: NavItem[] = [
   // Student & Guest
   { label: 'Accueil', path: '/app/student/dashboard', icon: 'Home', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Mati\u00e8res', path: '/app/student/subjects', icon: 'BookOpen', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
+  { label: 'Programme', path: '/app/student/programme', icon: 'CalendarDays', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Formulaire', path: '/app/student/formulaire', icon: 'ClipboardList', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Classement', path: '/app/student/leaderboard', icon: 'Trophy', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
   { label: 'Progression', path: '/app/student/progress', icon: 'Award', allowedRoles: [UserRole.STUDENT, UserRole.GUEST] },
@@ -70,6 +71,7 @@ const IconMap: Record<string, React.ReactNode> = {
   School: <School size={24} />,
   ClipboardList: <ClipboardList size={24} />,
   FileQuestion: <FileQuestion size={24} />,
+  CalendarDays: <CalendarDays size={24} />,
 };
 
 // --- Sync-aware logout guard ---
