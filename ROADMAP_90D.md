@@ -58,6 +58,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Polish Dashboard ↔ Programme** (iter 23) : finition de la découvrabilité de la page programme. CTA secondaire « Voir tout mon programme → » sous le bouton principal de `CurrentLessonHero`, et nouveau widget récapitulatif `ProgressByTrimester` (3 barres T1/T2/T3, total maîtrisés, surlignage trimestre courant) inséré juste après la hero — cliquable vers `/app/student/programme`. Réutilise la fonction pure `groupByTrimesterWeek` de iter 22. 4 tests de rendu.
 
+**✅ Widget Programme côté parent** (iter 25) : extension du widget `ProgressByTrimester` à la fiche enfant parent (`ChildDetailPage` onglet « Vue d'ensemble »). Le composant accepte désormais 3 props optionnelles (`title`, `programmeHref`, `linkAriaLabel`) pour s'adapter au contexte parent qui n'a pas la route `/app/student/programme` accessible. Le parent voit « Où en est <Prénom> dans le programme » avec les mêmes 3 barres T1/T2/T3 que l'élève. `ChildDTO` étendu avec `gradeLevelId` (déjà exposé par le BE, juste non mappé jusqu'ici). 6 tests rendu (+2 sur les nouvelles props).
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
