@@ -48,7 +48,7 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 - Éditeur admin trimestre/semaine + validation Pydantic (iter 9)
 - Cleanup chaîne Alembic (iter 10)
 
-**❌ Trou implicite : backfill `trimester`/`week_order` sur les ~224 micro-compétences CM2.** Tant qu'ils sont NULL, le FE retombe sur l'heuristique « premier skill non-maîtrisé » (commentaire `models/content.py:107-109`) — le pivot reste dormant.
+**✅ Backfill `trimester`/`week_order`** : 219 skills CM2 actifs séquencés par heuristique (iter 19, `app/scripts/backfill_curriculum_sequencing.py` idempotent). T3 = domaines `preparation-cep-*`, T1+T2 = reste, ordre `(domain effectif, skill.order)`. Override d'ordre maths intégré (toutes les rows à `domain.order=1` en base). Le picker FE bascule désormais en mode calendrier.
 
 ### Trous résiduels par ROI
 
@@ -58,10 +58,10 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 | 2 | A5.3-A5.6 TWA Play Store | 5 | DevOps 3-4j | KPI ≥ 500 installs J+90 |
 | 3 | A6.1 + A6.2 MTN/Moov Money | 6 | BE ~5j | Monétisation locale |
 | 4 | A6.6 code invitation classe | 6 | BE+FE 1-2j | Usage réel du dashboard prof |
-| 5 | Backfill curriculum trimestre/semaine | pivot | contenu | Active le pivot compagnon-annuel |
+| 5 | ~~Backfill curriculum trimestre/semaine~~ | pivot | ~~contenu~~ | ✅ iter 19 |
 | 6 | A2.6 backfill explications top-200 | 2 | contenu | KPI ≥ 60 % worked-solution |
 
-> **Itération 11 en cours** (16 mai) : item #1 — A3.2 boucle at-risk admin.
+> **Itération 19 livrée** (16 mai) : item #5 — backfill curriculum (script + tests + impact FE picker calendar-aware).
 
 ---
 
