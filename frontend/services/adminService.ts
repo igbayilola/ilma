@@ -327,6 +327,14 @@ export const adminService = {
     };
   },
 
+  exportAtRiskCsv(minLevel: AtRiskLevel = 'medium'): void {
+    window.open(`/api/v1/admin/students/at-risk/export.csv?min_level=${minLevel}`, '_blank');
+  },
+
+  async sendInactivitySms(profileId: string): Promise<{ risk_level: string; parent_phone: string }> {
+    return apiClient.post(`/admin/students/${profileId}/send-inactivity-sms`, {});
+  },
+
   async listAtRisk(
     minLevel: AtRiskLevel = 'medium',
     page = 1,

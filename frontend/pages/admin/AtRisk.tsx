@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { DataTable } from '../../components/admin/DataTable';
 import { Skeleton } from '../../components/ui/Skeleton';
 import { Badge } from '../../components/ui/Cards';
-import { AlertTriangle, AlertCircle, Phone, Calendar, TrendingDown } from 'lucide-react';
+import { AlertTriangle, AlertCircle, Phone, Calendar, TrendingDown, Download, Send, Loader2 } from 'lucide-react';
 import { adminService, AtRiskLevel, AtRiskStudentDTO } from '../../services/adminService';
 
 type RowWithId = AtRiskStudentDTO & { id: string };
@@ -43,6 +43,8 @@ export const AdminAtRiskPage: React.FC = () => {
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [total, setTotal] = useState(0);
+    const [smsBusy, setSmsBusy] = useState<Set<string>>(new Set());
+    const [toast, setToast] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
     const load = useCallback(async (p: number, level: AtRiskLevel) => {
         setIsLoading(true);
@@ -62,6 +64,37 @@ export const AdminAtRiskPage: React.FC = () => {
     }, []);
 
     useEffect(() => { load(1, minLevel); }, [load, minLevel]);
+
+    const handleExportCsv = () => {
+        adminService.exportAtRiskCsv(minLevel);
+    };
+
+    const handleSendSms = async (row: RowWithId) => {
+        if (!row.parentPhone) return;
+        const childName = row.displayName;
+        if (!window.confirm(`Envoyer un SMS au parent de ${childName} maintenant ?`)) return;
+        setSmsBusy(prev => new Set(prev).add(row.profileId));
+        try {
+            await adminService.sendInactivitySms(row.profileId);
+            setToast({ type: 'success', text: `SMS envoyé au parent de ${childName}.` });
+        } catch (err: any) {
+            const msg = err?.message?.includes('NOTIFICATION_THROTTLED')
+                ? 'Limite SMS quotidienne atteinte pour ce parent.'
+                : err?.message?.includes('NOT_AT_RISK')
+                ? 'Ce profil n\'est plus classé à risque (recharger).'
+                : err?.message?.includes('NO_PARENT_PHONE')
+                ? 'Aucun téléphone parent disponible.'
+                : err?.message || 'Erreur lors de l\'envoi.';
+            setToast({ type: 'error', text: msg });
+        } finally {
+            setSmsBusy(prev => {
+                const next = new Set(prev);
+                next.delete(row.profileId);
+                return next;
+            });
+            setTimeout(() => setToast(null), 4000);
+        }
+    };
 
     const counts = {
         high: rows.filter(r => r.riskLevel === 'high').length,
@@ -132,6 +165,29 @@ export const AdminAtRiskPage: React.FC = () => {
                 <span className="text-sm text-gray-700">{row.suggestedAction || '—'}</span>
             ),
         },
+        {
+            header: '',
+            accessor: (row: RowWithId) => {
+                const busy = smsBusy.has(row.profileId);
+                const disabled = !row.parentPhone || busy;
+                return (
+                    <button
+                        type="button"
+                        onClick={() => handleSendSms(row)}
+                        disabled={disabled}
+                        title={
+                            !row.parentPhone
+                                ? 'Pas de téléphone parent'
+                                : 'Envoyer un SMS au parent maintenant'
+                        }
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-sitou-primary text-white hover:bg-amber-600 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
+                    >
+                        {busy ? <Loader2 size={12} className="animate-spin" /> : <Send size={12} />}
+                        SMS
+                    </button>
+                );
+            },
+        },
     ];
 
     if (isLoading && rows.length === 0) {
@@ -156,25 +212,47 @@ export const AdminAtRiskPage: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-xl p-1 shadow-sm">
-                    {(['medium', 'high'] as AtRiskLevel[]).map(level => (
-                        <button
-                            key={level}
-                            type="button"
-                            onClick={() => setMinLevel(level)}
-                            aria-pressed={minLevel === level}
-                            className={
-                                'px-3 py-1.5 rounded-lg text-sm font-bold transition-colors ' +
-                                (minLevel === level
-                                    ? 'bg-sitou-primary text-white'
-                                    : 'text-gray-600 hover:bg-gray-50')
-                            }
-                        >
-                            {level === 'high' ? 'Élevé uniquement' : 'Modéré + Élevé'}
-                        </button>
-                    ))}
+                <div className="flex items-center gap-2 flex-wrap">
+                    <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-xl p-1 shadow-sm">
+                        {(['medium', 'high'] as AtRiskLevel[]).map(level => (
+                            <button
+                                key={level}
+                                type="button"
+                                onClick={() => setMinLevel(level)}
+                                aria-pressed={minLevel === level}
+                                className={
+                                    'px-3 py-1.5 rounded-lg text-sm font-bold transition-colors ' +
+                                    (minLevel === level
+                                        ? 'bg-sitou-primary text-white'
+                                        : 'text-gray-600 hover:bg-gray-50')
+                                }
+                            >
+                                {level === 'high' ? 'Élevé uniquement' : 'Modéré + Élevé'}
+                            </button>
+                        ))}
+                    </div>
+                    <button
+                        type="button"
+                        onClick={handleExportCsv}
+                        disabled={total === 0}
+                        className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold bg-white border border-gray-200 text-gray-700 hover:border-sitou-primary hover:text-sitou-primary disabled:opacity-40 disabled:cursor-not-allowed transition-colors shadow-sm"
+                    >
+                        <Download size={14} />
+                        Export CSV
+                    </button>
                 </div>
             </header>
+
+            {toast && (
+                <div
+                    role="status"
+                    className={`px-4 py-2 rounded-xl text-sm font-medium ${
+                        toast.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'
+                    }`}
+                >
+                    {toast.text}
+                </div>
+            )}
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="bg-white border border-gray-200 rounded-xl p-4">
