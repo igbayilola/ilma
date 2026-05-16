@@ -10,13 +10,12 @@ import {
   ClassroomDTO,
   AlertStudentDTO,
 } from '../../services/teacherService';
+import { ClassInviteShare } from '../../components/teacher/ClassInviteShare';
 import {
   Users,
   School,
   AlertTriangle,
   Plus,
-  Copy,
-  Check,
   ChevronRight,
 } from 'lucide-react';
 
@@ -48,33 +47,6 @@ const StatCard = ({
     />
   </Card>
 );
-
-const InviteCodeBadge: React.FC<{ code: string }> = ({ code }) => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    navigator.clipboard.writeText(code).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
-
-  return (
-    <button
-      onClick={handleCopy}
-      className="inline-flex items-center space-x-1.5 bg-gray-100 hover:bg-gray-200 transition-colors px-3 py-1 rounded-lg text-sm font-mono font-bold text-gray-700"
-      title="Copier le code d'invitation"
-    >
-      <span>{code}</span>
-      {copied ? (
-        <Check size={14} className="text-green-600" />
-      ) : (
-        <Copy size={14} className="text-gray-400" />
-      )}
-    </button>
-  );
-};
 
 export const TeacherDashboard: React.FC = () => {
   const { user } = useAuthStore();
@@ -215,7 +187,7 @@ export const TeacherDashboard: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-center justify-between">
-                  <InviteCodeBadge code={c.invite_code} />
+                  <ClassInviteShare className={c.name} inviteCode={c.invite_code} variant="sm" />
                   <ChevronRight size={18} className="text-gray-300" />
                 </div>
               </Card>

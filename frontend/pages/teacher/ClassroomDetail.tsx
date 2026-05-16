@@ -11,9 +11,8 @@ import {
   AssignmentDTO,
   ClassroomOverviewDTO,
 } from '../../services/teacherService';
+import { ClassInviteShare } from '../../components/teacher/ClassInviteShare';
 import {
-  Copy,
-  Check,
   UserMinus,
   Plus,
   Eye,
@@ -38,7 +37,6 @@ export const ClassroomDetail: React.FC = () => {
   const [overview, setOverview] = useState<ClassroomOverviewDTO | null>(null);
   const [activeTab, setActiveTab] = useState('students');
   const [isLoading, setIsLoading] = useState(true);
-  const [copied, setCopied] = useState(false);
 
   // Create assignment modal state
   const [showAssignModal, setShowAssignModal] = useState(false);
@@ -89,14 +87,6 @@ export const ClassroomDetail: React.FC = () => {
       () => setIsLoading(false)
     );
   }, [loadClassroom, loadAssignments, loadOverview]);
-
-  const handleCopyCode = () => {
-    if (!classroom) return;
-    navigator.clipboard.writeText(classroom.invite_code).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
 
   const handleRemoveStudent = async (profileId: string) => {
     if (!id) return;
@@ -197,19 +187,13 @@ export const ClassroomDetail: React.FC = () => {
               {(classroom.student_count || 0) !== 1 ? 's' : ''}
             </p>
           </div>
-          <div className="flex items-center space-x-3">
-            <span className="text-sm text-gray-500">Code d'invitation :</span>
-            <button
-              onClick={handleCopyCode}
-              className="inline-flex items-center space-x-2 bg-gray-100 hover:bg-gray-200 transition-colors px-4 py-2 rounded-xl font-mono font-bold text-gray-800"
-            >
-              <span>{classroom.invite_code}</span>
-              {copied ? (
-                <Check size={16} className="text-green-600" />
-              ) : (
-                <Copy size={16} className="text-gray-400" />
-              )}
-            </button>
+          <div className="flex flex-col md:items-end gap-1">
+            <span className="text-sm text-gray-500">Code d'invitation</span>
+            <ClassInviteShare
+              className={classroom.name}
+              inviteCode={classroom.invite_code}
+              variant="md"
+            />
           </div>
         </div>
       </Card>
