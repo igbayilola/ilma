@@ -322,6 +322,11 @@ async def _send_parent_inactivity_alerts() -> int:
                 type=NotificationType.INACTIVITY,
                 title=title,
                 body=body,
+                # Tag the subject so the at-risk funnel can correlate this SMS
+                # back to the kid that triggered it (notification.user_id is
+                # the parent — without this, the funnel can't distinguish
+                # which child's inactivity prompted the alert).
+                data={"subject_profile_id": str(profile.id), "risk_level": risk_level},
                 phone=parent.phone,
             )
             sent += 1

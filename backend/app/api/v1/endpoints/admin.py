@@ -16,7 +16,7 @@ from app.schemas.response import ok, paginated
 from app.schemas.user import User as UserSchema
 from app.services.admin_service import admin_service
 from app.services.config_service import config_service
-from app.services.risk_service import RiskLevel, list_at_risk
+from app.services.risk_service import RiskLevel, compute_funnel, list_at_risk
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -146,6 +146,28 @@ async def get_virality(
 ):
     data = await admin_service.get_virality(db)
     return ok(data=data)
+
+
+@router.get("/analytics/at-risk-funnel")
+async def get_at_risk_funnel(
+    period_days: int = Query(30, ge=7, le=90),
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    """Funnel : at-risk détecté → SMS parent envoyé → réactivation J+7.
+
+    Période paramétrable (7–90 j, défaut 30). `detected_now` est un
+    snapshot indépendant de la période ; les autres compteurs sont
+    fenêtrés.
+    """
+    funnel = await compute_funnel(db, period_days=period_days)
+    return ok(data={
+        "period_days": funnel.period_days,
+        "detected_now": funnel.detected_now,
+        "sms_sent": funnel.sms_sent,
+        "sms_with_reactivation": funnel.sms_with_reactivation,
+        "reactivation_rate": round(funnel.reactivation_rate, 4),
+    })
 
 
 @router.get("/analytics/notifications")

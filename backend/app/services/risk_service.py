@@ -11,7 +11,7 @@ in sync — diverging here would silently mean admins and parents see
 different at-risk lists.
 """
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Literal
 from uuid import UUID
 
@@ -20,6 +20,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.models.content import GradeLevel
+from app.models.notification import Notification, NotificationChannel, NotificationType
 from app.models.profile import Profile
 from app.models.progress import Progress
 from app.models.session import ExerciseSession, SessionStatus
@@ -183,3 +184,80 @@ async def list_at_risk(
     rows.sort(key=lambda r: (-_RANK[r.signals.risk_level], -r.signals.days_inactive))
     total = len(rows)
     return rows[skip : skip + limit], total
+
+
+@dataclass(frozen=True, slots=True)
+class AtRiskFunnel:
+    period_days: int
+    detected_now: int
+    sms_sent: int
+    sms_with_reactivation: int
+    reactivation_rate: float  # 0.0–1.0
+
+
+async def compute_funnel(db: AsyncSession, period_days: int = 30) -> AtRiskFunnel:
+    """Funnel : at-risk détecté → SMS parent envoyé → réactivation J+7.
+
+    - `detected_now`  : profils actuellement classés ≥ medium (snapshot,
+       même formule que le cron, indépendant de la période)
+    - `sms_sent`      : notifications type=INACTIVITY, channel=SMS dans la
+       fenêtre [now - period_days, now]
+    - `sms_with_reactivation` : parmi `sms_sent`, celles dont le profil
+       enfant ciblé (`data["subject_profile_id"]`) a une ExerciseSession
+       COMPLETED dans les 7 jours suivant l'envoi
+    - `reactivation_rate` : sms_with_reactivation / sms_sent (0 si dénom = 0)
+
+    Note : les SMS envoyés avant l'introduction du tag `subject_profile_id`
+    (rétro-itération 11) ne peuvent pas être corrélés et comptent comme
+    non-réactivés. Le ratio devient fiable une fois la nouvelle cohorte
+    constituée.
+    """
+    now = datetime.now(timezone.utc)
+    period_start = now - timedelta(days=period_days)
+
+    # `detected_now` : on rejoue la classification courante.
+    _, detected_now = await list_at_risk(db, min_level="medium", skip=0, limit=1)
+
+    sms_rows = (
+        await db.execute(
+            select(Notification).where(
+                Notification.type == NotificationType.INACTIVITY,
+                Notification.channel == NotificationChannel.SMS,
+                Notification.created_at >= period_start,
+            )
+        )
+    ).scalars().all()
+    sms_sent = len(sms_rows)
+
+    reactivated = 0
+    for notif in sms_rows:
+        subject_id_str = (notif.data or {}).get("subject_profile_id") if notif.data else None
+        if not subject_id_str:
+            continue
+        try:
+            subject_id = UUID(subject_id_str)
+        except (TypeError, ValueError):
+            continue
+        notif_at = _as_utc_aware(notif.created_at)
+        window_end = notif_at + timedelta(days=7)
+        has_followup = (
+            await db.execute(
+                select(func.count(ExerciseSession.id)).where(
+                    ExerciseSession.profile_id == subject_id,
+                    ExerciseSession.status == SessionStatus.COMPLETED,
+                    ExerciseSession.completed_at > notif_at,
+                    ExerciseSession.completed_at <= window_end,
+                )
+            )
+        ).scalar()
+        if (has_followup or 0) > 0:
+            reactivated += 1
+
+    rate = reactivated / sms_sent if sms_sent > 0 else 0.0
+    return AtRiskFunnel(
+        period_days=period_days,
+        detected_now=detected_now,
+        sms_sent=sms_sent,
+        sms_with_reactivation=reactivated,
+        reactivation_rate=rate,
+    )

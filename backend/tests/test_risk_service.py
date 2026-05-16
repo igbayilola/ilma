@@ -7,6 +7,7 @@ from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.content import Domain, GradeLevel, Skill, Subject
+from app.models.notification import Notification, NotificationChannel, NotificationType
 from app.models.profile import Profile
 from app.models.progress import Progress
 from app.models.session import ExerciseSession, SessionMode, SessionStatus
@@ -14,6 +15,7 @@ from app.models.user import User, UserRole
 from app.services.risk_service import (
     classify_risk,
     compute_for_profile,
+    compute_funnel,
     list_at_risk,
     suggested_action,
 )
@@ -261,3 +263,102 @@ async def test_get_students_at_risk_min_level_high_filters_medium(
     items = resp.json()["data"]["items"]
     names = {it["display_name"] for it in items}
     assert names == {"Hi"}
+
+
+# ── At-risk funnel ─────────────────────────────────────────
+
+
+@pytest.mark.asyncio
+async def test_compute_funnel_no_data(db_session: AsyncSession):
+    funnel = await compute_funnel(db_session, period_days=30)
+    assert funnel.detected_now == 0
+    assert funnel.sms_sent == 0
+    assert funnel.sms_with_reactivation == 0
+    assert funnel.reactivation_rate == 0.0
+
+
+@pytest.mark.asyncio
+async def test_compute_funnel_counts_reactivation_within_7d(db_session: AsyncSession):
+    """SMS sent → kid completed a session in the 7d window → counted as reactivation."""
+    parent = _make_user(role=UserRole.PARENT)
+    db_session.add(parent)
+    await db_session.flush()
+    kid_reactivated = Profile(
+        id=uuid.uuid4(), user_id=parent.id, display_name="Réactivé", is_active=True,
+    )
+    kid_stayed_silent = Profile(
+        id=uuid.uuid4(), user_id=parent.id, display_name="Silencieux", is_active=True,
+    )
+    db_session.add_all([kid_reactivated, kid_stayed_silent])
+    await db_session.flush()
+
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    sms_at = now - timedelta(days=5)
+
+    # SMS for kid 1, then a session 2 days later → counted
+    db_session.add(Notification(
+        id=uuid.uuid4(), user_id=parent.id,
+        type=NotificationType.INACTIVITY, channel=NotificationChannel.SMS,
+        title="t", body="b", data={"subject_profile_id": str(kid_reactivated.id), "risk_level": "high"},
+        created_at=sms_at,
+    ))
+    db_session.add(ExerciseSession(
+        id=uuid.uuid4(), profile_id=kid_reactivated.id,
+        status=SessionStatus.COMPLETED, mode=SessionMode.PRACTICE,
+        started_at=sms_at + timedelta(days=2), completed_at=sms_at + timedelta(days=2),
+    ))
+
+    # SMS for kid 2, no follow-up session → not counted
+    db_session.add(Notification(
+        id=uuid.uuid4(), user_id=parent.id,
+        type=NotificationType.INACTIVITY, channel=NotificationChannel.SMS,
+        title="t", body="b", data={"subject_profile_id": str(kid_stayed_silent.id), "risk_level": "medium"},
+        created_at=sms_at,
+    ))
+    await db_session.flush()
+
+    funnel = await compute_funnel(db_session, period_days=30)
+    assert funnel.sms_sent == 2
+    assert funnel.sms_with_reactivation == 1
+    assert funnel.reactivation_rate == 0.5
+
+
+@pytest.mark.asyncio
+async def test_compute_funnel_ignores_legacy_sms_without_subject_tag(
+    db_session: AsyncSession,
+):
+    """Pre-iter-12 SMS without `subject_profile_id` count in sms_sent but never
+    in sms_with_reactivation — a known caveat documented in the docstring."""
+    parent = _make_user(role=UserRole.PARENT)
+    db_session.add(parent)
+    await db_session.flush()
+    db_session.add(Notification(
+        id=uuid.uuid4(), user_id=parent.id,
+        type=NotificationType.INACTIVITY, channel=NotificationChannel.SMS,
+        title="t", body="b", data=None,
+        created_at=datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=1),
+    ))
+    await db_session.flush()
+
+    funnel = await compute_funnel(db_session, period_days=30)
+    assert funnel.sms_sent == 1
+    assert funnel.sms_with_reactivation == 0
+    assert funnel.reactivation_rate == 0.0
+
+
+@pytest.mark.asyncio
+async def test_get_at_risk_funnel_endpoint(
+    client: AsyncClient, db_session: AsyncSession, test_admin
+):
+    resp = await client.get(
+        "/api/v1/admin/analytics/at-risk-funnel?period_days=30",
+        headers=auth_header(test_admin),
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["success"] is True
+    data = body["data"]
+    assert data["period_days"] == 30
+    assert "detected_now" in data
+    assert "sms_sent" in data
+    assert "reactivation_rate" in data
