@@ -97,7 +97,7 @@ export const ForgotPasswordPage: React.FC = () => {
 
   if (step === 'done') {
     return (
-      <AuthLayout title="Mot de passe modifie" backTo="/login">
+      <AuthLayout title="Mot de passe modifie" backLink="/login">
         <div className="text-center py-8 space-y-4">
           <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center">
             <CheckCircle2 className="text-green-600 w-8 h-8" />
@@ -111,7 +111,7 @@ export const ForgotPasswordPage: React.FC = () => {
   }
 
   return (
-    <AuthLayout title="Mot de passe oublie" backTo="/login">
+    <AuthLayout title="Mot de passe oublie" backLink="/login">
       <div className="space-y-6">
         {step === 'email' && (
           <form onSubmit={handleSendOTP} className="space-y-4">
