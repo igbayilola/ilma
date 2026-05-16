@@ -1,4 +1,5 @@
 """Admin endpoints: user management, analytics, exports."""
+import csv
 import io
 from datetime import datetime, timezone
 from typing import Any
@@ -6,17 +7,28 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, Query
 from fastapi.responses import StreamingResponse
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.config import settings
 from app.core.deps import require_role
+from app.core.exceptions import AppException, NotFoundException
 from app.db.session import get_db_session
+from app.models.notification import NotificationType
+from app.models.profile import Profile
 from app.models.subscription import PaymentStatus
 from app.models.user import User, UserRole
 from app.schemas.response import ok, paginated
 from app.schemas.user import User as UserSchema
 from app.services.admin_service import admin_service
 from app.services.config_service import config_service
-from app.services.risk_service import RiskLevel, compute_funnel, list_at_risk
+from app.services.notification_service import notification_service
+from app.services.risk_service import (
+    RiskLevel,
+    compute_for_profile,
+    compute_funnel,
+    list_at_risk,
+)
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -230,6 +242,116 @@ async def list_students_at_risk(
         for r in rows
     ]
     return paginated(items=items, total=total, page=page, page_size=page_size)
+
+
+@router.get("/students/at-risk/export.csv")
+async def export_students_at_risk_csv(
+    min_level: RiskLevel = Query("medium"),
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    """Export CSV de la cohorte at-risk pour campagnes outreach (papier,
+    appel téléphonique). Pas de pagination — l'admin veut tout d'un coup.
+    Limite haute à 5000 pour éviter une réponse pathologique."""
+    rows, _ = await list_at_risk(db, min_level=min_level, skip=0, limit=5000)
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerow([
+        "profile_id", "display_name", "grade_level",
+        "risk_level", "days_inactive", "avg_score",
+        "last_completed_at", "parent_phone", "suggested_action",
+    ])
+    for r in rows:
+        writer.writerow([
+            str(r.profile_id),
+            r.display_name,
+            r.grade_level or "",
+            r.signals.risk_level,
+            r.signals.days_inactive,
+            round(r.signals.avg_score, 1),
+            r.last_completed_at.isoformat() if r.last_completed_at else "",
+            r.parent_phone or "",
+            r.signals.action,
+        ])
+    filename = f"at_risk_{min_level}_{datetime.now(timezone.utc).strftime('%Y%m%d')}.csv"
+    return StreamingResponse(
+        iter([output.getvalue()]),
+        media_type="text/csv",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
+
+
+@router.post("/students/{profile_id}/send-inactivity-sms")
+async def admin_send_inactivity_sms(
+    profile_id: UUID,
+    db: AsyncSession = Depends(get_db_session),
+    _user: User = Depends(_admin),
+):
+    """Déclenche un SMS d'inactivité manuel vers le parent du profil cible.
+
+    Respecte le même throttling quotidien que le cron
+    (`NOTIFICATION_MAX_PER_DAY`) — l'admin ne peut pas spammer un parent.
+    Construit le message via la même logique de gravité (`classify_risk`),
+    donc cohérent avec ce que ferait le cron à l'identique.
+    """
+    profile = (await db.execute(
+        select(Profile).where(Profile.id == profile_id, Profile.is_active.is_(True))
+    )).scalar_one_or_none()
+    if not profile:
+        raise NotFoundException("Profil", str(profile_id))
+
+    parent = (await db.execute(
+        select(User).where(User.id == profile.user_id, User.role == UserRole.PARENT)
+    )).scalar_one_or_none()
+    if not parent or not parent.phone:
+        raise AppException(
+            status_code=400, code="NO_PARENT_PHONE",
+            message="Aucun téléphone parent disponible pour ce profil.",
+        )
+
+    signals = await compute_for_profile(db, profile)
+    if signals.risk_level == "low":
+        raise AppException(
+            status_code=400, code="NOT_AT_RISK",
+            message="Ce profil n'est pas classé à risque — aucun SMS envoyé.",
+        )
+
+    today_count = await notification_service.count_today(db, parent.id)
+    if today_count >= settings.NOTIFICATION_MAX_PER_DAY:
+        raise AppException(
+            status_code=429, code="NOTIFICATION_THROTTLED",
+            message="Limite quotidienne atteinte pour ce parent.",
+        )
+
+    child_name = profile.display_name or "Votre enfant"
+    if signals.risk_level == "high":
+        title = f"Alerte : {child_name} risque de décrocher"
+        body = f"{child_name} n'a pas étudié depuis {signals.days_inactive} jours"
+        if signals.avg_score < 40:
+            body += f" et son score moyen est de {signals.avg_score:.0f}%"
+        body += ". Encouragez-le à reprendre avec un exercice de 10 minutes."
+    else:
+        title = f"{child_name} n'a pas étudié depuis {signals.days_inactive} jours"
+        body = f"Un petit rappel pourrait aider {child_name} à reprendre le rythme."
+
+    await notification_service.create_multi_channel(
+        db=db,
+        user_id=parent.id,
+        type=NotificationType.INACTIVITY,
+        title=title,
+        body=body,
+        data={
+            "subject_profile_id": str(profile.id),
+            "risk_level": signals.risk_level,
+            "trigger": "admin_manual",
+        },
+        phone=parent.phone,
+    )
+    await db.commit()
+    return ok(
+        data={"risk_level": signals.risk_level, "parent_phone": parent.phone},
+        message="SMS envoyé au parent.",
+    )
 
 
 # ── Exports ────────────────────────────────────────────────

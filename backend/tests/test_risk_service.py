@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 from httpx import AsyncClient
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.content import Domain, GradeLevel, Skill, Subject
@@ -362,3 +363,146 @@ async def test_get_at_risk_funnel_endpoint(
     assert "detected_now" in data
     assert "sms_sent" in data
     assert "reactivation_rate" in data
+
+
+# ── CSV export ─────────────────────────────────────────────
+
+
+@pytest.mark.asyncio
+async def test_export_at_risk_csv_returns_csv_with_rows(
+    client: AsyncClient, db_session: AsyncSession, test_admin
+):
+    parent = User(
+        id=uuid.uuid4(), email=f"{uuid.uuid4().hex[:8]}@p.com",
+        phone="+22912345678", full_name="Mère",
+        hashed_password="x", role=UserRole.PARENT, is_active=True,
+    )
+    db_session.add(parent)
+    await db_session.flush()
+    profile = Profile(
+        id=uuid.uuid4(), user_id=parent.id, display_name="Kofi", is_active=True,
+        created_at=datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=12),
+    )
+    db_session.add(profile)
+    await db_session.flush()
+
+    resp = await client.get(
+        "/api/v1/admin/students/at-risk/export.csv",
+        headers=auth_header(test_admin),
+    )
+    assert resp.status_code == 200
+    assert resp.headers["content-type"].startswith("text/csv")
+    assert "attachment" in resp.headers.get("content-disposition", "")
+    body = resp.text
+    lines = [ln for ln in body.splitlines() if ln.strip()]
+    assert lines[0].startswith("profile_id,display_name,grade_level")
+    assert any("Kofi" in ln and "high" in ln and "+22912345678" in ln for ln in lines[1:])
+
+
+# ── Admin manual SMS trigger ───────────────────────────────
+
+
+@pytest.mark.asyncio
+async def test_admin_send_sms_for_at_risk_profile(
+    client: AsyncClient, db_session: AsyncSession, test_admin
+):
+    parent = User(
+        id=uuid.uuid4(), email=f"{uuid.uuid4().hex[:8]}@p.com",
+        phone="+22987654321", full_name="Papa",
+        hashed_password="x", role=UserRole.PARENT, is_active=True,
+    )
+    db_session.add(parent)
+    await db_session.flush()
+    profile = Profile(
+        id=uuid.uuid4(), user_id=parent.id, display_name="Aïcha", is_active=True,
+        created_at=datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=10),
+    )
+    db_session.add(profile)
+    await db_session.flush()
+
+    resp = await client.post(
+        f"/api/v1/admin/students/{profile.id}/send-inactivity-sms",
+        headers=auth_header(test_admin),
+    )
+    assert resp.status_code == 200, resp.text
+    body = resp.json()
+    assert body["success"] is True
+    assert body["data"]["parent_phone"] == "+22987654321"
+    assert body["data"]["risk_level"] == "high"
+
+    # Verify notifications were created (in_app + sms tracks)
+    notifs = (await db_session.execute(
+        select(Notification).where(
+            Notification.user_id == parent.id,
+            Notification.type == NotificationType.INACTIVITY,
+        )
+    )).scalars().all()
+    assert len(notifs) >= 1
+    # data tag should mark this as admin-triggered for the funnel
+    tagged = [n for n in notifs if n.data and n.data.get("trigger") == "admin_manual"]
+    assert len(tagged) >= 1
+
+
+@pytest.mark.asyncio
+async def test_admin_send_sms_rejects_low_risk_profile(
+    client: AsyncClient, db_session: AsyncSession, test_admin
+):
+    parent = User(
+        id=uuid.uuid4(), email=f"{uuid.uuid4().hex[:8]}@p.com",
+        phone="+22911111111", full_name="P",
+        hashed_password="x", role=UserRole.PARENT, is_active=True,
+    )
+    db_session.add(parent)
+    await db_session.flush()
+    # Fresh profile (1 day old) → low risk
+    profile = Profile(
+        id=uuid.uuid4(), user_id=parent.id, display_name="X", is_active=True,
+        created_at=datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=1),
+    )
+    db_session.add(profile)
+    await db_session.flush()
+
+    resp = await client.post(
+        f"/api/v1/admin/students/{profile.id}/send-inactivity-sms",
+        headers=auth_header(test_admin),
+    )
+    assert resp.status_code == 400
+    assert "NOT_AT_RISK" in resp.text
+
+
+@pytest.mark.asyncio
+async def test_admin_send_sms_rejects_no_parent_phone(
+    client: AsyncClient, db_session: AsyncSession, test_admin
+):
+    parent = User(
+        id=uuid.uuid4(), email=f"{uuid.uuid4().hex[:8]}@p.com",
+        phone=None, full_name="P",
+        hashed_password="x", role=UserRole.PARENT, is_active=True,
+    )
+    db_session.add(parent)
+    await db_session.flush()
+    profile = Profile(
+        id=uuid.uuid4(), user_id=parent.id, display_name="X", is_active=True,
+        created_at=datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=15),
+    )
+    db_session.add(profile)
+    await db_session.flush()
+
+    resp = await client.post(
+        f"/api/v1/admin/students/{profile.id}/send-inactivity-sms",
+        headers=auth_header(test_admin),
+    )
+    assert resp.status_code == 400
+    assert "NO_PARENT_PHONE" in resp.text
+
+
+@pytest.mark.asyncio
+async def test_admin_send_sms_404_on_unknown_profile(
+    client: AsyncClient, db_session: AsyncSession, test_admin
+):
+    fake_id = uuid.uuid4()
+    resp = await client.post(
+        f"/api/v1/admin/students/{fake_id}/send-inactivity-sms",
+        headers=auth_header(test_admin),
+    )
+    assert resp.status_code == 404
