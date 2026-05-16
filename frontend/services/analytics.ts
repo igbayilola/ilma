@@ -128,6 +128,11 @@ function contentViewed(data: {
   enqueue({ event_type: 'content_viewed', data });
 }
 
+/** PWA install funnel (A5.6) — shown / accepted / dismissed. */
+function installPromptOutcome(outcome: 'shown' | 'accepted' | 'dismissed') {
+  enqueue({ event_type: `install_prompt_${outcome}` });
+}
+
 export const analytics = {
   start,
   stop,
@@ -138,4 +143,5 @@ export const analytics = {
   exerciseCompleted,
   dropOff,
   contentViewed,
+  installPromptOutcome,
 };

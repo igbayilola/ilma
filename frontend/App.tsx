@@ -11,6 +11,8 @@ import { Skeleton } from './components/ui/Skeleton';
 import { PWAUpdatePrompt } from './components/pwa/UpdatePrompt';
 import { ErrorBoundary } from './components/common/ErrorBoundary';
 import { useForegroundNotifications } from './hooks/useForegroundNotifications';
+import { InstallPwaBanner } from './components/ui/InstallPwaBanner';
+import { analytics } from './services/analytics';
 
 // Retry wrapper for lazy imports — reloads the page once on chunk load failure
 function lazyWithRetry<T extends React.ComponentType<any>>(
@@ -126,6 +128,7 @@ const AppLayout = () => {
             <Suspense fallback={<PageLoader />}>
                 <Outlet />
             </Suspense>
+            <InstallPwaBanner onTrack={analytics.installPromptOutcome} />
         </AppShell>
     );
 };
