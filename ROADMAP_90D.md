@@ -19,6 +19,52 @@ Le reste (mascotte, RN, vidéo, Fon/Yoruba, pair-tutoring) reste **hors-périmè
 
 ---
 
+## État au 2026-05-16 (S+1 / W1)
+
+> Le plan original ci-dessous reste inchangé comme référence. Cette section reflète l'état réel après audit du 16 mai. Beaucoup d'items Sprint 1-4 étaient déjà livrés à la rédaction du plan (corrections P0/P1/P2 antérieures). Les itérations P3 1-10 ont fait du picking dans le roadmap + un pivot UX « compagnon-annuel » hors-périmètre.
+
+### Sprint 1 — Débloquer le légal + fondations diag &nbsp;✅ **complet**
+A1.1 Privacy/ToS · A1.2 consentement parental · A1.3 `DELETE /me/purge` · A1.4 Sentry gated (`SENTRY_ENABLED=true` requis sinon désactivé) · A1.5 avatars locaux · A1.6 modèles `DiagnosticAttempt` + `is_diagnostic` · A1.7 backups B2
+
+### Sprint 2 — Diagnostic + worked solutions &nbsp;✅ ~95 %
+A2.1 questions diag (via refonte CEP v2) · A2.2 endpoints (`diagnostic_service.py` + endpoint) · A2.3 onboarding 5 min (iter 7) · A2.4 Tiptap admin (iter 11, **commits du 16 mai** — stocké dans la colonne `explanation` existante, pas de migration `explanation_html` séparée) · A2.5 worked-solution + TTS (iter 6) · **❌ A2.6 backfill explications top-200** (contenu)
+
+### Sprint 3 — Détection à risque + a11y parents &nbsp;⚠️ moitié
+A3.1 règles risk_level low/medium/high (cron APScheduler 11:30 UTC, `tasks/notification_tasks.py:244 _send_parent_inactivity_alerts`) · A3.3 SMS contextualisés (partiel, pas d'A/B vs digest) · A3.4 TTS résumé parent (sur `pages/parent/Dashboard.tsx:82`) — **❌ A3.2 `GET /admin/students/at-risk` · ❌ A3.5 carte « Action suggérée » côté parent · ❌ A3.6 funnel at-risk → SMS → réactivation J+7**
+
+### Sprint 4 — Examens CEP 1/2 &nbsp;✅ complet
+A4.1 MockExam · A4.2 score prédictif (iter 6) · A4.3 contenu CEP (largement plus que 4 examens — annales 2008-2025 importées) · A4.4 timer 60min (`ExamPlayer.tsx` countdown + auto-soumission) · A4.5 paywall « 1 free per subject » (`api/v1/endpoints/exams.py:49`)
+
+### Sprint 5 — Examens 2/2 + TWA Play Store &nbsp;⚠️ partiel
+A5.1 correction détaillée (`ExamCorrection.tsx`) · A5.2 score CEP UI (iter 7) — **❌ A5.3 Bubblewrap · ❌ A5.4 assetlinks.json · ❌ A5.5 fiche Play Store · ❌ A5.6 onboarding install PWA**
+
+### Sprint 6 — Mobile Money + Espace Enseignant &nbsp;⚠️ tiers
+A6.3 plans micro 100/500 FCFA (iter 1) · A6.4 rôle TEACHER + modèles Classroom/Assignment · A6.5 dashboard prof (`pages/teacher/Dashboard.tsx`) — **❌ A6.1 MTN MoMo · ❌ A6.2 Moov Money · ❌ A6.6 code invitation 8 chars classe**
+
+### Pivot non-roadmap — Compagnon-annuel (iter 8-10)
+Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = leçon du jour, pas crammer CEP ». Livré :
+- Refonte dashboard élève autour de la leçon du jour (iter 8 1/2 + 2/2)
+- Champs `Skill.trimester` + `Skill.week_order` (cf. `backend/app/models/content.py:106-111`) — séquencement programme MEMP
+- Éditeur admin trimestre/semaine + validation Pydantic (iter 9)
+- Cleanup chaîne Alembic (iter 10)
+
+**❌ Trou implicite : backfill `trimester`/`week_order` sur les ~224 micro-compétences CM2.** Tant qu'ils sont NULL, le FE retombe sur l'heuristique « premier skill non-maîtrisé » (commentaire `models/content.py:107-109`) — le pivot reste dormant.
+
+### Trous résiduels par ROI
+
+| Rang | Item | Sprint d'origine | Charge | Bloque |
+|------|------|------------------|--------|--------|
+| 1 | A3.2 + A3.5 + A3.6 boucle at-risk admin/parent/funnel | 3 | BE+FE 3j | Boucle pédagogique ouverte côté admin |
+| 2 | A5.3-A5.6 TWA Play Store | 5 | DevOps 3-4j | KPI ≥ 500 installs J+90 |
+| 3 | A6.1 + A6.2 MTN/Moov Money | 6 | BE ~5j | Monétisation locale |
+| 4 | A6.6 code invitation classe | 6 | BE+FE 1-2j | Usage réel du dashboard prof |
+| 5 | Backfill curriculum trimestre/semaine | pivot | contenu | Active le pivot compagnon-annuel |
+| 6 | A2.6 backfill explications top-200 | 2 | contenu | KPI ≥ 60 % worked-solution |
+
+> **Itération 11 en cours** (16 mai) : item #1 — A3.2 boucle at-risk admin.
+
+---
+
 ## Track A — Engineering (sprints 2 semaines)
 
 ### Sprint 1 (W1-W2) — Débloquer le légal + fondations diagnostic
