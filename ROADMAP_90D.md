@@ -62,14 +62,60 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
 |------|------|------------------|--------|--------|
-| 1 | A3.2 + A3.5 + A3.6 boucle at-risk admin/parent/funnel | 3 | BE+FE 3j | Boucle pédagogique ouverte côté admin |
-| 2 | A5.3-A5.6 TWA Play Store | 5 | DevOps 3-4j | KPI ≥ 500 installs J+90 |
-| 3 | A6.1 + A6.2 MTN/Moov Money | 6 | BE ~5j | Monétisation locale |
-| 4 | A6.6 code invitation classe | 6 | BE+FE 1-2j | Usage réel du dashboard prof |
+| 1 | ~~A3.2 + A3.5 + A3.6 boucle at-risk~~ | 3 | ~~BE+FE 3j~~ | ✅ iter 11-15 |
+| 2 | A5.3-A5.5 TWA Play Store | 5 | DevOps 3-4j | KPI ≥ 500 installs J+90 |
+| 3 | A6.1 + A6.2 MTN/Moov Money natifs | 6 | BE ~5j + KYC | Aggregator KKiaPay/FedaPay couvre fonctionnellement |
+| 4 | ~~A6.6 code invitation classe~~ | 6 | ~~BE+FE 1-2j~~ | ✅ iter 13-17 |
 | 5 | ~~Backfill curriculum trimestre/semaine~~ | pivot | ~~contenu~~ | ✅ iter 19 |
-| 6 | A2.6 backfill explications top-200 | 2 | contenu | KPI ≥ 60 % worked-solution |
+| 6 | A2.6 explications top-200 — **qualité**, pas existence | 2 | contenu | KPI ≥ 60 % worked-solution |
 
-> **Itération 19 livrée** (16 mai) : item #5 — backfill curriculum (script + tests + impact FE picker calendar-aware).
+> **Itération 23 livrée** (16 mai) : polish Dashboard ↔ Programme. Le pivot compagnon-annuel est désormais découvert depuis le Dashboard et fonctionne en mode catch-up sur 219 skills CM2 séquencés.
+
+---
+
+## Audit / punch list — post-iter 23 (2026-05-16)
+
+> Pause-bilan après 13 itérations enchaînées (11→23). État santé global : **bon**.
+
+### Quality gate ✅
+
+- BE pytest : **244 passed** (1m40s, 2 warnings deprecations dépendances tierces)
+- FE vitest : **114 passed** (15 fichiers)
+- FE `tsc --noEmit` : **0 erreur**
+- Alembic : 1 head propre (`e4f5a6b7c8d9`), pas de dangling
+- BE ruff : 6 E701 **pré-existants** dans `app/scripts/generate_illustrations.py` + `generate_svg.py` (helpers d'assets, non runtime)
+
+### Couverture data ✅
+
+- **0 skill actif sans `(trimester, week_order)`** post-iter 19 (couverture 219/219).
+- **904/904 questions** ont `explanation IS NOT NULL` mais **longueur moyenne 63 caractères** (min 9) — ce sont des placeholders/hints courts, pas de vrais worked-solutions (>200 char attendu). Le KPI #6 reste légitimement à faire côté qualité.
+- `lazy="raise"` enforcé sur 26 relations modèles (contrat strict tenu).
+
+### Dette latente ✅
+
+- 0 TODO/FIXME/XXX/HACK dans les paths touchés iter 11-23.
+- 0 test skip/xfail.
+- Pas de mock injecté en prod (les `MockPaymentProvider` / `StubPaymentProvider` sont gated par flag de config).
+
+### Petits items à programmer
+
+| # | Item | Sévérité | Charge | Note |
+|---|------|----------|--------|------|
+| P1 | Contenu : 904 explanations placeholders → worked-solutions (top 200 prioritaires) | M | contenu MEMP | Ouvre KPI A2.6 |
+| P2 | Schema Pydantic `week_order` — `le=15` mais calendrier max=14 sem. (T1) → bound `le=14` | XS | 5 min code + 1 test | Évite skill « invisible » T1.W15 |
+| P3 | Ruff E701 dans `app/scripts/generate_*.py` (6 occurrences pré-existantes) | XS | 5 min | Optionnel — helpers one-shot |
+| P4 | Tests rendu page entière `Programme.tsx` (actuellement seul `groupByTrimesterWeek` + widget couverts) | S | 30 min | Renforce iter 22 |
+| P5 | `schoolCalendar.ts` BENIN_CM2_TRIMESTERS hardcodé — dette consciente, dormante pour Track C M12+ (multi-pays) | — | hors-périmètre | Commentaire explicite déjà en haut du fichier |
+
+### Hors-périmètre P3 confirmés bloqués
+
+- **A5.3-A5.5 TWA Play Store** — Bubblewrap, keystore, assetlinks, fiche : DevOps + Direction.
+- **A6.1-A6.2 MTN/Moov Money natifs** — sandbox accessible ; passage prod = KYC entreprise. KKiaPay + FedaPay couvrent fonctionnellement via aggregator.
+- **A2.6 backfill explications** — contenu pédagogique (équipe MEMP), pas code.
+
+### Volume P3 11→23
+
+- 84 commits, **82 fichiers modifiés**, **+6 652 / −264 LOC**.
 
 ---
 
