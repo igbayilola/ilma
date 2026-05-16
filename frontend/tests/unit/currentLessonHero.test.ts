@@ -74,17 +74,18 @@ describe('pickCurrentLesson', () => {
     expect(hint?.subjectTotalSkills).toBe(2);
   });
 
-  it('prefers calendar-matched skill over fallback when trimester data present', () => {
+  it('prefers earliest non-mastered (T,W) ≤ today (rattrapage)', () => {
     const skills = [
-      skill('sk-1', 'dom-1', 'Lecon 1', 1),                // no trimester data
-      skill('sk-2', 'dom-1', 'Lecon T2W3', 2, 2, 3),       // matches current T2
-      skill('sk-3', 'dom-1', 'Lecon T2W5', 3, 2, 5),       // matches current week
+      skill('sk-1', 'dom-1', 'Lecon 1', 1),                // no trimester data → ignored par strat 1
+      skill('sk-2', 'dom-1', 'Lecon T2W3', 2, 2, 3),       // candidat
+      skill('sk-3', 'dom-1', 'Lecon T2W5', 3, 2, 5),       // candidat
     ];
     const map = new Map([[subjectMath.id, skills]]);
 
     const hint = pickCurrentLesson([subjectMath], map, [], T2_W5);
-    expect(hint?.skill.id).toBe('sk-3'); // latest week <= current
+    expect(hint?.skill.id).toBe('sk-2'); // T2W3 — le plus ancien non-maîtrisé
     expect(hint?.matchedCalendar).toBe(true);
+    expect(hint?.isCatchUp).toBe(true); // T2W3 < T2W5 → rattrapage
   });
 
   it('calendar pick excludes mastered skills', () => {
@@ -135,16 +136,52 @@ describe('pickCurrentLesson', () => {
     expect(hint?.subjectMasteredSkills).toBe(1);
   });
 
-  it('picks across subjects when calendar matches the second subject', () => {
-    const mathSkills = [skill('sk-m', 'dom-m', 'Math T1', 1, 1, 2)]; // T1 — not current
-    const frSkills = [skill('sk-f', 'dom-f', 'Fr T2W4', 1, 2, 4)];   // T2 — matches
+  it('prioritise un skill T1 non-maîtrisé sur un T2 non-maîtrisé', () => {
+    // Étudiant en T2.W5 avec backlog T1 → on lui sert d'abord le T1.
+    const mathSkills = [skill('sk-m', 'dom-m', 'Math T1', 1, 1, 2)]; // T1.W2
+    const frSkills = [skill('sk-f', 'dom-f', 'Fr T2W4', 1, 2, 4)];   // T2.W4
     const map = new Map([
       [subjectMath.id, mathSkills],
       [subjectFr.id, frSkills],
     ]);
 
     const hint = pickCurrentLesson([subjectMath, subjectFr], map, [], T2_W5);
-    expect(hint?.skill.id).toBe('sk-f');
+    expect(hint?.skill.id).toBe('sk-m');
     expect(hint?.matchedCalendar).toBe(true);
+    expect(hint?.isCatchUp).toBe(true);
+  });
+
+  it("nouvel élève en T2.W5 sans progression reçoit T1.W1 d'abord", () => {
+    const mathSkills = [
+      skill('sk-m1', 'dom-m', 'Math T1W1', 1, 1, 1),
+      skill('sk-m5', 'dom-m', 'Math T2W5', 2, 2, 5),
+    ];
+    const frSkills = [
+      skill('sk-f1', 'dom-f', 'Fr T1W1', 1, 1, 1),
+      skill('sk-f5', 'dom-f', 'Fr T2W5', 2, 2, 5),
+    ];
+    const map = new Map([
+      [subjectMath.id, mathSkills],
+      [subjectFr.id, frSkills],
+    ]);
+
+    const hint = pickCurrentLesson([subjectMath, subjectFr], map, [], T2_W5);
+    // T1.W1 + subject.order=1 (math) → sk-m1
+    expect(hint?.skill.id).toBe('sk-m1');
+    expect(hint?.isCatchUp).toBe(true);
+  });
+
+  it("élève à jour reçoit le skill de la semaine courante (isCatchUp=false)", () => {
+    const skills = [
+      skill('sk-1', 'dom-1', 'T1W1', 1, 1, 1),
+      skill('sk-2', 'dom-1', 'T2W5', 2, 2, 5),
+    ];
+    const map = new Map([[subjectMath.id, skills]]);
+    const prog = [progress('sk-1', 90)]; // T1.W1 maîtrisé
+
+    const hint = pickCurrentLesson([subjectMath], map, prog, T2_W5);
+    expect(hint?.skill.id).toBe('sk-2');
+    expect(hint?.matchedCalendar).toBe(true);
+    expect(hint?.isCatchUp).toBe(false); // T2.W5 == calendar → pas du rattrapage
   });
 });

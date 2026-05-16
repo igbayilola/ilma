@@ -21,8 +21,14 @@ export interface CurrentLessonHint {
   subjectMasteredSkills: number;
   /** True if every skill across every subject is mastered. */
   allMastered: boolean;
-  /** True if this skill was picked because it matches the current school week. */
+  /** True if this skill was picked via the calendar-aware (T,W) ordering. */
   matchedCalendar: boolean;
+  /**
+   * True when the picked skill is from a (trimester, week) strictly earlier
+   * than today's — i.e. the student is catching up. Drives the UI copy
+   * ("À rattraper" vs "Cette semaine en CM2").
+   */
+  isCatchUp: boolean;
 }
 
 interface SubjectCounters {
@@ -46,12 +52,13 @@ function countSubjectSkills(skills: SkillDTO[], progressById: Map<string, SkillP
  * Pick the "current lesson" the student should focus on.
  *
  * Strategy (in order):
- *  1. If today falls in the school year AND any skill has `trimester` matching
- *     today's trimester: among non-mastered skills with `trimester === today.trimester`
- *     AND `weekOrder <= today.week` (don't surface future material), pick the
- *     latest-week one (closest to today) — fallback on the earliest if tie.
- *  2. Otherwise, walk subjects in `order` → skills in `order`, return the first
- *     non-mastered skill.
+ *  1. Calendar-aware catch-up : parmi tous les skills non-maîtrisés dont
+ *     (`trimester`, `weekOrder`) ≤ (today.trimester, today.week), on choisit
+ *     le PLUS ANCIEN (compagnon-annuel : un élève qui rentre en T2.W5 sans
+ *     progression voit d'abord T1.W1, pas T2.W5). Ordre lexicographique
+ *     (trimester, weekOrder, subject.order, skill.order).
+ *  2. Fallback : walk subjects in `order` → skills in `order`, return the
+ *     first non-mastered skill.
  *  3. If everything is mastered: return last skill of last subject with
  *     `allMastered=true` for the celebration state.
  */
@@ -65,37 +72,56 @@ export function pickCurrentLesson(
   const progressById = new Map(progress.map(p => [p.skillId, p]));
   const sortedSubjects = [...subjects].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
-  // ── Strategy 1: calendar-aware pick ──────────────────────────────────────
+  // ── Strategy 1: calendar-aware catch-up pick ─────────────────────────────
   if (calendar) {
-    type Candidate = { subject: SubjectDTO; skill: SkillDTO; weekOrder: number };
+    type Candidate = {
+      subject: SubjectDTO;
+      skill: SkillDTO;
+      trimester: number;
+      weekOrder: number;
+    };
     const candidates: Candidate[] = [];
     for (const subject of sortedSubjects) {
       const skills = skillsBySubject.get(subject.id) || [];
       for (const skill of skills) {
-        if (skill.trimester !== calendar.trimester) continue;
+        const tri = skill.trimester ?? null;
         const wk = skill.weekOrder ?? null;
-        if (wk == null || wk > calendar.week) continue;
+        if (tri == null || wk == null) continue;
+        // Don't surface future material.
+        if (tri > calendar.trimester) continue;
+        if (tri === calendar.trimester && wk > calendar.week) continue;
         const score = progressById.get(skill.id)?.score ?? 0;
         if (score >= MASTERY_THRESHOLD) continue;
-        candidates.push({ subject, skill, weekOrder: wk });
+        candidates.push({ subject, skill, trimester: tri, weekOrder: wk });
       }
     }
     if (candidates.length > 0) {
-      // Closest to the current week (latest weekOrder), tiebreak on subject.order
+      // Earliest non-mastered : T1 backlog avant T2 courant.
       candidates.sort((a, b) => {
-        if (b.weekOrder !== a.weekOrder) return b.weekOrder - a.weekOrder;
-        return (a.subject.order ?? 0) - (b.subject.order ?? 0);
+        if (a.trimester !== b.trimester) return a.trimester - b.trimester;
+        if (a.weekOrder !== b.weekOrder) return a.weekOrder - b.weekOrder;
+        if ((a.subject.order ?? 0) !== (b.subject.order ?? 0)) {
+          return (a.subject.order ?? 0) - (b.subject.order ?? 0);
+        }
+        return (a.skill.order ?? 0) - (b.skill.order ?? 0);
       });
-      const { subject, skill } = candidates[0];
-      const counters = countSubjectSkills(skillsBySubject.get(subject.id) || [], progressById);
+      const picked = candidates[0];
+      const counters = countSubjectSkills(
+        skillsBySubject.get(picked.subject.id) || [],
+        progressById,
+      );
+      const isCatchUp =
+        picked.trimester < calendar.trimester ||
+        (picked.trimester === calendar.trimester && picked.weekOrder < calendar.week);
       return {
-        subject,
-        skill,
+        subject: picked.subject,
+        skill: picked.skill,
         subjectTotalSkills: counters.total,
         subjectTouchedSkills: counters.touched,
         subjectMasteredSkills: counters.mastered,
         allMastered: false,
         matchedCalendar: true,
+        isCatchUp,
       };
     }
   }
@@ -125,6 +151,7 @@ export function pickCurrentLesson(
         subjectMasteredSkills: counters.mastered,
         allMastered: false,
         matchedCalendar: false,
+        isCatchUp: false,
       };
     }
 
@@ -136,6 +163,7 @@ export function pickCurrentLesson(
       subjectMasteredSkills: counters.mastered,
       allMastered: true,
       matchedCalendar: false,
+      isCatchUp: false,
     };
   }
 
@@ -162,7 +190,7 @@ export const CurrentLessonHero: React.FC<CurrentLessonHeroProps> = ({
 
   if (!hint) return null;
 
-  const { subject, skill, subjectTotalSkills, subjectTouchedSkills, subjectMasteredSkills, allMastered, matchedCalendar } = hint;
+  const { subject, skill, subjectTotalSkills, subjectTouchedSkills, subjectMasteredSkills, allMastered, matchedCalendar, isCatchUp } = hint;
   const masteredPct = subjectTotalSkills > 0
     ? Math.round((subjectMasteredSkills / subjectTotalSkills) * 100)
     : 0;
@@ -206,7 +234,7 @@ export const CurrentLessonHero: React.FC<CurrentLessonHeroProps> = ({
       <div className="relative z-10 p-2">
         <div className="flex items-center gap-2 mb-3 flex-wrap">
           <span className="text-xs font-bold uppercase tracking-wide bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
-            &#128218; Cette semaine en CM2
+            {isCatchUp ? <>&#127919; &Agrave; rattraper</> : <>&#128218; Cette semaine en CM2</>}
           </span>
           {matchedCalendar && calendar && (
             <span className="text-xs font-bold uppercase tracking-wide bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm flex items-center gap-1.5">
