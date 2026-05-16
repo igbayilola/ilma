@@ -9,6 +9,7 @@ import { contentService, SubjectDTO, SkillDTO } from '../../services/contentServ
 import { progressService, SkillProgressDTO } from '../../services/progressService';
 import { useAuthStore } from '../../store/authStore';
 import { ProgramTimeline } from '../../components/dashboard/ProgramTimeline';
+import { CEPPredictionCard } from '../../components/dashboard/CEPPredictionCard';
 import { Skeleton } from '../../components/ui/Skeleton';
 
 export const ProgrammePage: React.FC = () => {
@@ -58,6 +59,9 @@ export const ProgrammePage: React.FC = () => {
           Toutes tes leçons de l'année, regroupées par trimestre et semaine.
         </p>
       </header>
+
+      {/* Carte CEP estimé en tête — donne le « pourquoi » de toute la timeline */}
+      <CEPPredictionCard />
 
       {isLoading ? (
         <div className="space-y-4">
