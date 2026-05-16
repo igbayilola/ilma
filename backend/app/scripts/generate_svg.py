@@ -224,9 +224,12 @@ def gen_pave(params, text):
     right = f"{fx+fw},{fy} {fx+fw+ox},{fy+oy} {fx+fw+ox},{fy+fh+oy} {fx+fw},{fy+fh}"
     ET.SubElement(svg, "polygon", {"points": right, "fill": COLORS["fill"], "stroke": COLORS["stroke"], "stroke-width": "1.5"})
 
-    if len(dims) >= 1: _dim_label(svg, fx + fw // 2, fy + fh + 16, f"L={dims[0]} cm")
-    if len(dims) >= 2: _dim_label(svg, fx - 18, fy + fh // 2, f"l={dims[1]} cm")
-    if len(dims) >= 3: _dim_label(svg, fx + fw + ox + 10, fy + oy + fh // 2, f"h={dims[2]} cm")
+    if len(dims) >= 1:
+        _dim_label(svg, fx + fw // 2, fy + fh + 16, f"L={dims[0]} cm")
+    if len(dims) >= 2:
+        _dim_label(svg, fx - 18, fy + fh // 2, f"l={dims[1]} cm")
+    if len(dims) >= 3:
+        _dim_label(svg, fx + fw + ox + 10, fy + oy + fh // 2, f"h={dims[2]} cm")
 
     return ET.tostring(svg, encoding="unicode", xml_declaration=True)
 
@@ -252,8 +255,10 @@ def gen_cylindre(params, text):
         "fill": COLORS["fill_light"], "stroke": COLORS["stroke"], "stroke-width": "2",
     })
 
-    if len(dims) >= 1: _dim_label(svg, cx, cy - ry_ellipse - 10, f"r={dims[0]} cm")
-    if len(dims) >= 2: _dim_label(svg, cx + rx + 18, cy + height // 2, f"h={dims[1]} cm")
+    if len(dims) >= 1:
+        _dim_label(svg, cx, cy - ry_ellipse - 10, f"r={dims[0]} cm")
+    if len(dims) >= 2:
+        _dim_label(svg, cx + rx + 18, cy + height // 2, f"h={dims[1]} cm")
 
     return ET.tostring(svg, encoding="unicode", xml_declaration=True)
 

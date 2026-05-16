@@ -43,7 +43,8 @@ def _svg(w=320, h=220):
 
 def _text(svg, x, y, txt, size=11, color=None, bold=False, anchor="middle"):
     el = ET.SubElement(svg, "text", {"x": str(x), "y": str(y), "font-family": "Inter,sans-serif", "font-size": str(size), "fill": color or C["text"], "text-anchor": anchor, "dominant-baseline": "middle"})
-    if bold: el.set("font-weight", "bold")
+    if bold:
+        el.set("font-weight", "bold")
     el.text = str(txt)
 
 
