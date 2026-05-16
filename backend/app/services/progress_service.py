@@ -9,6 +9,7 @@ from app.models.content import MicroSkill
 from app.models.progress import MicroSkillProgress, Progress
 from app.models.session import Attempt, ExerciseSession, SessionStatus
 from app.services.config_service import config_service
+from app.services.risk_service import classify_risk, suggested_action
 
 
 class ProgressService:
@@ -406,6 +407,12 @@ class ProgressService:
         if days_inactive >= 3 and not advice:
             advice = "Encourager à reprendre les exercices"
 
+        # Unified risk level — same formula used by admin at-risk endpoint and
+        # the parent-SMS cron, so the three surfaces stay in sync (admin sees
+        # X as "high" → kid gets flagged in parent dashboard → parent gets SMS).
+        risk_level = classify_risk(min(days_inactive, 999), float(avg_score))
+        suggested = suggested_action(risk_level, min(days_inactive, 999), float(avg_score))
+
         return {
             "average_score": avg_score,
             "streak": streak,
@@ -415,6 +422,8 @@ class ProgressService:
             "days_inactive": min(days_inactive, 999),
             "weakest_skill_name": weakest_skill_name,
             "advice": advice,
+            "risk_level": risk_level,
+            "suggested_action": suggested,
         }
 
 
