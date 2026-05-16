@@ -54,6 +54,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Cleanup `Domain.order` maths** (iter 21) : les 7 domaines maths CM2 avaient tous `order=1` en base (donnée historique) — l'override hardcodé du backfill iter 19 contournait. Script `app/scripts/cleanup_domain_order.py` idempotent réordonne (numération→1, opérations→2, …, preparation-au-cep→7), et l'override est retiré du backfill (devenu redondant). Bénéficie aussi à l'admin UI et à l'explorateur FE (fallback picker correct hors période scolaire).
 
+**✅ Vue « Mon programme »** (iter 22) : nouvelle page élève `/app/student/programme` qui rend la timeline T1/T2/T3 avec skills classés par statut (maîtrisé / en cours / à faire / verrouillé-futur). Ferme la boucle du pivot compagnon-annuel : le séquencement backfillé en iter 19 et exploité par le picker en iter 20 devient enfin visible côté élève. Logique de regroupement extraite en fonction pure `groupByTrimesterWeek` (7 tests), nav mobile/desktop mis à jour avec une 3ᵉ entrée « Programme ».
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
