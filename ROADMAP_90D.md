@@ -56,6 +56,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Vue « Mon programme »** (iter 22) : nouvelle page élève `/app/student/programme` qui rend la timeline T1/T2/T3 avec skills classés par statut (maîtrisé / en cours / à faire / verrouillé-futur). Ferme la boucle du pivot compagnon-annuel : le séquencement backfillé en iter 19 et exploité par le picker en iter 20 devient enfin visible côté élève. Logique de regroupement extraite en fonction pure `groupByTrimesterWeek` (7 tests), nav mobile/desktop mis à jour avec une 3ᵉ entrée « Programme ».
 
+**✅ Polish Dashboard ↔ Programme** (iter 23) : finition de la découvrabilité de la page programme. CTA secondaire « Voir tout mon programme → » sous le bouton principal de `CurrentLessonHero`, et nouveau widget récapitulatif `ProgressByTrimester` (3 barres T1/T2/T3, total maîtrisés, surlignage trimestre courant) inséré juste après la hero — cliquable vers `/app/student/programme`. Réutilise la fonction pure `groupByTrimesterWeek` de iter 22. 4 tests de rendu.
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
