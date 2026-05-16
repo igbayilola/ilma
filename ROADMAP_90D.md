@@ -52,6 +52,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Picker rattrapage** (iter 20) : la stratégie 1 du `pickCurrentLesson` (`CurrentLessonHero.tsx`) sert maintenant le plus ancien skill non-maîtrisé `(T,W) ≤ aujourd'hui` au lieu du plus proche de la semaine courante. Effet : un élève neuf en T2.W5 voit T1.W1 d'abord (compagnon-annuel), pas T2.W5. Drapeau `isCatchUp` exposé à la hero pour basculer le label « Cette semaine en CM2 » → « À rattraper ».
 
+**✅ Cleanup `Domain.order` maths** (iter 21) : les 7 domaines maths CM2 avaient tous `order=1` en base (donnée historique) — l'override hardcodé du backfill iter 19 contournait. Script `app/scripts/cleanup_domain_order.py` idempotent réordonne (numération→1, opérations→2, …, preparation-au-cep→7), et l'override est retiré du backfill (devenu redondant). Bénéficie aussi à l'admin UI et à l'explorateur FE (fallback picker correct hors période scolaire).
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
