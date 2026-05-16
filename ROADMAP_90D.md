@@ -60,6 +60,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Widget Programme côté parent** (iter 25) : extension du widget `ProgressByTrimester` à la fiche enfant parent (`ChildDetailPage` onglet « Vue d'ensemble »). Le composant accepte désormais 3 props optionnelles (`title`, `programmeHref`, `linkAriaLabel`) pour s'adapter au contexte parent qui n'a pas la route `/app/student/programme` accessible. Le parent voit « Où en est <Prénom> dans le programme » avec les mêmes 3 barres T1/T2/T3 que l'élève. `ChildDTO` étendu avec `gradeLevelId` (déjà exposé par le BE, juste non mappé jusqu'ici). 6 tests rendu (+2 sur les nouvelles props).
 
+**✅ Carte CEP prédictif sur Programme** (iter 26) : `CEPPredictionCard` (déjà rendue sur le Dashboard depuis iter 7) ré-insérée en tête de la page `/app/student/programme`. Donne le « pourquoi » de toute la timeline T1/T2/T3 affichée en dessous : score CEP projeté + bande pédagogique + skills faibles cliquables. Le composant fetch ses propres données via `examService.getPredictiveScore()`, aucune nouvelle plomberie. Couche d'intelligence + motivation : la page Programme passe d'une simple checklist à « voici où tu en es et où ça te mène ».
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
