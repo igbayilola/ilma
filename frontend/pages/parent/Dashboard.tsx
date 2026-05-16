@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
-import { Plus, Flame, Clock, TrendingUp, ChevronRight, Lightbulb, Zap, MessageSquare, Volume2, Share2 } from 'lucide-react';
+import { Plus, Flame, Clock, TrendingUp, ChevronRight, Lightbulb, Zap, MessageSquare, Volume2, Share2, AlertCircle, AlertTriangle } from 'lucide-react';
 import { parentService, ChildDTO, ChildHealthDTO } from '../../services/parentService';
 
 const STATUS_CONFIG = {
@@ -225,6 +225,26 @@ export const ParentDashboard: React.FC = () => {
                   <span className="font-medium">{progressPct}% de l'objectif</span>
                 </div>
               </div>
+
+              {/* Action suggérée — basée sur risk_level unifié (même formule
+                  que l'admin at-risk + le cron SMS parent). S'affiche au-dessus
+                  du conseil pédagogique car c'est une intervention parent, pas
+                  un commentaire sur le score. */}
+              {child.suggestedAction && child.riskLevel !== 'low' && (
+                <div className={`flex items-start gap-2 p-3 rounded-xl text-xs font-bold mb-2 border ${
+                  child.riskLevel === 'high'
+                    ? 'bg-red-50 text-red-800 border-red-200'
+                    : 'bg-amber-50 text-amber-800 border-amber-200'
+                }`}>
+                  {child.riskLevel === 'high'
+                    ? <AlertCircle size={14} className="flex-shrink-0 mt-0.5" />
+                    : <AlertTriangle size={14} className="flex-shrink-0 mt-0.5" />}
+                  <span>
+                    <span className="uppercase tracking-wide text-[10px] opacity-80">Action suggérée</span>
+                    <br />{child.suggestedAction}
+                  </span>
+                </div>
+              )}
 
               {/* Contextual advice */}
               {child.advice && (

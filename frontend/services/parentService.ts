@@ -25,6 +25,8 @@ export interface ChildHealthDTO {
   daysInactive: number;
   weakestSkillName: string | null;
   advice: string | null;
+  riskLevel: 'low' | 'medium' | 'high';
+  suggestedAction: string;
 }
 
 export const parentService = {
@@ -70,6 +72,8 @@ export const parentService = {
       daysInactive: c.days_inactive ?? 0,
       weakestSkillName: c.weakest_skill_name || null,
       advice: c.advice || null,
+      riskLevel: c.risk_level || 'low',
+      suggestedAction: c.suggested_action || '',
     }));
   },
 };
