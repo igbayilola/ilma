@@ -409,6 +409,7 @@ export const Dashboard: React.FC = () => {
         subjects={subjects}
         skillsBySubject={skillsBySubject}
         progress={skillsProgress}
+        programmeHref="/app/student/programme"
       />
 
       {/* 3. Streak Reminder — cadence quotidienne, cœur du modèle compagnon-annuel */}

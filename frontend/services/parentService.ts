@@ -10,6 +10,8 @@ export interface ChildDTO {
   weeklyGoalMinutes: number;
   hasPin: boolean;
   subscriptionTier: string;
+  /** Niveau scolaire de l'enfant — requis pour filtrer le programme côté parent (iter 25). */
+  gradeLevelId: string | null;
 }
 
 export interface ChildHealthDTO {
@@ -41,6 +43,7 @@ export const parentService = {
       weeklyGoalMinutes: c.weekly_goal_minutes ?? c.weeklyGoalMinutes ?? 120,
       hasPin: c.has_pin ?? c.hasPin ?? false,
       subscriptionTier: c.subscription_tier || c.subscriptionTier || 'FREE',
+      gradeLevelId: c.grade_level_id ? String(c.grade_level_id) : (c.gradeLevelId ? String(c.gradeLevelId) : null),
     }));
   },
 

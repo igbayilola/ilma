@@ -8,6 +8,8 @@ import { ButtonVariant } from '../../types';
 import { ArrowLeft, Clock, CheckCircle2, XCircle, TrendingUp, AlertTriangle } from 'lucide-react';
 import { parentService, ChildDTO } from '../../services/parentService';
 import { progressService, SkillProgressDTO } from '../../services/progressService';
+import { contentService, SubjectDTO, SkillDTO } from '../../services/contentService';
+import { ProgressByTrimester } from '../../components/dashboard/ProgressByTrimester';
 
 export const ChildDetailPage: React.FC = () => {
     const { childId } = useParams<{ childId: string }>();
@@ -15,19 +17,51 @@ export const ChildDetailPage: React.FC = () => {
     const [activeTab, setActiveTab] = useState('overview');
     const [child, setChild] = useState<ChildDTO | null>(null);
     const [skillProgress, setSkillProgress] = useState<SkillProgressDTO[]>([]);
+    const [subjects, setSubjects] = useState<SubjectDTO[]>([]);
+    const [skillsBySubject, setSkillsBySubject] = useState<Map<string, SkillDTO[]>>(new Map());
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if (!childId) return;
-        Promise.all([
-            parentService.listChildren(),
-            progressService.getStudentProgress(childId).catch(() => []),
-        ]).then(([children, progress]) => {
-            const found = children.find(c => c.id === childId);
-            setChild(found || null);
-            setSkillProgress(progress);
-        }).catch(() => {})
-          .finally(() => setIsLoading(false));
+        let cancelled = false;
+        (async () => {
+            try {
+                const [children, progress] = await Promise.all([
+                    parentService.listChildren(),
+                    progressService.getStudentProgress(childId).catch(() => []),
+                ]);
+                if (cancelled) return;
+                const found = children.find(c => c.id === childId) || null;
+                setChild(found);
+                setSkillProgress(progress);
+
+                // Charge le programme de l'enfant (iter 25) — filtré par son niveau.
+                if (found?.gradeLevelId) {
+                    const subjs = await contentService
+                        .listSubjects(found.gradeLevelId)
+                        .catch(() => [] as SubjectDTO[]);
+                    if (cancelled) return;
+                    setSubjects(subjs);
+                    const results = await Promise.all(
+                        subjs.map(s =>
+                            contentService
+                                .listSkills(s.id)
+                                .then(r => r.items)
+                                .catch(() => [] as SkillDTO[]),
+                        ),
+                    );
+                    if (cancelled) return;
+                    const map = new Map<string, SkillDTO[]>();
+                    subjs.forEach((s, i) => map.set(s.id, results[i]));
+                    setSkillsBySubject(map);
+                }
+            } finally {
+                if (!cancelled) setIsLoading(false);
+            }
+        })();
+        return () => {
+            cancelled = true;
+        };
     }, [childId]);
 
     if (isLoading) {
@@ -75,6 +109,14 @@ export const ChildDetailPage: React.FC = () => {
 
             {activeTab === 'overview' && (
                 <div className="space-y-6 animate-fade-in">
+                    {/* Vue annuelle programme — iter 25 (parent réutilise le widget élève) */}
+                    <ProgressByTrimester
+                        subjects={subjects}
+                        skillsBySubject={skillsBySubject}
+                        progress={skillProgress}
+                        title={`Où en est ${child?.name?.split(' ')[0] || 'votre enfant'} dans le programme`}
+                    />
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <Card className="md:col-span-2">
                             <h3 className="font-bold text-gray-800 mb-4 flex items-center">

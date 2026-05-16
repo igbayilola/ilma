@@ -17,12 +17,27 @@ interface Props {
   subjects: SubjectDTO[];
   skillsBySubject: Map<string, SkillDTO[]>;
   progress: SkillProgressDTO[];
+  /**
+   * Titre custom (par défaut « Tu en es là dans le programme » pour l'élève).
+   * Le dashboard parent passe ex. « Où en est <Prénom> dans le programme ».
+   */
+  title?: string;
+  /**
+   * URL cible du lien « Détail → ». Si omise, le widget reste statique
+   * (cas parent qui n'a pas la route élève accessible).
+   */
+  programmeHref?: string;
+  /** Label aria pour le lien (override quand le titre change). */
+  linkAriaLabel?: string;
 }
 
 export const ProgressByTrimester: React.FC<Props> = ({
   subjects,
   skillsBySubject,
   progress,
+  title = 'Tu en es là dans le programme',
+  programmeHref,
+  linkAriaLabel = 'Voir tout mon programme',
 }) => {
   const navigate = useNavigate();
   const calendar = useMemo(() => getCurrentTrimesterWeek(), []);
@@ -35,24 +50,38 @@ export const ProgressByTrimester: React.FC<Props> = ({
   const totalSequenced = trimesters.reduce((acc, t) => acc + t.totals.total, 0);
   if (totalSequenced === 0) return null;
 
-  return (
-    <Card className="bg-white border border-gray-200 shadow-clay">
-      <button
-        type="button"
-        onClick={() => navigate('/app/student/programme')}
-        className="w-full text-left flex items-center justify-between gap-3 mb-4"
-        aria-label="Voir tout mon programme"
-      >
-        <div className="flex items-center gap-2">
-          <CalendarDays size={20} className="text-sitou-primary" />
-          <h3 className="text-base md:text-lg font-extrabold text-gray-900 font-display">
-            Tu en es l&agrave; dans le programme
-          </h3>
-        </div>
+  const interactive = Boolean(programmeHref);
+
+  const Header = (
+    <div className="flex items-center justify-between gap-3 mb-4">
+      <div className="flex items-center gap-2">
+        <CalendarDays size={20} className="text-sitou-primary" />
+        <h3 className="text-base md:text-lg font-extrabold text-gray-900 font-display">
+          {title}
+        </h3>
+      </div>
+      {interactive && (
         <span className="text-sm font-bold text-sitou-primary flex items-center gap-1 hover:gap-1.5 transition-all">
           D&eacute;tail <ArrowRight size={14} />
         </span>
-      </button>
+      )}
+    </div>
+  );
+
+  return (
+    <Card className="bg-white border border-gray-200 shadow-clay">
+      {interactive ? (
+        <button
+          type="button"
+          onClick={() => navigate(programmeHref!)}
+          className="w-full text-left"
+          aria-label={linkAriaLabel}
+        >
+          {Header}
+        </button>
+      ) : (
+        Header
+      )}
 
       <ul className="space-y-3" data-testid="trimester-progress-list">
         {trimesters.map(tri => {

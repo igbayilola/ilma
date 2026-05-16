@@ -94,7 +94,20 @@ describe('<ProgressByTrimester>', () => {
     expect(screen.getByText('0/1', { exact: false })).toBeInTheDocument(); // T2 (et T3 vide à 0/0)
   });
 
-  it("expose un lien aria-label vers la page programme", () => {
+  it("expose un lien aria-label quand programmeHref est fourni", () => {
+    const skills = [skill('sk-1', 'A', 1, 1, 1)];
+    renderWithRouter(
+      <ProgressByTrimester
+        subjects={[subjectMath]}
+        skillsBySubject={new Map([[subjectMath.id, skills]])}
+        progress={[]}
+        programmeHref="/app/student/programme"
+      />,
+    );
+    expect(screen.getByLabelText('Voir tout mon programme')).toBeInTheDocument();
+  });
+
+  it("statique (pas de lien) quand programmeHref est omis", () => {
     const skills = [skill('sk-1', 'A', 1, 1, 1)];
     renderWithRouter(
       <ProgressByTrimester
@@ -103,6 +116,22 @@ describe('<ProgressByTrimester>', () => {
         progress={[]}
       />,
     );
-    expect(screen.getByLabelText('Voir tout mon programme')).toBeInTheDocument();
+    expect(screen.queryByLabelText('Voir tout mon programme')).toBeNull();
+    expect(screen.queryByText('Détail')).toBeNull();
+  });
+
+  it("accepte un titre custom (cas parent)", () => {
+    const skills = [skill('sk-1', 'A', 1, 1, 1)];
+    renderWithRouter(
+      <ProgressByTrimester
+        subjects={[subjectMath]}
+        skillsBySubject={new Map([[subjectMath.id, skills]])}
+        progress={[]}
+        title="Où en est Léa dans le programme"
+      />,
+    );
+    expect(
+      screen.getByText('Où en est Léa dans le programme'),
+    ).toBeInTheDocument();
   });
 });
