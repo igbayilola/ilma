@@ -82,6 +82,27 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Couverture rendu 4 mini-widgets Dashboard** (iter 36, P4 punch-list iter 32, clôture) : les 4 widgets définis dans `pages/Dashboard.tsx` (StreakReminderCard, RuleDuJourWidget, DailyChallengeWidget, CalculMentalWidget) étaient sans test rendu malgré leur centralité dans la cadence quotidienne (compagnon-annuel). Export ajouté sur 3 d'entre eux (le 4e l'était déjà). `contentService.listFormulas` + `useNavigate` mockés, `localStorage` réel (jsdom) pour CalculMental. 13 cas répartis : `<StreakReminderCard>` × 5 (3 branches Bravo/urgence/nouvelle-série + 2 navigations selon lastActivity), `<RuleDuJourWidget>` × 3 (null sur liste vide, rendu titre+formule, clic Pratiquer navigate), `<DailyChallengeWidget>` × 2 (rendu props + clic Relever), `<CalculMentalWidget>` × 3 (message d'amorce, record depuis localStorage, clic Jouer). Vitest : 163/163, 23 fichiers. **Fin de la punch-list iter 32 — les 4 items P1-P4 sont fermés.**
 
+**✅ Audit data BE post iter 19-27** (iter 37, 2026-05-17) : switch BE après 9 itérations FE consécutives. Pause découverte plutôt que code — queries SQL contre la prod-like DB pour mesurer la santé réelle des données.
+
+### Quality data — état post iter 27 (lecture)
+- **Skills sequencing** ✅ : 219/219 avec `(trimester, week_order)` valides ; **0 skill** avec `week_order > 14` (iter 27 sans casualité) ; 0 inactif.
+- **Couverture questions par matière** ⚠️ : mathématiques 50/50 ✅ (toutes pratiquables) ; français 0/77, éducation sociale 0/57, éducation scientifique 0/35 → **169/219 skills actifs sans aucune question**. Cohérent avec le scope MVP CM2 maths/CEP, mais il faut documenter explicitement que les 3 autres matières ne sont qu'une structure (Skills + Domains) sans contenu pratique.
+- **T3 coverage** ⚠️ : T1=14 semaines, T2=13 semaines, **T3=2 semaines** (W1 + W6) sur les 4 matières. Pour les maths, T3.W1 = « Sujets d'examen 2010-2025 », T3.W6 = « Corrigés » → c'est *intentionnel* (T3 = révisions CEP). Mais aucun skill séquencé en T3.W2-5 et W7+ → l'élève qui arrive en T3.W4 verra une timeline vide pour son trimestre courant. À vérifier côté `<ProgramTimeline>` : message « Aucun skill séquencé sur ce trimestre » couvre ce cas (iter 30, T2 vide) mais ici T3 a W1+W6 séparés.
+- **Questions explanations** ⚠️ : 904/904 ont une explanation, mais **499/904 < 50 char**, **855/904 < 200 char**, moyenne = **63 char**. → confirme P1 audit iter 24 (worked-solutions placeholder, bloqué contenu MEMP).
+- **Mock exams** ✅ : 46 templates dont 44 actifs, 0 sans items.
+- **Question types** ✅ : 12 types, distribution équilibrée (MCQ 232 majo, NUMERIC 184, GUIDED_STEPS 86, ...).
+- **Subjects/Domains** ✅ : 4 subjects, 35 domains, tous actifs, tous ordonnés, 0 domain sans skill.
+- **Micro-leçons** ⚠️ : **1 seule** entrée dans `micro_lessons`, sans `sections`. La table est quasi-vide en prod — les leçons sont probablement stockées ailleurs (à clarifier : champ JSON sur le skill ? un autre modèle ?).
+
+### Items actionnables (post-iter 36)
+
+| # | Item | Sévérité | Charge | Note |
+|---|------|----------|--------|------|
+| Q1 | T3 coverage : décider si timeline doit signaler « semaine actuelle hors plage couverte » plutôt que rendre vide. Calendrier T3 effectif = 2 semaines isolées (W1, W6) → besoin UX. | M | S | Découvert iter 37. Affecte `<ProgramTimeline>` rendu T3.W2-5,7+. |
+| Q2 | `micro_lessons` quasi-vide (1 entrée) : tracer où vivent réellement les leçons (sections sur skill ? autre modèle ?). | S | XS | Découverte audit, vérification, pas forcément du code. |
+| Q3 | Durcissement schéma `MockExam` : audit des champs String non-enum (`exam_type`, `status` sur ExamSession), `points` Float sans bornes. | S | S | Hygiène type-safety, parallèle iter 27 sur Skills. |
+| Q4 | Document explicite : « Les 3 matières non-maths sont structure-only en MVP » — éviter qu'un futur audit ne soulève à tort le gap 169/219. | XS | XS | Note dans memory `project_state` ou doc README. |
+
 ### Petits items à programmer (post-iter 31) — ✅ tous fermés
 
 | # | Item | Sévérité | Charge | Note |
