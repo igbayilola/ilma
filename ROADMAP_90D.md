@@ -78,12 +78,14 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Cancel flag hygiène 4 pages élève** (iter 34, P3 punch-list iter 32) : refactor pur, aucun changement de comportement. Pattern `let cancelled = false; ... return () => { cancelled = true; }` ajouté sur les useEffect data-fetching de `Progress.tsx` (2 effets), `Skills.tsx`, `Domains.tsx`, `SkillDetail.tsx`. Avant : sur navigation rapide entre pages (clic timeline → autre skill avant fin du fetch), les setState terminaient sur un composant unmounté — warning React silencieux + state mort affiché brièvement. Maintenant le cleanup annule la mise à jour. Vitest : 143/143 (non-régression vérifiée, pas de nouveau test — modifications trop fines pour mériter d'isoler).
 
+**✅ Couverture rendu CEPPredictionCard** (iter 35, P2 punch-list iter 32) : composant rendu sur Dashboard (iter 7) ET sur ProgrammePage (iter 26), donc 2 surfaces critiques sans aucun test rendu jusqu'ici. `examService.getPredictiveScore` et `useNavigate` mockés ; 7 cas couvrant les 4 branches : loading (promise non résolue → ni score, ni meter), erreur (fetch rejette → message), normale (`predicted=15.3` → score affiché + bande « Très bien »), meter a11y (`role=meter`, `aria-valuenow`, min=0/max=20, bande « À renforcer » pour `predicted<10`), `weak_skills` non-vide (liste rendue, clic → navigate skill detail), `weak_skills=[]` × 2 variantes (coverage>0 → « Aucun point faible détecté », coverage=0 → « Commence à pratiquer »). Vitest : 150/150, 22 fichiers.
+
 ### Petits items à programmer (post-iter 31)
 
 | # | Item | Sévérité | Charge | Note |
 |---|------|----------|--------|------|
 | P1 | ~~`Subjects.tsx` — appliquer pattern iter 28/29~~ | M | XS | ✅ iter 33 |
-| P2 | Tests rendu `CEPPredictionCard.tsx` | S | S | Rendu sur Dashboard ET Programme, 0 test rendu actuel |
+| P2 | ~~Tests rendu `CEPPredictionCard.tsx`~~ | S | S | ✅ iter 35 |
 | P3 | ~~Cancel flag hygiène sur `Progress.tsx` / `Skills.tsx` / `Domains.tsx` / `SkillDetail.tsx`~~ | S | XS | ✅ iter 34 |
 | P4 | Tests rendu mini-widgets Dashboard (`StreakReminderCard`, `RuleDuJourWidget`, `DailyChallengeWidget`, `CalculMentalWidget`) | S | S | 4 × ~30-100 LOC, rendements décroissants |
 
