@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
@@ -42,22 +42,38 @@ vi.mock('../../services/examService', async () => {
 });
 
 // ── Mock the auth store : juste ce dont la page a besoin ───────────────────
-const { useAuthStoreMock } = vi.hoisted(() => {
-  const useAuthStoreMock: any = () => ({
-    user: { id: 'u1', gradeLevelId: 'gl-cm2' },
-    activeProfile: { id: 'p1', gradeLevelId: 'gl-cm2' },
-  });
-  useAuthStoreMock.getState = () => ({
+// State mutable pour que les tests iter 28 puissent simuler "pas de classe".
+const { useAuthStoreMock, setAuthState, resetAuthState } = vi.hoisted(() => {
+  const DEFAULT = {
     user: { id: 'u1', gradeLevelId: 'gl-cm2' },
     activeProfile: { id: 'p1', gradeLevelId: 'gl-cm2' },
     accessToken: null,
-  });
-  return { useAuthStoreMock };
+  };
+  let state: any = { ...DEFAULT };
+  const useAuthStoreMock: any = () => state;
+  useAuthStoreMock.getState = () => state;
+  const setAuthState = (s: any) => {
+    state = { ...state, ...s };
+  };
+  const resetAuthState = () => {
+    state = { ...DEFAULT };
+  };
+  return { useAuthStoreMock, setAuthState, resetAuthState };
 });
 
 vi.mock('../../store/authStore', () => ({
   useAuthStore: useAuthStoreMock,
 }));
+
+// Mock useNavigate pour vérifier la redirection iter 28 sans full routing.
+const { navigateMock } = vi.hoisted(() => ({ navigateMock: vi.fn() }));
+vi.mock('react-router-dom', async () => {
+  const actual: any = await vi.importActual('react-router-dom');
+  return {
+    ...actual,
+    useNavigate: () => navigateMock,
+  };
+});
 
 import { ProgrammePage } from '../../pages/student/Programme';
 
@@ -87,6 +103,7 @@ const SKILL = {
 describe('<ProgrammePage>', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    resetAuthState();
     listSubjectsMock.mockResolvedValue([SUBJECT]);
     listSkillsMock.mockResolvedValue({
       items: [SKILL],
@@ -144,6 +161,50 @@ describe('<ProgrammePage>', () => {
     );
     await waitFor(() => {
       expect(screen.getByText(/Trimestre 1/)).toBeInTheDocument();
+    });
+  });
+
+  it('garde quand gradeLevelId manquant : message + CTA classe (iter 28)', async () => {
+    setAuthState({
+      user: { id: 'u1' },
+      activeProfile: { id: 'p1' },
+    });
+
+    render(
+      <MemoryRouter>
+        <ProgrammePage />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByText('Choisis ta classe')).toBeInTheDocument();
+    // L'effet ne doit pas tenter de charger sans gradeLevelId.
+    expect(listSubjectsMock).not.toHaveBeenCalled();
+    // La carte CEP est masquée hors contexte classe.
+    expect(screen.queryByText('Score CEP estimé')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: /Choisir ma classe/ }));
+    expect(navigateMock).toHaveBeenCalledWith('/select-profile');
+  });
+
+  it('affiche l\'état vide retry quand subjects=[] post-chargement (iter 28)', async () => {
+    listSubjectsMock.mockResolvedValue([]);
+
+    render(
+      <MemoryRouter>
+        <ProgrammePage />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('Programme indisponible')).toBeInTheDocument();
+    });
+    expect(listSkillsMock).not.toHaveBeenCalled();
+
+    // Le clic Réessayer relance la requête (deuxième appel à listSubjects).
+    listSubjectsMock.mockResolvedValueOnce([SUBJECT]);
+    fireEvent.click(screen.getByRole('button', { name: /Réessayer/ }));
+    await waitFor(() => {
+      expect(listSubjectsMock).toHaveBeenCalledTimes(2);
     });
   });
 });
