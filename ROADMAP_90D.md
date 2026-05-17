@@ -74,11 +74,13 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Audit / punch list post-iter 27-31** (iter 32, 2026-05-17) : pause-bilan après 5 itérations consécutives FE (test + robustness). Quality gate global ✅ : BE 498/498 pytest (3m21s), FE 140/140 vitest (20 fichiers, +8 vs post-iter-26), tsc 0, ruff clean sur les fichiers touchés. Volume iter 27-31 : 12 commits, 11 fichiers, **+1 069 / −29 LOC**. Pattern de robustesse `gradeLevelId` guard + état vide + cancel flag propagé sur 2 pages (Programme iter 28, Dashboard iter 29) ; gap restant identifié sur `Subjects.tsx` (même structure pré-iter-28). Couverture rendu composants dashboard : ProgressByTrimester ✅ (iter 25), ProgramTimeline ✅ (iter 30), CurrentLessonHero ✅ (iter 31) ; gap restant sur `CEPPredictionCard.tsx` (utilisé sur 2 pages) + mini-widgets in-Dashboard (StreakReminderCard, RuleDuJourWidget, DailyChallengeWidget, CalculMentalWidget). 4 petits items P1-P4 documentés ci-dessous.
 
+**✅ Robustesse SubjectsPage** (iter 33, P1 punch-list iter 32) : application du pattern iter 28/29 à `pages/student/Subjects.tsx`, dernière des 3 pages élève qui consommait `listSubjects(gradeLevelId)` sans garde. L'effet skip le fetch sans classe, branche `NoClassEmptyState` (icône `GraduationCap` + CTA `/select-profile`) rendue avant `isLoading`, branche `subjects=[]` post-load remplace la grille muette par « Matières indisponibles » + bouton « Réessayer » (`retryToken`), flag `cancelled` au passage. Nouveau fichier `subjectsPage.test.tsx` (3 cas : garde, retry, smoke). Le pattern est désormais propagé sur les 3 pages basées sur `gradeLevelId` — fin du chantier P1. Vitest : 143/143, 21 fichiers.
+
 ### Petits items à programmer (post-iter 31)
 
 | # | Item | Sévérité | Charge | Note |
 |---|------|----------|--------|------|
-| P1 | `Subjects.tsx` — appliquer pattern iter 28/29 (garde `gradeLevelId` + cancel + état vide explicite) | M | XS | Même gap que Programme/Dashboard pré-iter-28, page d'entrée d'exploration |
+| P1 | ~~`Subjects.tsx` — appliquer pattern iter 28/29~~ | M | XS | ✅ iter 33 |
 | P2 | Tests rendu `CEPPredictionCard.tsx` | S | S | Rendu sur Dashboard ET Programme, 0 test rendu actuel |
 | P3 | Cancel flag hygiène sur `Progress.tsx` / `Skills.tsx` / `Domains.tsx` / `SkillDetail.tsx` | S | XS | setState-after-unmount silencieux, pas de bug visible |
 | P4 | Tests rendu mini-widgets Dashboard (`StreakReminderCard`, `RuleDuJourWidget`, `DailyChallengeWidget`, `CalculMentalWidget`) | S | S | 4 × ~30-100 LOC, rendements décroissants |
