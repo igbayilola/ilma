@@ -99,7 +99,7 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 | # | Item | Sévérité | Charge | Note |
 |---|------|----------|--------|------|
 | Q1 | ~~T3 coverage : décider si timeline doit signaler « semaine actuelle hors plage couverte »~~ | M | S | ✅ iter 38 |
-| Q2 | `micro_lessons` quasi-vide (1 entrée) : tracer où vivent réellement les leçons (sections sur skill ? autre modèle ?). | S | XS | Découverte audit, vérification, pas forcément du code. |
+| Q2 | ~~`micro_lessons` quasi-vide : tracer où vivent réellement les leçons~~ | S | XS | ✅ iter 41 — conclusion : aucune leçon en prod, app = drill engine + curriculum map |
 | Q3 | ~~Durcissement schéma `MockExam` (Pydantic SubmitAnswerRequest)~~ | S | S | ✅ iter 39 |
 | Q4 | ~~Document explicite : « Les 3 matières non-maths sont structure-only en MVP »~~ | XS | XS | ✅ iter 40 |
 
@@ -108,6 +108,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 **✅ Durcir SubmitAnswerRequest** (iter 39, Q3 audit iter 37) : le seul schéma Pydantic exposé sur `POST /exams/sessions/{id}/answer` (`SubmitAnswerRequest`) acceptait n'importe quel `time_seconds`, `item_number`, `sub_label`. Ajouts ciblés : `time_seconds: ge=0` (interdit valeurs négatives — clock skew, payload manipulé), `item_number: ge=1 le=10` (borne haute généreuse, DB observée 1..4), `sub_label: Literal["a","b","c"]` (vocabulaire fermé, casse-sensible, aligné sur la DB). Nouveau fichier `test_exam_request_bounds.py` (10 cas : acceptation QCM/CEP, rejet de chaque borne, compatibilité descendante sur payload `answer`-only). Pytest : 518/518, +10 vs iter 27.
 
 **✅ CONTENT_STATUS.md** (iter 40, Q4 audit iter 37) : nouveau document `docs/CONTENT_STATUS.md` qui formalise l'état réel du contenu pédagogique post-audit iter 37 — scope MVP maths-only côté pratique (50/219 skills avec questions, 904 questions), T3 = 2 semaines isolées intentionnellement (révision CEP, traité côté UX iter 38), `micro_lessons` table quasi-vide (Q2 reste ouvert), explanations placeholders (P1 historique iter 24, bloqué MEMP). But : qu'un futur audit ne reflag pas le gap 169/219 comme bug — c'est attendu. Mémoire Claude `project_content_status` aussi mise à jour pour les futures sessions.
+
+**✅ Trace Q2 leçons** (iter 41, Q2 audit iter 37, **clôture punch-list iter 37**) : investigation pure, pas de code. FE `SkillDetail.tsx` → `GET /subjects/skills/{id}` → renvoie `lessons: skill.lessons` (relation MicroLesson). La table `micro_lessons` a 1 seule entrée ; le tree `content/` (programme + exercices + epreuves) ne contient aucun champ `content_html` / `sections` lesson — c'est curriculum + exercices, pas de narratif pédagogique. Pour 218/219 skills, `lessons=[]` → `SkillDetail` rend silencieusement sans la section « Leçon » (line 123 : `{hasLesson && ...}`). L'élève voit titre + progression + bouton « Commencer l'exercice ». **L'app fonctionne comme drill engine + curriculum map, pas IXL complet.** `CONTENT_STATUS.md` et memory `project_content_status` mis à jour. Q2 fermé en investigation mais ouvre une décision produit (backfill MEMP, copy MVP adaptée, ou cleanup du code lesson mort). **Punch-list iter 37 entièrement fermée** (Q1+Q2+Q3+Q4).
 
 ### Petits items à programmer (post-iter 31) — ✅ tous fermés
 
