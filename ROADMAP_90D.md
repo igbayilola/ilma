@@ -100,10 +100,12 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 |---|------|----------|--------|------|
 | Q1 | ~~T3 coverage : décider si timeline doit signaler « semaine actuelle hors plage couverte »~~ | M | S | ✅ iter 38 |
 | Q2 | `micro_lessons` quasi-vide (1 entrée) : tracer où vivent réellement les leçons (sections sur skill ? autre modèle ?). | S | XS | Découverte audit, vérification, pas forcément du code. |
-| Q3 | Durcissement schéma `MockExam` : audit des champs String non-enum (`exam_type`, `status` sur ExamSession), `points` Float sans bornes. | S | S | Hygiène type-safety, parallèle iter 27 sur Skills. |
+| Q3 | ~~Durcissement schéma `MockExam` (Pydantic SubmitAnswerRequest)~~ | S | S | ✅ iter 39 |
 | Q4 | Document explicite : « Les 3 matières non-maths sont structure-only en MVP » — éviter qu'un futur audit ne soulève à tort le gap 169/219. | XS | XS | Note dans memory `project_state` ou doc README. |
 
 **✅ Note « semaine sans contenu » sur ProgramTimeline** (iter 38, Q1 audit iter 37) : un élève en T3.W4 voyait la timeline T3 sauter silencieusement de W1 à W6 (T3 réel = 2 semaines isolées : examens 2010-2025 + corrigés). `TrimesterBlock` accepte désormais une prop `currentWeek` (null si pas le trimestre courant) et rend une note d'orientation quand cette semaine n'est pas dans `tri.weeks`. Copy différencié : T3 → bande ambre « Période de révision CEP — Semaine X » + lien `/app/student/exams` ; T1/T2 → bande bleue « pas de nouveau cours cette semaine, continue à pratiquer ». +4 tests vitest (12/12 sur le fichier). Vitest : 167/167, 23 fichiers.
+
+**✅ Durcir SubmitAnswerRequest** (iter 39, Q3 audit iter 37) : le seul schéma Pydantic exposé sur `POST /exams/sessions/{id}/answer` (`SubmitAnswerRequest`) acceptait n'importe quel `time_seconds`, `item_number`, `sub_label`. Ajouts ciblés : `time_seconds: ge=0` (interdit valeurs négatives — clock skew, payload manipulé), `item_number: ge=1 le=10` (borne haute généreuse, DB observée 1..4), `sub_label: Literal["a","b","c"]` (vocabulaire fermé, casse-sensible, aligné sur la DB). Nouveau fichier `test_exam_request_bounds.py` (10 cas : acceptation QCM/CEP, rejet de chaque borne, compatibilité descendante sur payload `answer`-only). Pytest : 518/518, +10 vs iter 27.
 
 ### Petits items à programmer (post-iter 31) — ✅ tous fermés
 
