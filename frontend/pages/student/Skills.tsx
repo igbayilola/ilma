@@ -38,12 +38,14 @@ export const SkillsPage: React.FC = () => {
 
   useEffect(() => {
     if (!subjectId || !domainId) return;
+    let cancelled = false;
     Promise.all([
       contentService.listSkills(subjectId, domainId).then(r => r.items),
       progressService.getSkillsProgress().catch(() => [] as SkillProgressDTO[]),
       contentService.getSubject(subjectId).catch(() => null),
       contentService.getDomain(subjectId, domainId).catch(() => null),
     ]).then(([skillList, progressList, subjectData, domainData]) => {
+      if (cancelled) return;
       setSubject(subjectData);
       setDomain(domainData);
       const progressMap = new Map(progressList.map(p => [p.skillId, p]));
@@ -57,8 +59,15 @@ export const SkillsPage: React.FC = () => {
         };
       });
       setSkills(merged);
-    }).catch(() => setSkills([]))
-      .finally(() => setIsLoading(false));
+    }).catch(() => {
+      if (!cancelled) setSkills([]);
+    })
+      .finally(() => {
+        if (!cancelled) setIsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [subjectId, domainId]);
 
   const filteredSkills = skills.filter(skill => {

@@ -25,6 +25,7 @@ export const DomainsPage: React.FC = () => {
 
   useEffect(() => {
     if (!subjectId) return;
+    let cancelled = false;
     setExpandedDomain(null);
     setIsLoading(true);
 
@@ -34,6 +35,7 @@ export const DomainsPage: React.FC = () => {
       progressService.getSkillsProgress().catch(() => [] as SkillProgressDTO[]),
       contentService.getSubject(subjectId).catch(() => null),
     ]).then(([domainList, skillList, progressList, subjectData]) => {
+      if (cancelled) return;
       setSubject(subjectData);
       const progressMap = new Map(progressList.map(p => [p.skillId, p]));
       const merged: SkillWithProgress[] = skillList.map(sk => {
@@ -48,9 +50,15 @@ export const DomainsPage: React.FC = () => {
       setDomains(domainList);
       setAllSkills(merged);
     }).catch(() => {
+      if (cancelled) return;
       setDomains([]);
       setAllSkills([]);
-    }).finally(() => setIsLoading(false));
+    }).finally(() => {
+      if (!cancelled) setIsLoading(false);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [subjectId]);
 
   const enrichedDomains = useMemo<DomainEnriched[]>(() => {

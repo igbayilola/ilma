@@ -27,20 +27,37 @@ export const ProgressPage: React.FC = () => {
 
   // Load subjects for tabs
   useEffect(() => {
+    let cancelled = false;
     contentService.listSubjects()
       .then(subs => {
+        if (cancelled) return;
         setSubjects(subs);
         if (subs.length > 0) setActiveTab(subs[0].id);
       })
-      .catch(() => setSubjects([]));
+      .catch(() => {
+        if (!cancelled) setSubjects([]);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Load progress
   useEffect(() => {
+    let cancelled = false;
     progressService.getSkillsProgress()
-      .then(setSkillProgress)
-      .catch(() => setSkillProgress([]))
-      .finally(() => setIsLoading(false));
+      .then(data => {
+        if (!cancelled) setSkillProgress(data);
+      })
+      .catch(() => {
+        if (!cancelled) setSkillProgress([]);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const handleToggleMicroSkills = async (skillId: string) => {

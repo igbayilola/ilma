@@ -27,6 +27,7 @@ export const SkillDetailPage: React.FC = () => {
 
   useEffect(() => {
     if (!skillId) return;
+    let cancelled = false;
     setIsLoading(true);
 
     Promise.all([
@@ -34,13 +35,19 @@ export const SkillDetailPage: React.FC = () => {
       progressService.getSkillsProgress().catch(() => [] as SkillProgressDTO[]),
     ])
       .then(([{ skill: sk, lessons: ls }, progressList]) => {
+        if (cancelled) return;
         setSkill(sk);
         setLessons(ls);
         const p = progressList.find(p => p.skillId === skillId) || null;
         setProgress(p);
       })
       .catch(() => {})
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        if (!cancelled) setIsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [skillId]);
 
   const score = progress?.score ?? 0;
