@@ -1,9 +1,9 @@
 """Mock exam (Examen Blanc) endpoints for CEP preparation."""
-from typing import Optional
+from typing import Literal, Optional
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, Query
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.deps import get_active_profile
@@ -24,10 +24,16 @@ class SubmitAnswerRequest(BaseModel):
     # QCM-format fields
     question_id: UUID | None = None
     answer: object
-    time_seconds: int | None = None
-    # CEP-format fields
-    item_number: int | None = None
-    sub_label: str | None = None
+    # Borné à >=0 — interdit les valeurs négatives bizarres (clé biaisée
+    # ou erreur d'horloge front).
+    time_seconds: int | None = Field(default=None, ge=0)
+    # CEP-format fields — un examen CEP a 3 items observés en DB mais
+    # 4 dans certains examens existants ; on garde une borne généreuse
+    # (1-10) pour absorber les futurs formats sans patcher.
+    item_number: int | None = Field(default=None, ge=1, le=10)
+    # Toutes les sous-questions CEP en base utilisent "a"/"b"/"c". Une
+    # valeur hors-vocabulaire indique un payload mal formé.
+    sub_label: Literal["a", "b", "c"] | None = None
 
 
 @router.get("")
