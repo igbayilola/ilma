@@ -72,6 +72,24 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Couverture rendu CurrentLessonHero** (iter 31) : parallèle d'iter 30 sur le hero « leçon du jour » (309 LOC, cœur du modèle compagnon-annuel). 10 cas couvraient déjà la fn pure `pickCurrentLesson` depuis iter 7, mais aucun test sur le rendu React. Stratégie distincte d'iter 30 : au lieu de mocker l'agrégation, on construit des inputs (subjects/skills/progress) qui forcent chaque variante de hint via la VRAIE `pickCurrentLesson` ; seuls `getCurrentTrimesterWeek` et `useNavigate` sont mockés. 8 cas : `hint=null` → composant rend `null` ; `allMastered` → carte célébration + CTA explorer matières ; `isCatchUp=true/false` → labels « À rattraper » vs « Cette semaine en CM2 » ; `matchedCalendar=false` → pas de badge `formatTrimesterWeek` ; CTA « Continuer la leçon » et « Voir tout mon programme » → navigations vérifiées ; barre de progression `aria-valuenow=33` + mention « X leçons en cours ». Vitest : 140/140, 20 fichiers.
 
+**✅ Audit / punch list post-iter 27-31** (iter 32, 2026-05-17) : pause-bilan après 5 itérations consécutives FE (test + robustness). Quality gate global ✅ : BE 498/498 pytest (3m21s), FE 140/140 vitest (20 fichiers, +8 vs post-iter-26), tsc 0, ruff clean sur les fichiers touchés. Volume iter 27-31 : 12 commits, 11 fichiers, **+1 069 / −29 LOC**. Pattern de robustesse `gradeLevelId` guard + état vide + cancel flag propagé sur 2 pages (Programme iter 28, Dashboard iter 29) ; gap restant identifié sur `Subjects.tsx` (même structure pré-iter-28). Couverture rendu composants dashboard : ProgressByTrimester ✅ (iter 25), ProgramTimeline ✅ (iter 30), CurrentLessonHero ✅ (iter 31) ; gap restant sur `CEPPredictionCard.tsx` (utilisé sur 2 pages) + mini-widgets in-Dashboard (StreakReminderCard, RuleDuJourWidget, DailyChallengeWidget, CalculMentalWidget). 4 petits items P1-P4 documentés ci-dessous.
+
+### Petits items à programmer (post-iter 31)
+
+| # | Item | Sévérité | Charge | Note |
+|---|------|----------|--------|------|
+| P1 | `Subjects.tsx` — appliquer pattern iter 28/29 (garde `gradeLevelId` + cancel + état vide explicite) | M | XS | Même gap que Programme/Dashboard pré-iter-28, page d'entrée d'exploration |
+| P2 | Tests rendu `CEPPredictionCard.tsx` | S | S | Rendu sur Dashboard ET Programme, 0 test rendu actuel |
+| P3 | Cancel flag hygiène sur `Progress.tsx` / `Skills.tsx` / `Domains.tsx` / `SkillDetail.tsx` | S | XS | setState-after-unmount silencieux, pas de bug visible |
+| P4 | Tests rendu mini-widgets Dashboard (`StreakReminderCard`, `RuleDuJourWidget`, `DailyChallengeWidget`, `CalculMentalWidget`) | S | S | 4 × ~30-100 LOC, rendements décroissants |
+
+### Hors-périmètre P3 confirmés (toujours valides depuis iter 24)
+- P1 worked-solutions — contenu MEMP, pas code.
+- P5 calendrier multi-pays — dette consciente Track C M12+.
+
+### Volume P3 24→31
+- 12 commits sur iter 27-31, 11 fichiers, **+1 069 / −29 LOC**.
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
