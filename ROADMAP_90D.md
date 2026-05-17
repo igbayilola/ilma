@@ -76,13 +76,15 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Robustesse SubjectsPage** (iter 33, P1 punch-list iter 32) : application du pattern iter 28/29 à `pages/student/Subjects.tsx`, dernière des 3 pages élève qui consommait `listSubjects(gradeLevelId)` sans garde. L'effet skip le fetch sans classe, branche `NoClassEmptyState` (icône `GraduationCap` + CTA `/select-profile`) rendue avant `isLoading`, branche `subjects=[]` post-load remplace la grille muette par « Matières indisponibles » + bouton « Réessayer » (`retryToken`), flag `cancelled` au passage. Nouveau fichier `subjectsPage.test.tsx` (3 cas : garde, retry, smoke). Le pattern est désormais propagé sur les 3 pages basées sur `gradeLevelId` — fin du chantier P1. Vitest : 143/143, 21 fichiers.
 
+**✅ Cancel flag hygiène 4 pages élève** (iter 34, P3 punch-list iter 32) : refactor pur, aucun changement de comportement. Pattern `let cancelled = false; ... return () => { cancelled = true; }` ajouté sur les useEffect data-fetching de `Progress.tsx` (2 effets), `Skills.tsx`, `Domains.tsx`, `SkillDetail.tsx`. Avant : sur navigation rapide entre pages (clic timeline → autre skill avant fin du fetch), les setState terminaient sur un composant unmounté — warning React silencieux + state mort affiché brièvement. Maintenant le cleanup annule la mise à jour. Vitest : 143/143 (non-régression vérifiée, pas de nouveau test — modifications trop fines pour mériter d'isoler).
+
 ### Petits items à programmer (post-iter 31)
 
 | # | Item | Sévérité | Charge | Note |
 |---|------|----------|--------|------|
 | P1 | ~~`Subjects.tsx` — appliquer pattern iter 28/29~~ | M | XS | ✅ iter 33 |
 | P2 | Tests rendu `CEPPredictionCard.tsx` | S | S | Rendu sur Dashboard ET Programme, 0 test rendu actuel |
-| P3 | Cancel flag hygiène sur `Progress.tsx` / `Skills.tsx` / `Domains.tsx` / `SkillDetail.tsx` | S | XS | setState-after-unmount silencieux, pas de bug visible |
+| P3 | ~~Cancel flag hygiène sur `Progress.tsx` / `Skills.tsx` / `Domains.tsx` / `SkillDetail.tsx`~~ | S | XS | ✅ iter 34 |
 | P4 | Tests rendu mini-widgets Dashboard (`StreakReminderCard`, `RuleDuJourWidget`, `DailyChallengeWidget`, `CalculMentalWidget`) | S | S | 4 × ~30-100 LOC, rendements décroissants |
 
 ### Hors-périmètre P3 confirmés (toujours valides depuis iter 24)
