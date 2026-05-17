@@ -12,8 +12,8 @@
  * pour pouvoir la tester sans DOM.
  */
 import React, { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CheckCircle, Circle, Clock, Lock, CalendarDays } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { CheckCircle, Circle, Clock, Lock, CalendarDays, Sparkles } from 'lucide-react';
 import type { SubjectDTO, SkillDTO } from '../../services/contentService';
 import type { SkillProgressDTO } from '../../services/progressService';
 import { getCurrentTrimesterWeek, formatTrimesterWeek } from '../../utils/schoolCalendar';
@@ -94,11 +94,24 @@ const SkillRow: React.FC<{ item: TimelineSkill }> = ({ item }) => {
   );
 };
 
-const TrimesterBlock: React.FC<{ tri: TimelineTrimester }> = ({ tri }) => {
+const TrimesterBlock: React.FC<{
+  tri: TimelineTrimester;
+  /** Numéro de la semaine courante si ce trimestre est le trimestre courant. */
+  currentWeek: number | null;
+}> = ({ tri, currentWeek }) => {
   const masteryPct =
     tri.totals.total > 0
       ? Math.round((tri.totals.mastered / tri.totals.total) * 100)
       : 0;
+
+  // Trou de couverture : on est sur ce trimestre, on connaît la semaine courante,
+  // mais aucun skill n'est séquencé dessus. Cas réel pour T3 (W1+W6 = examens
+  // + corrigés, le reste vide) et possible sur T1/T2 si le backfill se troue.
+  const showCurrentWeekGap =
+    currentWeek != null &&
+    tri.weeks.length > 0 &&
+    !tri.weeks.some(w => w.weekOrder === currentWeek);
+
   return (
     <section
       className={`rounded-2xl border ${tri.isCurrent ? 'border-amber-300 bg-amber-50/40' : 'border-gray-200 bg-white'} p-4 md:p-6`}
@@ -125,6 +138,43 @@ const TrimesterBlock: React.FC<{ tri: TimelineTrimester }> = ({ tri }) => {
           <span className="font-bold">{masteryPct}%</span>
         </div>
       </header>
+
+      {showCurrentWeekGap && tri.trimester === 3 && (
+        <div
+          role="note"
+          className="mb-4 flex items-start gap-3 p-3 rounded-xl bg-amber-50 border border-amber-200"
+        >
+          <Sparkles size={18} className="text-amber-600 flex-shrink-0 mt-0.5" />
+          <div className="text-sm text-amber-900">
+            <p className="font-bold mb-1">
+              Période de révision CEP — Semaine {currentWeek}
+            </p>
+            <p className="text-amber-800">
+              Pas de nouveau cours cette semaine : entraîne-toi sur les sujets
+              d'examen passés et consolide ce qui n'est pas encore maîtrisé.
+            </p>
+            <Link
+              to="/app/student/exams"
+              className="inline-block mt-1 font-bold underline underline-offset-2 hover:text-amber-700"
+            >
+              Voir les examens blancs &rarr;
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {showCurrentWeekGap && tri.trimester !== 3 && (
+        <div
+          role="note"
+          className="mb-4 flex items-start gap-3 p-3 rounded-xl bg-sky-50 border border-sky-200"
+        >
+          <CalendarDays size={18} className="text-sky-600 flex-shrink-0 mt-0.5" />
+          <p className="text-sm text-sky-900">
+            <strong>Semaine {currentWeek}</strong> — pas de nouveau cours cette
+            semaine, continue à pratiquer ce qui n'est pas encore maîtrisé.
+          </p>
+        </div>
+      )}
 
       {tri.weeks.length === 0 ? (
         <p className="text-sm text-gray-500 italic">Aucun skill séquencé sur ce trimestre.</p>
@@ -176,7 +226,11 @@ export const ProgramTimeline: React.FC<Props> = ({ subjects, skillsBySubject, pr
         </p>
       )}
       {trimesters.map(tri => (
-        <TrimesterBlock key={tri.trimester} tri={tri} />
+        <TrimesterBlock
+          key={tri.trimester}
+          tri={tri}
+          currentWeek={tri.isCurrent ? (calendar?.week ?? null) : null}
+        />
       ))}
     </div>
   );

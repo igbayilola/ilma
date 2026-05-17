@@ -261,4 +261,95 @@ describe('<ProgramTimeline>', () => {
     const btn = screen.getByRole('button', { name: /Numération avancée/ });
     expect(btn).toHaveTextContent('65%');
   });
+
+  // ── Q1 iter 38 : note « semaine sans contenu » ────────────────────────────
+  it('T3 courant, semaine courante non-couverte → note révision CEP (Q1)', () => {
+    // Calendrier T3.W4 ; T3 a uniquement W1+W6 (cas réel maths).
+    getCurrentMock.mockReturnValue({ trimester: 3, week: 4, totalWeeks: 8 });
+    const w1 = makeTimelineSkill({ skill: makeSkill('sk-t3w1', 'Sujets examen') });
+    const w6 = makeTimelineSkill({ skill: makeSkill('sk-t3w6', 'Corrigés') });
+    groupMock.mockReturnValue([
+      makeTrimester(1, { skills: [makeTimelineSkill()] }),
+      makeTrimester(2, {
+        skills: [makeTimelineSkill({ skill: makeSkill('sk-2', 'Op 1') })],
+      }),
+      {
+        trimester: 3,
+        isCurrent: true,
+        weeks: [
+          { weekOrder: 1, skills: [w1] },
+          { weekOrder: 6, skills: [w6] },
+        ],
+        totals: { total: 2, mastered: 0, inProgress: 0, upcoming: 2, future: 0 },
+      },
+    ]);
+
+    renderTimeline();
+
+    const t3 = screen.getByRole('region', { name: /Trimestre 3/ });
+    expect(t3).toHaveTextContent(/Période de révision CEP — Semaine 4/);
+    expect(t3).toHaveTextContent(/Pas de nouveau cours cette semaine/);
+    // Le lien vers les examens blancs est rendu.
+    const link = screen.getByRole('link', { name: /Voir les examens blancs/ });
+    expect(link).toHaveAttribute('href', '/app/student/exams');
+  });
+
+  it('T2 courant, semaine courante non-couverte → note générique (pas T3)', () => {
+    getCurrentMock.mockReturnValue({ trimester: 2, week: 5, totalWeeks: 13 });
+    groupMock.mockReturnValue([
+      makeTrimester(1, { skills: [makeTimelineSkill()] }),
+      {
+        trimester: 2,
+        isCurrent: true,
+        // W3 et W7 mais pas W5.
+        weeks: [
+          { weekOrder: 3, skills: [makeTimelineSkill({ skill: makeSkill('sk-w3', 'A') })] },
+          { weekOrder: 7, skills: [makeTimelineSkill({ skill: makeSkill('sk-w7', 'B') })] },
+        ],
+        totals: { total: 2, mastered: 0, inProgress: 0, upcoming: 2, future: 0 },
+      },
+      makeTrimester(3),
+    ]);
+
+    renderTimeline();
+
+    const t2 = screen.getByRole('region', { name: /Trimestre 2/ });
+    expect(t2).toHaveTextContent(/Semaine 5/);
+    expect(t2).toHaveTextContent(/pas de nouveau cours cette semaine/);
+    // Variante générique, pas le copywriting T3.
+    expect(t2).not.toHaveTextContent(/Période de révision CEP/);
+  });
+
+  it('semaine courante couverte → aucune note de gap', () => {
+    getCurrentMock.mockReturnValue({ trimester: 1, week: 1, totalWeeks: 14 });
+    groupMock.mockReturnValue([
+      makeTrimester(1, { isCurrent: true, skills: [makeTimelineSkill()], weekOrder: 1 }),
+      makeTrimester(2),
+      makeTrimester(3),
+    ]);
+
+    renderTimeline();
+
+    expect(
+      screen.queryByText(/pas de nouveau cours cette semaine/i),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/Période de révision CEP/),
+    ).not.toBeInTheDocument();
+  });
+
+  it('calendrier=null → aucune note de gap (pas de trimestre courant)', () => {
+    getCurrentMock.mockReturnValue(null);
+    groupMock.mockReturnValue([
+      makeTrimester(1, { skills: [makeTimelineSkill()] }),
+      makeTrimester(2),
+      makeTrimester(3),
+    ]);
+
+    renderTimeline();
+
+    expect(
+      screen.queryByText(/pas de nouveau cours cette semaine/i),
+    ).not.toBeInTheDocument();
+  });
 });
