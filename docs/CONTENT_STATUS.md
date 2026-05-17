@@ -28,9 +28,29 @@ Sitou est positionné comme **compagnon-annuel pour le programme CM2 béninois**
 
 Le `<ProgramTimeline>` (iter 38) rend explicitement une note « Période de révision CEP » quand l'élève est sur T3.W2-5,7+ pour ne pas laisser la timeline silencieuse.
 
-## Leçons (`micro_lessons` table)
+## Leçons — l'app est en mode « exercises-only »
 
-À date, la table `micro_lessons` ne contient **qu'une seule entrée** (sans `sections`). Les leçons consommées par les pages élèves (`SkillDetail`, `MicroLesson`) vivent probablement ailleurs — Q2 de la punch-list iter 37 reste **ouvert** : à investiguer (champ JSON sur le skill ? autre modèle ? statique côté contenu ?).
+**Trace complète établie iter 41 (Q2 audit iter 37) :**
+
+- FE `pages/student/SkillDetail.tsx` appelle `GET /subjects/skills/{skill_id}`.
+- BE `endpoints/content.py:118` renvoie `{skill, lessons: skill.lessons, micro_skills}`.
+- `Skill.lessons` est la relation `MicroLesson` (`models/content.py:117`).
+- La table `micro_lessons` contient **1 seule entrée** en prod, sans `sections`.
+- Le tree `content/` (Bénin CM2) contient `programme/`, `exercices/`, `epreuves/` — **aucun champ `content_html` ni `sections` côté lesson**. Les JSON sont du curriculum + des exercices, pas de leçons narratives.
+
+Conséquence UX : pour 218/219 skills, `SkillDetail` reçoit `lessons: []`. Le composant gère le cas via `{hasLesson && ...}` (SkillDetail.tsx:123) → **la section « Leçon » n'est tout simplement pas rendue, silencieusement**. L'élève voit :
+- Titre + description du skill.
+- Sa progression (`score`, barre).
+- Bouton « Commencer l'exercice » → ExercisePlayer.
+
+Pas de texte pédagogique narratif (intro / règle / exemple) entre exercises. L'app fonctionne aujourd'hui comme un **drill engine + curriculum map**, pas comme un IXL complet.
+
+**À décider** (ouvert post-iter 41) :
+1. **Backfill `micro_lessons`** côté contenu (équipe MEMP, charge L, externe).
+2. **Accepter** comme état MVP et l'expliciter dans la copy élève (ex. label « Pratique » plutôt que « Leçon » sur la page).
+3. **Cleanup** : retirer le code mort du rendu leçon dans `SkillDetail` + `MicroLesson` si décision (2) confirmée.
+
+Q2 est donc **fermé en investigation** mais ouvre une décision produit.
 
 ## Qualité des explications de questions
 
