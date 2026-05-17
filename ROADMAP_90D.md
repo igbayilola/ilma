@@ -80,14 +80,16 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Couverture rendu CEPPredictionCard** (iter 35, P2 punch-list iter 32) : composant rendu sur Dashboard (iter 7) ET sur ProgrammePage (iter 26), donc 2 surfaces critiques sans aucun test rendu jusqu'ici. `examService.getPredictiveScore` et `useNavigate` mockés ; 7 cas couvrant les 4 branches : loading (promise non résolue → ni score, ni meter), erreur (fetch rejette → message), normale (`predicted=15.3` → score affiché + bande « Très bien »), meter a11y (`role=meter`, `aria-valuenow`, min=0/max=20, bande « À renforcer » pour `predicted<10`), `weak_skills` non-vide (liste rendue, clic → navigate skill detail), `weak_skills=[]` × 2 variantes (coverage>0 → « Aucun point faible détecté », coverage=0 → « Commence à pratiquer »). Vitest : 150/150, 22 fichiers.
 
-### Petits items à programmer (post-iter 31)
+**✅ Couverture rendu 4 mini-widgets Dashboard** (iter 36, P4 punch-list iter 32, clôture) : les 4 widgets définis dans `pages/Dashboard.tsx` (StreakReminderCard, RuleDuJourWidget, DailyChallengeWidget, CalculMentalWidget) étaient sans test rendu malgré leur centralité dans la cadence quotidienne (compagnon-annuel). Export ajouté sur 3 d'entre eux (le 4e l'était déjà). `contentService.listFormulas` + `useNavigate` mockés, `localStorage` réel (jsdom) pour CalculMental. 13 cas répartis : `<StreakReminderCard>` × 5 (3 branches Bravo/urgence/nouvelle-série + 2 navigations selon lastActivity), `<RuleDuJourWidget>` × 3 (null sur liste vide, rendu titre+formule, clic Pratiquer navigate), `<DailyChallengeWidget>` × 2 (rendu props + clic Relever), `<CalculMentalWidget>` × 3 (message d'amorce, record depuis localStorage, clic Jouer). Vitest : 163/163, 23 fichiers. **Fin de la punch-list iter 32 — les 4 items P1-P4 sont fermés.**
+
+### Petits items à programmer (post-iter 31) — ✅ tous fermés
 
 | # | Item | Sévérité | Charge | Note |
 |---|------|----------|--------|------|
 | P1 | ~~`Subjects.tsx` — appliquer pattern iter 28/29~~ | M | XS | ✅ iter 33 |
 | P2 | ~~Tests rendu `CEPPredictionCard.tsx`~~ | S | S | ✅ iter 35 |
 | P3 | ~~Cancel flag hygiène sur `Progress.tsx` / `Skills.tsx` / `Domains.tsx` / `SkillDetail.tsx`~~ | S | XS | ✅ iter 34 |
-| P4 | Tests rendu mini-widgets Dashboard (`StreakReminderCard`, `RuleDuJourWidget`, `DailyChallengeWidget`, `CalculMentalWidget`) | S | S | 4 × ~30-100 LOC, rendements décroissants |
+| P4 | ~~Tests rendu mini-widgets Dashboard~~ | S | S | ✅ iter 36 |
 
 ### Hors-périmètre P3 confirmés (toujours valides depuis iter 24)
 - P1 worked-solutions — contenu MEMP, pas code.
