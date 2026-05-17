@@ -200,7 +200,7 @@ export const StreakReminderCard: React.FC<{
 };
 
 /** Rule of the day widget — shows a random formula from the weakest domain. */
-const RuleDuJourWidget: React.FC<{ skillsProgress: SkillProgressDTO[] }> = ({ skillsProgress }) => {
+export const RuleDuJourWidget: React.FC<{ skillsProgress: SkillProgressDTO[] }> = ({ skillsProgress }) => {
   const navigate = useNavigate();
   const [formula, setFormula] = useState<FormulaDTO | null>(null);
 
@@ -258,7 +258,7 @@ const RuleDuJourWidget: React.FC<{ skillsProgress: SkillProgressDTO[] }> = ({ sk
 };
 
 /** Compact "Défi du jour" widget — dynamic if progress data present, static fallback otherwise. */
-const DailyChallengeWidget: React.FC<{
+export const DailyChallengeWidget: React.FC<{
   challenge: { title: string; desc: string; xp: number };
 }> = ({ challenge }) => {
   const navigate = useNavigate();
@@ -290,7 +290,7 @@ const DailyChallengeWidget: React.FC<{
 };
 
 /** Calcul Mental quick-launch widget with personal best score. */
-const CalculMentalWidget: React.FC = () => {
+export const CalculMentalWidget: React.FC = () => {
   const navigate = useNavigate();
   const bestScore = parseInt(localStorage.getItem('sitou_calcul_mental_best') || '0', 10);
 
