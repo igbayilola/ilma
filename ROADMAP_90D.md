@@ -64,6 +64,8 @@ Non prévu au plan initial, motivé par la mémoire produit « UX quotidienne = 
 
 **✅ Durcissement schéma + couverture ProgrammePage** (iter 27) : deux petits filets de sécurité sur le pivot programme livré aux iter 19→26. (1) Backend : la borne Pydantic `week_order` sur `SkillBase` / `SkillUpdate` passe de `le=15` à `le=14` — le calendrier CM2 plafonne T1 à 14 semaines, accepter 15 stockait silencieusement une valeur jamais affichable par le picker. Nouveau test `test_skill_schema_bounds.py` (5 cas : accept(14), reject(15), reject(0), partial update, trimester inchangé). (2) Frontend : premier fichier de test pour `pages/student/Programme.tsx` (4 cas mockés vi.hoisted — titre, carte CEP iter 26, fetch via `gradeLevelId`, timeline iter 22). Plus un nettoyage style sur les générateurs SVG (`generate_svg.py` / `generate_illustrations.py`).
 
+**✅ Robustesse ProgrammePage** (iter 28) : deux états manquants comblés sur la page programme. (1) **Garde `gradeLevelId` manquant** : un profil sans classe (cas réel après migration ou choix incomplet) déclenchait `listSubjects(undefined)`. L'effet est maintenant skippé, la carte CEP est masquée hors contexte classe, et un état vide « Choisis ta classe » avec CTA vers `/select-profile` remplace la timeline. (2) **État vide post-load** : si `subjects=[]` après chargement (panne réseau, BE indispo), l'utilisateur voyait des skeletons puis une timeline silencieuse. Remplacé par « Programme indisponible — Réessayer » avec un bouton qui ré-incrémente `retryToken` (re-fetch propre). Annulation `cancelled` ajoutée au passage pour éviter les setState après unmount. +2 tests vitest sur les nouveaux états (6/6 sur le fichier).
+
 ### Trous résiduels par ROI
 
 | Rang | Item | Sprint d'origine | Charge | Bloque |
