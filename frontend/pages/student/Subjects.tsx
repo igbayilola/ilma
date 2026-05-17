@@ -4,7 +4,16 @@ import { Card } from '../../components/ui/Cards';
 import { Button } from '../../components/ui/Button';
 import { Skeleton } from '../../components/ui/Skeleton';
 import { ButtonVariant } from '../../types';
-import { Calculator, Book, FlaskConical, Globe, BookOpen, ChevronRight } from 'lucide-react';
+import {
+  Calculator,
+  Book,
+  FlaskConical,
+  Globe,
+  BookOpen,
+  ChevronRight,
+  AlertCircle,
+  GraduationCap,
+} from 'lucide-react';
 import { contentService, SubjectDTO } from '../../services/contentService';
 import { useAuthStore } from '../../store/authStore';
 
@@ -29,13 +38,65 @@ export const SubjectsPage: React.FC = () => {
   const gradeLevelId = activeProfile?.gradeLevelId || user?.gradeLevelId;
   const [subjects, setSubjects] = useState<SubjectDTO[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [retryToken, setRetryToken] = useState(0);
 
   useEffect(() => {
-    contentService.listSubjects(gradeLevelId)
-      .then(setSubjects)
-      .catch(() => setSubjects([]))
-      .finally(() => setIsLoading(false));
-  }, [gradeLevelId]);
+    if (!gradeLevelId) {
+      setIsLoading(false);
+      return;
+    }
+    let cancelled = false;
+    setIsLoading(true);
+    contentService
+      .listSubjects(gradeLevelId)
+      .then(data => {
+        if (!cancelled) setSubjects(data);
+      })
+      .catch(() => {
+        if (!cancelled) setSubjects([]);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [gradeLevelId, retryToken]);
+
+  const renderHeader = () => (
+    <header>
+      <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2 font-display">
+        &#128214; Mati&egrave;res
+      </h1>
+      <p className="text-gray-500">
+        Choisis une mati&egrave;re pour t'entra&icirc;ner. Tu vas y arriver !
+      </p>
+    </header>
+  );
+
+  if (!gradeLevelId) {
+    return (
+      <div className="space-y-6">
+        {renderHeader()}
+        <Card>
+          <div className="text-center py-8 flex flex-col items-center">
+            <div className="w-16 h-16 gradient-hero rounded-full flex items-center justify-center mb-4 text-white">
+              <GraduationCap size={32} />
+            </div>
+            <h3 className="text-lg font-bold text-gray-800 mb-1 font-display">
+              Choisis ta classe
+            </h3>
+            <p className="text-gray-500 mb-6">
+              Pour voir tes mati&egrave;res, s&eacute;lectionne d'abord ta classe.
+            </p>
+            <Button onClick={() => navigate('/select-profile')}>
+              Choisir ma classe
+            </Button>
+          </div>
+        </Card>
+      </div>
+    );
+  }
 
   if (isLoading) {
     return (
@@ -48,12 +109,36 @@ export const SubjectsPage: React.FC = () => {
     );
   }
 
+  if (subjects.length === 0) {
+    return (
+      <div className="space-y-6">
+        {renderHeader()}
+        <Card>
+          <div className="text-center py-8 flex flex-col items-center">
+            <div className="w-16 h-16 gradient-hero rounded-full flex items-center justify-center mb-4 text-white">
+              <AlertCircle size={32} />
+            </div>
+            <h3 className="text-lg font-bold text-gray-800 mb-1 font-display">
+              Mati&egrave;res indisponibles
+            </h3>
+            <p className="text-gray-500 mb-6">
+              Aucune mati&egrave;re n'a pu &ecirc;tre charg&eacute;e. V&eacute;rifie ta connexion et r&eacute;essaie.
+            </p>
+            <Button
+              variant={ButtonVariant.SECONDARY}
+              onClick={() => setRetryToken(t => t + 1)}
+            >
+              R&eacute;essayer
+            </Button>
+          </div>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
-      <header>
-        <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2 font-display">&#128214; Mati&egrave;res</h1>
-        <p className="text-gray-500">Choisis une mati&egrave;re pour t'entra&icirc;ner. Tu vas y arriver !</p>
-      </header>
+      {renderHeader()}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {subjects.map((subject) => (
