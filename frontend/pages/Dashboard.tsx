@@ -11,7 +11,7 @@ import { useAuthStore } from '../store/authStore';
 import { useAppStore } from '../store';
 import { contentService, SubjectDTO, SkillDTO } from '../services/contentService';
 import { progressService, SkillProgressDTO } from '../services/progressService';
-import { Zap, Trophy, Download, Book, Calculator, FlaskConical, Globe, BookOpen, Flame, Clock, Sprout, Brain, Lightbulb, Target } from 'lucide-react';
+import { Zap, Trophy, Download, Book, Calculator, FlaskConical, Globe, BookOpen, Flame, Clock, Sprout, Brain, Lightbulb, Target, GraduationCap } from 'lucide-react';
 import { contentService as contentSvc, FormulaDTO } from '../services/contentService';
 import { ButtonVariant } from '../types';
 import { avatarUrl } from '../utils/avatar';
@@ -335,9 +335,15 @@ export const Dashboard: React.FC = () => {
   const [todayChallenge, setTodayChallenge] = useState(STATIC_CHALLENGES[new Date().getDay()]);
 
   useEffect(() => {
+    if (!gradeLevelId) {
+      setIsLoading(false);
+      return;
+    }
+    let cancelled = false;
     const loadData = async () => {
       try {
         const subjectsData = await contentService.listSubjects(gradeLevelId).catch(() => [] as SubjectDTO[]);
+        if (cancelled) return;
         setSubjects(subjectsData);
 
         // Load all skills per subject (for progress bars)
@@ -345,12 +351,14 @@ export const Dashboard: React.FC = () => {
         const skillsResults = await Promise.all(
           subjectsData.map(s => contentService.listSkills(s.id).then(r => r.items).catch(() => [] as SkillDTO[]))
         );
+        if (cancelled) return;
         subjectsData.forEach((s, i) => skillsMap.set(s.id, skillsResults[i]));
         setSkillsBySubject(skillsMap);
 
         // Try to build a dynamic challenge from progress data
         try {
           const progress = await progressService.getSkillsProgress();
+          if (cancelled) return;
           setSkillsProgress(progress);
           const dynamic = buildDynamicChallenge(progress);
           if (dynamic) setTodayChallenge(dynamic);
@@ -358,11 +366,18 @@ export const Dashboard: React.FC = () => {
           // Keep static fallback
         }
       } finally {
-        setIsLoading(false);
+        if (!cancelled) setIsLoading(false);
       }
     };
     loadData();
+    return () => {
+      cancelled = true;
+    };
   }, [gradeLevelId]);
+
+  if (!gradeLevelId) {
+    return <NoClassEmptyState />;
+  }
 
   if (isLoading) {
     return <DashboardSkeleton />;
@@ -546,6 +561,24 @@ const DashboardSkeleton = () => (
         </div>
     </div>
 );
+
+const NoClassEmptyState = () => {
+    const navigate = useNavigate();
+    return (
+        <div className="flex flex-col items-center justify-center min-h-[60vh] text-center p-6 animate-fade-in">
+            <div className="w-24 h-24 gradient-hero rounded-full flex items-center justify-center mb-6 shadow-fun animate-float">
+                <GraduationCap size={40} className="text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-2 font-display">Choisis ta classe</h2>
+            <p className="text-gray-500 max-w-md mb-8 leading-relaxed">
+                Pour voir ton tableau de bord personnalis&eacute;, s&eacute;lectionne d'abord ta classe.
+            </p>
+            <Button onClick={() => navigate('/select-profile')}>
+                Choisir ma classe
+            </Button>
+        </div>
+    );
+};
 
 const EmptyStateDashboard = () => {
     const navigate = useNavigate();
